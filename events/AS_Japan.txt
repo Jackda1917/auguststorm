@@ -101,7 +101,7 @@ country_event = {
 	option = {
 		name = as_japan.3.a
 		ai_chance = {
-			factor = 10
+			factor = 0.1
 		}
 		white_peace = { tag = CHI message = "Sino-Japanese Attrition War" tooltip = "Sino-Japanese Attrition War" } 		
 		set_global_flag = chi_limited_war_flag		
@@ -233,7 +233,7 @@ country_event = {
 	option = {
 		name = as_japan.3.b
 		ai_chance = {
-			factor = 0
+			factor = 0.9
 		}
 		effect_tooltip = {
 			add_political_power = -200
