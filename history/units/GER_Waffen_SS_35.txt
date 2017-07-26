@@ -1,0 +1,8 @@
+﻿units = {
+	division= {	
+		name = "35. SS- und Polizei-Grenadier-Division"
+		location = 6521 # Berlin
+		division_template = "SS-Grenadier-Division"
+		start_experience_factor = 0.5
+	}
+}

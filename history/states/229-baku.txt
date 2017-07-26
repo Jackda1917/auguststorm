@@ -1,0 +1,60 @@
+
+state={
+	id=229
+	name="STATE_229"
+	manpower = 2881049
+	
+	state_category = large_town
+	
+	resources={
+		oil=126
+	}
+
+	history={
+		owner = RUS
+		add_core_of = AZR
+		add_core_of = RUS
+
+		victory_points = {
+			7661 1 
+		}
+		buildings = {
+			infrastructure = 4
+			industrial_complex = 1
+			air_base = 1
+		}
+
+		# Azerbaijan Democratic Republic
+		1918.5.28 = {
+			owner = AZR
+			add_core_of = AZR
+			remove_core_of = RUS
+			add_claim_by = RUS
+		}
+
+		# Transcaucasian Socialist Federative Soviet Republic
+		1920.4.28 = {
+			remove_claim_by = RUS
+		}
+
+		# Union of Soviet Socialist Republics
+		1922.12.30 = {
+			owner = SOV
+			add_core_of = SOV
+		}
+
+		1991.10.18 = {
+			owner = AZR
+			remove_core_of = SOV
+			add_claim_by = SOV
+		}
+
+		1991.12.25 = {
+			remove_claim_by = SOV
+		}
+	}
+
+	provinces={
+		1467 1536 1539 1610 4458 4473 4477 4545 4614 6763 7495 7661 9715 11645 11674 11704 12434 
+	}
+}

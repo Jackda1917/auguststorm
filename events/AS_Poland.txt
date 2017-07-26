@@ -1,0 +1,42 @@
+﻿##### August Storm
+##### Poland Events
+
+add_namespace = as_poland
+
+# Zaolzie
+country_event = {
+	id = as_poland.1
+	title = as_poland.1.title
+	desc = as_poland.1.desc
+	picture = GFX_report_event_german_troops
+
+	is_triggered_only = yes
+	
+	option = {
+		name = as_poland.1.option_a
+		ai_chance = { factor = 100 }
+		
+		# Zaolzie
+		72 = {
+			add_core_of = POL
+		}
+
+		CZE = { country_event = { days = 1 id = as_czechoslovakia.2 } }
+	}
+	
+	option = {
+		name = as_poland.1.option_b
+		ai_chance = { factor = 0 }
+		# Zaolzie
+		72 = {
+			if = {
+				limit = { is_owned_by = CZE }
+				add_claim_by = GER
+			}
+		}
+		GER = {
+			transfer_state = 72 # Zaolzie
+		}
+		add_political_power = -150
+	}
+}

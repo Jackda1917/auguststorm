@@ -1,0 +1,27 @@
+
+state={
+	id=743
+	name="STATE_743" #North Arabia
+	manpower = 50000
+	
+	state_category = rural
+
+	history = {
+		owner = ENG
+		controller = ENG
+		add_core_of = JOR
+
+		buildings = {
+			infrastructure = 2
+		}
+
+		1923.5.23 = {
+			owner = JOR
+			controller = JOR
+		}
+	}
+
+	provinces = {
+		1544 4115 4440 4562 4574 4591 4603 7001 11976 
+	}
+}

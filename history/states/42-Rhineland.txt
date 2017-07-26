@@ -1,0 +1,62 @@
+
+state={
+	id=42
+	name="STATE_42"
+	manpower = 2507739
+	
+	state_category = metropolis
+
+	history={
+		owner = GER
+		buildings = {
+			infrastructure = 7
+			industrial_complex = 3
+
+		}
+		add_core_of = GER
+	
+		set_demilitarized_zone = yes
+		
+		1936.3.7 = {
+			set_demilitarized_zone = no
+		}
+
+		1939.1.1 ={
+			buildings = {
+				radar_station = 1
+				synthetic_refinery = 3
+			}
+		}
+		
+		# German Surrender
+		1945.5.8 = {
+			owner = FRA
+			controller = FRA
+		}
+		
+		# Federal Republic of Germany
+		1949.5.23 = {
+			owner = WGR
+			controller = WGR
+			add_core_of = WGR
+			remove_core_of = GER
+		}
+
+		# German Democratic Republic
+		1949.10.7 = {
+			add_core_of = DDR
+		}
+
+		# German Reunification Treaty
+		1990.10.3 = {
+			remove_core_of = DDR
+		}
+	}
+
+	provinces={
+		563 3423 3558 9575 11547 
+		11560
+	}
+	
+	
+}

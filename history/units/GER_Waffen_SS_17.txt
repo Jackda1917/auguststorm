@@ -1,0 +1,8 @@
+﻿units = {
+	division= {	
+		name = "17. SS-Panzergrenadier-Division 'Götz von Berlichingen'"
+		location = 11596 # Poitiers
+		division_template = "SS-Panzergrenadier-Division"
+		start_experience_factor = 0.5
+	}
+}

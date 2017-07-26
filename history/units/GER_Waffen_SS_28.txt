@@ -1,0 +1,8 @@
+﻿units = {
+	division= {	
+		name = "28. SS-Freiwilligen-Grenadier-Division 'Wallonien'"
+		location = 3516 # Namur
+		division_template = "SS-Grenadier-Division"
+		start_experience_factor = 0.4
+	}
+}

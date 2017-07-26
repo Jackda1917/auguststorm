@@ -1,0 +1,34 @@
+﻿l_english:
+ ARMY_ARMY_LABEL:0 "Unit Overview"
+
+ ARMY_DIVISIONS_ACTIVE:0 "$N$ Units"
+ ARMY_DIVISIONS_THEATRES:0 "Active in $N$ Army Group(s)"
+
+ ARMY_DIVISION_TOOLTIP_DETAILED_DESC:0 "We have only one $TYPE|Y$ unit in our army."
+ ARMY_DIVISION_TOOLTIP_DETAILED_MULTIPLE_DESC:0 "We have $COUNT$ $TYPE|Y$ units in our army."
+
+ ARMY_DIVISIONS_BUTTON:0 "§GClick§! to select.\n§GClick§! while §HHolding Shift§! to select multiple units.\n§GRight-click§! to pan to the unit."
+
+ ARMY_DIVISONS_TAB:0 "§YUnit§!"
+
+ ARMY_DIVISONS_FILTER_DESC:0 "Enter a part of Unit name, Unit Type, Army Group, State, Leader name, Equipment name or Level name"
+
+ ARMY_SORT_THEATRE:0 "Army Group"
+ UNASSIGNED_UNIT_DESCRIPTION:1 "These units are unassigned. Right-click an existing army or create a new one to assign them."
+
+ PLAN_VALUE_STILL_PLANNING:0 "Unit still preparing: $VAL|0%+%$"
+ PLAN_VALUE_NOT_IN_POSITION:0 "Some units not in position: $VAL|0%+%$"
+
+ THEATER_GROUP_NAME_PATTERN:0 "Army Group $NUMBER$"
+ NEW_THEATER_GROUP:1 "New Army Group"
+ THEATER_GROUP_DIVISIONS_COUNT_DESC:0 "$NAME|H$ has $COUNT|H$ units."
+
+ THEATER_GROUP_ASSIGN_CLICK_BUTTON_DESC:1 "§GClick to select all units in the current army group!"
+ THEATER_GROUP_ASSIGN_RIGHT_CLICK_BUTTON_DESC:1 "§GRight-Click to assign army to the current army group!"
+ THEATER_GROUP_ASSIGN_TO_VOLUNTEERS_DESC:1 "§RCannot assign non-volunteer armies to volunteer army group§!"
+ THEATER_GROUP_ASSIGN_FROM_VOLUNTEERS_DESC:1 "§RCannot assign volunteer armies to non-volunteer army group§!"
+ NEW_THEATER_GROUP_BUTTON_DESC:0 "§GClick to create new army group and assign all selected armies to it§!"
+ THEATER_GROUP_DISBAND_BUTTON_DESC:0 "Disband Army Group"
+
+ THEATER_GROUP_DISBAND_TITLE:1 "Disband Army Group"
+

@@ -1,0 +1,22 @@
+state = {
+	id = 754
+	name= "STATE_754" # West Banat
+	manpower = 600000
+	
+	state_category = rural
+
+	history = {
+		owner = YUG
+		add_core_of = YUG
+		add_core_of = SER
+
+		buildings = {
+			infrastructure = 5
+			industrial_complex = 2
+		}
+	}
+
+	provinces = {
+		6643 11787 614 3614
+	}
+}

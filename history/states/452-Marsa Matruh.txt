@@ -1,0 +1,27 @@
+
+state={
+	id=452
+	name="STATE_452"
+	manpower = 52556
+	
+	state_category = wasteland
+
+	history={
+		owner = ENG
+		add_core_of = EGY
+		buildings = {
+			infrastructure = 3
+		}
+
+		1922.3.15 = {
+			owner = EGY
+			controller = EGY
+		}
+	}
+
+	provinces={
+		7079 9989 10061 11910 11967
+		5078 12033 12091 12764
+	}
+
+}

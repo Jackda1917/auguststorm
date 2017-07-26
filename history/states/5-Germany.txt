@@ -1,0 +1,50 @@
+
+state={
+	id=5
+	name="STATE_5"
+	manpower = 2378108
+	state_category = large_city
+
+	history={
+		owner = GER
+		controller = GER
+		add_core_of = GER
+		
+		victory_points = {
+			6332 10 
+		}
+		buildings = {
+			infrastructure = 6
+			industrial_complex = 2
+			6332 = {
+				bunker = 1
+
+			}
+			anti_air_building = 2
+			6332 = {
+				naval_base = 5
+
+			}
+			air_base = 6
+		}
+
+		1939.1.1 = {
+			buildings = {
+				anti_air_building = 5
+			}
+		}
+
+		1945.4.25 = {
+			controller = SOV
+		}
+		
+		1945.5.8 = {
+			owner = SOV
+			remove_core_of = GER
+		}
+	}
+
+	provinces={
+		281 348 395 3384 6332 11265
+	}
+}

@@ -1,0 +1,39 @@
+##### August Storm
+##### Germany Scripted Triggers
+
+as_germany_rhineland_demilitarized = {
+	OR = {
+		51 = { is_owned_by = GER is_demilitarized_zone = yes } # Rhineland
+		42 = { is_owned_by = GER is_demilitarized_zone = yes } # Moselland
+		749 = { is_owned_by = GER is_demilitarized_zone = yes } # Saarland
+	}
+}
+
+as_germany_anschluss = {
+	AND = {
+		4 = { is_owned_by = GER } # Lower Austria
+		152 = { is_owned_by = GER } # Upper Austria
+		153 = { is_owned_by = GER } # Tyrol
+	}
+}
+
+as_germany_sudetenland = {
+	AND = {
+		69 = { is_owned_by = GER } # Sudetenland
+		74 = { is_owned_by = GER } # Eastern Sudetenland
+	}
+}
+
+as_germany_controls_paris = {
+	# Ile de France
+	16 = {
+		OR = {
+			is_controlled_by = GER
+			any_country = {
+				controls_state = 16
+				is_in_faction_with = GER
+				GER = { is_faction_leader = yes }
+			}
+		}
+	}
+}

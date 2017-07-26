@@ -1,0 +1,8 @@
+﻿units = {
+	division= {	
+		name = "38. SS-Grenadier-Division 'Nibelungen'"
+		location = 11620 # Bad Tölz
+		division_template = "SS-Grenadier-Division"
+		start_experience_factor = 0.1
+	}
+}

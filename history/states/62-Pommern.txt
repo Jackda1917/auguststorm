@@ -1,0 +1,50 @@
+
+state={
+	id=62
+	name="STATE_62" # Sachsen-Anhalt
+	manpower = 1000000
+	
+	state_category = town
+
+	history={
+		owner = GER
+		controller = GER
+		add_core_of = GER
+		
+		buildings = {
+			infrastructure = 6
+			industrial_complex = 1
+			air_base = 10
+		}
+		
+		# German Surrender
+		1945.5.8 = {
+			owner = SOV
+		}
+		
+		# Federal Republic of Germany
+		1949.5.23 = {
+			add_core_of = WGR
+		}
+
+		# German Democratic Republic
+		1949.10.7 = {
+			owner = DDR
+			controller = DDR
+			add_core_of = DDR
+			remove_core_of = GER
+		}
+
+		# German Reunification Treaty
+		1990.10.3 = {
+			owner = WGR
+			controller = WGR
+			remove_core_of = DDR
+		}
+	}
+
+	provinces={
+		9238 9375 11468 11359 3522 6487 6582
+		9560
+	}
+}

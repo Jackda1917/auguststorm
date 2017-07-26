@@ -1,0 +1,8 @@
+﻿units = {
+	division= {	
+		name = "7. SS-Freiwilligen-Gebirgs-Division 'Prinz Eugen'"
+		location = 3617 # Banat
+		division_template = "SS-Gebirgs-Division"
+		start_experience_factor = 0.4
+	}
+}

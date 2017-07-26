@@ -1,0 +1,8 @@
+state_categories={
+	wasteland = {
+		local_building_slots = 0
+	    local_supplies = 0 # was none	
+		color = { 40 40 40 }
+
+	}
+}

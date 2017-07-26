@@ -1,0 +1,144 @@
+##### August Storm
+##### Iraq AI Strategy
+
+##### Diplomacy
+
+israel_war_goal = {
+	enable = {
+		tag = IRQ
+		country_exists = ISR
+	}
+	abort = {
+		NOT = {
+			country_exists = ISR
+		}
+	}
+	
+	ai_strategy = {
+		type = antagonize
+		id = "ISR"			
+		value = 200
+	}		
+}
+
+egypt_ally = {
+	enable = {
+		tag = IRQ
+		country_exists = EGY
+	}
+	abort = {
+		NOT = { country_exists = EGY }
+	}
+	
+	ai_strategy = {
+		type = befriend
+		id = "EGY"			
+		value = 100
+	}
+	ai_strategy = {
+		type = alliance
+		id = "EGY"			
+		value = 100
+	}	
+}
+
+jordan_ally = {
+	enable = {
+		tag = SYR
+		country_exists = JOR
+	}
+	abort = {
+		NOT = { country_exists = JOR }
+	}
+	
+	ai_strategy = {
+		type = befriend
+		id = "JOR"			
+		value = 100
+	}
+	ai_strategy = {
+		type = alliance
+		id = "JOR"			
+		value = 100
+	}	
+}
+
+syria_ally = {
+	enable = {
+		tag = IRQ
+		country_exists = SYR
+	}
+	abort = {
+		NOT = { country_exists = SYR }
+	}
+	
+	ai_strategy = {
+		type = befriend
+		id = "SYR"			
+		value = 100
+	}
+	ai_strategy = {
+		type = alliance
+		id = "SYR"			
+		value = 100
+	}	
+}
+
+uk_antagonize = {
+	enable = {
+		tag = IRQ
+		country_exists = ENG
+	}
+	abort = {
+		OR = {
+			NOT = { country_exists = ENG }
+			OR = {
+				NOT = { IRQ = { is_puppet_of = ENG } }
+				NOT = { ENG = { controls_state = 656 } } # Kuwait
+			}
+		}
+		
+
+	}
+	
+	ai_strategy = {
+		type = antagonize
+		id = "ENG"			
+		value = 100
+	}	
+}
+
+germany_befriend = {
+	enable = {
+		tag = IRQ
+		country_exists = GER
+	}
+	abort = {
+		NOT = { country_exists = GER }
+	}
+	
+	ai_strategy = {
+		type = befriend
+		id = "GER"			
+		value = 100
+	}	
+}
+
+russia_befriend = {
+	enable = {
+		tag = IRQ
+		country_exists = SOV
+	}
+	abort = {
+		OR = {
+			NOT = { country_exists = SOV }
+			NOT = { country_exists = GER } # Germany lost WW2
+		}
+	}
+	
+	ai_strategy = {
+		type = befriend
+		id = "SOV"			
+		value = 100
+	}	
+}

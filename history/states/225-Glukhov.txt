@@ -1,0 +1,46 @@
+
+state={
+	id=225
+	name="STATE_225" # Sumy
+	manpower = 1338280
+	
+	state_category = town
+
+	history={
+		owner = RUS
+		add_core_of = RUS
+		
+		buildings = {
+			infrastructure = 5
+		}
+		
+		# Ukrainian People's Republic
+		1917.11.8 = {
+			owner = UKR
+			add_core_of = UKR
+			remove_core_of = RUS
+		}
+		
+		# Union of Soviet Socialist Republics
+		1922.12.30 = {
+			owner = SOV
+			add_core_of = SOV
+		}
+		
+		# Independence declared
+		1991.8.24 = {
+			owner = UKR
+			remove_core_of = SOV
+			add_claim_by = SOV
+		}
+
+		# Independence recognized
+		1991.12.2 = {
+			remove_claim_by = SOV
+		}
+	}
+
+	provinces={
+		463 501 522 3225 3455 3520 6565 9477 9566 11462 11553 
+	}
+}

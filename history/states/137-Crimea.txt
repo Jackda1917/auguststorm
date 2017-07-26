@@ -1,0 +1,66 @@
+
+state={
+	id=137
+	name="STATE_137"
+	manpower = 1061607
+	
+	state_category = city
+
+	history={
+		#owner = RUS
+		#add_core_of = RUS
+		owner = SOV
+		add_core_of = SOV
+		
+		victory_points = {
+			3686 20
+		}
+		buildings = {
+			infrastructure = 5
+			dockyard = 1
+			air_base = 3
+			3686 ={
+				naval_base = 10
+				coastal_bunker = 3
+			}
+			9680 ={
+				naval_base = 1
+				coastal_bunker = 1
+			}
+		}
+		
+		# Union of Soviet Socialist Republics
+		1922.12.30 = {
+			owner = SOV
+			add_core_of = SOV
+		}
+		
+		1939.1.1 = {
+			buildings = {
+				dockyard = 2
+			}
+		}
+		
+		# Khrushchev gifts Crimea from Russia to Ukraine
+		1954.2.1 = {
+			add_core_of = UKR
+			#remove_core_of = RUS
+		}
+		
+		# Independence declared
+		1991.8.24 = {
+			owner = UKR
+			remove_core_of = SOV
+			add_claim_by = SOV
+		}
+
+		# Independence recognized
+		1991.12.2 = {
+			remove_claim_by = SOV
+		}
+	}
+
+	provinces={
+		705 3686 3722 6704 6724 9677 9680 9718 11649 
+	}
+}

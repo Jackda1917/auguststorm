@@ -1,0 +1,62 @@
+
+state={
+	id=57
+	name="STATE_57"
+	manpower = 5109333
+	state_category = large_city
+
+	history={
+		owner = GER
+		victory_points = {
+			495 5 
+		}
+		victory_points = {
+			6469 10 
+		}
+		buildings = {
+			infrastructure = 8
+			arms_factory = 4
+			industrial_complex = 1
+			air_base = 3
+
+		}
+		add_core_of = GER
+
+		1939.1.1 ={
+			buildings = {
+				radar_station = 1
+				arms_factory = 6
+				industrial_complex = 3
+			}
+		}
+		
+		# German Surrender
+		1945.5.8 = {
+			owner = ENG
+			controller = ENG
+		}
+		
+		# Federal Republic of Germany
+		1949.5.23 = {
+			owner = WGR
+			controller = WGR
+			add_core_of = WGR
+			remove_core_of = GER
+		}
+
+		# German Democratic Republic
+		1949.10.7 = {
+			add_core_of = DDR
+		}
+
+		# German Reunification Treaty
+		1990.10.3 = {
+			remove_core_of = DDR
+		}
+	}
+
+	provinces={
+		405 495 3355 3398 6535 6622 9443 9509 11346 11431 
+		529 3512 6469 6570 9482
+	}
+}

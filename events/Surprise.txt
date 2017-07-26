@@ -1,0 +1,36 @@
+﻿# Generic Surprise event
+
+add_namespace = surprise
+
+country_event = {								
+	id = surprise.1
+	title = surprise.1.t
+	desc = surprise.1.d
+	picture = GFX_report_event_001
+	
+	is_triggered_only = yes   # triggered by on_actions file
+	
+	option = {
+		name = surprise.1.a
+		add_timed_idea = { idea = surprised_army days = 12 } 
+	}
+}
+
+# Day of Infamy (USA)
+country_event = {								
+	id = surprise.4
+	title = surprise.4.t
+	desc = surprise.4.d
+	picture = GFX_report_event_usa_pearl_harbor_airphoto
+	
+	is_triggered_only = yes   # triggered by on_actions file
+
+	immediate = {
+		set_global_flag = day_of_infamy_flag	
+	}
+	
+	option = {
+		name = surprise.1.a
+		add_timed_idea = { idea = day_of_infamy days = 7 } 
+	}
+}

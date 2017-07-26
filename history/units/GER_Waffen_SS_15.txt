@@ -1,0 +1,8 @@
+﻿units = {
+	division= {	
+		name = "15. Waffen-Grenadier-Division der SS (lettische Nr. 1)"
+		location = 9340 # Riga
+		division_template = "SS-Grenadier-Division"
+		start_experience_factor = 0.3
+	}
+}

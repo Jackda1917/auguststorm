@@ -1,0 +1,48 @@
+state={
+	id=97
+	name="STATE_97"
+	manpower = 1066000
+	
+	state_category = town
+	
+	history={
+		owner = RUS
+		add_core_of = RUS
+		
+		victory_points = {
+			11301 1 
+		}
+		buildings = {
+			infrastructure = 5
+			industrial_complex = 1
+			air_base = 3
+		}
+
+		1918.3.25 = {
+			add_core_of = BLR
+			remove_core_of = RUS
+		}
+
+		1918.11.18 = {
+			add_claim_by = POL
+		}
+
+		1921.10.18 = {
+			owner = POL
+			remove_claim_by = POL
+			add_core_of = POL
+		}
+
+		1922.12.30 = {
+			add_claim_by = SOV
+		}
+		
+		1991.12.25 = {
+			remove_claim_by = SOV
+		}
+	}
+
+	provinces={
+		290 347 400 3254  11247 11274 11301 11329 11357 
+	}
+}

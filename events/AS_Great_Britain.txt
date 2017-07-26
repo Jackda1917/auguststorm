@@ -1,0 +1,618 @@
+﻿##### August Storm
+##### Great Britain Events
+
+add_namespace = as_great_britain
+
+# The Colony of Aden
+country_event = {
+	id = as_great_britain.1
+	title = as_great_britain.1.title
+	desc = as_great_britain.1.desc
+	picture = GFX_report_event_indian_soldiers
+	
+	fire_only_once = yes
+	
+	trigger = {
+		tag = ENG
+		RAJ = { is_puppet_of = ENG }
+		659 = { is_owned_by = RAJ } # Aden
+		date > 1936.12.31 # Historical 1937.1.1
+	}
+
+	mean_time_to_happen = {
+		days = 7
+	}
+	
+	option = {
+		name = as_great_britain.1.option_a
+		ai_chance = { factor = 100 }
+		transfer_state = 659 # Aden
+	}
+	
+	option = {
+		name = as_great_britain.1.option_b
+		ai_chance = { factor = 0 }
+	}
+}
+
+# British Burma
+country_event = {
+	id = as_great_britain.2
+	title = as_great_britain.2.title
+	desc = as_great_britain.2.desc
+	picture = GFX_report_event_indian_soldiers
+	
+	fire_only_once = yes
+	
+	trigger = {
+		tag = ENG
+		RAJ = { is_puppet_of = ENG }
+		288 = { is_owned_by = RAJ } # Aden
+		date > 1936.12.31 # Historical 1937.1.1
+	}
+
+	mean_time_to_happen = {
+		days = 7
+	}
+	
+	option = {
+		name = as_great_britain.2.option_a
+		ai_chance = { factor = 100 }
+		288 = { remove_core_of = RAJ }
+		640 = { remove_core_of = RAJ }
+		hidden_effect = { transfer_state = 288 } # Burma
+		hidden_effect = { transfer_state = 640 } # Mandalay
+		release = BUR
+		hidden_effect = { 
+			if = {
+				limit = { has_dlc = "Together for Victory" }
+				set_autonomy = { 
+					target = BUR 
+					autonomy_state = autonomy_puppet
+					freedom_level = 0.20		
+				}
+				else = {
+					puppet = BUR
+					give_military_access = BUR		
+				}				
+			}
+		}
+		hidden_effect = { add_to_faction = BUR }
+		hidden_effect = { 
+			BUR = { 
+				set_politics = { ruling_party = neutrality } 
+				add_ideas = {
+					vampirized_economy  #AS	
+				}
+				set_country_flag = vampirized_economy_flag # AS				
+			} 
+		}
+	}
+	
+	option = {
+		name = as_great_britain.2.option_b
+		ai_chance = { factor = 0 }
+
+	}
+}
+
+country_event = {
+	id = as_great_britain.3
+	title = as_great_britain.3.title
+	desc = as_great_britain.3.desc
+	picture = GFX_report_event_indian_soldiers
+	
+	is_triggered_only = yes
+	
+	fire_only_once = yes
+	
+	immediate = {
+		 ENG = {
+		 	annex_country = {
+				target = EGY
+				transfer_troops = yes 
+			}
+			set_global_flag = stab_in_the_back
+		 }		
+	}	
+				
+	option = {
+		name = as_great_britain.3.option_a
+		ai_chance = { factor = 100 }
+		if = {
+			limit = {
+				NOT = { has_tech = basic_medium_tank }
+			}
+			set_technology = { basic_medium_tank = 1 }		
+		}
+		if = {
+			limit = {
+				NOT = { has_tech = basic_light_tank }
+			}
+			set_technology = { basic_light_tank = 1 }		
+		}
+		if = {
+			limit = {
+				NOT = { has_tech = improved_light_tank }
+			}
+			set_technology = { improved_light_tank = 1 }		
+		}		
+		add_equipment_to_stockpile = {
+			type = light_tank_equipment_2
+			amount = 500
+			producer = ENG
+		}
+		add_equipment_to_stockpile = {
+			type = medium_tank_equipment_1
+			amount = 200
+			producer = ENG
+		}
+		add_equipment_to_stockpile = {
+			type = infantry_equipment_1
+			amount = 1000
+			producer = USA
+		}		
+		set_technology = { basic_medium_td = 1 }
+		set_technology = { basic_medium_art = 1 }
+		set_technology = { basic_medium_spaa = 1 }
+		set_technology = { tech_logistics_company = 1 }		
+		load_oob = "ENG_desert_rats"
+		RAJ = { load_oob = "RAJ_desert_rats" }
+	}
+}
+
+country_event = {
+	id = as_great_britain.4
+	title = as_great_britain.4.title
+	desc = as_great_britain.4.desc
+	picture = GFX_report_event_indian_soldiers
+	
+	trigger = {
+		tag = RAJ
+		is_ai = yes
+		has_war_with = ITA
+		has_war_with = GER
+	}
+	
+	fire_only_once = yes
+
+	mean_time_to_happen = {
+		days = 1
+	}	
+					
+	option = {
+		name = as_great_britain.4.option_a
+		ai_chance = { factor = 100 }
+		RAJ = {												### AS
+				if = {
+					limit = {
+						RAJ = { is_ai = yes }
+						NOT = {
+								has_idea = war_economy
+								has_idea = tot_economic_mobilisation						
+						}
+					}
+						add_ideas = war_economy
+				}			
+		}
+		RAJ = {												### AS
+				if = {
+					limit = {
+						RAJ = { is_ai = yes }
+						NOT = {
+								has_idea = service_by_requirement
+								has_idea = all_adults_serve
+								has_idea = scraping_the_barrel											
+						}
+					}
+						add_ideas = service_by_requirement
+				}			
+		}			
+	}
+}
+
+country_event = {
+	id = as_great_britain.5
+	title = as_great_britain.5.title
+	desc = as_great_britain.5.desc
+	picture = GFX_report_event_indian_soldiers
+	
+	trigger = {
+		tag = CAN
+		is_ai = yes
+		has_war_with = ITA
+		has_war_with = GER
+	}
+	
+	fire_only_once = yes
+
+	mean_time_to_happen = {
+		days = 1
+	}	
+					
+	option = {
+		name = as_great_britain.4.option_a
+		ai_chance = { factor = 100 }
+		CAN = {												### AS
+				if = {
+					limit = {
+						CAN = { is_ai = yes }
+						NOT = {
+								has_idea = war_economy
+								has_idea = tot_economic_mobilisation						
+						}
+					}
+						add_ideas = war_economy
+				}														### AS
+				if = {
+					limit = {
+						CAN = { is_ai = yes }
+						NOT = {
+								has_idea = service_by_requirement
+								has_idea = all_adults_serve
+								has_idea = scraping_the_barrel											
+						}
+					}
+						add_ideas = service_by_requirement
+				}			
+		}			
+	}
+}
+
+country_event = {
+	id = as_great_britain.6
+	title = as_great_britain.6.title
+	desc = as_great_britain.6.desc
+	picture = GFX_report_event_indian_soldiers
+	
+	trigger = {
+		tag = AST
+		is_ai = yes
+		has_war_with = ITA
+		has_war_with = GER
+	}
+	
+	fire_only_once = yes
+
+	mean_time_to_happen = {
+		days = 1
+	}	
+					
+	option = {
+		name = as_great_britain.4.option_a
+		ai_chance = { factor = 100 }
+		AST = {												### AS
+				if = {
+					limit = {
+						AST = { is_ai = yes }
+						NOT = {
+								has_idea = war_economy
+								has_idea = tot_economic_mobilisation						
+						}
+					}
+						add_ideas = war_economy
+				}														### AS
+				if = {
+					limit = {
+						AST = { is_ai = yes }
+						NOT = {
+								has_idea = service_by_requirement
+								has_idea = all_adults_serve
+								has_idea = scraping_the_barrel											
+						}
+					}
+						add_ideas = service_by_requirement
+				}			
+		}			
+	}
+}
+
+country_event = {
+	id = as_great_britain.7
+	title = as_great_britain.7.title
+	desc = as_great_britain.7.desc
+	picture = GFX_report_event_indian_soldiers
+	
+	trigger = {
+		tag = SAF
+		is_ai = yes
+		has_war_with = ITA
+		has_war_with = GER
+	}
+	
+	fire_only_once = yes
+
+	mean_time_to_happen = {
+		days = 1
+	}	
+					
+	option = {
+		name = as_great_britain.4.option_a
+		ai_chance = { factor = 100 }
+		SAF = {												### AS
+				if = {
+					limit = {
+						SAF = { is_ai = yes }
+						NOT = {
+								has_idea = war_economy
+								has_idea = tot_economic_mobilisation						
+						}
+					}
+						add_ideas = war_economy
+				}			
+		}
+		SAF = {												### AS
+				if = {
+					limit = {
+						SAF = { is_ai = yes }
+						NOT = {
+								has_idea = service_by_requirement
+								has_idea = all_adults_serve
+								has_idea = scraping_the_barrel											
+						}
+					}
+						add_ideas = service_by_requirement
+				}			
+		}			
+	}
+}
+
+country_event = {
+	id = as_great_britain.8
+	title = as_great_britain.8.title
+	desc = as_great_britain.8.desc
+	picture = GFX_report_event_indian_soldiers
+	
+	trigger = {
+		tag = ENG
+		is_ai = yes
+		has_war_with = GER
+		NOT = {
+			SOV = { is_ai = no }
+			GER = { is_ai = yes }
+		}
+	}
+	
+	fire_only_once = yes
+
+	mean_time_to_happen = {
+		days = 1
+	}	
+					
+	option = {
+		name = as_great_britain.4.option_a
+		ai_chance = { factor = 100 }
+		if = {
+			limit = {
+				NOT = { has_tech = fighter2 }
+			}
+			set_technology = { fighter2 = 1 }		
+		}		
+			add_equipment_to_stockpile = {
+					type = infantry_equipment_1
+					amount = 2000
+					producer = ENG
+			}		
+			random_owned_controlled_state = {
+				limit = {
+					is_in_home_area = yes								# AS
+					free_building_slots = {
+						building = arms_factory
+						size > 2
+						include_locked = yes
+					}
+				}
+				add_extra_state_shared_building_slots = 3
+				add_building_construction = {
+					type = arms_factory
+					level = 3
+					instant_build = yes
+				}
+			}
+			random_owned_controlled_state = {
+				limit = {
+					is_in_home_area = yes								# AS
+					free_building_slots = {
+						building = arms_factory
+						size > 2
+						include_locked = yes
+					}
+				}
+				add_extra_state_shared_building_slots = 3
+				add_building_construction = {
+					type = arms_factory
+					level = 3
+					instant_build = yes
+				}
+			}
+			random_owned_controlled_state = {
+				limit = {
+					is_in_home_area = yes								# AS
+					free_building_slots = {
+						building = arms_factory
+						size > 2
+						include_locked = yes
+					}
+				}
+				add_extra_state_shared_building_slots = 3
+				add_building_construction = {
+					type = arms_factory
+					level = 3
+					instant_build = yes
+				}
+			}
+			random_owned_controlled_state = {
+				limit = {
+					is_in_home_area = yes								# AS
+					free_building_slots = {
+						building = arms_factory
+						size > 2
+						include_locked = yes
+					}
+				}
+				add_extra_state_shared_building_slots = 3
+				add_building_construction = {
+					type = arms_factory
+					level = 3
+					instant_build = yes
+				}
+			}			
+	}
+}
+
+country_event = {
+	id = as_great_britain.9
+	title = as_great_britain.9.title
+	desc = as_great_britain.9.desc
+	picture = GFX_report_event_indian_soldiers
+
+
+	fire_only_once = yes
+
+	trigger = {
+		tag = ENG
+		is_ai = yes
+		NOT = { ITA = { is_ai = yes } }
+		NOT = { has_global_flag = stab_in_the_back }		
+		OR = {	
+			FRA = { 
+				has_war_with = GER
+				surrender_progress > 0.15
+			}
+			has_war_with = ITA
+			16 = {
+				is_controlled_by = GER 
+			}			
+		}
+	}	
+		
+	mean_time_to_happen = {
+		days = 0
+	}	
+	
+	option = {
+		name = as_great_britain.3.option_a
+		ai_chance = { factor = 100 }
+		army_experience = 100
+		air_experience = 100
+		ENG = {												### AS
+				if = {
+					limit = {
+						NOT = {
+							has_idea = tot_economic_mobilisation						
+						}
+					}
+						add_ideas = tot_economic_mobilisation
+				}			
+		}
+		ENG = {												### AS
+				if = {
+					limit = {
+						NOT = {
+								has_idea = service_by_requirement											
+						}
+					}
+						add_ideas = service_by_requirement
+				}			
+		}		
+		country_event = as_great_britain.3
+	}
+}
+
+
+country_event = {
+	id = as_great_britain.10
+	title = as_great_britain.10.title
+	desc = as_great_britain.10.desc
+	picture = GFX_report_event_indian_soldiers
+	
+	trigger = {
+		tag = ENG
+		is_ai = yes
+		has_war_with = GER
+	}
+	
+	fire_only_once = yes
+
+	mean_time_to_happen = {
+		days = 1
+	}	
+					
+	option = {
+		name = as_great_britain.4.option_a
+		ai_chance = { factor = 100 } 
+		if = {
+			limit = {
+				NOT = { has_tech = improved_decimetric_radar }
+			}
+			set_technology = { improved_decimetric_radar = 1 }		
+		}		
+		if = {
+			limit = {
+				NOT = { has_tech = centimetric_radar }
+			}
+			set_technology = { centimetric_radar = 1 }		
+		}		
+			125 = {
+				add_building_construction = {
+					type = radar_station
+					level = 3
+					instant_build = yes
+				}
+			}
+			126 = {
+				add_building_construction = {
+					type = radar_station
+					level = 3
+					instant_build = yes
+				}
+			}
+			127 = {
+				add_building_construction = {
+					type = radar_station
+					level = 3
+					instant_build = yes
+				}
+			}
+			128 = {
+				add_building_construction = {
+					type = radar_station
+					level = 3
+					instant_build = yes
+				}
+			}			
+	}
+}
+
+country_event = {					# Operation Countenance
+	id = as_great_britain.11
+	title = as_great_britain.11.title
+	desc = as_great_britain.11.desc
+	picture = GFX_report_event_soviet_tanks
+	
+	is_triggered_only = yes
+	
+	fire_only_once = yes
+
+	option = {
+		name = as_great_britain.11.option_a
+		ai_chance = { factor = 100 }
+		custom_effect_tooltip = op_countenance_accepted_TT
+		add_opinion_modifier = { target = SOV modifier = offered_support }
+		add_political_power = 50 
+		hidden_effect = {	
+			SOV = { country_event = { id = as_sov.9 } }
+		}
+	}
+				
+	option = {
+		name = as_great_britain.11.option_b
+		ai_chance = { factor = 0 }
+		custom_effect_tooltip = op_countenance_refused_TT
+		add_national_unity = -0.05
+		add_opinion_modifier = { target = SOV modifier = unstable_alliance }
+		hidden_effect = {	
+			SOV = { country_event = { id = as_sov.10 } }
+		}		
+	}	
+}

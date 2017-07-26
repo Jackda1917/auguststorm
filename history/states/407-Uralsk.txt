@@ -1,0 +1,54 @@
+
+state={
+	id=407
+	name="STATE_407"
+	manpower = 268572
+	
+	state_category = rural
+
+	history={
+		owner = RUS
+		add_core_of = KAZ
+		add_core_of = RUS
+		
+		buildings = {
+			infrastructure = 3
+		}
+
+		# Kazakh Autonomous Soviet Socialist Republic
+		1920.8.26 = {
+			owner = KAZ
+			add_core_of = KAZ
+			remove_core_of = RUS
+			add_claim_by = RUS
+		}
+
+		# Union of Soviet Socialist Republics
+		1922.12.30 = {
+			owner = SOV
+			add_core_of = SOV
+		}
+
+		# Kazakh Soviet Socialist Republic
+		#1936.12.5 = { make event for this
+		1936.1.1 = {
+			remove_claim_by = RUS
+		}
+
+		# Independence declared
+		1991.12.10 = {
+			owner = KAZ
+			remove_core_of = SOV
+			add_claim_by = SOV
+		}
+
+		# Independence recognized
+		1991.12.16 = {
+			remove_claim_by = SOV
+		}
+	}
+
+	provinces={
+		432 468 470 508 545 566 576 1318 3404 3406 3467 3502 3515 3538 4351 6491 6525 6551 6564 6588 7438 9462 9487 9513 9526 9528 9538 9549 11457 11472 11473 11480 11482 11510 11524 11537 11538 11552 
+	}
+}

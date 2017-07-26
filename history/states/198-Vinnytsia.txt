@@ -1,0 +1,47 @@
+
+state={
+	id=198
+	name="STATE_198"
+	manpower = 1893391
+
+	state_category = large_town
+
+	history={
+		owner = RUS
+		add_core_of = RUS
+		
+		buildings = {
+			infrastructure = 5
+			air_base = 3
+		}
+		
+		# Ukrainian People's Republic
+		1917.11.8 = {
+			owner = UKR
+			add_core_of = UKR
+			remove_core_of = RUS
+		}
+		
+		# Union of Soviet Socialist Republics
+		1922.12.30 = {
+			owner = SOV
+			add_core_of = SOV
+		}
+		
+		# Independence declared
+		1991.8.24 = {
+			owner = UKR
+			remove_core_of = SOV
+			add_claim_by = SOV
+		}
+
+		# Independence recognized
+		1991.12.2 = {
+			remove_claim_by = SOV
+		}
+	}
+
+	provinces={
+		476 6455 6480 9423 9435 9481 9576 
+	}
+}

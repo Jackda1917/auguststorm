@@ -1,0 +1,8 @@
+﻿units = {
+	division= {	
+		name = "2. SS-Panzer-Division 'Das Reich'"
+		location = 6521 # Berlin
+		division_template = "SS-Panzer-Division 40"
+		start_experience_factor = 0.75
+	}
+}

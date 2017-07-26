@@ -1,0 +1,142 @@
+##### August Storm
+##### Egypt AI Strategy
+
+##### Diplomacy
+
+israel_war_goal = {
+	enable = {
+		tag = SYR
+		country_exists = ISR
+	}
+	abort = {
+		NOT = {
+			country_exists = ISR
+		}
+	}
+	
+	ai_strategy = {
+		type = antagonize
+		id = "ISR"			
+		value = 200
+	}		
+}
+
+syria_ally = {
+	enable = {
+		tag = EGY
+		country_exists = SYR
+	}
+	abort = {
+		NOT = { country_exists = SYR }
+	}
+	
+	ai_strategy = {
+		type = befriend
+		id = "SYR"			
+		value = 100
+	}
+	ai_strategy = {
+		type = alliance
+		id = "SYR"			
+		value = 100
+	}	
+}
+
+jordan_ally = {
+	enable = {
+		tag = EGY
+		country_exists = JOR
+	}
+	abort = {
+		NOT = { country_exists = JOR }
+	}
+	
+	ai_strategy = {
+		type = befriend
+		id = "JOR"			
+		value = 100
+	}
+	ai_strategy = {
+		type = alliance
+		id = "JOR"			
+		value = 100
+	}	
+}
+
+iraq_ally = {
+	enable = {
+		tag = EGY
+		country_exists = IRQ
+	}
+	abort = {
+		NOT = { country_exists = IRQ }
+	}
+	
+	ai_strategy = {
+		type = befriend
+		id = "IRQ"			
+		value = 100
+	}
+	ai_strategy = {
+		type = alliance
+		id = "IRQ"			
+		value = 100
+	}	
+}
+
+uk_antagonize = {
+	enable = {
+		tag = EGY
+		country_exists = ENG
+	}
+	abort = {
+		OR = {
+			NOT = { country_exists = ENG }
+			OR = {
+				NOT = { EGY = { is_puppet_of = ENG } }
+				NOT = { ENG = { controls_state = 751 } } # Suez
+			}
+		}
+		
+
+	}
+	
+	ai_strategy = {
+		type = antagonize
+		id = "ENG"			
+		value = 100
+	}	
+}
+
+germany_befriend = {
+	enable = {
+		tag = EGY
+		country_exists = GER
+	}
+	abort = {
+		NOT = { country_exists = GER }
+	}
+	
+	ai_strategy = {
+		type = befriend
+		id = "GER"			
+		value = 100
+	}	
+}
+
+russia_befriend = {
+	enable = {
+		tag = EGY
+		country_exists = SOV
+		NOT = { country_exists = GER } # Germany lost WW2
+	}
+	abort = {
+		NOT = { country_exists = SOV }
+	}
+	
+	ai_strategy = {
+		type = befriend
+		id = "SOV"			
+		value = 100
+	}	
+}

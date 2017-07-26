@@ -1,0 +1,64 @@
+﻿division_template = {
+	name = "Infantry Division -1942-" 
+
+	regiments = {
+		infantry = { x = 0 y = 0 }
+		infantry = { x = 0 y = 1 }
+		infantry = { x = 0 y = 2 }
+		infantry = { x = 1 y = 0 }
+		infantry = { x = 1 y = 1 }
+		infantry = { x = 1 y = 2 }
+		infantry = { x = 2 y = 0 }
+		infantry = { x = 2 y = 1 }
+		infantry = { x = 2 y = 2 }
+		infantry = { x = 3 y = 0 }
+		infantry = { x = 3 y = 1 }
+		infantry = { x = 3 y = 2 }
+		artillery_brigade = { x = 4 y = 0 }  # US Hvy Field Arty consisted of 2 Bns, 155mm howitzers
+		artillery_brigade = { x = 4 y = 1 }		
+	}
+	support = {
+		field_hospital = { x = 0 y = 0 }
+		engineer = { x = 0 y = 1 }   # US Eng Rgt consisted of 2 Bns
+		logistics_company = { x = 0 y = 2 }
+		anti_tank = { x = 0 y = 3 }
+	}
+}
+
+units = {  # Patton Ist Corps / Western Task Force
+
+	division = {
+		name = "3rd Infantry Division"
+		location = 7069
+		division_template = "Infantry Division -1942-"
+	}
+	division = {
+		name = "9th Infantry Division"
+		location = 7069
+		division_template = "Infantry Division -1942-"
+	}
+	division = {
+		name = "2nd Armored Division"
+		location = 7069
+		division_template = "Armored Division -1942-"
+	}
+# Center Task Force	
+	division = {
+		name = "1st Armored Division"
+		location = 9994
+		division_template = "Armored Division -1942-"
+	}
+	division = {
+		name = "1st Infantry Division"
+		location = 9994
+		division_template = "Infantry Division -1942-"
+	}
+# The Eastern Task Force	
+	division = {
+		name = "34th Infantry Division"
+		location = 9994
+		division_template = "Infantry Division -1942-"
+	}	
+}
+
+assign_all_forces_to = "George S. Patton"

@@ -1,0 +1,8 @@
+﻿units = {
+	division= {	
+		name = "3. SS-Panzer-Division 'Totenkopf'"
+		location = 362 # Danzig
+		division_template = "SS-Panzer-Division 40"
+		start_experience_factor = 0.75
+	}
+}

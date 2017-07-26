@@ -1,0 +1,9 @@
+﻿l_english:
+ ORDER_PROV_TOOLTIP_UNIT_ASSIGN_PARATROOPERS:0 "\nNotice that, if a unit has at least one non-paratrooper unit, it cannot be assigned to the transport orders."
+ UNITS_ASSIGNED_TO_ORDER_HEADER:0 "§HUnits assigned to this order:§!\n"
+ THEATRE_PRIORITY_DESC:0 "Army group priority decides which one will first get replacement resources and manpower shipped."
+ THEATRE_PIN_AREA_DESC:0 "Pinning an area or army group means it sticks around even when not selected for quick access."
+ THEATRE_DESC_DESC:0 "Selecting an army group shows the commands groups active in this army group."
+ THEATRE_THEATRE:0 "Army group: §Y$NAME$§!"
+ THEATRE_UNIT:0 "The army group has §Y1§! unit"
+ THEATRE_UNITS:0 "The army group has $N|Y$ units"

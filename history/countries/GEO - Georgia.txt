@@ -1,0 +1,40 @@
+﻿capital = 231 # Georgia
+
+set_national_unity = 0.75
+set_convoys = 5
+
+set_technology = {
+	tech_support = 1		
+	tech_engineers = 1
+	tech_mountaineers = 1
+	early_fighter = 1
+	gwtank = 1
+	basic_light_tank = 1
+	infantry_weapons = 1
+	infantry_weapons1 = 1
+	early_destroyer = 1
+	early_light_cruiser = 1
+	early_submarine = 1
+}
+
+set_politics = {
+	parties = {
+		democratic = { 
+			popularity = 90
+		}
+		fascism = {
+			popularity = 0
+		}
+		communism = {
+			popularity = 10
+		}
+		neutrality = { 
+			popularity = 0
+		}
+	}
+	
+	ruling_party = democratic
+	last_election = "1936.1.1"
+	election_frequency = 36
+	elections_allowed = yes
+}

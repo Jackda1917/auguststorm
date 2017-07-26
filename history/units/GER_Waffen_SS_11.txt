@@ -1,0 +1,8 @@
+﻿units = {
+	division= {	
+		name = "11. SS-Freiwilligen-Panzergrenadier-Division 'Nordland'"
+		location = 6287 # Copenhagen
+		division_template = "SS-Panzergrenadier-Division"
+		start_experience_factor = 0.4
+	}
+}

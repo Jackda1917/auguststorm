@@ -1,0 +1,54 @@
+
+state={
+	id=613
+	name="STATE_613" # Shanghai
+	manpower = 17305100
+	
+	state_category = megalopolis
+	
+	history={
+		owner = CHI
+		add_core_of = CHI
+		add_core_of = PRC
+		buildings = {
+			infrastructure = 5
+			industrial_complex = 2
+			air_base = 6
+			dockyard = 1
+			7014 = {
+				naval_base = 6
+				coastal_bunker = 1
+				bunker = 1
+			}
+		}
+		victory_points = {
+			11913 20 
+		}
+		victory_points = {
+			7014 10
+		}
+
+		1938.10.25 = {
+			controller = JAP
+		}
+
+		# Japanese Surrender
+		1945.8.15 = {
+			controller = CHI
+		}
+
+		# Chinese Civil War
+		1949.6.2 = {
+			controller = PRC
+		}
+
+		# People's Republic of China proclaimed
+		1949.10.1 = {
+			owner = PRC
+		}
+	}
+
+	provinces={
+		996 1089 4091 7014 7120 10034 10076 11913 11928 11982 12052 12076 13142 
+	}
+}

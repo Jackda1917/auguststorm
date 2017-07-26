@@ -1,0 +1,199 @@
+﻿##### August Storm
+##### Austria Events
+
+add_namespace = as_austria
+
+# German Ultimatum
+country_event = {
+	id = as_austria.1
+	title = as_austria.1.title
+	desc = as_austria.1.desc
+	picture = GFX_report_event_german_troops
+
+	is_triggered_only = yes
+	
+	option = {
+		name = as_austria.1.option_a
+		ai_chance = { factor = 100 }
+		GER = {
+			annex_country = { target = AUS transfer_troops = yes }
+			division_template = {
+				name = "Gebirgs-Division"
+
+				regiments = {
+					mountaineers = { x = 0 y = 0 }
+					mountaineers = { x = 0 y = 1 }
+					mountaineers = { x = 0 y = 2 }
+					mountaineers = { x = 1 y = 0 }
+					mountaineers = { x = 1 y = 1 }
+					mountaineers = { x = 1 y = 2 }
+					mountaineers = { x = 2 y = 0 }
+					mountaineers = { x = 2 y = 1 }
+					mountaineers = { x = 2 y = 2 }
+				}
+				support = {
+					recon = { x = 0 y = 0 }
+					anti_tank = { x = 0 y = 1 }
+					artillery = { x = 0 y = 2 }
+					signal_company = { x = 0 y = 3 }
+					engineer = { x = 0 y = 4 }
+				}
+			}		
+			add_political_power = 150
+			add_named_threat = { threat = 5 name = as_germany.2.title }
+			news_event = { hours = 6 id = news.36 }
+		}
+		FRA = {												### AS
+				if = {
+					limit = {
+						FRA = { is_ai = yes }
+						NOT = {
+								has_idea = low_economic_mobilisation
+								has_idea = partial_economic_mobilisation
+								has_idea = war_economy
+								has_idea = tot_economic_mobilisation						
+						}
+					}
+						add_ideas = low_economic_mobilisation
+				}			
+		}
+		FRA = {												### AS
+				if = {
+					limit = {
+						FRA = { is_ai = yes }
+						NOT = {
+								has_idea = limited_conscription								
+								has_idea = extensive_conscription
+								has_idea = service_by_requirement
+								has_idea = all_adults_serve
+								has_idea = scraping_the_barrel											
+						}
+					}
+						add_ideas = limited_conscription
+				}			
+		}
+		ENG = {												### AS
+				if = {
+					limit = {
+						ENG = { is_ai = yes }
+						NOT = {
+								has_idea = low_economic_mobilisation
+								has_idea = partial_economic_mobilisation
+								has_idea = war_economy
+								has_idea = tot_economic_mobilisation						
+						}
+					}
+						add_ideas = low_economic_mobilisation
+				}			
+		}
+		ENG = {												### AS
+				if = {
+					limit = {
+						ENG = { is_ai = yes }
+						NOT = {
+								has_idea = limited_conscription								
+								has_idea = extensive_conscription
+								has_idea = service_by_requirement
+								has_idea = all_adults_serve
+								has_idea = scraping_the_barrel											
+						}
+					}
+						add_ideas = limited_conscription
+				}			
+		}
+		CZE = {												### AS
+				if = {
+					limit = {
+						CZE = { is_ai = yes }
+						NOT = {
+								has_idea = partial_economic_mobilisation
+								has_idea = war_economy
+								has_idea = tot_economic_mobilisation						
+						}
+					}
+						add_ideas = partial_economic_mobilisation
+				}			
+		}
+		CZE = {												### AS
+				if = {
+					limit = {
+						CZE = { is_ai = yes }
+						NOT = {							
+								has_idea = extensive_conscription
+								has_idea = service_by_requirement
+								has_idea = all_adults_serve
+								has_idea = scraping_the_barrel											
+						}
+					}
+						add_ideas = extensive_conscription
+				}			
+		}		
+	}
+	
+	option = {
+		name = as_austria.1.option_b
+		ai_chance = { factor = 0 }
+		set_global_flag = as_anschluss_refused
+		GER = {
+			declare_war_on = { target = AUS type = annex_everything }
+		}
+		FRA = {												### AS
+				if = {
+					limit = {
+						FRA = { is_ai = yes }
+						NOT = {
+								has_idea = low_economic_mobilisation
+								has_idea = partial_economic_mobilisation
+								has_idea = war_economy
+								has_idea = tot_economic_mobilisation						
+						}
+					}
+						add_ideas = low_economic_mobilisation
+				}			
+		}
+		FRA = {												### AS
+				if = {
+					limit = {
+						FRA = { is_ai = yes }
+						NOT = {
+								has_idea = limited_conscription								
+								has_idea = extensive_conscription
+								has_idea = service_by_requirement
+								has_idea = all_adults_serve
+								has_idea = scraping_the_barrel											
+						}
+					}
+						add_ideas = limited_conscription
+				}			
+		}
+		ENG = {												### AS
+				if = {
+					limit = {
+						ENG = { is_ai = yes }
+						NOT = {
+								has_idea = low_economic_mobilisation
+								has_idea = partial_economic_mobilisation
+								has_idea = war_economy
+								has_idea = tot_economic_mobilisation						
+						}
+					}
+						add_ideas = low_economic_mobilisation
+				}			
+		}
+		ENG = {												### AS
+				if = {
+					limit = {
+						ENG = { is_ai = yes }
+						NOT = {
+								has_idea = limited_conscription								
+								has_idea = extensive_conscription
+								has_idea = service_by_requirement
+								has_idea = all_adults_serve
+								has_idea = scraping_the_barrel											
+						}
+					}
+						add_ideas = limited_conscription
+				}			
+		}				
+	}
+}

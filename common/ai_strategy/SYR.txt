@@ -1,0 +1,154 @@
+##### August Storm
+##### Syria AI Strategy
+
+##### Diplomacy
+
+israel_war_goal = {
+	enable = {
+		tag = SYR
+		country_exists = ISR
+	}
+	abort = {
+		NOT = {
+			country_exists = ISR
+		}
+	}
+	
+	ai_strategy = {
+		type = antagonize
+		id = "ISR"			
+		value = 200
+	}		
+}
+
+lebanon_antagonize = {
+	enable = {
+		tag = SYR
+		country_exists = LEB
+	}
+	abort = {
+		NOT = {
+			country_exists = LEB
+		}
+	}
+	
+	ai_strategy = {
+		type = antagonize
+		id = "LEB"			
+		value = 50
+	}		
+}
+
+turkey_antagonize = {
+	enable = {
+		tag = SYR
+		country_exists = TUR
+	}
+	abort = {
+		NOT = { TUR = { controls_state = 747 } } # Hatay
+		NOT = {
+			country_exists = TUR
+		}
+	}
+	
+	ai_strategy = {
+		type = antagonize
+		id = "TUR"			
+		value = 50
+	}		
+}
+
+egypt_ally = {
+	enable = {
+		tag = SYR
+		country_exists = EGY
+	}
+	abort = {
+		NOT = { country_exists = EGY }
+	}
+	
+	ai_strategy = {
+		type = befriend
+		id = "EGY"			
+		value = 100
+	}
+	ai_strategy = {
+		type = alliance
+		id = "EGY"			
+		value = 100
+	}	
+}
+
+jordan_ally = {
+	enable = {
+		tag = SYR
+		country_exists = JOR
+	}
+	abort = {
+		NOT = { country_exists = JOR }
+	}
+	
+	ai_strategy = {
+		type = befriend
+		id = "JOR"			
+		value = 100
+	}
+	ai_strategy = {
+		type = alliance
+		id = "JOR"			
+		value = 100
+	}	
+}
+
+iraq_ally = {
+	enable = {
+		tag = SYR
+		country_exists = IRQ
+	}
+	abort = {
+		NOT = { country_exists = IRQ }
+	}
+	
+	ai_strategy = {
+		type = befriend
+		id = "IRQ"			
+		value = 100
+	}
+	ai_strategy = {
+		type = alliance
+		id = "IRQ"			
+		value = 100
+	}	
+}
+
+france_befriend = {
+	enable = {
+		tag = SYR
+		country_exists = FRA
+	}
+	abort = {
+		NOT = { country_exists = FRA }
+	}
+	
+	ai_strategy = {
+		type = befriend
+		id = "FRA"			
+		value = 100
+	}	
+}
+
+russia_befriend = {
+	enable = {
+		tag = SYR
+		country_exists = SOV
+	}
+	abort = {
+		NOT = { country_exists = SOV }
+	}
+	
+	ai_strategy = {
+		type = befriend
+		id = "SOV"			
+		value = 100
+	}	
+}

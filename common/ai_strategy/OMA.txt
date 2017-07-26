@@ -1,0 +1,26 @@
+##### August Storm
+##### Oman AI Strategy
+
+##### Diplomacy
+
+uk_befriend = {
+	enable = {
+		tag = OMA
+		country_exists = ENG
+		has_government = neutrality
+		ENG = { has_government = democratic }
+	}
+	abort = {
+		OR = {
+			NOT = { country_exists = ENG }
+			NOT = { has_government = neutrality }
+			NOT = { ENG = { has_government = democratic } }
+		}
+	}
+	
+	ai_strategy = {
+		type = befriend
+		id = "ENG"			
+		value = 200
+	}	
+}

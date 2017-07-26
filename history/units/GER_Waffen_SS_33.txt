@@ -1,0 +1,8 @@
+﻿units = {
+	division= {	
+		name = "33. Waffen-Grenadier-Division der SS 'Charlemagne' (franz. Nr. 1)"
+		location = 11506 # Paris
+		division_template = "SS-Grenadier-Division"
+		start_experience_factor = 0.3
+	}
+}

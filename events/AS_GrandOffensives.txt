@@ -1,0 +1,194 @@
+﻿####### Grand Land Offensive ########
+
+add_namespace = glo
+
+
+country_event = {					
+	id = glo.1
+	title = glo.1.t
+	desc = glo.1.d
+	picture = GFX_report_event_british_artillery #### Find a picture
+
+	is_triggered_only = yes
+
+	option = {
+		name = glo.3.a
+		set_country_flag = grand_land_offensive_flag
+		add_country_leader_trait = grand_land_offensive_plan
+	}
+}
+
+country_event = {						# GLO ends
+	id = glo.2
+	title = glo.2.t
+	desc = glo.2.d
+	picture = GFX_report_event_dead_soldiers 
+
+	trigger = {		
+			has_country_flag = grand_land_offensive_flag
+	}
+	
+	mean_time_to_happen = {
+				days = 20
+	}
+	
+	immediate = {
+		set_country_flag = reset_glo_flag	
+	}
+	
+	option = {
+			name = glo.2.a	
+			hidden_effect = {	
+				remove_country_leader_trait = grand_land_offensive_plan					
+				clr_country_flag = grand_land_offensive_flag									
+				send_equipment = { target = D15 type = support_equipment amount = 10000 } 				
+			}
+	}	
+}
+
+country_event = {				### Scripted For AI only
+	id = glo.3
+	title = glo.3.t
+	desc = glo.3.d
+	picture = GFX_report_event_british_artillery #### Find a picture
+
+	is_triggered_only = yes
+
+	option = {
+		name = glo.3.a
+		set_country_flag = grand_land_offensive_ai_flag
+		add_country_leader_trait = grand_land_offensive_plan_ai
+	}
+}
+
+country_event = {				### Scripted For AI only
+	id = glo.4
+	title = glo.4.t
+	desc = glo.4.d
+	picture = GFX_report_event_dead_soldiers #### Find a picture
+
+	trigger = {
+		has_country_flag = grand_land_offensive_ai_flag
+	}
+	
+	mean_time_to_happen = {
+				days = 30
+	}
+	
+	option = {
+		name = glo.4.a	
+		hidden_effect = {	
+			clr_country_flag = grand_land_offensive_ai_flag
+			remove_country_leader_trait = grand_land_offensive_plan_ai
+			set_country_flag = reset_glo_flag
+			if = {
+				limit = {  
+					is_ai = yes
+				}					
+				send_equipment = { target = D15 type = support_equipment amount = 1000 } 
+			}			
+		}
+	}	
+}
+
+country_event = {				
+	id = glo.5
+	title = glo.5.t
+	desc = glo.5.d
+	picture = GFX_report_event_ace_died 
+
+	is_triggered_only = yes
+
+	option = {
+		name = glo.5.a
+		set_country_flag = grand_air_offensive_flag
+		add_country_leader_trait = grand_air_offensive_plan
+	}
+}
+
+country_event = {				
+	id = glo.6
+	title = glo.6.t
+	desc = glo.6.d
+	picture = GFX_report_event_ace_died
+
+	trigger = {
+		has_country_flag = grand_air_offensive_flag
+	}
+	
+	mean_time_to_happen = {
+			days = 20
+	}
+	
+	option = {
+			name = glo.6.a	
+			hidden_effect = {	
+				clr_country_flag = grand_air_offensive_flag
+				remove_country_leader_trait = grand_air_offensive_plan
+				set_country_flag = reset_gao_flag
+				if = {
+					limit = {  
+						NOT = { is_ai = yes }
+					}					
+					send_equipment = { target = D15 type = support_equipment amount = 3000 } 
+				}
+				if = {
+					limit = {  
+						is_ai = yes
+					}					
+					send_equipment = { target = D15 type = support_equipment amount = 300 } 
+				}				
+			}
+	}	
+}
+
+country_event = {							
+	id = glo.7
+	title = glo.7.t
+	desc = glo.7.d
+	picture = GFX_report_event_usa_heavy_cruiser
+
+	is_triggered_only = yes
+
+	option = {
+		name = glo.7.a
+		set_country_flag = grand_naval_air_offensive_flag
+		add_country_leader_trait = grand_naval_air_offensive_plan
+	}
+}
+
+country_event = {				
+	id = glo.8
+	title = glo.8.t
+	desc = glo.8.d
+	picture = GFX_report_event_usa_heavy_cruiser
+
+	trigger = {	
+			has_country_flag = grand_naval_air_offensive_flag
+	}
+	
+	mean_time_to_happen = {
+				days = 20
+	}
+	
+	option = {
+			name = glo.8.a	
+			hidden_effect = {	
+				clr_country_flag = grand_naval_air_offensive_flag
+				remove_country_leader_trait = grand_naval_air_offensive_plan
+				set_country_flag = reset_gno_flag
+				if = {
+					limit = {  
+						NOT = { is_ai = yes }
+					}					
+					send_equipment = { target = D15 type = support_equipment amount = 2000 } 
+				}
+				if = {
+					limit = {  
+						is_ai = yes
+					}					
+					send_equipment = { target = D15 type = support_equipment amount = 200 } 
+				}				
+			}
+	}	
+}

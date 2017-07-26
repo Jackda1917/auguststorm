@@ -1,0 +1,919 @@
+﻿##### August Storm
+##### Germany Events
+
+add_namespace = as_germany
+
+# Remilitarization of the Rhineland
+country_event = {
+	id = as_germany.1
+	title = as_germany.1.title
+	desc = as_germany.1.desc
+	picture = GFX_report_event_german_troops
+	
+	is_triggered_only = yes
+
+	
+	#trigger = {
+	#	tag = GER
+    #
+	#	as_germany_rhineland_demilitarized = yes
+    #
+	#	is_puppet = no
+	#	has_defensive_war = no
+	#	NOT = { has_government = democratic }
+	#	NOT = {
+	#		OR = {
+	#			has_idea = disarmed_nation
+	#			has_idea = volunteer_only
+	#		}
+	#	}
+	#	NOT = { has_idea = as_germany_rhineland_backed_down }
+	#	OR = {
+	#		AND = {
+	#			has_government = fascism
+	#			date > 1936.3.6 # Historical 1936.3.7
+	#		}
+	#		has_government = communism
+	#		has_government = neutrality
+	#	}
+	#}
+
+	#mean_time_to_happen = {
+	#	days = 0
+	#}
+	
+	option = {
+		name = as_germany.1.option_a
+		ai_chance = { factor = 100 }
+		add_political_power = 150  #120
+		army_experience = 5
+		add_named_threat = { threat = 5 name = as_germany.1.title }
+		clr_global_flag = as_treaty_of_versailles
+		51 = { set_demilitarized_zone = no } # Rhineland
+		42 = { set_demilitarized_zone = no } # Moselland
+		749 = { set_demilitarized_zone = no } # Saarland
+		if = {
+			limit = {
+				FRA = { is_puppet = no }
+				NOT = { has_war_with = FRA }
+			}
+			FRA = {
+				country_event = { id = germany.60 }
+				custom_effect_tooltip = may_provoke_hostility
+			}
+		}
+	}
+	
+	option = {
+		name = as_germany.1.option_b
+		ai_chance = { factor = 0 }
+		add_timed_idea = {
+			idea = as_germany_rhineland_backed_down
+			days = 365
+		}
+	}
+}
+
+# Anschluss
+country_event = {
+	id = as_germany.2
+	title = as_germany.2.title
+	desc = as_germany.2.desc
+	picture = GFX_report_event_german_speech
+	
+	is_triggered_only = yes
+		
+	#trigger = {
+	#	tag = GER
+	#	as_germany_rhineland_demilitarized = no
+	#	as_germany_anschluss = no
+	#	is_puppet = no
+	#	has_defensive_war = no
+	#	NOT = { has_war_with = AUS }
+	#	NOT = { has_government = democratic }
+	#	OR = {
+	#		AND = {
+	#			has_government = fascism
+	#			OR = {
+	#				date > 1938.3.10 # Historical 1938.3.11
+	#			}
+	#		}
+	#		has_government = communism
+	#		has_government = neutrality
+	#	}
+	#	NOT = { AUS = { has_government = neutrality } } # Only allow anschluss if the Austrian Empire is defunct
+	#}
+
+
+	#mean_time_to_happen = {
+	#	days = 0
+	#}
+	
+	option = {
+		name = as_germany.2.option_a
+		ai_chance = { factor = 100 }
+		# Lower Austria
+		4 = {
+			if = {
+				limit = { is_owned_by = AUS }
+				add_core_of = GER
+			}
+		}
+		# Upper Austria
+		152 = {
+			if = {
+				limit = { is_owned_by = AUS }
+				add_core_of = GER
+			}
+		}
+		# Tyrol
+		153 = {
+			if = {
+				limit = { is_owned_by = AUS }
+				add_core_of = GER
+			}
+		}
+		# Sudetenland
+		69 = {
+			if = {
+				limit = { is_owned_by = AUS }
+				add_core_of = GER
+			}
+		}
+		# Eastern Sudetenland
+		74 = {
+			if = {
+				limit = { is_owned_by = AUS }
+				add_core_of = GER
+			}
+		}
+		# Bohemia
+		9 = {
+			if = {
+				limit = { is_owned_by = AUS }
+				add_claim_by = GER
+			}
+		}
+		# Moravia
+		75 = {
+			if = {
+				limit = { is_owned_by = AUS }
+				add_claim_by = GER
+			}
+		}
+		# Zaolzie
+		72 = {
+			if = {
+				limit = { is_owned_by = AUS }
+				add_claim_by = GER
+			}
+		}
+		AUS = { country_event = { days = 1 id = as_austria.1 } }
+	}
+	
+	option = {
+		name = as_germany.2.option_b
+		ai_chance = { factor = 0 }
+		add_political_power = -150
+	}
+}
+
+# Sudeten Crisis
+country_event = {
+	id = as_germany.3
+	title = as_germany.3.title
+	desc = as_germany.3.desc
+	picture = GFX_report_event_german_speech
+	
+	is_triggered_only = yes
+	
+	#trigger = {
+	#	tag = GER
+	#	as_germany_anschluss = yes
+	#	as_germany_sudetenland = no
+	#	OR = {
+	#		69 = { is_owned_by = CZE } # Sudetenland
+	#		74 = { is_owned_by = CZE } # Eastern Sudetenland
+	#	}
+	#	is_puppet = no
+	#	has_defensive_war = no
+	#	NOT = { has_war_with = CZE }
+	#	NOT = { has_government = democratic }
+	#	has_government = fascism
+	#	date > 1938.9.11 # Historical 1938.9.12
+	#}
+
+
+	#mean_time_to_happen = {
+	#	days = 0
+	#}
+	
+	option = {
+		name = as_germany.3.option_a
+		ai_chance = { factor = 100 }
+		# Sudetenland
+		69 = {
+			if = {
+				limit = { is_owned_by = CZE }
+				add_core_of = GER
+			}
+		}
+		# Eastern Sudetenland
+		74 = {
+			if = {
+				limit = { is_owned_by = CZE }
+				add_core_of = GER
+			}
+		}
+		CZE = { country_event = { days = 18 id = as_czechoslovakia.1 } }
+		SOV = {
+			if = {
+				limit = {
+					is_ai = yes
+					NOT = {
+						has_idea = war_economy
+						has_idea = tot_economic_mobilisation						
+					}
+				}
+				add_ideas = war_economy
+			}
+			if = {
+				limit = {
+					is_ai = yes
+					NOT = {
+						has_idea = extensive_conscription
+						has_idea = service_by_requirement
+						has_idea = all_adults_serve
+						has_idea = scraping_the_barrel											
+					}
+				}
+				add_ideas = extensive_conscription
+			}
+		}
+	}
+	
+	option = {
+		name = as_germany.3.option_b
+		ai_chance = { factor = 0 }
+		add_political_power = -150
+	}
+}
+
+# Fall Anton
+country_event = {
+	id = as_germany.4
+	title = as_germany.4.t
+	desc = as_germany.4.d
+	picture = GFX_report_event_german_troops
+	
+	is_triggered_only = yes
+		
+	option = {
+		name = as_germany.4.a
+		ai_chance = { factor = 10 }
+		set_country_flag = ger_fall_anton
+		ITA = { add_national_unity = 0.10 }
+		random_country = { 
+			limit = {
+				original_tag = FRA
+				has_government = democratic
+			}
+			annex_country = { target = VIC transfer_troops = no }
+			if = {
+				limit = { 28 = { owner = { tag = GER } } }
+				set_state_owner = 28 
+			}
+			if = {
+				limit = { 17 = { owner = { tag = GER } } }
+				set_state_owner = 17 			
+			}
+			if = {
+				limit = { 27 = { owner = { tag = GER } } }
+				set_state_owner = 27 			
+			}
+			if = {
+				limit = { 18 = { owner = { tag = GER } } }
+				set_state_owner = 18 			
+			}
+			if = {
+				limit = { 29 = { owner = { tag = GER } } }
+				set_state_owner = 29 			
+			}
+			if = {
+				limit = { 15 = { owner = { tag = GER } } }
+				set_state_owner = 15 			
+			}
+			if = {
+				limit = { 16 = { owner = { tag = GER } } }
+				set_state_owner = 16 			
+			}
+			if = {
+				limit = { 24 = { owner = { tag = GER } } }
+				set_state_owner = 24 			
+			}
+			if = {
+				limit = { 30 = { owner = { tag = GER } } }
+				set_state_owner = 30 			
+			}
+			if = {
+				limit = { 14 = { owner = { tag = GER } } }
+				set_state_owner = 14 			
+			}
+			if = {
+				limit = { 23 = { owner = { tag = GER } } }
+				set_state_owner = 23 		
+			}
+			if = {
+				limit = { 19 = { owner = { tag = GER } } }
+				set_state_owner = 19 			
+			}
+		}
+		if = {
+			limit = { 28 = { owner = { tag = FRA } } }
+			set_state_controller = 28
+		}
+		if = {
+			limit = { 17 = { owner = { tag = FRA } } }
+			set_state_controller = 17			
+		}
+		if = {
+			limit = { 27 = { owner = { tag = FRA } } }
+			set_state_controller = 27		
+		}
+		if = {
+			limit = { 18 = { owner = { tag = FRA } } }
+			set_state_controller = 18		
+		}
+		if = {
+			limit = { 29 = { owner = { tag = FRA } } }
+			set_state_controller = 29			
+		}
+		if = {
+			limit = { 15 = { owner = { tag = FRA } } }
+			set_state_controller = 15		
+		}
+		if = {
+			limit = { 16 = { owner = { tag = FRA } } }
+			set_state_controller = 16		
+		}
+		if = {
+			limit = { 24 = { owner = { tag = FRA } } }
+			set_state_controller = 24			
+		}
+		if = {
+			limit = { 30 = { owner = { tag = FRA } } }
+			set_state_controller = 30		
+		}
+		if = {
+			limit = { 14 = { owner = { tag = FRA } } }
+			set_state_controller = 14			
+		}
+		if = {
+			limit = { 23 = { owner = { tag = FRA } } }
+			set_state_controller = 23		
+		}
+		if = {
+			limit = { 19 = { owner = { tag = FRA } } }
+			set_state_controller = 19		
+		}
+		
+		# Occupy French State
+		if = {
+			limit = { 33 = { owner = { tag = FRA } } }
+			set_state_controller = 33
+		}
+		if = {
+			limit = { 26 = { owner = { tag = FRA } } }
+			set_state_controller = 26		
+		}		
+		if = {
+			limit = { 25 = { owner = { tag = FRA } } }
+			set_state_controller = 25		
+		}
+		if = {
+			limit = { 22 = { owner = { tag = FRA } } }
+			set_state_controller = 22			
+		}
+		if = {
+			limit = { 21 = { owner = { tag = FRA } } }
+			set_state_controller = 21			
+		}
+		if = {
+			limit = { 32 = { owner = { tag = FRA } } }
+			set_state_controller = 32		
+		}
+		if = {
+			limit = { 20 = { owner = { tag = FRA } } }
+			set_state_controller = 20		
+		}
+		if = {
+			limit = { 31 = { owner = { tag = FRA } } }
+			set_state_controller = 31
+		}
+		if = {
+			limit = { 
+				JAP = { has_country_flag = jap_get_indo }
+			}
+			JAP = { transfer_state = 286 }
+		}
+		if = {
+			limit = {  
+				JAP = { has_country_flag = jap_get_indo }
+			}
+			JAP = { transfer_state = 670 }			
+		}
+		if = {
+			limit = { 
+				JAP = { has_country_flag = jap_get_indo }				
+			}
+			JAP = { transfer_state = 671 }
+		}
+		if = {
+			limit = {  
+				JAP = { has_country_flag = jap_get_indo }				
+			}
+			JAP = { transfer_state = 758 }			
+		}		
+		# Extend Italian Occupation zone
+		if = {
+			limit = { 
+				735 = { owner = { tag = FRA } } 
+				ITA = { exists = yes }
+				ITA = { is_in_faction_with = GER }
+			}
+			ITA = { set_state_controller = 735 }			
+		}
+		if = {
+			limit = { 
+				735 = { owner = { tag = FRA } } 
+				ITA = { NOT = { is_in_faction_with = GER } }
+			}
+			set_state_controller = 735 			
+		}		
+		if = {
+			limit = { 
+				1 = { owner = { tag = FRA } } 
+				ITA = { is_in_faction_with = GER }
+			}
+			ITA = { set_state_controller = 1 }			
+		}
+		if = {
+			limit = { 
+				735 = { owner = { tag = FRA } } 
+				ITA = { NOT = { is_in_faction_with = GER } }
+			}
+			set_state_controller = 1			
+		}		
+		
+		
+		# Spain
+		if = {
+			limit = { 
+				31 = { owner = { tag = FRA } } 
+				SPR = { is_in_faction_with = GER }
+			}
+			SPR = { set_state_controller = 31 }			
+		}
+		if = {
+			limit = { 31 = { owner = { tag = FRA } } 
+				SPR = { NOT = { is_in_faction_with = GER } }
+			}
+			set_state_controller = 31
+		}
+		every_state = {
+			limit = { 
+				is_core_of = VIC
+			}			
+			remove_core_of = VIC 
+		}				
+	}
+	option = {
+		name = as_germany.4.b
+		ai_chance = { factor = 0 }
+		effect_tooltip = {
+			if = {
+				limit = { 
+					ITA = { is_in_faction_with = GER }
+					ITA = { exists = yes }
+				}
+				ITA = { add_national_unity = -0.20 }		
+			}
+		}
+	}	
+}		
+
+# STO
+country_event = {
+	id = as_germany.5
+	title = as_germany.5.t
+	desc = as_germany.5.d
+	picture = GFX_report_event_pierre_laval
+	
+	fire_only_once = yes
+
+	mean_time_to_happen = {
+			days = 50
+	}
+	
+	trigger = {
+		tag = GER
+		VIC = { exists = yes }
+		has_completed_focus = french_state_collaboration_focus
+		has_war_with = SOV
+		has_war_with = USA
+		has_war_with = ENG		
+	}
+	option = {
+		name = as_germany.5.a
+		ai_chance = { factor = 10 }		
+		show_ideas_tooltip = sto_idea
+		set_country_flag = ger_vic_sto
+		add_ideas = sto_idea
+	}
+	option = {
+		name = as_germany.5.b
+		ai_chance = { factor = 0 }
+	}	
+}
+
+# Template and Tech events
+country_event = {
+	id = as_germany.6
+	title = as_germany.6.t
+	desc = as_germany.6.d
+	picture = GFX_report_event_german_troops
+	
+	fire_only_once = yes
+
+	mean_time_to_happen = {
+			days = 1
+	}
+	
+	trigger = {
+		tag = GER
+		is_ai = yes
+		NOT = { has_country_flag = ger_panzer_1940 }
+		has_tech = basic_medium_tank 
+	}
+	option = {
+		name = as_germany.6.a
+		ai_chance = { factor = 10 }		
+		set_country_flag = ger_panzer_1940
+		set_technology = { basic_medium_td = 1 }
+		set_technology = { basic_medium_art = 1 }
+		set_technology = { basic_medium_spaa = 1 }
+		load_oob = "GER_panzer_1940"		
+	}	
+}
+
+country_event = {
+	id = as_germany.7
+	title = as_germany.7.t
+	desc = as_germany.7.d
+	picture = GFX_report_event_german_troops
+	
+	fire_only_once = yes
+
+	mean_time_to_happen = {
+			days = 1
+	}
+	
+	trigger = {
+		tag = GER
+		is_ai = yes
+		has_country_flag = ger_panzer_1940
+		NOT = { has_country_flag = ger_panzer_1942 }		
+		has_tech = improved_medium_tank 
+		has_tech = improved_heavy_tank
+	}
+	option = {
+		name = as_germany.6.a
+		ai_chance = { factor = 10 }		
+		set_country_flag = ger_panzer_1942
+		load_oob = "GER_panzer_1942"		
+	}	
+}
+
+country_event = {
+	id = as_germany.8
+	title = as_germany.8.t
+	desc = as_germany.8.d
+	picture = GFX_report_event_german_troops
+	
+	fire_only_once = yes
+
+	mean_time_to_happen = {
+			days = 1
+	}
+	
+	trigger = {
+		tag = GER
+		is_ai = yes
+		NOT = { has_country_flag = GER_mechanized }
+		has_tech = mechanised_infantry
+		has_country_flag = ger_panzer_1942
+	}
+	option = {
+		name = as_germany.6.a
+		ai_chance = { factor = 10 }		
+		set_country_flag = GER_mechanized
+		load_oob = "GER_mechanized"		
+	}	
+}
+
+country_event = {
+	id = as_germany.9
+	title = as_germany.9.t
+	desc = as_germany.9.d
+	picture = GFX_report_event_german_troops
+	
+	fire_only_once = yes
+
+	mean_time_to_happen = {
+			days = 1
+	}
+	
+	trigger = {
+		tag = GER
+		is_ai = yes
+		has_tech = improved_medium_tank
+		OR = {
+			NOT = { has_tech = improved_medium_td }
+			NOT = { has_tech = improved_medium_art }
+			NOT = { has_tech = improved_medium_spaa }		
+		}
+	}
+	option = {
+		name = as_germany.6.a
+		ai_chance = { factor = 10 }		
+		set_technology = { improved_medium_td = 1 }
+		set_technology = { improved_medium_art = 1 }
+		set_technology = { improved_medium_spaa = 1 }
+		set_technology = { improved_heavy_tank = 1 }		
+	}	
+}
+
+country_event = {
+	id = as_germany.10
+	title = as_germany.10.t
+	desc = as_germany.10.d
+	picture = GFX_report_event_german_troops
+	
+	fire_only_once = yes
+
+	mean_time_to_happen = {
+			days = 1
+	}
+	
+	trigger = {
+		tag = GER
+		is_ai = yes
+		has_tech = advanced_medium_tank
+		OR = {
+			NOT = { has_tech = advanced_medium_td }
+			NOT = { has_tech = advanced_medium_art }
+			NOT = { has_tech = advanced_medium_spaa }		
+		}		
+	}
+	option = {
+		name = as_germany.6.a
+		ai_chance = { factor = 10 }
+		set_technology = { advanced_medium_td = 1 }
+		set_technology = { advanced_medium_art = 1 }
+		set_technology = { advanced_medium_spaa = 1 }		
+	}	
+}
+
+country_event = {
+	id = as_germany.11
+	title = as_germany.11.t
+	desc = as_germany.11.d
+	picture = GFX_report_event_german_troops
+	
+	fire_only_once = yes
+
+	mean_time_to_happen = {
+			days = 10
+	}
+	
+	trigger = {
+		tag = GER
+		is_ai = yes
+		NOT = { has_country_flag = GER_infantry_1940 }
+		has_completed_focus = GER_anschluss
+	}
+	option = {
+		name = as_germany.6.a
+		ai_chance = { factor = 10 }		
+		set_country_flag = GER_infantry_1940
+		load_oob = "GER_infantry_1940"		
+	}	
+}
+
+country_event = {									# Help SPA
+	id = as_germany.12
+	title = as_germany.12.t
+	desc = as_germany.12.d
+	picture = GFX_report_event_soviet_tanks
+	
+	fire_only_once = yes
+
+	mean_time_to_happen = {
+			days = 20
+	}
+	
+	trigger = {
+		tag = GER
+		is_ai = yes
+		SPR = { has_civil_war = yes }
+
+	}
+	option = {
+		name = as_germany.6.a
+		random_country = {
+			limit = {
+				original_tag = SPR
+				has_government = fascism 
+			}
+			add_equipment_to_stockpile = {
+				type = light_tank_equipment_1
+				amount = 200
+				producer = GER
+			}
+			add_equipment_to_stockpile = {
+				type = fighter_equipment_1
+				amount = 300
+				producer = GER
+			}
+			add_equipment_to_stockpile = {
+				type = tac_bomber_equipment_1
+				amount = 80
+				producer = GER
+			}			
+			add_equipment_to_stockpile = {
+				type = infantry_equipment_1
+				amount = 3000
+				producer = GER
+			}			
+			add_equipment_to_stockpile = {
+				type = artillery_equipment_1
+				amount = 500
+				producer = GER
+			}
+			add_equipment_to_stockpile = {
+				type = support_equipment_1
+				amount = 500
+				producer = GER
+			}			
+		}
+	}	
+}
+
+country_event = {									# Help SPA 2
+	id = as_germany.13
+	title = as_germany.13.t
+	desc = as_germany.13.d
+	picture = GFX_report_event_soviet_tanks
+
+
+	mean_time_to_happen = {
+			days = 360
+	}
+	
+	hidden = yes
+	
+	trigger = {
+		tag = GER
+		is_ai = yes
+		SPR = { has_civil_war = yes }
+	}
+	option = {
+		name = as_germany.6.a
+		random_country = {
+			limit = {
+				original_tag = SPR
+				has_government = fascism 
+			}
+			add_equipment_to_stockpile = {
+				type = infantry_equipment_1
+				amount = 2000
+				producer = GER
+			}			
+			add_equipment_to_stockpile = {
+				type = artillery_equipment_1
+				amount = 1000
+				producer = GER
+			}
+			add_equipment_to_stockpile = {
+				type = support_equipment_1
+				amount = 500
+				producer = GER
+			}			
+		}
+	}	
+}
+
+country_event = {									# Bitter Peace
+	id = as_germany.14
+	title = as_germany.14.t
+	desc = as_germany.14.d
+	picture = GFX_report_event_germany_victory
+
+	is_triggered_only = yes 		# as_sov.14
+	
+	option = {
+		name = as_germany.14.a					# Accept Bitter Peace
+		ai_chance = { factor = 10 }	
+		add_national_unity = 0.25
+		SOV = { 
+			add_national_unity = -0.10
+			country_event = { id = as_sov.15 days = 0 }
+		}		
+	}
+	option = {
+		name = as_germany.14.b        # Let's grab it all !
+		ai_chance = { factor = 0 }
+		SOV = { 
+			add_national_unity = 0.10
+			country_event = { id = as_sov.16 days = 1 }
+			show_ideas_tooltip = soviet_partisans
+		}		
+	}	
+}
+
+country_event = {								# DOW Irak	
+	id = as_germany.15
+	title = as_germany.15.t
+	desc = as_germany.15.d
+	picture = GFX_report_event_germany_victory
+ 	
+	trigger = {
+		tag = GER
+		is_ai = yes
+		IRQ = { exists = yes }
+		has_war_with = ENG
+		IRQ = { NOT = { is_in_faction_with = GER } }
+		OR = {	
+			751 = { is_controlled_by = GER }
+			751 = { is_controlled_by = ITA }
+			EGY = { has_capitulated = yes }				
+		}
+		ITA = { is_in_faction_with = GER }
+	}		
+
+	mean_time_to_happen = {
+			days = 20
+	}	
+	
+	hidden = yes
+	
+	option = {
+		name = as_germany.15.a					
+		ai_chance = { factor = 10 }	
+		create_wargoal = {
+			target = IRQ		
+			type = puppet_wargoal_focus
+		}
+	}	
+}
+
+country_event = {								# DOW Persia	
+	id = as_germany.16
+	title = as_germany.16.t
+	desc = as_germany.16.d
+	picture = GFX_report_event_germany_victory
+ 	
+	trigger = {
+		tag = GER
+		is_ai = yes
+		PER = { NOT = { is_in_faction_with = GER } }
+		OR = {
+			IRQ = { has_capitulated = yes } 
+			IRQ = { is_in_faction_with = GER }
+			IRQ = { is_puppet_of = GER }
+			IRQ = { exists = no }
+		}
+		AND = {
+			OR = {	
+				751 = { is_controlled_by = GER }
+				751 = { is_controlled_by = ITA }
+			}
+			ITA = { is_in_faction_with = GER }
+		}
+	}		
+
+	mean_time_to_happen = {
+			days = 10
+	}	
+	
+	hidden = yes
+	
+	option = {
+		name = as_germany.16.a					
+		ai_chance = { factor = 10 }	
+		create_wargoal = {
+			target = PER		
+			type = puppet_wargoal_focus
+		}
+	}
+}

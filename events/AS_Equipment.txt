@@ -1,0 +1,192 @@
+﻿##### August Storm
+##### Equipment Events
+
+add_namespace = as_equipment
+
+# T34
+country_event = {
+	id = as_equipment.1
+	title = as_equipment.1.t
+	desc = as_equipment.1.d
+	picture = GFX_report_event_soviet_tanks
+	
+	fire_only_once = yes
+	
+	trigger = {
+		tag = SOV
+		has_tech = improved_medium_tank
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	option = {
+		name = as_equipment.1_a
+		ai_chance = {
+			modifier = {
+				factor = 10
+				is_historical_focus_on = yes
+			}
+		}		
+		army_experience = -50	
+		
+		create_equipment_variant = { 
+			name = "T-34/76" 
+			type = medium_tank_equipment_2 
+			upgrades = { tank_gun_upgrade = 2 tank_armor_upgrade = 3 tank_engine_upgrade = 4 tank_reliability_upgrade = 4 } 		
+		}
+	}
+	option = {
+		name = as_equipment.1_b
+		ai_chance = {
+			modifier = {
+				factor = 0
+			}
+		}		
+	}	
+}
+
+# Tiger
+country_event = {
+	id = as_equipment.2
+	title = as_equipment.2.t
+	desc = as_equipment.2.d
+	picture = GFX_news_event_tank_factory
+	
+	fire_only_once = yes
+	
+	trigger = {
+		tag = GER
+		has_tech = improved_heavy_tank
+		NOT = { is_ai = yes }
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	option = {
+		name = as_equipment.2_a
+		ai_chance = {
+			modifier = {
+				factor = 10
+				is_historical_focus_on = yes
+			}
+		}
+		
+		army_experience = -25
+		
+		create_equipment_variant = { 
+			name = "Tiger I" 
+			type = heavy_tank_equipment_2 
+			upgrades = { tank_gun_upgrade = 4 tank_armor_upgrade = 4 tank_engine_upgrade = 4 tank_reliability_upgrade = 2 } 		
+		}		
+	}
+	option = {
+		name = as_equipment.2_b
+		ai_chance = {
+			modifier = {
+				factor = 0
+			}
+		}		
+	}	
+}
+
+# Panther
+country_event = {
+	id = as_equipment.3
+	title = as_equipment.3.t
+	desc = as_equipment.3.d
+	picture = GFX_news_event_tank_factory
+	
+	fire_only_once = yes
+	
+	trigger = {
+		tag = GER
+		has_tech = advanced_medium_tank	
+		has_war_with = SOV
+		SOV = { 
+			has_template_containing_unit = improved_medium_tank
+		}
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	option = {
+		name = as_equipment.2_a
+		ai_chance = {
+			modifier = {
+				factor = 10
+				is_historical_focus_on = yes
+			}
+		}		
+		army_experience = -25	
+		create_equipment_variant = { 
+			name = "Panther I" 
+			type = medium_tank_equipment_3
+			upgrades = { tank_gun_upgrade = 4 tank_armor_upgrade = 4 tank_engine_upgrade = 5 tank_reliability_upgrade = 1 } 		
+		}
+		
+	}
+	option = {
+		name = as_equipment.2_b
+		ai_chance = {
+			modifier = {
+				factor = 0
+			}
+		}		
+	}	
+}
+
+# Tiger AI
+country_event = {
+	id = as_equipment.22
+	title = as_equipment.22.t
+	desc = as_equipment.22.d
+	picture = GFX_news_event_tank_factory
+	
+	fire_only_once = yes
+	
+	trigger = {
+		tag = GER
+		has_tech = improved_heavy_tank
+		is_ai = yes	
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	option = {
+		name = as_equipment.22_a
+		ai_chance = {
+			factor = 10
+		}
+
+		create_equipment_variant = { 
+			name = "Tiger I" 
+			type = heavy_tank_equipment_2 
+			upgrades = { tank_gun_upgrade = 5 tank_armor_upgrade = 5 tank_engine_upgrade = 5 tank_reliability_upgrade = 3 } 		
+		}
+		add_equipment_to_stockpile = {
+				type = heavy_tank_equipment_2
+				amount = 500
+				producer = GER
+		}
+		add_ai_strategy = {
+			type = template_prio
+			id = heavy_armor
+			value = 50
+		} 
+		load_oob = "GER_tigers"
+	}
+	option = {
+		name = as_equipment.22_b
+		ai_chance = {
+			factor =  0
+		}		
+	}	
+}

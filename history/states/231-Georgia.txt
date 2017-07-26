@@ -1,0 +1,72 @@
+
+state={
+	id=231
+	name="STATE_231"
+	manpower = 2949413
+	
+	state_category = town
+
+	history = {
+		owner = RUS
+		add_core_of = GEO
+		add_core_of = RUS
+
+		victory_points = {
+			1599 5 
+		}
+		victory_points = {
+			3653 3 
+		}
+
+		buildings = {
+			infrastructure = 3
+			industrial_complex = 2
+			air_base = 3
+			3653 = {
+				naval_base = 2
+				coastal_bunker = 1
+			}
+		}
+
+		# Democratic Republic of Georgia
+		1918.5.26 = {
+			owner = GEO
+			add_core_of = GEO
+			remove_core_of = RUS
+			add_claim_by = RUS
+		}
+
+		# Treaty of Moscow
+		1920.5.7 = {
+			remove_claim_by = RUS
+		}
+
+		# Union of Soviet Socialist Republics
+		1922.12.30 = {
+			owner = SOV
+			add_core_of = SOV
+		}
+
+		1939.1.1 = {
+			buildings = {
+				industrial_complex = 3
+			}
+		}
+
+		1991.4.9 = {
+			owner = GEO
+			remove_core_of = SOV
+			add_claim_by = SOV
+		}
+
+		1991.12.25 = {
+			remove_claim_by = SOV
+		}
+	}
+
+	provinces={
+		772 1599 3653 3656 3658 6669 6671 9702 11599 12441 
+		11617 11647 654 672 9626 1530 4534 6436
+		12309 4605
+	}
+}

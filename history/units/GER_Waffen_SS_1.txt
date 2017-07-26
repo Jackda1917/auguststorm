@@ -1,0 +1,39 @@
+﻿division_template = {
+	name = "SS-Panzer-Division 40"
+
+	regiments = {
+		medium_armor = { x = 0 y = 0 }
+		medium_armor = { x = 0 y = 1 }
+		medium_armor = { x = 0 y = 2 }	
+		
+		motorized = { x = 1 y = 0 }
+		motorized = { x = 1 y = 1 }
+		motorized = { x = 1 y = 2 }
+		
+		motorized = { x = 2 y = 0 }
+		motorized = { x = 2 y = 1 }
+		motorized = { x = 2 y = 2 }
+		
+		motorized_artillery_brigade = { x = 3 y = 0 } # 1 Arty Rgt
+		motorized_artillery_brigade = { x = 3 y = 1 }
+		motorized_artillery_brigade = { x = 3 y = 2 }
+	}
+	support = {
+		recon = { x = 0 y = 0 }
+		anti_tank = { x = 0 y = 1 }
+		engineer = { x = 0 y = 2 }
+		artillery = { x = 0 y = 3 }
+		anti_air = { x = 0 y = 4 }
+	}
+	priority = 2
+	template_counter = 2
+}
+
+units = {
+	division= {	
+		name = "1. SS-Panzer-Division 'Leibstandarte SS Adolf Hitler'"
+		location = 3544 # Warsaw
+		division_template = "SS-Panzer-Division 40"
+		start_experience_factor = 0.8 
+	}
+}

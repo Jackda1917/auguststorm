@@ -1,0 +1,77 @@
+﻿##### August Storm
+##### Czechoslovakia Events
+
+add_namespace = as_czechoslovakia
+
+# Munich Agreement
+country_event = {
+	id = as_czechoslovakia.1
+	title = as_czechoslovakia.1.title
+	desc = as_czechoslovakia.1.desc
+	picture = GFX_report_event_german_troops
+
+	is_triggered_only = yes
+	
+	option = {
+		name = as_czechoslovakia.1.option_a
+		ai_chance = { factor = 100 }
+		GER = {
+			transfer_state = 69 # Sudetenland
+			transfer_state = 74 # Eastern Sudetenland
+			add_named_threat = { threat = 5 name = as_germany.3.title }
+		}
+		POL = { country_event = { days = 1 id = as_poland.1 } }
+	}
+	
+	option = {
+		name = as_czechoslovakia.1.option_b
+		ai_chance = { factor = 0 }
+
+		# Zaolzie
+		72 = {
+			if = {
+				limit = { is_owned_by = CZE }
+				add_claim_by = GER
+			}
+		}
+
+		GER = {
+			declare_war_on = {
+				target = CZE
+				type = take_state
+				generator = { 69 74 72 } # Sudetenland, Eastern Sudetenland, Zaolzie
+			}
+		}
+	}
+}
+
+# Polish Ultimatum
+country_event = {
+	id = as_czechoslovakia.2
+	title = as_czechoslovakia.2.title
+	desc = as_czechoslovakia.2.desc
+	picture = GFX_report_event_german_troops
+
+	is_triggered_only = yes
+	
+	option = {
+		name = as_czechoslovakia.2.option_a
+		ai_chance = { factor = 100 }
+		POL = {
+			transfer_state = 72 # Zaolzie
+			add_named_threat = { threat = 2 name = as_poland.1.title }
+		}
+	}
+	
+	option = {
+		name = as_czechoslovakia.2.option_b
+		ai_chance = { factor = 0 }
+		POL = {
+			declare_war_on = {
+				target = CZE
+				type = take_state
+				generator = { 72 } # Zaolzie
+			}
+		}
+	}
+}

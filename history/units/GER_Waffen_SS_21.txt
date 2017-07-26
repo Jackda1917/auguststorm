@@ -1,0 +1,8 @@
+﻿units = {
+	division= {	
+		name = "21. Waffen-Gebirgs-Division der SS 'Skanderbeg' (albanische Nr. 1)"
+		location = 9914 # Tirana
+		division_template = "SS-Gebirgs-Division"
+		start_experience_factor = 0.3
+	}
+}

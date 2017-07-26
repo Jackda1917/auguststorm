@@ -1,0 +1,29 @@
+﻿division_template = {
+		name = "Panzer-Division -1940-"  	
+
+		regiments = {
+				medium_armor = { x = 0 y = 0 }   # 3 Armored Rgts
+				medium_armor = { x = 0 y = 1 }
+				
+				light_armor = { x = 1 y = 0 }
+				light_armor = { x = 1 y = 1 }
+				light_armor = { x = 1 y = 2 }
+				
+				light_armor = { x = 2 y = 0 }
+				light_armor = { x = 2 y = 1 }
+
+				motorized = { x = 3 y = 0 } # 1 Armored Infantry Rgt + others
+				motorized = { x = 3 y = 1 }
+				motorized = { x = 3 y = 2 }
+				
+				motorized_artillery_brigade = { x = 4 y = 0 } # 1 Arty Rgt
+				motorized_artillery_brigade = { x = 4 y = 1 }		
+		}
+		support = {
+			recon = { x = 0 y = 0 }
+			anti_air = { x = 0 y = 1 }
+			engineer = { x = 0 y = 2 }
+			maintenance_company = { x = 0 y = 3 }
+			signal_company = { x = 0 y = 4 }
+		}
+} 

@@ -1,0 +1,8 @@
+﻿units = {
+	division= {	
+		name = "20. Waffen-Grenadier-Division der SS (estnische Nr. 1)"
+		location = 3152 # Tallinn
+		division_template = "SS-Grenadier-Division"
+		start_experience_factor = 0.4
+	}
+}

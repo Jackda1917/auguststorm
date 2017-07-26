@@ -1,0 +1,35 @@
+﻿division_template = {
+	name = "SS-Grenadier-Division"
+
+	regiments = {
+		motorized = { x = 0 y = 0 }
+		motorized = { x = 0 y = 1 }
+		motorized = { x = 0 y = 2 }
+		
+		motorized = { x = 1 y = 0 }
+		motorized = { x = 1 y = 1 }		
+		motorized = { x = 1 y = 2 }
+		
+		motorized = { x = 2 y = 0 }
+		motorized = { x = 2 y = 1 }
+		motorized = { x = 2 y = 2 }
+	}
+	support = {
+		recon = { x = 0 y = 0 }
+		anti_tank = { x = 0 y = 1 }
+		engineer = { x = 0 y = 2 }
+		artillery = { x = 0 y = 3 }
+		signal_company = { x = 0 y = 4 }
+	}
+	priority = 1
+	template_counter=0
+}
+
+units = {
+	division= {	
+		name = "14. Waffen-Grenadier-Division der SS 'Galizien' (ukrain. Nr. 1)"
+		location = 11479 # Lvov
+		division_template = "SS-Grenadier-Division"
+		start_experience_factor = 0.3
+	}
+}

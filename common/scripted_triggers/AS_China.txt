@@ -1,0 +1,15 @@
+##### August Storm
+##### China Scripted Triggers
+
+as_is_china_warlord = {
+	OR = {
+		tag = MAN
+		tag = MEN
+		tag = GXC
+		tag = YUN
+		tag = SHX
+		tag = XSM
+		tag = SIK
+		tag = TIB
+	}
+}

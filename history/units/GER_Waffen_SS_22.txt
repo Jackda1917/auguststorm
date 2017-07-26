@@ -1,0 +1,8 @@
+﻿units = {
+	division= {	
+		name = "22. SS-Freiwilligen-Kavallerie-Division 'Maria Theresia'"
+		location = 6711 # Siebenbürgen
+		division_template = "SS-Kavallerie-Division"
+		start_experience_factor = 0.4
+	}
+}

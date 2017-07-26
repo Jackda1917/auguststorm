@@ -1,0 +1,171 @@
+# Europe
+FRA	= "countries/France.txt"
+VIC = "countries/French State.txt" 
+SPR = "countries/Spain.txt"
+POR = "countries/Portugal.txt"
+ITA = "countries/Italy.txt"
+
+# Netherlands
+HOL	= "countries/Holland.txt"
+BEL	= "countries/Belgium.txt"
+LUX	= "countries/Luxemburg.txt"
+
+# Scandinavia
+DEN = "countries/Denmark.txt"
+ICE = "countries/Iceland.txt"
+NOR = "countries/Norway.txt"
+SWE	= "countries/Sweden.txt"
+
+# Germany
+GER	= "countries/Germany.txt"
+WGR = "countries/West Germany.txt"
+DDR = "countries/East Germany.txt"
+AUS	= "countries/Austria.txt"
+SWI = "countries/Switzerland.txt"
+CZE	= "countries/Czechoslovakia.txt"
+
+# Carpathia
+HUN = "countries/Hungary.txt"
+SLO = "countries/Slovakia.txt"
+ROM = "countries/Romania.txt"
+
+# Yugoslavia
+YUG = "countries/Yugoslavia.txt"
+SER = "countries/Serbia.txt"
+CRO = "countries/Croatia.txt"
+BOS = "countries/Bosnia.txt"
+ALB = "countries/Albania.txt"
+BUL = "countries/Bulgaria.txt"
+MNT = "countries/Montenegro.txt"
+
+# Great Britain
+ENG = "countries/United Kingdom.txt"
+#WAL = "countries/Wales.txt"
+#SCO = "countries/Scotland.txt"
+IRE = "countries/Ireland.txt"
+
+# Greece
+GRE = "countries/Greece.txt"
+TUR = "countries/Turkey.txt"
+SYR = "countries/Syria.txt"
+LEB = "countries/Lebanon.txt"
+
+# Israel
+ISR = "countries/Israel.txt"
+JOR = "countries/Jordan.txt"
+PAL = "countries/Palestine.txt"
+
+# North Africa
+LBA = "countries/Libya.txt"
+EGY = "countries/Egypt.txt"
+
+# Africa
+ETH = "countries/Ethiopia.txt"
+LIB = "countries/Liberia.txt"
+SAF = "countries/South Africa.txt"
+ANG = "countries/Angola.txt"
+MZB = "countries/Mozambique.txt"
+ZIM = "countries/Zimbabwe.txt"
+COG = "countries/Congo.txt"
+BOT = "countries/Botswana.txt"
+KEN = "countries/Kenya.txt"
+
+# Arabia
+SAU = "countries/Saudi Arabia.txt"
+YEM = "countries/Yeman.txt"
+OMA = "countries/Oman.txt"
+
+# Persia
+AFG = "countries/Afghanistan.txt"
+IRQ = "countries/Iraq.txt"
+PER = "countries/Persia.txt"
+
+# Russia
+SOV = "countries/Soviet Union.txt"
+RUS = "countries/Russia.txt"
+BLR = "countries/Belarus.txt"
+UKR = "countries/Ukraine.txt"
+MOL = "countries/Moldova.txt"
+KAZ = "countries/Kazakhstan.txt"
+UZB = "countries/Uzbekistan.txt"
+KYR = "countries/Kyrgyzstan.txt"
+TAJ = "countries/Tajikistan.txt"
+TRM = "countries/Turkmenistan.txt"
+GEO = "countries/Georgia.txt"
+ARM = "countries/Armenia.txt"
+AZR = "countries/Azerbaijan.txt"
+TAN = "countries/Tannu Tuva.txt"
+EST	= "countries/Estonia.txt"
+LAT	= "countries/Latvia.txt"
+LIT	= "countries/Lithuania.txt"
+FIN = "countries/Finland.txt"
+POL	= "countries/Poland.txt"
+
+# India
+RAJ = "countries/British Raj.txt"
+BUR = "countries/Burma.txt"
+BHU = "countries/Bhutan.txt"
+NEP = "countries/Nepal.txt"
+PAK = "countries/Pakistan.txt" 
+
+# China
+CHI = "countries/China.txt"
+PRC = "countries/ComChina.txt"
+SHX = "countries/Shanxi.txt"
+GXC = "countries/Guangxi.txt"
+YUN = "countries/Yunnan.txt"
+XSM = "countries/Xibei San Ma.txt"
+MAN = "countries/Manchukuo.txt"
+MEN = "countries/Mengkukuo.txt"
+SIK = "countries/Sinkiang.txt"
+TIB = "countries/Tibet.txt"
+MON = "countries/Mongolia.txt"
+
+# South East Asia
+SIA = "countries/Siam.txt"
+VIN = "countries/Vietnam.txt"
+LAO = "countries/Laos.txt"
+CAM = "countries/Cambodia.txt"
+MAL = "countries/Malaysia.txt"
+INS = "countries/Indonesia.txt"
+
+# Pacific
+AST = "countries/Australia.txt"
+NZL = "countries/New Zealand.txt"
+JAP = "countries/Japan.txt"
+KOR = "countries/Korea.txt"
+PHI = "countries/Philippines.txt"
+
+# North America
+CAN = "countries/Canada.txt"
+USA = "countries/USA.txt"
+MEX = "countries/Mexico.txt"
+
+# Central America
+COS = "countries/Costa Rica.txt"
+ELS = "countries/El Salvador.txt"
+GUA = "countries/Guatemla.txt"
+HON = "countries/Honduras.txt"
+NIC = "countries/Nicaragua.txt"
+PAN = "countries/Panama.txt"
+
+# Caribbeans
+CUB = "countries/Cuba.txt"
+DOM = "countries/Dominican Republic.txt"
+HAI = "countries/Haiti.txt"
+
+# Columbia
+COL = "countries/Colombia.txt"
+ECU = "countries/Ecuador.txt"
+VEN = "countries/Venezula.txt"
+PRU = "countries/Peru.txt"
+
+# Brazil
+BRA = "countries/Brazil.txt"
+
+# Argentina
+ARG = "countries/Argentina.txt"
+BOL = "countries/Bolivia.txt"
+CHL = "countries/Chile.txt"
+PAR = "countries/Paraguay.txt"
+URG = "countries/Uruguay.txt"

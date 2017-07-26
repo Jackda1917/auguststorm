@@ -1,0 +1,90 @@
+# befriend
+# conquer
+# antagonize
+# build_ship
+# build_army
+# unit_ratio
+# build_building
+# research_tech
+# garrison
+# protect
+# influence
+
+
+czechs_production = {
+	enable = {
+		original_tag = CZE
+	}
+	
+	abort = {
+		always = no
+	}
+	
+	ai_strategy = {
+		type = build_army
+		id = armor
+		value = 10
+	}	
+	
+	ai_strategy = {
+		type = role_ratio
+		id = paratroopers
+		value = 0
+	}
+
+	ai_strategy = {
+		type = role_ratio
+		id = mountaineers
+		value = 4
+	}
+
+	ai_strategy = {
+		type = role_ratio
+		id = marines
+		value = 0
+	}
+
+	ai_strategy = {
+		type = role_ratio
+		id = infantry
+		value = -30
+	}	
+	
+	ai_strategy = {
+		type = role_ratio
+		id = armor
+		value = 30
+	}
+
+	ai_strategy = {
+		type = role_ratio
+		id = mobile
+		value = 1
+	}	
+
+	ai_strategy = {
+		type = unit_ratio
+		id = fighter
+		value = 20
+	}
+	
+	ai_strategy = {
+		type = unit_ratio
+		id = cas
+		value = 10
+	}
+	
+	ai_strategy = {
+		type = unit_ratio
+		id = tactical_bomber
+		value = 10
+	}
+
+	ai_strategy = {
+		type = equipment_production_factor
+		id = armor
+		value = 40
+	}
+
+}
+

@@ -1,0 +1,8 @@
+﻿units = {
+	division= {	
+		name = "24. Waffen-Gebirgs-Karstjäger-Division der SS"
+		location = 9627 # Ljubljana
+		division_template = "SS-Gebirgs-Division"
+		start_experience_factor = 0.3
+	}
+}

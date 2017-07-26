@@ -1,0 +1,900 @@
+﻿##### August Storm
+##### Silent Events
+
+add_namespace = as_silent
+
+
+# Bugged French puppet
+country_event = {															
+	id = as_silent.1
+	title = as_silent.1.title
+	desc = as_silent.1.desc
+	picture = GFX_report_event_german_politician_speech
+	
+	fire_only_once = yes
+	
+	hidden = yes
+	
+	trigger = {
+		tag = SYR		
+	}
+	
+	mean_time_to_happen = {
+		days = 0
+	}
+	
+	option = {
+		name = as_silent.1.option_a
+		ai_chance = { factor = 100 }
+			FRA = {	
+				if = {
+					limit = { has_dlc = "Together for Victory" }
+					set_autonomy = { 
+						target = SYR 
+						autonomy_state = autonomy_puppet
+						freedom_level = 0.30		
+					}
+					set_autonomy = { 
+						target = LEB 
+						autonomy_state = autonomy_puppet
+						freedom_level = 0.30		
+					}	
+					else = {
+						puppet = SYR
+						puppet = LEB
+						give_military_access = SYR
+						give_military_access = LEB		
+					}
+				}
+			}
+	}
+
+}
+
+country_event = {															
+	id = as_silent.2
+	title = as_silent.2.title
+	desc = as_silent.2.desc
+	picture = GFX_report_event_german_politician_speech
+		
+	trigger = {
+		is_ai = yes
+		has_template_containing_unit = motorized_rocket_brigade	
+		NOT = { has_equipment = { motorized_rocket_equipment > 500 } }
+	}
+	
+	fire_only_once = yes
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	hidden = yes
+	
+	option = {
+		name = as_silent.1.option_a
+		ai_chance = { factor = 100 }
+		add_equipment_to_stockpile = {
+				type = motorized_rocket_equipment_1
+				amount = 500
+		}
+	}
+}
+
+country_event = {															
+	id = as_silent.3
+	title = as_silent.3.title
+	desc = as_silent.3.desc
+	picture = GFX_report_event_german_politician_speech
+		
+	trigger = {
+		is_ai = yes	
+		has_template_containing_unit = motorized_artillery_equipment	
+		NOT = { has_equipment = { motorized_artillery_equipment > 500 } }
+	}
+
+	fire_only_once = yes
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+
+	hidden = yes
+		
+	option = {
+		name = as_silent.1.option_a
+		ai_chance = { factor = 100 }
+		add_equipment_to_stockpile = {
+			type = motorized_artillery_equipment_1
+			amount = 500
+		}
+	}
+}
+
+country_event = {				# Revolutionaries always in the same faction											
+	id = as_silent.4
+	title = as_silent.4.title
+	desc = as_silent.4.desc
+	picture = GFX_report_event_german_politician_speech
+		
+	trigger = {
+		is_ai = yes	
+		has_government = revolutionary
+		NOT = { is_in_faction = yes }
+		NOT = { is_faction_leader = yes }		
+	}
+	
+	mean_time_to_happen = {
+		days = 50
+	}
+
+	hidden = yes
+		
+	option = {
+		name = as_silent.4.option_a
+		ai_chance = { factor = 100 }
+		random_country = {
+			limit = { 
+				has_government = revolutionary
+				is_faction_leader = yes
+				is_ai = yes
+			}
+			add_to_faction = ROOT
+		}
+	}
+}
+
+country_event = {				# Revolutionary joinning revolutionary union											
+	id = as_silent.5
+	title = as_silent.5.title
+	desc = as_silent.5.desc
+	picture = GFX_report_event_german_politician_speech
+		
+	trigger = {
+		is_ai = yes	
+		NOT = { has_war = yes }
+		has_government = revolutionary 
+		NOT = { is_faction_leader = yes }
+		any_neighbor_country = {
+			is_faction_leader = yes
+			has_government = revolutionary
+		}
+	}
+	
+	mean_time_to_happen = {
+		days = 600
+	}
+
+	hidden = yes
+		
+	option = {
+		name = as_silent.5.option_a
+		ai_chance = { factor = 100 }
+		random_country = {
+			limit = { 
+				has_government = revolutionary
+				is_faction_leader = yes
+				is_neighbor_of = ROOT
+			}
+			country_event = { id = as_politics.3 }
+		}
+	}
+}
+
+country_event = {				# Reset GLO											
+	id = as_silent.6
+	title = as_silent.6.title
+	desc = as_silent.6.desc
+	picture = GFX_report_event_german_politician_speech
+		
+	trigger = {
+		has_country_flag = reset_glo_flag
+	}
+	
+	mean_time_to_happen = {
+		days = 30
+	}
+
+	hidden = yes
+		
+	option = {
+		name = as_silent.6.option_a
+		ai_chance = { factor = 100 }
+		clr_country_flag = reset_glo_flag
+	}
+}
+
+
+country_event = {				# Reset GAO											
+	id = as_silent.7
+	title = as_silent.7.title
+	desc = as_silent.7.desc
+	picture = GFX_report_event_german_politician_speech
+		
+	trigger = {
+		has_country_flag = reset_gao_flag
+	}
+	
+	mean_time_to_happen = {
+		days = 30
+	}
+
+	hidden = yes
+		
+	option = {
+		name = as_silent.6.option_a
+		ai_chance = { factor = 100 }
+		clr_country_flag = reset_gao_flag
+	}
+}
+
+country_event = {				# Reset GNO											
+	id = as_silent.8
+	title = as_silent.8.title
+	desc = as_silent.8.desc
+	picture = GFX_report_event_german_politician_speech
+		
+	trigger = {
+		has_country_flag = reset_gno_flag
+	}
+	
+	mean_time_to_happen = {
+		days = 30
+	}
+
+	hidden = yes
+		
+	option = {
+		name = as_silent.6.option_a
+		ai_chance = { factor = 100 }
+		clr_country_flag = reset_gno_flag
+	}
+}
+
+country_event = {				# GER Satellites								
+	id = as_silent.13
+	title = as_silent.13.title
+	desc = as_silent.13.desc
+	picture = GFX_report_event_german_politician_speech
+
+	fire_only_once = yes	
+	
+	trigger = {
+		original_tag = ROM
+		is_subject = no
+		is_puppet = no
+		has_government = fascism
+		has_dlc = "Together for Victory"
+		has_dlc = "Death or Dishonor"
+		is_ai = yes
+	}
+	
+	mean_time_to_happen = {
+		days = 100
+	}
+
+	hidden = yes
+		
+	option = {
+		name = as_silent.6.option_a
+		ai_chance = { factor = 100 }
+		GER = {
+			set_autonomy = { 
+				target = ROOT 
+				autonomy_state = autonomy_satellite
+				freedom_level = 0.80		
+			}		
+		}
+	}
+}
+
+country_event = {				# GER Satellites								
+	id = as_silent.14
+	title = as_silent.14.title
+	desc = as_silent.14.desc
+	picture = GFX_report_event_german_politician_speech
+
+	fire_only_once = yes
+	
+	trigger = {
+		tag = HUN
+		is_subject = no
+		is_puppet = no
+		has_government = fascism
+		has_dlc = "Together for Victory"
+		has_dlc = "Death or Dishonor"
+		is_ai = yes
+	}
+	
+	mean_time_to_happen = {
+		days = 100
+	}
+
+	hidden = yes
+		
+	option = {
+		name = as_silent.6.option_a
+		ai_chance = { factor = 100 }
+		GER = {
+			set_autonomy = { 
+				target = HUN 
+				autonomy_state = autonomy_satellite
+				freedom_level = 0.80		
+			}		
+		}
+	}
+}
+
+country_event = {				# GER Satellites								
+	id = as_silent.16
+	title = as_silent.16.title
+	desc = as_silent.16.desc
+	picture = GFX_report_event_german_politician_speech
+
+	fire_only_once = yes	
+	
+	trigger = {
+		tag = BUL
+		is_subject = no
+		is_puppet = no
+		has_government = fascism
+		has_dlc = "Together for Victory"
+		has_dlc = "Death or Dishonor"
+		is_ai = yes
+	}
+	
+	mean_time_to_happen = {
+		days = 100
+	}
+
+	hidden = yes
+		
+	option = {
+		name = as_silent.6.option_a
+		ai_chance = { factor = 100 }
+		GER = {
+			set_autonomy = { 
+				target = BUL 
+				autonomy_state = autonomy_satellite
+				freedom_level = 0.80		
+			}		
+		}
+	}
+}
+
+country_event = {				# War mobilisation								
+	id = as_silent.17
+	title = as_silent.17.title
+	desc = as_silent.17.desc
+	picture = GFX_report_event_german_politician_speech
+		
+	trigger = {
+		is_ai = yes
+		has_war = yes
+		NOT = { has_country_flag = war_prod_flag }
+		NOT = {
+			has_idea = war_economy
+			has_idea = tot_economic_mobilisation 
+		}
+	}
+	
+	mean_time_to_happen = {
+		days = 15
+	}
+
+	hidden = yes
+		
+	option = {
+		name = as_silent.6.option_a
+		ai_chance = { factor = 100 }											
+		if = {
+			limit = {
+				NOT = {
+					has_idea = war_economy
+					has_idea = tot_economic_mobilisation						
+				}
+			}
+			add_ideas = war_economy
+			set_country_flag = war_prod_flag
+		}						
+	}
+}
+
+country_event = {				# War mobilisation								
+	id = as_silent.18
+	title = as_silent.18.title
+	desc = as_silent.18.desc
+	picture = GFX_report_event_german_politician_speech
+		
+	trigger = {
+		is_ai = yes
+		has_war = yes
+		NOT = { has_country_flag = war_mp_flag }		
+		NOT = {
+			has_idea = service_by_requirement
+			has_idea = all_adults_serve
+			has_idea = scraping_the_barrel 
+		}
+	}
+	
+	mean_time_to_happen = {
+		days = 15
+	}
+
+	hidden = yes
+		
+	option = {
+		name = as_silent.6.option_a
+		ai_chance = { factor = 100 }											
+		if = {
+			limit = {
+				NOT = {
+					has_idea = service_by_requirement
+					has_idea = all_adults_serve
+					has_idea = scraping_the_barrel						
+				}
+			}
+			add_ideas = service_by_requirement
+			set_country_flag = war_mp_flag
+		}						
+	}
+}
+
+country_event = {				# 									
+	id = as_silent.19
+	title = as_silent.19.title
+	desc = as_silent.19.desc
+	picture = GFX_report_event_german_politician_speech
+
+	fire_only_once = yes
+	
+	trigger = {
+		tag = SOV
+		is_ai = yes
+		has_war_with = GER
+		NOT = { has_completed_focus = SOV_move_industry_to_urals }
+		focus_progress = { focus = SOV_anti_capitalist_diplomacy progress > 0.01 }
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+
+	hidden = yes
+		
+	option = {
+		name = as_silent.6.option_a
+		ai_chance = { factor = 100 }
+		SOV = { complete_national_focus = SOV_anti_capitalist_diplomacy }
+	}
+}
+
+country_event = {				# 									
+	id = as_silent.20
+	title = as_silent.20.title
+	desc = as_silent.20.desc
+	picture = GFX_report_event_german_politician_speech
+
+	fire_only_once = yes
+	
+	trigger = {
+		tag = SOV
+		is_ai = yes
+		has_war_with = GER
+		NOT = { has_completed_focus = SOV_move_industry_to_urals }
+		focus_progress = { focus = SOV_anti_colonialist_rebels progress > 0.01 }
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+
+	hidden = yes
+		
+	option = {
+		name = as_silent.6.option_a
+		ai_chance = { factor = 100 }
+		SOV = { complete_national_focus = SOV_anti_colonialist_rebels }
+	}
+}
+
+country_event = {				# 									
+	id = as_silent.21
+	title = as_silent.21.title
+	desc = as_silent.21.desc
+	picture = GFX_report_event_german_politician_speech
+
+	fire_only_once = yes
+	
+	trigger = {
+		tag = SOV
+		is_ai = yes
+		has_war_with = GER
+		NOT = { has_completed_focus = SOV_move_industry_to_urals }
+		focus_progress = { focus = SOV_southern_thrust progress > 0.01 }
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+
+	hidden = yes
+		
+	option = {
+		name = as_silent.6.option_a
+		ai_chance = { factor = 100 }
+		SOV = { complete_national_focus = SOV_southern_thrust }
+	}
+}
+
+country_event = {				# 									
+	id = as_silent.22
+	title = as_silent.22.title
+	desc = as_silent.22.desc
+	picture = GFX_report_event_german_politician_speech
+
+	fire_only_once = yes
+	
+	trigger = {
+		tag = SOV
+		is_ai = yes
+		has_war_with = GER
+		NOT = { has_completed_focus = SOV_move_industry_to_urals }
+		focus_progress = { focus = SOV_claim_on_sinkiang progress > 0.01 }
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+
+	hidden = yes
+		
+	option = {
+		name = as_silent.6.option_a
+		ai_chance = { factor = 100 }
+		SOV = { complete_national_focus = SOV_claim_on_sinkiang }
+	}
+}
+
+country_event = {				# 									
+	id = as_silent.23
+	title = as_silent.23.title
+	desc = as_silent.23.desc
+	picture = GFX_report_event_german_politician_speech
+
+	fire_only_once = yes
+	
+	trigger = {
+		tag = SOV
+		is_ai = yes
+		has_war_with = GER
+		NOT = { has_completed_focus = SOV_move_industry_to_urals }
+		focus_progress = { focus = SOV_claim_on_the_straits progress > 0.01 }
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+
+	hidden = yes
+		
+	option = {
+		name = as_silent.6.option_a
+		ai_chance = { factor = 100 }
+		SOV = { complete_national_focus = SOV_claim_on_the_straits }
+	}
+}
+
+country_event = {				# ROM re-take Moldavia									
+	id = as_silent.24
+	title = as_silent.24.title
+	desc = as_silent.24.desc
+	picture = GFX_report_event_german_politician_speech
+
+	fire_only_once = yes
+	
+	trigger = {
+		original_tag = ROM
+		is_ai = yes
+		has_government = fascism
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+
+	hidden = yes
+		
+	option = {
+		name = as_silent.6.option_a
+		ai_chance = { factor = 100 }
+		add_state_claim = 79
+		add_state_core = 79
+	}
+}
+
+country_event = {				# Stalinisation								
+	id = as_silent.25
+	title = as_silent.25.title
+	desc = as_silent.25.desc
+	picture = GFX_report_event_german_politician_speech
+
+	trigger = {
+		any_country = {
+			revolutionary > 0.10
+			NOT = { has_government = revolutionary }
+		}
+		SOV = { has_government = communism }
+		any_other_country = {
+			NOT = { has_government = revolutionary }
+			is_major = yes
+		}
+	}
+	
+	mean_time_to_happen = {
+		days = 300
+	}
+
+	hidden = yes
+		
+	option = {
+		name = as_silent.6.option_a
+		ai_chance = { factor = 100 }
+		random_country = { 
+			limit = { 
+				revolutionary > 0.10
+			}
+			add_popularity = {
+				ideology = communism
+				popularity = 0.05
+			}
+			add_popularity = {
+				ideology = revolutionary
+				popularity = -0.05
+			}		
+		}
+	}
+}
+
+country_event = {				
+	id = as_silent.26
+	title = as_silent.26.title
+	desc = as_silent.26.desc
+	picture = GFX_report_event_german_politician_speech
+
+	trigger = {
+		OR = {
+			tag = COS
+			tag = ELS
+ 			tag = GUA
+			tag = HON
+ 			tag = NIC
+			tag = PAN
+ 			tag = CUB
+			tag = DOM
+			tag = HAI
+			tag = COL
+			tag = ECU
+			tag = VEN
+			tag = PRU
+		}
+		OR = {
+			is_subject = yes
+			is_puppet = yes
+		}
+		NOT = { 
+			has_idea = neutrality_idea
+			has_war = yes
+			is_in_faction = yes
+		}
+	}
+	
+	mean_time_to_happen = {
+		days = 20
+	}
+
+	hidden = yes
+		
+	option = {
+		name = as_silent.6.option_a
+		ai_chance = { factor = 100 }
+		add_timed_idea = { idea = neutrality_idea days = 3300 }
+	}
+}
+
+
+country_event = {				# 									
+	id = as_silent.27
+	title = as_silent.27.title
+	desc = as_silent.27.desc
+	picture = GFX_report_event_german_politician_speech
+
+	fire_only_once = yes
+	
+	trigger = {
+		tag = SOV
+		is_ai = yes
+		has_war_with = GER
+		NOT = { has_completed_focus = SOV_move_industry_to_urals }
+		focus_progress = { focus = SOV_reconcile_japan progress > 0.01 }
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+
+	hidden = yes
+		
+	option = {
+		name = as_silent.6.option_a
+		ai_chance = { factor = 100 }
+		SOV = { complete_national_focus = SOV_reconcile_japan }
+	}
+}
+
+country_event = {				# 									
+	id = as_silent.28
+	title = as_silent.28.title
+	desc = as_silent.28.desc
+	picture = GFX_report_event_german_politician_speech
+
+	fire_only_once = yes
+	
+	trigger = {
+		tag = SOV
+		is_ai = yes
+		has_war_with = GER
+		NOT = { has_completed_focus = SOV_move_industry_to_urals }
+		focus_progress = { focus = SOV_operation_zet progress > 0.01 }
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+
+	hidden = yes
+		
+	option = {
+		name = as_silent.6.option_a
+		ai_chance = { factor = 100 }
+		SOV = { complete_national_focus = SOV_operation_zet }
+	}
+}
+
+
+country_event = {				# White peace bug								
+	id = as_silent.29
+	title = as_silent.29.title
+	desc = as_silent.29.desc
+	picture = GFX_report_event_german_politician_speech
+
+	fire_only_once = yes
+	
+	trigger = {
+		original_tag = ETH
+		is_ai = yes
+		surrender_progress > 0.25
+	}
+	
+	mean_time_to_happen = {
+		days = 0
+	}
+
+	hidden = yes
+		
+	option = {
+		name = as_silent.6.option_a
+		ai_chance = { factor = 100 }
+		news_event = { id = country_capitulated.0 }
+		ITA = { annex_country = { target = ETH transfer_troops = no } }
+	}
+}
+
+country_event = {				# Casualties events							
+	id = as_silent.30
+	title = as_silent.30.title
+	desc = as_silent.30.desc
+	picture = GFX_report_event_german_politician_speech
+
+	
+	trigger = {
+		has_war = yes
+		NOT = { has_civil_war = yes }
+		NOT = { 
+			has_idea = heavy_casualties
+			has_idea = terrible_casualties
+			has_idea = terrific_casualties			
+		}		
+		NOT = {
+			tag = SOV
+			tag = CHI
+			tag = PRC
+			tag = GER
+			AND = {	
+				tag = JAP
+				has_government = fascism
+			}
+		}
+		casualties > 1000000
+	}
+	
+	mean_time_to_happen = {
+		days = 10
+	}
+
+	hidden = yes
+		
+	option = {
+		name = as_silent.6.option_a
+		ai_chance = { factor = 100 }
+		add_ideas = heavy_casualties
+	}
+}
+
+
+country_event = {				# Casualties events							
+	id = as_silent.31
+	title = as_silent.31.title
+	desc = as_silent.31.desc
+	picture = GFX_report_event_german_politician_speech
+
+	
+	trigger = {
+		has_war = yes
+		NOT = { has_civil_war = yes }		
+		NOT = { 
+			has_idea = terrible_casualties
+			has_idea = terrific_casualties			
+		}		
+		NOT = {
+			tag = SOV
+			tag = CHI
+			tag = PRC
+			AND = {	
+				tag = JAP
+				has_government = fascism
+			}
+		}
+		casualties > 3000000
+	}
+	
+	mean_time_to_happen = {
+		days = 10
+	}
+
+	hidden = yes
+		
+	option = {
+		name = as_silent.6.option_a
+		ai_chance = { factor = 100 }
+		add_ideas = terrible_casualties
+	}
+}
+
+country_event = {				# Casualties events							
+	id = as_silent.32
+	title = as_silent.32.title
+	desc = as_silent.32.desc
+	picture = GFX_report_event_german_politician_speech
+	
+	trigger = {
+		has_war = yes
+		NOT = { has_civil_war = yes }		
+		NOT = { 
+			has_idea = terrific_casualties			
+		}		
+		casualties > 6000000
+	}
+	
+	mean_time_to_happen = {
+		days = 10
+	}
+
+	hidden = yes
+		
+	option = {
+		name = as_silent.6.option_a
+		ai_chance = { factor = 100 }
+		add_ideas = terrific_casualties
+	}
+}

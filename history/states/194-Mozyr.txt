@@ -1,0 +1,46 @@
+
+state={
+	id=194
+	name="STATE_194" # Mozyr
+	manpower = 934632
+	
+	state_category = rural
+
+	history={
+		owner = RUS
+		add_core_of = RUS
+		
+		buildings = {
+			infrastructure = 3
+			air_base = 3
+		}
+
+		1918.3.25 = {
+			owner = BLR
+			add_core_of = BLR
+			remove_core_of = RUS
+		}
+
+		1922.12.30 = {
+			owner = SOV
+			add_core_of = SOV
+		}
+
+		1990.7.27 = {
+			remove_core_of = SOV
+			add_claim_by = SOV
+		}
+
+		1991.8.21 = {
+			owner = BLR
+		}
+
+		1991.12.25 = {
+			remove_claim_by = SOV
+		}
+	}
+
+	provinces={
+		215 3203 3293 3507 6232 6319 6556 9249 9554 11453 
+	}
+}

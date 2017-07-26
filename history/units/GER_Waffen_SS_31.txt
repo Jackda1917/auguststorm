@@ -1,0 +1,8 @@
+﻿units = {
+	division= {	
+		name = "31. SS-Freiwilligen-Grenadier-Division"
+		location = 3623 # Bačka
+		division_template = "SS-Grenadier-Division"
+		start_experience_factor = 0.4
+	}
+}

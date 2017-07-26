@@ -1,0 +1,54 @@
+
+state={
+	id=584
+	name="STATE_584" # Ashkhabad
+	manpower = 1064523
+	
+	state_category = pastoral
+
+	history={
+		owner = RUS
+		add_core_of = TRM
+		add_core_of = RUS
+
+		buildings = {
+			infrastructure = 2
+			industrial_complex = 1
+		}
+
+		# Turkestan Autonomous Soviet Socialist Republic
+		1918.4.30 = {
+			owner = TRM
+			add_core_of = TRM
+			remove_core_of = RUS
+			add_claim_by = RUS
+		}
+
+		# Union of Soviet Socialist Republics
+		1922.12.30 = {
+			owner = SOV
+			add_core_of = SOV
+		}
+
+		# Turkmen Soviet Socialist Republic
+		1925.5.13 = {
+			remove_claim_by = RUS
+		}
+
+		# Independence declared
+		1991.10.27 = {
+			owner = TRM
+			remove_core_of = SOV
+			add_claim_by = SOV
+		}
+
+		# Independence recognized
+		1991.12.25 = {
+			remove_claim_by = SOV
+		}
+	}
+
+	provinces={
+		1493 1593 1649 4482 4549 4599 4958 5003 7477 7491 7560 7563 7618 7635 7924 8099 10357 10359 10414 10485 10510 10742 12333 12359 12491 
+	}
+}

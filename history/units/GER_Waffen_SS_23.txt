@@ -1,0 +1,8 @@
+﻿units = {
+	division= {	
+		name = "23. Waffen-Gebirgs-Division der SS 'Kama' (kroat. Nr. 2)"
+		location = 11899 # Sarajevo
+		division_template = "SS-Gebirgs-Division"
+		start_experience_factor = 0.3
+	}
+}

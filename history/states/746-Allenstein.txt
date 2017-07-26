@@ -1,0 +1,36 @@
+
+state={
+	id=746
+	name="STATE_746" #Allenstein
+	manpower = 1000000
+	state_category = town
+
+	history={
+		owner = GER
+		controller = GER
+		add_core_of = GER
+
+		buildings = {
+			infrastructure = 4
+		}
+		
+		1945.1.22 = {
+			controller = SOV
+		}
+		
+		1945.5.8 = {
+			owner = SOV
+		}
+
+		1945.8.1 = {
+			owner = POL
+			controller = POL
+			add_core_of = POL
+			remove_core_of = GER
+		}
+	}
+
+	provinces={
+		266 3351 3380 6375 6402 9327 9346 9372 9398 11245 11386
+	}
+}

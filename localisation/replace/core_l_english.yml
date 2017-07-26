@@ -1,0 +1,7 @@
+﻿l_english:
+ SCORE_CALC_ARMY:0 "Number of Units: $ARMIES$"
+ UNIT_TOOLTIP_REGIMENTS:0 "§GCombat Battalions§!"
+ UNIT_TOOLTIP_SUPPORT:0 "§GSupport Companies§!"
+ MAP_ARROWS_LOCALIZATION_EMPTY:0 "No units"
+ MAP_ARROWS_DIVISIONS_COUNT:0 "$DIV$ Units"
+ UNITS_VIEW_DIVISIONS_COUNT:0 "$DIV|G$ Units"

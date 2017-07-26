@@ -1,0 +1,94 @@
+##### August Storm
+##### Waffen-SS Scripted Effects
+
+as_new_waffen_ss_division_effect = {
+	add_political_power = 30
+	custom_effect_tooltip = GER_new_waffen_ss_division
+}
+
+as_new_waffen_ss_volunteer_division_effect = {
+	add_political_power = 20
+	custom_effect_tooltip = GER_new_waffen_ss_volunteer_division
+}
+
+as_new_waffen_ss_foreign_division_effect = {
+	add_political_power = 10
+	custom_effect_tooltip = GER_new_waffen_ss_foreign_division
+}
+
+
+
+as_add_waffen_ss_effect = {
+	if = { 
+		limit = { NOT = { has_idea = as_germany_waffen_ss } }
+			add_ideas = as_germany_waffen_ss 
+			add_political_power = -100
+			custom_effect_tooltip = GER_add_waffen_ss
+	}
+}
+
+as_add_waffen_ss_volunteers_effect = {
+	if = { 
+		limit = { NOT = { has_idea = as_germany_waffen_ss_volunteers } } 
+			add_ideas = as_germany_waffen_ss_volunteers 
+			add_political_power = -100
+			custom_effect_tooltip = GER_add_waffen_ss_volunteers
+	}
+	#hidden_effect = { remove_ideas = as_germany_waffen_ss }
+}
+
+as_add_waffen_ss_foreigners_effect = {
+	if = { 
+		limit = { NOT = { has_idea = as_germany_waffen_ss_foreigners } } 
+			add_ideas = as_germany_waffen_ss_foreigners 
+			add_political_power = -100
+			custom_effect_tooltip = GER_add_waffen_ss_foreigners
+	}
+	#remove_ideas = as_germany_waffen_ss_volunteers 
+}
+
+
+
+as_end_waffen_ss_effect = {
+	if = {
+		limit = { has_idea = as_germany_waffen_ss }
+		hidden_effect = { remove_ideas = as_germany_waffen_ss }
+		add_political_power = -100
+	}
+	if = {
+		limit = { has_idea = as_germany_waffen_ss_volunteers }
+		hidden_effect = { remove_ideas = as_germany_waffen_ss_volunteers }
+		add_political_power = -200
+	}
+	if = {
+		limit = { has_idea = as_germany_waffen_ss_foreigners }
+		hidden_effect = { remove_ideas = as_germany_waffen_ss_foreigners }
+		add_political_power = -300
+	}
+	custom_effect_tooltip = GER_end_waffen_ss
+}
+
+as_end_waffen_ss_volunteers_effect = {
+	if = {
+		limit = { has_idea = as_germany_waffen_ss_volunteers }
+		hidden_effect = { remove_ideas = as_germany_waffen_ss_volunteers }
+		add_political_power = -100
+	}
+	if = {
+		limit = { has_idea = as_germany_waffen_ss_foreigners }
+		hidden_effect = { remove_ideas = as_germany_waffen_ss_foreigners }
+		add_political_power = -200
+	}
+	hidden_effect = { add_ideas = as_germany_waffen_ss }
+	custom_effect_tooltip = GER_end_waffen_ss_volunteers
+}
+
+as_end_waffen_ss_foreigners_effect = {
+	if = {
+		limit = { has_idea = as_germany_waffen_ss_foreigners }
+		hidden_effect = { add_ideas = as_germany_waffen_ss_volunteers }
+		add_political_power = -100
+		hidden_effect = { remove_ideas = as_germany_waffen_ss_foreigners }
+		custom_effect_tooltip = GER_end_waffen_ss_foreigners
+	}
+}

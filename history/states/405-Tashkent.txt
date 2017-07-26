@@ -1,0 +1,66 @@
+
+state={
+	id=405
+	name="STATE_405" #Tashkent
+
+	state_category = city
+
+	history={
+		owner = RUS
+		add_core_of = UZB
+		add_core_of = RUS
+
+		victory_points = {
+			1459 3 
+		}
+		buildings = {
+			infrastructure = 5
+			industrial_complex = 3
+			air_base = 1
+
+		}
+
+		# Turkestan Autonomous Soviet Socialist Republic
+		1918.4.30 = {
+			owner = UZB
+			add_core_of = UZB
+			remove_core_of = RUS
+			add_claim_by = RUS
+		}
+
+		# Union of Soviet Socialist Republics
+		1922.12.30 = {
+			owner = SOV
+			add_core_of = SOV
+		}
+
+		# Uzbek Soviet Socialist Republic
+		1924.10.27 = {
+			remove_claim_by = RUS
+		}
+
+		1939.1.1 = {
+			buildings = {
+				industrial_complex = 4
+			}
+		}
+
+		# Independence declared
+		1991.8.31 = {
+			owner = UZB
+			remove_core_of = SOV
+			add_claim_by = SOV
+		}
+
+		# Independence recognized
+		1991.12.25 = {
+			remove_claim_by = SOV
+		}
+	}
+
+	provinces={
+		756 1216 1459 1573 1632 2058 7639 9605 10205 10488 10601 10671 11687 12239 12581 12722 
+		4629 7682 7775
+	}
+	manpower=6275820
+}

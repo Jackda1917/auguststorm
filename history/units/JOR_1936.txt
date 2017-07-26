@@ -1,0 +1,23 @@
+﻿##### Templates
+
+division_template = {
+	name = "Infantry Regiment"
+	regiments = {
+		infantry = { x = 0 y = 0 }
+	}
+	support = {
+		recon = { x = 0 y = 0 }
+	}
+}
+
+##### OOB
+
+units = {
+	division= {	
+		name = "Arab Legion"
+		location = 7151 # Amman
+		division_template = "Infantry Regiment"
+		start_experience_factor = 0.2
+		start_equipment_factor = 0.5
+	}
+}

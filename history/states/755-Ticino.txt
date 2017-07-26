@@ -1,0 +1,21 @@
+state = {
+	id = 755
+	name = "STATE_755" # Ticino
+	manpower = 300000
+	
+	state_category = town
+
+	history = {
+		owner = SWI
+		add_core_of = SWI
+
+		buildings = {
+			infrastructure = 6
+			industrial_complex = 1
+		}
+	}
+
+	provinces = {
+		3641 9600 658 3660 3662
+	}
+}

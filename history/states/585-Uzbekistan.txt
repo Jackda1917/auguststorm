@@ -1,0 +1,53 @@
+state={
+	id=585
+	name="STATE_585"
+
+	history={
+		owner = RUS
+		add_core_of = UZB
+		add_core_of = RUS
+
+		buildings = {
+			infrastructure = 3
+
+		}
+
+		# Turkestan Autonomous Soviet Socialist Republic
+		1918.4.30 = {
+			owner = UZB
+			add_core_of = UZB
+			remove_core_of = RUS
+			add_claim_by = RUS
+		}
+
+		# Union of Soviet Socialist Republics
+		1922.12.30 = {
+			owner = SOV
+			add_core_of = SOV
+		}
+
+		# Uzbek Soviet Socialist Republic
+		1924.10.27 = {
+			remove_claim_by = RUS
+		}
+		
+		# Independence declared
+		1991.8.31 = {
+			owner = UZB
+			remove_core_of = SOV
+			add_claim_by = SOV
+		}
+
+		# Independence recognized
+		1991.12.25 = {
+			remove_claim_by = SOV
+		}
+	}
+	state_category = rural
+
+	provinces={
+		1479 1532 1554 1576 1614 1623 1721 4488 4499 4578 4581 4618 4636 4638 7486 7501 7507 7777 10353 10366 10395 10420 10435 10470 12161 12324 12465 12471 
+	}
+	manpower=1033721
+	buildings_max_level_factor=1.000
+}

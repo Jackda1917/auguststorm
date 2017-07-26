@@ -1,0 +1,115 @@
+﻿division_template = {
+	name = "Juntuán"   # A division had (again, officially) 2 infantry brigades, each of 2 regiments; an artillery battalion or regiment; an engineer and a quartermaster battalion, and small signals, medical and transport units
+
+	regiments = {
+		infantry = { x = 0 y = 0 }
+		infantry = { x = 0 y = 1 }
+		infantry = { x = 0 y = 2 }
+		infantry = { x = 0 y = 3 }
+		infantry = { x = 1 y = 0 }
+		infantry = { x = 1 y = 1 }
+		infantry = { x = 1 y = 2 }
+		infantry = { x = 1 y = 3 }		
+	}
+	support = {
+        artillery = { x = 0 y = 0 }
+	}	
+}
+
+units = {
+	division = {
+		name = "90 Juntuán"
+		location = 11913
+		division_template = "Juntuán"
+	}
+	division = {
+		name = "91 Juntuán"
+		location = 11913
+		division_template = "Juntuán"
+	}
+	division = {
+		name = "92 Juntuán"
+		location = 11913
+		division_template = "Juntuán"
+	}
+	division = {
+		name = "96 Juntuán"
+		location = 11913
+		division_template = "Juntuán"
+	}
+	division = {
+		name = "98 Juntuán"
+		location = 11913
+		division_template = "Juntuán"
+	}
+	division = {
+		name = "99 Juntuán"
+		location = 11913
+		division_template = "Juntuán"
+	}
+	division = {
+		name = "100 Juntuán"
+		location = 11913
+		division_template = "Juntuán"
+	}
+	division = {
+		name = "101 Juntuán"
+		location = 11913
+		division_template = "Juntuán"
+	}
+	division = {
+		name = "102 Juntuán"
+		location = 11913
+		division_template = "Juntuán"
+	}
+	division = {
+		name = "103 Juntuán"
+		location = 11913
+		division_template = "Juntuán"
+	}
+	division = {
+		name = "104 Juntuán"
+		location = 11913
+		division_template = "Juntuán"
+	}
+	division = {
+		name = "105 Juntuán"
+		location = 11913
+		division_template = "Juntuán"
+	}
+	division = {
+		name = "106 Juntuán"
+		location = 11913
+		division_template = "Juntuán"
+	}
+	division = {
+		name = "107 Juntuán"
+		location = 11913
+		division_template = "Juntuán"
+	}
+	division = {
+		name = "108 Juntuán"
+		location = 11913
+		division_template = "Juntuán"
+	}
+	division = {
+		name = "109 Juntuán"
+		location = 11913
+		division_template = "Juntuán"
+	}
+	division = {
+		name = "110 Juntuán"
+		location = 11913
+		division_template = "Juntuán"
+	}
+	division = {
+		name = "111 Juntuán"
+		location = 11913
+		division_template = "Juntuán"
+	}
+	division = {
+		name = "112 Juntuán"
+		location = 11913
+		division_template = "Juntuán"
+	}	
+}

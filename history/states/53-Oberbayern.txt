@@ -1,0 +1,44 @@
+
+state={
+	id=53
+	name="STATE_53"
+	manpower = 1453365
+	
+	state_category = city
+
+	history={
+		owner = GER
+		buildings = {
+			infrastructure = 6
+		}
+		add_core_of = GER
+		
+		# German Surrender
+		1945.5.8 = {
+			owner = USA
+			controller = USA
+		}
+		
+		# Federal Republic of Germany
+		1949.5.23 = {
+			owner = WGR
+			controller = WGR
+			add_core_of = WGR
+			remove_core_of = GER
+		}
+
+		# German Democratic Republic
+		1949.10.7 = {
+			add_core_of = DDR
+		}
+
+		# German Reunification Treaty
+		1990.10.3 = {
+			remove_core_of = DDR
+		}
+	}
+
+	provinces={
+		532 571 586 3299 3541 3571 6725 9515 9681 11497 
+	}
+}

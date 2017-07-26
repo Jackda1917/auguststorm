@@ -1,0 +1,8 @@
+﻿units = {
+	division= {	
+		name = "10. SS-Panzer-Division 'Frundsberg'"
+		location = 11506 # Paris
+		division_template = "SS-Panzer-Division 42"
+		start_experience_factor = 0.5
+	}
+}

@@ -1,0 +1,8 @@
+﻿units = {
+	division= {	
+		name = "26. Waffen-Grenadier-Division der SS (ungarische Nr. 2)"
+		location = 9660 # Budapest
+		division_template = "SS-Grenadier-Division"
+		start_experience_factor = 0.3
+	}
+}

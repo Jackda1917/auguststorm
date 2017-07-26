@@ -1,0 +1,8 @@
+﻿units = {
+	division= {	
+		name = "18. SS-Freiwilligen-Panzergrenadier-Division 'Horst Wessel'"
+		location = 6711 # Siebenbürgen
+		division_template = "SS-Panzergrenadier-Division"
+		start_experience_factor = 0.4
+	}
+}

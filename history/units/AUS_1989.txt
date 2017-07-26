@@ -1,0 +1,122 @@
+##### August Storm
+##### Austria 1989 OOB
+
+##### Division Templates
+
+division_template = {
+	name = "Panzergrenadierbrigade"
+
+	regiments = {
+		medium_armor = { x = 0 y = 0 }
+		mechanized = { x = 1 y = 0 }
+		medium_tank_destroyer = { x = 2 y = 0 }
+		medium_sp_artillery_brigade = { x = 2 y = 1 }
+	}
+	support = {
+		armoured_reconnaissance_company = { x = 0 y = 0 }
+		artillery = { x = 0 y = 1 }
+		anti_air = { x = 0 y = 2 }
+		engineer = { x = 0 y = 3 }
+		signal_company = { x = 0 y = 4 }
+	}
+}
+
+division_template = {
+	name = "Jägerbrigade"
+
+	regiments = {
+		motorized = { x = 0 y = 0 }
+		motorized = { x = 0 y = 1 }
+		motorized = { x = 0 y = 2 }
+		medium_sp_artillery_brigade = { x = 1 y = 1 }
+	}
+}
+
+division_template = {
+	name = "Landwehrregiment"
+
+	regiments = {
+		infantry = { x = 0 y = 0 }
+		infantry = { x = 0 y = 1 }
+		infantry = { x = 0 y = 2 }
+	}
+	support = {
+		anti_tank = { x = 0 y = 0 }
+		engineer = { x = 0 y = 1 }
+		logistics_company = { x = 0 y = 2 }
+		signal_company = { x = 0 y = 3 }
+	}
+	priority = 0
+}
+
+##### Army
+
+units = {
+	# Österreichisches Bundesheer
+
+	# Kommando Landstreitkräfte
+
+	# Militärkommando Wien
+	division = {	
+		name = "Landwehrregiment 21"
+		location = 11666 # Wien
+		division_template = "Landwehrregiment"
+		start_experience_factor = 0.1
+	}
+
+	# I. Korps
+
+	# 1. Panzergrenadierdivision
+	division = {	
+		name = "3. Panzergrenadierbrigade"
+		location = 704 # Mautern an der Donau
+		division_template = "Panzergrenadierbrigade"
+		start_experience_factor = 0.3
+	}
+	division = {	
+		name = "4. Panzergrenadierbrigade"
+		location = 9665 # Linz
+		division_template = "Panzergrenadierbrigade"
+		start_experience_factor = 0.3
+	}
+	division = {	
+		name = "9. Panzergrenadierbrigade"
+		location = 3700 # Götzendorf an der Leitha
+		division_template = "Panzergrenadierbrigade"
+		start_experience_factor = 0.3
+	}
+
+	# Militärkommando Burgenland
+	division = {	
+		name = "1. Jägerbrigade"
+		location = 9661 # Eisenstadt
+		division_template = "Jägerbrigade"
+		start_experience_factor = 0.2
+	}
+	division = {	
+		name = "Landwehrregiment 11"
+		location = 3700 # Northern Burgenland
+		division_template = "Landwehrregiment"
+		start_experience_factor = 0.1
+	}
+	division = {	
+		name = "Landwehrregiment 12"
+		location = 9661 # Central Burgenland
+		division_template = "Landwehrregiment"
+		start_experience_factor = 0.1
+	}
+
+	# Militärkommando Niederösterreich
+	division= {	
+		name = "2. Jägerbrigade"
+		location = 9661 # Eisenstadt
+		division_template = "Jägerbrigade"
+		start_experience_factor = 0.2
+	}
+	division = {	
+		name = "3. Jägerbrigade"
+		location = 704 # St Poelten
+		division_template = "Jägerbrigade"
+		start_experience_factor = 0.2
+	}
+}

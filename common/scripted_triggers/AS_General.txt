@@ -1,0 +1,36 @@
+##### August Storm
+##### General Scripted Triggers
+
+as_is_major = {
+	is_puppet = no
+	OR = {
+		tag = USA
+		tag = SOV
+		tag = ENG
+		tag = FRA
+		tag = CHI
+		tag = GER
+		tag = ITA
+		tag = JAP
+		num_of_factories > 80
+	}
+}
+
+as_heavy_industry = {
+	is_puppet = no
+	OR = {					# Former 1936 countries with HI
+		tag = USA
+		tag = SOV
+		tag = ENG
+		tag = FRA
+		tag = GER
+		tag = ITA
+		tag = JAP
+		tag = CAN
+		tag = CZE
+		tag = SWE
+		tag = RUS
+		tag = UKR
+		num_of_factories > 70
+	}
+}

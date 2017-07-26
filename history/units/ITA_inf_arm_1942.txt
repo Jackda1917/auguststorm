@@ -1,0 +1,63 @@
+﻿##### Division Templates #####
+division_template = {
+	name = "Divisione di Fanteria -1942-"		
+	# Represents nearly all infantry divisions
+	# In later years, CCNN Brigade added to Inf Division (1x2 militia/inf regiment)
+	# Also represent semi-mountain divisions (1st, 2nd, 3rd, 4th, 6th Divisions)
+	regiments = {
+		infantry = { x = 0 y = 0 }
+		infantry = { x = 0 y = 1 }
+		infantry = { x = 0 y = 2 }
+		
+		infantry = { x = 1 y = 0 }
+		infantry = { x = 1 y = 1 }
+		infantry = { x = 1 y = 2 }
+		
+		infantry = { x = 2 y = 0 }
+		infantry = { x = 2 y = 1 }
+
+		artillery_brigade = { x = 3 y = 0 } 
+	}
+	support = {
+		engineer = { x = 0 y = 0 }
+	}
+}
+
+division_template = {
+	name = "Divisione Corazzata" 		# Division blindée
+	regiments = {
+		medium_armor = { x = 0 y = 0 }
+		medium_armor = { x = 0 y = 1 }
+		
+		light_armor = { x = 1 y = 0 }
+		light_armor = { x = 1 y = 1 }
+		
+		motorized = { x = 2 y = 0 }		# (elite) Bersaglieri Regiment
+		motorized = { x = 2 y = 1 }
+		
+		motorized_artillery_brigade = { x = 3 y = 0 }
+	}
+	support = {
+		engineer = { x = 0 y = 0 }
+	}		
+	priority = 2
+}
+
+division_template = {
+	name = "Divisione Celere -1942-" 		# Divisione Celere (Fast Division)
+	regiments = {
+		motorized = { x = 0 y = 0 }
+		motorized = { x = 0 y = 1 }
+		
+		motorized = { x = 1 y = 0 }
+		motorized = { x = 1 y = 1 }
+		
+		motorized = { x = 2 y = 0 }		
+		motorized = { x = 2 y = 1 }
+	}
+	support = {
+		armoured_reconnaissance_company = { x = 0 y = 0 }
+		artillery = { x = 0 y = 1 }
+	}		
+	priority = 2
+}

@@ -1,0 +1,466 @@
+﻿##### August Storm
+##### Japan Events
+
+add_namespace = as_japan
+
+# Phillipines scripted invasion AI
+country_event = {
+	id = as_japan.1
+	title = as_japan.1.t
+	desc = as_japan.1.d
+	picture = GFX_report_event_japanese_transport_soldiers
+		
+	is_triggered_only = yes    # on action
+		
+	immediate = {
+		if = {													# 
+			limit = { 623 = { owner = { tag = PHI } } }
+			set_state_controller = 623 
+		}		
+	}	
+	
+	option = {
+		name = as_japan.1.a
+		load_oob = JAP_Philippines
+	}
+}
+
+# NEI scripted invasion AI
+country_event = {
+	id = as_japan.2
+	title = as_japan.2.t
+	desc = as_japan.2.d
+	picture = GFX_report_event_japanese_transport_soldiers
+		
+	is_triggered_only = yes    # on action
+		
+	immediate = {
+		if = {													# Borneo
+			limit = { 334 = { owner = { tag = HOL } } }
+			set_state_controller = 334 
+		}
+		if = {													# Borneo
+			limit = { 334 = { owner = { tag = INS } } }
+			set_state_controller = 334 
+		}		
+		if = {													# Borneo
+			limit = { 334 = { owner = { tag = ENG } } }
+			set_state_controller = 334 
+		}
+		if = {												    # Java												
+			limit = { 335 = { owner = { tag = HOL } } }
+			set_state_controller = 335
+		}
+		if = {											        # Java												
+			limit = { 335 = { owner = { tag = ENG } } }
+			set_state_controller = 335 
+		}
+		if = {											        # Java												
+			limit = { 335 = { owner = { tag = INS } } }
+			set_state_controller = 335 
+		}		
+		if = {										            # Sumatra												
+			limit = { 672 = { owner = { tag = HOL } } }
+			set_state_controller = 672
+		}
+		if = {										            # Sumatra												
+			limit = { 672 = { owner = { tag = ENG } } }
+			set_state_controller = 672 
+		}
+		if = {										            # Sumatra												
+			limit = { 672 = { owner = { tag = INS } } }
+			set_state_controller = 672 
+		}			
+	}	
+	
+	option = {
+		name = as_japan.1.a
+		load_oob = JAP_NEI
+	}
+}
+
+# Limited War in China
+country_event = {
+	id = as_japan.3
+	title = as_japan.3.t
+	desc = as_japan.3.d
+	picture = GFX_report_event_japanese_transport_soldiers
+	
+	trigger = {
+		tag = JAP
+		has_war_with = CHI
+		CHI = { surrender_progress > 0.55 }                 
+		NOT = { has_global_flag = chi_limited_war_flag }
+	}
+
+	mean_time_to_happen = { days = 1 }				
+
+	fire_only_once = yes
+
+	# China "Surrender" and "offer" territory
+	option = {
+		name = as_japan.3.a
+		ai_chance = {
+			factor = 10
+		}
+		white_peace = { tag = CHI message = "Sino-Japanese Attrition War" tooltip = "Sino-Japanese Attrition War" } 		
+		set_global_flag = chi_limited_war_flag		
+		every_state = {
+				limit = {
+					is_claimed_by = JAP	
+					is_core_of = CHI
+				}
+			JAP = {
+				transfer_state = PREV				
+			}
+		}
+		every_state = {
+				limit = {
+					is_controlled_by = JAP
+					is_core_of = CHI
+				}					
+			JAP = {
+				transfer_state = PREV
+			}
+		}
+			every_state = {
+					limit = {
+						country_exists = MEN
+						OR = {	
+							is_controlled_by = JAP
+							is_controlled_by = MAN
+							is_controlled_by = MEN						
+						}
+						OR = {	
+							is_claimed_by = MEN
+							is_core_of = MEN
+						}
+						NOT = { is_claimed_by = JAP }
+					}
+				MEN = {
+					transfer_state = PREV
+				}
+			}
+			every_state = {
+					limit = {
+						OR = {	
+							is_controlled_by = JAP
+							is_controlled_by = MAN
+							is_controlled_by = MEN						
+						}
+						OR = {	
+							is_claimed_by = MAN
+							is_core_of = MAN
+						}
+						NOT = { is_claimed_by = JAP }
+					}
+				MAN = {
+					transfer_state = PREV
+				}
+			}
+		diplomatic_relation = {
+				country = CHI
+				relation = non_aggression_pact
+				active = yes
+		}			
+		custom_effect_tooltip = as_japan.3_TT 	
+		effect_tooltip = {
+		    JAP = { white_peace = CHI }					
+		    diplomatic_relation = {
+					country = CHI
+					relation = non_aggression_pact
+					active = yes
+			}		
+			CHI = {
+				country_event = { id = as_china.3 }
+			}
+		every_state = {
+				limit = {
+					is_controlled_by = JAP
+					is_core_of = CHI
+				}					
+			JAP = {
+				transfer_state = PREV
+			}
+		}
+		every_state = {
+				limit = {
+					is_claimed_by = JAP	
+					is_core_of = CHI
+				}
+			JAP = {
+				transfer_state = PREV
+			}
+		}		
+			every_state = {
+					limit = {
+						OR = {	
+							is_controlled_by = JAP
+							is_controlled_by = MAN
+							is_controlled_by = MEN						
+						}
+						OR = {	
+							is_claimed_by = MEN
+							is_core_of = MEN
+						}
+						NOT = { is_claimed_by = JAP }
+					}
+				MEN = {
+					transfer_state = PREV
+				}
+			}
+			every_state = {
+					limit = {
+						OR = {	
+							is_controlled_by = JAP
+							is_controlled_by = MAN
+							is_controlled_by = MEN						
+						}
+						OR = {	
+							is_claimed_by = MAN
+							is_core_of = MAN
+						}
+						NOT = { is_claimed_by = JAP }
+					}
+				MAN = {
+					transfer_state = PREV
+				}
+			}			
+				#add_ideas = warlords_corruption			
+		}
+	}
+	#Let's Grab it all !
+	option = {
+		name = as_japan.3.b
+		ai_chance = {
+			factor = 0
+		}
+		effect_tooltip = {
+			add_political_power = -200
+			PRC = { add_ideas = chinese_partisans }
+			show_ideas_tooltip = chinese_partisans
+			PRC = {
+				add_tech_bonus = {   # was none			
+					bonus = 0.50
+					uses = 3
+					category = land_doctrine
+				}			
+			}
+			CHI = {
+				add_tech_bonus = {   # was none			
+					bonus = 0.50
+					uses = 2
+					category = land_doctrine
+				}			
+			}			
+		}				
+	}
+}
+
+# Japan puppet China
+country_event = {
+	id = as_japan.4
+	title = as_japan.4.t
+	desc = as_japan.4.d
+	picture = GFX_report_event_japanese_transport_soldiers
+	
+	is_triggered_only = yes  # on_action
+	
+	immediate = {
+		if = {
+			limit = { 
+				MEN = { exists = no } 
+			}
+			JAP = { release_puppet = MEN }			
+		}
+		if = {
+			limit = { 
+				MAN = { exists = no } 
+			}
+			JAP = { release_puppet = MAN }			
+		}		
+	}
+	
+		
+	option = {
+		name = as_japan.4.a
+		JAP = { 
+			if = {
+				limit = { has_dlc = "Death or Dishonor" }
+					set_autonomy = { 
+						target = CHI 
+						autonomy_state = autonomy_satellite
+						freedom_level = 0.8		
+					}
+				else = {
+					puppet = CHI		
+				}
+			}
+		}		
+		JAP = { set_state_controller = 594 }
+		JAP = { set_state_controller = 609 }				
+		MEN = {		
+			transfer_state = 612			
+			transfer_state = 611			
+			transfer_state = 615
+			transfer_state = 621			
+			transfer_state = 622
+			transfer_state = 283
+			transfer_state = 615			
+			transfer_state = 616			
+		}
+		every_state = {
+			limit = {
+				is_claimed_by = JAP	
+				is_core_of = CHI
+			}
+			PRC = { 
+				set_state_owner = PREV
+			}
+			JAP = {
+				set_state_controller = PREV
+			}
+		}		
+	}	
+}
+
+# Strategic Military Stockpile (AI)
+country_event = {
+	id = as_japan.5
+	title = as_japan.5.t
+	desc = as_japan.5.d
+	picture = GFX_report_event_japanese_transport_soldiers
+
+	fire_only_once = yes
+	
+	mean_time_to_happen = {
+			days = 150
+	}
+	
+	trigger = {
+		tag = JAP
+		is_ai = yes
+	}
+	
+	option = {
+		name =  as_japan.5.a
+		add_equipment_to_stockpile = {
+				type = light_tank_equipment_1
+				amount = 200
+				producer = JAP
+		}
+		add_equipment_to_stockpile = {
+				type = motorized_equipment_1
+				amount = 1000
+				producer = JAP
+		}
+		add_equipment_to_stockpile = {
+				type = fighter_equipment_1
+				amount = 200
+				producer = JAP
+		}
+		add_equipment_to_stockpile = {
+				type = tac_bomber_equipment_1
+				amount = 250
+				producer = JAP
+		}		
+		add_equipment_to_stockpile = {
+				type = infantry_equipment_1
+				amount = 9000
+				producer = JAP
+		}		
+	}
+}
+
+country_event = {
+	id = as_japan.6
+	title = as_japan.6.t
+	desc = as_japan.6.d
+	picture = GFX_report_event_japanese_transport_soldiers
+
+	fire_only_once = yes
+	
+	mean_time_to_happen = {
+			days = 500
+	}
+	
+	trigger = {
+		tag = JAP
+		is_ai = yes
+		OR = {
+			CHI = { NOT = { is_ai = yes } }		
+			PRC = { NOT = { is_ai = yes } }						
+		}	
+	}
+	
+	option = {
+		name = as_japan.5.a
+		add_equipment_to_stockpile = {
+				type = light_tank_equipment_1
+				amount = 500
+				producer = JAP
+		}
+		add_equipment_to_stockpile = {
+				type = motorized_equipment_1
+				amount = 2000
+				producer = JAP
+		}
+		add_equipment_to_stockpile = {
+				type = fighter_equipment_1
+				amount = 200
+				producer = JAP
+		}		
+		add_equipment_to_stockpile = {
+				type = tac_bomber_equipment_1
+				amount = 250
+				producer = JAP
+		}
+		add_equipment_to_stockpile = {
+				type = infantry_equipment_1
+				amount = 10000
+				producer = JAP
+		}		
+	}
+}	
+
+
+country_event = {
+	id = as_japan.7
+	title = as_japan.7.t
+	desc = as_japan.7.d
+	picture = GFX_report_event_soviet_japanese_pact
+
+	is_triggered_only = yes
+	
+	
+	option = {
+		name = as_japan.7.a # "A good opportunity to secure our northern front"
+		ai_chance = { factor = 10 }		
+		diplomatic_relation = {							
+			country = SOV
+			relation = non_aggression_pact
+			active = yes
+		}		
+		add_opinion_modifier = { target = SOV modifier = border_conflict_reconciled }
+		country_event = { id = as_sov.3 days = 1 }
+	}
+	option = {
+		name = as_japan.7.b # "No deal with the Bolcheviks!"
+		ai_chance = { factor = 0 }
+		country_event = { id = as_sov.4 days = 1 }		
+		655 = { add_claim_by = JAP } # North Sakhalin
+		SOV = { add_opinion_modifier = { target = JAP modifier = embargo } }
+		if = {
+			limit = { 
+					NOT = {
+						CHI = { has_capitulated = yes }
+					}
+			}
+			set_political_power = -200
+			add_timed_idea = { idea = communist_partisans_recruiting days = 550 } 
+		}	
+		hidden_effect = {	
+			set_global_flag = no_sovjap_pact
+		}
+	}	
+}

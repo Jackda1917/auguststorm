@@ -1,0 +1,376 @@
+﻿##### August Storm
+##### USA Events
+
+add_namespace = as_usa
+
+# Operation Torch
+country_event = {
+	id = as_usa.1
+	title = as_usa.1.t
+	desc = as_usa.1.d
+	picture = GFX_report_event_usa_british_sailors_destroyers
+
+	fire_only_once = yes
+	
+	mean_time_to_happen = {
+			days = 5
+	}
+	
+	trigger = {
+		tag = USA
+		is_ai = yes
+		has_war_with = GER
+		is_in_faction_with = ENG
+		ENG = { controls_state = 118 }
+		VIC = { exists = yes }
+		SOV = { 
+			has_war_with = GER
+			surrender_progress > 0.25
+		}
+		NOT = { has_country_flag = usa_operation_torch }
+	}
+	
+	option = {
+		name = as_usa.1.a
+		set_country_flag = usa_operation_torch
+		random_list = {
+			60 = {				
+				load_oob = "USA_torch1"					
+				FRA = {	
+					transfer_state = 461 # Casablanca
+					transfer_state = 459 # Alger
+				    transfer_state = 272 # French Africa				
+					transfer_state = 310 # Guinée
+					transfer_state = 458 # Tunisia
+					transfer_state = 460 # eastern Algeria
+					transfer_state = 462 # Southern Morocco
+					transfer_state = 513 # Southern Algeria
+					transfer_state = 514 # North Africa
+					transfer_state = 515 # Central Africa
+					transfer_state = 539 # Gabon
+					transfer_state = 556 # Ivory Coast
+					transfer_state = 557 # Dakar
+					transfer_state = 660 # Equatorial Africa
+					transfer_state = 665 # Gabes
+				}
+			}
+			30 = {   					
+				load_oob = "USA_torch2"
+				FRA = {	
+				    transfer_state = 461
+					transfer_state = 460
+					transfer_state = 272 # French Africa				
+					transfer_state = 310 # Guinée
+					transfer_state = 458 # Tunisia
+					transfer_state = 459 # western Algeria
+					transfer_state = 462 # Southern Morocco
+					transfer_state = 513 # Southern Algeria
+					transfer_state = 514 # North Africa
+					transfer_state = 515 # Central Africa
+					transfer_state = 539 # Gabon
+					transfer_state = 556 # Ivory Coast
+					transfer_state = 557 # Dakar
+					transfer_state = 660 # Equatorial Africa
+					transfer_state = 665 # Gabes
+				}				
+			}
+			10 = {				
+				load_oob = "USA_torch3"
+				FRA = {
+					transfer_state = 458 # Tunisia
+				    transfer_state = 461					
+				    transfer_state = 272 # French Africa				
+					transfer_state = 310 # Guinée
+					transfer_state = 459 # western Algeria
+					transfer_state = 460 # eastern Algeria
+					transfer_state = 462 # Southern Morocco
+					transfer_state = 513 # Southern Algeria
+					transfer_state = 514 # North Africa
+					transfer_state = 515 # Central Africa
+					transfer_state = 539 # Gabon
+					transfer_state = 556 # Ivory Coast
+					transfer_state = 557 # Dakar
+					transfer_state = 660 # Equatorial Africa
+					transfer_state = 665 # Gabes
+				}				
+			}
+		}				
+	}
+}
+
+# Operation Torch ( Gibraltar is controlled by Axis, pressure on POR )
+country_event = {
+	id = as_usa.2
+	title = as_usa.1.t
+	desc = as_usa.1.d
+	picture = GFX_report_event_usa_british_sailors_destroyers
+
+	fire_only_once = yes
+	
+	mean_time_to_happen = {
+			days = 30
+	}
+	
+	trigger = {
+		tag = USA
+		is_ai = yes
+		has_war_with = GER
+		is_in_faction_with = ENG
+		POR = { exists = yes }
+		any_other_country = {
+			is_in_faction_with = GER
+			controls_state = 118
+		}
+		NOT = { has_country_flag = usa_operation_torch }		
+	}
+	
+	immediate =	{ add_to_faction = POR }
+		
+	option = {
+		name = as_usa.1.a
+		set_country_flag = usa_operation_torch		
+		load_oob = "USA_torch4"					
+	}	
+}
+
+country_event = {
+	id = as_usa.3
+	title = as_usa.3.t
+	desc = as_usa.3.d
+	picture = GFX_report_event_chinese_soldiers
+	
+	fire_only_once = yes
+	
+	mean_time_to_happen = {
+			days = 1
+	}
+		
+	trigger = {
+		tag = USA
+		OR = {
+			CHI = { has_capitulated = yes }
+			CHI = { is_puppet_of = JAP }
+		}
+		has_global_flag = fall_of_nanjing 
+	} 
+
+	option = {
+		name = as_usa.3.a
+		605 = { remove_building = { type = arms_factory level = 5 } } 
+	
+	}
+}	
+
+# Template and Tech events
+country_event = {
+	id = as_usa.4
+	title = as_usa.4.t
+	desc = as_usa.4.d
+	picture = GFX_report_event_usa_british_sailors_destroyers
+	
+	fire_only_once = yes
+
+	mean_time_to_happen = {
+			days = 1
+	}
+	
+	trigger = {
+		tag = USA
+		is_ai = yes
+		NOT = { has_country_flag = usa_armoured_1942 }
+		has_tech = improved_medium_tank 	# Sherman
+	}
+	option = {
+		name = as_usa.4.a
+		ai_chance = { factor = 10 }		
+		set_country_flag = usa_armoured_1942
+		set_technology = { basic_medium_td = 1 }
+		set_technology = { basic_medium_art = 1 }
+		set_technology = { basic_medium_spaa = 1 }
+		set_technology = { mechanised_infantry = 1 }		
+		load_oob = "USA_armoured_1942"		
+	}	
+}
+
+country_event = {
+	id = as_usa.5
+	title = as_usa.5.t
+	desc = as_usa.5.d
+	picture = GFX_report_event_usa_british_sailors_destroyers
+	
+	fire_only_once = yes
+
+	mean_time_to_happen = {
+			days = 1
+	}
+	
+	trigger = {
+		tag = USA
+		is_ai = yes	
+		has_country_flag = usa_armoured_1942
+		NOT = { has_country_flag = usa_mechanized }		
+		has_tech = mechanised_infantry 
+	}
+	option = {
+		name = as_sov.5.a
+		ai_chance = { factor = 10 }		
+		set_country_flag = usa_mechanized
+		set_technology = { improved_medium_td = 1 }
+		set_technology = { improved_medium_art = 1 }
+		set_technology = { improved_medium_spaa = 1 }		
+		load_oob = "USA_mechanized"		
+	}	
+}
+
+country_event = {
+	id = as_usa.6
+	title = as_usa.6.t
+	desc = as_usa.6.d
+	picture = GFX_report_event_usa_british_sailors_destroyers
+	
+	fire_only_once = yes
+
+	mean_time_to_happen = {
+			days = 1
+	}
+	
+	trigger = {
+		tag = USA
+		is_ai = yes		
+		has_tech = advanced_medium_tank
+		OR = {
+			NOT = { has_tech = advanced_medium_td }
+			NOT = { has_tech = advanced_medium_art }
+			NOT = { has_tech = advanced_medium_spaa }		
+		}		
+	}
+	option = {
+		name = as_usa.5.a
+		ai_chance = { factor = 10 }
+		set_technology = { advanced_medium_td = 1 }
+		set_technology = { advanced_medium_art = 1 }
+		set_technology = { advanced_medium_spaa = 1 }		
+	}	
+}
+
+country_event = {
+	id = as_usa.7
+	title = as_usa.7.t
+	desc = as_usa.7.d
+	picture = GFX_report_event_usa_british_sailors_destroyers
+	
+	fire_only_once = yes
+
+	mean_time_to_happen = {
+			days = 10
+	}
+	
+	trigger = {
+		tag = USA
+		is_ai = yes
+		OR = {	
+			has_war_with = GER
+			has_war_with = SOV
+		}
+	}
+	option = {
+		name = as_usa.5.a
+		ai_chance = { factor = 10 }
+			random_owned_controlled_state = {
+				limit = {
+					is_in_home_area = yes								# AS
+					free_building_slots = {
+						building = industrial_complex
+						size > 3
+						include_locked = yes
+					}
+				}
+				add_extra_state_shared_building_slots = 4
+				add_building_construction = {
+					type = industrial_complex
+					level = 4
+					instant_build = yes
+				}
+			}
+			random_owned_controlled_state = {
+				limit = {
+					is_in_home_area = yes								# AS
+					free_building_slots = {
+						building = industrial_complex
+						size > 3
+						include_locked = yes
+					}
+				}
+				add_extra_state_shared_building_slots = 4
+				add_building_construction = {
+					type = industrial_complex
+					level = 4
+					instant_build = yes
+				}
+			}
+			random_owned_controlled_state = {
+				limit = {
+					is_in_home_area = yes								# AS
+					free_building_slots = {
+						building = arms_factory
+						size > 3
+						include_locked = yes
+					}
+				}
+				add_extra_state_shared_building_slots = 4
+				add_building_construction = {
+					type = arms_factory
+					level = 4
+					instant_build = yes
+				}
+			}		
+			random_owned_controlled_state = {
+				limit = {
+					is_in_home_area = yes								# AS
+					free_building_slots = {
+						building = industrial_complex
+						size > 3
+						include_locked = yes
+					}
+				}
+				add_extra_state_shared_building_slots = 4
+				add_building_construction = {
+					type = industrial_complex
+					level = 4
+					instant_build = yes
+				}
+			}
+			random_owned_controlled_state = {
+				limit = {
+					is_in_home_area = yes								# AS
+					free_building_slots = {
+						building = industrial_complex
+						size > 3
+						include_locked = yes
+					}
+				}
+				add_extra_state_shared_building_slots = 4
+				add_building_construction = {
+					type = industrial_complex
+					level = 4
+					instant_build = yes
+				}
+			}
+			random_owned_controlled_state = {
+				limit = {
+					is_in_home_area = yes								# AS
+					free_building_slots = {
+						building = arms_factory
+						size > 3
+						include_locked = yes
+					}
+				}
+				add_extra_state_shared_building_slots = 4
+				add_building_construction = {
+					type = arms_factory
+					level = 4
+					instant_build = yes
+				}
+			}				
+	}	
+}		

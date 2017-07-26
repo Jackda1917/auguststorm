@@ -1,0 +1,8 @@
+﻿units = {
+	division= {	
+		name = "5. SS-Panzer-Division 'Wiking'"
+		location = 6287 # Copenhagen
+		division_template = "SS-Panzer-Division 40"
+		start_experience_factor = 0.6
+	}
+}

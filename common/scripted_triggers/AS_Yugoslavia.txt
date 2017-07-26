@@ -1,0 +1,13 @@
+##### August Storm
+##### Yugoslavia Scripted Triggers
+
+as_is_a_yugoslav_state = {
+	OR = {
+		tag = SER
+		tag = CRO
+		tag = BOS
+		#tag = MTN
+		#tag = SLV
+		#tag = MAC
+	}
+}

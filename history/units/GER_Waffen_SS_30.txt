@@ -1,0 +1,8 @@
+﻿units = {
+	division= {	
+		name = "30. Waffen-Grenadier-Division der SS (Weißruthenische Nr. 1)"
+		location = 3544 # Warsaw
+		division_template = "SS-Grenadier-Division"
+		start_experience_factor = 0.3
+	}
+}

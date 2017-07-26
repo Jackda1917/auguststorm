@@ -1,0 +1,72 @@
+
+state={
+	id=64
+	name="STATE_64"
+	manpower = 6515029
+	buildings_max_level_factor = 1
+
+	state_category = megalopolis
+
+	history={
+		owner = GER
+		add_core_of = GER
+		
+		victory_points = {
+			6521 50 
+		}
+		victory_points = {
+			3522 5 
+		}
+		buildings = {
+			infrastructure = 8
+			arms_factory = 7
+			industrial_complex = 4
+			anti_air_building = 2
+			air_base = 6
+
+		}
+
+		1939.1.1 = {
+			buildings = {
+				air_base = 10
+				anti_air_building = 5
+				arms_factory = 10
+				industrial_complex = 7
+			}
+		}
+		
+		1945.5.2 = {
+			controller = SOV
+		}
+		
+		# German Surrender
+		1945.5.8 = {
+			owner = SOV
+		}
+		
+		# Federal Republic of Germany
+		1949.5.23 = {
+			add_core_of = WGR
+		}
+
+		# German Democratic Republic
+		1949.10.7 = {
+			owner = DDR
+			controller = DDR
+			add_core_of = DDR
+			remove_core_of = GER
+		}
+
+		# German Reunification Treaty
+		1990.10.3 = {
+			owner = WGR
+			controller = WGR
+			remove_core_of = DDR
+		}
+	}
+
+	provinces={
+		375 3367 3499 6521 9428 9456 11219 11444 11505 478 9496 11415
+		3207
+	}
+}

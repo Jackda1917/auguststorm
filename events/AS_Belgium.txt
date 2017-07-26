@@ -1,0 +1,39 @@
+﻿##### August Storm
+##### Belgium Events
+
+add_namespace = as_belgium
+
+# The Neutrality of Belgium
+country_event = {
+	id = as_belgium.1
+	title = as_belgium.1.title
+	desc = as_belgium.1.desc
+	picture = GFX_report_event_german_troops
+
+	fire_only_once = yes
+
+	trigger = {
+		tag = BEL
+		GER = {
+			NOT = { has_government = democratic }
+		}
+		28 = { is_core_of = GER } # Alsace
+		as_germany_rhineland_demilitarized = no
+	}
+
+	mean_time_to_happen = {
+		days = 30
+	}
+	
+	option = {
+		name = as_belgium.1.option_a
+		ai_chance = { factor = 100 }
+		ENG = { remove_from_faction = BEL }
+		complete_national_focus = neutrality_focus
+	}
+	
+	option = {
+		name = as_belgium.1.option_b
+		ai_chance = { factor = 0 }
+	}
+}

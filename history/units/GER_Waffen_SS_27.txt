@@ -1,0 +1,8 @@
+﻿units = {
+	division= {	
+		name = "27. SS-Freiwilligen-Grenadier-Division 'Langemark'"
+		location = 516 # Brussels
+		division_template = "SS-Grenadier-Division"
+		start_experience_factor = 0.4
+	}
+}

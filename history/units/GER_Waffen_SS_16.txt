@@ -1,0 +1,8 @@
+﻿units = {
+	division= {	
+		name = "16. SS-Panzergrenadier-Division 'Reichsführer SS'"
+		location = 3780 # Milan
+		division_template = "SS-Panzergrenadier-Division"
+		start_experience_factor = 0.5
+	}
+}

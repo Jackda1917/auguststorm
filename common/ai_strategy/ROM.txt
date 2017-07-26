@@ -1,0 +1,48 @@
+# befriend
+# conquer
+# antagonize
+# build_ship
+# build_army
+# unit_ratio
+# build_building
+# research_tech
+# garrison
+# protect
+# influence
+
+
+romanian_oil = {
+	enable = {
+		original_tag = ROM
+		date > 1936.1.1
+	}
+	abort = {
+		original_tag = ROM	
+		NOT = { 
+			date > 1936.1.1
+		}
+	}
+	ai_strategy = {
+		type = research_tech
+		id = "construction1"			
+		value = 300
+	}
+	
+	ai_strategy = {
+		type = research_tech
+		id = "excavation1"			
+		value = 300
+	}
+	
+	ai_strategy = {
+		type = research_tech
+		id = "construction2"			
+		value = 300
+	}
+	
+	ai_strategy = {
+		type = research_tech
+		id = "excavation2"			
+		value = 300
+	}	
+}

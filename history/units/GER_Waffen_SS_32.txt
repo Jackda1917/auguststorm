@@ -1,0 +1,8 @@
+﻿units = {
+	division= {	
+		name = "32. SS-Freiwilligen-Grenadier-Division '30. Januar'"
+		location = 6521 # Berlin
+		division_template = "SS-Grenadier-Division"
+		start_experience_factor = 0.1						# Almost no military instruction
+	}
+}

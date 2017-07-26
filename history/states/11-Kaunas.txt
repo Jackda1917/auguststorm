@@ -1,0 +1,52 @@
+
+state={
+	id=11
+	name="STATE_11"
+	manpower = 1353130
+	
+	state_category = town
+	
+	history={
+		owner = RUS
+		add_core_of = LIT
+		add_core_of = RUS
+
+		victory_points = {
+			6296 5
+		}
+		buildings = {
+			infrastructure = 5
+			arms_factory = 1
+			industrial_complex = 3
+			air_base = 4
+		}
+		
+		# Treaty of Brest-Litovsk
+		1918.3.3 = {
+			remove_core_of = RUS
+		}
+
+		1918.2.16 = {
+			owner = LIT
+		}
+
+		1940.8.3 = {
+			owner = SOV
+			add_core_of = SOV
+		}
+		
+		1991.3.11 = {
+			owner = LIT
+			remove_core_of = SOV
+			add_claim_by = SOV
+		}
+		
+		1991.9.6 = {
+			remove_claim_by = SOV
+		}
+	}
+
+	provinces={
+		327 3272 6281 6296 6407 9246 9357 9374 9404 9438 11226 11312 11498 
+	}
+}

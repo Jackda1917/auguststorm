@@ -1,0 +1,312 @@
+##### August Storm
+##### Production Scripted Triggers
+
+as_hyper_power_production_maxed = {
+	num_of_factories > 499
+	OR = {
+		OR = {
+			has_army_size = { type = infantry size > 549 }
+			AND = {
+				has_government = democratic
+				NOT = { any_neighbor_country = { NOT = { has_government = democratic } } }
+				has_army_size = { type = infantry size > 199 }
+			}
+		}
+		AND = {
+			has_war = no
+			threat < 0.1
+			NOT = { any_neighbor_country = { NOT = { has_government = communism } } }
+			has_government = communism
+			has_army_size = { type = infantry size > 399 }
+		}
+		AND = {
+			has_war = no
+			threat < 0.2
+			NOT = { any_neighbor_country = { NOT = { has_government = democratic } } }
+			OR = {
+				has_government = fascism
+				has_government = neutrality
+			}
+			has_army_size = { type = infantry size > 249 }
+		}
+		AND = {
+			has_war = no
+			threat < 0.3
+			NOT = { any_neighbor_country = { NOT = { has_government = democratic } } }
+			has_government = democratic
+			has_army_size = { type = infantry size > 49 }
+		}
+	}
+}
+
+as_super_power_production_maxed = {
+	num_of_factories < 500
+	num_of_factories > 399
+	OR = {
+		OR = {
+			has_army_size = { type = infantry size > 499 }
+			AND = {
+				has_government = democratic
+				NOT = { any_neighbor_country = { NOT = { has_government = democratic } } }
+				has_army_size = { type = infantry size > 159 }
+			}
+		}
+		AND = {
+			has_war = no
+			threat < 0.1
+			NOT = { any_neighbor_country = { NOT = { has_government = communism } } }
+			has_government = communism
+			has_army_size = { type = infantry size > 319 }
+		}
+		AND = {
+			has_war = no
+			threat < 0.2
+			NOT = { any_neighbor_country = { NOT = { has_government = democratic } } }
+			OR = {
+				has_government = fascism
+				has_government = neutrality
+			}
+			has_army_size = { type = infantry size > 199 }
+		}
+		AND = {
+			has_war = no
+			threat < 0.3
+			NOT = { any_neighbor_country = { NOT = { has_government = democratic } } }
+			has_government = democratic
+			has_army_size = { type = infantry size > 39 }
+		}
+	}
+}
+
+as_great_power_production_maxed = {
+	num_of_factories < 400
+	num_of_factories > 299
+	OR = {
+		OR = {
+			has_army_size = { type = infantry size > 449 }
+			AND = {
+				has_government = democratic
+				NOT = { any_neighbor_country = { NOT = { has_government = democratic } } }
+				has_army_size = { type = infantry size > 119 }
+			}
+		}
+		AND = {
+			has_war = no
+			threat < 0.1
+			NOT = { any_neighbor_country = { NOT = { has_government = communism } } }
+			has_government = communism
+			has_army_size = { type = infantry size > 239 }
+		}
+		AND = {
+			has_war = no
+			threat < 0.2
+			NOT = { any_neighbor_country = { NOT = { has_government = democratic } } }
+			OR = {
+				has_government = fascism
+				has_government = neutrality
+			}
+			has_army_size = { type = infantry size > 149 }
+		}
+		AND = {
+			has_war = no
+			threat < 0.3
+			NOT = { any_neighbor_country = { NOT = { has_government = democratic } } }
+			has_government = democratic
+			has_army_size = { type = infantry size > 29 }
+		}
+	}
+}
+
+as_major_power_production_maxed = {
+	num_of_factories < 300
+	num_of_factories > 199
+	OR = {
+		OR = {
+			has_army_size = { type = infantry size > 299 }
+			AND = {
+				has_government = democratic
+				NOT = { any_neighbor_country = { NOT = { has_government = democratic } } }
+				has_army_size = { type = infantry size > 79 }
+			}
+		}
+		AND = {
+			has_war = no
+			threat < 0.1
+			NOT = { any_neighbor_country = { NOT = { has_government = communism } } }
+			has_government = communism
+			has_army_size = { type = infantry size > 159 }
+		}
+		AND = {
+			has_war = no
+			threat < 0.2
+			NOT = { any_neighbor_country = { NOT = { has_government = democratic } } }
+			OR = {
+				has_government = fascism
+				has_government = neutrality
+			}
+			num_divisions > 99
+		}
+		AND = {
+			has_war = no
+			threat < 0.3
+			NOT = { any_neighbor_country = { NOT = { has_government = democratic } } }
+			has_government = democratic
+			has_army_size = { type = infantry size > 19 }
+		}
+	}
+}
+
+as_middle_power_production_maxed = {
+	num_of_factories < 200
+	num_of_factories > 99
+	OR = {
+		OR = {
+			has_army_size = { type = infantry size > 199 }
+			AND = {
+				has_government = democratic
+				NOT = { any_neighbor_country = { NOT = { has_government = democratic } } }
+				has_army_size = { type = infantry size > 39 }
+			}
+		}
+		AND = {
+			has_war = no
+			threat < 0.1
+			NOT = { any_neighbor_country = { NOT = { has_government = communism } } }
+			has_government = communism
+			has_army_size = { type = infantry size > 79 }
+		}
+		AND = {
+			has_war = no
+			threat < 0.2
+			NOT = { any_neighbor_country = { NOT = { has_government = democratic } } }
+			OR = {
+				has_government = fascism
+				has_government = neutrality
+			}
+			has_army_size = { type = infantry size > 49 }
+		}
+		AND = {
+			has_war = no
+			threat < 0.3
+			NOT = { any_neighbor_country = { NOT = { has_government = democratic } } }
+			has_government = democratic
+			has_army_size = { type = infantry size > 9 }
+		}
+	}
+}
+
+as_minor_power_production_maxed = {
+	num_of_factories < 100
+	num_of_factories > 49
+	OR = {
+		OR = {
+			num_divisions > 99
+			AND = {
+				has_government = democratic
+				NOT = { any_neighbor_country = { NOT = { has_government = democratic } } }
+				has_army_size = { type = infantry size > 23 }
+			}
+		}
+		AND = {
+			has_war = no
+			threat < 0.1
+			NOT = { any_neighbor_country = { NOT = { has_government = communism } } }
+			has_government = communism
+			has_army_size = { type = infantry size > 35 }
+		}
+		AND = {
+			has_war = no
+			threat < 0.2
+			NOT = { any_neighbor_country = { NOT = { has_government = democratic } } }
+			OR = {
+				has_government = fascism
+				has_government = neutrality
+			}
+			has_army_size = { type = infantry size > 23 }
+		}
+		AND = {
+			has_war = no
+			threat < 0.3
+			NOT = { any_neighbor_country = { NOT = { has_government = democratic } } }
+			has_government = democratic
+			has_army_size = { type = infantry size > 5 }
+		}
+	}
+}
+
+as_micro_power_production_maxed = {
+	num_of_factories < 50
+	num_of_factories > 24
+	OR = {
+		OR = {
+			has_army_size = { type = infantry size > 49 }
+			AND = {
+				has_government = democratic
+				NOT = { any_neighbor_country = { NOT = { has_government = democratic } } }
+				has_army_size = { type = infantry size > 11 }
+			}
+		}
+		AND = {
+			has_war = no
+			threat < 0.1
+			NOT = { any_neighbor_country = { NOT = { has_government = communism } } }
+			has_government = communism
+			has_army_size = { type = infantry size > 17 }
+		}
+		AND = {
+			has_war = no
+			threat < 0.2
+			NOT = { any_neighbor_country = { NOT = { has_government = democratic } } }
+			OR = {
+				has_government = fascism
+				has_government = neutrality
+			}
+			has_army_size = { type = infantry size > 11 }
+		}
+		AND = {
+			has_war = no
+			threat < 0.3
+			NOT = { any_neighbor_country = { NOT = { has_government = democratic } } }
+			has_government = democratic
+			has_army_size = { type = infantry size > 2 }
+		}
+	}
+}
+
+as_nano_power_production_maxed = {
+	num_of_factories < 25
+	OR = {
+		OR = {
+			has_army_size = { type = infantry size > 14 }
+			AND = {
+				has_government = democratic
+				NOT = { any_neighbor_country = { NOT = { has_government = democratic } } }
+				has_army_size = { type = infantry size > 7 }
+			}
+		}
+		AND = {
+			has_war = no
+			threat < 0.1
+			NOT = { any_neighbor_country = { NOT = { has_government = communism } } }
+			has_government = communism
+			has_army_size = { type = infantry size > 8 }
+		}
+		AND = {
+			has_war = no
+			threat < 0.2
+			NOT = { any_neighbor_country = { NOT = { has_government = democratic } } }
+			OR = {
+				has_government = fascism
+				has_government = neutrality
+			}
+			has_army_size = { type = infantry size > 5 }
+		}
+		AND = {
+			has_war = no
+			threat < 0.3
+			NOT = { any_neighbor_country = { NOT = { has_government = democratic } } }
+			has_government = democratic
+			has_army_size = { type = infantry size > 1 }
+		}
+	}
+}

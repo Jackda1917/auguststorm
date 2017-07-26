@@ -1,0 +1,200 @@
+﻿##### August Storm
+##### Silent Events
+
+add_namespace = as_ai_buildings
+
+
+# Defence of the industry
+country_event = {															
+	id = as_ai_buildings.1
+	title = as_ai_buildings.1.title
+	desc = as_ai_buildings.1.desc
+	picture = GFX_report_event_german_politician_speech
+	
+	hidden = yes
+	
+	trigger = {
+		is_ai = yes
+		has_war = yes
+		num_of_factories > 30
+		has_civil_war = no	
+		any_owned_state = {
+			anti_air_building < 1
+			OR = {
+				radar_station > 0			
+				arms_factory > 4
+				synthetic_refinery > 1
+				air_base > 9
+				industrial_complex > 6
+				rocket_site > 0
+				nuclear_reactor > 0
+			}			
+		}
+	}
+	
+	mean_time_to_happen = {
+		days = 200
+	}
+	
+	option = {
+		name = as_ai_buildings.option_a
+		ai_chance = { factor = 100 }
+		random_owned_controlled_state = {
+			limit = {
+				NOT = { has_state_flag = aa_defence_ai }
+				NOT = { anti_air_building > 0 }
+				NOT = {
+					is_core_of = SOV
+					is_on_continent = asia
+				}
+				OR = {	
+					radar_station > 0				
+					arms_factory > 4
+					synthetic_refinery > 1
+					air_base > 9
+					industrial_complex > 6
+					rocket_site > 0
+					nuclear_reactor > 0
+				}
+			}
+			add_building_construction = {
+				type = anti_air_building
+				level = 5
+				instant_build = yes
+			}
+			set_state_flag = aa_defence_ai
+		}
+	}
+}
+
+# RADARS
+country_event = {															
+	id = as_ai_buildings.2
+	title = as_ai_buildings.2.title
+	desc = as_ai_buildings.2.desc
+	picture = GFX_report_event_german_politician_speech
+	
+	hidden = yes
+	
+	trigger = {
+		is_ai = yes
+		has_war = yes
+		num_of_factories > 30
+		has_civil_war = no
+		has_tech = decimetric_radar
+		any_owned_state = {
+			radar_station < 1
+			OR = {	
+				anti_air_building > 4
+				arms_factory > 4
+				synthetic_refinery > 1
+				air_base > 9
+				industrial_complex > 6
+				rocket_site > 0
+				nuclear_reactor > 0
+			}			
+		}
+	}
+	
+	mean_time_to_happen = {
+		days = 200
+	}
+	
+	option = {
+		name = as_ai_buildings.option_a
+		ai_chance = { factor = 100 }
+		random_owned_controlled_state = {
+			limit = {
+				NOT = { has_state_flag = aa_radar_ai }
+				NOT = { radar_station > 0 }
+				NOT = {
+					is_core_of = SOV
+					is_on_continent = asia
+				}
+				OR = {	
+					anti_air_building > 4
+					arms_factory > 4
+					synthetic_refinery > 1
+					air_base > 9
+					industrial_complex > 6
+					rocket_site > 0
+					nuclear_reactor > 0
+				}
+			}
+			add_building_construction = {
+				type = radar_station
+				level = 1
+				instant_build = yes
+			}
+			set_state_flag = aa_radar_ai
+		}
+	}
+}
+
+# RADARS3
+country_event = {															
+	id = as_ai_buildings.3
+	title = as_ai_buildings.3.title
+	desc = as_ai_buildings.3.desc
+	picture = GFX_report_event_german_politician_speech
+	
+	hidden = yes
+	
+	trigger = {
+		is_ai = yes
+		has_war = yes
+		num_of_factories > 30
+		has_civil_war = no
+		has_tech = centimetric_radar
+		any_owned_state = {
+			OR = {	
+				radar_station > 0
+				has_state_flag = aa_radar_ai
+			}
+			OR = {	
+				anti_air_building > 4
+				arms_factory > 4
+				synthetic_refinery > 1
+				air_base > 9
+				industrial_complex > 6
+				rocket_site > 0
+				nuclear_reactor > 0
+			}			
+		}
+	}
+	
+	mean_time_to_happen = {
+		days = 100
+	}
+	
+	option = {
+		name = as_ai_buildings.option_a
+		ai_chance = { factor = 100 }
+		random_owned_controlled_state = {
+			limit = {
+				NOT = { has_state_flag = aa_radar3_ai }
+				NOT = { radar_station > 1 }
+				NOT = {
+					is_core_of = SOV
+					is_on_continent = asia
+				}
+				radar_station > 0
+				OR = {	
+					anti_air_building > 4
+					arms_factory > 4
+					synthetic_refinery > 1
+					air_base > 9
+					industrial_complex > 6
+					rocket_site > 0
+					nuclear_reactor > 0
+				}
+			}
+			add_building_construction = {
+				type = radar_station
+				level = 2
+				instant_build = yes
+			}
+			set_state_flag = aa_radar3_ai
+		}
+	}
+}

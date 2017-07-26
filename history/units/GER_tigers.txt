@@ -1,0 +1,30 @@
+﻿division_template = {
+		name = "Schwere Panzer-Abteilung"  	
+		regiments = {
+			heavy_armor = { x = 0 y = 0 }   
+			medium_tank_destroyer_brigade = { x = 0 y = 1 } 		
+		}
+		support = {
+			maintenance_company = { x = 0 y = 0 }
+			engineer = { x = 0 y = 1 }
+			anti_air = { x = 0 y = 2 }
+			logistics_company = { x = 0 y = 3 }
+			signal_company = { x = 0 y = 4 }
+		}
+	priority = 2
+} 
+	
+units = {
+	division= {
+		name = "s.Pz.Abt. 501"
+		location = 6521 # Berlin
+		division_template = "Schwere Panzer-Abteilung"
+		start_experience_factor = 0.6
+	}
+	division= {
+		name = "s.Pz.Abt. 502"
+		location = 6521 # Berlin
+		division_template = "Schwere Panzer-Abteilung"
+		start_experience_factor = 0.6
+	}	
+}

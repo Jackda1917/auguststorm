@@ -1,0 +1,11 @@
+﻿l_english:
+ MODIFIER_XP_GAIN_ARMY_UNIT:0 "Unit Experience Gain"
+ MODIFIER_XP_GAIN_ARMY_UNIT_FACTOR:0 "Unit Experience Gain"
+ MODIFIER_TRAINING_TIME_ARMY:0 "Unit training time"
+ MODIFIER_TRAINING_TIME_ARMY_FACTOR:0 "Unit training time"
+ MODIFIER_ARMY_SPEED_FACTOR:0 "Units speed"
+ MODIFIER_ARMY_SPEED_FACTOR_DESC:0 "Determines the speed at which our units move."
+ MODIFIER_ARMY_ORG:0 "Unit Organization"
+ MODIFIER_ARMY_ORG_FACTOR:0 "Unit Organization"
+ MODIFIER_ARMY_MORALE:0 "Unit Recovery Rate"
+ MODIFIER_ARMY_MORALE_FACTOR:0 "Unit Recovery Rate"

@@ -1,0 +1,46 @@
+state={
+	id=748
+	name="STATE_748" # Pomorskie
+	manpower = 730100
+	
+	state_category = town
+
+	history = {
+		owner = POL
+		controller = POL
+		add_core_of = POL
+		
+		victory_points = {
+			9263 1
+		}
+		
+		buildings = {
+			infrastructure = 6
+			arms_factory = 2
+			industrial_complex = 1
+			dockyard = 1
+			air_base = 3
+			9263 = {
+				naval_base = 3
+			}
+		}
+		
+		1945.4.4 = {
+			controller = SOV
+		}
+		
+		1945.5.8 = {
+			owner = SOV
+		}
+		
+		1945.8.1 = {
+			owner = POL
+			controller = POL
+			add_core_of = POL
+		}
+	}
+
+	provinces = {
+		279 334 389 3295 3324 6347 9263 
+	}
+}

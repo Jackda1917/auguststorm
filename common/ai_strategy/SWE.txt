@@ -1,0 +1,20 @@
+##### August Storm
+##### Sweden AI Strategy
+
+##### Diplomacy
+
+germany_trading = {
+	enable = {
+		tag = SWE
+		country_exists = GER
+	}
+	abort = {
+		NOT = { is_in_faction = yes }
+	}
+	
+	ai_strategy = {
+		type = befriend
+		id = "GER"			
+		value = 200
+	}	
+}

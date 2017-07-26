@@ -1,0 +1,8 @@
+﻿units = {
+	division= {	
+		name = "25. Waffen-Grenadier-Division der SS 'Hunyadi' (ungarische Nr. 1)"
+		location = 9660 # Budapest
+		division_template = "SS-Grenadier-Division"
+		start_experience_factor = 0.3
+	}
+}

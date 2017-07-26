@@ -1,0 +1,41 @@
+state={
+	id=85
+	name="STATE_85"
+	manpower = 350000
+	
+	state_category = city
+	history={
+		owner = POL
+		controller = POL
+		add_core_of = POL
+
+		victory_points = {
+			362 10
+		}
+		buildings = {
+			infrastructure = 6
+			dockyard = 1
+			362 = {
+				naval_base = 5
+			}
+		}
+		
+		1945.3.31 = {
+			controller = SOV
+		}
+		
+		1945.5.8 = {
+			owner = SOV
+		}
+		
+		1945.8.1 = {
+			owner = POL
+			controller = POL
+			add_core_of = POL
+		}
+	}
+
+	provinces={
+		362
+	}
+}

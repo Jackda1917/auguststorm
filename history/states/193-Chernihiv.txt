@@ -1,0 +1,47 @@
+
+state={
+	id=193
+	name="STATE_193" # Chernihiv
+	manpower = 1373637
+	
+	state_category = city
+
+	history={
+		owner = RUS
+		add_core_of = RUS
+		
+		buildings = {
+			infrastructure = 5
+			air_base = 8
+		}
+		
+		# Ukrainian People's Republic
+		1917.11.8 = {
+			owner = UKR
+			add_core_of = UKR
+			remove_core_of = RUS
+		}
+		
+		# Union of Soviet Socialist Republics
+		1922.12.30 = {
+			owner = SOV
+			add_core_of = SOV
+		}
+		
+		# Independence declared
+		1991.8.24 = {
+			owner = UKR
+			remove_core_of = SOV
+			add_claim_by = SOV
+		}
+
+		# Independence recognized
+		1991.12.2 = {
+			remove_claim_by = SOV
+		}
+	}
+
+	provinces={
+		238 546 3480 3542 3568 3584 6458 6508 6532 6589 9437 9506 11425 11489 
+	}
+}

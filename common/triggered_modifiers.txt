@@ -1,0 +1,20 @@
+############################### AS ################################
+
+Med_arms_template = {
+
+	potential = {
+		TAG = GER
+		is_ai = yes
+		exists = yes
+		has_tech = basic_medium_tank
+		land_doctrine_level = 2
+	}
+	
+	trigger = {
+		GER_med_arms_template = yes
+	}
+
+	effect = {
+		GER_med_arms_template_effect = yes
+	}
+}

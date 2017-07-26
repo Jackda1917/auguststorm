@@ -1,0 +1,193 @@
+﻿##### August Storm
+##### France Events
+
+add_namespace = as_france
+
+# The Hatay Province
+country_event = {
+	id = as_france.1
+	title = as_france.1.title
+	desc = as_france.1.desc
+	picture = GFX_report_event_german_politician_speech
+	
+	fire_only_once = yes
+	
+	trigger = {
+		tag = FRA
+		NOT = { has_war_with = TUR }
+		SYR = { is_puppet_of = FRA }
+		747 = { OR = { is_owned_by = SYR is_owned_by = FRA } } # Hatay
+		date > 1939.6.28 # Historical 1939.6.29
+	}
+	
+	mean_time_to_happen = {
+		days = 0
+	}
+	
+	option = {
+		name = as_france.1.option_a
+		ai_chance = { factor = 100 }
+		TUR = {
+			transfer_state = 747 # Hatay
+			add_named_threat = { threat = 1 name = as_france.1.title }
+		}
+	}
+	
+	option = {
+		name = as_france.1.option_b
+		ai_chance = { factor = 0 }
+	}
+}
+
+country_event = {
+	id = as_france.2
+	title = as_france.2.title
+	desc = as_france.2.desc
+	picture = GFX_report_event_german_politician_speech
+	
+	fire_only_once = yes
+	
+	trigger = {
+		tag = FRA
+		is_ai = yes
+		OR = {	
+			has_war_with = GER
+			has_global_flag = end_of_czechoslovakia
+		}
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	option = {
+		name = as_france.2.option_a
+		ai_chance = { factor = 100 }
+			add_equipment_to_stockpile = {
+					type = infantry_equipment_1
+					amount = 30000
+					producer = FRA
+			}		
+			random_owned_controlled_state = {
+				limit = {
+					is_in_home_area = yes								# AS
+					free_building_slots = {
+						building = arms_factory
+						size > 2
+						include_locked = yes
+					}
+				}
+				add_extra_state_shared_building_slots = 3
+				add_building_construction = {
+					type = arms_factory
+					level = 3
+					instant_build = yes
+				}
+			}
+			random_owned_controlled_state = {
+				limit = {
+					is_in_home_area = yes								# AS
+					free_building_slots = {
+						building = arms_factory
+						size > 2
+						include_locked = yes
+					}
+				}
+				add_extra_state_shared_building_slots = 3
+				add_building_construction = {
+					type = arms_factory
+					level = 3
+					instant_build = yes
+				}
+			}
+			random_owned_controlled_state = {
+				limit = {
+					is_in_home_area = yes								# AS
+					free_building_slots = {
+						building = arms_factory
+						size > 2
+						include_locked = yes
+					}
+				}
+				add_extra_state_shared_building_slots = 3
+				add_building_construction = {
+					type = arms_factory
+					level = 3
+					instant_build = yes
+				}
+			}
+			random_owned_controlled_state = {
+				limit = {
+					is_in_home_area = yes								# AS
+					free_building_slots = {
+						building = arms_factory
+						size > 2
+						include_locked = yes
+					}
+				}
+				add_extra_state_shared_building_slots = 3
+				add_building_construction = {
+					type = arms_factory
+					level = 3
+					instant_build = yes
+				}
+			}				
+	}
+}
+
+country_event = {
+	id = as_france.3
+	title = as_france.3.title
+	desc = as_france.3.desc
+	picture = GFX_report_event_german_politician_speech
+	
+	fire_only_once = yes
+	
+	hidden = yes
+	
+	trigger = {
+		original_tag = FRA
+		has_government = democratic
+		16 = { NOT = { is_controlled_by = FRA } }
+		has_war_with = GER
+		SOV = { has_war_with = GER }
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	option = {
+		name = as_france.2.option_a
+		ai_chance = { factor = 100 }
+		if = {
+			limit = {
+				has_idea = FRA_communism_banned 
+			}
+			remove_ideas = FRA_communism_banned 
+		}		
+		if = {
+			limit = {
+				SOV = { has_government = communism }
+			}
+			ROOT = { 
+				add_popularity = {
+					ideology = communism
+					popularity = 0.25
+				} 
+			}
+		}
+		if = {
+			limit = {
+				SOV = { has_government = revolutionary }
+			}
+			ROOT = { 
+				add_popularity = {
+					ideology = revolutionary
+					popularity = 0.15
+				} 
+			}
+		}		
+	}	
+}		
+			

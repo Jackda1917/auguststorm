@@ -1,0 +1,53 @@
+state={
+	id=404
+	name="STATE_404" # Kzyl Orda
+	manpower = 667036
+	
+	state_category = wasteland
+
+	history={
+		owner = RUS
+		add_core_of = KAZ
+		add_core_of = RUS
+		
+		buildings = {
+			infrastructure = 1
+		}
+
+		# Kazakh Autonomous Soviet Socialist Republic
+		1920.8.26 = {
+			owner = KAZ
+			add_core_of = KAZ
+			remove_core_of = RUS
+			add_claim_by = RUS
+		}
+
+		# Union of Soviet Socialist Republics
+		1922.12.30 = {
+			owner = SOV
+			add_core_of = SOV
+		}
+
+		# Kazakh Soviet Socialist Republic
+		#1936.12.5 = { make event for this
+		1936.1.1 = {
+			remove_claim_by = RUS
+		}
+
+		# Independence declared
+		1991.12.10 = {
+			owner = KAZ
+			remove_core_of = SOV
+			add_claim_by = SOV
+		}
+
+		# Independence recognized
+		1991.12.16 = {
+			remove_claim_by = SOV
+		}
+	}
+
+	provinces={
+		1243 1312 1382 1402 4250 4277 4389 4492 4595 7335 7392 7556 7597 7600 7657 10179 10220 10268 10275 10277 10452 10506 10508 10603 12111 12121 12177 12194 12329 12340 12385 12397 12487 12658 
+	}
+}

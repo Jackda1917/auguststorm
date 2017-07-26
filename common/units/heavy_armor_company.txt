@@ -1,0 +1,86 @@
+sub_units = {
+	heavy_armor_company = {
+		sprite = heavy_armor
+		map_icon_category = armored
+		priority = 0
+	    ai_priority = 0
+		active = yes
+		training_time = 180
+
+		type = {
+			armor
+			support
+		}
+		
+		group = support
+		
+		categories = {
+			category_tanks
+			category_front_line
+			category_all_armor
+			category_army
+			category_support_battalions
+		}
+
+		forest = {
+		    attack = -0.40
+			movement = -0.40
+		}
+		hills = {
+		    attack = -0.20
+			movement = -0.20 # none			
+		}
+		mountain = 	{
+		    attack = -0.3
+			defence = -0.6 # none	
+			movement = -0.4 # none			
+		}
+		jungle = {
+		    attack = -0.6
+			defence = -0.5 # none			
+			movement = -0.4
+		}
+		marsh = {
+		    attack = -0.4 
+			defence = -0.2 # none				
+			movement = -0.3 # -0.2
+		}
+		urban = {
+			attack = -0.5
+			defence = -0.3 # -0.2
+		}
+		river = { 
+			attack = -0.3 # -0.4 
+			movement = -0.4
+		}
+		amphibious = { 
+			attack = -0.8 
+		}
+		fort = {
+			attack = 0.25 # none
+		}
+
+		combat_width = 1
+
+		need = {
+			heavy_tank_equipment = 16 
+		}
+
+		manpower = 500
+		max_organisation = 5
+		default_morale = 0.3
+		max_strength = 1
+		weight = 0.75
+		
+		supply_consumption = 0.2 
+
+		# Support nerfs to combat abilities
+		defense = -0.5
+		breakthrough = -0.5
+		soft_attack = -0.5
+		hard_attack = -0.5		
+		
+		#Tanks are awesome
+		soft_attack = 0.3  
+	}
+}

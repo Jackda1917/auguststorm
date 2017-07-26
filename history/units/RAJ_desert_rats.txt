@@ -1,0 +1,35 @@
+﻿division_template = {
+	name = "Indian Large Division"
+
+	regiments = {
+		infantry = { x = 0 y = 0 }
+		infantry = { x = 0 y = 1 }
+		infantry = { x = 0 y = 2 }
+		infantry = { x = 1 y = 0 }
+		infantry = { x = 1 y = 1 }
+		infantry = { x = 1 y = 2 }
+		infantry = { x = 2 y = 0 }
+		infantry = { x = 2 y = 1 }
+		infantry = { x = 2 y = 2 }
+		infantry = { x = 3 y = 0 }
+		infantry = { x = 3 y = 1 }
+		infantry = { x = 3 y = 2 }		
+	}
+priority = 0
+}
+
+units = {
+	##### Special forces spawned for ENG AI if war with ITA #####
+	division= {
+		name = "4th Indian Division"
+		location = 9989 # Alexandria
+		division_template = "Indian Large Division"
+		start_experience_factor = 0.3
+	}
+}
+
+
+
+
+
+

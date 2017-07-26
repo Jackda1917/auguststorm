@@ -1,0 +1,4 @@
+﻿l_english:
+ MANPOWER_DIVISION:0 "Unit Manpower"
+ EQUIPMENT_DIVISION_DESC:0 "Shows how unit is filled with needed equipment."
+ DIVISION_IN_TEMPLATE_TRANSFER:0 "Unit is currently reorganizing from $OLD|H$ to $NEW|H$ template. The reorganization will be complete when the first needed equipment is delivered and old equipment will then be returned to stockpile."

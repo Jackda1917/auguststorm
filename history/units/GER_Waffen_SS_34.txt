@@ -1,0 +1,8 @@
+﻿units = {
+	division= {	
+		name = "34. SS-Freiwilligen-Grenadier-Division 'Landstorm Nederland'"
+		location = 391 # Amsterdam
+		division_template = "SS-Grenadier-Division"
+		start_experience_factor = 0.4
+	}
+}

@@ -1,0 +1,33 @@
+
+state={
+	id=747
+	name="STATE_747" # Hatay
+	manpower = 300000
+	
+	state_category = town
+	
+	history = {
+		owner = FRA
+		controller = FRA
+		add_core_of = SYR
+		add_core_of = TUR
+
+		buildings = {
+			infrastructure = 3
+		}
+
+		1930.5.14 = {
+			owner = SYR
+			controller = SYR
+		}
+
+		1938.9.2 = {
+			owner = TUR
+			controller = TUR
+		}
+	}
+	
+	provinces = {
+		12029
+	}
+}

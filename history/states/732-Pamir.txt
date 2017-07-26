@@ -1,0 +1,53 @@
+state={
+	id=732
+	name="STATE_732"
+	
+	state_category = wasteland
+
+	history={
+		owner = RUS
+		add_core_of = KYR
+		add_core_of = RUS
+
+		buildings = {
+			infrastructure = 1
+		}
+
+		# Turkestan Autonomous Soviet Socialist Republic
+		1918.4.30 = {
+			owner = KYR
+			add_core_of = KYR
+			remove_core_of = RUS
+			add_claim_by = RUS
+		}
+
+		# Union of Soviet Socialist Republics
+		1922.12.30 = {
+			owner = SOV
+			add_core_of = SOV
+		}
+
+		# Kirghiz Soviet Socialist Republic
+		#1936.12.5 = { make event for this
+		1936.1.1 = {
+			remove_claim_by = RUS
+		}
+		
+		# Independence declared
+		1991.8.31 = {
+			owner = KYR
+			remove_core_of = SOV
+			add_claim_by = SOV
+		}
+
+		# Independence recognized
+		1991.12.25 = {
+			remove_claim_by = SOV
+		}
+	}
+
+	provinces={
+		1483 1675 4316 4391 4467 4768 4923 5062 10408 10530 12370 12511 
+	}
+	manpower=450000
+}

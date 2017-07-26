@@ -1,0 +1,1838 @@
+armored_GER = {
+
+	available_for = {
+		GER
+	}
+	
+	roles = {
+		armor
+	}
+	
+	match_to_count = 0.9
+	
+	upgrade_prio = {
+		factor = 2.0
+
+		modifier = {
+			factor = 18
+			has_tech = improved_medium_tank
+		}
+		
+		modifier = {
+			factor = 28
+			has_tech = advanced_medium_tank
+		}
+		
+		modifier = {
+			factor = 38
+			has_tech = main_battle_tank
+		}		
+	}
+
+	light_armor_GER = {
+	
+		upgrade_prio = {
+			factor = 2
+
+			modifier = {
+				factor = 2
+			}
+		}
+		
+		target_width = 12.0
+		width_weight = 1.0
+		column_swap_factor = 0.5
+
+		# this is a stop-gap towards medium tanks, if deployed dont upgrade to medium tanks until we burn out our light tanks
+		can_upgrade_in_field = {
+			has_equipment = { light_tank_equipment < 500 } 
+		}
+		
+		stat_weights = {
+			0.00 #-- default_morale
+			1.10 #-- defense
+			1.10 #-- breakthrough
+			0.60 #-- hardness
+			1.00 #-- soft_attack
+			0.00 #-- hard_attack
+			0.10 #-- recon
+			0.01 #-- entrenchment
+			0.10 #-- initiative
+			0.01 #-- casualty_trickleback
+			-0.05 #-- supply_consumption_factor
+			-0.01 #-- supply_consumption
+			0.00 #-- suppression
+			0.00 #-- suppression_factor
+			0.01 #-- experience_loss_factor
+			#-- Air Values
+			0.02 #-- air_attack
+			#-- Common Values
+			30.00 #-- max_organisation
+			0.80 #-- max_strength
+			0.00 #-- build_cost_ic
+			2.0 #-- maximum_speed
+			0.80 #-- armor_value
+			0.20 #-- ap_attack
+			0.10 #-- reliability
+			0.10 #-- reliability_factor
+			0.00 #-- weight
+		}
+		
+		target_template = {
+			weight = 0.99
+			match_value = 40000.0
+			
+			support = {
+				engineer = 1
+				recon = 1
+				anti_tank = 1
+				signal_company = 1
+			}
+			
+			regiments = {
+				light_armor = 4
+				motorized = 4
+			}
+		}
+		
+		allowed_types = {
+			light_armor
+			motorized
+			engineer
+			recon
+			artillery
+			signal_company
+			anti_tank
+		}
+		
+		replace_at_match = 1
+		replace_with = medium_armor_GER
+		target_min_match = 1
+	}
+
+	medium_armor_GER = {
+	
+		upgrade_prio = {
+			factor = 2
+
+			modifier = {
+				factor = 6
+				has_tech = basic_medium_tank
+				NOT = {
+					has_tech = main_battle_tank
+				}
+			}
+		}
+		
+		target_width = 20.0
+		width_weight = 1.5
+		column_swap_factor = 0.5
+
+		# this is a stop-gap towards medium tanks, if deployed dont upgrade to medium tanks until we burn out our light tanks
+		can_upgrade_in_field = {
+			has_equipment = { light_tank_equipment < 1000 } 
+		}
+		
+		stat_weights = {
+			0.00 #-- default_morale
+			1.10 #-- defense
+			2.10 #-- breakthrough
+			2.60 #-- hardness
+			1.00 #-- soft_attack
+			2.00 #-- hard_attack
+			0.10 #-- recon
+			0.01 #-- entrenchment
+			0.10 #-- initiative
+			0.01 #-- casualty_trickleback
+			-0.05 #-- supply_consumption_factor
+			-0.01 #-- supply_consumption
+			0.00 #-- suppression
+			0.00 #-- suppression_factor
+			0.01 #-- experience_loss_factor
+			#-- Air Values
+			0.02 #-- air_attack
+			#-- Common Values
+			5.00 #-- max_organisation
+			0.80 #-- max_strength
+			0.00 #-- build_cost_ic
+			1.0 #-- maximum_speed
+			30.0 #-- armor_value
+			0.05 #-- ap_attack
+			0.10 #-- reliability
+			0.10 #-- reliability_factor
+			0.00 #-- weight
+		}
+
+		target_template = {
+			weight = 0.99
+			match_value = 40000.0
+			
+			support = {
+				engineer = 1
+				recon = 1
+				anti_tank = 1
+				signal_company = 1
+				maintenance_company = 1
+			}
+			
+			regiments = {
+				medium_armor = 2
+				light_armor = 5
+				motorized = 3
+				motorized_artillery_brigade = 2
+			}
+		}
+
+		allowed_types = {
+			modern_armor
+			medium_armor
+			motorized
+			mechanized
+			infantry
+			motorized_artillery_brigade
+			motorized_rocket_brigade 
+			engineer
+			recon
+			signal_company
+			maintenance_company
+			logistics_company
+			heavy_armor_company
+			anti_tank
+			military_police
+			artillery
+			anti_air
+			rocket_artillery
+		}
+		
+		replace_at_match = 1
+		replace_with = medium_armor_2_GER
+		target_min_match = 1
+	}
+
+	medium_armor_2_GER = {
+	
+		upgrade_prio = {
+			factor = 2
+
+			modifier = {
+				factor = 6
+			}
+			
+			modifier = {
+				factor = 20
+				has_tech = improved_medium_tank
+				NOT = {
+					has_tech = main_battle_tank
+				}
+				has_equipment = { light_tank_equipment < 1000 }
+				has_equipment = { medium_tank_equipment > 5 }
+			}
+		}
+		
+		target_width = 28.5
+		width_weight = 1.5
+		column_swap_factor = 0.5
+		
+		stat_weights = {
+			0.00 #-- default_morale
+			1.10 #-- defense
+			2.10 #-- breakthrough
+			2.60 #-- hardness
+			1.00 #-- soft_attack
+			2.00 #-- hard_attack
+			0.10 #-- recon
+			0.01 #-- entrenchment
+			0.10 #-- initiative
+			0.01 #-- casualty_trickleback
+			-0.05 #-- supply_consumption_factor
+			-0.01 #-- supply_consumption
+			0.00 #-- suppression
+			0.00 #-- suppression_factor
+			0.01 #-- experience_loss_factor
+			#-- Air Values
+			0.02 #-- air_attack
+			#-- Common Values
+			5.00 #-- max_organisation
+			0.80 #-- max_strength
+			0.00 #-- build_cost_ic
+			0.5 #-- maximum_speed
+			30.0 #-- armor_value
+			0.05 #-- ap_attack
+			0.10 #-- reliability
+			0.10 #-- reliability_factor
+			0.00 #-- weight
+		}
+		
+		target_template = {
+			weight = 0.99
+			match_value = 70000.0
+			
+			support = {
+				engineer = 1
+				armoured_reconnaissance_company = 1
+				heavy_armor_company = 1
+				maintenance_company = 1
+				signal_company = 1
+			}
+			
+			regiments = {
+				medium_armor = 3  
+				mechanized = 6
+				motorized_artillery_brigade = 3
+				medium_tank_destroyer_brigade = 1
+			}
+		}
+
+		allowed_types = {
+			modern_armor
+			medium_armor
+			motorized
+			mechanized
+			infantry
+			engineer
+			recon
+			anti_air
+			heavy_armor_company
+			maintenance_company
+			logistics_company
+			signal_company
+			armoured_reconnaissance_company
+			anti_tank
+			artillery
+			motorized_artillery_brigade
+			medium_sp_artillery_brigade
+			medium_tank_destroyer_brigade
+		}
+		
+		replace_at_match = 1
+		replace_with = modern_armor_GER
+		target_min_match = 1
+	}
+
+	modern_armor_GER = {
+
+		upgrade_prio = {
+			factor = 2
+
+			modifier = {
+				factor = 15
+				has_tech = main_battle_tank
+			}
+		}
+		
+		target_width = 22.0
+		width_weight = 3.0
+		column_swap_factor = 0.5
+		
+		stat_weights = {
+			0.00 #-- default_morale
+			1.10 #-- defense
+			1.10 #-- breakthrough
+			0.60 #-- hardness
+			2.00 #-- soft_attack
+			0.00 #-- hard_attack
+			0.10 #-- recon
+			0.01 #-- entrenchment
+			0.10 #-- initiative
+			0.01 #-- casualty_trickleback
+			-0.05 #-- supply_consumption_factor
+			-0.01 #-- supply_consumption
+			0.00 #-- suppression
+			0.00 #-- suppression_factor
+			0.01 #-- experience_loss_factor
+			#-- Air Values
+			0.02 #-- air_attack
+			#-- Common Values
+			50.00 #-- max_organisation
+			0.80 #-- max_strength
+			0.00 #-- build_cost_ic
+			10.0 #-- maximum_speed
+			0.20 #-- armor_value
+			0.05 #-- ap_attack
+			0.10 #-- reliability
+			0.10 #-- reliability_factor
+			0.00 #-- weight
+		}
+
+		target_template = {
+			weight = 0.99
+			match_value = 80000.0
+			
+			support = {
+				engineer = 1
+				armoured_reconnaissance_company = 1
+				maintenance_company = 1
+				signal_company = 1
+				anti_air = 1
+			}
+		
+			regiments = {
+				modern_armor = 4
+				mechanized = 5
+				medium_sp_artillery_brigade = 2
+			}
+		}
+		
+		allowed_types = {
+			modern_armor
+			mechanized
+			motorized_rocket_brigade 
+			modern_sp_artillery_brigade
+			modern_sp_anti_air_brigade
+			engineer
+			recon
+			signal_company
+			maintenance_company
+			logistics_company
+			armoured_reconnaissance_company
+			anti_tank
+			military_police
+			artillery
+			anti_air
+			rocket_artillery
+		}
+	}
+}
+
+garrison_GER = {
+
+	available_for = {
+		GER
+	}
+	
+	roles = {
+		garrison
+	}
+	
+	upgrade_prio = {
+		factor = 1
+
+		modifier = {
+			factor = 100
+			OR = {
+				AND = {
+					has_completed_focus = GER_anschluss
+					NOT = { ai_has_role_template = garrison }
+				}
+				
+				AND = {
+					any_country = {
+						is_justifying_wargoal_against = ROOT
+					}
+					NOT = { ai_has_role_template = garrison }
+				}
+			}			
+		}
+	}
+	
+	match_to_count = 0.9
+
+
+	garrison_GER = {
+	
+		reinforce_prio = 0
+		#custom_icon  = 7
+	
+		upgrade_prio = {
+			factor = 2
+
+			modifier = {
+				factor = 2
+			}
+		}
+		
+		target_width = 18.0
+		width_weight = 1.0
+		column_swap_factor = 0.5
+		
+		stat_weights = {
+			0.00 #-- default_morale
+			0.00 #-- defense
+			0.00 #-- breakthrough
+			0.00 #-- hardness
+			4.00 #-- soft_attack
+			0.00 #-- hard_attack
+			0.00 #-- recon
+			3.00 #-- entrenchment
+			0.00 #-- initiative
+			0.00 #-- casualty_trickleback
+			0.00 #-- supply_consumption_factor
+			0.00 #-- supply_consumption
+			0.00 #-- suppression
+			0.00 #-- suppression_factor
+			0.00 #-- experience_loss_factor
+			#-- Air Values
+			0.00 #-- air_attack
+			#-- Common Values
+			0.60 #-- max_organisation
+			0.40 #-- max_strength
+			0.00 #-- build_cost_ic
+			0.00 #-- maximum_speed
+			0.00 #-- armor_value
+			0.20 #-- ap_attack
+			0.00 #-- reliability
+			0.00 #-- reliability_factor
+			0.00 #-- weight
+		}
+		
+		target_template = {
+			weight = 0.9
+			match_value = 6000.0
+			
+			support = {
+				military_police = 1
+				anti_air = 1
+			}
+			
+			regiments = {
+				infantry = 6
+			}
+		}
+		
+		allowed_types = {
+			infantry		
+			military_police
+			cavalry
+			anti_air
+		}
+	}
+}
+	
+infantry_GER = {
+
+	available_for = {
+		GER
+	}
+	
+	roles = {
+		infantry
+	}
+	
+	upgrade_prio = {
+		factor = 2
+
+		modifier = {
+			factor = 4
+			NOT = {
+				has_tech = basic_medium_tank
+			}
+		}
+	}
+	
+	match_to_count = 0.9
+
+
+	infantry_GER = {
+	
+		upgrade_prio = {
+			factor = 2
+
+			modifier = {
+				factor = 2
+			}
+		}
+		
+		target_width = 26.0
+		width_weight = 1.0
+		column_swap_factor = 0.5
+		
+		stat_weights = {
+			0.00 #-- default_morale
+			0.00 #-- defense
+			1.00 #-- breakthrough
+			0.00 #-- hardness
+			4.00 #-- soft_attack
+			0.00 #-- hard_attack
+			0.00 #-- recon
+			1.00 #-- entrenchment
+			0.00 #-- initiative
+			0.00 #-- casualty_trickleback
+			0.00 #-- supply_consumption_factor
+			0.00 #-- supply_consumption
+			0.00 #-- suppression
+			0.00 #-- suppression_factor
+			0.00 #-- experience_loss_factor
+			#-- Air Values
+			0.00 #-- air_attack
+			#-- Common Values
+			0.60 #-- max_organisation
+			0.40 #-- max_strength
+			0.00 #-- build_cost_ic
+			0.00 #-- maximum_speed
+			0.00 #-- armor_value
+			0.20 #-- ap_attack
+			0.00 #-- reliability
+			0.00 #-- reliability_factor
+			0.00 #-- weight
+		}
+		
+		target_template = {
+			weight = 0.99
+			match_value = 30000.0
+			
+			support = {
+				engineer = 1
+				recon = 1
+				anti_tank = 1
+				signal_company = 1
+				artillery = 1
+			}
+			
+			regiments = {
+				infantry = 9
+			}
+		}
+		
+		allowed_types = {
+			infantry		
+			engineer
+			recon
+			signal_company
+			field_hospital
+			logistics_company
+			anti_tank
+			military_police
+			artillery
+			anti_air
+			rocket_artillery
+			anti_tank_brigade
+			artillery_brigade
+			rocket_artillery_brigade
+	#		light_tank_destroyer_brigade 
+	#		medium_tank_destroyer_brigade 
+		}
+		replace_at_match = 1
+		replace_with = infantry_1940_GER
+		target_min_match = 1		
+	}
+	
+	infantry_1940_GER = {
+	
+		upgrade_prio = {
+			factor = 3
+
+			modifier = {
+				factor = 5
+			}
+		}
+		
+		target_width = 26.0
+		width_weight = 1.0
+		column_swap_factor = 0.5
+		
+		stat_weights = {
+			0.00 #-- default_morale
+			0.00 #-- defense
+			1.00 #-- breakthrough
+			0.00 #-- hardness
+			4.00 #-- soft_attack
+			0.00 #-- hard_attack
+			0.00 #-- recon
+			1.00 #-- entrenchment
+			0.00 #-- initiative
+			0.00 #-- casualty_trickleback
+			0.00 #-- supply_consumption_factor
+			0.00 #-- supply_consumption
+			0.00 #-- suppression
+			0.00 #-- suppression_factor
+			0.00 #-- experience_loss_factor
+			#-- Air Values
+			0.00 #-- air_attack
+			#-- Common Values
+			0.60 #-- max_organisation
+			0.40 #-- max_strength
+			0.00 #-- build_cost_ic
+			0.00 #-- maximum_speed
+			0.00 #-- armor_value
+			0.20 #-- ap_attack
+			0.00 #-- reliability
+			0.00 #-- reliability_factor
+			0.00 #-- weight
+		}
+		
+		target_template = {
+			weight = 0.99
+			match_value = 70000.0
+			
+			support = {
+				engineer = 1
+				recon = 1
+				field_hospital = 1
+				anti_air = 1
+				signal_company = 1
+			}
+			
+			regiments = {
+				infantry = 9
+				artillery_brigade = 2
+				anti_tank_brigade = 1
+			}
+		}
+		
+		allowed_types = {
+			infantry		
+			engineer
+			recon
+			signal_company
+			field_hospital
+			logistics_company
+			anti_tank
+			military_police
+			artillery
+			anti_air
+			rocket_artillery
+			anti_tank_brigade
+			artillery_brigade
+			rocket_artillery_brigade
+	#		light_tank_destroyer_brigade 
+	#		medium_tank_destroyer_brigade 
+		}		
+	}	
+}
+
+mountaineers_GER = {
+
+	available_for = {
+		GER
+	}
+	
+	roles = {
+		mountaineers
+	}
+	
+	upgrade_prio = {
+		factor = 2
+
+		modifier = {
+			factor = 0
+			NOT = {
+				has_tech = tech_mountaineers
+			}
+		}
+	}
+	
+	match_to_count = 0.99
+	
+	mountaineers_GER = {
+	
+		upgrade_prio = {
+			factor = 2
+
+			modifier = {
+				factor = 1
+			}
+		}
+		
+		target_width = 22.0
+		width_weight = 3
+		column_swap_factor = 0.2
+		
+		stat_weights = {
+			0 #-- default_morale
+			1 #-- defense
+			1 #-- breakthrough
+			0 #-- hardness
+			2 #-- soft_attack
+			0 #-- hard_attack
+			0 #-- recon
+			0 #-- entrenchment
+			0 #-- initiative
+			0 #-- casualty_trickleback
+			0  #-- supply_consumption_factor
+			0 #-- supply_consumption
+			0 #-- suppression
+			0 #-- suppression_factor
+			0 #-- experience_loss_factor
+			#-- Air Values
+			0 #-- air_attack
+			#-- Common Values
+			1 #-- max_organisation
+			1 #-- max_strength
+			-0.1 #-- build_cost_ic
+			0 #-- maximum_speed
+			0 #-- armor_value
+			0 #-- ap_attack
+			0 #-- reliability
+			0 #-- reliability_factor
+			0 #-- weight
+		}
+
+		target_template = {
+			weight = 0.99
+			match_value = 50000.0
+			
+			support = {
+				recon = 1
+				anti_tank = 1
+				engineer = 1
+				signal_company = 1
+			}
+			
+			regiments = {
+				mountaineers = 9
+				artillery_brigade = 2
+			}
+		}
+		
+		allowed_types = {
+			mountaineers
+			artillery
+			engineer
+			recon
+			signal_company
+			field_hospital
+			logistics_company
+			anti_tank
+			artillery_brigade
+		}
+	}
+}
+
+marines_GER = {
+
+	available_for = {
+		GER
+	}
+	
+	roles = {
+		marines
+	}
+	
+	upgrade_prio = {
+		factor = 2
+
+		modifier = {
+			factor = 0
+			NOT = {
+				has_tech = marines
+			}
+		}
+	}
+	
+	match_to_count = 0.5
+
+	marine_GER = {
+	
+		upgrade_prio = {
+			factor = 2
+
+			modifier = {
+				factor = 1
+			}
+		}
+		
+		target_width = 24.0
+		width_weight = 1.0
+		column_swap_factor = 0.5
+		
+		stat_weights = {
+			0.00 #-- default_morale
+			0.00 #-- defense
+			1.00 #-- breakthrough
+			0.05 #-- hardness
+			3.00 #-- soft_attack
+			0.01 #-- hard_attack
+			0.00 #-- recon
+			2.20 #-- entrenchment
+			0.00 #-- initiative
+			0.00 #-- casualty_trickleback
+			-0.1 #-- supply_consumption_factor
+			-0.1 #-- supply_consumption
+			0.00 #-- suppression
+			0.00 #-- suppression_factor
+			0.00 #-- experience_loss_factor
+			#-- Air Values
+			0.00 #-- air_attack
+			#-- Common Values
+			0.60 #-- max_organisation
+			0.40 #-- max_strength
+			-0.1 #-- build_cost_ic
+			0.00 #-- maximum_speed
+			0.05 #-- armor_value
+			0.00 #-- ap_attack
+			0.00 #-- reliability
+			0.00 #-- reliability_factor
+			-0.2 #-- weight
+		}
+
+		target_template = {
+			weight = 0.9
+			match_value = 2000.0
+			
+			support = {
+				engineer = 1
+				artillery = 1
+				recon = 1
+				logistics_company = 1
+			}
+			
+			regiments = {
+				marine = 9				
+			}
+		}
+
+		
+		allowed_types = {
+			marine
+			engineer
+			logistics_company
+			recon
+			artillery
+		}
+	}
+}
+
+
+paratroopers_GER = {
+
+	available_for = {
+		GER
+	}
+	
+	roles = {
+		paratrooper
+	}
+	
+	upgrade_prio = {
+		factor = 2
+
+		modifier = {
+			factor = 0
+			NOT = {
+				has_tech = paratroopers
+			}
+		}
+	}
+	
+	match_to_count = 0.45
+
+	paratrooper_GER = {
+	
+		upgrade_prio = {
+			factor = 2
+
+			modifier = {
+				factor = 1
+			}
+		}
+		
+		target_width = 18.0
+		width_weight = 3.0
+		column_swap_factor = 0.5
+		
+		stat_weights = {
+			0.20 #-- default_morale
+			1.00 #-- defense
+			0.20 #-- breakthrough
+			0.00 #-- hardness
+			2.00 #-- soft_attack
+			0.10 #-- hard_attack
+			0.05 #-- recon
+			0.20 #-- entrenchment
+			0.20 #-- initiative
+			0.05 #-- casualty_trickleback
+			-1.0 #-- supply_consumption_factor
+			-1.0 #-- supply_consumption
+			0.01 #-- suppression
+			0.01 #-- suppression_factor
+			0.05 #-- experience_loss_factor
+			#-- Air Values
+			0.01 #-- air_attack
+			#-- Common Values
+			0.6 #-- max_organisation
+			0.4 #-- max_strength
+			-0.1 #-- build_cost_ic
+			0.00 #-- maximum_speed
+			0.00 #-- armor_value
+			0.20 #-- ap_attack
+			0.00 #-- reliability
+			0.00 #-- reliability_factor
+			-1.0 #-- weight
+		}
+
+		target_template = {
+			weight = 0.9
+			match_value = 4000.0
+			
+			support = {
+				engineer = 1
+				artillery = 1
+				anti_tank = 1
+			}
+			
+			regiments = {
+				paratrooper= 4
+			}
+		}
+		
+		allowed_types = {
+			paratrooper
+			engineer
+			recon
+			signal_company
+			field_hospital
+			logistics_company
+			anti_tank
+			military_police
+			artillery
+			anti_air
+			rocket_artillery
+		}
+	}
+}
+
+anti_armor_GER = {
+
+	available_for = {
+		GER
+	}
+	
+	roles = {
+		anti_armor
+	}
+	
+	upgrade_prio = {
+		factor = 2
+
+		modifier = {
+			factor = 30
+			#has_war_with = SOV
+			any_enemy_country = {
+				ROOT = {
+					estimated_intel_max_armor = {
+						tag = PREV
+						value > 20
+					}
+				}
+			}
+		}
+	}
+	
+	match_to_count = 0.9
+		
+	heavy_armor_GER = {
+
+		reinforce_prio = 9
+	
+		upgrade_prio = {
+			factor = 2
+
+			modifier = {
+				factor = 50
+				has_tech = basic_medium_td
+				has_tech = improved_heavy_tank
+				#has_war_with = SOV
+				any_enemy_country = {
+					ROOT = {
+						estimated_intel_max_armor = {
+							tag = PREV
+							value > 20
+						}
+					}
+				}
+			}
+		}
+				
+		target_width = 4
+		width_weight = 2.0
+		column_swap_factor = 0.5
+		
+		stat_weights = {
+			0.00 #-- default_morale
+			1.10 #-- defense
+			1.10 #-- breakthrough
+			0.60 #-- hardness
+			2.00 #-- soft_attack
+			0.00 #-- hard_attack
+			0.10 #-- recon
+			0.01 #-- entrenchment
+			0.10 #-- initiative
+			0.01 #-- casualty_trickleback
+			-0.05 #-- supply_consumption_factor
+			-0.01 #-- supply_consumption
+			0.00 #-- suppression
+			0.00 #-- suppression_factor
+			0.01 #-- experience_loss_factor
+			#-- Air Values
+			0.02 #-- air_attack
+			#-- Common Values
+			10.00 #-- max_organisation
+			0.80 #-- max_strength
+			0.00 #-- build_cost_ic
+			0.0 #-- maximum_speed
+			0.20 #-- armor_value
+			0.05 #-- ap_attack
+			0.10 #-- reliability
+			0.10 #-- reliability_factor
+			0.00 #-- weight
+		}
+
+		target_template = {
+			weight = 0.99
+			match_value = 6000.0
+			
+			support = {
+				maintenance_company = 1
+				engineer = 1
+				anti_air = 1
+				logistics_company = 1
+				signal_company = 1
+			}
+			
+			regiments = {
+				heavy_armor = 1
+				medium_tank_destroyer_brigade = 1
+			}
+		}
+		
+		allowed_types = {
+			modern_armor
+			heavy_armor
+			medium_armor
+			#Cheaper but slower might be worth considering
+			infantry
+			artillery_brigade
+			rocket_artillery_brigade
+			motorized_artillery_brigade
+			motorized_rocket_brigade 
+			engineer
+			recon
+			signal_company
+			maintenance_company
+			logistics_company
+			anti_tank
+			military_police
+			artillery
+			anti_air
+			rocket_artillery
+			medium_tank_destroyer_brigade
+		}
+		
+
+	}
+}
+
+mobile_GER = {
+
+	available_for = {
+		GER
+	}
+
+	roles = {
+		mobile
+	}
+	
+	upgrade_prio = {
+		factor = 2.17
+		modifier = {
+			factor = 19
+			has_tech = mechanised_infantry
+		}
+	}
+	
+	match_to_count = 0.9
+
+	motorized_GER = {
+		upgrade_prio = {
+			factor = 1
+
+			modifier = {
+				factor = 1
+			}
+		}
+		
+		production_prio = {
+			factor = 0.1
+
+			modifier = {
+				factor = 1
+			}
+		}
+		
+		target_width = 24.0
+		width_weight = 1.0
+		column_swap_factor = 0.5
+		
+		target_template = {
+			weight = 0.99
+			match_value = 40000.0
+			
+			support = {
+				engineer = 1
+				signal_company = 1
+			}
+			
+			regiments = {
+				motorized = 9
+				motorized_artillery_brigade = 2
+			}
+		}
+		
+		allowed_types = {
+			armoured_reconnaissance_company			
+			field_hospital
+			motorized
+			engineer
+			recon
+			artillery
+			anti_tank
+			anti_air
+			signal_company
+			motorized_artillery_brigade
+		}
+		
+		replace_at_match = 1
+		replace_with = mechanized_GER
+		target_min_match = 1
+	}
+	
+	mechanized_GER = {
+		upgrade_prio = {
+			factor = 1
+
+			modifier = {
+				factor = 1
+			}
+		}
+		
+		production_prio = {
+			factor = 2
+
+			modifier = {
+				factor = 1
+			}
+		}
+		
+		target_width = 25.0
+		width_weight = 1.0
+		column_swap_factor = 0.5
+		
+		target_template = {
+			weight = 0.99
+			match_value = 40000.0
+			
+			support = {
+				armoured_reconnaissance_company = 1
+				anti_tank = 1
+				engineer = 1
+				anti_air = 1
+				signal_company = 1
+			}
+			
+			regiments = {
+				mechanized = 8
+				motorized_artillery_brigade = 3
+			}
+		}
+		
+		allowed_types = {
+			armoured_reconnaissance_company
+			anti_air
+			maintenance_company
+			logistics_company
+			signal_company
+			motorized
+			mechanized
+			engineer
+			recon
+			artillery
+			anti_tank
+			motorized_artillery_brigade
+			medium_sp_artillery_brigade
+			medium_tank_destroyer_brigade
+		}
+	}	
+	
+}
+
+elite_GER = {
+
+	available_for = {
+		GER
+	}
+	
+	roles = {
+		elite
+	}
+	
+	match_to_count = 0.9
+	
+	upgrade_prio = {
+		factor = 50
+	}
+	
+	SS_Division_GER = {
+	
+		reinforce_prio = 10	
+	
+		upgrade_prio = {
+			factor = 10
+
+			modifier = {
+				factor = 50
+			}
+		}
+		
+		target_width = 12.0
+		width_weight = 1.0
+		column_swap_factor = 0.5
+		
+		stat_weights = {
+			0.00 #-- default_morale
+			1.10 #-- defense
+			1.10 #-- breakthrough
+			0.60 #-- hardness
+			1.00 #-- soft_attack
+			0.00 #-- hard_attack
+			0.10 #-- recon
+			0.01 #-- entrenchment
+			0.10 #-- initiative
+			0.01 #-- casualty_trickleback
+			-0.05 #-- supply_consumption_factor
+			-0.01 #-- supply_consumption
+			0.00 #-- suppression
+			0.00 #-- suppression_factor
+			0.01 #-- experience_loss_factor
+			#-- Air Values
+			0.02 #-- air_attack
+			#-- Common Values
+			30.00 #-- max_organisation
+			0.80 #-- max_strength
+			0.00 #-- build_cost_ic
+			2.0 #-- maximum_speed
+			0.20 #-- armor_value
+			0.05 #-- ap_attack
+			0.10 #-- reliability
+			0.10 #-- reliability_factor
+			0.00 #-- weight
+		}
+		
+		target_template = {
+			weight = 0.99
+			match_value = 40000.0
+			
+			regiments = {
+				motorized = 6
+			}
+		}
+		
+		allowed_types = {
+			medium_armor
+			motorized
+			engineer
+			recon
+			artillery
+			anti_tank
+			anti_air
+		}
+		
+		replace_at_match = 1
+		replace_with = motorized_GER  #because historical SS by events
+		target_min_match = 1
+	}	
+		
+	SS_PanzerDivision_40_GER = {
+
+		reinforce_prio = 10
+	
+		upgrade_prio = {
+			factor = 20
+
+			modifier = {
+				factor = 50
+			}
+		}
+		
+		target_width = 25.5
+		width_weight = 1.0
+		column_swap_factor = 0.5
+		
+		stat_weights = {
+			0.00 #-- default_morale
+			1.10 #-- defense
+			1.10 #-- breakthrough
+			0.60 #-- hardness
+			1.00 #-- soft_attack
+			0.00 #-- hard_attack
+			0.10 #-- recon
+			0.01 #-- entrenchment
+			0.10 #-- initiative
+			0.01 #-- casualty_trickleback
+			-0.05 #-- supply_consumption_factor
+			-0.01 #-- supply_consumption
+			0.00 #-- suppression
+			0.00 #-- suppression_factor
+			0.01 #-- experience_loss_factor
+			#-- Air Values
+			0.02 #-- air_attack
+			#-- Common Values
+			30.00 #-- max_organisation
+			0.80 #-- max_strength
+			0.00 #-- build_cost_ic
+			2.0 #-- maximum_speed
+			0.20 #-- armor_value
+			0.05 #-- ap_attack
+			0.10 #-- reliability
+			0.10 #-- reliability_factor
+			0.00 #-- weight
+		}
+		
+		target_template = {
+			weight = 0.99
+			match_value = 40000.0
+			
+			support = {
+				recon = 1
+				anti_tank = 1				
+				engineer = 1
+				artillery = 1
+				anti_air = 1
+			}
+			
+			regiments = {
+				medium_armor = 3
+				motorized = 6
+				motorized_artillery_brigade = 3
+			}
+		}
+		
+		allowed_types = {
+			medium_armor
+			motorized
+			engineer
+			recon
+			artillery
+			anti_tank
+			anti_air
+		}
+		
+		replace_at_match = 1
+		replace_with = SS_PanzerDivision_42
+		target_min_match = 1
+	}
+
+	SS_PanzerDivision_42_GER = {
+	
+		reinforce_prio = 10	
+	
+		upgrade_prio = {
+			factor = 60
+
+			modifier = {
+				factor = 100				
+			}
+		}
+		
+		target_width = 27.5
+		width_weight = 2.0
+		column_swap_factor = 0.5
+		
+		stat_weights = {
+			0.00 #-- default_morale
+			1.10 #-- defense
+			1.10 #-- breakthrough
+			0.60 #-- hardness
+			2.00 #-- soft_attack
+			0.00 #-- hard_attack
+			0.10 #-- recon
+			0.01 #-- entrenchment
+			0.10 #-- initiative
+			0.01 #-- casualty_trickleback
+			-0.05 #-- supply_consumption_factor
+			-0.01 #-- supply_consumption
+			0.00 #-- suppression
+			0.00 #-- suppression_factor
+			0.01 #-- experience_loss_factor
+			#-- Air Values
+			0.02 #-- air_attack
+			#-- Common Values
+			10.00 #-- max_organisation
+			0.80 #-- max_strength
+			0.00 #-- build_cost_ic
+			0.0 #-- maximum_speed
+			0.20 #-- armor_value
+			0.05 #-- ap_attack
+			0.10 #-- reliability
+			0.10 #-- reliability_factor
+			0.00 #-- weight
+		}
+
+		target_template = {
+			weight = 0.99
+			match_value = 70000.0
+			
+			support = {
+				armoured_reconnaissance_company = 1
+				heavy_armor_company = 1
+				engineer = 1
+				anti_air = 1
+				signal_company = 1
+			}
+			
+			regiments = {
+				medium_armor = 3
+				mechanized = 6
+				medium_sp_artillery_brigade = 1
+				medium_tank_destroyer_brigade = 1
+				motorized_artillery_brigade = 2
+			}
+		}
+		
+		allowed_types = {
+			modern_armor
+			heavy_armor
+			medium_armor
+			#Cheaper but slower might be worth considering
+			infantry
+			artillery_brigade
+			heavy_armor_company
+			rocket_artillery_brigade
+			armoured_reconnaissance_company
+			motorized_artillery_brigade
+			motorized_rocket_brigade 
+			engineer
+			recon
+			anti_tank
+			
+			signal_company
+			maintenance_company
+			logistics_company
+
+			anti_tank
+			military_police
+			artillery
+
+			anti_air
+			rocket_artillery
+		}
+
+	}
+
+	SS_Panzergrenadier_GER = {
+	
+		reinforce_prio = 10	
+	
+		upgrade_prio = {
+			factor = 40
+
+			modifier = {
+				factor = 50
+			}
+		}
+						
+		target_width = 22.0
+		width_weight = 1.0
+		column_swap_factor = 0.5
+		
+		target_template = {
+			weight = 0.99
+			match_value = 40000.0
+			
+			support = {
+				armoured_reconnaissance_company = 1
+				anti_tank = 1
+				engineer = 1
+				anti_air = 1
+				signal_company = 1
+			}
+			
+			regiments = {
+				mechanized = 6
+				medium_sp_artillery_brigade = 1
+				medium_tank_destroyer_brigade = 1
+				motorized_artillery_brigade = 2
+			}
+		}
+		
+		allowed_types = {
+			armoured_reconnaissance_company
+			anti_air
+			maintenance_company
+			logistics_company
+			motorized
+			mechanized
+			engineer
+			recon
+			artillery
+			anti_tank
+			signal_company
+			motorized_artillery_brigade
+			medium_sp_artillery_brigade
+			medium_tank_destroyer_brigade
+		}
+	}	
+		
+	SS_Gebirgs_Division_GER = {
+
+		reinforce_prio = 10
+	
+		upgrade_prio = {
+			factor = 2
+
+			modifier = {
+				factor = 50
+			}
+		}
+		
+		target_width = 24.0
+		width_weight = 3
+		column_swap_factor = 0.2
+		
+		stat_weights = {
+			0 #-- default_morale
+			1 #-- defense
+			1 #-- breakthrough
+			0 #-- hardness
+			2 #-- soft_attack
+			0 #-- hard_attack
+			0 #-- recon
+			0 #-- entrenchment
+			0 #-- initiative
+			0 #-- casualty_trickleback
+			0  #-- supply_consumption_factor
+			0 #-- supply_consumption
+			0 #-- suppression
+			0 #-- suppression_factor
+			0 #-- experience_loss_factor
+			#-- Air Values
+			0 #-- air_attack
+			#-- Common Values
+			1 #-- max_organisation
+			1 #-- max_strength
+			-0.1 #-- build_cost_ic
+			0 #-- maximum_speed
+			0 #-- armor_value
+			0 #-- ap_attack
+			0 #-- reliability
+			0 #-- reliability_factor
+			0 #-- weight
+		}
+
+		target_template = {
+			weight = 0.99
+			match_value = 50000.0
+			
+			support = {
+				recon = 1
+				anti_tank = 1
+				engineer = 1
+				logistics_company = 1
+				anti_air = 1
+			}
+			
+			regiments = {
+				mountaineers = 9
+				artillery_brigade = 2
+			}
+		}
+		
+		allowed_types = {
+			mountaineers
+			artillery
+			engineer
+			recon
+			signal_company
+			field_hospital
+			logistics_company
+			anti_tank
+			artillery_brigade
+		}
+	}
+		
+	SS_Grenadier_Division_GER = {
+
+		reinforce_prio = 10
+	
+		upgrade_prio = {
+			factor = 2
+
+			modifier = {
+				factor = 50
+			}
+		}
+		
+		target_width = 18.0
+		width_weight = 1.0
+		column_swap_factor = 0.5
+		
+		stat_weights = {
+			0.00 #-- default_morale
+			1.10 #-- defense
+			1.10 #-- breakthrough
+			0.60 #-- hardness
+			1.00 #-- soft_attack
+			0.00 #-- hard_attack
+			0.10 #-- recon
+			0.01 #-- entrenchment
+			0.10 #-- initiative
+			0.01 #-- casualty_trickleback
+			-0.05 #-- supply_consumption_factor
+			-0.01 #-- supply_consumption
+			0.00 #-- suppression
+			0.00 #-- suppression_factor
+			0.01 #-- experience_loss_factor
+			#-- Air Values
+			0.02 #-- air_attack
+			#-- Common Values
+			30.00 #-- max_organisation
+			0.80 #-- max_strength
+			0.00 #-- build_cost_ic
+			2.0 #-- maximum_speed
+			0.20 #-- armor_value
+			0.05 #-- ap_attack
+			0.10 #-- reliability
+			0.10 #-- reliability_factor
+			0.00 #-- weight
+		}
+		
+		target_template = {
+			weight = 0.99
+			match_value = 40000.0
+			
+			support = {
+				recon = 1
+				anti_tank = 1
+				engineer = 1
+				artillery = 1
+				signal_company = 1
+			}
+			
+			regiments = {
+				motorized = 9
+			}
+		}
+		
+		allowed_types = {
+			signal_company
+			motorized
+			engineer
+			recon
+			artillery
+			anti_tank
+			anti_air
+		}
+
+	}		
+		
+	SS_Kavallerie_GER = {
+	
+		upgrade_prio = {
+			factor = 1
+
+			modifier = {
+				factor = 1
+			}
+		}
+		
+		target_width = 21.0
+		width_weight = 1.5
+		column_swap_factor = 0.5
+		
+		stat_weights = {
+			0.00 #-- default_morale
+			1.10 #-- defense
+			2.10 #-- breakthrough
+			2.60 #-- hardness
+			1.00 #-- soft_attack
+			2.00 #-- hard_attack
+			0.10 #-- recon
+			0.01 #-- entrenchment
+			0.10 #-- initiative
+			0.01 #-- casualty_trickleback
+			-0.05 #-- supply_consumption_factor
+			-0.01 #-- supply_consumption
+			0.00 #-- suppression
+			0.00 #-- suppression_factor
+			0.01 #-- experience_loss_factor
+			#-- Air Values
+			0.02 #-- air_attack
+			#-- Common Values
+			5.00 #-- max_organisation
+			0.80 #-- max_strength
+			0.00 #-- build_cost_ic
+			1.0 #-- maximum_speed
+			10.0 #-- armor_value
+			0.05 #-- ap_attack
+			0.10 #-- reliability
+			0.10 #-- reliability_factor
+			0.00 #-- weight
+		}
+
+		target_template = {
+			weight = 0.99
+			match_value = 40000.0
+			
+			support = {
+				engineer = 1
+				recon = 1
+				anti_tank = 1
+				signal_company = 1
+				anti_air = 1
+			}
+			
+			regiments = {
+				cavalry = 9
+				motorized_artillery_brigade = 1
+			}
+		}
+
+		allowed_types = {
+			modern_armor
+			cavalry
+			medium_armor
+			motorized
+			mechanized
+			infantry
+			motorized_artillery_brigade
+
+			motorized_rocket_brigade 
+
+			engineer
+			recon
+			signal_company
+			maintenance_company
+			logistics_company
+
+			anti_tank
+
+			military_police
+			artillery
+
+			anti_air
+			rocket_artillery
+		}
+	}
+}
+	# REGIMENTS:
+	#infantry
+	#light_armor
+	#super_heavy_armor
+	#modern_armor
+	#heavy_armor
+	#medium_armor
+	#light_armor
+	#anti_tank
+	#cavalry
+	#motorized
+	#mechanized
+	#marine
+	#mountaineers
+	#paratrooper
+	#rocket_artillery
+	#light_tank_destroyer
+	#anti_air
+	#artillery
+
+	# SUPPORT:
+	#engineer
+	#recon
+	#signal_company
+	#maintenance_company
+	#anti_tank_brigade
+	#anti_air_brigade
+	#artillery_brigade
+	#field_hospital
+	#logistics_company
+	#military_police
+	#light_sp_anti_air_brigade
+	#light_sp_artillery_brigade

@@ -1,0 +1,285 @@
+﻿##### August Storm
+##### Template Events
+
+add_namespace = as_template
+
+
+country_event = {			# French Templates									
+	id = as_template.7
+	title = as_template.7.title
+	desc = as_template.7.desc
+	picture = GFX_report_event_german_politician_speech
+
+	fire_only_once = yes
+	
+	trigger = {
+		original_tag = FRA
+		is_ai = yes
+		has_war_with = GER
+	}
+	
+	mean_time_to_happen = {
+		days = 120
+	}
+
+	hidden = yes
+		
+	option = {
+		name = as_template.6.option_a
+		ai_chance = { factor = 100 }
+		load_oob = FRA_division_blindee_1940
+	}
+}
+
+country_event = {			# French Templates															
+	id = as_template.8
+	title = as_template.8.title
+	desc = as_template.8.desc
+	picture = GFX_report_event_german_politician_speech
+
+	fire_only_once = yes
+	
+	trigger = {
+		original_tag = FRA
+		is_ai = yes
+		has_war_with = GER
+		is_in_faction_with = USA		
+		452 = {
+			NOT = {
+				is_controlled_by = GER
+				is_controlled_by = ITA			
+			} 
+		}
+	}
+	
+	mean_time_to_happen = {
+		days = 220
+	}
+
+	hidden = yes
+		
+	option = {
+		name = as_template.6.option_a
+		ai_chance = { factor = 100 }
+		load_oob = FRA_division_blindee_1944
+	}
+} 
+
+
+country_event = {				# US Templates									
+	id = as_template.9
+	title = as_template.9.title
+	desc = as_template.9.desc
+	picture = GFX_report_event_german_politician_speech
+
+	fire_only_once = yes
+	
+	trigger = {
+		original_tag = USA
+		is_ai = yes
+		has_tech = motorised_infantry
+	}
+	
+	mean_time_to_happen = {
+		days = 36
+	}
+
+	hidden = yes
+		
+	option = {
+		name = as_template.6.option_a
+		ai_chance = { factor = 100 }
+		load_oob = USA_motorized
+	}
+}
+
+country_event = {				# ENG Templates									
+	id = as_template.10
+	title = as_template.10.title
+	desc = as_template.10.desc
+	picture = GFX_report_event_german_politician_speech
+
+	fire_only_once = yes
+	
+	trigger = {
+		original_tag = ENG
+		is_ai = yes
+		has_tech = motorised_infantry
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+
+	hidden = yes
+		
+	option = {
+		name = as_template.6.option_a
+		ai_chance = { factor = 100 }
+		load_oob = ENG_Motorized
+	}
+}
+
+country_event = {				# ENG Templates									
+	id = as_template.11
+	title = as_template.11.title
+	desc = as_template.11.desc
+	picture = GFX_report_event_german_politician_speech
+
+	fire_only_once = yes
+	
+	trigger = {
+		original_tag = ENG
+		is_ai = yes
+		has_tech = mechanised_infantry
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+
+	hidden = yes
+		
+	option = {
+		name = as_template.6.option_a
+		ai_chance = { factor = 100 }
+		load_oob = ENG_Mechanized
+	}
+}
+
+country_event = {				# ENG Templates									
+	id = as_template.12
+	title = as_template.12.title
+	desc = as_template.12.desc
+	picture = GFX_report_event_german_politician_speech
+
+	fire_only_once = yes
+	
+	trigger = {
+		original_tag = ENG
+		is_ai = yes
+		has_tech = improved_medium_tank
+	}
+	
+	mean_time_to_happen = {
+		days = 100
+	}
+
+	hidden = yes
+		
+	option = {
+		name = as_template.6.option_a
+		ai_chance = { factor = 100 }
+		load_oob = ENG_armour_1942
+	}
+}
+
+
+country_event = {				# CAN Templates									
+	id = as_template.13
+	title = as_template.13.title
+	desc = as_template.13.desc
+	picture = GFX_report_event_german_politician_speech
+
+	fire_only_once = yes
+	
+	trigger = {
+		original_tag = CAN
+		is_ai = yes
+		has_tech = motorised_infantry
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+
+	hidden = yes
+		
+	option = {
+		name = as_template.6.option_a
+		ai_chance = { factor = 100 }
+		load_oob = CAN_Motorized
+	}
+}
+
+country_event = {				# CAN Templates									
+	id = as_template.14
+	title = as_template.14.title
+	desc = as_template.14.desc
+	picture = GFX_report_event_german_politician_speech
+
+	fire_only_once = yes
+	
+	trigger = {
+		original_tag = CAN
+		is_ai = yes
+		has_tech = mechanised_infantry
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+
+	hidden = yes
+		
+	option = {
+		name = as_template.6.option_a
+		ai_chance = { factor = 100 }
+		load_oob = CAN_Mechanized
+	}
+}
+
+country_event = {				# CAN Templates									
+	id = as_template.15
+	title = as_template.15.title
+	desc = as_template.15.desc
+	picture = GFX_report_event_german_politician_speech
+
+	fire_only_once = yes
+	
+	trigger = {
+		original_tag = CAN
+		is_ai = yes
+		has_tech = improved_medium_tank
+	}
+	
+	mean_time_to_happen = {
+		days = 100
+	}
+
+	hidden = yes
+		
+	option = {
+		name = as_template.6.option_a
+		ai_chance = { factor = 100 }
+		load_oob = CAN_armour_1942
+	}
+}
+
+country_event = {				# JAP Templates									
+	id = as_template.19
+	title = as_template.19.title
+	desc = as_template.19.desc
+	picture = GFX_report_event_german_politician_speech
+
+	fire_only_once = yes
+	
+	trigger = {
+		original_tag = JAP
+		is_ai = yes
+		has_tech = basic_medium_tank
+		has_war_with = USA
+	}
+	
+	mean_time_to_happen = {
+		days = 200
+	}
+
+	hidden = yes
+		
+	option = {
+		name = as_template.6.option_a
+		ai_chance = { factor = 100 }
+		load_oob = JAP_armour_1943
+	}
+}

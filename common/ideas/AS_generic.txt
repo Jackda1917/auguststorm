@@ -1,0 +1,271 @@
+ideas = {
+	country = {
+	
+		defeat_opinion = {
+			
+			allowed = {
+				always = no
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+
+			removal_cost = -1
+
+			picture = generic_infantry_bonus
+
+			cancel = {
+				has_idea = victory_opinion
+			}
+			
+			modifier = {
+				unity_weekly = -0.015
+				political_power_factor = -0.1
+			}
+		}	
+	
+		victory_opinion = {
+			
+			allowed = {
+				always = no
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+
+			removal_cost = -1
+
+			picture = generic_morale_bonus
+
+			cancel = {
+				has_idea = defeat_opinion
+			}
+			
+			modifier = {
+				unity_weekly = 0.015
+				political_power_factor = 0.2				
+			}
+		}
+
+		vampirized_economy = {
+			
+			allowed = {
+				always = no
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+
+			cancel = {
+				is_puppet = no
+				is_subject = no
+			}
+			
+			removal_cost = -1
+
+			picture = generic_spy_coup
+
+			research_bonus = {  
+				industry = -0.25
+			}				
+												
+			modifier = {
+				unity_factor = -0.2 # was none
+				research_time_factor = 0.25 # was none	
+				production_speed_arms_factory_factor = -0.5
+				production_speed_industrial_complex_factor = -0.5
+				ai_get_ally_desire_factor = -300
+				conscription_factor = -0.5				
+				join_faction_tension = 0.5				
+				political_power_factor = -0.5 
+				consumer_goods_factor = 0.05
+			}	
+		}
+
+		fractured_society = {
+			
+			allowed = {
+				always = no
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+
+			removal_cost = -1
+
+			picture = generic_spy_coup
+
+			research_bonus = {  
+				industry = -0.25
+			}				
+												
+			modifier = {
+				research_time_factor = 0.25 # was none	
+				production_speed_arms_factory_factor = -0.25
+				production_speed_industrial_complex_factor = -0.25				
+			}	
+		}
+		
+		bureaucratic_threat = {
+			
+			allowed = {
+				always = no
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+
+			removal_cost = -1
+
+			picture = generic_disjointed_gov
+
+			
+			modifier = {
+				communism_drift = 0.025  # Stalinism
+			}
+		}
+
+		iv_international_influence = {
+			
+			allowed = {
+				always = no
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+
+			removal_cost = -1
+
+			picture = FRA_scw_intervention_republicans_focus
+
+			
+			modifier = {
+				political_power_factor = 2
+			}
+		}
+		
+		 revolutionary_agitation = {
+			
+			allowed = {
+				always = no
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+
+			removal_cost = -1
+
+			picture = FRA_scw_intervention_republicans_focus
+
+			
+			modifier = {
+				unity_weekly = -0.001
+				revolutionary_drift = 0.15
+				communism_drift = -0.15
+				industrial_capacity_factory = -0.1
+				production_factory_efficiency_gain_factor =	-0.1
+				industrial_capacity_dockyard = -0.1				
+			}
+		}
+		
+		 upset_workers = {
+			
+			allowed = {
+				always = no
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+
+			removal_cost = -1
+
+			picture = FRA_matignon_agreements
+
+			
+			modifier = {
+				revolutionary_drift = 0.01
+				political_power_factor = -0.20
+				unity_factor = -0.1
+				industrial_capacity_factory = -0.05 # was none
+				production_factory_efficiency_gain_factor =	-0.05 # was none
+				industrial_capacity_dockyard = -0.05 # was none				
+			}
+		}
+		
+	}
+
+	hidden_ideas = {						# AS
+		heavy_casualties = {
+
+			allowed = {
+				always = no          # AS_silent event 30
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+
+			cancel = {
+				has_war = no
+			}
+			
+			removal_cost = -1
+
+			modifier = {
+				unity_factor = -0.20
+			}
+		}
+
+		terrible_casualties = {
+
+			allowed = {
+				always = no          # AS_silent event 31 
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+
+			cancel = {
+				has_war = no
+			}
+			
+			removal_cost = -1
+
+			modifier = {
+				unity_factor = -0.20
+			}
+		}
+		
+		terrific_casualties = {
+
+			allowed = {
+				always = no          # AS_silent events 32
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+
+			cancel = {
+				has_war = no
+			}
+			
+			removal_cost = -1
+
+			modifier = {
+				unity_factor = -0.20
+			}
+		}
+		
+	}	
+	
+}

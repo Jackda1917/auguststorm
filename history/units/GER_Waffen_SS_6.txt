@@ -1,0 +1,37 @@
+﻿division_template = {
+	name = "SS-Gebirgs-Division"
+
+	regiments = {
+		mountaineers = { x = 0 y = 0 }
+		mountaineers = { x = 0 y = 1 }
+		mountaineers = { x = 0 y = 2 }
+		
+		mountaineers = { x = 1 y = 0 }
+		mountaineers = { x = 1 y = 1 }
+		mountaineers = { x = 1 y = 2 }
+		
+		mountaineers = { x = 2 y = 0 }
+		mountaineers = { x = 2 y = 1 }
+		mountaineers = { x = 2 y = 2 }
+		
+		artillery_brigade = { x = 3 y = 0 }		
+	}
+	support = {
+		recon = { x = 0 y = 0 }
+		anti_tank = { x = 0 y = 1 }
+		engineer = { x = 0 y = 2 }
+		anti_air = { x = 0 y = 3 }
+		logistics_company = { x = 0 y = 4 }
+	}
+	priority = 2
+	template_counter=3
+}
+
+units = {
+	division= {	
+		name = "6. SS-Gebirgs-Division 'Nord'"
+		location = 6115 # Oslo
+		division_template = "SS-Gebirgs-Division"
+		start_experience_factor = 0.6
+	}
+}

@@ -1,0 +1,44 @@
+state={
+	id=728
+	name="STATE_728"
+	manpower = 200000
+	
+	state_category = enclave
+	
+	history={
+		owner = FRA
+		add_core_of = GXC
+		add_core_of = CHI
+		add_core_of = PRC
+
+		buildings = {
+			infrastructure = 3
+			11981 = {
+				naval_base = 1
+			}
+		}
+
+		# Japanese Surrender
+		1945.8.15 = {
+			controller = FRA
+		}
+
+		# Return of Guangzhouwan
+		1945.11.20 = {
+			owner = CHI
+		}
+		
+		# Chinese Civil War - Guangxi Campaign
+		1949.12.14 = {
+		}
+
+		# People's Republic of China proclaimed
+		1949.10.1 = {
+			owner = PRC
+		}
+	}
+	
+	provinces={
+		11981 
+	}
+}
