@@ -1,0 +1,22 @@
+﻿units = {
+	division = {
+		name = "5. Leichte-Division(DAK)"
+		location = 11954 # Benghazi
+		division_template = "Infanterie-Division mot."
+		start_experience_factor = 0.6		
+	}	
+	division = {
+		name = "15. Panzerdivision(DAK)"
+		location = 11954 # Benghazi
+		division_template = "Panzer-Division -1940-"
+		start_experience_factor = 0.7		
+	}
+}
+air_wings = {
+	448 = { 	
+		fighter_equipment_2 =  {		
+			owner = "GER" 
+			amount = 300
+		}
+	}
+}

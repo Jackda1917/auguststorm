@@ -522,7 +522,10 @@ focus_tree = {
 				}
 			}
 			if = {
-				limit = { country_exists = SHX }
+				limit = { 
+					country_exists = SHX 
+					NOT = { is_puppet_of = JAP }
+				}
 				create_wargoal = {
 					type = take_state_focus
 					target = SHX
@@ -530,7 +533,10 @@ focus_tree = {
 				}
 			}
 			if = {
-				limit = { country_exists = GXC }
+				limit = { 
+					country_exists = GXC
+					NOT = { is_puppet_of = JAP }					
+				}
 				create_wargoal = {
 					type = take_state_focus
 					target = GXC
@@ -538,7 +544,10 @@ focus_tree = {
 				}
 			}
 			if = {
-				limit = { country_exists = XSM }
+				limit = { 
+					country_exists = XSM
+					NOT = { is_puppet_of = JAP }					
+				}
 				create_wargoal = {
 					type = take_state_focus
 					target = XSM
@@ -546,7 +555,10 @@ focus_tree = {
 				}
 			}
 			if = {
-				limit = { country_exists = YUN }
+				limit = { 
+					country_exists = YUN
+					NOT = { is_puppet_of = JAP }					
+				}
 				create_wargoal = {
 					type = take_state_focus
 					target = YUN
@@ -1895,6 +1907,7 @@ focus_tree = {
 		available_if_capitulated = yes
 
 		completion_reward = {
+			clr_global_flag = chi_limited_war_flag
 			hidden_effect = {
 				set_rule = {
 					can_use_kamikaze_pilots = yes
@@ -2347,7 +2360,7 @@ focus_tree = {
 			is_major = yes
 			is_subject = no
 			has_war_with = USA  
-			any_enemy_country = { ic_ratio = { tag = JAP ratio > 3.5 } }  
+			any_enemy_country = { ic_ratio = { tag = JAP ratio > 3 } }  
 			enemies_strength_ratio > 2
 		}
 

@@ -45,7 +45,7 @@ armored_GER = {
 
 		# this is a stop-gap towards medium tanks, if deployed dont upgrade to medium tanks until we burn out our light tanks
 		can_upgrade_in_field = {
-			has_equipment = { light_tank_equipment < 500 } 
+			has_equipment = { light_tank_equipment < 1500 } 
 		}
 		
 		stat_weights = {
@@ -130,7 +130,7 @@ armored_GER = {
 
 		# this is a stop-gap towards medium tanks, if deployed dont upgrade to medium tanks until we burn out our light tanks
 		can_upgrade_in_field = {
-			has_equipment = { light_tank_equipment < 1000 } 
+			has_equipment = { light_tank_equipment < 1500 } 
 		}
 		
 		stat_weights = {
@@ -169,15 +169,15 @@ armored_GER = {
 			
 			support = {
 				engineer = 1
-				recon = 1
+				armoured_reconnaissance_company = 1
 				anti_tank = 1
 				signal_company = 1
 				maintenance_company = 1
 			}
 			
 			regiments = {
-				medium_armor = 2
-				light_armor = 5
+				medium_armor = 3
+				light_armor = 3
 				motorized = 3
 				motorized_artillery_brigade = 2
 			}
@@ -277,7 +277,8 @@ armored_GER = {
 			
 			regiments = {
 				medium_armor = 3  
-				mechanized = 6
+				mechanized = 3
+				motorized = 3
 				motorized_artillery_brigade = 3
 				medium_tank_destroyer_brigade = 1
 			}
@@ -1142,7 +1143,7 @@ mobile_GER = {
 		}
 		
 		production_prio = {
-			factor = 0.1
+			factor = 0.5
 
 			modifier = {
 				factor = 1
@@ -1160,6 +1161,7 @@ mobile_GER = {
 			support = {
 				engineer = 1
 				signal_company = 1
+				armoured_reconnaissance_company = 1
 			}
 			
 			regiments = {
@@ -1196,7 +1198,7 @@ mobile_GER = {
 		}
 		
 		production_prio = {
-			factor = 2
+			factor = 0.5
 
 			modifier = {
 				factor = 1
@@ -1255,7 +1257,7 @@ elite_GER = {
 		elite
 	}
 	
-	match_to_count = 0.9
+	match_to_count = 0.7
 	
 	upgrade_prio = {
 		factor = 50

@@ -190,10 +190,12 @@ tactic_encirclement = {
 	
 	active = yes
 	
-	base = 4 #1
+	base = 5 #1
 	picture = encircle
 	countered_by = tactic_tactical_withdrawal
+	countered_by = tactic_winter_defence  # AS
 
+	attacker_movement_speed = 0.15		
 	combat_width = 0.75		# was 0.5 increased combat_width
 	attacker = 0.50   # was 0.25
 	defender = 0.1    # was 0.05
@@ -248,7 +250,7 @@ tactic_tactical_withdrawal = { #counters encirclement
 		is_attacker = no
 		phase = no	
 		has_trait = trickster
-		skill > 2
+		skill > 0
 	}
 	
 	active = yes
@@ -257,7 +259,8 @@ tactic_tactical_withdrawal = { #counters encirclement
 	picture = withdraw
 	
 	phase = tactical_withdrawal
-	
+
+	attacker_movement_speed = -0.2	
 	combat_width = -0.25
 	attacker = -0.35  # was -0.25
 	defender = -0.05
@@ -322,11 +325,11 @@ tactic_tw_evade = {
 		}		
 	}
 	
-	base = 4 
+	base = 5  #4 
 	picture = tw_evade
 	display_phase = tactical_withdrawal
 	
-	
+	attacker_movement_speed = -0.4	
 	combat_width = -0.25		
 	attacker = -0.4
 	defender = -0.1
@@ -349,8 +352,6 @@ tactic_tw_intercept = {
 	defender = -0.1
 }
 
-
-
 tactic_breakthrough = { #counters ambush
 	is_attacker = yes
 	trigger = {
@@ -363,18 +364,35 @@ tactic_breakthrough = { #counters ambush
 			is_fighting_in_terrain = forest
 			is_fighting_in_terrain = desert				
 		}
-		hardness > 0.25  # was 0.5  		
+		hardness > 0.30  # was 0.5  		
 		phase = no		
-		OR = {									# AS
-			skill_advantage > 1
-			has_trait = panzer_leader 
-			#is_ai = yes 
+		AND = {	
+			OR = {
+				has_trait = panzer_leader
+				AND = {									#Because AI is too dumb to use the good leaders
+					has_global_flag = ger_is_ai
+					tag = GER
+				}
+				AND = {
+					has_global_flag = sov_is_ai
+					tag = SOV
+				}
+				AND = {
+					has_global_flag = usa_is_ai
+					tag = USA
+				}
+				AND = {
+					has_global_flag = eng_is_ai
+					tag = ENG
+				}					
+			}
+			NOT = { skill_advantage < 0 } 				
 		}			
 	}
 	
 	active = no
 	
-	base = 4 
+	base = 5
 	picture = breakthrough
 	
 	countered_by = tactic_backhand_blow
@@ -402,7 +420,8 @@ tactic_ambush = { #counters shock
 	base = 4
 	picture = ambush
 	countered_by = tactic_breakthrough
-	
+
+	attacker_movement_speed = -0.20	
 	attacker = -0.25
 	defender = 0.10 # was none	
 }
@@ -421,9 +440,27 @@ tactic_blitz = {
 		temperature > -15      # AS		
 		hardness > 0.3  # was 0.5
 		phase = no
-		OR = {		
-			has_trait = panzer_leader
-			skill > 3
+		AND = {	
+			OR = {
+				has_trait = panzer_leader
+				AND = {
+					has_global_flag = ger_is_ai
+					tag = GER
+				}
+				AND = {
+					has_global_flag = sov_is_ai
+					tag = SOV
+				}
+				AND = {
+					has_global_flag = usa_is_ai
+					tag = USA
+				}
+				AND = {
+					has_global_flag = eng_is_ai
+					tag = ENG
+				}					
+			}
+			NOT = { skill_advantage < 0 } 
 			#AND = {                     Because AI is too dumb to use the good leaders
 			#	skill_advantage > 0
 			#	skill > 2
@@ -437,11 +474,11 @@ tactic_blitz = {
 	
 	active = no
 	
-	base = 4
+	base = 5 #4
 	picture = blitz
 	countered_by = tactic_elastic_defense
 	
-	attacker_movement_speed = 0.75 # was 0.5
+	attacker_movement_speed = 0.65 # was 0.5
 	attacker = 0.45		# was 0.15
 	defender = -0.25     # was -0.1
 }
@@ -470,10 +507,10 @@ tactic_elastic_defense = { #counters blitz
 	
 	active = no
 	
-	base = 4
+	base = 5 #4
 	picture = elastic_defence
 	
-	attacker_movement_speed = -0.25
+	attacker_movement_speed = -0.33
 	attacker = -0.25 # was -0.15
 	defender = 0.15 # was 0.10
 }
@@ -488,21 +525,18 @@ tactic_backhand_blow = { #counters breakthrough
 			skill_advantage > 1  # was skill > 4
 			AND = {
 				has_trait = defensive_doctrine
-				skill_advantage > 1  # was skill > 3
+				skill_advantage > 0  # was skill > 3
 			}
-			#AND = {
-			#	is_ai = yes
-			#	skill > 3  				
-			#}			
+			
 		}
 	}
 	
-	base = 4
+	base = 5 #4
 	picture = backhand_blow
 	
-	attacker_movement_speed = -0.3
-	attacker = -0.3  # was -0.2
-	defender = 0.35  # was 0.25
+	attacker_movement_speed = -0.5
+	attacker = -0.25  # was -0.2
+	defender = 0.40  # was 0.25
 }
 
 tactic_seize_bridge = { 
@@ -737,7 +771,7 @@ tactic_guerrilla_tactics = { #People's army defender tactic. also for German vol
 		}			
 		phase = no
 		OR = {
-			skill > 2
+			skill > 1
 			has_trait = trickster
 			tag = PRC  # none, add IND when done
 			tag = SOV
@@ -749,7 +783,8 @@ tactic_guerrilla_tactics = { #People's army defender tactic. also for German vol
 	
 	base = 3 # was 4
 	picture = tactic_guerrilla_tactics
-	
+
+	attacker_movement_speed = -0.2	
 	combat_width = -0.75  # was -0.5
 	attacker = -0.8  # was -0.7
 	defender = -0.5  # was -0.6
@@ -799,7 +834,7 @@ tactic_banzai_charge = { #Special Japan attacker tactic
 	
 	attacker_movement_speed = 0.15  # was 0.1
 	attacker = 0.45 # was 0.25 
-	defender = 0.1
+	defender = 0.15
 }
 
 tactic_infantry_charge = { #GBP -> Infantry attacker tactic
@@ -897,9 +932,9 @@ tactic_unexpected_thrust = { #Mobile warfare attacker tactic
 	base = 3 #4
 	picture = tactic_unexpected_thrust
 	
-	attacker_movement_speed = 0.25     # was 0.15
-	attacker = 0.30     # was 0.15
-	defender = -0.15	    # was none
+	attacker_movement_speed = 0.15     
+	attacker = 0.20     # was 0.15
+	defender = -0.1	    # was none
 }
 
 tactic_overwhelming_fire = { # Counters Banzai charge
@@ -973,7 +1008,10 @@ tactic_winter_assault = { # winter equipment attacker tactic
 			tag = SOV
 			AND = {
 				has_trait = winter_specialist
-				skill_advantage > 2
+				OR = {	
+					skill > 2
+					has_trait = winter_specialist
+				}
 			}
 		}
 		is_attacker = yes
@@ -981,11 +1019,79 @@ tactic_winter_assault = { # winter equipment attacker tactic
 		phase = no
 	}
 	
-	active = yes
+	active = no
 	
-	base = 4 
+	base = 5 
 	picture = tactic_unexpected_thrust
 	
-	attacker_movement_speed = 0.40       # to compensate+ generic winter malus + Ski units
-	attacker = 0.60       				# to compensate+ generic winter malus
+	attacker_movement_speed = 0.50       # to compensate+ generic winter malus + Ski units
+	attacker = 0.80       				# to compensate+ generic winter malus
+}
+
+tactic_winter_defence = { # winter equipment attacker tactic
+	is_attacker = no
+	trigger = {
+		OR = {
+			tag = FIN
+			tag = CAN
+			tag = NOR
+			tag = SWE
+			tag = SOV
+			AND = {
+				has_trait = winter_specialist
+				OR = {	
+					skill > 2
+					has_trait = winter_specialist
+				}
+			}
+		}
+		is_attacker = no
+		temperature < -14
+		phase = no
+	}
+	
+	active = no
+		
+	base = 5
+	picture = cc_defend
+	countered_by = tactic_winter_assault	
+
+	defender = 0.50       				# to compensate+ generic winter malus
+	attacker = -0.30
+}
+
+tactic_limited_war = { 
+	is_attacker = no
+	trigger = {
+		has_global_flag = chi_limited_war_flag
+		AND = {	
+			OR = {
+				tag = JAP
+				tag = MEN
+				tag = MAN
+				tag = CHI
+				tag = PRC
+			}			
+		}
+		AND = {	
+			OR = {
+				tag = JAP
+				tag = MEN
+				tag = MAN
+				tag = CHI
+				tag = PRC
+			}
+			is_attacker = yes			
+		}
+		phase = no
+	}
+	
+	active = yes
+		
+	base = 5
+	picture = attack	
+
+	attacker_movement_speed = -0.80	
+	combat_width = -0.9      				
+	attacker = -0.99
 }

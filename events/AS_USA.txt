@@ -3,32 +3,16 @@
 
 add_namespace = as_usa
 
-# Operation Torch
+# Operation Torch (AI)
 country_event = {
 	id = as_usa.1
 	title = as_usa.1.t
 	desc = as_usa.1.d
 	picture = GFX_report_event_usa_british_sailors_destroyers
 
-	fire_only_once = yes
 	
-	mean_time_to_happen = {
-			days = 5
-	}
-	
-	trigger = {
-		tag = USA
-		is_ai = yes
-		has_war_with = GER
-		is_in_faction_with = ENG
-		ENG = { controls_state = 118 }
-		VIC = { exists = yes }
-		SOV = { 
-			has_war_with = GER
-			surrender_progress > 0.25
-		}
-		NOT = { has_country_flag = usa_operation_torch }
-	}
+	is_triggered_only = yes
+
 	
 	option = {
 		name = as_usa.1.a
@@ -373,4 +357,54 @@ country_event = {
 				}
 			}				
 	}	
-}		
+}
+
+# Operation Torch (player)
+country_event = {
+	id = as_usa.8
+	title = as_usa.8.t
+	desc = as_usa.8.d
+	picture = GFX_report_event_usa_british_sailors_destroyers
+
+	
+	is_triggered_only = yes
+
+	
+	option = {
+		name = as_usa.8.a
+		set_country_flag = usa_operation_torch		
+		if = { 
+			limit = { 
+				GER = {			
+					ic_ratio = { 
+						tag = USA 
+						ratio < 1
+					}
+				}
+				NOT = { SOV = { surrender_progress > 0.50 } }
+			} 					
+			FRA = {	
+				transfer_state = 461 # Casablanca
+				transfer_state = 459 # Alger
+			    transfer_state = 272 # French Africa				
+				transfer_state = 310 # Guinée			
+				transfer_state = 460 # eastern Algeria
+				transfer_state = 462 # Southern Morocco
+				transfer_state = 513 # Southern Algeria
+				transfer_state = 514 # North Africa
+				transfer_state = 515 # Central Africa
+				transfer_state = 539 # Gabon
+				transfer_state = 556 # Ivory Coast
+				transfer_state = 557 # Dakar
+				transfer_state = 660 # Equatorial Africa
+				transfer_state = 665 # Gabes
+			}
+			GER = { transfer_state = 458 } # Tunisia
+			else = {
+				VIC = { add_to_war = { targeted_alliance = GER enemy = USA } }
+				FRA = { add_national_unity = -0.40 }
+			}
+		}				
+	}
+}	
+	

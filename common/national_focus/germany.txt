@@ -761,6 +761,10 @@ focus_tree = {
 		cost = 10
 		ai_will_do = {
 			factor = 1
+			modifier = {
+				factor = 3000
+				has_idea = tot_economic_mobilisation				
+			}
 		}
 
 		available_if_capitulated = yes
@@ -768,12 +772,16 @@ focus_tree = {
 		completion_reward = {
 			add_tech_bonus = {
 				name = secret_bonus
-				bonus = 0.5
-				uses = 2  # was 1
-
-				category = nuclear
+				bonus = 0.25
+				uses = 4  # was 1
 				category = rocketry
 			}
+			add_tech_bonus = {
+				name = secret_nuclear_bonus
+				bonus = 0.5
+				uses = 1
+				category = nuclear
+			}			
 		}
 	}
 
@@ -2918,7 +2926,7 @@ focus_tree = {
 			add_tech_bonus = {
 				name = GER_u_boat_effort
 				bonus = 0.5
-				uses = 1
+				uses = 2
 				technology = early_submarine
 				technology = basic_submarine
 				technology = improved_submarine
@@ -3845,6 +3853,8 @@ focus_tree = {
 			has_global_flag = vichy_established				
 			VIC = { exists = yes }
 			OR = {
+				ITA = { has_capitulated = yes }
+				ITA = { is_in_faction_with = USA }
 				USA = { has_country_flag = usa_operation_torch }
 				GER = { surrender_progress > 0.10 }
 				NOT = { GER = { controls_state = 16 } }		
@@ -3860,6 +3870,7 @@ focus_tree = {
 				SPR = { 
 					is_in_faction_with = ENG 
 					controls_state = 41  # Madrid
+					NOT = { has_civil_war = yes }
 				}
 				AND = { 
 					has_war_with = USA
@@ -3875,7 +3886,7 @@ focus_tree = {
 				}
 				AND = {
 					ITA = { surrender_progress > 0.25 }
-					ITA = { is_in_faction_with = GER }			
+					ITA = { is_in_faction_with = GER }	
 				}			
 			}
 		}
@@ -4111,23 +4122,20 @@ focus_tree = {
 				if = {
 					limit = { 
 						is_ai = yes
-						NOT = { has_tech = advanced_oil_plant }						
+						NOT = { has_tech = experimental_rockets }						
 					}
-					set_technology = { advanced_oil_plant = 1 }									
+					set_technology = { experimental_rockets = 1 }									
 				}
 				if = {
 					limit = { 
-						is_ai = yes						
+						is_ai = yes
+						NOT = { has_tech = advanced_oil_plant }						
 					}
-					add_tech_bonus = {
-						name = secret_weapons
-						bonus = 0.3
-						uses = 5
-						technology = experimental_rockets
-						technology = rocket_engines
-						technology = improved_rocket_engines
-						technology = advanced_rocket_engines
-						technology = jet_engines					
+					set_technology = { advanced_oil_plant = 1 }									
+				}				
+				if = {
+					limit = { 
+						is_ai = yes						
 					}
 					add_tech_bonus = {
 						name = aa_weapons

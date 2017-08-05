@@ -1927,6 +1927,10 @@ ideas = {
 				original_tag = SOV
 			}
 			
+			ai_will_do = {
+				factor = 500
+			}			
+			
 			research_bonus = {
 				cat_mass_assault = 0.05
 			}

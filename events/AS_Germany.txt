@@ -267,18 +267,25 @@ country_event = {
 	picture = GFX_report_event_german_troops
 	
 	is_triggered_only = yes
-		
+
+	immediate = {
+		FRA = { 
+			annex_country = { target = VIC transfer_troops = no }
+		}
+	}
+	
 	option = {
 		name = as_germany.4.a
 		ai_chance = { factor = 10 }
 		set_country_flag = ger_fall_anton
-		ITA = { add_national_unity = 0.10 }
-		random_country = { 
+		every_state = {
 			limit = {
-				original_tag = FRA
-				has_government = democratic
+				is_core_of = VIC				
 			}
-			annex_country = { target = VIC transfer_troops = no }
+			remove_core_of = VIC
+		}		
+		ITA = { add_national_unity = 0.10 }
+		FRA = { 
 			if = {
 				limit = { 28 = { owner = { tag = GER } } }
 				set_state_owner = 28 
@@ -439,32 +446,22 @@ country_event = {
 			limit = { 
 				735 = { owner = { tag = FRA } } 
 				ITA = { exists = yes }
+				ITA = { has_government = fascism }
 				ITA = { is_in_faction_with = GER }
 			}
-			ITA = { set_state_controller = 735 }			
+			ITA = { set_state_controller = 735 }
+			else = { GER = { set_state_controller = 735 } }
 		}
-		if = {
-			limit = { 
-				735 = { owner = { tag = FRA } } 
-				ITA = { NOT = { is_in_faction_with = GER } }
-			}
-			set_state_controller = 735 			
-		}		
 		if = {
 			limit = { 
 				1 = { owner = { tag = FRA } } 
+				ITA = { exists = yes }
+				ITA = { has_government = fascism }
 				ITA = { is_in_faction_with = GER }
 			}
-			ITA = { set_state_controller = 1 }			
+			ITA = { set_state_controller = 1 }
+			else = { GER = { set_state_controller = 1 } }
 		}
-		if = {
-			limit = { 
-				735 = { owner = { tag = FRA } } 
-				ITA = { NOT = { is_in_faction_with = GER } }
-			}
-			set_state_controller = 1			
-		}		
-		
 		
 		# Spain
 		if = {
@@ -575,7 +572,7 @@ country_event = {
 	fire_only_once = yes
 
 	mean_time_to_happen = {
-			days = 1
+			days = 100
 	}
 	
 	trigger = {
@@ -603,7 +600,7 @@ country_event = {
 	fire_only_once = yes
 
 	mean_time_to_happen = {
-			days = 1
+			days = 100
 	}
 	
 	trigger = {
@@ -693,7 +690,7 @@ country_event = {
 	fire_only_once = yes
 
 	mean_time_to_happen = {
-			days = 10
+			days = 20
 	}
 	
 	trigger = {
@@ -777,7 +774,7 @@ country_event = {									# Help SPA 2
 
 
 	mean_time_to_happen = {
-			days = 360
+			days = 300
 	}
 	
 	hidden = yes
@@ -796,17 +793,22 @@ country_event = {									# Help SPA 2
 			}
 			add_equipment_to_stockpile = {
 				type = infantry_equipment_1
-				amount = 2000
+				amount = 4000
 				producer = GER
 			}			
 			add_equipment_to_stockpile = {
 				type = artillery_equipment_1
-				amount = 1000
+				amount = 2000
 				producer = GER
 			}
 			add_equipment_to_stockpile = {
 				type = support_equipment_1
 				amount = 500
+				producer = GER
+			}
+			add_equipment_to_stockpile = {
+				type = tac_bomber_equipment_1
+				amount = 120
 				producer = GER
 			}			
 		}
@@ -825,6 +827,7 @@ country_event = {									# Bitter Peace
 		name = as_germany.14.a					# Accept Bitter Peace
 		ai_chance = { factor = 10 }	
 		add_national_unity = 0.25
+		add_political_power = 1000 
 		SOV = { 
 			add_national_unity = -0.10
 			country_event = { id = as_sov.15 days = 0 }
@@ -856,7 +859,8 @@ country_event = {								# DOW Irak
 		OR = {	
 			751 = { is_controlled_by = GER }
 			751 = { is_controlled_by = ITA }
-			EGY = { has_capitulated = yes }				
+			EGY = { has_capitulated = yes }	
+			IRQ = { is_neighbor_of = GER }
 		}
 		ITA = { is_in_faction_with = GER }
 	}		
@@ -897,6 +901,7 @@ country_event = {								# DOW Persia
 			OR = {	
 				751 = { is_controlled_by = GER }
 				751 = { is_controlled_by = ITA }
+				PER = { is_neighbor_of = GER }
 			}
 			ITA = { is_in_faction_with = GER }
 		}
@@ -916,4 +921,63 @@ country_event = {								# DOW Persia
 			type = puppet_wargoal_focus
 		}
 	}
+}
+
+country_event = {									# King Tiger
+	id = as_germany.17
+	title = as_germany.17.t
+	desc = as_germany.17.d
+	picture = GFX_report_event_german_troops
+	
+	hidden = yes
+	
+	fire_only_once = yes
+
+	mean_time_to_happen = {
+			days = 600
+	}
+	
+	trigger = {
+		tag = GER
+		is_ai = yes
+		has_tech = improved_heavy_tank
+		NOT = { has_tech = advanced_heavy_tank }	
+	}
+	option = {
+		name = as_germany.6.a
+		ai_chance = { factor = 10 }
+		set_technology = { advanced_heavy_tank = 1 }		
+	}	
+}
+
+country_event = {									# DAK
+	id = as_germany.18
+	title = as_germany.18.t
+	desc = as_germany.18.d
+	picture = GFX_report_event_german_troops
+	
+	hidden = yes
+	
+	fire_only_once = yes
+
+	mean_time_to_happen = {
+			days = 0
+	}
+	
+	trigger = {
+		tag = GER
+		is_ai = yes
+		is_in_faction_with = ITA
+		451 = { NOT = { is_controlled_by = ITA } }	
+	}
+	option = {
+		name = as_germany.6.a
+		ai_chance = { factor = 10 }
+		load_oob = "GER_dak"		
+		add_ai_strategy = {
+			type = area_priority
+			id = africa
+			value = 40
+		}	
+	}	
 }

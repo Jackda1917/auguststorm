@@ -46,7 +46,7 @@ No surprise there: the more players will play the mod the more feedback you make
 
 August Storm detailed changes (cumulative but not exhaustive):
 
-Current Version: 1.4.1.21
+Current Version: 1.4.1.3
 Compatibility: HOI IV 1.4.1 DOD
 
 - Please, don't forget to evaluate the mod on Steam Workshop, we have put a link in the game menu for that, Thanks ! -
@@ -71,6 +71,7 @@ AI
 • AI research improved
 • AI build AA defence on crucials economic zone
 • Improved peace conference system
+• GER AI more likely to attack Persia and Iraq
 
 Land Combat
 • Winter countries (FIN, SOV, NOR, SWE) fought better than their opponents in winter: temperatures checked for every combats.
@@ -123,7 +124,10 @@ Balance and Gameplay
 • More Historical starting Spanish Republican government for SCW
 • New timed idea boosting Spanish Reps
 • A lot more political events (hidden or not)
+• Add more VPs to strategic territories
 • New Surrender events chain : Soviet Bitter Peace
+• The loss of its African territories hits Italy UN (helps for surrender/switching sides)
+• Gibraltar or Suez control boost Italy UN 
 • New Italian civil war event chain (RSI) 
 • Added UN penaties when suffer too many casualties  
 • Many other balance tweaks, historical fix, new events...

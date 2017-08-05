@@ -17,13 +17,18 @@ division_template = {
 		infantry = { x = 2 y = 0 }
 		infantry = { x = 2 y = 1 }
 		infantry = { x = 2 y = 2 }	
+
+		infantry = { x = 3 y = 0 }
+		infantry = { x = 3 y = 1 }
+		infantry = { x = 3 y = 2 }
 		
 		artillery_brigade = { x = 2 y = 3 }	
 	}
 	support = {
 		armoured_reconnaissance_company = { x = 0 y = 0 }
 		#anti_tank = { x = 0 y = 1 }
-		engineer = { x = 0 y = 0 }
+		engineer = { x = 0 y = 1 }
+		artillery = { x = 0 y = 2 } 
 		#signal_company = { x = 0 y = 3 }     too old materials / too low number of good one
 	}
 	priority = 1
@@ -44,9 +49,9 @@ division_template = {
 		motorized = { x = 2 y = 2 }
 	}
 	support = {
-		#recon = { x = 0 y = 0 }
-		artillery = { x = 0 y = 0 }
-		engineer = { x = 0 y = 1 }
+		armoured_reconnaissance_company = { x = 0 y = 0 }
+		artillery = { x = 0 y = 1 }
+		engineer = { x = 0 y = 2 }
 		#signal_company = { x = 0 y = 3 }
 	}
 	priority = 1
@@ -57,16 +62,23 @@ division_template = {
 		mountaineers = { x = 0 y = 0 }
 		mountaineers = { x = 0 y = 1 }
 		mountaineers = { x = 0 y = 2 }	
+		
 		mountaineers = { x = 1 y = 0 }
 		mountaineers = { x = 1 y = 1 }
 		mountaineers = { x = 1 y = 2 }
+		
 		mountaineers = { x = 2 y = 0 }
 		mountaineers = { x = 2 y = 1 }
 		mountaineers = { x = 2 y = 2 }
+		
 		mountaineers = { x = 3 y = 0 }
 		mountaineers = { x = 3 y = 1 }
-		artillery_brigade = { x = 3 y = 2 }
+		mountaineers = { x = 3 y = 2 }
 	}
+	support = {
+		recon = { x = 0 y = 0 }
+		artillery = { x = 0 y = 1 }
+	}	
 	priority = 1
 }
 division_template = {
@@ -128,6 +140,7 @@ division_template = {
 	regiments = {
 		mountaineers = { x = 0 y = 0 }
 		mountaineers = { x = 0 y = 1 }
+		mountaineers = { x = 0 y = 2 }		
 	}
 	support = {
 		artillery = { x = 0 y = 0 }
@@ -141,9 +154,11 @@ division_template = {
 		infantry = { x = 0 y = 0 }
 		infantry = { x = 0 y = 1 }
 		infantry = { x = 0 y = 2 }
+		
 		infantry = { x = 1 y = 0 }
 		infantry = { x = 1 y = 1 }
 		infantry = { x = 1 y = 2 }
+		
 		infantry = { x = 2 y = 0 }
 		infantry = { x = 2 y = 1 }
 		infantry = { x = 2 y = 2 }
@@ -182,6 +197,7 @@ units = {
 		division_template = "Division de Cavalerie" 	
 		start_experience_factor = 0.2
 		start_equipment_factor = 0.5
+		start_manpower_factor = 0.3
 	}
 
 	# 3ème Région Militaire
@@ -191,6 +207,8 @@ units = {
 		location = 11535 # Caen
 		division_template = "Division d'Infanterie Motorisée"
 		start_experience_factor = 0.3
+		start_equipment_factor = 0.5
+		start_manpower_factor = 0.3		
 	}
 
 	# 4ème Région Militaire
@@ -200,6 +218,8 @@ units = {
 		location = 9495 # Rennes
 		division_template = "Division d'Infanterie"
 		start_experience_factor = 0.3
+		start_equipment_factor = 0.5
+		start_manpower_factor = 0.3		
 	}
 
 	# 5ème Région Militaire
@@ -209,6 +229,8 @@ units = {
 		location = 3655 # Bourges
 		division_template = "Division d'Infanterie Motorisée"
 		start_experience_factor = 0.3
+		start_equipment_factor = 0.5
+		start_manpower_factor = 0.3		
 	}
 	division = {
 		name = "1ère Division de Cavalerie"
@@ -255,12 +277,16 @@ units = {
 		location = 9642 # Besançon
 		division_template = "Division d'Infanterie"
 		start_experience_factor = 0.3
+		start_equipment_factor = 0.5
+		start_manpower_factor = 0.3		
 	}
 	division= {	
 		name = "14ème Division d'Infanterie"
 		location = 6529 # Colmar
 		division_template = "Division d'Infanterie"
 		start_experience_factor = 0.3
+		start_equipment_factor = 0.5
+		start_manpower_factor = 0.3		
 	}
 
 	# 8ème Région Militaire
@@ -270,6 +296,8 @@ units = {
 		location = 3652 # Dijon
 		division_template = "Division d'Infanterie Motorisée"
 		start_experience_factor = 0.3
+		start_equipment_factor = 0.5
+		start_manpower_factor = 0.3		
 	}
 
 	# 9ème Région Militaire
@@ -279,6 +307,8 @@ units = {
 		location = 3671 # Tours
 		division_template = "Division d'Infanterie"
 		start_experience_factor = 0.3
+		start_equipment_factor = 0.5
+		start_manpower_factor = 0.3		
 	}
 	division = {	
 		name = "3ème Div. d'Inf. Nord-Africaine"
@@ -293,6 +323,7 @@ units = {
 		division_template = "Régiment de Chars de Combat"
 		force_equipment_variants = { light_tank_equipment_1 = { owner = "FRA" } }  # AS		
 		start_experience_factor = 0.3
+		start_manpower_factor = 0.3		
 	}
 	division = {	
 		name = "6ème Régiment de Chars de Combat"
@@ -300,6 +331,7 @@ units = {
 		division_template = "Régiment de Chars de Combat"
 		force_equipment_variants = { light_tank_equipment_1 = { owner = "FRA" } }  # AS		
 		start_experience_factor = 0.3
+		start_manpower_factor = 0.3		
 	}
 	
 	# 10e RM est suprimée (Strasbourg)
@@ -308,6 +340,8 @@ units = {
 		location = 9503 # Strasbourg
 		division_template = "Division d'Infanterie"
 		start_experience_factor = 0.3
+		start_equipment_factor = 0.1
+		start_manpower_factor = 0.1		
 	}
 
 	# 11ème Région Militaire
@@ -317,6 +351,8 @@ units = {
 		location = 11465 # Nantes
 		division_template = "Division d'Infanterie"
 		start_experience_factor = 0.3
+		start_equipment_factor = 0.5
+		start_manpower_factor = 0.3		
 	}
 
 	# 12e RM est suprimée (Rheims)
@@ -325,6 +361,8 @@ units = {
 		location = 11732 # Châlons-sur-Marne
 		division_template = "Division d'Infanterie Motorisée"
 		start_experience_factor = 0.3
+		start_equipment_factor = 0.5
+		start_manpower_factor = 0.3		
 	}
 	division= {	
 		name = "1ère Division Légère Mécanique"
@@ -342,6 +380,8 @@ units = {
 		location = 9748 # Clermont-Ferrand
 		division_template = "Division d'Infanterie Motorisée"
 		start_experience_factor = 0.3
+		start_equipment_factor = 0.5
+		start_manpower_factor = 0.3		
 	}
 
 	# 14ème Région Militaire
@@ -365,7 +405,7 @@ units = {
 		division_template = "Régiment de Chars de Combat"
 		force_equipment_variants = { light_tank_equipment_1 = { owner = "FRA" } }  # AS		
 		start_experience_factor = 0.3
-		start_equipment_factor = 0.5		
+		start_equipment_factor = 0.7		
 	}
 	division = {	
 		name = "7ème Régiment de Chars de Combat"
@@ -373,7 +413,7 @@ units = {
 		division_template = "Régiment de Chars de Combat"
 		force_equipment_variants = { light_tank_equipment_1 = { owner = "FRA" } }  # AS		
 		start_experience_factor = 0.3
-		start_equipment_factor = 0.5		
+		start_equipment_factor = 0.7		
 	}
 	# 15ème Région Militaire
 	# Marseille

@@ -508,4 +508,22 @@ ITA_area_priority = {
 		id = oceania
 		value = -90
 	}
+}
+
+ita_contains_spr = {
+	enable = {
+		tag = ITA
+		has_government = fascism		
+		SPR = { has_government = democratic }
+		country_exists = SPR
+	}
+	abort = {
+		SPR = { NOT { has_government = democratic } }
+	}
+	
+	ai_strategy = {
+		type = contain
+		id = "SPR"			
+		value = 300
+	}		
 }	

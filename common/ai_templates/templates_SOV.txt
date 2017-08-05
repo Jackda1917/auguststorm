@@ -904,7 +904,7 @@ garrison_SOV = {
 		reinforce_prio = 0
 		##custom_icon  = 7
 		
-		target_width = 1.0
+		target_width = 10.0
 		width_weight = 1.0
 		column_swap_factor = 0.5
 		
@@ -970,7 +970,7 @@ garrison_SOV = {
 		reinforce_prio = 0
 		##custom_icon  = 7
 		
-		target_width = 1.0
+		target_width = 12.0
 		width_weight = 1.0
 		column_swap_factor = 0.5
 		
@@ -1052,7 +1052,7 @@ anti_armor_SOV = {
 		}
 	}
 	
-	match_to_count = 0.9
+	match_to_count = 0.99
 	
 	heavy_armor_SOV = {
 	
@@ -1107,7 +1107,7 @@ anti_armor_SOV = {
 
 		target_template = {
 			weight = 0.99
-			match_value = 10000.0
+			match_value = 20000.0
 			
 			support = {
 				heavy_armor_company = 1
@@ -1174,7 +1174,7 @@ anti_armor_SOV = {
 			}
 		}
 	}	
-		target_width = 16.5
+		target_width = 16
 		width_weight = 3.0
 		column_swap_factor = 0.1
 		
@@ -1210,7 +1210,7 @@ anti_armor_SOV = {
 
 		target_template = {
 			weight = 0.99
-			match_value = 10000.0
+			match_value = 30000.0
 			
 			support = {
 				recon = 1
@@ -1328,13 +1328,13 @@ mobile_SOV = {
 		}
 		
 		replace_at_match = 1
-		replace_with = Mekhanizirovannaya_SOV
+		replace_with = mechanized_SOV
 		target_min_match = 1
 	}
 	
 	mechanized_SOV = {
 		upgrade_prio = {
-			factor = 0.4
+			factor = 0.2
 
 			modifier = {
 				factor = 1
@@ -1342,13 +1342,12 @@ mobile_SOV = {
 		}
 		
 		production_prio = {
-			factor = 1
+			factor = 0.5
 
 			modifier = {
 				factor = 1
 			}
 		}
-
 		
 		target_width = 20.0
 		width_weight = 1.0

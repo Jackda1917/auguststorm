@@ -67,7 +67,7 @@ ideas = {
 			allowed = {
 				always = no
 			}
-
+			
 			cancel = {
 				OR = {
 					VIC = { exists = yes }
@@ -103,7 +103,7 @@ ideas = {
 			removal_cost = -1
 
 			picture = generic_wall_line
-			
+		
 			modifier = {
 				max_planning = 0.25
 				planning_speed = -0.45

@@ -30,7 +30,7 @@ GER_unit_production = {
 	ai_strategy = {
 		type = role_ratio
 		id = garrison
-		value = 12 #30 to 8
+		value = 13 #30 to 8
 	}
 
 	ai_strategy = {
@@ -60,20 +60,20 @@ GER_unit_production = {
 	ai_strategy = {
 		type = role_ratio
 		id = mobile
-		value = 5 #because doctrine this = 2
+		value = 8 #because doctrine this = 2
 	}
 
 	ai_strategy = {
 		type = role_ratio
 		id = armor
-		value = 1 #because doctrine this = 10
+		value = -2 #because doctrine this = 10
 
 	}
 
 	ai_strategy = {
 		type = role_ratio
 		id = infantry
-		value = 80
+		value = 65
 	}
 	
 	#Air unit factors
@@ -135,7 +135,13 @@ GER_unit_production = {
 	ai_strategy = {
 		type = equipment_production_factor
 		id = submarine
-		value = 50  
+		value = 60  
+	}
+
+	ai_strategy = {
+		type = equipment_production_factor
+		id = carrier
+		value = -100  
 	}
 	
 	ai_strategy = {
@@ -147,7 +153,7 @@ GER_unit_production = {
 	ai_strategy = {
 		type = equipment_production_factor
 		id = infantry
-		value = 70   
+		value = 20   
 	}
 	
 	ai_strategy = {
@@ -159,7 +165,7 @@ GER_unit_production = {
 	ai_strategy = {
 		type = equipment_production_factor
 		id = motorized
-		value = 30 #to 40
+		value = 20 #to 40
 	}	
 }
 
@@ -240,6 +246,19 @@ GER_subs = {
 	}
 }	
 	
+
+GER_garrisons = {
+	enable = {
+		original_tag = GER	
+		date > 1941.1.1	
+	}
+	
+	ai_strategy = {
+		type = build_army
+		id = garrison
+		value = 200
+	}
+}
 		
 GER_armored_production = {
 	enable = {
@@ -289,16 +308,20 @@ GER_highered_armored_production = {
 		original_tag = GER
 		num_of_military_factories > 119
 		has_tech = improved_medium_tank
+		NOT = { has_equipment = { medium_tank_equipment > 4000 } }
 		has_war = yes
 	}
 	abort = {
-		num_of_military_factories < 120	
+		OR = {
+			num_of_military_factories < 120
+			has_equipment = { medium_tank_equipment > 4000 }
+		}
 	}
 
 	ai_strategy = {
 		type = equipment_production_factor
 		id = armor
-		value = 50  
+		value = 30  
 	}
 
 }
@@ -664,13 +687,13 @@ soviet_ally = {
 italy_ally = {
 	enable = {
 		tag = GER
-		has_completed_focus = GER_italy_ally
 		has_government = fascism
 		country_exists = ITA
 		ITA = { has_government = fascism }
+		FRA = { NOT = { controls_state = 16 } }		
 		OR = {								# AS
-			FRA = { NOT = { controls_state = 16 } }
-			VIC = { exists = yes }
+			has_completed_focus = GER_italy_ally
+			VIC = { exists = yes }			
 		}
 	}
 	abort = {
@@ -688,7 +711,7 @@ italy_ally = {
 	ai_strategy = {
 		type = alliance
 		id = "ITA"			
-		value = 300
+		value = 2000
 	}	
 }
 
@@ -1195,9 +1218,12 @@ play_nice_for_fall_gelb = {
 fall_gelb = {
 	enable = {
 		tag = GER
-		has_completed_focus = GER_around_maginot
+		OR = {	
+			has_completed_focus = GER_around_maginot
+			FRA = { has_capitulated = yes }
+			has_global_flag = vichy_established			
+		}
 	}
-
 
 	abort = {
 		tag = GER
@@ -1254,9 +1280,8 @@ need_dow_uncle_sam = {
 		OR ={
 			ENG = { has_capitulated = yes } 
 			AND = {
-					JAP = { has_war_with = USA }
-					JAP = { is_in_faction_with = GER }
-					has_global_flag = vichy_established
+				JAP = { has_war_with = USA }
+				has_global_flag = vichy_established
 			}		
 		}	
 	}
@@ -1558,3 +1583,99 @@ ger_oilplant = {
 	}
 }
 
+protect_italy = {
+	enable = {
+		tag = GER
+		has_government = fascism
+		country_exists = ITA
+		ITA = { has_government = fascism }
+	}
+	abort = {
+		NOT = { ITA = { has_government = fascism } } 
+	}		
+
+	ai_strategy = {
+		type = protect
+		id = "ITA"			
+		value = 2000
+	}
+
+	ai_strategy = {
+		type = support
+		id = "ITA"			
+		value = 300
+	}	
+}
+
+
+ger_contains_spr = {
+	enable = {
+		tag = GER
+		has_government = fascism
+		SPR = { has_government = democratic }
+		country_exists = SPR
+	}
+	abort = {
+		SPR = { NOT { has_government = democratic } }
+	}
+	
+	ai_strategy = {
+		type = contain
+		id = "SPR"			
+		value = 300
+	}		
+}
+
+
+ger_dow_spr = {
+	enable = {
+		tag = GER
+		has_government = fascism
+		SPR = { has_government = democratic }
+		country_exists = SPR
+		OR = {
+			FRA = { has_capitulated = yes}
+			VIC = { exists = yes }
+		}
+	}
+	abort = {
+		SPR = { NOT { has_government = democratic } }
+	}
+	
+	ai_strategy = {
+		type = antagonize
+		id = "SPR"			
+		value = 500
+	}
+
+	ai_strategy = {
+		type = build_army
+		id = mountaineers			
+		value = 10
+	}	
+	
+}
+
+dow_benelux = {
+	enable = {
+		tag = GER
+		NOT = { has_completed_focus = GER_around_maginot }
+		controls_state = 16	
+	}
+
+	ai_strategy = {
+		type = antagonize
+		id = "BEL"
+		value = 300
+	}
+	ai_strategy = {
+		type = antagonize
+		id = "LUX"
+		value = 300
+	}
+	ai_strategy = {
+		type = antagonize
+		id = "HOL"
+		value = 300
+	}	
+}

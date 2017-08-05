@@ -1190,6 +1190,7 @@ focus_tree = {
 		completion_reward = {
 			army_experience = 30 # was 5
 			set_country_flag = defense_of_moscow_flag						## AS set for GLO
+			add_national_unity = 0.10
 			if = { 
 				limit = { is_ai = yes }					
 				country_event = glo.3					
@@ -1680,17 +1681,18 @@ focus_tree = {
 		prerequisite = { focus = SOV_move_industry_to_urals }  # AS
 		x = 6
 		y = 4
-		cost = 3 # was 10
+		cost = 1 # was 10
 		available = {									# was none
 			has_defensive_war = yes
 			OR = {		
+				casualties > 3000000
 				AND = {
-					surrender_progress > 0.1
+					surrender_progress > 0.15
 					SOV = { is_ai = yes }
 				}
 				AND = {
-					surrender_progress > 0.2
-					SOV = { NOT = { is_ai = yes } }
+					surrender_progress > 0.25
+					SOV = { is_ai = no }
 				}				
 			}
 		}		
@@ -1712,7 +1714,8 @@ focus_tree = {
 					SOV = { is_ai = yes } 
 				}
 				add_timed_idea = { idea = order_227_ai days = 1500 }
-			}			
+			}
+			add_national_unity = 0.15
 			add_tech_bonus = {   # was none
 				name = land_doc_bonus
 				bonus = 0.5
@@ -1755,7 +1758,7 @@ focus_tree = {
 		y = 2
 		cost = 5 #10
 		ai_will_do = {
-			factor = 1
+			factor = 1000
 		}
 
 		available_if_capitulated = yes
@@ -1773,7 +1776,7 @@ focus_tree = {
 		y = 3
 		cost = 10
 		ai_will_do = {
-			factor = 1
+			factor = 1000
 		}
 
 		available_if_capitulated = yes
@@ -1792,7 +1795,7 @@ focus_tree = {
 		y = 4
 		cost = 10
 		ai_will_do = {
-			factor = 1
+			factor = 1000
 		}
 
 		available_if_capitulated = yes
@@ -1810,7 +1813,7 @@ focus_tree = {
 		y = 3
 		cost = 5 # was 10
 		ai_will_do = {
-			factor = 1
+			factor = 1000
 		}
 
 		available_if_capitulated = yes	
@@ -3333,14 +3336,17 @@ focus_tree = {
 							is_puppet_of = ENG
 							is_puppet_of = FRA
 							is_puppet_of = GER
-							is_puppet_of = JAP							
+							is_puppet_of = JAP
+							is_puppet_of = ITA							
 						}				
 					}
 					add_timed_idea = { idea = comintern_influence days = 1095 }
 				}
 			}
 			if = {
-				limit = { NOT = { has_government = revolutionary } }
+				limit = { 
+					has_government = revolutionary 					
+				}
 				add_political_power = -300
 				every_other_country = {
 					limit = {					
@@ -3364,7 +3370,11 @@ focus_tree = {
 		x = 16
 		y = 5
 		available = {
-			NOT = { has_country_flag = revol_gov } # Revolutionnnary Government		
+			NOT = { has_country_flag = revol_gov } # Revolutionnnary Government	
+			NOT = {
+				has_war_with = GER
+				GER = { has_government = fascism }
+			}			
 		}
 		cost = 10
 		ai_will_do = {
@@ -3546,7 +3556,11 @@ focus_tree = {
 		icon = GFX_goal_generic_political_pressure
 		prerequisite = { focus = SOV_expand_red_fleet }
 		available = {
-			NOT = { has_country_flag = revol_gov } # Revolutionnnary Government		
+			NOT = { has_country_flag = revol_gov } # Revolutionnnary Government
+			NOT = {
+				has_war_with = GER
+				GER = { has_government = fascism }
+			}
 		}
 		x = 18
 		y = 4

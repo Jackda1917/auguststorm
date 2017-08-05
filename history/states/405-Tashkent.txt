@@ -11,7 +11,7 @@ state={
 		add_core_of = RUS
 
 		victory_points = {
-			1459 3 
+			1459 5 
 		}
 		buildings = {
 			infrastructure = 5

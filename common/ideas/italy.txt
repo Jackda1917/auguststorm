@@ -154,6 +154,54 @@ ideas = {
 			}
 		}
 		
+		ita_controls_suez = {
+
+			allowed = {
+				always = no          			# AS  
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+
+			cancel = {
+				OR = {	
+					NOT = { has_government = fascism }
+					751 = { NOT = { is_controlled_by = ITA } }
+				}
+			}
+			
+			removal_cost = -1
+
+			modifier = {
+				unity_factor = 0.30
+			}
+		}
+
+		
+		ita_controls_gib = {
+
+			allowed = {
+				always = no          			# AS  
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+
+			cancel = {
+				OR = {	
+					NOT = { has_government = fascism }
+					118 = { NOT = { is_controlled_by = ITA } }
+				}
+			}
+			
+			removal_cost = -1
+
+			modifier = {
+				unity_factor = 0.30
+			}
+		}		
 	}	
 		
 	political_advisor = {

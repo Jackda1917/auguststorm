@@ -1,0 +1,8 @@
+﻿units = {		
+	navy = {
+		base = 12068
+		location = 12068
+		ship = { name = "Yamato" definition = battleship equipment = { SH_battleship_1 = { amount = 1 owner = JAP } } }
+		
+	}
+}	

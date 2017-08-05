@@ -21,7 +21,7 @@ SOV_unit_production = {
 	ai_strategy = {
 		type = build_army
 		id = infantry
-		value = 325
+		value = 300
 	}
 
 	ai_strategy = {
@@ -137,21 +137,33 @@ SOV_unit_production = {
 	ai_strategy = {
 		type = equipment_production_factor
 		id = fighter
-		value = 30
+		value = 20
 	}
 	
 	ai_strategy = {
 		type = equipment_production_factor
 		id = infantry
-		value = 30
+		value = 40
 	}
 	
 	ai_strategy = {
 		type = equipment_production_factor
 		id = artillery
-		value = 30
+		value = 40
 	}
-
+	
+	ai_strategy = {
+		type = equipment_production_factor
+		id = tactical_bomber
+		value = -10
+	}	
+	
+	ai_strategy = {
+		type = equipment_production_factor
+		id = strategic_bomber
+		value = -10
+	}
+	
 }	
 
 SOV_dont_waste_xp_until_medium_armor = {
@@ -266,7 +278,7 @@ SOV_highered_armored_production = {
 	ai_strategy = {
 		type = role_ratio
 		id = artillery
-		value = 5
+		value = 2
 	}	
 }
 
@@ -309,7 +321,7 @@ SOV_inf_spaming = {
 	ai_strategy = {								# AS
 		type = equipment_production_factor
 		id = infantry
-		value = 10
+		value = 20
 	}
 
 	ai_strategy = {								# AS
@@ -773,11 +785,9 @@ respect_rom_integrity = {
 	
 	abort = {
 		tag = SOV 
-		OR = {	
-			threat > 0.9
-			has_completed_focus = SOV_claim_bessarabia
-			has_global_flag = sov_yes_pact			
-		}
+		has_completed_focus = SOV_claim_bessarabia
+		NOT = { has_global_flag = sov_yes_pact }
+		threat > 0.9
 	}
 	
 	ai_strategy = {
@@ -821,15 +831,78 @@ respect_pol_integrity = {
 	}
 }
 
+respect_mol_riv_pact = {
+
+	enable = {
+		tag = SOV
+		has_global_flag = sov_yes_pact
+	}
+	
+	abort = {
+		tag = SOV 
+		date > 01.01.1942
+	}
+	
+	ai_strategy = {
+		type = antagonize
+		id = "GER"
+		value = -200
+	}
+}
+
+sov_contains_ger= {
+
+	enable = {
+		tag = SOV
+		NOT = { has_war_with = GER }
+		NOT = { has_global_flag = sov_yes_pact }		
+	}
+	
+	abort = {
+		has_global_flag = sov_yes_pact
+	}
+
+	ai_strategy = {
+		type = contain
+		id = "GER"
+		value = 200
+	}		
+}
+
+sov_war_with_ger = {
+
+	enable = {
+		tag = SOV
+		has_war_with = GER
+	}
+	
+	abort = {
+		NOT = { has_war_with = GER }
+	}
+	
+	ai_strategy = {
+		type = antagonize
+		id = "GER"
+		value = 3000
+	}
+
+	ai_strategy = {
+		type = contain
+		id = "GER"
+		value = 3000
+	}		
+}
+
 respect_sov_jap_pact = {
 
 	enable = {
 		tag = SOV
 		has_global_flag = sov_jap_nap_flag
+		has_war_with = GER
 	}
 	abort = {
 		tag = SOV 
-		date > 1943.06.31
+		date > 1944.06.31
 		NOT = { has_war_with = GER }
 		NOT = { surrender_progress > 0.01 }
 	}
@@ -837,14 +910,56 @@ respect_sov_jap_pact = {
 	ai_strategy = {
 		type = antagonize
 		id = "JAP"
-		value = -300
+		value = -5000
+	}
+
+	ai_strategy = {
+		type = contain
+		id = "JAP"
+		value = -5000
 	}
 	
 	ai_strategy = {
 		type = ignore
 		id = "JAP"
-		value = 300
+		value = 5000
 	}
+	
+	ai_strategy = {
+		type = antagonize
+		id = "MAN"
+		value = -5000
+	}
+	
+	ai_strategy = {
+		type = ignore
+		id = "MAN"
+		value = 5000
+	}	
+
+	ai_strategy = {
+		type = antagonize
+		id = "MEN"
+		value = -5000
+	}
+	
+	ai_strategy = {
+		type = ignore
+		id = "MEN"
+		value = 5000
+	}
+
+	ai_strategy = {
+		type = protect
+		id = "MON"
+		value = 5000
+	}
+	ai_strategy = {
+		type = protect
+		id = "SIK"
+		value = 5000
+	}
+	
 }
 
 refused_sov_jap_pact = {

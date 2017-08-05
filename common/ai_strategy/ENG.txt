@@ -386,7 +386,7 @@ careful_with_early_invasions = {
 	enable = {
 		is_in_faction_with = ENG # anyone in allies		
 		NOT = { has_tech = landing_craft }		
-		date < 1942.1.1
+		date < 1944.1.1
 		NOT = {
 			GER = { has_war_with = SOV }
 			is_in_faction_with = USA
@@ -395,7 +395,7 @@ careful_with_early_invasions = {
 	abort = {
 		has_tech = landing_craft
 		GER = { has_war_with = SOV }
-		date > 1942.1.1
+		date > 1943.12.30
 		is_in_faction_with = USA
 	}
 
@@ -410,6 +410,13 @@ careful_with_early_invasions = {
 		id = "GER"			
 		value = -3000
 	}
+
+	ai_strategy = {
+		type = invade
+		id = "YUG"			
+		value = -3000
+	}	
+	
 }
 
 east_prussia_invasion_is_death_trap = {

@@ -148,10 +148,10 @@ resistance_effect = {
 # On States
 non_core = {
 	local_building_slots_factor = -0.5
-	occupation_cost = 0.004           # was none
+	occupation_cost = 0.001           # was none
 	resistance_tick = -0.6   
 	local_resources = -0.25
-	local_manpower = -0.6     
+	local_manpower = -0.5     
 	local_factories = -0.5	  	
 }
 

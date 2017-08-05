@@ -98,7 +98,7 @@ country_event = {
 
 	trigger = {
 		tag = PRC
-		num_of_controlled_states > 3
+		num_of_controlled_states > 8
 	}
 	
 	option = {
@@ -873,6 +873,7 @@ country_event = {
 		name = china.103.a
 		set_global_flag = CHI_unite_PRC
 		annex_country = { target = FROM transfer_troops = yes }
+		CHI = { add_national_unity = 0.05 }
 	}
 }
 

@@ -33,7 +33,7 @@ leader_traits = {
 	
 	stout_defender = { # This particular trait will make the AI heavily prioritize defensive warfare, rarely, if ever, attacking out of fortified locations
 		random = no
-		ai_focus_defense_factor = 0.75 
+		ai_focus_defense_factor = 0.9 
 		
 		ai_will_do = {
 			factor = 1
@@ -225,9 +225,9 @@ leader_traits = {
 	anti_communist = {
 		random = no
 		communism_acceptance = -50
-		communism_drift = -0.01
+		communism_drift = -0.002
 		revolutionary_acceptance = -100
-		revolutionary_drift = -0.02
+		revolutionary_drift = -0.005
 		ai_will_do = {
 			factor = 1
 		}

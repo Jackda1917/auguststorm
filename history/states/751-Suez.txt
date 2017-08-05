@@ -14,7 +14,7 @@ state = {
 		}
 		
 		victory_points = {
-			4073 15
+			4073 25
 		}
 		
 		# Nasser nationalizes the Suez Canal

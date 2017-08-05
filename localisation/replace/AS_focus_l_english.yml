@@ -152,6 +152,8 @@
  SOV_operation_countenance:0 "Operation Countenance"
  SOV_operation_countenance_desc:0 "Propose to Great Britain the partition of Iran "
  SOV_production_effort2:0 "Armament Effort II"
+ USA_operation_torch_focus:0 "Operation Torch"
+ USA_operation_torch_focus_desc:0 "Prepare the invasion of North Africa"
  ###Important Flags
  revol_gov:0 "Revolutionary Government"
  courageous_defense_flag:0 "Courageous Defense"

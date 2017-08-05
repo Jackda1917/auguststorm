@@ -78,6 +78,19 @@ less_trucks_4_u_JAP = {
 		id = artillery
 		value = 20 #10 to 20
 	}
+	
+	ai_strategy = {
+		type = equipment_production_factor
+		id = carrier
+		value = 20  
+	}
+
+	ai_strategy = {
+		type = equipment_production_factor
+		id = capital_ship
+		value = 10  
+	}	
+	
 }
 
 southern_expansion = {
@@ -172,7 +185,20 @@ strike_usa = {
 		type = antagonize
 		id = "USA"			
 		value = 300
-	}	
+	}
+	
+	ai_strategy = {
+		type = equipment_production_factor
+		id = carrier
+		value = 20  
+	}
+
+	ai_strategy = {
+		type = equipment_production_factor
+		id = capital_ship
+		value = 10  
+	}
+	
 }
 
 germany_ally = {

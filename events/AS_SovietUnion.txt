@@ -13,7 +13,7 @@ country_event = {
 	fire_only_once = yes
 	
 	mean_time_to_happen = {
-			days = 15
+			days = 50
 	}
 	
 	trigger = {
@@ -209,7 +209,7 @@ country_event = {
 	fire_only_once = yes
 
 	mean_time_to_happen = {
-			days = 30
+			days = 50
 	}
 	
 	trigger = {
@@ -279,7 +279,7 @@ country_event = {									# Help SPR
 	fire_only_once = yes
 
 	mean_time_to_happen = {
-			days = 50
+			days = 20
 	}
 	
 	trigger = {
@@ -307,12 +307,12 @@ country_event = {									# Help SPR
 			}
 			add_equipment_to_stockpile = {
 				type = infantry_equipment_1
-				amount = 1000
+				amount = 2000
 				producer = SOV
 			}
 			add_equipment_to_stockpile = {
 				type = infantry_equipment_0
-				amount = 6000
+				amount = 8000
 				producer = SOV
 			}			
 			add_equipment_to_stockpile = {
@@ -340,9 +340,10 @@ country_event = {
 	option = {
 		name = as_sov.9.a 							# UK accepts partition of Iran
 		set_global_flag = sov_countenance_flag
-		add_national_unity = 0.05
+		add_national_unity = 0.10
 		add_opinion_modifier = { target = ENG modifier = offered_support }
-		add_political_power = 50 
+		add_political_power = 50
+		news_event = { id = as_news.5 hours = 4 }
 		SOV = {
 			transfer_state = 414
 			transfer_state = 416
@@ -855,15 +856,18 @@ country_event = {     					# Propose Bitter Peace
 	trigger = {
 		tag = SOV
 		has_government = communism
-		surrender_progress > 0.55
+		surrender_progress > 0.5
 		NOT = { 219 = { is_controlled_by = SOV } }   # Moscow
 		NOT = { 195 = { is_controlled_by = SOV } }	 # Leningrad
 		NOT = { 217 = { is_controlled_by = SOV } }	 # Stalingrad		
 		has_war_with = GER
+        NOT = {
+            has_civil_war = yes
+        }		
 	}   
 	
 	mean_time_to_happen = {
-			days = 10
+			days = 0
 	}	
 		
 	option = {
@@ -903,6 +907,7 @@ country_event = {     					# Germany accept proposal
 	is_triggered_only = yes
 
 	fire_only_once = yes
+			
 		
 	option = {
 		name = as_sov.15.a  # At least it would save the Politburo...
@@ -949,18 +954,117 @@ country_event = {     					# Germany accept proposal
 			limit = {
 				original_tag = ROM
 				has_government = fascism
-				78 = { NOT = { is_controlled_by = ROM } }
-				80 = { NOT = { is_controlled_by = ROM } }
 			}
-			if = {	
-				limit = { 80 = { NOT = { is_controlled_by = ROM } } }
-				transfer_state = 80
-			}
-			if = {	
-				limit = { 78 = { NOT = { is_controlled_by = ROM } } }
-				transfer_state = 78
-			}					
-		}	
+                if = {
+                    limit = { 78 = { owner = { original_tag = SOV } } }
+                    transfer_state = 78
+                }
+                if = {
+                    limit = { 80 = { owner = { original_tag = SOV } } }
+                    transfer_state = 80
+                }
+                if = {
+                    limit = { 192 = { owner = { original_tag = SOV } } }
+                    transfer_state = 192
+                }
+                if = {
+                    limit = { 198 = { owner = { original_tag = SOV } } }
+                    transfer_state = 198
+                }
+                white_peace = SOV
+                diplomatic_relation = { country = SOV relation = non_aggression_pact active = yes }
+		}
+    #if Romania was annexed by USSR
+        if = {
+            limit = {
+                AND = {
+                    ROM = { exists = no }
+                    82 = { owner = { original_tag = SOV }}
+                }
+            }
+            ROM = { transfer_state = 82 }
+        }
+        if = {
+            limit = {
+                AND = {
+                    ROM = { exists = no }
+                    83 = { owner = { original_tag = SOV }}
+                }
+            }
+            ROM = { transfer_state = 83 }
+        }
+        if = {
+            limit = {
+                AND = {
+                    ROM = { exists = no }
+                    76 = { owner = { original_tag = SOV }}
+                }
+            }
+            ROM = { transfer_state = 76 }
+        }
+        if = {
+            limit = {
+                AND = {
+                    ROM = { exists = no }
+                    84 = { owner = { original_tag = SOV }}
+                }
+            }
+            ROM = { transfer_state = 84 }
+        }
+        if = {
+            limit = {
+                AND = {
+                    ROM = { exists = no }
+                    81 = { owner = { original_tag = SOV }}
+                }
+            }
+            ROM = { transfer_state = 81 }
+        }
+        if = {
+            limit = {
+                AND = {
+                    ROM = { exists = no }
+                    46 = { owner = { original_tag = SOV }}
+                }
+            }
+            ROM = { transfer_state = 46 }
+        }
+        if = {
+            limit = {
+                AND = {
+                    ROM = { exists = no }
+                    77 = { owner = { original_tag = SOV }}
+                }
+            }
+            ROM = { transfer_state = 77 }
+        }
+        if = {
+            limit = {
+                AND = {
+                    ROM = { exists = no }
+                    79 = { owner = { original_tag = SOV }}
+                }
+            }
+            ROM = { transfer_state = 79 }
+        }
+        if = {
+            limit = {
+                AND = {
+                    ROM = { exists = no }
+                    80 = { owner = { original_tag = SOV }}
+                }
+            }
+            ROM = { transfer_state = 80 }
+        }
+        if = {
+            limit = {
+                AND = {
+                    ROM = { exists = no }
+                    78 = { owner = { original_tag = SOV }}
+                }
+            }
+            ROM = { transfer_state = 78 }
+        }		
 		random_other_country = {
 			limit = {
 				original_tag = FIN
@@ -970,18 +1074,32 @@ country_event = {     					# Germany accept proposal
 				147 = { NOT = { is_controlled_by = FIN } }
 				722 = { NOT = { is_controlled_by = FIN } }				
 			}
-			if = {	
-				limit = { 146 = { NOT = { is_controlled_by = FIN } } }
-				transfer_state = 146
-			}
-			if = {	
-				limit = { 147 = { NOT = { is_controlled_by = FIN } } }
-				transfer_state = 147
-			}
-			if = {	
-				limit = { 722 = { NOT = { is_controlled_by = FIN } } }
-				transfer_state = 722
-			}			
+            if = {
+                    limit = { 146 = { owner = { original_tag = SOV } } }
+                    transfer_state = 146
+                }
+                if = {
+                    limit = { 147 = { owner = { original_tag = SOV } } }
+                    transfer_state = 147
+                }
+                if = {
+                    limit = { 722 = { owner = { original_tag = SOV } } }
+                    transfer_state = 722
+                }
+                if = {
+                    limit = { 213 = { owner = { original_tag = SOV } } }
+                    transfer_state = 213
+                }
+                if = {
+                    limit = { 215 = { owner = { original_tag = SOV } } }
+                    transfer_state = 215
+                }
+                if = {
+                    limit = { 216 = { owner = { original_tag = SOV } } }
+                    transfer_state = 216
+                }
+                white_peace = SOV
+                diplomatic_relation = { country = SOV relation = non_aggression_pact active = yes }		
 		}					
 		every_state = {
 				limit = {	

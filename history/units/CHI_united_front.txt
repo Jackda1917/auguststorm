@@ -111,5 +111,55 @@ units = {
 		name = "112 Juntuán"
 		location = 11913
 		division_template = "Juntuán"
+	}
+	division = {
+		name = "113 Juntuán"
+		location = 11913
+		division_template = "Juntuán"
+	}
+	division = {
+		name = "114 Juntuán"
+		location = 11913
+		division_template = "Juntuán"
+	}
+	division = {
+		name = "115 Juntuán"
+		location = 11913
+		division_template = "Juntuán"
+	}
+	division = {
+		name = "116 Juntuán"
+		location = 11913
+		division_template = "Juntuán"
+	}
+	division = {
+		name = "117 Juntuán"
+		location = 11913
+		division_template = "Juntuán"
+	}
+	division = {
+		name = "118 Juntuán"
+		location = 11913
+		division_template = "Juntuán"
+	}
+	division = {
+		name = "119 Juntuán"
+		location = 11913
+		division_template = "Juntuán"
+	}
+	division = {
+		name = "120 Juntuán"
+		location = 11913
+		division_template = "Juntuán"
+	}
+	division = {
+		name = "121 Juntuán"
+		location = 11913
+		division_template = "Juntuán"
+	}
+	division = {
+		name = "122 Juntuán"
+		location = 11913
+		division_template = "Juntuán"
 	}	
 }

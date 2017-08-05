@@ -5935,7 +5935,7 @@ country_event = {								#### Barbarossa
 		FIN = {
 				if = {
 					limit = { 
-						has_country_flag = fin_sign_peace
+						SOV = { owns_state = 146 }
 						NOT = { is_in_faction_with = SOV }
 						NOT = { is_in_faction_with = ENG }	
 						is_ai = yes						
@@ -5998,9 +5998,10 @@ country_event = {								#### Barbarossa
 					limit = { 
 						NOT = { is_in_faction_with = SOV } 
 						NOT = { is_in_faction_with = ENG }
+						#has_government = fascism
 						is_ai = yes
 					}
-					add_to_war = { targeted_alliance = GER enemy = SOV } 		
+					#add_to_war = { targeted_alliance = GER enemy = SOV } 		
 					add_ai_strategy = {
 						type = alliance
 						id = "GER"
@@ -6024,7 +6025,7 @@ country_event = {								#### Barbarossa
 			add_ai_strategy = {
 				type = antagonize
 				id = "JAP"
-				value = -100
+				value = -200
 			}			
 		}
 

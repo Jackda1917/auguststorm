@@ -261,8 +261,14 @@ country_event = {				# GER Satellites
 	
 	trigger = {
 		original_tag = ROM
-		is_subject = no
-		is_puppet = no
+		has_war_with = SOV
+		GER = {
+			exists = yes
+			has_government = fascism
+			has_war_with = SOV
+		}
+		#is_subject = no
+		#is_puppet = no
 		has_government = fascism
 		has_dlc = "Together for Victory"
 		has_dlc = "Death or Dishonor"
@@ -270,7 +276,7 @@ country_event = {				# GER Satellites
 	}
 	
 	mean_time_to_happen = {
-		days = 100
+		days = 1
 	}
 
 	hidden = yes
@@ -281,7 +287,7 @@ country_event = {				# GER Satellites
 		GER = {
 			set_autonomy = { 
 				target = ROOT 
-				autonomy_state = autonomy_satellite
+				autonomy_state = autonomy_integrated_puppet
 				freedom_level = 0.80		
 			}		
 		}
@@ -298,7 +304,13 @@ country_event = {				# GER Satellites
 	
 	trigger = {
 		tag = HUN
-		is_subject = no
+		has_war_with = SOV	
+		GER = {
+			exists = yes
+			has_government = fascism
+			has_war_with = SOV
+		}		
+		#is_subject = no
 		is_puppet = no
 		has_government = fascism
 		has_dlc = "Together for Victory"
@@ -307,7 +319,7 @@ country_event = {				# GER Satellites
 	}
 	
 	mean_time_to_happen = {
-		days = 100
+		days = 1
 	}
 
 	hidden = yes
@@ -318,7 +330,7 @@ country_event = {				# GER Satellites
 		GER = {
 			set_autonomy = { 
 				target = HUN 
-				autonomy_state = autonomy_satellite
+				autonomy_state = autonomy_integrated_puppet
 				freedom_level = 0.80		
 			}		
 		}
@@ -335,8 +347,13 @@ country_event = {				# GER Satellites
 	
 	trigger = {
 		tag = BUL
-		is_subject = no
-		is_puppet = no
+		#is_subject = no
+		#is_puppet = no
+		GER = {
+			exists = yes
+			has_government = fascism
+			has_war_with = SOV
+		}		
 		has_government = fascism
 		has_dlc = "Together for Victory"
 		has_dlc = "Death or Dishonor"
@@ -344,7 +361,7 @@ country_event = {				# GER Satellites
 	}
 	
 	mean_time_to_happen = {
-		days = 100
+		days = 10
 	}
 
 	hidden = yes
@@ -632,7 +649,7 @@ country_event = {				# Stalinisation
 	}
 	
 	mean_time_to_happen = {
-		days = 300
+		days = 360
 	}
 
 	hidden = yes
@@ -761,34 +778,8 @@ country_event = {				#
 	}
 }
 
+### AS 29 White peace bugged / in new1 
 
-country_event = {				# White peace bug								
-	id = as_silent.29
-	title = as_silent.29.title
-	desc = as_silent.29.desc
-	picture = GFX_report_event_german_politician_speech
-
-	fire_only_once = yes
-	
-	trigger = {
-		original_tag = ETH
-		is_ai = yes
-		surrender_progress > 0.25
-	}
-	
-	mean_time_to_happen = {
-		days = 0
-	}
-
-	hidden = yes
-		
-	option = {
-		name = as_silent.6.option_a
-		ai_chance = { factor = 100 }
-		news_event = { id = country_capitulated.0 }
-		ITA = { annex_country = { target = ETH transfer_troops = no } }
-	}
-}
 
 country_event = {				# Casualties events							
 	id = as_silent.30
@@ -896,5 +887,159 @@ country_event = {				# Casualties events
 		name = as_silent.6.option_a
 		ai_chance = { factor = 100 }
 		add_ideas = terrific_casualties
+	}
+}
+
+country_event = {											# Conversion techs						
+	id = as_silent.33
+	title = as_silent.33.title
+	desc = as_silent.33.desc
+	picture = GFX_report_event_german_politician_speech
+	
+	trigger = {	
+		is_major = yes
+		has_tech = improved_machine_tools
+		NOT = { has_tech = improved_equipment_conversion }			
+	}
+	
+	mean_time_to_happen = {
+		days = 100
+	}
+
+	hidden = yes
+		
+	option = {
+		name = as_silent.6.option_a
+		ai_chance = { factor = 100 }
+		set_technology = { improved_equipment_conversion = 1 }	
+	}
+}
+
+country_event = {											# Conversion techs						
+	id = as_silent.34
+	title = as_silent.34.title
+	desc = as_silent.34.desc
+	picture = GFX_report_event_german_politician_speech
+	
+	trigger = {	
+		is_major = yes
+		has_tech = improved_equipment_conversion
+		NOT = { has_tech = advanced_equipment_conversion }			
+	}
+	
+	mean_time_to_happen = {
+		days = 100
+	}
+
+	hidden = yes
+		
+	option = {
+		name = as_silent.6.option_a
+		ai_chance = { factor = 100 }
+		set_technology = { advanced_equipment_conversion = 1 }	
+	}
+}
+
+country_event = {											# AI combat tactics techs						
+	id = as_silent.35
+	title = as_silent.35.title
+	desc = as_silent.35.desc
+	picture = GFX_report_event_german_politician_speech
+	
+	fire_only_once = yes
+	
+	trigger = {	
+		tag = GER
+		is_ai = yes
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+
+	hidden = yes
+		
+	option = {
+		name = as_silent.6.option_a
+		ai_chance = { factor = 100 }
+		set_global_flag = ger_is_ai	
+	}
+}
+
+country_event = {											# AI combat tactics techs						
+	id = as_silent.36
+	title = as_silent.36.title
+	desc = as_silent.36.desc
+	picture = GFX_report_event_german_politician_speech
+	
+	fire_only_once = yes
+	
+	trigger = {	
+		tag = SOV
+		is_ai = yes
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+
+	hidden = yes
+		
+	option = {
+		name = as_silent.6.option_a
+		ai_chance = { factor = 100 }
+		set_global_flag = sov_is_ai	
+	}
+}
+
+country_event = {											# AI combat tactics techs						
+	id = as_silent.37
+	title = as_silent.37.title
+	desc = as_silent.37.desc
+	picture = GFX_report_event_german_politician_speech
+	
+	fire_only_once = yes
+	
+	trigger = {	
+		tag = USA
+		is_ai = yes
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+
+	hidden = yes
+		
+	option = {
+		name = as_silent.6.option_a
+		ai_chance = { factor = 100 }
+		set_global_flag = usa_is_ai	
+	}
+}
+
+country_event = {											# AI combat tactics techs						
+	id = as_silent.38
+	title = as_silent.38.title
+	desc = as_silent.38.desc
+	picture = GFX_report_event_german_politician_speech
+	
+	fire_only_once = yes
+	
+	trigger = {	
+		tag = ENG
+		is_ai = yes
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+
+	hidden = yes
+		
+	option = {
+		name = as_silent.6.option_a
+		ai_chance = { factor = 100 }
+		set_global_flag = eng_is_ai	
 	}
 }

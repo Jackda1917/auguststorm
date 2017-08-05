@@ -978,6 +978,7 @@ country_event = {										# AS
 		
 	option = {
 		name = soviet.30.a
+		ai_chance = { factor = 100 }		
 		random_country = {
 			limit = { 
 				has_government = fascism

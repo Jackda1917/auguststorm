@@ -15,6 +15,82 @@
 # contain
 # area_priority
 
+
+major_dont_waste_on_templates = {			# Because scripted templates
+	enable = {
+		always = yes
+		OR = {
+			original_tag = GER 
+			original_tag = FRA
+			original_tag = ENG
+			original_tag = SOV
+			original_tag = USA
+			original_tag = CAN
+			original_tag = ITA			
+		}
+	}
+	ai_strategy = {
+		type = template_prio
+		id = infantry
+		value = -100
+	}
+
+	ai_strategy = {
+		type = template_prio
+		id = paratroopers
+		value = -100
+	}
+
+	ai_strategy = {
+		type = template_prio
+		id = mountaineers
+		value = -100
+	}
+
+	ai_strategy = {
+		type = template_prio
+		id = marines
+		value = -100
+	}
+
+	ai_strategy = {
+		type = template_prio
+		id = cavalry
+		value = -100
+	}
+
+	ai_strategy = {
+		type = template_prio
+		id = light_armor
+		value = -100
+	}
+
+	ai_strategy = {
+		type = template_prio
+		id = medium_armor
+		value = -100
+	}
+	
+	ai_strategy = {
+		type = template_prio
+		id = heavy_armor
+		value = -100
+	}	
+
+	ai_strategy = {
+		type = template_prio
+		id = mechanized
+		value = -100
+	}
+
+	ai_strategy = {
+		type = template_prio
+		id = motorized
+		value = -100
+	}
+	
+}
+
 end_all_production = {
 	enable = {
 		OR = {
@@ -100,7 +176,7 @@ default_unit_production = {
 	enable = {
 		always = yes
 		NOT = { original_tag = GER } NOT = { original_tag = FRA } NOT = { original_tag = CHI  } NOT = { original_tag = ENG  }
-		NOT = { original_tag = SOV } NOT = { original_tag = USA }
+		NOT = { original_tag = SOV } NOT = { original_tag = USA } NOT = { original_tag = CAN } NOT = { original_tag = PRC  } 
 	}
 
 	ai_strategy = {

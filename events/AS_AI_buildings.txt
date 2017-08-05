@@ -20,20 +20,20 @@ country_event = {
 		has_civil_war = no	
 		any_owned_state = {
 			anti_air_building < 1
-			OR = {
-				radar_station > 0			
+			OR = {			
 				arms_factory > 4
 				synthetic_refinery > 1
 				air_base > 9
 				industrial_complex > 6
 				rocket_site > 0
 				nuclear_reactor > 0
+				radar_station > 0				
 			}			
 		}
 	}
 	
 	mean_time_to_happen = {
-		days = 200
+		days = 150
 	}
 	
 	option = {

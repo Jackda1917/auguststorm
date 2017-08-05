@@ -163,10 +163,11 @@ country_event = {
 	trigger = {
 		tag = FRA
 		has_war_with = GER
+		VIC = { exists = no }
 		16 = { is_controlled_by = GER }
 		is_in_faction_with = ENG
 		ENG = { has_war_with = GER }
-		surrender_progress > 0.4 # was 0.7
+		surrender_progress > 0.25 # was 0.7 
 		GER = {
 			is_faction_leader = yes
 		}
@@ -176,7 +177,7 @@ country_event = {
 	}
 	
 	mean_time_to_happen = {
-		days = 2
+		days = 0
 	}
 
 	immediate = {
@@ -185,11 +186,12 @@ country_event = {
 	
 	option = { # Become Vichy
 		name = france.10.a
-		trigger = { is_ai = no }
+		trigger = { is_ai = no }		
 		set_country_flag = become_vichy
 		set_global_flag = fall_of_france
 		GER = { country_event = france.14 }
-		USA = {												### AS
+		hidden_effect = {	
+			USA = {												### AS
 				if = {
 					limit = {
 						USA = { is_ai = yes }
@@ -202,8 +204,8 @@ country_event = {
 					}
 						add_ideas = low_economic_mobilisation
 				}			
-		}
-		USA = {												### AS
+			}
+			USA = {												### AS
 				if = {
 					limit = {
 						USA = { is_ai = yes }
@@ -217,6 +219,7 @@ country_event = {
 					}
 						add_ideas = limited_conscription
 				}			
+			}
 		}
 		custom_effect_tooltip = france.10.a_tt
 		# Switches to Vichy if GER accepts
@@ -229,8 +232,9 @@ country_event = {
 				factor = 100
 				is_historical_focus_on = yes
 			}			
-		}
-		USA = {												### AS
+		}		
+		hidden_effect = {	
+			USA = {												### AS
 				if = {
 					limit = {
 						USA = { is_ai = yes }
@@ -243,8 +247,8 @@ country_event = {
 					}
 						add_ideas = low_economic_mobilisation
 				}			
-		}
-		USA = {												### AS
+			}
+			USA = {												### AS
 				if = {
 					limit = {
 						USA = { is_ai = yes }
@@ -258,8 +262,9 @@ country_event = {
 					}
 						add_ideas = limited_conscription
 				}			
+			}
 		}		
-		set_global_flag = fall_of_france
+		set_global_flag = fall_of_france		
 		GER = { country_event = france.14 }
 		custom_effect_tooltip = france.10.b_tt
 	}
@@ -271,7 +276,7 @@ country_event = {
 				factor = 0
 				is_historical_focus_on = yes
 			}
-		}
+		}		
 		ENG = {
 			country_event = france.11
 			effect_tooltip = {
@@ -391,126 +396,78 @@ country_event = {
 				is_historical_focus_on = yes
 			}			
 		}
-				every_owned_state = {
-					limit = {
-						is_core_of = FRA				
+		add_national_unity = 0.10
+		add_political_power = 500		
+		FRA = {	
+			add_national_unity = -0.50
+			remove_unit_leader = 703			 
+			remove_unit_leader = 704
+			remove_unit_leader = 705
+			remove_unit_leader = 706
+			remove_unit_leader = 707
+			remove_unit_leader = 708
+			remove_unit_leader = 709
+			remove_unit_leader = 710
+			remove_ideas = {
+				francois_darlan
+			}
+			VIC = { 
+				transfer_state = 26
+				set_capital = 26
+			}
+			every_owned_state = {
+				limit = {
+					is_core_of = FRA				
+				}
+				add_core_of = VIC
+			}			
+		}
+		# Italian Occupation Zone (if they did well)
+		if = {
+			limit = {
+				1 = { #Corsica
+					is_owned_by = FRA 
+					is_controlled_by = ITA
+				}
+			}
+			ITA = { transfer_state = 1 }
+		}
+		if = {
+			limit = {					# AS
+				AND = {
+					735 = { #Savoy
+						is_owned_by = FRA 
+						is_controlled_by = ITA
 					}
-					add_core_of = VIC
+					21 = { #Côte d'Azur
+						is_owned_by = FRA 
+						is_controlled_by = ITA
+					}
+					32 = { #Alpes
+						is_owned_by = FRA 
+						is_controlled_by = ITA
+					}
 				}
-				 remove_unit_leader = 703			 
-				 remove_unit_leader = 704
-				 remove_unit_leader = 705
-				 remove_unit_leader = 706
-				 remove_unit_leader = 707
-				 remove_unit_leader = 708
-				 remove_unit_leader = 709
-				 remove_unit_leader = 710
-				 remove_ideas = {
-					francois_darlan
+			}
+			ITA = { transfer_state = 735 }
+		}
+		#Spanish occupation zone
+		if = {
+			limit = {
+				31 = { #Midi-Pyrinees
+					is_owned_by = FRA 
+					is_controlled_by = SPR
 				}
+			}
+			SPR = {
+				transfer_state = 31
+			}
+		}
+		#GER = { release = VIC }		
 		set_global_flag = vichy_established							# AS		
- 
 		GER = {	give_guarantee = VIC }			
-		VIC = {
-				annex_country =  { target = FRA transfer_troops = yes }				
-				set_equipment_fraction = 0.01				
-				create_country_leader = {
-					name = "Philippe Pétain"
-					desc = "POLITICS_PHILIPPE_PÉTAIN_DESC"
-					picture = "Portrait_Vichy_Philippe_Petain.dds"
-					expire = "1965.1.1"
-					ideology = fascism_ideology
-					traits = {
-		
-					}
-				}				
-				add_ai_strategy = {							# AS 
-					type = alliance
-					id = "GER"
-					value = -300
-				}
-				add_ai_strategy = {							# AS 
-					type = befriend
-					id = "GER"
-					value = 200
-				}				
-				release = FRA
-				if = {
-					limit = { has_dlc = "Together for Victory" }
-					set_autonomy = { 
-						target = SYR 
-						autonomy_state = autonomy_puppet
-						freedom_level = 0.30		
-					}
-					set_autonomy = { 
-						target = LEB 
-						autonomy_state = autonomy_puppet
-						freedom_level = 0.30		
-					}	
-					else = {
-						puppet = SYR
-						puppet = LEB
-						give_military_access = SYR
-						give_military_access = LEB		
-					}
-				}			
-				transfer_state = 1   # Corse 
-				transfer_state = 20  # Franche-comté
-				transfer_state = 21  # Côte d'Azur
-				transfer_state = 22  # Roussillon
-				transfer_state = 25  # Limousin
-				transfer_state = 26  # Auvergne
-				transfer_state = 31  # Midi-Pyrénnées				 					 
-				transfer_state = 32  # Alpes
-				transfer_state = 33  # Centre Sud
-				transfer_state = 268 # Djibouti
-				transfer_state = 272 # French Africa
-				transfer_state = 286 # Indochina
-				transfer_state = 310 # Guinée
-				transfer_state = 320 # French India
-				transfer_state = 458 # Tunisia
-				transfer_state = 459 # western Algeria
-				transfer_state = 460 # eastern Algeria
-				transfer_state = 461 # Northern Morocco
-				transfer_state = 462 # Southern Morocco
-				transfer_state = 513 # Southern Algeria
-				transfer_state = 514 # North Africa
-				transfer_state = 515 # Central Africa
-				transfer_state = 539 # Gabon
-				transfer_state = 543 # Madagascar				
-				transfer_state = 556 # Ivory Coast
-				transfer_state = 557 # Dakar
-				transfer_state = 635 # Nouvelle Calédonie
-				transfer_state = 641 # Tahiti
-				transfer_state = 660 # Equatorial Africa
-				transfer_state = 665 # Gabes
-				transfer_state = 670 # Laos
-				transfer_state = 671 # Annam
-				transfer_state = 694 # French Caribbean
-				transfer_state = 706 # Reunion
-				transfer_state = 708 # Comoro Islands
-				transfer_state = 713 # Kerguelen
-				transfer_state = 728 # Guangzhouwan
-				transfer_state = 730 # St Pierre et Miquelon
-				transfer_state = 734 # Nendo
-				transfer_state = 735 # Savoy							
-				diplomatic_relation = { country = GER relation = non_aggression_pact }
-				diplomatic_relation = { country = ENG relation = non_aggression_pact }
-				diplomatic_relation = { country = USA relation = non_aggression_pact }
-				#diplomatic_relation = { country = FRA relation = non_aggression_pact }				
-				diplomatic_relation = { country = ITA relation = non_aggression_pact }
-				diplomatic_relation = { country = JAP relation = non_aggression_pact }  			
-				every_owned_state = {
-					limit = {
-						is_core_of = VIC				
-					}
-					add_core_of = FRA
-				}							
-		}
-		country_event = { hours = 6 id = news.34 }				
-		hidden_effect =  {
-			FRA = { news_event = { id = france.20 hours = 1 } }
-		}
+		news_event = { hours = 6 id = news.34 }				
+
 	}
 	option = { # Conquer everything!
 		name = france.14.b
@@ -538,6 +495,19 @@ country_event = {
 	
 	option = {
 		name = france.15.a
+		add_national_unity = 0.30
+		if = {
+			limit = { has_idea = FRA_victors_of_wwi }
+			remove_ideas = FRA_victors_of_wwi
+		}
+		if = {
+			limit = { has_idea = FRA_disjointed_government }
+			remove_ideas = FRA_disjointed_government
+		}
+		if = {
+			limit = { has_idea = FRA_protected_by_the_maginot_line }
+			remove_ideas = FRA_protected_by_the_maginot_line
+		}		
 		hidden_effect = {
 			USA = {												### AS
 				if = {
@@ -709,133 +679,175 @@ country_event = {
 	is_triggered_only = yes
 
 	immediate = {
-		# German Occupation Zone
-			if = {
-				limit = {
-					VIC = { 
-						NOT = {
-							has_idea = undisturbed_isolation
-							has_idea = isolation						
-						}
-					}
-				}
-				VIC = { 
-					add_ideas = isolation
-					add_political_power = -1000
-				}
-			}			
-			if = {
-				limit = {
-					VIC = { 
-						NOT = {
-							has_idea = disarmed_nation
-							has_idea = volunteer_only											
-						}
-					}
-				}
-				VIC = { 
-					add_ideas = volunteer_only					
-				}
-			}					
+		# German Occupation Zone		
 		if = {
-			limit = { 28 = { owner = { tag = FRA } } }
+			limit = { 28 = { owner = { original_tag = VIC } } }
 			GER = { transfer_state = 28 } # Alsace
 		}
 		if = {
-			limit = { 17 = { owner = { tag = FRA } } }
+			limit = { 17 = { owner = { original_tag = VIC } } }
 			GER = { transfer_state = 17 } # Lorraine
 		}
 		if = {
-			limit = { 27 = { owner = { tag = FRA } } }
+			limit = { 27 = { owner = { original_tag = VIC } } }
 			GER = { transfer_state = 27 }  # Champagne2
 		}
 		if = {
-			limit = { 18 = { owner = { tag = FRA } } }
+			limit = { 18 = { owner = { original_tag = VIC } } }
 			GER = { transfer_state = 18 } # Champagne
 		}
 		if = {
-			limit = { 29 = { owner = { tag = FRA } } }
+			limit = { 29 = { owner = { original_tag = VIC } } }
 			GER = { transfer_state = 29 }	# Pas de Calais
 		}
 		if = {
-			limit = { 15 = { owner = { tag = FRA } } }
+			limit = { 15 = { owner = { original_tag = VIC } } }
 			GER = { transfer_state = 15 }  # Normandy
 		}
 		if = {
-			limit = { 16 = { owner = { tag = FRA } } }
+			limit = { 16 = { owner = { original_tag = VIC } } }
 			GER = { transfer_state = 16 }
 		}
 		if = {
-			limit = { 24 = { owner = { tag = FRA } } }
+			limit = { 24 = { owner = { original_tag = VIC } } }
 			GER = { transfer_state = 24 }
 		}
 		if = {
-			limit = { 30 = { owner = { tag = FRA } } }
+			limit = { 30 = { owner = { original_tag = VIC } } }
 			GER = { transfer_state = 30 }
 		}
 		if = {
-			limit = { 14 = { owner = { tag = FRA } } }
+			limit = { 14 = { owner = { original_tag = VIC } } }
 			GER = { transfer_state = 14 }
 		}
 		if = {
-			limit = { 23 = { owner = { tag = FRA } } }
+			limit = { 23 = { owner = { original_tag = VIC } } }
 			GER = { transfer_state = 23 }
 		}
 		if = {
-			limit = { 19 = { owner = { tag = FRA } } }
+			limit = { 19 = { owner = { original_tag = VIC } } }
 			GER = { transfer_state = 19 }
-		}
-		# Italian Occupation Zone (if they did well)
-
-		if = {
-			limit = {
-				AND = {
-					1 = { #Corsica
-						owner = { tag = FRA }
-						is_controlled_by = ITA
-					}
-				}
-			}
-			ITA = { transfer_state = 1 }
-		}
-
-		if = {
-			limit = {					# AS
-				AND = {
-					735 = { #Savoy
-						owner = { tag = FRA }
-						is_controlled_by = ITA
-					}
-					21 = { #Côte d'Azur
-						owner = { tag = FRA }
-						is_controlled_by = ITA
-					}
-					32 = { #Alpes
-						owner = { tag = FRA }
-						is_controlled_by = ITA
-					}
-				}
-			}
-			ITA = { transfer_state = 32 }
-		}
-		#Spanish occupation zone
-		if = {
-			limit = {
-				31 = { #Midi-Pyrinees
-					owner = { tag = FRA }
-					is_controlled_by = SPR
-				}
-			}
-			SPR = {
-				transfer_state = 31
-			}
 		}	
 	}
 	
-	option = {	
-		custom_effect_tooltip = france.20.a_tt
-		transfer_state = 539 			
+	option = {
+		name = france.20.a	
+		custom_effect_tooltip = france.20.a_tt 			
+		VIC = {
+			release = FRA
+					create_country_leader = {
+						name = "Philippe Pétain"
+						desc = "POLITICS_PHILIPPE_PÉTAIN_DESC"
+						picture = "Portrait_Vichy_Philippe_Petain.dds"
+						expire = "1965.1.1"
+						ideology = fascism_ideology
+						traits = {
+							anti_communist
+							fascist_sympathies
+							popular_figurehead
+						}
+					}			
+					if = { 
+						limit = { 1 = { NOT = { is_owned_by = ITA } } }
+							transfer_state = 1 
+					}   # Corse 
+					transfer_state = 20  # Franche-comté
+					transfer_state = 21  # Côte d'Azur
+					transfer_state = 22  # Roussillon
+					transfer_state = 25  # Limousin
+					transfer_state = 26  # Auvergne
+					if = { 
+						limit = { 31 = { NOT = { is_owned_by = SPR } } }
+							transfer_state = 31 
+					} # Midi-Pyrénnées				 					 
+					if = { 
+						limit = { 735 = { NOT = { is_owned_by = ITA } } }
+							transfer_state = 735 
+					} # Savoy
+					transfer_state = 33  # Centre Sud
+					transfer_state = 268 # Djibouti
+					transfer_state = 272 # French Africa
+					transfer_state = 286 # Indochina
+					transfer_state = 310 # Guinée
+					transfer_state = 320 # French India
+					transfer_state = 458 # Tunisia
+					transfer_state = 459 # western Algeria
+					transfer_state = 460 # eastern Algeria
+					transfer_state = 461 # Northern Morocco
+					transfer_state = 462 # Southern Morocco
+					transfer_state = 513 # Southern Algeria
+					transfer_state = 514 # North Africa
+					transfer_state = 515 # Central Africa
+					transfer_state = 539 # Gabon
+					transfer_state = 543 # Madagascar				
+					transfer_state = 556 # Ivory Coast
+					transfer_state = 557 # Dakar
+					transfer_state = 635 # Nouvelle Calédonie
+					transfer_state = 641 # Tahiti
+					transfer_state = 660 # Equatorial Africa
+					transfer_state = 665 # Gabes
+					transfer_state = 670 # Laos
+					transfer_state = 671 # Annam
+					transfer_state = 694 # French Caribbean
+					transfer_state = 706 # Reunion
+					transfer_state = 708 # Comoro Islands
+					transfer_state = 713 # Kerguelen
+					transfer_state = 728 # Guangzhouwan
+					transfer_state = 730 # St Pierre et Miquelon
+					transfer_state = 734 # Nendo
+					transfer_state = 32  # Alpes					
+			every_owned_state = {
+				limit = {
+					is_core_of = VIC
+				}
+				add_core_of = FRA
+			}						
+			every_owned_state = {
+				limit = {
+					is_controlled_by = GER
+					is_controlled_by = ITA
+					is_controlled_by = SPR					
+				}
+				remove_core_of = VIC
+			}
+			if = {
+					limit = { has_dlc = "Together for Victory" }
+					set_autonomy = { 
+						target = SYR 
+						autonomy_state = autonomy_puppet
+						freedom_level = 0.30		
+					}
+					set_autonomy = { 
+						target = LEB 
+						autonomy_state = autonomy_puppet
+						freedom_level = 0.30		
+					}	
+					else = {
+						puppet = SYR
+						puppet = LEB
+						give_military_access = SYR
+						give_military_access = LEB		
+					}
+			}
+				add_ai_strategy = {							# AS 
+					type = alliance
+					id = "GER"
+					value = -300
+				}
+				add_ai_strategy = {							# AS 
+					type = befriend
+					id = "GER"
+					value = 300
+				}														
+				diplomatic_relation = { country = GER relation = non_aggression_pact }
+				diplomatic_relation = { country = ENG relation = non_aggression_pact }
+				diplomatic_relation = { country = USA relation = non_aggression_pact }
+				#diplomatic_relation = { country = FRA relation = non_aggression_pact }				
+				diplomatic_relation = { country = ITA relation = non_aggression_pact }
+				diplomatic_relation = { country = JAP relation = non_aggression_pact } 			
+		}		
 		FRA = {												# AS
+			transfer_state = 539
 			set_capital = 539
 			retire_country_leader = yes
 			set_country_flag = reynaud_resign
@@ -845,22 +857,23 @@ country_event = {
 			picture = "Portrait_France_Charles_De_Gaulle.dds"
 			expire = "1970.1.1"
 			ideology = conservatism
-			traits = {		
+			traits = {
+				indomitable_perseverance
+				tenacious_defender
+				political_dancer
 				}
-			}						
+			}
+			add_popularity = {
+				ideology = fascism
+				popularity = -1
+			}
+			add_popularity = {
+				ideology = democratic
+				popularity = 1
+			}			
 			hidden_effect = {
-				set_national_unity = 0.90
+				set_national_unity = 0.99
 			}						
-		}
-		VIC = {	
-			every_owned_state = {
-				limit = {
-					is_controlled_by = GER
-					is_controlled_by = ITA
-					is_controlled_by = SPR					
-				}
-				remove_core_of = VIC
-			} 
 		}
 		if = {
 			limit = {
@@ -894,7 +907,6 @@ country_event = {
 				remove_core_of = VIC
 			}
 		}
-		name = france.20.a
 	}
 }
 # French strikes
@@ -913,7 +925,7 @@ country_event = {
 
 	fire_only_once = yes
 	
-	mean_time_to_happen = {	days = 60	}
+	mean_time_to_happen = {	days = 40	}
 
 	option = {
 		ai_chance = {
@@ -956,7 +968,7 @@ country_event = {
 
 	fire_only_once = yes
 
-	mean_time_to_happen = {	days = 90	}
+	mean_time_to_happen = {	days = 150 }
 	option = {
 		ai_chance = {
 			factor = 2
@@ -976,7 +988,7 @@ country_event = {
 		remove_ideas =  FRA_matignon_agreements
 		add_popularity = {
 			ideology = communism
-			popularity = 0.05
+			popularity = -0.05
 		}
 	}	
 }
@@ -1014,7 +1026,7 @@ country_event = {
 		tag = FRA
 		SOV = { has_government = communism }
 		has_government = democratic
-		communism < 0.5
+		communism < 0.6
 		has_global_flag = sov_yes_pact
 	}
 
@@ -1023,12 +1035,14 @@ country_event = {
 	mean_time_to_happen = {	days = 2 }
 
 	option = {
-		ai_chance = {	factor = 10 }
-		add_political_power = -50
+		ai_chance = { factor = 10 }
+		add_political_power = -100
 		name = france.24.a
+		remove_ideas = FRA_disjointed_government
+		add_national_unity = 0.25
 		add_popularity = {
 			ideology = communism
-			popularity = -0.3
+			popularity = -0.35
 		}
 		add_ideas = FRA_communism_banned
 
@@ -1052,8 +1066,13 @@ country_event = {
 
 	}
 	option = {
-		ai_chance = {	factor = 0 }
+		ai_chance = { factor = 0 }
 		name = france.24.b
+		add_national_unity = -0.10
+		add_popularity = {					# Pact is Stal shit anyway
+			ideology = communism
+			popularity = -0.2
+		}		
 	}
 }
 

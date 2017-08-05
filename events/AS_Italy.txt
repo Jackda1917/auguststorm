@@ -62,18 +62,27 @@ country_event = {
 
 	trigger = {
 		tag = ITA		
-		alliance_strength_ratio < 0.75 
+		enemies_strength_ratio > 1
 		has_war_with = USA
 		OR = {
 			has_national_unity < 0.50
-			casualties > 2000000
+			casualties > 2500000
 		}
-		OR = {			
+		OR = {
+			any_country {
+				is_in_faction_with = USA
+				controls_state = 2			
+			}
 			any_owned_state = {
 				is_core_of = ITA
 				is_on_continent = europe
 				is_controlled_by = ENG
 			}
+			any_owned_state = {
+				is_core_of = ITA
+				is_on_continent = europe
+				is_controlled_by = CAN
+			}			
 			any_owned_state = {
 				is_core_of = ITA
 				is_on_continent = europe				
@@ -83,12 +92,17 @@ country_event = {
 	}
 		
 	mean_time_to_happen = {
-		days = 1
+		days = 5
 	}	
 	
 	immediate = {
 		kill_country_leader = yes
-		set_national_unity = 0.70
+	}
+	
+	option = {
+		name = as_italy.2.a
+		ai_chance = { factor = 100 }
+		news_event = { id = as_news.2 hours = 3 }
 		create_country_leader = {
 			name = "Pietro Badoglio"
 			desc = "POLITICS_PIETRO_BADOGLIO_DESC"
@@ -104,29 +118,30 @@ country_event = {
 		}
 		add_popularity = {
 			ideology = democratic 
-			popularity = 0.55
+			popularity = 0.35
 		}
 		add_popularity = {  
 			ideology = communism
-			popularity = 0.20
+			popularity = 0.15
 		}
 		add_popularity = {
 			ideology = fascism
-			popularity = 0.25
-		}	
-	}
-	
-	option = {
-		name = as_italy.2.a
-		ai_chance = { factor = 100 }
-		news_event = { id = as_news.2 hours = 3 }
+			popularity = -0.10
+		}			
 		if = {
-			limit = { 
-				any_country = { has_government = democracy }
-				is_faction_leader = yes
-			}
-			country_event = { id = as_italy.3 days = 1 }			
+			limit = {
+				ENG = { exists = yes }
+				ENG = { is_faction_leader = yes }
+			}			
+			ENG = { country_event = { id = as_italy.3 days = 1 } }
 		}
+		if = {
+			limit = {
+				USA = { exists = yes }
+				USA = { is_faction_leader = yes }
+			}			
+			USA = { country_event = { id = as_italy.3 days = 1 } }
+		}		
 	}
 	option = {
 		name = as_italy.2.b
@@ -141,7 +156,7 @@ country_event = {
 				original_tag = ITA
 				has_government = communism
 			}
-			set_cosmetic_tag = ITA_STA
+			set_cosmetic_tag = ITA_SOV
 			set_equipment_fraction = 0.3
 			set_national_unity = 0.9
 			create_country_leader = {
@@ -171,37 +186,39 @@ country_event = {               # Secret negociations with Allies (UK or USA)
 	option = {
 		name = as_italy.3.a
 		ai_chance = { factor = 100 }
-		country_event = { id = as_italy.4 days = 10 }
+		set_global_flag = ita_sue_for_peace
+		ITA = { add_national_unity = -0.50 }	
 	}
 	
 	option = {					# We don't trust Badoglio
-		name = as_italy.3.a
+		name = as_italy.3.b
 		ai_chance = { factor = 0 }
-		start_civil_war = {
+		ITA = {	
+			start_civil_war = {
 			ideology = communism
-			size = 0.20
-		}
-		random_other_country = {
-			limit = {
-				original_tag = ITA
-				has_government = communism
+				size = 0.40
 			}
-			set_cosmetic_tag = ITA_STA			
-			set_equipment_fraction = 0.3
-			set_national_unity = 0.9
-			create_country_leader = {
-				name = "Palmiro Togliatti"
-				desc = "POLITICS_PALMIRO_TOGLIATTI_DESC"
-				picture = "GFX_Portrait_Italy_Generic_1"
-				expire = "1964.08.21"
-				ideology = stalinism
-				traits = {
-					stalins_puppet
+			random_other_country = {
+				limit = {
+					original_tag = ITA
+					has_government = communism
 				}
-			}			
-		}		
-	}
-	
+				set_cosmetic_tag = ITA_SOV		
+				set_equipment_fraction = 0.3
+				set_national_unity = 0.9
+				create_country_leader = {
+					name = "Palmiro Togliatti"
+					desc = "POLITICS_PALMIRO_TOGLIATTI_DESC"
+					picture = "GFX_Portrait_Italy_Generic_1"
+					expire = "1964.08.21"
+					ideology = stalinism
+					traits = {
+						stalins_puppet
+					}
+				}			
+			}
+		}
+	}	
 }
 
 country_event = {
@@ -211,48 +228,28 @@ country_event = {
 	picture = GFX_report_event_generic_rally2
 
 	fire_only_once = yes
+								
+	is_triggered_only = yes							# On_actions trigger
 
-	is_triggered_only = yes
-				
+	immediate = {
+		ENG = { add_to_faction = ITA }		
+	}
+	
 	option = {
 		name = as_italy.4.a
 		ai_chance = { factor = 100 }
-		GER = { remove_from_faction = ITA }
-		ENG = { add_to_faction = ITA }
-		if = { 
-			limit = { has_war_with = ENG } 	
-			white_peace = ENG
-		}
-		white_peace = USA
-		if = { 
-			limit = { has_war_with = SOV } 	
-			white_peace = SOV
-		}		
-		add_to_war = { targeted_alliance = ENG enemy = GER }		
+		set_national_unity = 0.90
 		add_popularity = {
 			ideology = fascism
 			popularity = -1
-		}
-		add_popularity = {
-			ideology = democratic 
-			popularity = 0.60
-		}
-		add_popularity = {  
-			ideology = communism
-			popularity = 0.25
-		}	
-		add_popularity = {  
-			ideology = neutrality
-			popularity = 0.15
 		}		
 		every_owned_state = {
 			limit = { 
 				NOT = { is_core_of = ITA }
-				is_owned_by = ITA
 			}
 			ENG = { transfer_state = PREV }
 		}
-		every_owned_state = {
+		every_state = {
 			limit = { 
 				NOT = { is_core_of = ITA }
 				is_controlled_by = ITA
@@ -277,68 +274,13 @@ country_event = {
 				}
 			}
 			FRA = { transfer_state = 735 }
+			else = { GER = { transfer_state = 735 } }
 		}
-		if = {
-			limit = {
-				735 = { 
-					any_neighbor_state = { is_controlled_by = GER } 
-				}
-			}
-			GER = { transfer_state = 735 }
-		}		
-		every_other_country  = {	
-			every_owned_state = { 
-				limit = { 
-					is_claimed_by = ITA				
-				}
-				ITA = { remove_state_claim = PREV }
-			}
-		}
-		start_civil_war = {
-				ideology = fascism
-				size = 0.30
-				capital = 159
-				states = { 159 161 158 162 157 2 }
-		}
-		news_event = { id = as_news.3 hours = 3 }
-		random_other_country = {
-			limit = {
-				original_tag = ITA
-				has_government = fascism
-			}
-			set_equipment_fraction = 0.3
-			set_national_unity = 0.8
-			set_cosmetic_tag = ITA_RSI			
-			create_country_leader = {
-				name = "Benito Mussolini"
-				desc = "POLITICS_BENITO_MUSSOLINI_DESC"
-				picture = "Portrait_Italy_Benito_Mussolini.dds"
-				expire = "1965.1.1"
-				ideology = fascism_ideology
-				traits = {
-					militarily_incompetent # was none
-					inexperienced_imperialist # was none		
-				}
-			}
-			if = { 
-				limit = { 
-					GER = { 
-						has_government = fascism
-						is_faction_leader = yes
-					} 
-				}
-				GER = { 
-					add_to_faction = ROOT
-					transfer_state = 736
-					transfer_state = 39
-					transfer_state = 160				
-				} 
-			}
-		}
+		country_event = { id = as_italy.9 }		
 	}
 }
 
-country_event = {
+country_event = {										# Western Africa lost
 	id = as_italy.5
 	title = as_italy.5.t
 	desc = as_italy.5.d
@@ -365,7 +307,7 @@ country_event = {
 	}
 }
 
-country_event = {
+country_event = {										# Tripoli lost
 	id = as_italy.6
 	title = as_italy.6.t
 	desc = as_italy.6.d
@@ -389,5 +331,114 @@ country_event = {
 		name = as_italy.1.a
 		ai_chance = { factor = 100 }
 		add_ideas = tripoli_lost
+	}
+}
+
+country_event = {										# Controls Suez
+	id = as_italy.7
+	title = as_italy.7.t
+	desc = as_italy.7.d
+	picture = GFX_report_event_german_politician_speech
+	
+	hidden = yes
+	
+	trigger = {
+		tag = ITA
+		has_war = yes
+		has_government = fascism
+		751 = { is_controlled_by = ITA } 
+		NOT = { has_idea = ita_controls_suez }
+	}
+		
+	mean_time_to_happen = {
+		days = 10
+	}	
+	
+	option = {
+		name = as_italy.1.a
+		ai_chance = { factor = 100 }
+		add_ideas = ita_controls_suez
+	}
+}
+
+country_event = {										# Controls Gibraltar
+	id = as_italy.8
+	title = as_italy.8.t
+	desc = as_italy.8.d
+	picture = GFX_report_event_german_politician_speech
+	
+	hidden = yes
+	
+	trigger = {
+		tag = ITA
+		has_war = yes
+		has_government = fascism
+		118 = { is_controlled_by = ITA } 
+		NOT = { has_idea = ita_controls_gib }
+	}
+		
+	mean_time_to_happen = {
+		days = 10
+	}	
+	
+	option = {
+		name = as_italy.1.a
+		ai_chance = { factor = 100 }
+		add_ideas = ita_controls_gib
+	}
+}
+
+country_event = {											# RSI
+	id = as_italy.9
+	title = as_italy.9.t
+	desc = as_italy.9.d
+	picture = GFX_report_event_generic_rally2
+
+	hidden = yes	
+
+	is_triggered_only = yes
+	
+	immediate = {
+		add_to_war = { targeted_alliance = ENG enemy = GER }
+	}
+	
+	option = {
+		name = as_italy.1.a
+		ai_chance = { factor = 100 }						
+		start_civil_war = {
+				ideology = fascism
+				size = 0.40
+				capital = 159
+				states = { 159 161 158 162 157 2 }
+		}
+		news_event = { id = as_news.3 hours = 2 }
+		random_other_country = {
+			limit = {
+				original_tag = ITA
+				has_government = fascism
+			}
+			set_cosmetic_tag = ITA_GER						
+			set_equipment_fraction = 0.4
+			set_national_unity = 0.8
+			create_country_leader = {
+				name = "Benito Mussolini"
+				desc = "POLITICS_BENITO_MUSSOLINI_DESC"
+				picture = "Portrait_Italy_Benito_Mussolini.dds"
+				expire = "1965.1.1"
+				ideology = fascism_ideology
+				traits = {
+					militarily_incompetent # was none
+					inexperienced_imperialist # was none		
+				}
+			}
+			GER = { 
+				puppet = ROOT
+				add_to_faction = ROOT
+				transfer_state = 736
+				transfer_state = 39
+				transfer_state = 160				
+			}
+			add_to_war = { targeted_alliance = GER enemy = USA }				
+		}
 	}
 }

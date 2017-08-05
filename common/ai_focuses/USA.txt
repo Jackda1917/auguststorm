@@ -1,5 +1,6 @@
 ai_historical_focus_list_USA = {
 	ai_national_focuses = {
+		USA_operation_torch_focus     # AS
 		USA_destroyers_for_bases	
 		USA_USACE_projects
 		USA_embargo_japan					

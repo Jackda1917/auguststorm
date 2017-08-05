@@ -13,7 +13,7 @@ state={
 		owner = FRA
 		
 		victory_points = {
-			1145 5 
+			1145 10 
 		}
 		victory_points = {
 			7132 5 

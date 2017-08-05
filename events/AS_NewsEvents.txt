@@ -61,9 +61,7 @@ news_event = {
 	option = {
 		name = as_news.2.a
 		trigger = {
-			NOT = {
-				TAG = ITA
-			}
+			NOT = { TAG = ITA }
 			OR = {
 				is_in_faction_with = GER
 				has_war_with = ENG
@@ -75,15 +73,15 @@ news_event = {
 	option = {
 		name = news.2.b
 		trigger = { 
-			NOT = {
-				TAG = ITA
+			OR = {	
+				TAG = ITA			
+				NOT = {
+					is_in_faction_with = GER
+					has_war_with = ENG
+					has_war_with = USA
+					has_government = fascism				
+				}
 			}
-			NOT = {
-				is_in_faction_with = GER
-				has_war_with = ENG
-				has_war_with = USA
-				has_government = fascism				
-			}						
 		}
 	}
 }
@@ -116,15 +114,77 @@ news_event = {
 	option = {
 		name = as_news.3.b
 		trigger = { 
+			OR = {	
+				TAG = ITA			
+				NOT = {
+					is_in_faction_with = GER
+					has_war_with = ENG
+					has_war_with = USA
+					has_government = fascism				
+				}
+			}						
+		}
+	}
+}
+
+# Operation Torch 
+news_event = {
+	id = as_news.4
+	title = as_news.4.t
+	desc = as_news.4.d
+	picture = GFX_news_event_military_planning
+	
+	major = yes
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = as_news.4.a
+		trigger = {
 			NOT = {
-				TAG = ITA
+				TAG = USA
 			}
 			NOT = {
 				is_in_faction_with = GER
 				has_war_with = ENG
 				has_war_with = USA
 				has_government = fascism				
+			}					
+		}
+	}
+	option = {
+		name = as_news.4.b
+		trigger = { 
+			NOT = {
+				TAG = USA
+			}
+			OR = {
+				is_in_faction_with = GER
+				has_war_with = ENG
+				has_war_with = USA
+				has_government = fascism
 			}						
+		}
+	}
+}
+
+# Operation Countenance
+news_event = {
+	id = as_news.5
+	title = as_news.5.t
+	desc = as_news.5.d
+	picture = GFX_news_event_soviet_tanks
+	
+	major = yes
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = as_news.5.a
+		trigger = {
+			NOT = {
+				TAG = SOV
+			}				
 		}
 	}
 }

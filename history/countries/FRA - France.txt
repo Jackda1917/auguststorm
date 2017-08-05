@@ -46,7 +46,7 @@ set_technology = {
 }
 
 set_convoys = 300
-set_national_unity = 0.65  # was 0.45
+set_national_unity = 0.55  # was 0.45
 
 # DIPLOMACY
 if = {
@@ -211,6 +211,7 @@ create_country_leader = {
 	ideology = socialism
 	traits = {
 		stout_defender
+		anti_communist
 	}
 }
 
@@ -221,7 +222,7 @@ create_country_leader = {
 	expire = "1965.1.1"
 	ideology = stalinism
 	traits = {
-		
+		stalins_puppet
 	}
 }
 

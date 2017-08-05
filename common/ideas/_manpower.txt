@@ -343,12 +343,12 @@ ideas = {
 				has_manpower < 500000
 				NOT = { has_idea = fractured_society }				
 				OR = {	
-					has_national_unity > 70
-					is_major = no
+					has_national_unity > 60
+					is_major = yes
 				}
 				OR = {
 					AND = {	
-						casualties > 2000000
+						casualties > 3000000
 						is_major = yes
 					}								
 					AND = {									# was none
@@ -357,7 +357,7 @@ ideas = {
 								has_war_with = ROOT  
 								}
 							}
-							has_national_unity > 60														
+							has_national_unity > 50														
 					}
 				}
 				if = {
@@ -398,7 +398,7 @@ ideas = {
 
 
 			ai_will_do = {
-   				factor = 1
+   				factor = 9
 				modifier = {
 					#Prio if low on manpower
 					factor = 20
@@ -445,13 +445,12 @@ ideas = {
 				#has_manpower_for_recruit_change_to =  { value = 0.22 group = mobilization_laws }
 				has_war = yes
 				has_manpower < 100000				
-				enemies_strength_ratio > 1
-				has_national_unity > 80 								
+				enemies_strength_ratio > 1 								
 				NOT = { has_idea = fractured_society }	
 				NOT = { has_idea = vampirized_economy }				
 				OR = {	
 					AND = {	
-						casualties > 2000000
+						casualties > 5000000
 						is_major = yes
 					}
 					AND = {									# was none
@@ -506,7 +505,7 @@ ideas = {
 
 
 			ai_will_do = {
-   				factor = 1
+   				factor = 9
 				modifier = {
 					#Prio if low on manpower
 					factor = 20

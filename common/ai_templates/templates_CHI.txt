@@ -29,6 +29,14 @@ infantry_CHI = {
 			}
 		}
 		
+		production_prio = {
+			factor = 0.8
+
+			modifier = {
+				factor = 1
+			}
+		}		
+		
 		target_width = 12.0
 		width_weight = 1.0
 		column_swap_factor = 0.5
@@ -100,6 +108,14 @@ infantry_CHI = {
 				num_of_factories < 40
 			}
 		}
+
+		production_prio = {
+			factor = 0.2
+
+			modifier = {
+				factor = 1
+			}
+		}		
 		
 		target_width = 17.0
 		width_weight = 1.0

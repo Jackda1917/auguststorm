@@ -209,6 +209,12 @@ USA_war_prod = {
 		id = "ENG"
 		value = 100
 	}	
+
+	ai_strategy = {
+		type = equipment_production_factor
+		id = carrier
+		value = 40  
+	}
 	
 	ai_strategy = {
 		type = equipment_production_factor
@@ -512,14 +518,21 @@ usaaf_effort = {
 	}	
 	ai_strategy = {
 		type = air_factory_balance
-		value = 200
+		value = 100
+	}
+
+	ai_strategy = {
+		type = equipment_production_factor
+		id = strategic_bomber
+		value = 50  
+	}
+
+	ai_strategy = {
+		type = equipment_production_factor
+		id = carrier
+		value = 20  
 	}
 	
-	ai_strategy = {
-		type = unit_ratio
-		id = strategic_bomber
-		value = 30
-	}	
 }
 
 usa_antagonize_germany = {

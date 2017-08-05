@@ -1,7 +1,8 @@
 ﻿l_english:
  communism_drift:0 "Daily Stalinism Support"
  communism_acceptance:0 "Acceptance of Stalinist Diplomacy"
- revolutionary_drift:0 "Daily Communism Support" 
+ revolutionary_drift:0 "Daily Communism Support"
+ revolutionary_acceptance:0 "Acceptance of Communist Revolutionary Diplomacy" 
  MODIFIER_XP_GAIN_ARMY_UNIT:0 "Unit Experience Gain"
  MODIFIER_XP_GAIN_ARMY_UNIT_FACTOR:0 "Unit Experience Gain"
  MODIFIER_TRAINING_TIME_ARMY:0 "Unit training time"

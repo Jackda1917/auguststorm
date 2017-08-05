@@ -27,7 +27,7 @@ country_event = {			# French Templates
 	option = {
 		name = as_template.6.option_a
 		ai_chance = { factor = 100 }
-		load_oob = FRA_division_blindee_1940
+		load_oob = "FRA_division_blindee_1940"
 	}
 }
 
@@ -61,7 +61,7 @@ country_event = {			# French Templates
 	option = {
 		name = as_template.6.option_a
 		ai_chance = { factor = 100 }
-		load_oob = FRA_division_blindee_1944
+		load_oob = "FRA_division_blindee_1944"
 	}
 } 
 
@@ -89,7 +89,7 @@ country_event = {				# US Templates
 	option = {
 		name = as_template.6.option_a
 		ai_chance = { factor = 100 }
-		load_oob = USA_motorized
+		load_oob = "USA_motorized"
 	}
 }
 
@@ -116,7 +116,7 @@ country_event = {				# ENG Templates
 	option = {
 		name = as_template.6.option_a
 		ai_chance = { factor = 100 }
-		load_oob = ENG_Motorized
+		load_oob = "ENG_Motorized"
 	}
 }
 
@@ -143,7 +143,7 @@ country_event = {				# ENG Templates
 	option = {
 		name = as_template.6.option_a
 		ai_chance = { factor = 100 }
-		load_oob = ENG_Mechanized
+		load_oob = "ENG_Mechanized"
 	}
 }
 
@@ -170,7 +170,7 @@ country_event = {				# ENG Templates
 	option = {
 		name = as_template.6.option_a
 		ai_chance = { factor = 100 }
-		load_oob = ENG_armour_1942
+		load_oob = "ENG_armour_1942"
 	}
 }
 
@@ -198,7 +198,7 @@ country_event = {				# CAN Templates
 	option = {
 		name = as_template.6.option_a
 		ai_chance = { factor = 100 }
-		load_oob = CAN_Motorized
+		load_oob = "CAN_Motorized"
 	}
 }
 
@@ -225,7 +225,7 @@ country_event = {				# CAN Templates
 	option = {
 		name = as_template.6.option_a
 		ai_chance = { factor = 100 }
-		load_oob = CAN_Mechanized
+		load_oob = "CAN_Mechanized"
 	}
 }
 
@@ -252,7 +252,7 @@ country_event = {				# CAN Templates
 	option = {
 		name = as_template.6.option_a
 		ai_chance = { factor = 100 }
-		load_oob = CAN_armour_1942
+		load_oob = "CAN_armour_1942"
 	}
 }
 
@@ -280,6 +280,6 @@ country_event = {				# JAP Templates
 	option = {
 		name = as_template.6.option_a
 		ai_chance = { factor = 100 }
-		load_oob = JAP_armour_1943
+		load_oob = "JAP_armour_1943"
 	}
 }
