@@ -1047,6 +1047,22 @@ on_actions = {
 				remove_ideas = YUG_idea_economic_aid
 			}			
 ##################### August Storm ##############################################################	
+			if = {                              
+				limit = { 
+					ROOT = { 
+						tag = SOV 
+						has_government = communism
+					}										
+					FROM = { 
+						tag = GER
+					}
+					#has_global_flag = sov_sue_for_peace 
+				} 
+				white_peace = ROOT				
+				ROOT = { 
+					country_event = { id = as_sov.15 }
+				}
+			}			
 			if = {                              ## Lead to ITA/RSI civil war
 				limit = { 
 					ROOT = { 
@@ -1063,7 +1079,7 @@ on_actions = {
 					has_global_flag = ita_sue_for_peace
 				}
 				GER = { remove_from_faction = ITA }
-				FROM = { puppet = ROOT } 
+				FROM = { white_peace = ROOT } 
 				ROOT = { country_event = { id = as_italy.4 hours = 1 } }
 			}			
 			if = {                              ## French State establishment

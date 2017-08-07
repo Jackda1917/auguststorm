@@ -856,7 +856,6 @@ country_event = {     					# Propose Bitter Peace
 	trigger = {
 		tag = SOV
 		has_government = communism
-		surrender_progress > 0.5
 		NOT = { 219 = { is_controlled_by = SOV } }   # Moscow
 		NOT = { 195 = { is_controlled_by = SOV } }	 # Leningrad
 		NOT = { 217 = { is_controlled_by = SOV } }	 # Stalingrad		
@@ -865,10 +864,6 @@ country_event = {     					# Propose Bitter Peace
             has_civil_war = yes
         }		
 	}   
-	
-	mean_time_to_happen = {
-			days = 0
-	}	
 		
 	option = {
 		name = as_sov.14.a  # At least it would save the Politburo...
@@ -912,7 +907,7 @@ country_event = {     					# Germany accept proposal
 	option = {
 		name = as_sov.15.a  # At least it would save the Politburo...
 		ai_chance = { factor = 10 }
-		white_peace = GER
+		add_national_unity = 0.40
 		if = {
 			limit = { 
 				SOV = { has_war_with = JAP } 

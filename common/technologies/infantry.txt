@@ -556,7 +556,7 @@ technologies = {
 	}
 
 	winter_equipment = {
-		winter_attrition_factor = -0.25
+		winter_attrition_factor = -0.40
 		
 		enable_tactic = tactic_winter_assault
 		enable_tactic = tactic_winter_defence		

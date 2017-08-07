@@ -828,16 +828,17 @@ country_event = {									# Bitter Peace
 		ai_chance = { factor = 10 }	
 		add_national_unity = 0.25
 		add_political_power = 1000 
+		set_global_flag = sov_sue_for_peace
 		SOV = { 
-			add_national_unity = -0.10
-			country_event = { id = as_sov.15 days = 0 }
+			add_national_unity = -0.40
+			#country_event = { id = as_sov.15 days = 0 }
 		}		
 	}
 	option = {
 		name = as_germany.14.b        # Let's grab it all !
 		ai_chance = { factor = 0 }
 		SOV = { 
-			add_national_unity = 0.10
+			add_national_unity = 0.20
 			country_event = { id = as_sov.16 days = 1 }
 			show_ideas_tooltip = soviet_partisans
 		}		

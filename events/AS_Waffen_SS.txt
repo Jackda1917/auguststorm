@@ -48,6 +48,7 @@ country_event = {
 		as_new_waffen_ss_division_effect = yes
 		hidden_effect = { load_oob = GER_Waffen_SS_1 }
 		set_country_flag = as_germany_ss_panzer_division_40
+		army_experience = -100
 	}
 	
 	option = {
@@ -222,6 +223,7 @@ country_event = {
 		as_new_waffen_ss_division_effect = yes
 		hidden_effect = { load_oob = GER_Waffen_SS_4 }
 		set_country_flag = as_germany_ss_panzergrenadier_division
+		army_experience = -100		
 	}
 	
 	option = {
@@ -312,6 +314,7 @@ country_event = {
 		as_new_waffen_ss_division_effect = yes
 		hidden_effect = { load_oob = GER_Waffen_SS_6 }
 		set_country_flag = as_germany_ss_gebirgs_division
+		army_experience = -100		
 	}
 	
 	option = {
@@ -400,6 +403,7 @@ country_event = {
 		as_new_waffen_ss_volunteer_division_effect = yes
 		hidden_effect = { load_oob = GER_Waffen_SS_8 }
 		set_country_flag = as_germany_ss_kavallerie_division
+		army_experience = -100		
 	}
 	
 	option = {
@@ -449,6 +453,7 @@ country_event = {
 		as_new_waffen_ss_division_effect = yes
 		hidden_effect = { load_oob = GER_Waffen_SS_9 }
 		set_country_flag = as_germany_ss_panzer_division_42
+		army_experience = -100		
 	}
 	
 	option = {
@@ -676,6 +681,7 @@ country_event = {
 		as_new_waffen_ss_foreign_division_effect = yes
 		hidden_effect = { load_oob = GER_Waffen_SS_14 }
 		set_country_flag = as_germany_ss_motorized_division
+		army_experience = -100		
 	}
 	
 	option = {
@@ -1040,6 +1046,7 @@ country_event = {
 		as_new_waffen_ss_foreign_division_effect = yes
 		as_add_waffen_ss_foreigners_effect = yes
 		hidden_effect = { load_oob = GER_Waffen_SS_22 }
+		#army_experience = -100		
 	}
 	
 	option = {
@@ -1049,7 +1056,7 @@ country_event = {
 	}
 }
 	################################################################################
-	# 23. SS-Freiw.-Pz.Gr.Div. 'Nederland'
+	# 23. Waffen-Gebirgs-Division der SS 'Kama' (kroat. Nr. 2)
 	################################################################################
 country_event = {
 	id = as_waffen_ss.23
@@ -1063,12 +1070,12 @@ country_event = {
 		tag = GER
 		has_government = fascism
 		has_idea = as_germany_waffen_ss_volunteers
-		has_country_flag = as_germany_ss_panzergrenadier_division
-		36 = {							
+		has_country_flag = as_germany_ss_gebirgs_division
+		109 = {
 			OR = {
 				is_controlled_by = GER
 				any_other_country = {
-					controls_state = 36
+					controls_state = 109 # Croatia
 					is_in_faction_with = GER
 					GER = { is_faction_leader = yes }
 				}
@@ -1083,8 +1090,8 @@ country_event = {
 	option = {
 		name = as_waffen_ss.23.option_a
 		ai_chance = { factor = 100 }
-		as_new_waffen_ss_foreign_division_effect = yes
 		as_add_waffen_ss_foreigners_effect = yes
+		as_new_waffen_ss_foreign_division_effect = yes
 		hidden_effect = { load_oob = GER_Waffen_SS_23 }
 	}
 	

@@ -187,7 +187,7 @@ country_event = {               # Secret negociations with Allies (UK or USA)
 		name = as_italy.3.a
 		ai_chance = { factor = 100 }
 		set_global_flag = ita_sue_for_peace
-		ITA = { add_national_unity = -0.50 }	
+		ITA = { add_national_unity = -0.30 }	
 	}
 	
 	option = {					# We don't trust Badoglio
