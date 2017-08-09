@@ -193,6 +193,7 @@ country_event = {
 
 			JAP = {
 				transfer_state = PREV
+				transfer_state = 609 #East Hebei
 			}
 		}
 			if = {
