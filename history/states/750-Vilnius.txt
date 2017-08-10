@@ -40,7 +40,7 @@ state={
 		1939.10.6 = {
 			owner = SOV
 			remove_claim_by = SOV
-			add_core_of = SOV
+			add_core_of = SOV  add_core_of = RUS
 		}
 
 		1939.10.10 = {
@@ -51,7 +51,7 @@ state={
 
 		1940.8.3 = {
 			owner = SOV
-			add_core_of = SOV
+			add_core_of = SOV  add_core_of = RUS
 		}
 		
 		1945.8.1 = {

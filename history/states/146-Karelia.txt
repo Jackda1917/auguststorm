@@ -30,7 +30,7 @@ state={
 		1940.3.13 = {
 			owner = SOV
 			controller = SOV
-			add_core_of = SOV
+			add_core_of = SOV  add_core_of = RUS
 		}
 		
 		1944.9.19 = {

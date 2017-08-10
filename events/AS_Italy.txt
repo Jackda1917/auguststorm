@@ -66,7 +66,14 @@ country_event = {
 		has_war_with = USA
 		OR = {
 			has_national_unity < 0.50
-			casualties > 2500000
+			AND = {	
+				casualties > 2500000
+				is_ai = yes
+			}
+			AND = {	
+				casualties > 1500000
+				is_ai = no
+			}			
 		}
 		OR = {
 			any_country {
@@ -88,11 +95,16 @@ country_event = {
 				is_on_continent = europe				
 				is_controlled_by = USA
 			}
+			any_owned_state = {
+				is_core_of = ITA
+				is_on_continent = europe				
+				is_controlled_by = FRA
+			}			
 		}
 	}
 		
 	mean_time_to_happen = {
-		days = 5
+		days = 0
 	}	
 	
 	immediate = {
@@ -187,7 +199,10 @@ country_event = {               # Secret negociations with Allies (UK or USA)
 		name = as_italy.3.a
 		ai_chance = { factor = 100 }
 		set_global_flag = ita_sue_for_peace
-		ITA = { add_national_unity = -0.30 }	
+		ITA = { 
+			add_national_unity = -0.40
+		}
+		
 	}
 	
 	option = {					# We don't trust Badoglio
@@ -232,16 +247,65 @@ country_event = {
 	is_triggered_only = yes							# On_actions trigger
 
 	immediate = {
-		ENG = { add_to_faction = ITA }		
+		GER = { remove_from_faction = ITA }	
+		if = {
+			limit = {
+				ENG = { is_faction_leader = yes }
+			}	
+			ENG = { release = ITA }
+			else = { USA = { release = ITA } }
+		}
 	}
 	
 	option = {
 		name = as_italy.4.a
 		ai_chance = { factor = 100 }
+		ENG = { add_to_faction = ITA }	
+		create_country_leader = {
+			name = "Pietro Badoglio"
+			desc = "POLITICS_PIETRO_BADOGLIO_DESC"
+			picture = "Portrait_Italy_Pietro_Badoglio.dds"
+			expire = "1965.1.1"
+			ideology = conservatism
+			traits = {
+			}
+		}
+		every_owned_state = {
+			limit = { 
+				is_core_of = ITA 
+			}
+			ITA = { transfer_state = PREV }
+		}		
+		set_politics = {
+			ruling_party = democratic 
+			elections_allowed = yes
+			parties = {
+				democratic = { 
+					popularity = 70
+				}
+				fascism = {
+					popularity = -1
+				}		
+				communism = {
+					popularity = 30
+				}
+			}	
+		}		
 		set_national_unity = 0.90
-		add_popularity = {
-			ideology = fascism
-			popularity = -1
+		add_equipment_to_stockpile = {
+				type = infantry_equipment_2
+				amount = 20000
+				producer = ITA
+		}
+		add_equipment_to_stockpile = {
+				type = artillery_equipment_2
+				amount = 2000
+				producer = ITA
+		}
+		add_equipment_to_stockpile = {
+				type = support_equipment_1
+				amount = 3000
+				producer = ITA
 		}		
 		every_owned_state = {
 			limit = { 
@@ -406,10 +470,10 @@ country_event = {											# RSI
 		name = as_italy.1.a
 		ai_chance = { factor = 100 }						
 		start_civil_war = {
-				ideology = fascism
-				size = 0.40
-				capital = 159
-				states = { 159 161 158 162 157 2 }
+			ideology = fascism
+			size = 0.40
+			capital = 159
+			states = { 159 161 158 162 157 2 }
 		}
 		news_event = { id = as_news.3 hours = 2 }
 		random_other_country = {
@@ -432,8 +496,8 @@ country_event = {											# RSI
 				}
 			}
 			GER = { 
-				puppet = ROOT
-				add_to_faction = ROOT
+				puppet = PREV
+				add_to_faction = PREV
 				transfer_state = 736
 				transfer_state = 39
 				transfer_state = 160				

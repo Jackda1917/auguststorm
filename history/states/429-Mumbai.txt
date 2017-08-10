@@ -1,7 +1,7 @@
 
 state={
 	id=429
-	name="STATE_429"
+	name="STATE_429"		# Bombay
 	manpower = 17355600
 	state_category = town
 	
@@ -12,8 +12,9 @@ state={
 	history={
 		owner = RAJ
 		buildings = {
-			infrastructure = 4
-			industrial_complex = 1
+			infrastructure = 5 #4
+			industrial_complex = 3 #1
+			arms_factory = 2 #0
 			air_base = 2
 			1349 = {
 				naval_base = 6

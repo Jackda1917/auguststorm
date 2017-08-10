@@ -25,7 +25,7 @@ state={
 
 		1922.12.30 = {
 			owner = SOV
-			add_core_of = SOV
+			add_core_of = SOV  add_core_of = RUS
 		}
 
 		1990.7.27 = {

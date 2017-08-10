@@ -582,6 +582,7 @@ country_event = {
 		NOT = { has_country_flag = ger_panzer_1942 }		
 		has_tech = improved_medium_tank 
 		has_tech = improved_heavy_tank
+		has_tech = mechanised_infantry
 	}
 	option = {
 		name = as_germany.6.a
@@ -607,7 +608,6 @@ country_event = {
 		tag = GER
 		is_ai = yes
 		NOT = { has_country_flag = GER_mechanized }
-		has_tech = mechanised_infantry
 		has_country_flag = ger_panzer_1942
 	}
 	option = {
@@ -830,8 +830,8 @@ country_event = {									# Bitter Peace
 		add_political_power = 1000 
 		set_global_flag = sov_sue_for_peace
 		SOV = { 
-			add_national_unity = -0.40
-			#country_event = { id = as_sov.15 days = 0 }
+			#add_national_unity = 0.10
+			country_event = { id = as_sov.15 days = 0 }
 		}		
 	}
 	option = {
@@ -935,7 +935,7 @@ country_event = {									# King Tiger
 	fire_only_once = yes
 
 	mean_time_to_happen = {
-			days = 600
+			days = 700
 	}
 	
 	trigger = {
@@ -980,5 +980,192 @@ country_event = {									# DAK
 			id = africa
 			value = 40
 		}	
+	}	
+}
+
+country_event = {									# Extra GLO against human SOV
+	id = as_germany.19
+	title = as_germany.19.t
+	desc = as_germany.19.d
+	picture = GFX_report_event_german_troops
+	
+	hidden = yes
+	
+	fire_only_once = yes
+
+	mean_time_to_happen = {
+			days = 0
+	}
+	
+	trigger = {
+		tag = GER
+		is_ai = yes
+		has_war_with = SOV
+		SOV = { is_ai = no }
+		NOT = { 
+			has_country_flag = grand_land_offensive_ai_flag
+			has_country_flag = grand_land_offensive_flag
+		}
+	}
+	option = {
+		name = as_germany.6.a
+		ai_chance = { factor = 10 }
+		country_event = { id = glo.3 hours = 1 }
+	}	
+}
+
+country_event = {													# German Rockets
+	id = as_germany.20
+	title = as_germany.20.t
+	desc = as_germany.20.d
+	picture = GFX_report_event_german_troops
+	
+	fire_only_once = yes
+
+	mean_time_to_happen = {
+			days = 1
+	}
+	
+	hidden = yes
+	
+	trigger = {
+		tag = GER
+		is_ai = yes
+		date > 1943.1.1
+		has_tech = experimental_rockets 
+		NOT = { has_tech = rocket_engines }
+		NOT = { has_tech = improved_rocket_engines }
+		NOT = { has_tech = advanced_rocket_engines }
+		NOT = { has_tech = jet_engines }		
+	}
+	option = {
+		name = as_germany.6.a
+		ai_chance = { factor = 10 }
+		set_technology = { rocket_engines = 1 }		
+	}	
+}
+
+country_event = {													# German Rockets
+	id = as_germany.21
+	title = as_germany.21.t
+	desc = as_germany.21.d
+	picture = GFX_report_event_german_troops
+	
+	fire_only_once = yes
+
+	mean_time_to_happen = {
+			days = 100
+	}
+	
+	hidden = yes
+	
+	trigger = {
+		tag = GER
+		is_ai = yes
+		date > 1943.1.1
+		has_tech = experimental_rockets 
+		has_tech = rocket_engines 
+		NOT = { has_tech = improved_rocket_engines }
+		NOT = { has_tech = advanced_rocket_engines }
+		NOT = { has_tech = jet_engines }		
+	}
+	option = {
+		name = as_germany.6.a
+		ai_chance = { factor = 10 }
+		set_technology = { improved_rocket_engines = 1 }		
+	}	
+}
+
+country_event = {													# German Rockets
+	id = as_germany.22
+	title = as_germany.22.t
+	desc = as_germany.22.d
+	picture = GFX_report_event_german_troops
+	
+	fire_only_once = yes
+
+	mean_time_to_happen = {
+			days = 100
+	}
+	
+	hidden = yes
+	
+	trigger = {
+		tag = GER
+		is_ai = yes
+		date > 1943.1.1
+		has_tech = experimental_rockets 
+		has_tech = rocket_engines 
+		has_tech = improved_rocket_engines 
+		NOT = { has_tech = advanced_rocket_engines }
+		NOT = { has_tech = jet_engines }		
+	}
+	option = {
+		name = as_germany.6.a
+		ai_chance = { factor = 10 }
+		set_technology = { advanced_rocket_engines = 1 }		
+	}	
+}
+
+country_event = {													# German Rockets
+	id = as_germany.23
+	title = as_germany.23.t
+	desc = as_germany.23.d
+	picture = GFX_report_event_german_troops
+	
+	fire_only_once = yes
+
+	mean_time_to_happen = {
+			days = 10
+	}
+	
+	hidden = yes
+	
+	trigger = {
+		tag = GER
+		is_ai = yes
+		date > 1944.1.1
+		has_tech = experimental_rockets 
+		has_tech = rocket_engines 
+		has_tech = improved_rocket_engines 
+		has_tech = advanced_rocket_engines 
+		NOT = { has_tech = jet_engines }		
+	}
+	option = {
+		name = as_germany.6.a
+		ai_chance = { factor = 10 }
+		set_technology = { jet_engines = 1 }		
+	}	
+}
+
+country_event = {													# German Rockets
+	id = as_germany.24
+	title = as_germany.24.t
+	desc = as_germany.24.d
+	picture = GFX_report_event_german_troops
+	
+	fire_only_once = yes
+
+	mean_time_to_happen = {
+			days = 100
+	}
+	
+	hidden = yes
+	
+	trigger = {
+		tag = GER
+		is_ai = yes
+		date > 1944.6.1	
+		has_tech = fighter3
+		has_tech = experimental_rockets 
+		has_tech = rocket_engines 
+		has_tech = improved_rocket_engines 
+		has_tech = advanced_rocket_engines 
+		has_tech = jet_engines 	
+	}
+	option = {
+		name = as_germany.6.a
+		ai_chance = { factor = 10 }
+		set_technology = { jet_fighter1 = 1 }		
 	}	
 }

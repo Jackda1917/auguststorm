@@ -37,7 +37,7 @@ state=
 		
 		1945.5.8 = {
 			owner = SOV
-			add_core_of = SOV
+			add_core_of = SOV  add_core_of = RUS
 			remove_core_of = GER
 		}
 		

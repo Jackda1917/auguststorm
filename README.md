@@ -44,9 +44,9 @@ No surprise there: the more players will play the mod the more feedback you make
 
 ################################################################################
 
-August Storm detailed changes (cumulative but not exhaustive):
+August Storm detailed changes (cumulative but not exhaustive!):
 
-Current Version: 1.4.1.3
+Current Version: 1.4.1.31
 Compatibility: HOI IV 1.4.1 DOD
 
 - Please, don't forget to evaluate the mod on Steam Workshop, we have put a link in the game menu for that, Thanks ! -
@@ -59,7 +59,7 @@ Map/UI
 
 Countries
 • Egypt, Syria, Lebanon, Jordan, Burma, Manchukuo, and many post WW2 countries
-• Releasable SSRs (Belarus, Ukraine, Transcaucasus, Central Asia)
+• Releasable SSRs (Belarus, Ukraine, Transcaucasus, Central Asia...)
 • French State
 
 AI
@@ -129,7 +129,10 @@ Balance and Gameplay
 • The loss of its African territories hits Italy UN (helps for surrender/switching sides)
 • Gibraltar or Suez control boost Italy UN 
 • New Italian civil war event chain (RSI) 
-• Added UN penaties when suffer too many casualties  
+• Added UN penaties when suffer too many casualties 
+• Navy XP gain increased
+• Land Unit XP gain increased, lowered for leaders
+• Air units XP gain decreased 
 • Many other balance tweaks, historical fix, new events...
 
 Equipment
@@ -154,6 +157,6 @@ Equipment
 Units
 • New: Armoured Reconnaissance Company
 • New: Air Assault Battalion (Enabled by Attack Helicopter I - 1957)
-• Germany gets historical Waffen-SS units (38/38 possible, note that you will need Heavy Armor tech and most of the Support companies researched to trigger the mid-war units)
+• Germany gets historical Waffen-SS units (38/38 possible, note that you will need Heavy Armor tech and most of the Support companies researched to trigger the mid-war units, new templates will cost Army XP)
 • New: Motorized Artillery
 • New: Heavy Armoured Company

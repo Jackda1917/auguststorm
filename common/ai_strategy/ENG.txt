@@ -52,7 +52,7 @@ ENG_unit_production = {
 	ai_strategy = {
 		type = role_ratio
 		id = armor
-		value = 15
+		value = 20
 	}
 
 	ai_strategy = {
@@ -213,6 +213,12 @@ royal_air_force = {
 		type = air_factory_balance
 		value = 100
 	}
+		
+	ai_strategy = {
+		type = equipment_production_factor
+		id = cas
+		value = -100
+	}		
 }
 
 ENG_template_design_1 = {
@@ -338,10 +344,7 @@ ENG_template_design_2 = {
 ENG_highered_armored_production = {
 	enable = {
 		original_tag = ENG
-		date > 1939.1.1	
-	}
-	abort = {
-		date > 1941.1.1	
+		date > 1940.12.31	
 	}
 
 	ai_strategy = {
@@ -349,23 +352,11 @@ ENG_highered_armored_production = {
 		id = armor
 		value = 10
 	}
-		
-	ai_strategy = {
-		type = equipment_production_factor
-		id = fighter
-		value = 10
-	}
-	
-	ai_strategy = {
-		type = equipment_production_factor
-		id = cas
-		value = -100
-	}	
 	
 	ai_strategy = {
 		type = equipment_production_factor
 		id = infantry
-		value = 10
+		value = -40
 	}
 	
 	ai_strategy = {
@@ -386,80 +377,113 @@ careful_with_early_invasions = {
 	enable = {
 		is_in_faction_with = ENG # anyone in allies		
 		NOT = { has_tech = landing_craft }		
-		date < 1944.1.1
-		NOT = {
-			GER = { has_war_with = SOV }
-			is_in_faction_with = USA
-		}
+		#date < 1944.1.1
+		ITA = { has_government = fascism }
 	}
 	abort = {
 		has_tech = landing_craft
 		GER = { has_war_with = SOV }
-		date > 1943.12.30
+		OR = {	
+			date > 1943.12.30
+			NOT = { ITA = { has_government = fascism } }
+		}
 		is_in_faction_with = USA
 	}
 
 	ai_strategy = {
 		type = invade
-		id = "ITA"			
-		value = -3000
-	}
-
-	ai_strategy = {
-		type = invade
 		id = "GER"			
 		value = -3000
+	}	
+}
+
+italy_first = {
+	enable = {
+		is_in_faction_with = ENG # anyone in allies				
+		date > 1943.1.1
+		ITA = { has_war_with = USA }
+		ITA = { has_national_unity < 0.5 }
+	}
+	abort = {
+		ITA = { is_in_faction_with = USA }
 	}
 
 	ai_strategy = {
 		type = invade
-		id = "YUG"			
-		value = -3000
-	}	
-	
+		id = "ITA"			
+		value = 2000
+	}
+
 }
 
 east_prussia_invasion_is_death_trap = {
-	enable = {
-		
+	enable = {		
 		OR = {
 			is_in_faction_with = ENG # anyone in allies
 			tag = FRA
 		}
-
-		GER = { has_war_with = POL }
-		POL = { 
-			OR = {
-				exists = yes 
-				has_capitulated = no
-			}
-		}
-
-		date < 1940.1.1
+		NOT = { USA = { has_war_with = GER } }
+		date < 1943.1.1
 	}
 	
 	abort = {
-		OR = {
-			NOT = { GER = { has_war_with = POL } }
-			POL = { 
-				OR = {
-					exists = no
-					has_capitulated = yes
-				}
-			}
-			date > 1940.1.1
-		}
+		USA = { has_war_with = GER }
+		date > 1942.12.30
 	}
 
+	ai_strategy = {
+		type = invade
+		id = "ITA"			
+		value = -2000
+	}	
+	
 	ai_strategy = {
 		type = invade
 		id = "GER"			
 		value = -2000
 	}
+	
+	ai_strategy = {
+		type = invade
+		id = "YUG"			
+		value = -2000
+	}
+	
+	ai_strategy = {
+		type = invade
+		id = "ALB"			
+		value = -2000
+	}
+	
 }
 
 ################# August Storm ############################################
+play_nice_with_yug = {
+	enable = {
+		tag = ENG
+		YUG = { exists = yes }
+	}
 
+	abort = {
+		OR = {	
+			ENG = { has_war_with = YUG }
+			YUG = { is_in_faction_with = YUG }
+		}
+	}	
+	
+	ai_strategy = {
+		type = antagonize
+		id = "YUG"
+		value = -300
+	}
+
+	ai_strategy = {
+		type = ignore
+		id = "YUG"
+		value = 300
+	}
+	
+}
 
 play_nice_with_vic = {
 	enable = {
@@ -484,17 +508,24 @@ play_nice_with_vic = {
 protect_malaisia = {
 	enable = {
 		tag = ENG
-		has_war = yes 
+		has_war_with = JAP 
 	}
 	abort = {	
-		has_war = no
+		NOT = { has_war_with = JAP }
 	}
 	
 	ai_strategy = {
 		type = protect
 		id = "MAL"
-		value = 200
+		value = 2000
 	}
+	
+	ai_strategy = {
+		type = protect
+		id = "RAJ"
+		value = 2000
+	}
+	
 }
 
 ENG_area_priority = {
