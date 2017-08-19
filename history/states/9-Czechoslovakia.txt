@@ -6,7 +6,7 @@ state={
 	state_category = metropolis
 	
 	resources={
-		steel = 32  # Prague Iron Company (Kladno)
+		steel = 320  # Prague Iron Company (Kladno)
 	}
 	
 	history={

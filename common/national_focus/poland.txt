@@ -219,12 +219,12 @@ focus_tree = {
 			}
 			add_resource = {
 				type = steel
-				amount = 12
+				amount = 120
 				state = 90
 			}
 			add_resource = {
 				type = aluminium
-				amount = 4
+				amount = 40
 				state = 90
 			}	
 		}
@@ -283,12 +283,12 @@ focus_tree = {
 			}
 			add_resource = {
 				type = steel
-				amount = 12
+				amount = 120
 				state = 90
 			}
 			add_resource = {
 				type = aluminium
-				amount = 4
+				amount = 40
 				state = 90
 			}			
 		}
@@ -559,12 +559,12 @@ focus_tree = {
 			}
 			add_resource = {
 				type = steel
-				amount = 12
+				amount = 120
 				state = 756
 			}
 			add_resource = {
 				type = aluminium
-				amount = 4
+				amount = 40
 				state = 756
 			}
 		}
@@ -589,12 +589,12 @@ focus_tree = {
 			}
 			add_resource = {
 				type = steel
-				amount = 12
+				amount = 120
 				state = 756
 			}
 			add_resource = {
 				type = aluminium
-				amount = 4
+				amount = 40
 				state = 756
 			}
 		}		

@@ -40,8 +40,8 @@ equipments = {
 		
 		build_cost_ic = 8
 		resources = {
-			oil = 1
-			steel = 5 #3
+			oil = 10
+			steel = 50 #3
 		}	
 
 	}
@@ -74,8 +74,8 @@ equipments = {
 
 		build_cost_ic = 7 #gw tanks are clunky
 		resources = {
-			oil = 1
-			steel = 4 #2
+			oil = 10
+			steel = 40 #2
 		}
 		
 	}	
@@ -114,8 +114,8 @@ equipments = {
 		
 		build_cost_ic = 9
 		resources = {
-			oil = 1
-			steel = 7 #4
+			oil = 10
+			steel = 70 #4
 		}
 	}
 		
@@ -146,8 +146,8 @@ equipments = {
 		
 		build_cost_ic = 11
 		resources = {
-			oil = 1.5
-			steel = 7 #4
+			oil = 15
+			steel = 70 #4
 		}		
 	}
 
@@ -176,9 +176,9 @@ equipments = {
 		
 		build_cost_ic = 13 
 		resources = {
-			oil = 1.5
-			steel = 7 #4
-			chromium = 3
+			oil = 15
+			steel = 70 #4
+			chromium = 30
 		}
 	}
 
@@ -207,9 +207,9 @@ equipments = {
 		
 		build_cost_ic = 18
 		resources = {
-			oil = 1.5
-			steel = 7 #4
-			chromium = 4
+			oil = 15
+			steel = 70 #4
+			chromium = 40
 		}
 	}
 
@@ -253,9 +253,9 @@ equipments = {
 		
 		build_cost_ic = 8
 		resources = {
-			oil = 1
-			steel = 4 #2
-			tungsten= 1
+			oil = 10
+			steel = 40 #2
+			tungsten = 10
 		}
 		
 	}
@@ -298,9 +298,9 @@ equipments = {
 		
 		build_cost_ic = 9
 		resources = {
-			steel = 3
-			oil = 1
-			tungsten= 1
+			steel = 30
+			oil = 10
+			tungsten = 10
 		}
 	}
 
@@ -331,9 +331,9 @@ equipments = {
 		
 		build_cost_ic = 10
 		resources = {
-			steel = 4
-			oil = 2
-			tungsten = 1
+			steel = 40
+			oil = 20
+			tungsten = 10
 		}
 	}
 
@@ -378,9 +378,9 @@ equipments = {
 		
 		build_cost_ic = 8
 		resources = {
-			oil = 1
-			steel = 2
-			tungsten = 1.5  # was 2
+			oil = 10
+			steel = 20
+			tungsten = 15  # was 2
 		}
 		
 	}
@@ -426,9 +426,9 @@ equipments = {
 		
 		build_cost_ic = 9
 		resources = {
-			oil = 1
-			steel = 5 #3
-			tungsten = 1.5  # was 2
+			oil = 10
+			steel = 50 #3
+			tungsten = 15  # was 2
 		}
 	}
 
@@ -460,9 +460,9 @@ equipments = {
 		
 		build_cost_ic = 10
 		resources = {
-			oil = 2
-			steel = 7 #4
-			tungsten = 1.5  # was 2
+			oil = 20
+			steel = 70 #4
+			tungsten = 15  # was 2
 		}
 	}
 
@@ -508,8 +508,8 @@ equipments = {
 		
 		build_cost_ic = 10
 		resources = {
-			oil = 1
-			steel = 4 #2
+			oil = 10
+			steel = 40 #2
 		}
 		
 	}
@@ -556,8 +556,8 @@ equipments = {
 		
 		build_cost_ic = 11
 		resources = {
-			oil = 1
-			steel = 5 #3
+			oil = 10
+			steel = 50 #3
 		}
 	}
 
@@ -590,8 +590,8 @@ equipments = {
 		
 		build_cost_ic = 12
 		resources = {
-			oil = 2
-			steel = 7 #4
+			oil = 20
+			steel = 70 #4
 		}
 	}
 }

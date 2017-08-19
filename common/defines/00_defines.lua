@@ -110,7 +110,7 @@ NDiplomacy = {
 	TAKE_STATES_GIVE_CORE_TO_SUBJECT_MULT = 0.05,	--WAS 0.1 Cost multiplier for feeding core states to a subject 
 	
 	RESOURCE_SENT_AUTONOMY_DAILY_BASE = 0.0,		-- If puppet provides resources to its master they increasy their autonomy by at least this amount
-	RESOURCE_SENT_AUTONOMY_DAILY_FACTOR = 0.001,	--WAS 0.005 If puppet provides resources to its master they increasy their autonomy by the resources factored by this
+	RESOURCE_SENT_AUTONOMY_DAILY_FACTOR = 0.0001,	--WAS 0.005 If puppet provides resources to its master they increasy their autonomy by the resources factored by this
 	WAR_SCORE_AUTONOMY_BASE = 0.0,					-- Value added if any war score is contributed by puppet
 	WAR_SCORE_AUTONOMY_FACTOR = 0.6,				-- If puppet generates war score it get a boost to independence 
 	LL_TO_OVERLORD_AUTONOMY_DAILY_BASE = 0.0,		-- If puppet lend leases equipment to overlord of at least same tech level as they have, they gain autonomy
@@ -198,7 +198,7 @@ NCountry = {
 	ARMY_IMPORTANCE_FACTOR = 7.0,					--WAS 5 Army factor for AI and calculations
 	VICTORY_POINTS_IMPORTANCE_FACTOR = 15.0,		--WAS 5.0 State victory points importance factor for AI and calculations
 	BUILDING_IMPORTANCE_FACTOR = 3.0,				-- State building importance factor for AI and calculations
-	RESOURCE_IMPORTANCE_FACTOR = 0.5,				--WAS 0.1 State resource importance factor for AI and calculations
+	RESOURCE_IMPORTANCE_FACTOR = 0.05,				--WAS 0.1 State resource importance factor for AI and calculations
 	INTERPOLATED_FRONT_STEPS_SHORT = 2,				-- Performance optimization - The amount of steps for interpolated fronts. Non-AI countries got full interpolated fronts, the rest has optimized version of it.
 	MIN_AIR_RESERVE_RATIO = 0.33,					-- Min manpower ratio to show air reserves alert
 	THEATRES_BIND_BORDER_DISTANCE = 25000,			-- Map distance (before sqrt) between the center of the borders that determines if theatres should be bound or not.

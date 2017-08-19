@@ -40,9 +40,9 @@ equipments = {
 		
 		build_cost_ic = 55
 		resources = {
-			oil = 2
-			steel = 15 #7
-			chromium = 4
+			oil = 20
+			steel = 150 #7
+			chromium = 40
 		}
 	}
 
@@ -96,9 +96,9 @@ equipments = {
 		
 		build_cost_ic = 100
 		resources = {
-			oil = 3
-			steel = 15 #7
-			chromium = 4
+			oil = 30
+			steel = 150 #7
+			chromium = 40
 		}
 	}
 
@@ -155,9 +155,9 @@ equipments = {
 		
 		build_cost_ic = 100
 		resources = {
-			oil = 3
-			steel = 15 #7
-			chromium = 4
+			oil = 30
+			steel = 150 #7
+			chromium = 40
 		}
 	}
 
@@ -214,9 +214,9 @@ equipments = {
 		
 		build_cost_ic = 100
 		resources = {
-			oil = 2
-			steel = 13 #6
-			chromium = 4
+			oil = 20
+			steel = 130 #6
+			chromium = 40
 		}
 	}
 

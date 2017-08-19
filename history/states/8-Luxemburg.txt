@@ -7,7 +7,7 @@ state=
 	
 	manpower = 294748
 	resources={
-		steel=50  #8
+		steel = 500  #8
 	}
 
 	history=

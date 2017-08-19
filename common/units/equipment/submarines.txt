@@ -42,8 +42,8 @@ equipments = {
 		
 		build_cost_ic = 450
 		resources = {
-			oil = 1
-			steel = 1
+			oil = 10
+			steel = 10
 		}
 		
 		manpower = 200
@@ -56,8 +56,8 @@ equipments = {
 		priority = 80
 
 		resources = {
-			oil = 1
-			steel = 1
+			oil = 10
+			steel = 10
 		}
 		type = { 
 			submarine
@@ -97,8 +97,8 @@ equipments = {
 		
 		build_cost_ic = 500
 		resources = {
-			oil = 1
-			steel = 2
+			oil = 10
+			steel = 20
 		}
 		type = { 
 			submarine
@@ -137,8 +137,8 @@ equipments = {
 		
 		build_cost_ic = 550
 		resources = {
-			oil = 2
-			steel = 2
+			oil = 20
+			steel = 20
 		}
 		type = { 
 			submarine
@@ -177,9 +177,9 @@ equipments = {
 		
 		build_cost_ic = 600
 		resources = {
-			oil = 2
-			steel = 3
-			chromium = 1
+			oil = 20
+			steel = 30
+			chromium = 10
 		}
 		type = { 
 			submarine

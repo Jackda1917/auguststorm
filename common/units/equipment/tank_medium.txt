@@ -39,9 +39,9 @@ equipments = {
 		
 		build_cost_ic = 10
 		resources = {
-			oil = 1
-			tungsten = 0.5			
-			steel = 6 #4
+			oil = 10
+			tungsten = 5			
+			steel = 60 #4
 		}	
 		
 		#Space taken in convoy
@@ -83,9 +83,9 @@ equipments = {
 		
 		build_cost_ic = 13
 		resources = {
-			oil = 1
-			tungsten = 1
-			steel = 8 #5
+			oil = 10
+			tungsten = 10
+			steel = 80 #5
 		}
 	}
 
@@ -118,9 +118,9 @@ equipments = {
 		
 		build_cost_ic = 17
 		resources = {
-			oil = 1
-			tungsten = 1.5  # was 2
-			steel = 11 #6
+			oil = 10
+			tungsten = 15  # was 2
+			steel = 110 #6
 		}
 	}
 
@@ -166,9 +166,9 @@ equipments = {
 		build_cost_ic = 12
 		
 		resources = {
-			oil = 1
-			tungsten = 3
-			steel = 4 #2
+			oil = 10
+			tungsten = 30
+			steel = 40 #2
 		}
 	}
 
@@ -213,9 +213,9 @@ equipments = {
 		build_cost_ic = 13
 		
 		resources = {
-			steel = 6 #3
-			tungsten = 3
-			oil = 1
+			steel = 60 #3
+			tungsten = 30
+			oil = 10
 		}
 	}
 
@@ -246,9 +246,9 @@ equipments = {
 		build_cost_ic = 14
 		
 		resources = {
-			steel = 8 #4
-			tungsten = 3
-			oil = 2
+			steel = 80 #4
+			tungsten = 30
+			oil = 20
 		}
 	}
 
@@ -295,9 +295,9 @@ equipments = {
 		build_cost_ic = 12
 		
 		resources = {
-			oil = 1
-			tungsten = 4
-			steel = 4 #2
+			oil = 10
+			tungsten = 40
+			steel = 40 #2
 		}
 	}
 
@@ -344,9 +344,9 @@ equipments = {
 		build_cost_ic = 13
 		
 		resources = {
-			oil = 1
-			tungsten = 4
-			steel = 6 #3
+			oil = 10
+			tungsten = 40
+			steel = 60 #3
 		}		
 	}
 
@@ -379,9 +379,9 @@ equipments = {
 		build_cost_ic = 14
 		
 		resources = {
-			oil = 2
-			tungsten = 4
-			steel = 8 #4
+			oil = 20
+			tungsten = 40
+			steel = 80 #4
 		}
 	}
 
@@ -428,9 +428,9 @@ equipments = {
 		build_cost_ic = 12
 		
 		resources = {
-			oil = 1
-			tungsten = 1.5  # was 2
-			steel = 4 #2
+			oil = 10
+			tungsten = 15  # was 2
+			steel = 40 #2
 		}
 	}
 
@@ -477,9 +477,9 @@ equipments = {
 		build_cost_ic = 13
 		
 		resources = {
-			oil = 1
-			tungsten = 1.5  # was 2
-			steel = 6 #3
+			oil = 10
+			tungsten = 15  # was 2
+			steel = 60 #3
 		}
 	}
 
@@ -513,9 +513,9 @@ equipments = {
 		build_cost_ic = 14
 		
 		resources = {
-			oil = 2
-			tungsten = 1.5  # was 2
-			steel = 8 #4
+			oil = 20
+			tungsten = 15  # was 2
+			steel = 80 #4
 		}		
 	}
 

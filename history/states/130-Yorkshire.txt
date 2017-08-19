@@ -7,7 +7,7 @@ state={
 	state_category = metropolis
 	
 	resources={
-		steel=120
+		steel = 1200
 	}
 
 	history={

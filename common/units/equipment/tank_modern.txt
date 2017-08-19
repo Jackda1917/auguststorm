@@ -41,9 +41,9 @@ equipments = {
 		
 		build_cost_ic = 20
 		resources = {
-			oil = 1
-			steel = 12 #6
-			tungsten = 1.5  # was 2
+			oil = 10
+			steel = 120 #6
+			tungsten = 15  # was 2
 		}		
 		
 	}
@@ -89,9 +89,9 @@ equipments = {
 		
 		build_cost_ic = 20
 		resources = {
-			oil = 1
-			steel = 12 #6
-			tungsten = 1.5  # was 2
+			oil = 10
+			steel = 120 #6
+			tungsten = 15  # was 2
 		}	
 	}
 
@@ -126,9 +126,9 @@ equipments = {
 		
 		build_cost_ic = 28
 		resources = {
-			oil = 1
-			steel = 10 #5
-			chromium = 4
+			oil = 10
+			steel = 100 #5
+			chromium = 40
 		}
 	}
 
@@ -163,9 +163,9 @@ equipments = {
 		
 		build_cost_ic = 33
 		resources = {
-			oil = 1
-			steel = 10 #5
-			chromium = 4
+			oil = 10
+			steel = 100 #5
+			chromium = 40
 		}
 	}
 
@@ -199,9 +199,9 @@ equipments = {
 		
 		build_cost_ic = 40
 		resources = {
-			oil = 2
-			steel = 8 #4
-			chromium = 4
+			oil = 20
+			steel = 80 #4
+			chromium = 40
 		}
 	}	
 	
@@ -248,9 +248,9 @@ equipments = {
 		build_cost_ic = 28
 		
 		resources = {
-			oil = 1
-			steel = 6 #3
-			chromium = 4
+			oil = 10
+			steel = 60 #3
+			chromium = 40
 		}
 	}
 
@@ -284,9 +284,9 @@ equipments = {
 		build_cost_ic = 28
 		
 		resources = {
-			oil = 1
-			steel = 6 #3
-			chromium = 4
+			oil = 10
+			steel = 60 #3
+			chromium = 40
 		}
 	}
 
@@ -322,9 +322,9 @@ equipments = {
 		build_cost_ic = 29
 		
 		resources = {
-			oil = 1
-			steel = 6 #3
-			chromium = 4
+			oil = 10
+			steel = 60 #3
+			chromium = 40
 		}
 	}
 
@@ -360,9 +360,9 @@ equipments = {
 		build_cost_ic = 30
 		
 		resources = {
-			oil = 1
-			steel = 6 #3
-			chromium = 4
+			oil = 10
+			steel = 60 #3
+			chromium = 40
 		}
 	}
 
@@ -398,9 +398,9 @@ equipments = {
 		build_cost_ic = 31
 		
 		resources = {
-			oil = 2
-			steel = 6 #3
-			chromium = 4
+			oil = 20
+			steel = 60 #3
+			chromium = 40
 		}
 	}
 		
@@ -447,9 +447,9 @@ equipments = {
 		build_cost_ic = 28
 		
 		resources = {
-			oil = 1
-			steel = 6 #3
-			chromium = 4
+			oil = 10
+			steel = 60 #3
+			chromium = 40
 		}
 	}
 
@@ -499,9 +499,9 @@ equipments = {
 		build_cost_ic = 29
 		
 		resources = {
-			oil = 1
-			steel = 6 #3
-			chromium = 4
+			oil = 10
+			steel = 60 #3
+			chromium = 40
 		}
 	}
 
@@ -537,9 +537,9 @@ equipments = {
 		build_cost_ic = 30
 		
 		resources = {
-			oil = 2
-			steel = 6 #3
-			chromium = 4
+			oil = 20
+			steel = 60 #3
+			chromium = 40
 		}
 	}
 
@@ -575,9 +575,9 @@ equipments = {
 		build_cost_ic = 31
 		
 		resources = {
-			oil = 2
-			steel = 6 #3
-			chromium = 4
+			oil = 20
+			steel = 60 #3
+			chromium = 40
 		}
 	}
 	
@@ -624,9 +624,9 @@ equipments = {
 		build_cost_ic = 28
 		
 		resources = {
-			oil = 1
-			steel = 6 #3
-			chromium = 4
+			oil = 10
+			steel = 60 #3
+			chromium = 40
 		}
 	}
 	
@@ -670,9 +670,9 @@ equipments = {
 		build_cost_ic = 29
 		
 		resources = {
-			oil = 1
-			steel = 6 #3
-			chromium = 4
+			oil = 10
+			steel = 60 #3
+			chromium = 40
 		}
 	}
 
@@ -709,9 +709,9 @@ equipments = {
 		build_cost_ic = 30
 		
 		resources = {
-			oil = 2
-			steel = 6 #3
-			chromium = 4
+			oil = 20
+			steel = 60 #3
+			chromium = 40
 		}
 	}
 
@@ -748,9 +748,9 @@ equipments = {
 		build_cost_ic = 31
 		
 		resources = {
-			oil = 2
-			steel = 6 #3
-			chromium = 4
+			oil = 20
+			steel = 60 #3
+			chromium = 40
 		}
 	}	
 	
