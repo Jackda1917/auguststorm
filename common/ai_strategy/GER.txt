@@ -166,7 +166,13 @@ GER_unit_production = {
 		type = equipment_production_factor
 		id = motorized
 		value = 20 #to 40
-	}	
+	}
+
+	ai_strategy = {
+		type = equipment_production_factor
+		id = strategic_bomber
+		value = -100
+	}
 }
 
 
