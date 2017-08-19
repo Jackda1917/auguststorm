@@ -19,7 +19,7 @@ sub_units = {
 			category_army
 		}
 		
-		combat_width = 1.5 # was 2
+		combat_width = 2
 
 		need = {
 			medium_tank_equipment = 60 #50
