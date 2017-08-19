@@ -2860,7 +2860,6 @@ focus_tree = {
 				name = bb_bonus
 				bonus = 0.5
 				uses = 1
-				technology = basic_battleship
 				technology = improved_battleship
 				technology = advanced_battleship
 				technology = heavy_battleship
@@ -2907,9 +2906,8 @@ focus_tree = {
 			add_tech_bonus = {
 				name = GER_u_boat_effort
 				bonus = 0.5
-				uses = 1
-				technology = early_submarine
-				technology = basic_submarine
+				ahead_reduction = 1
+				uses = 2
 				technology = improved_submarine
 				technology = advanced_submarine
 			}
@@ -2937,9 +2935,8 @@ focus_tree = {
 			add_tech_bonus = {
 				name = GER_u_boat_effort
 				bonus = 0.5
+				ahead_reduction = 1
 				uses = 2
-				technology = early_submarine
-				technology = basic_submarine
 				technology = improved_submarine
 				technology = advanced_submarine
 			}
@@ -2965,7 +2962,8 @@ focus_tree = {
 				name = ti_bonus
 				name = GER_trade_interdiction
 				bonus = 0.5
-				category = trade_interdiction_tree
+				uses = 3
+				category = submarine_doctrine
 			}
 		}
 	}
