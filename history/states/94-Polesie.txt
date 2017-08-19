@@ -1,65 +1,67 @@
+
 state={
 	id=94
 	name="STATE_94"
-	manpower = 1232200
-	
-	state_category = rural
-	
+
 	history={
 		owner = RUS
 		add_core_of = RUS
-		
 		buildings = {
 			infrastructure = 3
+
 		}
 		victory_points = {
-			3392 1
+			3392 1 
 		}
-
 		1918.3.25 = {
 			add_core_of = BLR
 			remove_core_of = RUS
-		}
 
+		}
 		1918.11.18 = {
 			add_claim_by = POL
-		}
 
+		}
 		1921.10.18 = {
 			owner = POL
 			remove_claim_by = POL
 			add_core_of = POL
-		}
 
+		}
 		1922.12.30 = {
 			add_claim_by = SOV
+
 		}
-		
 		1939.10.6 = {
 			owner = SOV
 			remove_claim_by = SOV
 			add_core_of = SOV
+
 		}
-		
 		1945.8.1 = {
 			remove_core_of = POL
-		}
 
+		}
 		1990.7.27 = {
 			remove_core_of = SOV
 			add_claim_by = SOV
-		}
 
+		}
 		1991.8.21 = {
 			owner = BLR
-		}
 
+		}
 		1991.12.25 = {
 			remove_claim_by = SOV
+
 		}
+
 	}
 
 	provinces={
-		535 560 3256 3309 3392 3496 3556 6280 6306 6415 6520 6579 9520 11285 11503 11528 
+		535 560 3256 3392 3496 3556 6280 6306 6415 6520 6546 6579 9520 11285 11503 11528 
 	}
+	manpower=1232200
+	buildings_max_level_factor=1.000
+	state_category=rural
 }
