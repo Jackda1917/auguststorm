@@ -70,6 +70,16 @@ focus_tree = {
 						}
 					}
 				}
+				62 = {
+					if = {
+						limit = { is_controlled_by = ROOT }
+						add_building_construction = {
+							type = infrastructure
+							level = 10
+							instant_build = yes
+						}
+					}
+				}
 			}		
 		}
 	}
