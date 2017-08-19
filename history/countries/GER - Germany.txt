@@ -69,6 +69,7 @@ set_technology = {
 	construction1 = 1 # was none
 	support_weapons = 1 # was none
 	tech_signal_company = 1 # was none 	
+	tech_military_police = 1 # was none 	
 	#doctrines
 	mobile_warfare = 1	
 	delay = 1 # was none
