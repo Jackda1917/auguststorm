@@ -1522,6 +1522,7 @@ focus_tree = {
 			188 = { is_owned_by = GER }
 			85 = { is_owned_by = GER }
 			748 = { is_owned_by = GER }
+			756 = { is_owned_by = GER }
 		}
 		ai_will_do = {
 			factor = 10	
