@@ -245,7 +245,7 @@ sub_units = {
 		combat_width = 3
 
 		need = {
-			motorized_artillery_equipment = 40
+			artillery_equipment = 40
 			motorized_equipment = 20
 		}
 		

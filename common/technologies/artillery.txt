@@ -3,8 +3,7 @@ technologies = {
 	gw_artillery = {
 
 		enable_equipments = {
-			artillery_equipment_1
-			motorized_artillery_equipment_1		# AS			
+			artillery_equipment_1		
 		}
 		
 		enable_subunits = {
@@ -111,7 +110,6 @@ technologies = {
 	
 		enable_equipments = {
 			artillery_equipment_2
-			motorized_artillery_equipment_2		# AS
 		}
 
 		#artillery = {
@@ -260,8 +258,7 @@ technologies = {
 	artillery4 = {
 	
 		enable_equipments = {
-			artillery_equipment_3
-			motorized_artillery_equipment_3		# AS			
+			artillery_equipment_3		
 		}
 
 		#artillery = { 
