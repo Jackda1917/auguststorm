@@ -860,56 +860,6 @@ country_event = {				# Casualties events
 	}
 }
 
-country_event = {											# Conversion techs						
-	id = as_silent.33
-	title = as_silent.33.title
-	desc = as_silent.33.desc
-	picture = GFX_report_event_german_politician_speech
-	
-	trigger = {	
-		is_major = yes
-		has_tech = improved_machine_tools
-		NOT = { has_tech = improved_equipment_conversion }			
-	}
-	
-	mean_time_to_happen = {
-		days = 100
-	}
-
-	hidden = yes
-		
-	option = {
-		name = as_silent.6.option_a
-		ai_chance = { factor = 100 }
-		set_technology = { improved_equipment_conversion = 1 }	
-	}
-}
-
-country_event = {											# Conversion techs						
-	id = as_silent.34
-	title = as_silent.34.title
-	desc = as_silent.34.desc
-	picture = GFX_report_event_german_politician_speech
-	
-	trigger = {	
-		is_major = yes
-		has_tech = improved_equipment_conversion
-		NOT = { has_tech = advanced_equipment_conversion }			
-	}
-	
-	mean_time_to_happen = {
-		days = 100
-	}
-
-	hidden = yes
-		
-	option = {
-		name = as_silent.6.option_a
-		ai_chance = { factor = 100 }
-		set_technology = { advanced_equipment_conversion = 1 }	
-	}
-}
-
 country_event = {											# AI combat tactics techs						
 	id = as_silent.35
 	title = as_silent.35.title
