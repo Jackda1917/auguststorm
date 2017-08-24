@@ -627,7 +627,7 @@ instant_effect = {
 			type = anti_tank_equipment_1
 			creator = "GER" 
 		}
-		requested_factories = 2
+		requested_factories = 3
 		progress = 0.3
 		efficiency = 50
 	}
@@ -637,7 +637,7 @@ instant_effect = {
 			type = anti_air_equipment_1
 			creator = "GER" 
 		}
-		requested_factories = 2
+		requested_factories = 1
 		progress = 0.3
 		efficiency = 50
 	}
