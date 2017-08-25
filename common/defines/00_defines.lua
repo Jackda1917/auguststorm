@@ -500,11 +500,11 @@ NMilitary = {
 	PLAN_PORVINCE_AIRFIELD_LEVEL_FACTOR = 0.25,		-- Bonus factor for airfield level
 	PLAN_PORVINCE_RESISTANCE_BASE_IMPORTANCE = 25.0, --WAS 10 Used when calculating the calue of defense area provinces for the battle plan system (factored by resistance level)
 	-- These need to result in province value > 1.0 for it to matter.
-	PLAN_AREA_DEFENSE_ENEMY_CONTROLLER_SCORE = 25.0,  --WAS 15.0 Score applied to provinces in the defense area order controlled by enemies
+	PLAN_AREA_DEFENSE_ENEMY_CONTROLLER_SCORE = 15.0,-- Score applied to provinces in the defense area order controlled by enemies
 	PLAN_AREA_DEFENSE_ENEMY_UNIT_FACTOR = -2.0,		  -- Factor applied to province score in area defense order per enemy unit in that province
-	PLAN_AREA_DEFENSE_FORT_IMPORTANCE = 0.9,		  --WAS 0.25 Used when calculating the calue of defense area provinces for the battle plan system, works as multipliers on the rest
-	PLAN_AREA_DEFENSE_COASTAL_FORT_IMPORTANCE = 50.0, --was 5 Used when calculating the calue of defense area provinces for the battle plan system
-	PLAN_AREA_DEFENSE_COAST_NO_FORT_IMPORTANCE = 1.0, -- Used when calculating the calue of defense area provinces for the battle plan system
+	PLAN_AREA_DEFENSE_FORT_IMPORTANCE = 0.25,		-- Used when calculating the calue of defense area provinces for the battle plan system, works as multipliers on the rest
+	PLAN_AREA_DEFENSE_COASTAL_FORT_IMPORTANCE = 5.0,-- Used when calculating the calue of defense area provinces for the battle plan system
+	PLAN_AREA_DEFENSE_COAST_NO_FORT_IMPORTANCE = 2.0,-- Used when calculating the calue of defense area provinces for the battle plan system
 	
 	PLAN_STICKINESS_FACTOR = 100.0,					-- Factor used in unitcontroller when prioritizing units for locations
 	
