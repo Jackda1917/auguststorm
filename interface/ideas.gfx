@@ -3262,5 +3262,13 @@ spriteTypes = {
 	spriteType = {
 		name = "GFX_idea_home_of_revolution_revo"
 		texturefile = "gfx/interface/ideas/home_of_the_revolution.dds"
+	}
+	spriteType = {
+		name = "GFX_idea_deutsche_werke"
+		texturefile = "gfx/interface/ideas/idea_deutsche_werke.dds"
+	}
+	spriteType = {
+		name = "GFX_idea_kriegsmarinewerft"
+		texturefile = "gfx/interface/ideas/idea_kriegsmarinewerft.dds"
 	}	
 }
