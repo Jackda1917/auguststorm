@@ -1093,6 +1093,10 @@ ideas = {
 				synth_resources = 0.1
 				industry = 0.05
 			}
+
+			modifier = {
+				local_resources_factor = 0.1
+			}
 			
 			traits = { refinery_concern }
 		}
