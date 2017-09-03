@@ -3407,8 +3407,13 @@ focus_tree = {
 					has_war_with = GER
 					surrender_progress > 0.35
 				}
+<<<<<<< HEAD
 				enemies_strength_ratio < 2.5
 				is_ai = no
+=======
+				enemies_strength_ratio < 1.1
+				is_ai = yes #was "no"
+>>>>>>> a29f547ce4b383b099fa312b5d7ed29aa1533a06
 			}
 		}
 		

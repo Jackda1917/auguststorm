@@ -74,8 +74,8 @@ AI
 • GER AI more likely to attack Persia and Iraq
 
 Land Combat
-• Winter countries (FIN, SOV, NOR, SWE) fought better than their opponents in winter: temperatures checked for every combats.
-• Some combat tactics won’t trigger in inappropriate terrains (fe: no more Blitz in mountains or swamps)
+• Winter countries (FIN, SOV, NOR, SWE) fight better than their opponents in winter: temperatures checked for every combats.
+• Some combat tactics won’t trigger in inappropriate terrains (fe: no more Blitz in mountains nor swamps)
 • Armour related combat events more difficult to trigger (see above), but also far more decisive when effective
 
 Balance and Gameplay
@@ -95,7 +95,7 @@ Balance and Gameplay
 • New events: Barbarossa (surprise malus to SU), Day Of Infamy (USA), Xi'an Incident (CHI, PRC), Generic Surprise attack events, STO (GER), Operation Torch (USA)...
 • Higher difficulty (Veteran mode tweaked, Grand Offensive events for AI, more aggressive AI)
 • CZE makes tanks (35t, 38t, potentially added to German’s OOB after “Fate of Cze”)
-• Balanced terrain modifiers
+• Balanced terrain modifiers to be more realistic
 • Added Winter Equipment for (FIN, NOR, SWE, CAN and by focus to SOV) 
 • Harsher weather effects
 • Halved sabotage factory damage factor 
