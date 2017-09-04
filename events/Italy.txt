@@ -526,7 +526,8 @@ country_event = {
 		if = {
 			limit = { has_global_flag = ITA_claims_on_france_1 }
 			ITA = { transfer_state = 1 }
-		}		
+		}
+		remove_ideas = vittoria_mutilata		
 	}
 }
 
@@ -545,5 +546,6 @@ country_event = {
 
 		transfer_state = 735
 	}
+	remove_ideas = vittoria_mutilata
 }
 
