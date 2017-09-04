@@ -1521,10 +1521,11 @@ focus_tree = {
 			}
 		}	
 		completion_reward = {
-			188 = { add_claim_by = GER }
-			85 = { add_claim_by = GER }
-			748 = { add_claim_by = GER }
-			756 = { add_claim_by = GER }
+			188 = { add_core_of = GER }
+			85 = { add_core_of = GER }
+			748 = { add_core_of = GER }
+			756 = { add_core_of = GER }
+			86 = { add_claim_by = GER }
 			add_named_threat = { threat = 3 name = GER_demand_memel_threat }
 			if = {
 				limit = {
