@@ -133,6 +133,18 @@ country_event = {
 				add_core_of = GER
 			}
 		}
+		# South Tyrol
+		39 = {
+			if = {
+				limit = {
+					OR = {
+						is_owned_by = AUS
+						is_owned_by = ITA
+					}
+				add_core_of = GER
+				}
+			}
+		}
 		# Sudetenland
 		69 = {
 			if = {
