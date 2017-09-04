@@ -52,9 +52,8 @@ ideas = {
 				fascism_acceptance = 10
 				ai_focus_aggressive_factor = 0.5
 				justify_war_goal_time = -0.10			# was -0.05
-				army_defence_factor = -0.25			# was none
-				army_attack_factor = -0.25		# was none
-				supply_consumption_factor = 0.30  # was none
+				army_attack_factor = -0.15		# was none
+				supply_consumption_factor = 0.20  # was none
 			}
 		}
 
