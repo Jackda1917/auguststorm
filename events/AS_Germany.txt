@@ -140,9 +140,9 @@ country_event = {
 					OR = {
 						is_owned_by = AUS
 						is_owned_by = ITA
-					}
-				add_core_of = GER
+					}				
 				}
+			add_core_of = GER
 			}
 		}
 		# Sudetenland
