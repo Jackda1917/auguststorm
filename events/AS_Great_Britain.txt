@@ -616,3 +616,193 @@ country_event = {					# Operation Countenance
 		}		
 	}	
 }
+
+### England surrender event chain by Vorondil ###
+
+country_event = {  
+	id = as_great_britain.12
+	title = as_great_britain.12.t
+	desc = as_great_britain.12.d
+	picture = GFX_news_event_churchill_ruins
+	
+	fire_only_once = yes
+	
+	trigger = {
+		tag = ENG		
+		AND = {	
+			NOT = { 126 = { is_controlled_by = ENG } }   # London
+			NOT = { 130 = { is_controlled_by = ENG } }	 # Yorkshire
+			NOT = { 121 = { is_controlled_by = ENG } }	 # Scotland
+		}			
+
+		has_war_with = GER
+        NOT = {
+            has_civil_war = yes
+        }
+	
+	}
+	
+	immediate = {
+		set_global_flag = fall_of_britain
+		hidden_effect = {
+			CAN = {set_major = yes} #lock peace conference
+		}
+	}
+	
+	Option = { #The government flees
+		name = as_great_britain.12.a
+		GER = { country_event = { id = as_great_britain.13 } }
+		
+	}
+
+}
+
+country_event = {
+	id = as_great_britain.13
+	title = as_great_britain.13.t
+	desc = as_great_britain.13.date
+	picture = GFX_news_event_generic_sign_treaty3
+	
+	is_triggered_only = yes
+	
+	fire_only_once = yes
+	
+	option = { #set collaborationist states
+		name = as_great_britain.13.a
+		ai_chance = { factor = 100 }
+		
+		BRI = {
+			transfer_state = 123
+			transfer_state = 125
+			transfer_state = 126
+			transfer_state = 127
+			transfer_state = 128
+			transfer_state = 129
+			transfer_state = 130
+			transfer_state = 131
+			transfer_state = 132
+			transfer_state = 338
+			set_politics = {
+					ruling_party = fascism
+					elections_allowed = no
+				}
+				add_popularity = {
+					ideology = fascism
+					popularity = 0.75
+				}
+		}
+		
+		WAL = {
+			transfer_state = 122
+			set_politics = {
+					ruling_party = fascism
+					elections_allowed = no
+				}
+				add_popularity = {
+					ideology = fascism
+					popularity = 0.75
+				}
+		}
+		
+		SCT = {
+			transfer_state = 121
+			transfer_state = 133
+			transfer_state = 136
+			transfer_state = 120
+			set_politics = {
+					ruling_party = fascism
+					elections_allowed = no
+				}
+				add_popularity = {
+					ideology = fascism
+					popularity = 0.75
+				}
+		}
+		
+		GER = {
+			puppet = BRI
+			puppet = WAL
+			puppet = SCT
+		}
+		
+		IRE = {
+			transfer_state = 119
+			add_ideas = fascist_influence
+		}
+		
+	}
+	
+	option = { #annex all
+		name = as_great_britain.13.b
+		ai_chance = { factor = 0 }
+	}
+	
+
+}
+
+country_event = {
+	id = as_great_britain.14
+	title = as_great_britain.14.t
+	desc = as_great_britain.14.d 
+	picture = GFX_news_event_canadian_soldiers
+	
+	fire_only_once = yes
+	
+	mean_time_to_happen = {
+		days = 14
+	}	
+	
+	trigger = {
+		tag = ENG	
+		has_global_flag = fall_of_britain
+		AND = {	
+			NOT = { 126 = { is_controlled_by = ENG } }   # London
+			NOT = { 130 = { is_controlled_by = ENG } }	 # Yorkshire
+			NOT = { 121 = { is_controlled_by = ENG } }	 # Scotland
+		}			
+
+		has_war_with = GER
+        NOT = {
+            has_civil_war = yes
+        }
+	
+	}
+	
+	option = { #the end of UK
+		name = as_great_britain.14.a 
+		
+		SAF = {
+			set_state_owner = 542
+			set_state_owner = 545
+			set_state_owner = 546
+			set_state_owner = 547
+		}
+		
+		RAJ = {
+			set_state_owner = 656
+			set_state_owner = 269
+			set_state_owner = 707
+			set_state_owner = 709
+			set_state_owner = 710
+			set_state_owner = 281
+			set_state_owner = 422
+			set_state_owner = 733
+		
+		}
+		
+		AST = {
+			set_state_owner = 712
+			set_state_owner = 711
+			set_state_owner = 639
+			set_state_owner = 643
+			set_state_owner = 636
+		
+		}
+		
+		CAN = {
+			annex_country = { target = ENG transfer_troops = yes}
+		}
+		custom_effect_tooltip = GAME_OVER_TT
+	}
+
+}
