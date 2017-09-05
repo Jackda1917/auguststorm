@@ -545,7 +545,8 @@ country_event = {
 		name = italy.16.a
 
 		transfer_state = 735
+		remove_ideas = vittoria_mutilata
 	}
-	remove_ideas = vittoria_mutilata
+	
 }
 
