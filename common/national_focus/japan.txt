@@ -145,7 +145,10 @@ focus_tree = {
 		prerequisite = { focus = test_the_ussr_focus }
 		mutually_exclusive = { focus = southern_expansion_focus }
 		available = {
-			country_exists = SOV
+			SOV = {
+				is_puppet = no
+				exists = yes
+			}
 			AND = {												# AS								
 							OR = {
 								FRA = { has_capitulated = yes }

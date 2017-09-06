@@ -1392,6 +1392,7 @@ focus_tree = {
 			GER = {
 				exists = yes
 				NOT = { has_government = ROOT }
+				is_puppet = no
 			}
 			date > 1942.1.1
 		}
@@ -1426,6 +1427,7 @@ focus_tree = {
 			SOV = {
 				exists = yes
 				NOT = { has_government = ROOT }
+				is_puppet = no
 			}
 			date > 1942.1.1
 		}
@@ -1458,11 +1460,13 @@ focus_tree = {
 				ENG = {
 					exists = yes
 					NOT = { has_government = ROOT }
+					is_puppet = no
 			}
 				
 				CAN = {
 					exists = yes
-					NOT = { has_government = ROOT } 
+					NOT = { has_government = ROOT }
+					is_puppet = no
 				}
 				
 			}
@@ -1501,6 +1505,7 @@ focus_tree = {
 			JAP = {
 				exists = yes
 				NOT = { has_government = ROOT }
+				is_puppet = no
 			}
 			date > 1942.1.1
 		}

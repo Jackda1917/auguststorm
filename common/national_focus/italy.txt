@@ -2371,7 +2371,14 @@ focus_tree = {
 	focus = {
 		id = ITA_anti_uk_war_goals
 		icon = GFX_goal_generic_major_war
-		prerequisite = { focus = ITA_italy_first }		
+		prerequisite = { focus = ITA_italy_first }	
+		available = {
+			ENG = {
+				exists = yes
+				is_puppet = no
+				NOT = { is_in_faction_with = ITA }
+			}
+		}
 		bypass = {
 			OR = {
 				has_war_with = ENG
