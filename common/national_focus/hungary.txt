@@ -3345,7 +3345,7 @@ focus_tree = {
 		completion_reward = {
 			add_tech_bonus = {
 				name = HUN_synthetic_industry
-				bonus = 0.75
+				bonus = 0.5
 				uses = 1
 				category = synth_resources
 			}
@@ -3756,7 +3756,7 @@ focus_tree = {
 		completion_reward = {
 			add_tech_bonus = {
 				name = HUN_light_fighter_effort
-				bonus = 0.5
+				bonus = 0.25
 				ahead_reduction = 1
 				uses = 1
 				technology = early_fighter
@@ -4141,7 +4141,7 @@ focus_tree = {
 			army_experience = 10
 			add_tech_bonus = {
 				name = HUN_army_maneuvers
-				bonus = 0.5
+				bonus = 0.25
 				uses = 1
 				category = land_doctrine
 			}
@@ -4186,7 +4186,7 @@ focus_tree = {
 		completion_reward = {
 			add_tech_bonus = {
 				name = HUN_mobile_focus
-				bonus = 0.5
+				bonus = 0.25
 				uses = 1
 				category = cat_mobile_warfare
 			}
@@ -4466,7 +4466,7 @@ focus_tree = {
 		completion_reward = {
 			add_tech_bonus = {
 				name = HUN_mobile_corps_doctrine
-				bonus = 0.5
+				bonus = 0.25
 				uses = 1
 				category = cat_mobile_warfare
 			}
@@ -4511,7 +4511,7 @@ focus_tree = {
 		completion_reward = {
 			add_tech_bonus = {
 				name = HUN_home_defense
-				bonus = 0.5
+				bonus = 0.25
 				uses = 1
 				category = cat_grand_battle_plan
 			}
@@ -4721,7 +4721,7 @@ focus_tree = {
 		completion_reward = {
 			add_tech_bonus = {
 				name = HUN_form_parachute_battalions
-				bonus = 0.75
+				bonus = 0.5
 				uses = 1
 				category = para_tech
 			}
@@ -4805,7 +4805,7 @@ focus_tree = {
 		completion_reward = {
 			add_tech_bonus = {
 				name = HUN_restauration
-				bonus = 0.75
+				bonus = 0.5
 				uses = 1
 				category = cat_fleet_in_being
 			}
@@ -4929,7 +4929,7 @@ focus_tree = {
 		completion_reward = {
 			add_tech_bonus = {
 				name = HUN_destroyers
-				bonus = 0.75
+				bonus = 0.5
 				uses = 1
 				category = dd_tech
 			}
@@ -5010,7 +5010,7 @@ focus_tree = {
 		completion_reward = {
 			add_tech_bonus = {
 				name = HUN_submarines
-				bonus = 0.75
+				bonus = 0.5
 				uses = 1
 				category = ss_tech
 			}
@@ -5051,7 +5051,7 @@ focus_tree = {
 		completion_reward = {
 			add_tech_bonus = {
 				name = HUN_carrier
-				bonus = 0.75
+				bonus = 0.5
 				uses = 1
 				category = cv_tech
 			}

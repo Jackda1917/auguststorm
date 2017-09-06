@@ -2508,7 +2508,7 @@ focus_tree = {
 		completion_reward = {
 			add_tech_bonus = {
 				name = land_doc_bonus
-				bonus = 0.75
+				bonus = 0.25
 				uses = 1
 				category = land_doctrine
 			}
@@ -3268,7 +3268,7 @@ focus_tree = {
 		completion_reward = {
 			add_tech_bonus = {
 				name = land_doc_bonus
-				bonus = 0.5
+				bonus = 0.25
 				uses = 1
 				category = land_doctrine
 			}
@@ -3308,7 +3308,7 @@ focus_tree = {
 		completion_reward = {
 			add_tech_bonus = {
 				name = motorized_bonus
-				bonus = 0.75
+				bonus = 0.5
 				technology = motorised_infantry
 			}
 		}
@@ -3467,7 +3467,7 @@ focus_tree = {
 		completion_reward = {
 			add_tech_bonus = {
 				name = land_doc_bonus
-				bonus = 0.5
+				bonus = 0.25
 				uses = 1
 				category = land_doctrine
 			}
@@ -3588,7 +3588,7 @@ focus_tree = {
 		completion_reward = {
 			add_tech_bonus = {
 				name = cze_import_fighter
-				bonus = 0.5
+				bonus = 0.25
 				uses = 1
 				category = light_fighter
 				category = cat_heavy_fighter
@@ -3630,7 +3630,7 @@ focus_tree = {
 		completion_reward = {
 			add_tech_bonus = {
 				name = cze_import_fighter
-				bonus = 0.5
+				bonus = 0.25
 				uses = 1
 				category = light_fighter
 			}

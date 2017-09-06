@@ -122,7 +122,7 @@ focus_tree = {
 			army_experience = 25
 			add_tech_bonus = {   # was none
 				name = land_doc_bonus
-				bonus = 0.5
+				bonus = 0.25
 				uses = 4
 				category = land_doctrine
 			}			
@@ -619,7 +619,7 @@ focus_tree = {
 			
 			add_tech_bonus = {   # was none
 				name = land_doc_bonus
-				bonus = 0.5
+				bonus = 0.25
 				uses = 3
 				category = land_doctrine
 			}						
@@ -1524,7 +1524,7 @@ focus_tree = {
 			add_state_claim = 648
 			add_tech_bonus = {   # was none
 				name = land_doc_bonus
-				bonus = 0.5
+				bonus = 0.25
 				uses = 1
 				category = land_doctrine
 			}						

@@ -1823,7 +1823,7 @@ focus_tree = {
 
 			add_tech_bonus = {
 				name = air_bonus
-				bonus = 0.5
+				bonus = 0.25
 				uses = 4
 				category = light_air
 				category = medium_air
@@ -4076,7 +4076,7 @@ focus_tree = {
 			}
 			add_tech_bonus = {   # was none
 				name = land_doc_bonus				
-				bonus = 0.5
+				bonus = 0.25
 				uses = 2
 				category = land_doctrine
 			}
