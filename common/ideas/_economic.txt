@@ -309,11 +309,11 @@ ideas = {
 								has_country_flag = ita_tot_economic_mobilisation
 								has_country_flag = jap_tot_economic_mobilisation
 							}
-							enemies_strength_ratio > 2						
+							enemies_strength_ratio > 1		# was 2				
 							any_enemy_country  = {			# was any_enemy_country
 								ic_ratio = { 
 									tag = ROOT 
-									ratio > 1.5     # was 0.5
+									ratio > 0.75     # was 1.5
 								}
 							}
 					}
