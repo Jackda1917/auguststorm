@@ -725,10 +725,22 @@ country_event = {
 			puppet = SCT
 		}
 		
-		IRE = {
-			transfer_state = 119
-			add_ideas = fascist_influence
+		IF = { 
+			Limit = {
+				IRE = {
+					NOT = {
+						Has_war_with = GER
+					}
+				}
+			}
+			IRE = {
+				transfer_state = 119
+				add_ideas = fascist_influence
+			}
+		
 		}
+		
+		
 		
 	}
 	
@@ -749,7 +761,7 @@ country_event = {
 	fire_only_once = yes
 	
 	mean_time_to_happen = {
-		days = 14
+		days = 7
 	}	
 	
 	trigger = {
