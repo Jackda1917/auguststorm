@@ -3400,7 +3400,9 @@ country_event = {
 				limit = { GER = { owns_state = 664 } }
 				transfer_state = 664
 			}
+			85 = { add_core_of = GER}
 			GER = { transfer_state = 85 }
+			748 = { add_core_of = GER }
 			GER = { transfer_state = 748 }
 		}
 	}

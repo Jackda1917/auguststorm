@@ -1068,7 +1068,7 @@ focus_tree = {
 			air_experience = 25
 			add_tech_bonus = {
 				name = fighter_bonus
-				bonus = 0.5
+				bonus = 0.25
 				uses = 1
 				technology = early_fighter
 				technology = fighter1
@@ -1292,7 +1292,7 @@ focus_tree = {
 		completion_reward = {
 			add_tech_bonus = {
 				name = fighter_bonus
-				bonus = 0.5
+				bonus = 0.25
 				uses = 1
 				technology = early_fighter
 				technology = fighter1
@@ -1327,7 +1327,7 @@ focus_tree = {
 		# Caproni Campini N.1
 			add_tech_bonus = {
 				name = ITA_jet_engine_effort
-				bonus = 0.5
+				bonus = 0.25
 				uses = 1
 				technology = jet_engines
 				technology = jet_fighter1
@@ -2032,7 +2032,7 @@ focus_tree = {
 		completion_reward = {
 			add_tech_bonus = {
 				name = secret_bonus
-				bonus = 0.5
+				bonus = 0.25
 				uses = 2
 				category = electronics
 				category = rocketry
@@ -2371,7 +2371,14 @@ focus_tree = {
 	focus = {
 		id = ITA_anti_uk_war_goals
 		icon = GFX_goal_generic_major_war
-		prerequisite = { focus = ITA_italy_first }		
+		prerequisite = { focus = ITA_italy_first }	
+		available = {
+			ENG = {
+				exists = yes
+				is_puppet = no
+				NOT = { is_in_faction_with = ITA }
+			}
+		}
 		bypass = {
 			OR = {
 				has_war_with = ENG

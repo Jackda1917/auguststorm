@@ -122,7 +122,7 @@ focus_tree = {
 			army_experience = 25
 			add_tech_bonus = {   # was none
 				name = land_doc_bonus
-				bonus = 0.5
+				bonus = 0.25
 				uses = 4
 				category = land_doctrine
 			}			
@@ -619,7 +619,7 @@ focus_tree = {
 			
 			add_tech_bonus = {   # was none
 				name = land_doc_bonus
-				bonus = 0.5
+				bonus = 0.25
 				uses = 3
 				category = land_doctrine
 			}						
@@ -1392,6 +1392,7 @@ focus_tree = {
 			GER = {
 				exists = yes
 				NOT = { has_government = ROOT }
+				is_puppet = no
 			}
 			date > 1942.1.1
 		}
@@ -1426,6 +1427,7 @@ focus_tree = {
 			SOV = {
 				exists = yes
 				NOT = { has_government = ROOT }
+				is_puppet = no
 			}
 			date > 1942.1.1
 		}
@@ -1458,11 +1460,13 @@ focus_tree = {
 				ENG = {
 					exists = yes
 					NOT = { has_government = ROOT }
+					is_puppet = no
 			}
 				
 				CAN = {
 					exists = yes
-					NOT = { has_government = ROOT } 
+					NOT = { has_government = ROOT }
+					is_puppet = no
 				}
 				
 			}
@@ -1501,6 +1505,7 @@ focus_tree = {
 			JAP = {
 				exists = yes
 				NOT = { has_government = ROOT }
+				is_puppet = no
 			}
 			date > 1942.1.1
 		}
@@ -1524,7 +1529,7 @@ focus_tree = {
 			add_state_claim = 648
 			add_tech_bonus = {   # was none
 				name = land_doc_bonus
-				bonus = 0.5
+				bonus = 0.25
 				uses = 1
 				category = land_doctrine
 			}						
@@ -3386,7 +3391,7 @@ focus_tree = {
 			}
 		}
 	}
-#### August Strom #####################################################################################################
+#### August Storm #####################################################################################################
 	
 	focus = {
 		id = USA_operation_torch_focus
@@ -3407,13 +3412,14 @@ focus_tree = {
 					has_war_with = GER
 					surrender_progress > 0.35
 				}
-<<<<<<< HEAD
-				enemies_strength_ratio < 2.5
-				is_ai = no
-=======
-				enemies_strength_ratio < 1.1
-				is_ai = yes #was "no"
->>>>>>> a29f547ce4b383b099fa312b5d7ed29aa1533a06
+				AND = {
+					enemies_strength_ratio > 2.5
+					is_ai = no
+				}
+				AND = {
+					enemies_strength_ratio > 1.1
+					is_ai = yes #was "no"
+				}
 			}
 		}
 		

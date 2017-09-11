@@ -43,6 +43,7 @@ set_technology = {
 	trench_warfare = 1
 	fleet_in_being = 1
 	basic_machine_tools = 1 # was none	
+	tech_engineers = 1 #was none
 }
 
 set_convoys = 300

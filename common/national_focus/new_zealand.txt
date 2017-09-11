@@ -626,7 +626,7 @@ focus_tree = {
 		completion_reward = {
 			add_tech_bonus = {
 				name = NZL_fighter_focus
-				bonus = 0.5
+				bonus = 0.25
 				uses = 1
 				category = light_fighter
 			}
@@ -749,7 +749,7 @@ focus_tree = {
 		completion_reward = {
 			add_tech_bonus = {
 				name = NZL_modern_fighters
-				bonus = 0.5
+				bonus = 0.25
 				uses = 1
 				technology = early_fighter
 				technology = fighter1
@@ -1428,7 +1428,7 @@ focus_tree = {
 			army_experience = 25
 			add_tech_bonus = {
 				name = NZL_army_reforms
-				bonus = 0.5
+				bonus = 0.25
 				uses = 1
 				category = land_doctrine
 			}

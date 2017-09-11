@@ -24,7 +24,8 @@ ai_historical_focus_list_JAP = {
 		carrier_focus		
 		naval_base_focus
 		synth_oil_focus		
-		axis_leanings_focus
+		#axis_leanings_focus
+		found_own_faction_focus  #AS
 		demand_indochina_focus
 		convoy_protection_focus		
 		test_the_ussr_focus

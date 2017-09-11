@@ -1521,10 +1521,11 @@ focus_tree = {
 			}
 		}	
 		completion_reward = {
-			188 = { add_claim_by = GER }
-			85 = { add_claim_by = GER }
-			748 = { add_claim_by = GER }
-			756 = { add_claim_by = GER }
+			188 = { add_core_of = GER }
+			85 = { add_core_of = GER }
+			748 = { add_core_of = GER }
+			756 = { add_core_of = GER }
+			86 = { add_claim_by = GER }
 			add_named_threat = { threat = 3 name = GER_demand_memel_threat }
 			if = {
 				limit = {
@@ -3935,7 +3936,10 @@ focus_tree = {
 			is_major = yes
 			is_subject = no 
 			has_war_with = ENG
-			has_war_with = USA
+			OR = { 
+				has_war_with = USA
+				has_war_with = SOV
+			}
 			16 = { is_controlled_by = GER }			
 		}
 
@@ -4097,11 +4101,12 @@ focus_tree = {
 			has_government = fascism
 			is_major = yes
 			is_subject = no
-			has_war_with = USA      
+			has_war_with = USA 
+			has_war_with = SOV
 			all_enemy_country = {
-				ic_ratio = { tag = GER ratio > 2 } 
+				ic_ratio = { tag = GER ratio > 1.5 } #was 2
 			}  
-			USA = { ic_ratio = { tag = GER ratio > 1 } } 
+			USA = { ic_ratio = { tag = GER ratio > 0.75 } } #was 1
 			OR = {
 				has_country_flag = ger_fall_anton
 				enemies_strength_ratio > 1.5

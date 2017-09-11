@@ -145,7 +145,10 @@ focus_tree = {
 		prerequisite = { focus = test_the_ussr_focus }
 		mutually_exclusive = { focus = southern_expansion_focus }
 		available = {
-			country_exists = SOV
+			SOV = {
+				is_puppet = no
+				exists = yes
+			}
 			AND = {												# AS								
 							OR = {
 								FRA = { has_capitulated = yes }
@@ -1135,7 +1138,7 @@ focus_tree = {
 
 			add_tech_bonus = {
 				name = fighter_bonus
-				bonus = 0.75
+				bonus = 0.25
 				uses = 1
 				category = light_fighter
 			}
@@ -1547,7 +1550,7 @@ focus_tree = {
             navy_experience = 10
 			add_tech_bonus = {
 				name = fighter_bonus
-				bonus = 0.5
+				bonus = 0.25
 				uses = 1
 				category = light_fighter
 			}

@@ -40,8 +40,9 @@ MNT = "countries/Montenegro.txt"
 
 # Great Britain
 ENG = "countries/United Kingdom.txt"
-#WAL = "countries/Wales.txt"
-#SCO = "countries/Scotland.txt"
+BRI = "countries/England.txt"
+WAL = "countries/Wales.txt"
+SCT = "countries/Scotland.txt"
 IRE = "countries/Ireland.txt"
 
 # Greece

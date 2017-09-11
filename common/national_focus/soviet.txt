@@ -1823,7 +1823,7 @@ focus_tree = {
 
 			add_tech_bonus = {
 				name = air_bonus
-				bonus = 0.5
+				bonus = 0.25
 				uses = 4
 				category = light_air
 				category = medium_air
@@ -2310,7 +2310,11 @@ focus_tree = {
 		x = 12
 		y = 6
 		available = {
-			country_exists = JAP
+			JAP = {
+				exists = yes
+				NOT = { has_government = ROOT }
+				is_puppet = no
+			}
 			NOT = { has_country_flag = revol_gov } # Revolutionnnary Government
 			NOT = { has_idea = trotskyite_plot }
 			OR = {	
@@ -3085,7 +3089,8 @@ focus_tree = {
 						has_government = fascism
 						has_offensive_war = yes
 						has_war_with = FRA
-						has_war_with = ENG												
+						has_war_with = ENG	
+						is_puppet = no
 					}
 				}
 			}
@@ -3487,7 +3492,11 @@ focus_tree = {
 		prerequisite = { focus = SOV_southern_thrust }
 		prerequisite = { focus = SOV_ultimatum_to_greece }
 		available = {
-			country_exists = ENG
+			ENG = {
+				exists = yes
+				NOT = { has_government = ROOT }
+				is_puppet = no
+			}
 			NOT = { has_idea = trotskyite_plot }
 			NOT = { has_country_flag = revol_gov } 
 			custom_trigger_tooltip = {
@@ -4076,7 +4085,7 @@ focus_tree = {
 			}
 			add_tech_bonus = {   # was none
 				name = land_doc_bonus				
-				bonus = 0.5
+				bonus = 0.25
 				uses = 2
 				category = land_doctrine
 			}

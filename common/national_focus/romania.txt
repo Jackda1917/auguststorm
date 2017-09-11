@@ -3331,7 +3331,7 @@ focus_tree = {
 				}
 				add_tech_bonus = {
 					name = ROM_iar_80
-					bonus = 0.5
+					bonus = 0.25
 					ahead_reduction = 1
 					uses = 1
 					category = light_fighter
@@ -3339,7 +3339,7 @@ focus_tree = {
 				else = {
 					add_tech_bonus = {
 						name = ROM_iar_80
-						bonus = 0.5
+						bonus = 0.25
 						ahead_reduction = 1
 						uses = 1
 						technology = fighter2
