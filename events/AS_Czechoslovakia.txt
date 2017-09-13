@@ -18,7 +18,6 @@ country_event = {
 		GER = {
 			transfer_state = 69 # Sudetenland
 			transfer_state = 74 # Eastern Sudetenland
-			add_named_threat = { threat = 5 name = as_germany.3.title }
 		}
 		POL = { country_event = { days = 1 id = as_poland.1 } }
 	}

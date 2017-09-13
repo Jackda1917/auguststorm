@@ -39,9 +39,9 @@ equipments = {
 		
 		build_cost_ic = 14
 		resources = {
-			steel = 4 #2
-			oil = 1
-			rubber = 0.75 # was 1
+			steel = 40 #2
+			oil = 10
+			rubber = 7 # was 1
 		}
 	}
 
@@ -78,9 +78,9 @@ equipments = {
 		
 		build_cost_ic = 16
 		resources = {
-			steel = 6 #3
-			rubber = 0.75 # was 1
-			oil = 1
+			steel = 60 #3
+			rubber = 7 # was 1
+			oil = 10
 		}
 	}
 
@@ -105,9 +105,9 @@ equipments = {
 		
 		build_cost_ic = 18
 		resources = {
-			steel = 7 #4
-			rubber = 0.75 # was 1
-			oil = 2
+			steel = 70 #4
+			rubber = 7 # was 1
+			oil = 20
 		}
 	}
 
@@ -133,9 +133,9 @@ equipments = {
 		
 		build_cost_ic = 14
 		resources = {
-			steel = 8 #4
-			rubber = 0.75 # was 1
-			oil = 2
+			steel = 80 #4
+			rubber = 7 # was 1
+			oil = 20
 		}
 	}
 
@@ -161,9 +161,9 @@ equipments = {
 		
 		build_cost_ic = 22
 		resources = {
-			steel = 8 #4
-			rubber = 0.75 # was 1
-			oil = 2
+			steel = 80 #4
+			rubber = 7 # was 1
+			oil = 20
 		}
 	}
 }

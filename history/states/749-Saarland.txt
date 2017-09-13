@@ -3,8 +3,8 @@ state = {
 	name="STATE_749" # Saarland
 	manpower = 520000
 	resources={
-		steel=100
-		aluminium=24
+		steel = 1000
+		aluminium = 240
 	}
 	
 	state_category = city

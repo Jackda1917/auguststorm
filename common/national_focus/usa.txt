@@ -162,7 +162,7 @@ focus_tree = {
 		completion_reward = {
 			add_resource = {
 				type = rubber
-				amount = 50     # was 10
+				amount = 500     # was 10
 				state = 369 #Kentucky
 			}
 		}

@@ -1130,7 +1130,7 @@ technologies = {
 
 	excavation1 = {
 		
-		 local_resources_factor = 0.12
+		 local_resources_factor = 0.10
 		 
 		allow = {							# AS
 			OR = {	
@@ -1233,7 +1233,7 @@ technologies = {
 
 	excavation2 = {
 		
-		local_resources_factor = 0.12 # was 0.10
+		local_resources_factor = 0.10
 
 		allow = {							# AS
 			OR = {	
@@ -1558,7 +1558,7 @@ technologies = {
 
 	excavation5 = {
 		
-		local_resources_factor = 0.12  #10
+		local_resources_factor = 0.10
 
 		allow = {							# AS
 			OR = {	

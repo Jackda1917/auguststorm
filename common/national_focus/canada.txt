@@ -490,25 +490,25 @@ focus_tree = {
 			470 = {
 				add_resource = {
 					type = oil
-					amount = 2
+					amount = 20
 				}
 			}
 			471 = {
 				add_resource = {
 					type = oil
-					amount = 4
+					amount = 40
 				}
 			}
 			472 = {
 				add_resource = {
 					type = oil
-					amount = 4
+					amount = 40
 				}
 			}
 			683 = {
 				add_resource = {
 					type = oil
-					amount = 4
+					amount = 40
 				}
 			}
 		}
@@ -881,7 +881,7 @@ focus_tree = {
 				}
 				add_resource = {
 					type = steel
-					amount = 2
+					amount = 20
 				}
 			}
 			random_owned_controlled_state = {
@@ -891,7 +891,7 @@ focus_tree = {
 				}
 				add_resource = {
 					type = steel
-					amount = 2
+					amount = 20
 				}
 			}
 			random_owned_controlled_state = {
@@ -901,7 +901,7 @@ focus_tree = {
 				}
 				add_resource = {
 					type = chromium
-					amount = 3
+					amount = 30
 				}
 			}
 		}
@@ -2807,19 +2807,19 @@ focus_tree = {
 			682 = {
 				add_resource = {
 					type = aluminium
-					amount = 24
+					amount = 240
 				}
 			}
 			466 = {
 				add_resource = {
 					type = aluminium
-					amount = 8
+					amount = 80
 				}
 			}
 			468 = {
 				add_resource = {
 					type = aluminium
-					amount = 8
+					amount = 80
 				}
 			}
 		}
@@ -2859,7 +2859,7 @@ focus_tree = {
 			470 = {
 				add_resource = {
 					type = oil
-					amount = 36
+					amount = 360
 				}
 			}
 		}

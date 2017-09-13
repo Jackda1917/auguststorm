@@ -1546,7 +1546,6 @@ on_actions = {
 					}
 				}
 				add_timed_idea = { idea = SPA_recovering_from_civil_war days = 2325 }
-				add_threat = -10
 			}
 			if = {
 				limit = {
@@ -1559,7 +1558,6 @@ on_actions = {
 					}
 				}
 				add_timed_idea = { idea = SPR_recovering_from_civil_war days = 1325 }
-				add_threat = -15				
 			}
 			if = {
 				limit = {
@@ -1572,7 +1570,6 @@ on_actions = {
 					}
 				}
 				add_timed_idea = { idea = SPR_recovering_from_civil_war days = 2025 }
-				add_threat = -15				
 			}						
 			#End of SCW
 			if = {

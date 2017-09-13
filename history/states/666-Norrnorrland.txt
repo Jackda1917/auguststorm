@@ -4,9 +4,9 @@ state={
 	name="STATE_666" # Lappland
 	manpower = 415327
 	resources={
-		tungsten=110
-		steel= 120
-		chromium = 50
+		tungsten = 1100
+		steel = 1200
+		chromium = 500
 	}
 	
 	state_category = rural

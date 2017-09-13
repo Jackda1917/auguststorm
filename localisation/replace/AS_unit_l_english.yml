@@ -45,7 +45,7 @@
  air_assault_brigade_desc:0 "Attack helicopters are very fast and powerful."
  armoured_cavalry_brigade:0 "Armoured Cavalry Battalion"
  armoured_cavalry_brigade_desc:0 "Lightly armored tanks that can rapidly exploit a breach."
- light_armor:0 "Armoured Battalion"
+ light_armor:0 "Light Armoured Battalion"
  medium_armor:0 "Armoured Battalion"
  heavy_armor:0 "Heavy Armoured Battalion"
  heavy_armoured_desc:0 "The strongest tanks with powerful armor and weapons, but slow and tactically inflexible."

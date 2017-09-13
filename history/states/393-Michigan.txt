@@ -2,8 +2,8 @@ state={
 	id=393
 	name="STATE_393"
 	resources={
-		steel=112.000
-		oil=10.000
+		steel = 11200
+		oil = 1000
 	}
 
 	state_category = metropolis

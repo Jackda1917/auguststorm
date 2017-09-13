@@ -7,7 +7,7 @@ state=
 	state_category = wasteland
 
 	resources={
-		aluminium=45
+		aluminium = 450
 	}
 	
 	history=
