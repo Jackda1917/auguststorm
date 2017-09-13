@@ -1013,3 +1013,56 @@ country_event = {											# AI combat tactics techs
 		set_global_flag = eng_is_ai	
 	}
 }
+
+country_event = {											# AI RAJ mobilisation						
+	id = as_silent.39
+	title = as_silent.39.title
+	desc = as_silent.39.desc
+	picture = GFX_report_event_german_politician_speech
+	
+	fire_only_once = yes
+	
+	trigger = {	
+		tag = RAJ
+		is_ai = yes
+		OR = {
+			CHI = { exists = no }	
+			CHI = { is_puppet_of = JAP }
+		}
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+
+	hidden = yes
+		
+	option = {
+		name = as_silent.6.option_a
+		ai_chance = { factor = 100 }
+		set_country_flag = fight_for_surviving
+		add_ideas = RAJ_indian_national_mobilisation
+		RAJ = {												### AS		
+				if = {
+					limit = {
+						NOT = {
+							has_idea = tot_economic_mobilisation						
+						}
+					}
+						add_ideas = tot_economic_mobilisation						
+				}				
+		}
+		RAJ = {												### AS
+				if = {
+					limit = {
+						NOT = {
+						    has_idea = service_by_requirement
+							has_idea = all_adults_serve
+							has_idea = scraping_the_barrel											
+						}
+					}
+						add_ideas = service_by_requirement
+				}			
+		}
+	}
+}

@@ -14,7 +14,7 @@ state={
 			infrastructure = 3
 			arms_factory = 3   # Since 1807 / AK47 placebirth
 		}
-		add_core_of = SOV
+		add_core_of = SOV  add_core_of = RUS
 	}
 
 	provinces={

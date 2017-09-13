@@ -319,6 +319,11 @@ technologies = {
 			leads_to_tech = interceptor_1
 			research_cost_coeff = 1
 		}
+
+		path = {
+			leads_to_tech = jet_fighter1
+			research_cost_coeff = 1
+		}		
 		
 		research_cost = 2
 		start_year = 1944
@@ -898,7 +903,7 @@ technologies = {
 	
 	jet_fighter1 = {
 		enable_equipments = {
-				jet_fighter_equipment_1
+			jet_fighter_equipment_1
 		}
 			
 		path = {

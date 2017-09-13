@@ -386,7 +386,7 @@ tactic_breakthrough = { #counters ambush
 					tag = ENG
 				}					
 			}
-			NOT = { skill_advantage < 0 } 				
+			skill > 2 				
 		}			
 	}
 	
@@ -398,8 +398,8 @@ tactic_breakthrough = { #counters ambush
 	countered_by = tactic_backhand_blow
 	
 	attacker_movement_speed = 0.5
-	attacker = 0.40 # was 0.25
-	defender = -0.20 # was -0.15
+	attacker = 0.45 # was 0.25
+	defender = -0.25 # was -0.15
 }
 
 tactic_ambush = { #counters shock
@@ -479,10 +479,9 @@ tactic_blitz = {
 	countered_by = tactic_elastic_defense
 	
 	attacker_movement_speed = 0.65 # was 0.5
-	attacker = 0.45		# was 0.15
-	defender = -0.25     # was -0.1
+	attacker = 0.55		# was 0.15
+	defender = -0.30     # was -0.1
 }
-
 
 tactic_elastic_defense = { #counters blitz
 	is_attacker = no
@@ -510,9 +509,9 @@ tactic_elastic_defense = { #counters blitz
 	base = 5 #4
 	picture = elastic_defence
 	
-	attacker_movement_speed = -0.33
+	attacker_movement_speed = -0.4
 	attacker = -0.25 # was -0.15
-	defender = 0.15 # was 0.10
+	defender = 0.20 # was 0.10
 }
 
 tactic_backhand_blow = { #counters breakthrough
@@ -522,7 +521,7 @@ tactic_backhand_blow = { #counters breakthrough
         # NOT = { has_combat_modifier = lack_of_supply } # AS			
 		phase = no
 		OR = {
-			skill_advantage > 1  # was skill > 4
+			skill_advantage > 0  # was skill > 4
 			AND = {
 				has_trait = defensive_doctrine
 				skill_advantage > 0  # was skill > 3

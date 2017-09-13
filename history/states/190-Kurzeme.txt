@@ -29,7 +29,7 @@ state = {
 		
 		1940.8.5 = {
 			owner = SOV
-			add_core_of = SOV
+			add_core_of = SOV  add_core_of = RUS
 		}
 		
 		1991.8.21 = {

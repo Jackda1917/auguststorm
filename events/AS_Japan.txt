@@ -212,7 +212,6 @@ country_event = {
 						autonomy_state = autonomy_integrated_puppet
 						freedom_level = 0.3	
 					}
-
 			}
 			if = {
 				limit = { has_dlc = "Death or Dishonor" }
@@ -547,7 +546,7 @@ country_event = {
 				is_core_of  = CHI
 				NOT = { state = 524 }
 			}
-		CHI = { transfer_state = PREV }
+			CHI = { transfer_state = PREV }
 		}
 		
 		if = {					### If Chinese United Front somehow controls Formosa, Nationalist China gets Formosa
@@ -712,3 +711,239 @@ country_event = {
 	}
 }
 
+#### Peace event for JAP defeated historicaly - by Vorondil ####
+
+country_event = {
+	id = as_japan.13
+	title = as_japan.13.t
+	desc = as_japan.13.d
+	picture = GFX_news_event_generic_sign_treaty1
+	fire_only_once = yes
+	
+	
+	mean_time_to_happen = {
+		days = 7
+	}
+	
+	trigger = {
+	
+		tag = JAP
+		JAP = { has_war_with = USA}
+		JAP = { has_war_with = SOV}
+		MAN = { has_capitulated = yes } 
+		AND = {
+			NOT = { 527 = { is_controlled_by = JAP } }   # North Korea
+			OR = {
+				NOT = { 526 = { is_controlled_by = JAP } }   # Okinawa
+				NOT = { 528 = { is_controlled_by = JAP } }   
+				NOT = { 529 = { is_controlled_by = JAP } }  
+				NOT = { 530 = { is_controlled_by = JAP } }  
+				NOT = { 531 = { is_controlled_by = JAP } }
+				NOT = { 532 = { is_controlled_by = JAP } }
+				NOT = { 533 = { is_controlled_by = JAP } }
+				NOT = { 534 = { is_controlled_by = JAP } }
+				NOT = { 535 = { is_controlled_by = JAP } }
+				NOT = { 536 = { is_controlled_by = JAP } }
+				NOT = { 282 = { is_controlled_by = JAP } } # Allies/Sov somehow managed to land in home islands
+				
+			}
+		}
+		
+	}
+	
+	Option = {
+		name = as_japan.13.a #The war is lost
+		ai_chance = { factor = 10 }
+		add_political_power = -50
+		add_national_unity = -0.15
+		USA = { country_event = { id = as_japan.14 } }
+	}
+	
+	Option = {
+		name = as_japan.13.b # war until total victory!
+		ai_chance = { factor = 0 }
+		add_political_power = -100
+		add_national_unity = -0.3
+	}
+	
+}
+
+country_event = {
+	id = as_japan.14
+	title = as_japan.14.t
+	desc = as_japan.14.d
+	picture = GFX_news_event_generic_sign_treaty1
+	
+	fire_only_once = yes
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = as_japan.14.a #accept the japanese offer
+		ai_chance = { factor = 10 }
+		
+		IF = {
+			limit = {
+				CHI = { is_puppet_of = JAP }			# if China is a japanese puppet
+			}
+			JAP = { end_puppet = CHI }
+			CHI = {
+				set_politics = {
+					ruling_party = neutrality
+					elections_allowed = yes
+				}
+				add_popularity = {
+					ideology = neutrality
+					popularity = 1
+				}
+			}
+		}
+		IF = {
+			limit = {
+				CHI = { exists = no }			# if China was annexed by japan
+			}
+			JAP = { release = CHI }
+			CHI = {
+				set_politics = {
+					ruling_party = neutrality
+					elections_allowed = yes
+				}
+				add_popularity = {
+					ideology = neutrality
+					popularity = 1
+				}
+			}
+		}
+		IF = {
+			Limit = {
+				JAP = { has_war_with = CHI}			# if the sino-japanese war still continues
+			}
+			CHI = {					
+				white_peace = JAP
+			}
+
+			JAP = {
+				white_peace = CHI
+				white_peace = PRC
+			}
+		}
+		
+		PRC = { annex_country = { target = MAN } }
+		PRC = { annex_country = { target = MEN } }   # Communists get Manchuria
+		PRC = { transfer_state = 611 }
+		PRC = { transfer_state = 612 }
+		
+		CHI = { annex_country = { target = YUN } }
+		CHI = { annex_country = { target = GXC } }   # Nationalists get warlords if still here 
+		
+		every_state = {			### Every State owned by Japan and is a core of NatChina becomes Chinese
+			limit = {
+				is_owned_by = JAP
+				is_core_of  = CHI
+			}
+			CHI = { transfer_state = PREV }
+		}
+		SOV = { transfer_state = 537 }
+		SOV = { transfer_state = 555 } # soviet gets Sakhalin and Kurils
+		
+		SOV = { transfer_state = 527 } # soviet occupation of Korea
+		
+		IF = {
+			limit = {
+				SIA = { is_puppet_of = JAP }			# if siam is a japanese puppet
+			}
+			JAP = { end_puppet = SIA }
+			SIA = {
+				set_politics = {
+					ruling_party = neutrality
+					elections_allowed = yes
+				}
+				add_popularity = {
+					ideology = neutrality
+					popularity = 1
+				}
+			}
+		}
+		IF = {
+			limit = {
+				SIA = { exists = no }			# if Siam was annexed by japan
+			}
+			JAP = { release = SIA }
+			SIA = {
+				set_politics = {
+					ruling_party = neutrality
+					elections_allowed = yes
+				}
+				add_popularity = {
+					ideology = neutrality
+					popularity = 1
+				}
+			}
+		}
+		
+		FRA = { transfer_state = 671 }
+		FRA = { transfer_state = 670 }
+		FRA = { transfer_state = 286 }
+		FRA = { transfer_state = 758 } # France gets back Indochina
+		
+		USA = { transfer_state = 646 }
+		USA = { transfer_state = 647 }
+		USA = { transfer_state = 684 }
+		USA = { transfer_state = 633 } # USA gets historical pacific Islands
+		
+		USA = { transfer_state = 525 } #US occupation of korea
+		
+		
+		
+		JAP = {
+			white_peace = USA
+			white_peace = SOV
+			white_peace = FRA 
+			white_peace = ENG # Peace
+		}
+		
+		USA = {
+			puppet = JAP
+		}
+		
+		if = {
+			limit = {
+				JAP = { 
+					NOT = {
+						has_idea = undisturbed_isolation
+						has_idea = isolation						
+					}
+				}
+			}
+			JAP = { 
+				add_ideas = isolation
+				add_political_power = -1000
+			}
+		}			
+		if = {
+			limit = {
+				JAP = { 
+					NOT = {
+						has_idea = disarmed_nation
+						has_idea = volunteer_only											
+					}
+				}
+			}
+			JAP = { 
+				add_ideas = volunteer_only					#demilitarization
+			}
+		}		
+		
+		
+	
+
+	
+	}
+	
+	option = {
+		name = as_japan.14.b #refuse
+		ai_chance = { factor = 0 }
+	
+	}
+	
+}

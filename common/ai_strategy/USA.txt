@@ -52,7 +52,10 @@ USA_save_india = { # in the case where japan has beaten china and is moving on i
 		}
 		RAJ = {
 			is_in_faction_with = ENG
-			surrender_progress > 0.15
+		}
+		OR = {	
+			BUR = { surrender_progress > 0.01 }
+			BUR = { has_capitulated = yes }
 		}
 	}
 	abort = {
@@ -68,13 +71,13 @@ USA_save_india = { # in the case where japan has beaten china and is moving on i
 	ai_strategy = {
 		type = contain
 		id = "JAP"			
-		value = 200
+		value = 300
 	}
 	
 	ai_strategy = {
 		type = protect
 		id = "RAJ"			
-		value = 200
+		value = 300
 	}
 }
 
@@ -119,26 +122,26 @@ USA_unit_production = {
 	ai_strategy = {
 		type = role_ratio
 		id = armor
-		value = 10
+		value = 5
 	}
 
 	ai_strategy = {
 		type = role_ratio
 		id = infantry
-		value = 50 
+		value = 70 
 	}
 
 	ai_strategy = {
 		type = role_ratio
 		id = mobile
-		value = 30 
+		value = 35
 	}
 	
 	#Air unit factors
 	ai_strategy = {
 		type = unit_ratio
 		id = fighter
-		value = 50
+		value = 40
 	}
 	
 	ai_strategy = {
@@ -213,15 +216,33 @@ USA_war_prod = {
 	ai_strategy = {
 		type = equipment_production_factor
 		id = carrier
-		value = 40  
+		value = 50  
 	}
 	
 	ai_strategy = {
 		type = equipment_production_factor
-		id = armor
+		id = screen_ship
 		value = 10  
+	}	
+	
+	ai_strategy = {
+		type = equipment_production_factor
+		id = armor
+		value = 5 
 	}
 	
+	ai_strategy = {
+		type = equipment_production_factor
+		id = infantry
+		value = 30   
+	}
+	
+	ai_strategy = {
+		type = equipment_production_factor
+		id = artillery
+		value = 40 
+	}	
+		
 	ai_strategy = {
 		type = equipment_production_factor
 		id = fighter
@@ -471,7 +492,6 @@ USA_garrison_production = {
 	ai_strategy = {
 		type = role_ratio
 		id = garrison
-
 		value = 3
 	}
 }

@@ -10,7 +10,7 @@ state={
 		#owner = RUS
 		#add_core_of = RUS
 		owner = SOV
-		add_core_of = SOV
+		add_core_of = SOV  add_core_of = RUS
 		
 		victory_points = {
 			3686 20
@@ -32,7 +32,7 @@ state={
 		# Union of Soviet Socialist Republics
 		1922.12.30 = {
 			owner = SOV
-			add_core_of = SOV
+			add_core_of = SOV  add_core_of = RUS
 		}
 		
 		1939.1.1 = {

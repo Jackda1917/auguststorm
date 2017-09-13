@@ -7,13 +7,13 @@ ai_historical_focus_list_ITA = {
 		ITA_army_primacy 
 		ITA_mare_nostrum 
 		ITA_light_ship_effort 
-		ITA_industrial_effort_2 
+		ITA_industrial_effort_2
+		ITA_albania_war_goal		
 		ITA_modernized_artillery 
 		ITA_air_innovation 
 		ITA_modernized_army 
 		ITA_fortification_effort 
-		ITA_extra_tech_slot 
-		ITA_albania_war_goal		
+		ITA_extra_tech_slot 		
 		ITA_bulgaria_friend 		
 		ITA_special_forces 
 		ITA_capital_ships 

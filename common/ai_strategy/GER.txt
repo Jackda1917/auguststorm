@@ -73,7 +73,7 @@ GER_unit_production = {
 	ai_strategy = {
 		type = role_ratio
 		id = infantry
-		value = 65
+		value = 70
 	}
 	
 	#Air unit factors
@@ -235,7 +235,7 @@ GER_anti_armor = {
 	ai_strategy = {
 		type = role_ratio
 		id = anti_armor
-		value = 10
+		value = 20
 	}
 }
 
@@ -248,7 +248,7 @@ GER_subs = {
 	ai_strategy = {
 		type = equipment_production_factor
 		id = submarine
-		value = 300  
+		value = 400  
 	}
 }	
 	
@@ -262,16 +262,16 @@ GER_garrisons = {
 	ai_strategy = {
 		type = build_army
 		id = garrison
-		value = 200
+		value = 100
 	}
 }
 		
-GER_armored_production = {
+GER_more_units_production = {
 	enable = {
 		original_tag = GER	
 		date > 1940.1.1
 		ai_wants_divisions > 24 #Decreasing the amount of tanks the AI wants
-		has_tech = basic_medium_tank		
+		#has_tech = basic_medium_tank		
 	}
 	abort = {
 		ai_wants_divisions < 25 #Decreasing the amount of tanks the AI wants		
@@ -279,16 +279,22 @@ GER_armored_production = {
 
 	ai_strategy = {
 		type = role_ratio
-		id = armor
-		value = 10
+		id = mobile
+		value = 15
 	}
 
 	ai_strategy = {
 		type = role_ratio
-		id = mobile
-		value = 10
+		id = infantry
+		value = 20
+	}	
+	
+	ai_strategy = {
+		type = role_ratio
+		id = garrison
+		value = 20 #30 to 8
 	}
-
+	
 	ai_strategy = {
 		type = equipment_production_factor
 		id = mechanized
@@ -314,20 +320,26 @@ GER_highered_armored_production = {
 		original_tag = GER
 		num_of_military_factories > 119
 		has_tech = improved_medium_tank
-		NOT = { has_equipment = { medium_tank_equipment > 4000 } }
+		NOT = { has_equipment = { medium_tank_equipment > 2999 } }
 		has_war = yes
 	}
 	abort = {
 		OR = {
 			num_of_military_factories < 120
-			has_equipment = { medium_tank_equipment > 4000 }
+			has_equipment = { medium_tank_equipment > 3000 }
 		}
 	}
 
 	ai_strategy = {
+		type = role_ratio
+		id = armor
+		value = 10
+	}
+		
+	ai_strategy = {
 		type = equipment_production_factor
 		id = armor
-		value = 30  
+		value = 10  
 	}
 
 }

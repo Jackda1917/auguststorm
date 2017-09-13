@@ -2627,6 +2627,7 @@ news_event = {
 	option = {
 		name = news.100.b
 		trigger = { TAG = GER }
+		add_timed_idea = { idea = victory_opinion days = 60 }       # AS			
 	}
 	option = {
 		name = news.100.c
@@ -2675,6 +2676,7 @@ news_event = {
 	option = {
 		name = news.100.c
 		trigger = { TAG = ENG }
+		add_national_unity = -0.50
 	}
 }
 
@@ -2894,12 +2896,12 @@ news_event = {
 	option = {
 		name = news.100.b
 		trigger = { TAG = GER }
-		add_timed_idea = { idea = victory_opinion days = 60 }       # AS		
+		add_timed_idea = { idea = victory_opinion days = 40 }       # AS		
 	}
 	option = {
 		name = news.103.c
 		trigger = { TAG = SOV }
-		add_timed_idea = { idea = defeat_opinion days = 60 }       # AS				
+		add_timed_idea = { idea = defeat_opinion days = 40 }       # AS				
 	}
 }
 
@@ -3079,7 +3081,8 @@ news_event = {
 	option = {
 		name = news.100.c
 		trigger = { TAG = USA }
-		add_timed_idea = { idea = defeat_opinion days = 360 }       # AS			
+		add_timed_idea = { idea = defeat_opinion days = 360 }       # AS
+		add_national_unity = -0.30
 	}
 }
 
@@ -3259,7 +3262,8 @@ news_event = {
 	option = {
 		name = news.100.c
 		trigger = { TAG = ENG }
-		add_timed_idea = { idea = defeat_opinion days = 90 }       # AS				
+		add_timed_idea = { idea = defeat_opinion days = 90 }       # AS
+		add_national_unity = -0.50
 	}
 }
 
@@ -3439,7 +3443,8 @@ news_event = {
 	option = {
 		name = news.100.c
 		trigger = { TAG = AST }
-		add_timed_idea = { idea = defeat_opinion days = 180 }       # AS			
+		add_timed_idea = { idea = defeat_opinion days = 180 }       # AS
+		add_national_unity = -0.50
 	}
 }
 
@@ -3529,8 +3534,8 @@ news_event = {
 	option = {
 		name = news.100.c
 		trigger = { TAG = CHI }
-		add_timed_idea = { idea = defeat_opinion days = 90 }       # AS			
-		CHI = { add_national_unity = 0.1 }			# AS
+		#add_timed_idea = { idea = defeat_opinion days = 90 }       # AS			
+		CHI = { add_national_unity = 0.25 }			# AS
 		CHI = { add_political_power = 100 }
 		605 = { add_building_construction = { type = arms_factory level = 5 instant_build = yes } } 	# Chonking  US help		
 		605 = { add_building_construction = { type = bunker province = 6999 level = 5 instant_build = yes } } 	# Chonking
@@ -3722,7 +3727,8 @@ news_event = {
 	option = {
 		name = news.100.c
 		trigger = { TAG = ENG }
-		add_timed_idea = { idea = defeat_opinion days = 90 }       # AS		
+		add_timed_idea = { idea = defeat_opinion days = 90 }       # AS	
+		
 	}
 }
 

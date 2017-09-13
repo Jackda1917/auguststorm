@@ -277,7 +277,10 @@ ideas = {
 			available = {
 				has_war = yes
 				NOT = { has_idea = fractured_society }	
-				NOT = { has_idea = vampirized_economy }
+				NOT = { 
+					has_idea = vampirized_economy 
+					has_country_flag = fight_for_surviving
+				}
 			    #NOT = { has_idea = SPA_recovering_from_civil_war }			
 				if = {
 					limit = {
@@ -287,6 +290,7 @@ ideas = {
 					NOT = { has_idea = HUN_treaty_of_triannon }
 				}				
 				OR = {
+					has_country_flag = fight_for_surviving
 					AND = {									# was none		
 							has_government = communism
 							enemies_strength_ratio > 0.75
@@ -448,7 +452,25 @@ ideas = {
 						}
 					}
 					AND = {
-						NOT = { has_government = democratic }
+						has_government = neutrality
+						has_war = yes
+						any_enemy_country = {
+							ic_ratio = { 
+								tag = ROOT 
+								ratio > 0.2
+							}
+						}
+					}
+					AND = {
+						has_government = fascism 
+						OR = {
+							has_idea = partial_economic_mobilisation
+							has_idea = war_economy
+							has_idea = tot_economic_mobilisation
+						}
+					}
+					AND = {
+						has_government = communism
 						OR = {
 							has_idea = partial_economic_mobilisation
 							has_idea = war_economy

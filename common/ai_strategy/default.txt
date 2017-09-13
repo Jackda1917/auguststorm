@@ -15,6 +15,39 @@
 # contain
 # area_priority
 
+major_limit_air_wings = {
+	enable = {
+		#date > 1942.7.1
+		has_equipment = { single_engine_airframe > 4499 }
+		OR = {
+			original_tag = GER 
+			original_tag = FRA
+			original_tag = ENG
+			original_tag = SOV
+			original_tag = USA
+			original_tag = ITA
+			original_tag = JAP			
+		}
+	}
+	
+	abort = {
+		has_equipment = { single_engine_airframe < 4500 } 
+	}	
+	
+	ai_strategy = {
+		type = equipment_production_factor
+		id = cas
+		value = -70
+	}
+	
+	ai_strategy = {
+		type = equipment_production_factor
+		id = fighter
+		value = -50
+	}
+
+} 
+
 
 major_dont_waste_on_templates = {			# Because scripted templates
 	enable = {
@@ -26,7 +59,8 @@ major_dont_waste_on_templates = {			# Because scripted templates
 			original_tag = SOV
 			original_tag = USA
 			original_tag = CAN
-			original_tag = ITA			
+			original_tag = ITA
+			original_tag = JAP			
 		}
 	}
 	ai_strategy = {

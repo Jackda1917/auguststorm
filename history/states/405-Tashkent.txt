@@ -31,7 +31,7 @@ state={
 		# Union of Soviet Socialist Republics
 		1922.12.30 = {
 			owner = SOV
-			add_core_of = SOV
+			add_core_of = SOV  add_core_of = RUS
 		}
 
 		# Uzbek Soviet Socialist Republic

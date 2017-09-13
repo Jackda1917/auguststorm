@@ -363,6 +363,19 @@ on_actions = {
 ###### August Storm ###############################################################################			
 			if = {										# Any new major member drastically strengthen revolutionary movements 
 				limit = {
+					tag = YUG
+					FROM = { 
+						tag = GER
+						has_government = fascism
+					}
+					ENG = { is_ai = yes }
+					YUG = { is_ai = yes }
+				}
+				ENG = { diplomatic_relation = { country = YUG relation = non_aggression_pact active = yes } }
+				YUG = { country_event = { id = DOD_yugoslavia.1 days = 2 } }
+			}
+			if = {										# Any new major member drastically strengthen revolutionary movements 
+				limit = {
 					has_government = revolutionary
 					is_major = yes
 					FROM = {
@@ -1055,12 +1068,14 @@ on_actions = {
 					}										
 					FROM = { 
 						tag = GER
+						is_ai = yes
 					}
-					#has_global_flag = sov_sue_for_peace 
+					NOT = { has_global_flag = sov_sue_for_peace } 
 				} 
-				white_peace = ROOT				
-				ROOT = { 
-					country_event = { id = as_sov.15 }
+								
+				FROM = {
+					annex_country = { target = SOV transfer_troops = no }				
+					country_event = { id = as_sov.17 }
 				}
 			}			
 			if = {                              ## Lead to ITA/RSI civil war
@@ -1078,9 +1093,10 @@ on_actions = {
 					}
 					has_global_flag = ita_sue_for_peace
 				}
-				GER = { remove_from_faction = ITA }
-				FROM = { white_peace = ROOT } 
-				ROOT = { country_event = { id = as_italy.4 hours = 1 } }
+				annex_country = { target = ITA transfer_troops = no }
+				ROOT = { 
+					country_event = { id = as_italy.4 }					
+				}
 			}			
 			if = {                              ## French State establishment
 				limit = { 

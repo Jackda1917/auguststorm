@@ -41,7 +41,7 @@ state = {
 		# Soviet occupation of Bessarabia and Northern Bukovina
 		1940.6.28 = {
 			owner = SOV
-			add_core_of = SOV
+			add_core_of = SOV  add_core_of = RUS
 		}
 		
 		# Sovereignty declared

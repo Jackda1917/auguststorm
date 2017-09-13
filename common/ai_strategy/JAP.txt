@@ -22,13 +22,13 @@ less_trucks_4_u_JAP = {
 	ai_strategy = { 
 		type = role_ratio
 		id = motorized 
-		value = 1 
+		value = 3 
 	}
 	
 	ai_strategy = { 
 		type = role_ratio
 		id = armor 
-		value = -20
+		value = -30
 	}	
 	
 	ai_strategy = { 
@@ -36,7 +36,13 @@ less_trucks_4_u_JAP = {
 		id = infantry
 		value = 80
 	}
-
+	
+	ai_strategy = { 
+		type = role_ratio
+		id = garrison
+		value = 20
+	}	
+	
 	ai_strategy = {
 		type = template_prio
 		id = motorized
@@ -234,6 +240,12 @@ JAP_template_design = {
 		id = marines
 		value = 50
 	}	
+
+	ai_strategy = { 
+		type = role_ratio
+		id = garrison
+		value = 10
+	}
 	
 	ai_strategy = {
 		type = template_prio
@@ -256,13 +268,13 @@ JAP_template_design = {
 	ai_strategy = {
 		type = template_prio
 		id = light_armor
-		value = -10
+		value = 10
 	}
 
 	ai_strategy = {
 		type = template_prio
 		id = medium_armor
-		value = 10
+		value = -10
 	}
 	
 	ai_strategy = {

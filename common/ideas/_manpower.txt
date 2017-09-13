@@ -340,7 +340,10 @@ ideas = {
 			available = {
 				#has_manpower_for_recruit_change_to =  { value = 0.16 group = mobilization_laws }
 				has_war = yes
-				has_manpower < 500000
+				OR = {	
+					has_manpower < 500000
+					has_country_flag = fight_for_surviving
+				}
 				NOT = { has_idea = fractured_society }				
 				OR = {	
 					has_national_unity > 60

@@ -14,7 +14,7 @@ ideas = {
 			removal_cost = -1
 
 			modifier = {
-				conscription_factor = 0.02
+				conscription_factor = 0.04
 			}
 		}
 
@@ -31,7 +31,7 @@ ideas = {
 			removal_cost = -1
 
 			modifier = {
-				conscription_factor = 0.02
+				conscription_factor = 0.04
 			}
 		}
 	}
@@ -161,7 +161,7 @@ ideas = {
 				industrial_capacity_factory = -0.25
 				industrial_capacity_dockyard = -0.25
 				conscription_factor = -0.1
-				consumer_goods_factor = 0.05
+				consumer_goods_factor = 0.10
 			}
 		}
 
@@ -371,7 +371,7 @@ ideas = {
 			removal_cost = -1
 
 			modifier = {
-				conscription_factor = -0.60  # was -0.69
+				conscription_factor = -0.25  # was -0.69 because Vampirized
 			}
 		}
 
@@ -398,6 +398,32 @@ ideas = {
 				autonomy_gain = 0.4
 			}
 		}
+		
+
+		RAJ_indian_national_mobilisation = {					# AS
+		
+			picture = raj_quit_india_movement
+			
+			allowed = {
+				original_tag = RAJ
+			}
+
+			allowed_civil_war = {
+				NOT = {
+					OR = {
+						has_government = communism
+						has_government = fascism
+					}
+				}
+			}
+			
+			removal_cost = -1
+			
+			modifier = {
+				autonomy_gain = 0.25
+				unity_weekly = 0.02
+			}
+		}		
 	}
 
 
