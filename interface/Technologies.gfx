@@ -2570,6 +2570,26 @@ spriteTypes = {
 		name = "GFX_FRA_interwar_antiair_medium"
 		texturefile = "gfx/interface/technologies/AA_1_allies.dds"
 	}	
+
+	SpriteType = {
+		name = "GFX_FRA_advanced_infantry_weapons_medium"
+		texturefile = "gfx/interface/technologies/fra_advanced_infantry_weapons.dds"
+	}
+
+	SpriteType = {
+		name = "GFX_FRA_improved_infantry_weapons_medium"
+		texturefile = "gfx/interface/technologies/fra_improved_infantry_weapons.dds"
+	}	
+
+	SpriteType = {
+		name = "GFX_FRA_infantry_weapons_medium"
+		texturefile = "gfx/interface/technologies/fra_basic_equipment.dds"
+	}
+
+	SpriteType = {
+		name = "GFX_FRA_infantry_weapons1_medium"
+		texturefile = "gfx/interface/technologies/fra_infantry_weapons1.dds"
+	}
 	
 	### FRA tanks ###
 
@@ -2946,6 +2966,36 @@ spriteTypes = {
 	SpriteType = {
 		name = "GFX_ITA_interwar_antiair_medium"
 		texturefile = "gfx/interface/technologies/AA_1_axis.dds"
+	}
+
+	SpriteType = {
+		name = "GFX_ITA_advanced_infantry_weapons_medium"
+		texturefile = "gfx/interface/technologies/ita_advanced_infantry_weapons.dds"
+	}
+
+	SpriteType = {
+		name = "GFX_ITA_improved_infantry_weapons_medium"
+		texturefile = "gfx/interface/technologies/ita_improved_infantry_weapons.dds"
+	}	
+
+	SpriteType = {
+		name = "GFX_ITA_infantry_weapons_medium"
+		texturefile = "gfx/interface/technologies/ita_basic_equipment.dds"
+	}
+
+	SpriteType = {
+		name = "GFX_ITA_infantry_weapons1_medium"
+		texturefile = "gfx/interface/technologies/ita_infantry_weapons1.dds"
+	}
+
+	SpriteType = {
+		name = "GFX_ITA_motorised_infantry_medium"
+		texturefile = "gfx/interface/technologies/ita_motorised_infantry.dds"
+	}
+	
+	SpriteType = {
+		name = "GFX_ITA_motorized_equipment_1_medium"
+		texturefile = "gfx/interface/technologies/ita_motorised_infantry.dds"
 	}
 	
 ### Italian tanks ####	

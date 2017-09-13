@@ -1,7 +1,7 @@
 ideas = {
 	hidden_ideas = {
 
-		idea_continuous_naval_production = {
+		continuous_naval_production = {
 			allowed = {
 				always = no
 			}
@@ -18,7 +18,7 @@ ideas = {
 		}
 
 
-		idea_continuous_air_production = {
+		continuous_air_production = {
 			allowed = {
 				always = no
 			}
@@ -629,13 +629,6 @@ ideas = {
 					}
 					has_completed_focus = NZL_the_lee_affair
 				}
-				if = {
-					limit = { 
-						original_tag = CZE
-						has_dlc = "Death or Dishonor"
-					}
-					has_completed_focus = CZE_go_left
-				}
 			}
 			
 			traits = { communist_revolutionary }
@@ -712,13 +705,6 @@ ideas = {
 						has_dlc = "Together for Victory"
 					}
 					has_completed_focus = NZL_in_the_darkness
-				}
-				if = {
-					limit = { 
-						original_tag = CZE
-						has_dlc = "Death or Dishonor"
-					}
-					has_completed_focus = CZE_go_right
 				}
 			}
 
