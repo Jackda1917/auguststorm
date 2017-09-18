@@ -290,7 +290,7 @@ guiTypes = {
 			textureFile = ""
 			font = "hoi_18b"
 			borderSize = {x = 0 y = 0}
-			text = "AS v1.4.1.31"
+			text = "AS v1.4.2.1"
 			format = right
 			maxWidth = 270
 			maxHeight = 20	
