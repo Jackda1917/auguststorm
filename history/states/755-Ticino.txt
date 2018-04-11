@@ -1,7 +1,7 @@
 state = {
 	id = 755
 	name = "STATE_755" # Ticino
-	manpower = 300000
+	buildings_max_level_factor=1.000   manpower = 300000
 	
 	state_category = town
 

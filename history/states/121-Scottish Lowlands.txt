@@ -2,7 +2,7 @@
 state={
 	id=121
 	name="STATE_121" # Lothian
-	manpower = 1431624
+	buildings_max_level_factor=1.000   manpower = 1431624
 	
 	state_category = city
 

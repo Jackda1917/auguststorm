@@ -340,7 +340,7 @@ country_event = {
 	option = {
 		name = as_sov.9.a 							# UK accepts partition of Iran
 		set_global_flag = sov_countenance_flag
-		add_national_unity = 0.10
+		add_stability = 0.10
 		add_opinion_modifier = { target = ENG modifier = offered_support }
 		add_political_power = 50
 		news_event = { id = as_news.5 hours = 4 }
@@ -374,7 +374,7 @@ country_event = {
 
 	option = {
 		name = as_sov.10.a
-		add_national_unity = -0.05
+		add_stability = -0.05
 		add_opinion_modifier = { target = ENG modifier = refused_help }		
 	}
 	
@@ -390,7 +390,7 @@ country_event = {     # Revolutionary won the civil war
 
 	option = {
 		name = as_sov.11.a
-		add_national_unity = 0.30
+		add_stability = 0.30
 		set_rule = { can_create_factions = yes }		
 		create_faction = "iv_international"	
 		set_country_flag = well_prepared_army
@@ -899,7 +899,7 @@ country_event = {     					# Propose Bitter Peace
 	option = {
 		name = as_sov.14.b    # We will never surrender !
 		ai_chance = { factor = 0 }
-		add_national_unity = 0.15
+		add_stability = 0.15
 	}	
 }
 
@@ -918,7 +918,7 @@ country_event = {     					# Germany accept proposal
 	option = {
 		name = as_sov.15.a  # At least it would save the Politburo...
 		ai_chance = { factor = 10 }
-		#add_national_unity = 0.50
+		#add_stability = 0.50
 		if = {
 			limit = { 
 				SOV = { has_war_with = JAP } 
@@ -1181,7 +1181,7 @@ country_event = {     					# Germany create fascist Russia
 	option = {
 		name = as_sov.15.a  
 		ai_chance = { factor = 10 }
-		add_national_unity = 0.50
+		add_stability = 0.50
 		every_owned_state = {
 			limit = {	
 				is_core_of = RUS

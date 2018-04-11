@@ -65,7 +65,7 @@ country_event = {
 		enemies_strength_ratio > 1
 		has_war_with = USA
 		OR = {
-			has_national_unity < 0.50
+			has_stability < 0.50
 			AND = {	
 				casualties > 2500000
 				is_ai = yes
@@ -170,7 +170,7 @@ country_event = {
 			}
 			set_cosmetic_tag = ITA_SOV
 			set_equipment_fraction = 0.3
-			set_national_unity = 0.9
+			set_stability = 0.9
 			create_country_leader = {
 				name = "Palmiro Togliatti"
 				desc = "POLITICS_PALMIRO_TOGLIATTI_DESC"
@@ -200,7 +200,7 @@ country_event = {               # Secret negociations with Allies (UK or USA)
 		ai_chance = { factor = 100 }
 		set_global_flag = ita_sue_for_peace
 		ITA = { 
-			add_national_unity = -0.40
+			add_stability = -0.40
 		}
 		
 	}
@@ -220,7 +220,7 @@ country_event = {               # Secret negociations with Allies (UK or USA)
 				}
 				set_cosmetic_tag = ITA_SOV		
 				set_equipment_fraction = 0.3
-				set_national_unity = 0.9
+				set_stability = 0.9
 				create_country_leader = {
 					name = "Palmiro Togliatti"
 					desc = "POLITICS_PALMIRO_TOGLIATTI_DESC"
@@ -291,7 +291,7 @@ country_event = {
 				}
 			}	
 		}		
-		set_national_unity = 0.90
+		set_stability = 0.90
 		add_equipment_to_stockpile = {
 				type = infantry_equipment_2
 				amount = 20000
@@ -483,7 +483,7 @@ country_event = {											# RSI
 			}
 			set_cosmetic_tag = ITA_GER						
 			set_equipment_fraction = 0.4
-			set_national_unity = 0.8
+			set_stability = 0.8
 			create_country_leader = {
 				name = "Benito Mussolini"
 				desc = "POLITICS_BENITO_MUSSOLINI_DESC"

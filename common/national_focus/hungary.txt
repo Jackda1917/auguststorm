@@ -372,7 +372,7 @@ focus_tree = {
 
 		completion_reward = {
 			set_cosmetic_tag = HUN_EMPIRE
-			AUS = { set_cosmetic_tag = AUS_NOT_WHITE }
+			hidden_effect = { AUS = { set_cosmetic_tag = AUS_NOT_WHITE } }
 			152 = { add_core_of = ROOT }
 			153 = { add_core_of = ROOT }
 			4 = { add_core_of = ROOT }
@@ -480,11 +480,17 @@ focus_tree = {
 			add_state_claim = 82
 			if = {
 				limit = { 
+					NOT = {
+						has_war_with = ROM
+					}
 					threat < 0.5 
 					ROM = {
-						owns_state = 76
-						owns_state = 83
-						owns_state = 84
+						OR = {
+							owns_state = 76
+							owns_state = 83
+							owns_state = 84
+							owns_state = 82
+						}
 					}
 				}
 				ROM = { country_event = DOD_hungary.50 }
@@ -1527,7 +1533,14 @@ focus_tree = {
 					create_faction = HUN_PACT_OF_ROME_FACTION
 
 
-					ITA = { country_event = generic.5 }
+					ITA = { 
+						country_event = generic.5 
+						add_ai_strategy = {
+							type = alliance
+							id = "HUN"
+							value = 200
+						}
+					}
 					if = {
 						limit = {
 							country_exists = AUS
@@ -1544,6 +1557,14 @@ focus_tree = {
 					ITA = { is_faction_leader = yes }
 				}
 				ITA = {
+					country_event = generic.2
+				}
+			}
+			if = {
+				limit = {
+					ITA = { is_in_faction_with = FRA }
+				}
+				FRA = {
 					country_event = generic.2
 				}
 			}
@@ -1793,11 +1814,23 @@ focus_tree = {
 		}
 
 		bypass = {
-			NOT = {
-				ROM = {
-					controls_state = 76
-					controls_state = 83
-					controls_state = 84
+		
+		
+		
+		
+		
+			OR = {
+				664 = {
+					OWNER = {
+						has_war_with = ROOT
+					}
+				}
+				NOT = {
+					ROM = {
+						controls_state = 76
+						controls_state = 83
+						controls_state = 84
+					}
 				}
 			}
 		}
@@ -1947,6 +1980,16 @@ focus_tree = {
 					exists = no
 				}
 				owns_state = 45
+				45 = {
+					OWNER = {
+						is_in_faction_with = ROOT
+					}
+				}
+				45 = {
+					OWNER = {
+						has_war_with = ROOT
+					}
+				}
 			}
 		}
 
@@ -1962,13 +2005,23 @@ focus_tree = {
 			custom_effect_tooltip = HUN_demands_tt
 			if = {
 				limit = {
-					has_war_with = YUG
+					OR = {
+						has_war_with = YUG
+						45 = {
+							NOT = {
+								is_owned_by = YUG
+							}
+						}
+					}
 				}
 				add_state_claim = 45
 				else = {
 					if = {
 						limit = {
-							YUG = { is_subject = yes }
+							YUG = { 
+								is_subject = yes 
+								owns_state = 45
+							}
 						}
 						create_wargoal = {
 							type = take_state_focus
@@ -1976,7 +2029,12 @@ focus_tree = {
 							generator = { 45 }
 						}
 						else = {
-							YUG = { country_event = DOD_hungary.90 }
+							if = {
+								limit = {
+									45 = { is_owned_by = YUG }
+								}
+								YUG = { country_event = DOD_hungary.90 }
+							}
 						}
 					}
 				}
@@ -2012,6 +2070,9 @@ focus_tree = {
 					owns_state = 71
 					owns_state = 72
 					owns_state = 73
+					NOT = {
+						has_war_with = HUN
+					}
 				}
 			}
 			if = {
@@ -2047,13 +2108,23 @@ focus_tree = {
 		completion_reward = {
 			custom_effect_tooltip = HUN_demands_tt
 			if = {
-				limit = { 
+
+				limit = {
+					70 = {
+						controller = {
+							NOT = {
+								has_war_with = ROOT
+							}
+						}
+					}
 					SLO = { exists = no } 
 					any_other_country = {
-						owns_state = 70
-						owns_state = 71
-						owns_state = 72
-						owns_state = 73
+						NOT = {
+							owns_state = 70
+							owns_state = 71
+							owns_state = 72
+							owns_state = 73
+						}
 					}
 				}
 				70 = {
@@ -2065,8 +2136,11 @@ focus_tree = {
 			if = {
 				limit = {
 					SLO = {
-					 exists = yes
-					 is_puppet = no
+						exists = yes
+						is_puppet = no
+						NOT = {
+							has_war_with = ROOT
+						}
 					}
 				}
 				SLO = { country_event = DOD_hungary.107 }
@@ -2074,8 +2148,11 @@ focus_tree = {
 			if = {
 				limit = {
 					SLO = {
-					 exists = yes
-					 is_puppet = yes
+						exists = yes
+						is_puppet = yes
+						NOT = {
+							has_war_with = ROOT
+						}
 					}
 				}
 				SLO = { OVERLORD = { country_event = DOD_hungary.107 } }
@@ -2102,6 +2179,15 @@ focus_tree = {
 
 		available = {
 
+			OR = {
+				owns_state = 664
+				owns_state = 73
+				owns_state = 76
+				owns_state = 84
+				owns_state = 83
+				owns_state = 82
+				owns_state = 45
+			}
 		}
 
 		bypass = {
@@ -2119,6 +2205,7 @@ focus_tree = {
 		completion_reward = {
 			custom_effect_tooltip = HUN_GREATER_tt
 			set_cosmetic_tag = HUN_GREATER
+			add_stability = 0.1
 			hidden_effect = {
 				news_event = { id = news.299 }
 			}
@@ -3278,7 +3365,7 @@ focus_tree = {
 				limit = {
 					has_state_flag = HUN_boost_hungarian_aviation_industry_AF1
 				}
-				add_extra_state_shared_building_slots = 1
+				add_extra_state_shared_building_slots = 2
 				add_building_construction = {
 					type = arms_factory
 					level = 2
@@ -4265,7 +4352,7 @@ focus_tree = {
 
 		completion_reward = {
 			add_tech_bonus = {
-				name = HUN_motorized_support_bonus
+				name = HUN_motorized_logistics
 				bonus = 0.5
 				uses = 2
 				category = hospital_tech
@@ -4550,7 +4637,7 @@ focus_tree = {
 
 		completion_reward = {
 			add_tech_bonus = {
-				name = HUN_danuvia_submachine_gunssub
+				name = HUN_danuvia_submachine_guns
 				bonus = 0.5
 				uses = 1
 				category = infantry_weapons
@@ -4636,6 +4723,7 @@ focus_tree = {
 					limit = { has_tech = tech_engineers }
 					division_template = {
 						name = "Light Division"
+						division_names_group = HUN_INF_01
 						priority = 2
 		
 						regiments = {
@@ -4656,6 +4744,7 @@ focus_tree = {
 					else = {
 						division_template = {
 							name = "Light Division"
+							division_names_group = HUN_INF_01
 							priority = 2
 			
 							regiments = {

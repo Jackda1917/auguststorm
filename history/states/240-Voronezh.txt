@@ -2,7 +2,7 @@
 state={
 	id=240
 	name="STATE_240" # Belgorod
-	manpower = 1364537
+	buildings_max_level_factor=1.000   manpower = 1364537
 	
 	state_category = town
 

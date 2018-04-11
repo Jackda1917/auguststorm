@@ -2,7 +2,7 @@
 state={
 	id=105
 	name="STATE_105" # Montenegro
-	manpower = 895500
+	buildings_max_level_factor=1.000   manpower = 895500
 	
 	state_category = rural
 	

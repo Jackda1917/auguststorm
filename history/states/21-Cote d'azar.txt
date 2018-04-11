@@ -2,7 +2,7 @@
 state={
 	id=21
 	name="STATE_21" # Provence
-	manpower = 2060400
+	buildings_max_level_factor=1.000   manpower = 2060400
 	resources={
 		aluminium=120
 	}

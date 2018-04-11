@@ -61,8 +61,12 @@ technologies = {
 			factor = 3
 			
 			modifier = {
-				factor = 5
+				factor = 6
 				has_war = yes
+			}
+			modifier = {
+				factor = 5
+				date > "1939.8.1"
 			}
 		}
 		
@@ -169,15 +173,16 @@ technologies = {
 		# radar boost in air/sea combat depends on radar level
 		enable_building = {
 			building = radar_station
-			level = 5
+			level = 4
 		}
+		static_anti_air_hit_chance_factor = 0.2
 		
 		path = {
 			leads_to_tech = improved_centimetric_radar 
 			research_cost_coeff = 1
 		}
 		
-		research_cost = 3
+		research_cost = 3.5 #2.5
 		start_year = 1940
 		
 		folder = {
@@ -200,15 +205,16 @@ technologies = {
 		# radar boost in air/sea combat depends on radar level
 		enable_building = {
 			building = radar_station
-			level = 7
+			level = 5
 		}
+		static_anti_air_hit_chance_factor = 0.2
 		
 		path = {
 			leads_to_tech = advanced_centimetric_radar 
 			research_cost_coeff = 1
 		}
 		
-		research_cost = 4
+		research_cost = 4.5 #2.5
 		start_year = 1941
 		
 		folder = {
@@ -234,7 +240,7 @@ technologies = {
 			level = 8
 		}		
 		
-		research_cost = 4
+		research_cost = 5 #2.5
 		start_year = 1942
 		
 		folder = {
@@ -777,10 +783,11 @@ technologies = {
 		start_year = 1944
 		research_cost = 2
 
-		#folder = {
-		#	name = air_techs_folder
-		#	position = { x = 2 y = 11 }
-		#}
+		folder = {
+			name = air_techs_folder
+			position = { x = 2 y = 11 }
+
+		}
 		
 		desc = "JET_ENGINES_SPECIAL"
 

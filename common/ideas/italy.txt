@@ -22,7 +22,7 @@ ideas = {
 			removal_cost = -1
 			
 			modifier = {
-				unity_factor = 0.05				
+				stability_factor = 0.05				
 			}
 		}
 		vittoria_mutilata = {			
@@ -125,7 +125,8 @@ ideas = {
 			removal_cost = -1
 
 			modifier = {
-				unity_factor = -0.30
+				stability_factor = -0.30
+				war_support_factor = -0.1
 			}
 		}
 
@@ -149,7 +150,8 @@ ideas = {
 			removal_cost = -1
 
 			modifier = {
-				unity_factor = -0.20
+				stability_factor = -0.20
+				war_support_factor = -0.1				
 			}
 		}
 		
@@ -173,7 +175,8 @@ ideas = {
 			removal_cost = -1
 
 			modifier = {
-				unity_factor = 0.30
+				stability_factor = 0.30
+				war_support_factor = 0.1				
 			}
 		}
 
@@ -198,7 +201,8 @@ ideas = {
 			removal_cost = -1
 
 			modifier = {
-				unity_factor = 0.30
+				stability_factor = 0.30
+				war_support_factor = 0.1				
 			}
 		}		
 	}	
@@ -214,9 +218,6 @@ ideas = {
 			
 			traits = { communist_revolutionary }
 	
-			on_add = {
-				country_event = political.1
-			}
 	
 			do_effect = {
 				NOT = {
@@ -240,9 +241,6 @@ ideas = {
 			
 			traits = { democratic_reformer }
 	
-			on_add = {
-				country_event = political.13
-			}
 	
 			do_effect = {
 				NOT = {
@@ -266,9 +264,6 @@ ideas = {
 			
 			traits = { fascist_demagogue }
 	
-			on_add = {
-				country_event = political.7
-			}
 	
 			do_effect = {
 				NOT = {

@@ -1,7 +1,7 @@
 state={
 	id=750
 	name="STATE_750" # Wilno
-	manpower = 226000
+	buildings_max_level_factor=1.000   manpower = 226000
 	
 	state_category = town
 	

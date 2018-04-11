@@ -1,7 +1,7 @@
 ﻿capital = 230 # Armenia
 
 
-set_national_unity = 0.75
+set_stability = 0.75
 set_convoys = 5
 
 set_technology = {
@@ -21,7 +21,7 @@ set_technology = {
 set_politics = {
 	parties = {
 		democratic = { 
-			popularity = 90
+			popularity = 50
 		}
 		fascism = {
 			popularity = 0
@@ -30,7 +30,7 @@ set_politics = {
 			popularity = 10
 		}
 		neutrality = { 
-			popularity = 0
+			popularity = 40
 		}
 	}
 	
@@ -38,4 +38,37 @@ set_politics = {
 	last_election = "1936.1.1"
 	election_frequency = 36
 	elections_allowed = yes
+}
+
+create_country_leader = {
+	name = "Drastamat Kanayan"
+	desc = ""
+	picture = "gfx/leaders/Europe/Portrait_Europe_Generic_land_5.dds"
+	expire = "1953.3.1"
+	ideology = fascism_ideology
+	traits = {
+		
+	}
+}
+
+create_country_leader = {
+	name = "Hovhannes Kajaznuni"
+	desc = ""
+	picture = "gfx/leaders/Europe/Portrait_Europe_Generic_2.dds"
+	expire = "1953.3.1"
+	ideology = conservatism
+	traits = {
+		
+	}
+}
+
+create_country_leader = {
+	name = "Grigor Harutyunyan"
+	desc = ""
+	picture = "gfx/leaders/Europe/Portrait_Europe_Generic_1.dds"
+	expire = "1953.3.1"
+	ideology = stalinism
+	traits = {
+		
+	}
 }

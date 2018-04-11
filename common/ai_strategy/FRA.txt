@@ -301,7 +301,7 @@ FRA_highered_armored_production = {
 	ai_strategy = {
 		type = role_ratio
 		id = armor
-		value = 10 #Removed from original production so increased from a bit to a f*** ton (in this case 10 to 20)
+		value = 20 #Removed from original production so increased from a bit to a f*** ton (in this case 10 to 20)
 	}
 	
 }

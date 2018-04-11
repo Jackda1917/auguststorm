@@ -21,9 +21,27 @@ ideas = {
 				industrial_capacity_factory = -0.4        # AS
 				industrial_capacity_dockyard = -0.5 # was none
 				subversive_activites_upkeep = 0.75 # was none
-				unity_factor = -0.2 # was none				
+				stability_factor = -0.2 # was none				
 				conscription_factor = -0.4 # was -0.5 
 				join_faction_tension = 0.40   # was 0.20
+			}
+		}
+
+		USA_homeland_defense = {
+			allowed = {
+				always = no
+			}
+			allowed_civil_war = {
+				always = no
+			}
+
+			removal_cost = -1
+
+			#picture = #WTT_TODO_CD: Art
+
+			modifier = {
+				army_core_defence_factor = 0.2
+				army_core_attack_factor = 0.2
 			}
 		}
 		
@@ -43,7 +61,7 @@ ideas = {
 				production_speed_infrastructure_factor = 0.15
 				production_speed_industrial_complex_factor = 0.15 # AS							
 				consumer_goods_factor = -0.05 # was none
-				unity_factor = 0.10
+				stability_factor = 0.10
 			}
 		}
 
@@ -62,7 +80,7 @@ ideas = {
 			
 			modifier = {
 				production_speed_infrastructure_factor = 0.1
-				unity_factor = 0.05
+				stability_factor = 0.05
 				drift_defence_factor = 0.2
 			}
 		}
@@ -379,7 +397,7 @@ ideas = {
 				drift_defence_factor = 0.2
 				ai_badass_factor = 0.03 # cares for 3% of normal threat
 				political_power_factor = 0.25  # was none				
-				unity_weekly = 0.001 # was none
+				stability_weekly = 0.001 # was none
 			}
 		}
 
@@ -574,9 +592,7 @@ ideas = {
 			
 			traits = { communist_revolutionary }
 	
-			on_add = {
-				country_event = political.1
-			}
+
 	
 			do_effect = {
 				NOT = {
@@ -600,9 +616,7 @@ ideas = {
 			
 			traits = { democratic_reformer }
 	
-			on_add = {
-				country_event = political.13
-			}
+
 	
 			do_effect = {
 				NOT = {
@@ -626,9 +640,7 @@ ideas = {
 			
 			traits = { fascist_demagogue }
 	
-			on_add = {
-				country_event = political.7
-			}
+
 	
 			do_effect = {
 				NOT = {
@@ -654,7 +666,7 @@ ideas = {
 
 		USA_john_winant = {
 			
-			picture = generic_political_advisor_europe_2
+			picture = generic_political_advisor_europe_5
 			
 			allowed = {
 				original_tag = USA
@@ -665,7 +677,7 @@ ideas = {
 
 		USA_cordell_hull = {
 			
-			picture = generic_political_advisor_europe_3
+			picture = generic_political_advisor_europe_6
 			
 			allowed = {
 				original_tag = USA
@@ -879,6 +891,9 @@ ideas = {
 				original_tag = USA
 			}
 			
+			available = {
+				NOT = { has_country_flag = joseph_stilwell_sent_to_china }
+			}
 
 			
 			traits = { army_logistics_2 }

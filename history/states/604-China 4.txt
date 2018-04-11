@@ -2,7 +2,7 @@
 state={
 	id=604
 	name="STATE_604" # Qinghai
-	manpower = 1196100
+	buildings_max_level_factor=1.000   manpower = 1196100
 	
 	state_category = town
 

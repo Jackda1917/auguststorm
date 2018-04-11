@@ -1,7 +1,7 @@
 state={
 	id=713
 	name="STATE_713"
-	manpower=96
+	buildings_max_level_factor=1.000   manpower=96
 	state_category = tiny_island
 
 	history={

@@ -2,7 +2,7 @@
 state={
 	id=378
 	name="STATE_378"
-	manpower = 5677248
+	buildings_max_level_factor=1.000   manpower = 5677248
 	
 	state_category = metropolis
 	

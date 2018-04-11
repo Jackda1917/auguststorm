@@ -2,7 +2,7 @@
 state={
 	id=431
 	name="STATE_431" # West Bengal
-	manpower = 18778100
+	buildings_max_level_factor=1.000   manpower = 18778100
 	
 	state_category = city
 	

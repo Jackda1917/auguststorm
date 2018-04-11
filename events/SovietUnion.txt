@@ -47,7 +47,7 @@ country_event = {
 		ai_chance = { factor = 25 }
 		JAP = {
 			effect_tooltip = {
-				add_national_unity = 0.05
+				add_stability = 0.05
 			}
 			country_event = { days = 1 id = japan.5 }
 		}
@@ -690,7 +690,7 @@ country_event = {
 		}
 		name = soviet.26.b
 		set_country_flag = purge_1_group_b
-		show_ideas_tooltip = mikhail_tukhachevsky
+		#show_ideas_tooltip = mikhail_tukhachevsky
 		custom_effect_tooltip = remove_chief_of_army
 		show_ideas_tooltip = semyon_timoshenko
 		#show_ideas_tooltip = kliment_voroshilov
@@ -937,7 +937,7 @@ country_event = {
 }
 
 # Demand Bessarabia
-country_event = {										# AS
+country_event = {										# AS MUST BE A DECISION
 	id = soviet.30
 	title = soviet.30.t
 	desc = soviet.30.d
@@ -1000,7 +1000,7 @@ country_event = {										# AS
 }
 
 # Demand Karjala
-country_event = {
+country_event = {								# AS MUST BE A DECISION
 	id = soviet.31
 	title = soviet.31.t
 	desc = soviet.31.d
@@ -1052,7 +1052,7 @@ country_event = {
 }
 
 # Oppress Estonia
-country_event = {
+country_event = {						# AS MUST BE A DECISION
 	id = soviet.32
 	title = soviet.32.t
 	desc = soviet.32.d
@@ -1104,7 +1104,7 @@ country_event = {
 }
 
 # Oppress Latvia
-country_event = {
+country_event = {						# AS MUST BE A DECISION
 	id = soviet.33
 	title = soviet.33.t
 	desc = soviet.33.d
@@ -1156,7 +1156,7 @@ country_event = {
 }
 
 # Oppress Lithuania 
-country_event = {
+country_event = {									# AS MUST BE A DECISION
 	id = soviet.34
 	title = soviet.34.t
 	desc = soviet.34.d
@@ -1811,7 +1811,7 @@ country_event = {
 		#has_global_flag = SOV_fourth_international_fired 
 		NOT = { has_completed_focus = SOV_great_purge }
 		has_government = communism
-		has_national_unity < 70
+		has_stability < 70
 		has_country_leader = { id = 499 ruling_only = yes name = "Joseph Stalin" } 
 	}
 	
@@ -1861,7 +1861,7 @@ country_event = {
 		#has_global_flag = SOV_fourth_international_fired 
 		NOT = { has_completed_focus = SOV_great_purge }
 		has_government = communism
-		has_national_unity < 60
+		has_stability < 60
 		NOT = { has_country_leader = { id = 499 ruling_only = yes name = "Joseph Stalin" } } 
 	}
 	
@@ -2138,7 +2138,10 @@ country_event = {
 	trigger = {
 		tag = SOV
 		has_global_flag = sov_yes_pact
-		GER = { exists = yes }
+		GER = {
+			exists = yes
+			is_subject = no
+		}
 		NOT =  { has_war_with = GER }
 		OR = {
 			OR = {
@@ -2275,7 +2278,10 @@ country_event = {
 					}
 				}
 			}
-			GER = { transfer_state = 86 }
+			GER = {
+				transfer_state = 86
+				add_state_core = 86
+			}
 		}
 		if = {
 			limit = {
@@ -2305,7 +2311,10 @@ country_event = {
 					}
 				}
 			}
-			GER = { transfer_state = 85 }
+			GER = {
+				transfer_state = 85
+				add_state_core = 85
+			}
 		}
 		if = {
 			limit = {

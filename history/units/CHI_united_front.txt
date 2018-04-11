@@ -1,5 +1,6 @@
 ﻿division_template = {
 	name = "Juntuán"   # A division had (again, officially) 2 infantry brigades, each of 2 regiments; an artillery battalion or regiment; an engineer and a quartermaster battalion, and small signals, medical and transport units
+	division_names_group = CHI_INF_01
 
 	regiments = {
 		infantry = { x = 0 y = 0 }
@@ -18,147 +19,234 @@
 
 units = {
 	division = {
-		name = "90 Juntuán"
+		division_name = {
+			is_name_ordered = yes
+			name_order = 90
+		}
 		location = 11913
 		division_template = "Juntuán"
 	}
 	division = {
-		name = "91 Juntuán"
+		division_name = {
+			is_name_ordered = yes
+			name_order = 91
+		}
 		location = 11913
 		division_template = "Juntuán"
 	}
 	division = {
-		name = "92 Juntuán"
+		division_name = {
+			is_name_ordered = yes
+			name_order = 92
+		}
 		location = 11913
 		division_template = "Juntuán"
 	}
 	division = {
-		name = "96 Juntuán"
+		division_name = {
+			is_name_ordered = yes
+			name_order = 93
+		}
 		location = 11913
 		division_template = "Juntuán"
 	}
 	division = {
-		name = "98 Juntuán"
+		division_name = {
+			is_name_ordered = yes
+			name_order = 98
+		}
 		location = 11913
 		division_template = "Juntuán"
 	}
 	division = {
-		name = "99 Juntuán"
+		division_name = {
+			is_name_ordered = yes
+			name_order = 99
+		}
 		location = 11913
 		division_template = "Juntuán"
 	}
 	division = {
-		name = "100 Juntuán"
+		division_name = {
+			is_name_ordered = yes
+			name_order = 100
+		}
 		location = 11913
 		division_template = "Juntuán"
 	}
 	division = {
-		name = "101 Juntuán"
+		division_name = {
+			is_name_ordered = yes
+			name_order = 101
+		}
 		location = 11913
 		division_template = "Juntuán"
 	}
 	division = {
-		name = "102 Juntuán"
+		division_name = {
+			is_name_ordered = yes
+			name_order = 102
+		}
 		location = 11913
 		division_template = "Juntuán"
 	}
 	division = {
-		name = "103 Juntuán"
+		division_name = {
+			is_name_ordered = yes
+			name_order = 103
+		}
 		location = 11913
 		division_template = "Juntuán"
 	}
 	division = {
-		name = "104 Juntuán"
+		division_name = {
+			is_name_ordered = yes
+			name_order = 104
+		}
 		location = 11913
 		division_template = "Juntuán"
 	}
 	division = {
-		name = "105 Juntuán"
+		division_name = {
+			is_name_ordered = yes
+			name_order = 105
+		}
 		location = 11913
 		division_template = "Juntuán"
 	}
 	division = {
-		name = "106 Juntuán"
+		division_name = {
+			is_name_ordered = yes
+			name_order = 106
+		}
 		location = 11913
 		division_template = "Juntuán"
 	}
 	division = {
-		name = "107 Juntuán"
+		division_name = {
+			is_name_ordered = yes
+			name_order = 107
+		}
 		location = 11913
 		division_template = "Juntuán"
 	}
 	division = {
-		name = "108 Juntuán"
+		division_name = {
+			is_name_ordered = yes
+			name_order = 108
+		}
 		location = 11913
 		division_template = "Juntuán"
 	}
 	division = {
-		name = "109 Juntuán"
+		division_name = {
+			is_name_ordered = yes
+			name_order = 109
+		}
 		location = 11913
 		division_template = "Juntuán"
 	}
 	division = {
-		name = "110 Juntuán"
+		division_name = {
+			is_name_ordered = yes
+			name_order = 110
+		}
 		location = 11913
 		division_template = "Juntuán"
 	}
 	division = {
-		name = "111 Juntuán"
+		division_name = {
+			is_name_ordered = yes
+			name_order = 111
+		}
 		location = 11913
 		division_template = "Juntuán"
 	}
 	division = {
-		name = "112 Juntuán"
+		division_name = {
+			is_name_ordered = yes
+			name_order = 112
+		}
 		location = 11913
 		division_template = "Juntuán"
 	}
 	division = {
-		name = "113 Juntuán"
+		division_name = {
+			is_name_ordered = yes
+			name_order = 113
+		}
 		location = 11913
 		division_template = "Juntuán"
 	}
 	division = {
-		name = "114 Juntuán"
+		division_name = {
+			is_name_ordered = yes
+			name_order = 114
+		}
 		location = 11913
 		division_template = "Juntuán"
 	}
 	division = {
-		name = "115 Juntuán"
+		division_name = {
+			is_name_ordered = yes
+			name_order = 115
+		}
 		location = 11913
 		division_template = "Juntuán"
 	}
 	division = {
-		name = "116 Juntuán"
+		division_name = {
+			is_name_ordered = yes
+			name_order = 116
+		}
 		location = 11913
 		division_template = "Juntuán"
 	}
 	division = {
-		name = "117 Juntuán"
+		division_name = {
+			is_name_ordered = yes
+			name_order = 117
+		}
 		location = 11913
 		division_template = "Juntuán"
 	}
 	division = {
-		name = "118 Juntuán"
+		division_name = {
+			is_name_ordered = yes
+			name_order = 118
+		}
 		location = 11913
 		division_template = "Juntuán"
 	}
 	division = {
-		name = "119 Juntuán"
+		division_name = {
+			is_name_ordered = yes
+			name_order = 119
+		}
 		location = 11913
 		division_template = "Juntuán"
 	}
 	division = {
-		name = "120 Juntuán"
+		division_name = {
+			is_name_ordered = yes
+			name_order = 120
+		}
 		location = 11913
 		division_template = "Juntuán"
 	}
 	division = {
-		name = "121 Juntuán"
+		division_name = {
+			is_name_ordered = yes
+			name_order = 121
+		}
 		location = 11913
 		division_template = "Juntuán"
 	}
 	division = {
-		name = "122 Juntuán"
+		division_name = {
+			is_name_ordered = yes
+			name_order = 122
+		}		
 		location = 11913
 		division_template = "Juntuán"
 	}	

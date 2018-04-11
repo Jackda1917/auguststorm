@@ -80,7 +80,7 @@ ideologies = {
 		
 		color = { 183 12 12 }
 		
-		war_impact_on_world_tension = 2.0		# Worst ennemy of the capitalist/Stalinist civilisation
+		war_impact_on_world_tension = 2.0		# Biggest threat for capitalist/Stalinist
 		faction_impact_on_world_tension = 2.0
 		
 		ai_communist = yes # uses the commie AI behaviour

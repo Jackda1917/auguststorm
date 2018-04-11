@@ -2,7 +2,7 @@
 state={
 	id=38
 	name="STATE_38"
-	manpower=931955
+	buildings_max_level_factor=1.000   manpower=931955
 	resources={
 		steel=62
 	}

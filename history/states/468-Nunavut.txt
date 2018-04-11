@@ -2,7 +2,7 @@
 state={
 	id=468
 	name="STATE_468" # Saint Lawrence
-	manpower = 2432754
+	buildings_max_level_factor=1.000   manpower = 2432754
 	
 	state_category = city
 	

@@ -2,7 +2,7 @@
 state={
 	id=529
 	name="STATE_529" # Chugoku
-	manpower = 5341000
+	buildings_max_level_factor=1.000   manpower = 5341000
 	state_category = metropolis
 
 	history={

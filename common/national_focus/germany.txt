@@ -11,15 +11,12 @@ focus_tree = {
 	}
 	
 	default = no
-
-
 	#####
 
 	focus = {
-		id = GER_autobahn
-		icon = GFX_goal_generic_construct_infrastructure
-		x = 1
-
+		id = GER_four_year_plan
+		icon = GFX_goal_generic_construction
+		x = 6
 		y = 0
 		cost = 10
 		ai_will_do = {
@@ -27,60 +24,25 @@ focus_tree = {
 		}
 		
 		completion_reward = {
-			custom_effect_tooltip = GER_autobahn_tt
-			hidden_effect = {
-				64 = {
-					if = {
-						limit = { is_controlled_by = ROOT }
-						add_building_construction = {
-							type = infrastructure
-							level = 10
-							instant_build = yes
-						}
-					}
-				}
-				59 = {
-					if = {
-						limit = { is_controlled_by = ROOT }
-
-						add_building_construction = {
-							type = infrastructure
-							level = 10
-							instant_build = yes
-						}
-					}
-				}
-				60 = {
-					if = {
-						limit = { is_controlled_by = ROOT }
-						add_building_construction = {
-							type = infrastructure
-							level = 10
-							instant_build = yes
-						}
-					}
-				}
-				54 = {
-					if = {
-						limit = { is_controlled_by = ROOT }
-						add_building_construction = {
-							type = infrastructure
-							level = 10
-							instant_build = yes
-						}
-					}
-				}
-			}		
+			add_tech_bonus = {
+				name = GER_four_year_plan
+				bonus = 0.5
+				uses = 2
+				category = industry
+			}
+			#add_ideas = schacht
+			custom_effect_tooltip = available_political_advisor
+			show_ideas_tooltip = hjalmar_schacht
 		}
-	}
-	
+	}	
+
 	focus = {
 		id = GER_west_wall
 		icon = GFX_goal_generic_construct_military
-		prerequisite = { focus = GER_autobahn }
-		x = 1
-
+		prerequisite = { focus = GER_four_year_plan }
+		x = -5
 		y = 1
+		relative_position_id = GER_four_year_plan
 		cost = 10
 		ai_will_do = {
 			factor = 8
@@ -176,27 +138,915 @@ focus_tree = {
 	}
 
 	focus = {
-		id = GER_industrial_effort
-		text = industrial_effort
-		icon = GFX_goal_generic_construct_civ_factory
+		id = GER_atlantikwall
+		icon = GFX_focus_generic_coastal_fort
 		prerequisite = { focus = GER_west_wall }
-		x = 1
+		available = {
+			has_government = fascism
+			OR = {	
+				VIC = { exists = yes }
+				GER = { is_ai = yes }
+				FRA = { has_capitulated = yes }
+				NOT = { country_exists = FRA }				
+			}
+			is_major = yes
+			is_subject = no 
+			has_war_with = ENG
+			OR = { 
+				has_war_with = USA
+				has_war_with = SOV
+			}
+			16 = { is_controlled_by = GER }			
+		}
 
-		y = 2
+		cancel_if_invalid = yes
+		x = -1
+		y = 1
+		relative_position_id = GER_west_wall
+		cost = 10
+		
+		ai_will_do = {
+			factor = 1000
+			modifier = {
+				factor = 0
+				any_owned_state = {
+					NOT = { is_controlled_by = GER }
+					is_coastal = yes
+					is_on_continent = europe
+				}
+			}
+		}	
+		completion_reward = {
+			add_stability = 0.02
+			add_ideas = GER_atlantikwall_idea
+			custom_effect_tooltip = atlantikwall_tooltip
+			custom_effect_tooltip = atlantikwall_tooltip_2			
+			28 = {							# Use Maginot materials
+				remove_building = {
+					type = bunker
+					province = 549
+					level = 10			
+				}
+				remove_building = {
+					type = bunker
+					province = 678
+					level = 10			
+				}
+				remove_building = {
+					type = bunker
+					province = 3629
+					level = 10			
+				}
+				remove_building = {
+					type = bunker
+					province = 6529
+					level = 10			
+				}
+				remove_building = {
+					type = bunker
+					province = 9503
+					level = 10			
+				}
+				remove_building = {
+					type = bunker
+					province = 9559
+					level = 10			
+				}
+				remove_building = {
+					type = bunker
+					province = 11502
+					level = 10			
+				}				
+			}
+			every_state = {
+				limit = {
+					is_controlled_by = GER
+					is_coastal = yes
+					is_on_continent = europe					
+					NOT = { is_core_of = GER }
+					NOT = { is_core_of = POL }
+					NOT = { is_core_of = SOV }
+					NOT = { is_core_of = SWE }
+					NOT = { is_core_of = YUG }
+					NOT = { is_core_of = GRE }	
+					NOT = { region = 23 }
+					NOT = { region = 24 }
+					NOT = { region = 26 }					
+					NOT = { region = 20 }			# Southern France
+				}
+				add_building_construction = {
+					type = coastal_bunker
+					province = {
+						all_provinces = yes
+						limit_to_coastal = yes
+					}
+					level = 2
+					instant_build = yes
+				}
+
+				#Extra fort on naval bases
+				add_building_construction = {
+					type = bunker
+					province = {
+						all_provinces = yes
+						limit_to_naval_base = yes
+					}
+					level = 1
+					instant_build = yes
+				}
+				add_building_construction = {
+					type = coastal_bunker
+					province = {
+						all_provinces = yes
+						limit_to_naval_base = yes
+					}
+					level = 1
+					instant_build = yes
+				}
+			}			
+			every_owned_state = {
+				limit = {
+					is_controlled_by = GER
+					OR = {
+						state = 56
+						state = 59
+					}			
+				}
+				add_building_construction = {
+					type = coastal_bunker
+					province = {
+						all_provinces = yes
+						limit_to_coastal = yes
+					}
+					level = 3
+					instant_build = yes
+				}
+
+				#Extra fort on naval bases
+				add_building_construction = {
+					type = bunker
+					province = {
+						all_provinces = yes
+						limit_to_naval_base = yes
+					}
+					level = 2
+					instant_build = yes
+				}
+				add_building_construction = {
+					type = coastal_bunker
+					province = {
+						all_provinces = yes
+						limit_to_naval_base = yes
+					}
+					level = 2
+					instant_build = yes
+				}
+			}					
+		}
+	}
+
+	focus = {
+		id = GER_ostwall
+		icon = GFX_goal_generic_fortify_city
+		prerequisite = { focus = GER_west_wall }
+		available = {
+			any_country = {
+				OR = {
+					tag = GER
+					is_in_faction_with = GER
+				}
+				OR = {
+					has_full_control_of_state = 191
+					has_full_control_of_state = 209
+					has_full_control_of_state = 210
+					has_full_control_of_state = 207
+					has_full_control_of_state = 206
+					has_full_control_of_state = 204
+					has_full_control_of_state = 194
+					has_full_control_of_state = 202
+					has_full_control_of_state = 203
+					has_full_control_of_state = 226
+					has_full_control_of_state = 200
+				}
+			}
+		}
+		x = 1
+		y = 1
+		relative_position_id = GER_west_wall
+		cost = 10
+		ai_will_do = {
+			factor = 1
+		}
+		
+		completion_reward = {
+			add_ideas = GER_ostwall_idea
+			custom_effect_tooltip = GER_ostwall_forts
+			custom_effect_tooltip = GER_ostwall_forts_2
+			if = {
+				limit = { 
+					any_country = {
+						OR = {
+							tag = GER
+							is_in_faction_with = GER
+						}
+						has_full_control_of_state = 191 
+					}
+				}
+				hidden_effect = {
+					191 = {
+						add_building_construction = {
+							type = bunker
+							level = 2
+							province = 4640
+							instant_build = yes
+						}
+					}
+				}
+			}
+			if = {
+				limit = { 
+					any_country = {
+						OR = {
+							tag = GER
+							is_in_faction_with = GER
+						}
+						has_full_control_of_state = 209
+					}
+				}
+				hidden_effect = {
+					209 = {
+						add_building_construction = {
+							type = bunker
+							level = 1
+							province = 415
+							instant_build = yes
+						}
+						add_building_construction = {
+							type = bunker
+							level = 1
+							province = 3310
+							instant_build = yes
+						}
+					}
+				}
+			}
+			if = {
+				limit = { 
+					any_country = {
+						OR = {
+							tag = GER
+							is_in_faction_with = GER
+						}
+						has_full_control_of_state = 210 
+					}
+				}
+				hidden_effect = {
+					210 = {
+						add_building_construction = {
+							type = bunker
+							level = 1
+							province = 3333
+							instant_build = yes
+						}
+						add_building_construction = {
+							type = bunker
+							level = 1
+							province = 11259
+							instant_build = yes
+						}
+						add_building_construction = {
+							type = bunker
+							level = 1
+							province = 9386
+							instant_build = yes
+						}
+					}
+				}
+			}
+			if = {
+				limit = { 
+					any_country = {
+						OR = {
+							tag = GER
+							is_in_faction_with = GER
+						}
+						has_full_control_of_state = 207 
+					}
+				}
+				hidden_effect = {
+					207 = {
+						add_building_construction = {
+							type = bunker
+							level = 1
+							province = 323
+							instant_build = yes
+						}
+						add_building_construction = {
+							type = bunker
+							level = 3
+							province = 11241
+							instant_build = yes
+						}
+						add_building_construction = {
+							type = bunker
+							level = 1
+							province = 11220
+							instant_build = yes
+						}
+						add_building_construction = {
+							type = bunker
+							level = 1
+							province = 3331
+							instant_build = yes
+						}
+					}
+				}
+			}
+			if = {
+				limit = { 
+					any_country = {
+						OR = {
+							tag = GER
+							is_in_faction_with = GER
+						}
+						has_full_control_of_state = 206 
+					}
+				}
+				hidden_effect = {
+					209 = {
+						add_building_construction = {
+							type = bunker
+							level = 1
+							province = 9289
+							instant_build = yes
+						}
+						add_building_construction = {
+							type = bunker
+							level = 1
+							province = 3378
+							instant_build = yes
+						}
+					}
+				}
+			}
+			if = {
+				limit = { 
+					any_country = {
+						OR = {
+							tag = GER
+							is_in_faction_with = GER
+						}
+						has_full_control_of_state = 204 
+					}
+				}
+				hidden_effect = {
+					204 = {
+						add_building_construction = {
+							type = bunker
+							level = 1
+							province = 6373
+							instant_build = yes
+						}
+					}
+				}
+			}
+			if = {
+				limit = { 
+					any_country = {
+						OR = {
+							tag = GER
+							is_in_faction_with = GER
+						}
+						has_full_control_of_state = 194 
+					}
+				}
+				hidden_effect = {
+					194 = {
+						add_building_construction = {
+							type = bunker
+							level = 1
+							province = 6319
+							instant_build = yes
+						}
+						add_building_construction = {
+							type = bunker
+							level = 1
+							province = 9249
+							instant_build = yes
+						}
+						add_building_construction = {
+							type = bunker
+							level = 1
+							province = 3507
+							instant_build = yes
+						}
+					}
+				}
+			}
+			if = {
+				limit = { 
+					any_country = {
+						OR = {
+							tag = GER
+							is_in_faction_with = GER
+						}
+						has_full_control_of_state = 202 
+					}
+				}
+				hidden_effect = {
+					202 = {
+						add_building_construction = {
+							type = bunker
+							level = 1
+							province = 9568
+							instant_build = yes
+						}
+						add_building_construction = {
+							type = bunker
+							level = 1
+							province = 3543
+							instant_build = yes
+						}
+						add_building_construction = {
+							type = bunker
+							level = 5
+							province = 525
+							instant_build = yes
+						}
+						add_building_construction = {
+							type = bunker
+							level = 1
+							province = 3494
+							instant_build = yes
+						}
+					}
+				}
+			}
+			if = {
+				limit = { 
+					any_country = {
+						OR = {
+							tag = GER
+							is_in_faction_with = GER
+						}
+						has_full_control_of_state = 203 
+					}
+				}
+				hidden_effect = {
+					203 = {
+						add_building_construction = {
+							type = bunker
+							level = 1
+							province = 11454
+							instant_build = yes
+						}
+						add_building_construction = {
+							type = bunker
+							level = 1
+							province = 488
+							instant_build = yes
+						}
+						add_building_construction = {
+							type = bunker
+							level = 1
+							province = 3468
+							instant_build = yes
+						}
+						add_building_construction = {
+							type = bunker
+							level = 1
+							province = 6478
+							instant_build = yes
+						}
+					}
+				}
+			}
+			if = {
+				limit = { 
+					any_country = {
+						OR = {
+							tag = GER
+							is_in_faction_with = GER
+						}
+						has_full_control_of_state = 226 
+					}
+				}
+				hidden_effect = {
+					226 = {
+						add_building_construction = {
+							type = bunker
+							level = 1
+							province = 9433
+							instant_build = yes
+						}
+						add_building_construction = {
+							type = bunker
+							level = 3
+							province = 11437
+							instant_build = yes
+						}
+					}
+				}
+			}
+			if = {
+				limit = { 
+					any_country = {
+						OR = {
+							tag = GER
+							is_in_faction_with = GER
+						}
+						has_full_control_of_state = 200 
+					}
+				}
+				hidden_effect = {
+					200 = {
+						add_building_construction = {
+							type = bunker
+							level = 3
+							province = 11405
+							instant_build = yes
+						}
+						add_building_construction = {
+							type = bunker
+							level = 1
+							province = 6596
+							instant_build = yes
+						}
+						add_building_construction = {
+							type = bunker
+							level = 1
+							province = 11700
+							instant_build = yes
+						}
+					}
+				}
+			}
+		}
+	}
+
+
+	focus = {
+		id = GER_autarky
+		icon = GFX_goal_generic_construct_civilian
+		prerequisite = { focus = GER_four_year_plan }
+		x = 4
+		y = 1
+		relative_position_id = GER_four_year_plan
+		cost = 10
+		ai_will_do = {
+			factor = 9
+		}
+		
+		completion_reward = {
+			add_tech_bonus = {
+				name = GER_autarky
+				bonus = 0.5
+				uses = 2
+				technology = excavation1
+				technology = excavation2
+				technology = excavation3
+				technology = excavation4
+				technology = excavation5
+			}
+			add_ideas = GER_autarky_idea
+		}
+	}
+
+	focus = {
+		id = GER_hermann_goring_werke
+		icon = GFX_goal_generic_construct_civ_factory
+		dynamic = yes
+		prerequisite = { focus = GER_autarky }
+		x = 2
+		y = 1
+		relative_position_id = GER_autarky
+		cost = 10
+		ai_will_do = {
+			factor = 9
+		}
+
+		available_if_capitulated = no
+
+		complete_tooltip = {
+			every_state = {
+				limit = { has_state_flag = GER_industrial_effort_2IC }
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = industrial_complex
+					level = 2
+					instant_build = yes
+				}
+			}			
+		}
+
+		completion_reward = {
+			random_owned_controlled_state = {
+				limit = {
+					free_building_slots = {
+						building = industrial_complex
+						size > 1
+						include_locked = yes
+					}
+				}
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = industrial_complex
+					level = 2
+					instant_build = yes
+				}
+				set_state_flag = GER_industrial_effort_2IC
+			}
+			random_owned_controlled_state = {
+				limit = {
+					free_building_slots = {
+						building = industrial_complex
+						size > 1
+						include_locked = yes
+					}
+				}
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = industrial_complex
+					level = 2
+					instant_build = yes
+				}
+				set_state_flag = GER_industrial_effort_2IC
+			}
+			random_owned_controlled_state = {
+				limit = {
+					free_building_slots = {
+						building = industrial_complex
+						size > 1
+						include_locked = yes
+					}
+				}
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = industrial_complex
+					level = 2
+					instant_build = yes
+				}
+				set_state_flag = GER_industrial_effort_2IC
+			}
+		}
+	}
+
+	focus = {
+		id = GER_kdf_wagen
+		icon = GFX_goal_generic_construct_civ_factory
+		dynamic = yes
+		prerequisite = { focus = GER_hermann_goring_werke }
+		x = 0
+		y = 1
+		relative_position_id = GER_hermann_goring_werke
+		cost = 10
+		ai_will_do = {
+			factor = 5
+		}
+
+		available_if_capitulated = no
+
+		complete_tooltip = {
+			every_state = {
+				limit = { has_state_flag = GER_industrial_effort_2_2IC }
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = industrial_complex
+					level = 2
+					instant_build = yes
+				}
+			}
+		}
+
+		completion_reward = {
+			random_owned_controlled_state = {
+				limit = {
+					free_building_slots = {
+						building = industrial_complex
+						size > 1
+						include_locked = yes
+					}
+				}
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = industrial_complex
+					level = 2
+					instant_build = yes
+				}
+				set_state_flag = GER_industrial_effort_2_2IC
+			}
+			random_owned_controlled_state = {
+				limit = {
+					free_building_slots = {
+						building = industrial_complex
+						size > 1
+						include_locked = yes
+					}
+				}
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = industrial_complex
+					level = 2
+					instant_build = yes
+				}
+				set_state_flag = GER_industrial_effort_2_2IC
+			}
+			random_owned_controlled_state = {
+				limit = {
+					free_building_slots = {
+						building = industrial_complex
+						size > 1
+						include_locked = yes
+					}
+				}
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = industrial_complex
+					level = 2
+					instant_build = yes
+				}
+				set_state_flag = GER_industrial_effort_2_2IC
+			}
+		}
+	}
+
+	focus = {
+		id = GER_coal_liquidization
+		icon = GFX_goal_generic_oil_refinery
+		prerequisite = { focus = GER_autarky }
+		x = 0
+		y = 1
+		relative_position_id = GER_autarky
+		cost = 10
+		ai_will_do = {
+			factor = 4
+		}
+
+		available = {
+			has_full_control_of_state = 65
+		}
+		
+		completion_reward = {
+			add_tech_bonus = {
+				name = GER_coal_liquidization
+				bonus = 0.75
+				uses = 1
+				category = synth_resources
+			}
+			if = {
+				limit = {
+					has_full_control_of_state = 65
+				}
+				65 = {
+					add_extra_state_shared_building_slots = 1
+					add_building_construction = {
+						type = synthetic_refinery
+						level = 1
+						instant_build = yes
+					}
+				}
+			}
+		}
+	}
+
+	focus = {
+		id = GER_synthetic_rubber
+		icon = GFX_focus_generic_rubber
+		prerequisite = { focus = GER_coal_liquidization }
+		x = 0
+		y = 1
+		relative_position_id = GER_coal_liquidization
+		cost = 10
+		ai_will_do = {
+			factor = 4
+		}
+		
+		completion_reward = {
+			#modify_building_resources = {
+        	#   building = synthetic_refinery
+        	#   resource = oil
+        	#   amount = -2
+        	#}
+	
+        	modify_building_resources = {
+        	   building = synthetic_refinery
+        	   resource = rubber
+        	   amount = 2
+        	}
+		}
+	}
+
+	focus = {
+		id = GER_extra_tech_slot
+		icon = GFX_focus_research
+		text = extra_tech_slot
+		prerequisite = { focus = GER_kdf_wagen focus = GER_synthetic_rubber }
+		x = -1
+		y = 1
+		relative_position_id = GER_kdf_wagen
+		cost = 10
+		ai_will_do = {
+			factor = 1
+		}
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+			add_research_slot = 1
+		}
+	}
+	
+	focus = {
+		id = GER_autobahn
+		icon = GFX_goal_generic_construct_infrastructure
+		prerequisite = { focus = GER_autarky }
+		x = -2
+		y = 1
+		relative_position_id = GER_autarky
+		cost = 10
+		ai_will_do = {
+			factor = 12
+		}
+
+		available = {
+			OR = {
+				has_full_control_of_state = 64
+				has_full_control_of_state = 59
+				has_full_control_of_state = 60
+				has_full_control_of_state = 54
+			}
+		}
+		
+		completion_reward = {
+			custom_effect_tooltip = GER_autobahn_tt
+			hidden_effect = {
+				64 = {
+					if = {
+						limit = { is_controlled_by = ROOT }
+						add_building_construction = {
+							type = infrastructure
+							level = 10
+							instant_build = yes
+						}
+					}
+				}
+				59 = {
+					if = {
+						limit = { is_controlled_by = ROOT }
+
+						add_building_construction = {
+							type = infrastructure
+							level = 10
+							instant_build = yes
+						}
+					}
+				}
+				60 = {
+					if = {
+						limit = { is_controlled_by = ROOT }
+						add_building_construction = {
+							type = infrastructure
+							level = 10
+							instant_build = yes
+						}
+					}
+				}
+				54 = {
+					if = {
+						limit = { is_controlled_by = ROOT }
+						add_building_construction = {
+							type = infrastructure
+							level = 10
+							instant_build = yes
+						}
+					}
+				}
+			}		
+		}
+	}
+
+	focus = {
+		id = GER_german_war_economy
+		icon = GFX_goal_generic_construct_mil_factory
+		prerequisite = { focus = GER_autobahn }
+		#mutually_exclusive = { focus = GER_integrate_war_economies }
+		x = 0
+		y = 1
+		relative_position_id = GER_autobahn
 		cost = 20			# was 10
 
 		ai_will_do = {
 			factor = 9
 		}
 
-		available_if_capitulated = yes
+		available_if_capitulated = no
 
 		complete_tooltip = {
 			every_state = {
-				limit = { has_state_flag = GER_industrial_effort_2IC }
+				limit = { has_state_flag = GER_german_war_economy }
 				add_extra_state_shared_building_slots = 4		# was 2
 				add_building_construction = {
-					type = industrial_complex
+					type = arms_factory
 					level = 4					# was 2
 
 					instant_build = yes
@@ -214,7 +1064,7 @@ focus_tree = {
 			random_owned_controlled_state = {
 				limit = {
 					free_building_slots = {
-						building = industrial_complex
+						building = arms_factory
 						size > 2  # was 1
 
 						include_locked = yes
@@ -222,17 +1072,17 @@ focus_tree = {
 				}
 				add_extra_state_shared_building_slots = 4		# was 2
 				add_building_construction = {
-					type = industrial_complex
+					type = arms_factory
 					level = 4		# was 2
 
 					instant_build = yes
 				}
-				set_state_flag = GER_industrial_effort_2IC
+				set_state_flag = GER_german_war_economy
 			}
 			random_owned_controlled_state = {
 				limit = {
 					free_building_slots = {
-						building = industrial_complex
+						building = arms_factory
 						size > 2  # was 1
 
 						include_locked = yes
@@ -240,17 +1090,17 @@ focus_tree = {
 				}
 				add_extra_state_shared_building_slots = 4		# was 2
 				add_building_construction = {
-					type = industrial_complex
+					type = arms_factory
 					level = 4		# was 2
 
 					instant_build = yes
 				}
-				set_state_flag = GER_industrial_effort_2IC
+				set_state_flag = GER_german_war_economy
 			}
 			random_owned_controlled_state = {
 				limit = {
 					free_building_slots = {
-						building = industrial_complex
+						building = arms_factory
 						size > 2  # was 1
 
 						include_locked = yes
@@ -258,12 +1108,12 @@ focus_tree = {
 				}
 				add_extra_state_shared_building_slots = 4		# was 2
 				add_building_construction = {
-					type = industrial_complex
+					type = arms_factory
 					level = 4		# was 2
 
 					instant_build = yes
 				}
-				set_state_flag = GER_industrial_effort_2IC
+				set_state_flag = GER_german_war_economy
 			}
 			add_tech_bonus = {
 				name = construction_tech_bonus
@@ -275,95 +1125,132 @@ focus_tree = {
 	}
 
 	focus = {
-		id = GER_industrial_effort_2
-		text = industrial_effort_2
-		icon = GFX_goal_generic_construct_civ_factory
-		prerequisite = { focus = GER_industrial_effort }
-		x = 1
-
-		y = 3
+		id = GER_grosraumwirtschaft
+		icon = GFX_goal_generic_construct_infrastructure
+		prerequisite = { focus = GER_four_year_plan }
+		x = 0
+		y = 1
+		relative_position_id = GER_four_year_plan
 		cost = 10
 		ai_will_do = {
-			factor = 5
+			factor = 1
 		}
-
-		available_if_capitulated = yes
-
-		complete_tooltip = {
-			every_state = {
-				limit = { has_state_flag = GER_industrial_effort_2_2IC }
-				add_extra_state_shared_building_slots = 2
-				add_building_construction = {
-					type = arms_factory			# was industrial_complex
-					level = 2
-					instant_build = yes
-				}
-			}
-			add_tech_bonus = {
-				name = construction_tech_bonus
-				bonus = 0.5
-				uses = 1
-				category = construction_tech
-			}
-		}
-
+		
 		completion_reward = {
-			random_owned_controlled_state = {
-				limit = {
-					free_building_slots = {
-						building =  arms_factory			# was industrial_complex
-						size > 1
-						include_locked = yes
-					}
+			add_ideas = GER_grosraumwirtschaft
+		}
+	}
+
+	focus = {
+		id = GER_align_hungary
+		icon = GFX_goal_generic_positive_trade_relations
+		prerequisite = { focus = GER_grosraumwirtschaft }
+		x = 0
+		y = 1
+		relative_position_id = GER_grosraumwirtschaft
+		cost = 10
+		ai_will_do = {
+			factor = 1
+		}
+
+		bypass = {
+			HUN = {
+				OR = {
+					exists = no
+					is_subject = yes				
 				}
-				add_extra_state_shared_building_slots = 2
-				add_building_construction = {
-					type = arms_factory			# was industrial_complex
-					level = 2
-					instant_build = yes
-				}
-				set_state_flag = GER_industrial_effort_2_2IC
 			}
-			random_owned_controlled_state = {
+		}
+		
+		completion_reward = {
+			if = {
 				limit = {
-					free_building_slots = {
-						building = arms_factory			# was industrial_complex
-						size > 1
-						include_locked = yes
-					}
+					has_government = fascism
 				}
-				add_extra_state_shared_building_slots = 2
-				add_building_construction = {
-					type = arms_factory			# was industrial_complex
-					level = 2
-					instant_build = yes
+				HUN = {
+					add_ideas = GER_align_hungary
 				}
-				set_state_flag = GER_industrial_effort_2_2IC
-			}
-			random_owned_controlled_state = {
+			}	
+			if = {
 				limit = {
-					free_building_slots = {
-						building = arms_factory			# was industrial_complex
-						size > 1
-						include_locked = yes
-					}
+					has_government = neutrality
 				}
-				add_extra_state_shared_building_slots = 2
-				add_building_construction = {
-					type = arms_factory			# was industrial_complex
-					level = 2
-					instant_build = yes
+				HUN = {
+					add_ideas = GER_align_hungary_unaligned
 				}
-				set_state_flag = GER_industrial_effort_2_2IC
-			}
-			add_tech_bonus = {
-				name = construction_tech_bonus
-				bonus = 0.5
-				uses = 1
-				category = construction_tech
+			}	
+			if = {
+				limit = {
+					has_government = democratic
+				}
+				HUN = {
+					add_ideas = GER_align_hungary_democratic
+				}
+			}	
+			HUN = {
+				add_opinion_modifier = {
+					target = ROOT
+					modifier = GER_align_hungary
+				}
 			}
 		}
 	}
+
+	focus = {
+		id = GER_align_romania
+		icon = GFX_goal_generic_positive_trade_relations
+		prerequisite = { focus = GER_grosraumwirtschaft }
+		x = -2
+		y = 1
+		relative_position_id = GER_grosraumwirtschaft
+		cost = 10
+		ai_will_do = {
+			factor = 1
+		}
+
+		bypass = {
+			ROM = {
+				OR = {
+					exists = no
+					is_subject = yes				
+				}
+			}
+		}
+		
+		completion_reward = {
+			if = {
+				limit = {
+					has_government = fascism
+				}
+				ROM = {
+					add_ideas = GER_align_romania
+				}
+			}	
+			if = {
+				limit = {
+					has_government = neutrality
+				}
+				ROM = {
+					add_ideas = GER_align_romania_unaligned
+				}
+			}	
+			if = {
+				limit = {
+					has_government = democratic
+				}
+				ROM = {
+					add_ideas = GER_align_romania_democratic
+				}
+			}	
+			ROM = {
+				add_opinion_modifier = {
+					target = ROOT
+					modifier = GER_align_romania
+				}
+			}
+		}
+	}
+
 
 	focus = {
 		id = GER_air_innovation
@@ -1720,18 +2607,18 @@ focus_tree = {
 				if = {
 					limit = { 
 						is_ai = yes
-						NOT = { has_tech = oil_plant }						
+						NOT = { has_tech = oil_processing }						
 					}
-					set_technology = { oil_plant = 1 }									
+					set_technology = { oil_processing = 1 }									
 				}				
 			}
 			hidden_effect = {	# AS
 				if = {
 					limit = { 
 						is_ai = yes
-						NOT = { has_tech = improved_oil_plant }						
+						NOT = { has_tech = improved_oil_processing }						
 					}
-					set_technology = { improved_oil_plant = 1 }									
+					set_technology = { improved_oil_processing = 1 }									
 				}				
 			}			
 		}
@@ -3918,174 +4805,7 @@ focus_tree = {
 		}
 	}
 
-	focus = {
-		id = GER_atlantic_wall_focus
-		icon = GFX_goal_generic_construct_civ_factory
-		prerequisite = { focus = GER_industrial_effort_2 }
 
-		bypass = {
-			
-		}
-		
-		available = {
-			has_government = fascism
-			OR = {	
-				VIC = { exists = yes }
-				GER = { is_ai = yes }
-			}
-			is_major = yes
-			is_subject = no 
-			has_war_with = ENG
-			OR = { 
-				has_war_with = USA
-				has_war_with = SOV
-			}
-			16 = { is_controlled_by = GER }			
-		}
-
-		x = 1
-		y = 4
-		
-		cost = 5
-		
-		cancel_if_invalid = no
-		
-		ai_will_do = {
-			factor = 1000
-			modifier = {
-				factor = 0
-				any_owned_state = {
-					NOT = { is_controlled_by = GER }
-					is_coastal = yes
-					is_on_continent = europe
-				}
-			}
-		}	
-		completion_reward = {
-			add_national_unity = 0.02
-			28 = {							# Use Maginot materials
-				remove_building = {
-					type = bunker
-					province = 549
-					level = 10			
-				}
-				remove_building = {
-					type = bunker
-					province = 678
-					level = 10			
-				}
-				remove_building = {
-					type = bunker
-					province = 3629
-					level = 10			
-				}
-				remove_building = {
-					type = bunker
-					province = 6529
-					level = 10			
-				}
-				remove_building = {
-					type = bunker
-					province = 9503
-					level = 10			
-				}
-				remove_building = {
-					type = bunker
-					province = 9559
-					level = 10			
-				}
-				remove_building = {
-					type = bunker
-					province = 11502
-					level = 10			
-				}				
-			}
-			every_state = {
-				limit = {
-					is_controlled_by = GER
-					is_coastal = yes
-					is_on_continent = europe					
-					NOT = { is_core_of = GER }
-					NOT = { is_core_of = POL }
-					NOT = { is_core_of = SOV }
-					NOT = { is_core_of = SWE }
-					NOT = { is_core_of = YUG }
-					NOT = { is_core_of = GRE }	
-					NOT = { region = 23 }
-					NOT = { region = 24 }
-					NOT = { region = 26 }					
-					NOT = { region = 20 }			# Southern France
-				}
-				add_building_construction = {
-					type = coastal_bunker
-					province = {
-						all_provinces = yes
-						limit_to_coastal = yes
-					}
-					level = 2
-					instant_build = yes
-				}
-
-				#Extra fort on naval bases
-				add_building_construction = {
-					type = bunker
-					province = {
-						all_provinces = yes
-						limit_to_naval_base = yes
-					}
-					level = 1
-					instant_build = yes
-				}
-				add_building_construction = {
-					type = coastal_bunker
-					province = {
-						all_provinces = yes
-						limit_to_naval_base = yes
-					}
-					level = 1
-					instant_build = yes
-				}
-			}			
-			every_owned_state = {
-				limit = {
-					is_controlled_by = GER
-					OR = {
-						state = 56
-						state = 59
-					}			
-				}
-				add_building_construction = {
-					type = coastal_bunker
-					province = {
-						all_provinces = yes
-						limit_to_coastal = yes
-					}
-					level = 3
-					instant_build = yes
-				}
-
-				#Extra fort on naval bases
-				add_building_construction = {
-					type = bunker
-					province = {
-						all_provinces = yes
-						limit_to_naval_base = yes
-					}
-					level = 2
-					instant_build = yes
-				}
-				add_building_construction = {
-					type = coastal_bunker
-					province = {
-						all_provinces = yes
-						limit_to_naval_base = yes
-					}
-					level = 2
-					instant_build = yes
-				}
-			}					
-		}
-	}
 	
 	focus = {
 		id = GER_total_war_mobilisation_focus
@@ -4122,7 +4842,7 @@ focus_tree = {
 		}	
 		completion_reward = {
 			set_country_flag = ger_tot_economic_mobilisation
-			add_national_unity = 0.05
+			add_stability = 0.05
 			hidden_effect = {	# AS
 				if = {
 					limit = { 
@@ -4134,9 +4854,9 @@ focus_tree = {
 				if = {
 					limit = { 
 						is_ai = yes
-						NOT = { has_tech = advanced_oil_plant }						
+						NOT = { has_tech = advanced_oil_processing }						
 					}
-					set_technology = { advanced_oil_plant = 1 }									
+					set_technology = { advanced_oil_processing = 1 }									
 				}				
 				if = {
 					limit = { 
@@ -4175,7 +4895,7 @@ focus_tree = {
 	focus = {
 		id = GER_finish_atlantic_wall_focus
 		icon = GFX_goal_generic_construct_civ_factory
-		prerequisite = { focus = GER_atlantic_wall_focus }
+		prerequisite = { focus = GER_atlantikwall }
 		prerequisite = { focus = GER_total_war_mobilisation_focus }
 		
 		bypass = {
@@ -4191,8 +4911,8 @@ focus_tree = {
 			16 = { is_controlled_by = GER }
 		}
 
-		x = 1
-		y = 6
+		x = -1
+		y = 2
 		
 		cost = 10
 		
@@ -4210,7 +4930,7 @@ focus_tree = {
 			}
 		}	
 		completion_reward = {
-			add_national_unity = 0.02
+			add_stability = 0.02
 			every_state = {
 				limit = {
 					is_controlled_by = GER

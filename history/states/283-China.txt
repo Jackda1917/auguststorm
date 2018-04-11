@@ -2,7 +2,7 @@
 state={
 	id=283
 	name="STATE_283" # Gansu
-	manpower = 6705400
+	buildings_max_level_factor=1.000   manpower = 6705400
 	
 	
 	state_category = town

@@ -75,7 +75,7 @@ set_technology = {
 		basic_machine_tools = 1
 		improved_machine_tools = 1
 		synth_oil_experiments = 1
-		oil_plant = 1
+		oil_processing = 1
 		construction1 = 1
 		concentrated_industry = 1
 	}
@@ -132,13 +132,13 @@ set_politics = {
 			}
 		}
 		
-		ruling_party = fascism
+		ruling_party = neutrality
 		last_election = "1938.1.1"
 		election_frequency = 36
 		elections_allowed = yes
 	}
 }
-set_national_unity = 0.6
+set_stability = 0.6
 
 create_country_leader = {
 	name = "Draza Mihailovic"
@@ -178,7 +178,7 @@ create_country_leader = {
 	desc = ""
 	picture = "gfx/leaders/Europe/Portrait_Europe_Generic_land_3.dds"
 	expire = "1965.1.1"
-	ideology = leninism
+	ideology = stalinism #leninism
 	traits = {
 		#
 	}

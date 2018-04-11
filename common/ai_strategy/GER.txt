@@ -26,7 +26,13 @@ GER_unit_production = {
 		id = elite
 		value = -100
 	}	
-		
+	
+	ai_strategy = {
+		type = role_ratio
+		id = suppression
+		value = 5
+	}
+	
 	ai_strategy = {
 		type = role_ratio
 		id = garrison
@@ -1205,27 +1211,53 @@ play_nice_for_fall_gelb = {
 		}
 	}
 	ai_strategy = {
-		type = ignore
+		type = declare_war
+		id = "HOL"			
+		value = -2000 
+	}
+	ai_strategy = {
+		type = declare_war
 		id = "BEL"
-		value = 300
+		value = -2000 
 	}
 	ai_strategy = {
-		type = ignore
+		type = declare_war
 		id = "LUX"
-		value = 300
+		value = -2000 
 	}
 	ai_strategy = {
-		type = ignore
-		id = "HOL"
-		value = 300
-	}
-	ai_strategy = {
-		type = ignore
+		type = declare_war
 		id = "SWI"
-		value = 300
-	}	
+		value = -2000 
+	}
 }
 
+invading_france_is_pointless_because_we_go_through_benelux_soon = {
+	enable = {
+		tag = GER
+		NOT = { has_tech = landing_craft }
+		date < 1940.1.1
+	}
+	abort = {
+		OR = {
+			has_tech = landing_craft
+			date > 1940.1.1
+		}
+	}
+
+	ai_strategy = {
+		type = invade
+		id = "FRA"			
+		value = -2000 # that low means not going for islands either
+	}
+
+	# danzig corridor is too small to be worth opening extra invasion front
+	ai_strategy = {
+		type = invade
+		id = "POL"			
+		value = -500 
+	}
+}
 
 fall_gelb = {
 	enable = {
@@ -1260,6 +1292,147 @@ fall_gelb = {
 		type = antagonize
 		id = "HOL"
 		value = 300
+	}
+}
+
+
+GER_want_to_invade_FRA_without_ITA = {
+	enable = {
+		tag = GER
+		is_historical_focus_on = yes
+		date < 1940.1.1
+		FRA = {
+			is_ai = yes
+		}
+		HOL = {	has_capitulated = no }
+		BEL = {	has_capitulated = no }
+	}
+
+	abort = {
+		OR = { 
+			date > 1940.1.1
+			FRA = {
+				is_ai = no
+			}
+			AND = {
+				HOL = {	has_capitulated = yes }
+				BEL = {	has_capitulated = yes }
+			}
+		}
+	}
+	
+	ai_strategy = {
+		type = dont_join_wars_with
+		id = ITA
+		target_country = FRA
+		value = 500
+	}
+}
+
+axis_stay_away_from_the_royal_navy = {
+	enable = {
+		has_war_with = ENG
+		date < 1942.1.1
+		
+		OR = {
+			GER = {
+				naval_strength_ratio = {
+					tag = ENG 
+  					ratio < 0.5
+  				}
+  			}
+
+			# if we manage to get a foothold in UK we must do what we can to exploit it! (checks coastal states)
+			divisions_in_state = { state = 127 size < 1 }
+			divisions_in_state = { state = 126 size < 1 }
+			divisions_in_state = { state = 125 size < 1 }
+			divisions_in_state = { state = 129 size < 1 }
+			divisions_in_state = { state = 130 size < 1 }
+			divisions_in_state = { state = 131 size < 1 }
+			divisions_in_state = { state = 123 size < 1 }
+			divisions_in_state = { state = 122 size < 1 }
+			divisions_in_state = { state = 132 size < 1 }
+			divisions_in_state = { state = 121 size < 1 }
+			divisions_in_state = { state = 136 size < 1 }
+			divisions_in_state = { state = 120 size < 1 }
+			divisions_in_state = { state = 133 size < 1 }
+		}		
+	}
+	abort = {
+		OR = {
+			date > 1942.1.1
+			NOT = { has_war_with = ENG }
+			AND = {
+				GER = {
+					naval_strength_ratio = {
+						tag = ENG 
+	  					ratio > 0.5
+	  				}
+	  			}
+				
+				divisions_in_state = { state = 127 size > 0 }
+				divisions_in_state = { state = 126 size > 0 }
+				divisions_in_state = { state = 125 size > 0 }
+				divisions_in_state = { state = 129 size > 0 }
+				divisions_in_state = { state = 130 size > 0 }
+				divisions_in_state = { state = 131 size > 0 }
+				divisions_in_state = { state = 123 size > 0 }
+				divisions_in_state = { state = 122 size > 0 }
+				divisions_in_state = { state = 132 size > 0 }
+				divisions_in_state = { state = 121 size > 0 }
+				divisions_in_state = { state = 136 size > 0 }
+				divisions_in_state = { state = 120 size > 0 }
+				divisions_in_state = { state = 133 size > 0 }
+			}
+		}
+	}
+	
+	ai_strategy = {
+		type = naval_avoid_region
+		id = 18 #english channel
+		value = 100
+	}
+}
+
+dont_take_claims_on_POL_we_got_focus = {
+	enable = {
+		tag = GER
+		country_exists = POL
+		has_war = no
+		has_completed_focus = GER_demand_memel
+	}
+
+	abort = {
+		OR = {
+			NOT = { country_exists = POL }
+			date > 1940.1.1
+			has_war = yes
+		}
+	}
+	
+	ai_strategy = {
+		type = ignore_claim
+		id = "POL"			
+		value = 1
+	}		
+}
+
+axis_dont_mess_with_volunteers = {
+	enable = {
+		date < 1941.6.1
+		OR = {
+			tag = GER
+			tag = ITA
+		}
+	}
+	abort = {
+		date > 1941.6.1
+	}
+
+	ai_strategy = {
+		type = send_volunteers_desire
+		id = JAP
+		value = -500
 	}
 }
 
@@ -1524,13 +1697,13 @@ germany_build_synth_oil = {
 	enable = {
 		tag = GER
 		date > 1936.1.1
-		has_tech = improved_oil_plant
+		has_tech = improved_oil_processing
 	}
 	abort = {
 		tag = GER 	
 		NOT = { 
 			date > 1936.1.1
-			has_tech = improved_oil_plant
+			has_tech = improved_oil_processing
 		}
 	}	
 	
@@ -1584,13 +1757,13 @@ ger_oilplant = {
 
 	ai_strategy = {
 		type = research_tech
-		id = "improved_oil_plant"			
+		id = "improved_oil_processing"			
 		value = 300
 	}
 	
 	ai_strategy = {
 		type = research_tech
-		id = "advanced_oil_plant"			
+		id = "advanced_oil_processing"			
 		value = 300
 	}
 }

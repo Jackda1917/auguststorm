@@ -1,7 +1,7 @@
 state={
 	id=687
 	name="STATE_687"
-	manpower = 309000
+	buildings_max_level_factor=1.000   manpower = 309000
 	
 	state_category = pastoral
 	

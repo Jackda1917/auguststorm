@@ -2,7 +2,7 @@
 state={
 	id=567
 	name="STATE_567" # Bratsk
-	manpower = 410183
+	buildings_max_level_factor=1.000   manpower = 410183
 	state_category = rural
 	
 	resources={

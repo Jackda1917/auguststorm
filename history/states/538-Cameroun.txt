@@ -2,7 +2,7 @@
 state={
 	id=538
 	name="STATE_538" # Central Congo
-	manpower = 1693974
+	buildings_max_level_factor=1.000   manpower = 1693974
 	
 	state_category = wasteland
 

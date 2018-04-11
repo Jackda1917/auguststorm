@@ -498,7 +498,7 @@ country_event = {
 		name = as_japan.10.a #we have lost the war on the continent
 		ai_chance = { factor = 10 }
 		add_political_power = -50
-		add_national_unity = -0.15
+		add_stability = -0.15
 		CHI = { country_event = { days = 1 id = as_japan.11 } }
 	}
 	
@@ -506,7 +506,7 @@ country_event = {
 		name = as_japan.10.b # war until total victory!
 		ai_chance = { factor = 0 }
 		add_political_power = -100
-		add_national_unity = -0.3
+		add_stability = -0.3
 	}
 }
 
@@ -690,7 +690,7 @@ country_event = {
 		
 		ai_chance = { factor = 0 }
 		add_political_power = -100
-		add_national_unity = -0.1
+		add_stability = -0.1
 	}	
 }
 
@@ -755,7 +755,7 @@ country_event = {
 		name = as_japan.13.a #The war is lost
 		ai_chance = { factor = 10 }
 		add_political_power = -50
-		add_national_unity = -0.15
+		add_stability = -0.15
 		USA = { country_event = { id = as_japan.14 } }
 	}
 	
@@ -763,7 +763,7 @@ country_event = {
 		name = as_japan.13.b # war until total victory!
 		ai_chance = { factor = 0 }
 		add_political_power = -100
-		add_national_unity = -0.3
+		add_stability = -0.3
 	}
 	
 }

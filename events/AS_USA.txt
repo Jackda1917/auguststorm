@@ -402,7 +402,7 @@ country_event = {
 			GER = { transfer_state = 458 } # Tunisia
 			else = {
 				VIC = { add_to_war = { targeted_alliance = GER enemy = USA } }
-				FRA = { add_national_unity = -0.40 }
+				FRA = { add_stability = -0.40 }
 			}
 		}				
 	}
@@ -533,7 +533,7 @@ Country_event = {
 	option = {
 		name = as_usa.10.b  #continue the war
 		ai_chance = { factor = 0 }
-		add_national_unity = -0.3
+		add_stability = -0.3
 	}
 
 }

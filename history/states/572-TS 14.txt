@@ -2,7 +2,7 @@
 state={
 	id=572
 	name="STATE_572" # Chelyabinsk
-	manpower = 2074932
+	buildings_max_level_factor=1.000   manpower = 2074932
 	
 	state_category = town
 

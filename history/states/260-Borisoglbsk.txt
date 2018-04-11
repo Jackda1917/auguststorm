@@ -2,7 +2,7 @@
 state={
 	id=260
 	name="STATE_260" # Voronezh
-	manpower = 2567983
+	buildings_max_level_factor=1.000   manpower = 2567983
 	
 	state_category = town
 

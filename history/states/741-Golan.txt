@@ -2,7 +2,7 @@
 state={
 	id=741
 	name="STATE_741" #Golan
-	manpower = 100000
+	buildings_max_level_factor=1.000   manpower = 100000
 	
 	state_category = rural
 

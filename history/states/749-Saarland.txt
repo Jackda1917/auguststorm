@@ -1,7 +1,7 @@
 state = {
 	id=749
 	name="STATE_749" # Saarland
-	manpower = 520000
+	buildings_max_level_factor=1.000   manpower = 520000
 	resources={
 		steel=100
 		aluminium=24

@@ -15,6 +15,7 @@ technologies = {
 		}
 		
 		planning_speed = 0.25 # was 0.5
+		army_speed_factor = 0.10
 		enable_tactic = tactic_unexpected_thrust
 		org_loss_when_moving = -0.1
 
@@ -586,11 +587,11 @@ technologies = {
 			has_idea = all_adults_serve
 		}
 		
-		conscription = 0.03 #0.02
+		conscription = 0.04 #0.02
 		
 		category_all_infantry = {
 			default_morale = -0.10  
-			max_organisation = -20  
+			max_organisation = -25  
 		}		
 		
 		path = {
@@ -1185,6 +1186,10 @@ technologies = {
 			soft_attack = 0.10  # was 0.05
 		}
 		
+		category_artillery = { 
+			soft_attack = 0.05
+		}		
+		
 		path = {
 			leads_to_tech = forward_observers 
 			research_cost_coeff = 1
@@ -1310,7 +1315,11 @@ technologies = {
 			soft_attack = 0.15  # was 0.1
 			hard_attack = 0.15 
 		}
-		
+		category_artillery = { 
+			soft_attack = 0.05
+			hard_attack = 0.05
+		}		
+				
 		enable_tactic = tactic_breakthrough
 				
 		doctrine = yes	
@@ -2126,6 +2135,18 @@ technologies = {
 			modifier = {
 				factor = 10
 				tag = SOV
+			}
+			modifier = {
+				factor = 0.4
+				OR = {
+					tag = CHI
+					tag = PRC
+					tag = XSM
+					tag = SIK
+					tag = GXC
+					tag = SHX
+					tag = YUN
+				}
 			}			
 		}
 		
@@ -2444,6 +2465,18 @@ technologies = {
 		ai_will_do = {
 			factor = 20
 			modifier = {
+				factor = 0.6
+				OR = {
+					tag = CHI
+					tag = PRC
+					tag = XSM
+					tag = SIK
+					tag = GXC
+					tag = SHX
+					tag = YUN
+				}
+			}
+			modifier = {
 				factor = 100
 				tag = SOV
 				surrender_progress > 0.10
@@ -2460,6 +2493,7 @@ technologies = {
 		infantry = {
 			default_morale = 0.45  # was 0.30
 		}
+		land_reinforce_rate = 0.05
 		
 		
 		
@@ -2539,6 +2573,7 @@ technologies = {
 			defense = -0.10 # was none			
 		}
 
+		land_reinforce_rate = 0.1 #0.15		
 		enable_tactic = tactic_human_wave_tactics
 		
 		path = {

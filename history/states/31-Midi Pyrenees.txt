@@ -2,7 +2,7 @@
 state={
 	id=31
 	name="STATE_31"
-	manpower = 1825000
+	buildings_max_level_factor=1.000   manpower = 1825000
 	
 	state_category = city
 

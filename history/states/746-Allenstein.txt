@@ -2,7 +2,7 @@
 state={
 	id=746
 	name="STATE_746" #Allenstein
-	manpower = 1000000
+	buildings_max_level_factor=1.000   manpower = 1000000
 	state_category = town
 
 	history={

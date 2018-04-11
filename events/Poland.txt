@@ -40,7 +40,23 @@ country_event = {
 	
 	option = {
 		name = poland.2.a
-		ai_chance = { factor = 30 }
+		ai_chance = { 
+			factor = 30 
+			modifier = {
+				factor = 0
+				OR = {
+					any_other_country = {
+						is_major = yes
+						OR = {
+							is_in_faction_with = POL
+							has_guaranteed = POL
+						}
+					}
+					has_idea = anti_soviet_pact
+				}
+			}
+		}
+		
 		effect_tooltip = {
 			SOV = {
 				if = {
@@ -512,7 +528,7 @@ country_event = {
 		name = poland.12.a
 		custom_effect_tooltip = WOJTEK_COMMANDER
 		hidden_effect = {
-			create_field_marshal = { #create_corps_commander 
+			create_corps_commander = {  
 				name = "Wojtek"
 				portrait_path = "gfx/leaders/POL/Portrait_POL_Voytek.dds"
 				traits = { bearer_of_artillery }

@@ -2,7 +2,7 @@
 state={
 	id=574
 	name="STATE_574" # Yakutsk
-	manpower = 407866
+	buildings_max_level_factor=1.000   manpower = 407866
 	
 	state_category = wasteland
 

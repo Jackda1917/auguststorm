@@ -2,7 +2,7 @@
 state={
 	id=617
 	name="STATE_617" # Urumqi
-	manpower = 1780500
+	buildings_max_level_factor=1.000   manpower = 1780500
 	
 	state_category = town
 

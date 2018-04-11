@@ -20,7 +20,7 @@ ideas = {
 			}
 			
 			modifier = {
-				unity_weekly = -0.01
+				stability_weekly = -0.01
 				political_power_factor = -0.1
 			}
 		}	
@@ -44,7 +44,7 @@ ideas = {
 			}
 			
 			modifier = {
-				unity_weekly = 0.01
+				stability_weekly = 0.01
 				political_power_factor = 0.2				
 			}
 		}
@@ -78,7 +78,7 @@ ideas = {
 			}				
 												
 			modifier = {
-				unity_factor = -0.2 # was none
+				stability_factor = -0.2 # was none
 				research_time_factor = 0.25 # was none	
 				production_speed_arms_factory_factor = -0.5
 				production_speed_industrial_complex_factor = -0.5
@@ -171,7 +171,7 @@ ideas = {
 
 			
 			modifier = {
-				unity_weekly = -0.001
+				stability_weekly = -0.001
 				revolutionary_drift = 0.15
 				communism_drift = -0.15
 				industrial_capacity_factory = -0.1
@@ -198,7 +198,7 @@ ideas = {
 			modifier = {
 				revolutionary_drift = 0.01
 				political_power_factor = -0.20
-				unity_factor = -0.1
+				stability_factor = -0.1
 				industrial_capacity_factory = -0.05 # was none
 				production_factory_efficiency_gain_factor =	-0.05 # was none
 				industrial_capacity_dockyard = -0.05 # was none				
@@ -225,7 +225,7 @@ ideas = {
 			removal_cost = -1
 
 			modifier = {
-				unity_factor = -0.20
+				stability_factor = -0.20
 			}
 		}
 
@@ -246,7 +246,7 @@ ideas = {
 			removal_cost = -1
 
 			modifier = {
-				unity_factor = -0.20
+				stability_factor = -0.20
 			}
 		}
 		
@@ -267,7 +267,7 @@ ideas = {
 			removal_cost = -1
 
 			modifier = {
-				unity_factor = -0.20
+				stability_factor = -0.20
 			}
 		}
 		

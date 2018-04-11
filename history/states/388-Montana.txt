@@ -2,7 +2,7 @@
 state={
 	id=388
 	name="STATE_388"
-	manpower = 537605
+	buildings_max_level_factor=1.000   manpower = 537605
 	state_category = rural
 	resources={
 		tungsten=16

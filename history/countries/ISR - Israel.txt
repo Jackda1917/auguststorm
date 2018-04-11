@@ -31,7 +31,7 @@ set_politics = {
 }
 
 set_convoys = 5
-set_national_unity = 0.75
+set_stability = 0.75
 
 1939.1.1 = {
 
@@ -73,8 +73,8 @@ set_national_unity = 0.75
 		improved_machine_tools = 1
 		advanced_machine_tools = 1
 		synth_oil_experiments = 1
-		oil_plant = 1
-		improved_oil_plant = 1
+		oil_processing = 1
+		improved_oil_processing = 1
 		construction1 = 1
 		construction2 = 1
 		dispersed_industry = 1
@@ -126,7 +126,7 @@ create_country_leader = {
 create_country_leader = {
 	name = "Shmuel Mikunis"
 	desc = ""
-	picture = "gfx/leaders/Europe/Portrait_Europe_Generic_1.dds"
+	picture = "gfx/leaders/Europe/Portrait_Europe_Generic_3.dds"
 	ideology = stalinism
 	traits = {
 		#
@@ -134,13 +134,17 @@ create_country_leader = {
 }
 
 
-##### Army Generals
+##### Army Generals 
 
 create_field_marshal = {
 	name = "Yaakov Dori"
 	portrait_path = "gfx/leaders/Europe/Portrait_Europe_Generic_land_2.dds"
 	traits = { organisational_leader old_guard }
 	skill = 4
+	attack_skill = 4
+	defense_skill = 4
+	planning_skill = 3
+	logistics_skill = 2	
 }
 
 create_field_marshal = {
@@ -148,97 +152,153 @@ create_field_marshal = {
 	portrait_path = "gfx/leaders/Europe/Portrait_Europe_Generic_land_2.dds"
 	traits = { fast_planner }
 	skill = 3
+	attack_skill = 3
+	defense_skill = 3
+	planning_skill = 1
+	logistics_skill = 2	
 }
 
-create_field_marshal = { #create_corps_commander 
+create_corps_commander = {  
 	name = "Mordechai Maklef"
 	portrait_path = "gfx/leaders/Europe/Portrait_Europe_Generic_land_2.dds"
 	traits = { hill_fighter }
 	skill = 4
+	attack_skill = 4
+	defense_skill = 4
+	planning_skill = 1
+	logistics_skill = 2	
 }
 
-create_field_marshal = { #create_corps_commander 
+create_corps_commander = {  
 	name = "Moshe Mann"
 	portrait_path = "gfx/leaders/Europe/Portrait_Europe_Generic_land_2.dds"
 	traits = { hill_fighter }
 	skill = 3
+	attack_skill = 3
+	defense_skill = 3
+	planning_skill = 1
+	logistics_skill = 2	
 }
 
-create_field_marshal = { #create_corps_commander 
+create_corps_commander = {  
 	name = "Moshe Carmel"
 	portrait_path = "gfx/leaders/Europe/Portrait_Europe_Generic_land_2.dds"
 	traits = { trickster }
 	skill = 5
+	attack_skill = 5
+	defense_skill = 3
+	planning_skill = 1
+	logistics_skill = 5
 }
 
-create_field_marshal = { #create_corps_commander 
+create_corps_commander = {  
 	name = "Dan Even"
 	portrait_path = "gfx/leaders/Europe/Portrait_Europe_Generic_land_2.dds"
 	traits = { }
 	skill = 3
+	attack_skill = 2
+	defense_skill = 3
+	planning_skill = 1
+	logistics_skill = 3	
 }
 
-create_field_marshal = { #create_corps_commander 
+create_corps_commander = {  
 	name = "Michael Ben-Gal"
 	portrait_path = "gfx/leaders/Europe/Portrait_Europe_Generic_land_2.dds"
 	traits = { }
 	skill = 3
+	attack_skill = 3
+	defense_skill = 3
+	planning_skill = 1
+	logistics_skill = 2	
 }
 
-create_field_marshal = { #create_corps_commander 
+create_corps_commander = {  
 	name = "Shimon Avidan"
 	portrait_path = "gfx/leaders/Europe/Portrait_Europe_Generic_land_2.dds"
 	traits = { }
 	skill = 4
+	attack_skill = 4
+	defense_skill = 4
+	planning_skill = 1
+	logistics_skill = 2	
 }
 
-create_field_marshal = { #create_corps_commander 
+create_corps_commander = {  
 	name = "David Shaltiel"
 	portrait_path = "gfx/leaders/Europe/Portrait_Europe_Generic_land_2.dds"
 	traits = { }
 	skill = 2
+	attack_skill = 2
+	defense_skill = 2
+	planning_skill = 1
+	logistics_skill = 2	
 }
 
-create_field_marshal = { #create_corps_commander 
+create_corps_commander = {  
 	name = "Shlomo Shamir"
 	portrait_path = "gfx/leaders/Europe/Portrait_Europe_Generic_land_2.dds"
 	traits = { panzer_leader }
 	skill = 5
+	attack_skill = 5
+	defense_skill = 5
+	planning_skill = 1
+	logistics_skill = 2	
 }
 
-create_field_marshal = { #create_corps_commander 
+create_corps_commander = {  
 	name = "Yitzhak Sadeh"
 	portrait_path = "gfx/leaders/Europe/Portrait_Europe_Generic_land_2.dds"
 	traits = { panzer_leader }
 	skill = 5
+	attack_skill = 5
+	defense_skill = 5
+	planning_skill = 1
+	logistics_skill = 2	
 }
 
-create_field_marshal = { #create_corps_commander 
+create_corps_commander = {  
 	name = "Avraham Yoffe"
 	portrait_path = "gfx/leaders/Europe/Portrait_Europe_Generic_land_2.dds"
 	traits = { desert_fox }
 	skill = 5
+	attack_skill = 5
+	defense_skill = 3
+	planning_skill = 1
+	logistics_skill = 5
 }
 
-create_field_marshal = { #create_corps_commander 
+create_corps_commander = {  
 	name = "Yitzhak Rabin"
 	portrait_path = "gfx/leaders/Europe/Portrait_Europe_Generic_land_2.dds"
 	traits = { commando }
 	skill = 4
+	attack_skill = 4
+	defense_skill = 3
+	planning_skill = 1
+	logistics_skill = 4	
 }
 
-create_field_marshal = { #create_corps_commander 
+create_corps_commander = {  
 	name = "Yigal Allon"
 	portrait_path = "gfx/leaders/Europe/Portrait_Europe_Generic_land_2.dds"
 	traits = { commando }
 	skill = 4
+	attack_skill = 4
+	defense_skill = 3
+	planning_skill = 4
+	logistics_skill = 2	
 }
 
-create_field_marshal = { #create_corps_commander 
+create_corps_commander = {  
 	name = "Nahum Sarig"
 	portrait_path = "gfx/leaders/Europe/Portrait_Europe_Generic_land_2.dds"
 	traits = { desert_fox }
 	skill = 4
+	attack_skill = 4
+	defense_skill = 4
+	planning_skill = 1
+	logistics_skill = 2	
 }
 
 ##### Navy Commanders

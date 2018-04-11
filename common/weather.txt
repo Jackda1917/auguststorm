@@ -51,7 +51,7 @@ settings = {
   mud = {
     # Amount of water collected by rain increases probability of mud
     water_gain_on_rain_light = 1.0
-    water_gain_on_rain_heavy = 1.8  # was 1.5
+    water_gain_on_rain_heavy = 2.0  # was 1.5
     water_gain_max = 500.0  # was 300
     water_gain_min = 5.0 # cutoff
 
@@ -63,7 +63,7 @@ settings = {
     water_dryout_multiplier = { 0.0005 0.3 }
 
     # When temperature goes below, the mud disappears (it gets frozen).
-    min_temperature = -2.0  # was -1.0
+    min_temperature = -3.0  # was -1.0
   }
 
   snowing = {

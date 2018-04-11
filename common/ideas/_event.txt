@@ -10,7 +10,7 @@ ideas = {
 			picture = generic_fascism_drift_bonus
 			
 			modifier = {
-				unity_factor = -0.05
+				stability_factor = -0.05
 				conscription = 0.002
 				fascism_drift = 0.05
 			}
@@ -47,7 +47,7 @@ ideas = {
 			picture = generic_communism_drift_bonus
 			
 			modifier = {
-				conscription = -0.002
+				conscription = -0.005
 				revolutionary_drift = 0.07
 			}
 	
@@ -85,7 +85,7 @@ ideas = {
 			picture = generic_fascism_drift_bonus
 			
 			modifier = {
-				unity_factor = -0.1
+				stability_factor = -0.1
 			}
 		}
 
@@ -100,7 +100,7 @@ ideas = {
 			picture = generic_communism_drift_bonus
 			
 			modifier = {
-				unity_factor = -0.1
+				stability_factor = -0.1
 			}
 		}
 
@@ -115,7 +115,7 @@ ideas = {
 			picture = generic_democratic_drift_bonus
 			
 			modifier = {
-				unity_factor = -0.1
+				stability_factor = -0.1
 			}
 		}
 
@@ -130,7 +130,7 @@ ideas = {
 			picture = generic_democratic_drift_bonus
 			
 			modifier = {
-				unity_factor = 0.1
+				stability_factor = 0.1
 			}
 		}
 
@@ -144,7 +144,7 @@ ideas = {
 			picture = generic_democratic_drift_bonus
 			
 			modifier = {
-				unity_factor = 0.1
+				stability_factor = 0.1
 			}
 		}
 		
@@ -159,13 +159,17 @@ ideas = {
 			
 			modifier = {
 				political_power_factor = 0.1
-				unity_factor = -0.1  # none
+				stability_factor = -0.1  # none
 			}
 		}
 
 		anti_soviet_pact = {
 			
 			removal_cost = -1 # Or make removable, with high cost?
+
+			available = {
+				is_subject = no
+			}
 			
 			allowed = {
 				always = no # Triggered via event
@@ -174,6 +178,7 @@ ideas = {
 			ai_will_do = {
 				factor = 0
 			}
+			picture = anti_soviet_pact
 			modifier = {				# None
 				communism_drift = -0.01
 				revolutionary_drift = -0.01
@@ -195,7 +200,7 @@ ideas = {
 			}
 
 			modifier = {
-				unity_factor = -0.07
+				stability_factor = -0.07
 				communism_drift = 0.05
 			}
 		}
@@ -224,7 +229,7 @@ ideas = {
 			picture = generic_democratic_drift_bonus
 			
 			modifier = {
-				unity_factor = -0.2 #0.1
+				stability_factor = -0.2 #0.1
 			}
 		}
 	}

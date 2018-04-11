@@ -24,6 +24,7 @@ ideas = {
 				industrial_capacity_dockyard = -0.50 # was none
 				consumer_goods_factor = 0.10        # AS
 				conscription = -0.33       # AS
+				war_support_factor = -0.4 # AS
 			}
 		}
 	}
@@ -264,6 +265,7 @@ ideas = {
 		SPA_emilio_esteban_infantes = {
 			
 			
+			picture = generic_army_europe_5
 			allowed = {
 				original_tag = SPR
 				has_government = fascism
@@ -280,7 +282,8 @@ ideas = {
 		
 		SPA_agustin_munoz_grandes = {
 			
-			
+
+			picture = generic_army_europe_3
 			allowed = {
 				original_tag = SPR
 				has_government = fascism
@@ -298,6 +301,7 @@ ideas = {
 		SPA_joaquin_garcia_morato = {
 			
 			
+			picture = generic_air_europe_2
 			allowed = {
 				original_tag = SPR
 				has_government = fascism
@@ -314,7 +318,8 @@ ideas = {
 		
 		SPA_angel_salas_larrazabal = {
 			
-			
+
+			picture = generic_air_europe_1
 			allowed = {
 				original_tag = SPR
 				has_government = fascism

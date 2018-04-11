@@ -609,7 +609,7 @@ country_event = {					# Operation Countenance
 		name = as_great_britain.11.option_b
 		ai_chance = { factor = 0 }
 		custom_effect_tooltip = op_countenance_refused_TT
-		add_national_unity = -0.05
+		add_stability = -0.05
 		add_opinion_modifier = { target = SOV modifier = unstable_alliance }
 		hidden_effect = {	
 			SOV = { country_event = { id = as_sov.10 } }

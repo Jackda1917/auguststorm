@@ -2,7 +2,7 @@
 state={
 	id=438
 	name="STATE_438"
-	manpower = 33491000
+	buildings_max_level_factor=1.000   manpower = 33491000
 	
 	state_category = rural
 

@@ -2,7 +2,7 @@
 state={
 	id=575
 	name="STATE_575" # Kirensk
-	manpower = 146494
+	buildings_max_level_factor=1.000   manpower = 146494
 	
 	state_category = wasteland
 

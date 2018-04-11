@@ -16,6 +16,9 @@ set_technology = {
 	tech_engineers = 1
 	early_fighter = 1
 }
+set_war_support = 0.1
+set_stability = 0.8
+
 
 set_research_slots = 2
 
@@ -60,7 +63,7 @@ set_research_slots = 2
 		improved_machine_tools = 1
 		advanced_machine_tools = 1
 		synth_oil_experiments = 1
-		oil_plant = 1
+		oil_processing = 1
 		construction1 = 1
 		construction2 = 1
 		concentrated_industry = 1
@@ -129,7 +132,7 @@ set_politics = {
 create_country_leader = {
 	name = "Joseph Bech"
 	desc = "POLITICS_JOSEPH_BECH_DESC"
-	picture = "gfx/leaders/Europe/Portrait_Europe_Generic_2.dds"
+	picture = "GFX_portrait_luxembourg_joseph_bech"
 	expire = "1965.1.1"
 	ideology = conservatism
 	traits = {

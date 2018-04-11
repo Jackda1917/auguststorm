@@ -128,7 +128,7 @@ country_event = {
 	
 	trigger = {
 		#has_idea_with_trait = communist_revolutionary
-		has_national_unity < 0.60
+		has_stability < 0.60
 		NOT = { has_government = communism }
 		NOT = { has_government = revolutionary }		
 		OR = {	
@@ -182,7 +182,7 @@ country_event = {
 				}
 			add_ideas = revolutionary_agitation		
 		}		
-		add_national_unity = -0.02
+		add_stability = -0.02
 	}
 }
 
@@ -195,7 +195,7 @@ country_event = {
 	
 	trigger = {
 		#has_idea_with_trait = communist_revolutionary
-		has_national_unity < 0.55
+		has_stability < 0.55
 		NOT = { has_government = communism }
 		NOT = { has_government = revolutionary }
 		OR = {	
@@ -270,7 +270,7 @@ country_event = {										# AS
 	trigger = {
 		#has_idea = communist_revolutionaries
 		#has_idea = revolutionary_communism
-		#has_national_unity < 0.50 
+		#has_stability < 0.50 
 		NOT = { has_government = revolutionary }
 		revolutionary > 0.5
 	}
@@ -755,7 +755,7 @@ country_event = {
 			ideology = democratic
 			popularity = 0.1
 		}
-		add_national_unity = -0.02
+		add_stability = -0.02
 		set_country_flag = democracy_opposition_formed
 	}
 }
@@ -877,7 +877,7 @@ country_event = {
 			ruling_party = fascism
 			elections_allowed = no
 		}
-		add_national_unity = -0.05
+		add_stability = -0.05
 	}
 }
 
@@ -964,7 +964,7 @@ country_event = {
 					elections_allowed = yes
 				}
 		}		
-		add_national_unity = -0.10
+		add_stability = -0.10
 	}
 }
 
@@ -1023,7 +1023,7 @@ country_event = {
 			ruling_party = democratic
 			elections_allowed = yes
 		}
-		add_national_unity = -0.05
+		add_stability = -0.05
 	}
 }
 
@@ -1037,7 +1037,7 @@ country_event = {
 	picture = GFX_report_event_fascist_militia
 
 	trigger = {
-		fascism > 0.5
+		fascism > 0.65 # 0.7
 		has_idea = fascist_revolutionaries
 	}
 
@@ -1051,6 +1051,9 @@ country_event = {
 
 	option = {
 		name = political.21.a
+		ai_chance = {
+			factor = 0
+		}
 		start_civil_war = {
 			ideology = fascism
 			size = 0.5
@@ -1109,6 +1112,8 @@ country_event = {
 				tag = CHI
 			}			
 		}
+		has_civil_war = no
+		check_has_focus_tree_to_switch_to_communism = yes
 	}
 
 	mean_time_to_happen = {
@@ -1121,6 +1126,9 @@ country_event = {
 
 	option = {
 		name = political.22.a
+		ai_chance = {
+			factor = 0
+		}
 		start_civil_war = {
 			ideology = communism
 			size = 0.5
@@ -1172,6 +1180,7 @@ country_event = {
 		democratic > 0.7
 		has_idea = democratic_revolutionaries
 		#Special case CHI PRC
+		NOT = { has_government = democratic }
 		OR = {
 			NOT = { tag = CHI }
 			AND = {
@@ -1179,6 +1188,8 @@ country_event = {
 				tag = CHI
 			}			
 		}
+		has_civil_war = no
+		check_has_focus_tree_to_switch_to_democratic = yes
 	}
 
 	mean_time_to_happen = {
@@ -1191,6 +1202,9 @@ country_event = {
 
 	option = {
 		name = political.23.a
+		ai_chance = {
+			factor = 0
+		}
 		start_civil_war = {
 			ideology = democratic
 			size = 0.5

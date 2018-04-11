@@ -504,6 +504,7 @@ focus_tree = {
 		available = {
 			GER = {
 				NOT = { has_war_with = ROOT }
+				#has_government = fascism
 				has_capitulated = no
 				is_faction_leader = yes
 			}
@@ -2602,8 +2603,8 @@ focus_tree = {
 
 		completion_reward = {
 			add_tech_bonus = {
-				name = HUN_ik3_bonus
-				bonus = 0.25
+				name = YUG_the_ik_3
+				bonus = 0.5  #0.75
 				ahead_reduction = 0.75
 				uses = 1
 				category = light_fighter
@@ -2643,7 +2644,7 @@ focus_tree = {
 
 		completion_reward = {
 			add_tech_bonus = {
-				name = HUN_heavy_fighter_bonus
+				name = YUG_heavy_fighter_project
 				bonus = 0.5
 				uses = 1
 				category = cat_heavy_fighter
@@ -2683,7 +2684,7 @@ focus_tree = {
 
 		completion_reward = {
 			add_tech_bonus = {
-				name = HUN_tactical_bomber_bonus
+				name = YUG_bomber_project
 				bonus = 0.5
 				uses = 1
 				category = tactical_bomber
@@ -3043,7 +3044,7 @@ focus_tree = {
 
 		completion_reward = {
 			add_tech_bonus = {
-				name = YUG_motorized_bonus
+				name = YUG_motorize_the_cavalry
 				bonus = 0.5
 				technology = motorised_infantry
 			}
@@ -3086,7 +3087,7 @@ focus_tree = {
 
 		completion_reward = {
 			add_tech_bonus = {
-				name = YUG_motorized_support_bonus
+				name = YUG_motorized_logistics
 				bonus = 0.5
 				uses = 2
 				category = hospital_tech
@@ -3131,7 +3132,7 @@ focus_tree = {
 
 		completion_reward = {
 			add_tech_bonus = {
-				name = YUG_mechanized_focus
+				name = YUG_armored_cavalry
 				bonus = 0.5
 				uses = 1
 				category = cat_mechanized_equipment
@@ -3762,7 +3763,7 @@ focus_tree = {
 		}
 
 		available = {
-			any_owned_state {
+			any_owned_state = {
 				is_coastal = yes
 			}
 		}
@@ -3804,7 +3805,7 @@ focus_tree = {
 		}
 
 		available = {
-			any_owned_state {
+			any_owned_state = {
 				is_coastal = yes
 			}
 		}
@@ -3846,7 +3847,7 @@ focus_tree = {
 		}
 
 		available = {
-			any_owned_state {
+			any_owned_state = {
 				is_coastal = yes
 			}
 		}
@@ -3888,7 +3889,7 @@ focus_tree = {
 		}
 
 		available = {
-			any_owned_state {
+			any_owned_state = {
 				is_coastal = yes
 			}
 		}
@@ -3930,7 +3931,7 @@ focus_tree = {
 		}
 
 		available = {
-			any_owned_state {
+			any_owned_state = {
 				is_coastal = yes
 			}
 		}
@@ -4107,7 +4108,7 @@ focus_tree = {
 		}
 
 		available = {
-			any_owned_state {
+			any_owned_state = {
 				is_coastal = yes
 			}
 		}

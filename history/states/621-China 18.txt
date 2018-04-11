@@ -1,7 +1,7 @@
 state={
 	id=621
 	name="STATE_621" # Suiyuan
-	manpower = 2083700
+	buildings_max_level_factor=1.000   manpower = 2083700
 	
 	state_category = rural
 

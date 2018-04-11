@@ -16,7 +16,7 @@ ideas = {
 			picture = generic_democratic_drift_bonus
 
 			modifier = {
-				unity_factor = -0.10
+				stability_factor = -0.10
 			}
 		}
 		as_germany_waffen_ss = {
@@ -31,7 +31,7 @@ ideas = {
 			picture = generic_manpower_bonus
 
 			modifier = {
-				unity_factor = 0.02
+				stability_factor = 0.02
 				political_power_gain = 0.1
 				conscription = -0.002
 				army_morale_factor = -0.01
@@ -67,7 +67,7 @@ ideas = {
 			picture = generic_manpower_bonus
 
 			modifier = {
-				unity_factor = -0.01
+				stability_factor = -0.01
 				political_power_gain = -0.1
 				conscription = 0.004
 				army_morale_factor = -0.08

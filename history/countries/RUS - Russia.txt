@@ -41,7 +41,7 @@ set_technology = {
 }
 
 set_convoys = 50
-set_national_unity = 0.50
+set_stability = 0.50
 
 set_politics = {
 	parties = {
@@ -99,21 +99,27 @@ create_country_leader = {
 	}
 }
 
-create_field_marshal = { #create_corps_commander 
+create_corps_commander = {  
 	name = "Andrey Vlasov"
 	picture = "Portrait_Soviet_Andrey_Vlasov.dds"
 	traits = { winter_specialist }
 	id = 4120 # 412 SOV
 	skill = 3
-	
+	attack_skill = 3
+	defense_skill = 3
+	planning_skill = 2
+	logistics_skill = 2	
 }
 
-create_field_marshal = { #create_corps_commander 
+create_corps_commander = {  
 	name = "Ivan Fedyuninsky"
 		picture = "Portrait_Soviet_Ivan_Fedyuninsky.dds"
 	traits = {  }
 	skill = 1 
-	
+	attack_skill = 1
+	defense_skill = 1
+	planning_skill = 1
+	logistics_skill = 1	
 }
 
 create_navy_leader = {
@@ -121,6 +127,10 @@ create_navy_leader = {
 		picture = "Portrait_Soviet_Filipp_Oktyabrsky.dds"
 	traits = { ironside }
 	skill = 2
+	attack_skill = 2
+	defense_skill = 2
+	planning_skill = 2
+	logistics_skill = 2	
 }
 
 create_navy_leader = {
@@ -129,5 +139,9 @@ create_navy_leader = {
 		picture = "Portrait_Soviet_Sergey_Gorshkov.dds"
 	traits = {  }
 	skill = 3
+	attack_skill = 2
+	defense_skill = 3
+	planning_skill = 2
+	logistics_skill = 3	
 }
 

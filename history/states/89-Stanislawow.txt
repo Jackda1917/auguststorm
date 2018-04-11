@@ -1,7 +1,7 @@
 state={
 	id=89
 	name="STATE_89" # Stanislawow
-	manpower = 2180300
+	buildings_max_level_factor=1.000   manpower = 2180300
 	
 	state_category = town
 	

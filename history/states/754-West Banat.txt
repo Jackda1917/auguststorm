@@ -1,7 +1,7 @@
 state = {
 	id = 754
 	name= "STATE_754" # West Banat
-	manpower = 600000
+	buildings_max_level_factor=1.000   manpower = 600000
 	
 	state_category = rural
 

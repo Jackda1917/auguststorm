@@ -2,7 +2,7 @@
 state={
 	id=275
 	name="STATE_275" # Transvaal
-	manpower = 3680363
+	buildings_max_level_factor=1.000   manpower = 3680363
 	
 	state_category = city
 	

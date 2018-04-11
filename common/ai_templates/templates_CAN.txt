@@ -59,18 +59,20 @@ armor_CAN = {
 			0.00 #-- suppression
 			0.00 #-- suppression_factor
 			0.01 #-- experience_loss_factor
+			0.00 #-- equipment_capture_factor
 			#-- Air Values
 			0.02 #-- air_attack
 			#-- Common Values
 			30.00 #-- max_organisation
-			0.80 #-- max_strCANth
-			0.00 #-- build_cost_ic
+			0.80 #-- max_strength
+
 			2.0 #-- maximum_speed
 			0.20 #-- armor_value
 			0.05 #-- ap_attack
 			0.10 #-- reliability
 			0.10 #-- reliability_factor
 			0.00 #-- weight
+			0.00 #-- build_cost_ic
 		}
 		
 		target_template = {
@@ -78,7 +80,7 @@ armor_CAN = {
 			match_value = 40000.0
 			
 			support = {
-				CANineer = 1
+				engineer = 1
 			}
 			
 			regiments = {
@@ -90,7 +92,7 @@ armor_CAN = {
 		allowed_types = {
 			light_armor
 			motorized
-			CANineer
+			engineer
 			recon
 			artillery
 		}
@@ -131,18 +133,20 @@ armor_CAN = {
 			0.00 #-- suppression
 			0.00 #-- suppression_factor
 			0.01 #-- experience_loss_factor
+			0.00 #-- equipment_capture_factor
 			#-- Air Values
 			0.02 #-- air_attack
 			#-- Common Values
 			10.00 #-- max_organisation
-			0.80 #-- max_strCANth
-			0.00 #-- build_cost_ic
+			0.80 #-- max_strength
+
 			0.0 #-- maximum_speed
 			0.20 #-- armor_value
 			0.05 #-- ap_attack
 			0.10 #-- reliability
 			0.10 #-- reliability_factor
 			0.00 #-- weight
+			0.00 #-- build_cost_ic
 		}
 
 		target_template = {
@@ -150,7 +154,7 @@ armor_CAN = {
 			match_value = 1000.0
 			
 			support = {
-				CANineer = 1
+				engineer = 1
 				recon = 1
 				logistics_company = 1
 				maintenance_company = 1
@@ -176,7 +180,7 @@ armor_CAN = {
 			motorized_artillery_brigade
 			motorized_rocket_brigade 
 
-			CANineer
+			engineer
 			recon
 			signal_company
 			maintenance_company
@@ -230,12 +234,13 @@ armor_CAN = {
 			0.00 #-- suppression
 			0.00 #-- suppression_factor
 			0.01 #-- experience_loss_factor
+			0.00 #-- equipment_capture_factor
 			#-- Air Values
 			0.02 #-- air_attack
 			#-- Common Values
 			50.00 #-- max_organisation
-			0.80 #-- max_strCANth
-			0.00 #-- build_cost_ic
+			0.80 #-- max_strength
+
 			1.0 #-- maximum_speed
 
 			10.0 #-- armor_value
@@ -243,6 +248,7 @@ armor_CAN = {
 			0.10 #-- reliability
 			0.10 #-- reliability_factor
 			0.00 #-- weight
+			0.00 #-- build_cost_ic
 		}
 		
 
@@ -251,7 +257,7 @@ armor_CAN = {
 			match_value = 50000.0
 			
 			support = {
-				CANineer = 1
+				engineer = 1
 				recon = 1
 				maintenance_company = 1
 				logistics_company = 1
@@ -276,7 +282,7 @@ armor_CAN = {
 			motorized_artillery_brigade
 			motorized_rocket_brigade 
 
-			CANineer
+			engineer
 			recon
 			signal_company
 			maintenance_company
@@ -325,19 +331,21 @@ armor_CAN = {
 			0.00 #-- suppression
 			0.00 #-- suppression_factor
 			0.01 #-- experience_loss_factor
+			0.00 #-- equipment_capture_factor
 			#-- Air Values
 			0.02 #-- air_attack
 			#-- Common Values
 			50.00 #-- max_organisation
-			0.80 #-- max_strCANth
-			0.00 #-- build_cost_ic
+			0.80 #-- max_strength
 
 			1.0 #-- maximum_speed
+
 			10.0 #-- armor_value
 			0.05 #-- ap_attack
 			0.10 #-- reliability
 			0.10 #-- reliability_factor
 			0.00 #-- weight
+			0.00 #-- build_cost_ic
 		}
 		
 		target_template = {
@@ -345,7 +353,7 @@ armor_CAN = {
 			match_value = 50000.0
 			
 			support = {
-				CANineer = 1
+				engineer = 1
 				armoured_reconnaissance_company = 1
 				field_hospital = 1
 				logistics_company = 1
@@ -367,7 +375,7 @@ armor_CAN = {
 			motorized
 			mechanized
 			infantry
-			CANineer
+			engineer
 			recon
 			maintenance_company
 			logistics_company
@@ -436,7 +444,7 @@ armor_CAN = {
 			match_value = 50000.0
 			
 			support = {
-				CANineer = 1
+				engineer = 1
 				armoured_reconnaissance_company = 1
 				maintenance_company = 1
 				logistics_company = 1
@@ -458,7 +466,7 @@ armor_CAN = {
 			motorized_rocket_brigade 
 			medium_sp_artillery_brigade
 			medium_sp_anti_air_brigade
-			CANineer
+			engineer
 			recon
 			signal_company
 			maintenance_company
@@ -523,18 +531,20 @@ infantry_CAN = {
 			0.00 #-- suppression
 			0.00 #-- suppression_factor
 			0.00 #-- experience_loss_factor
+			0.00 #-- equipment_capture_factor
 			#-- Air Values
 			0.00 #-- air_attack
 			#-- Common Values
 			0.60 #-- max_organisation
-			0.40 #-- max_strCANth
-			0.00 #-- build_cost_ic
+			0.40 #-- max_strength
+
 			0.00 #-- maximum_speed
 			0.00 #-- armor_value
 			0.20 #-- ap_attack
 			0.00 #-- reliability
 			0.00 #-- reliability_factor
 			0.00 #-- weight
+			0.00 #-- build_cost_ic
 		}
 		
 		target_template = {
@@ -629,18 +639,20 @@ mountaineers_CAN = {
 			0 #-- suppression
 			0 #-- suppression_factor
 			0 #-- experience_loss_factor
+			0 #-- equipment_capture_factor
 			#-- Air Values
 			0 #-- air_attack
 			#-- Common Values
 			1 #-- max_organisation
-			1 #-- max_strCANth
-			-0.1 #-- build_cost_ic
+			1 #-- max_strength
+
 			0 #-- maximum_speed
 			0 #-- armor_value
 			0 #-- ap_attack
 			0 #-- reliability
 			0 #-- reliability_factor
 			0 #-- weight
+			-0.1 #-- build_cost_ic
 		}
 
 		target_template = {
@@ -727,18 +739,20 @@ marines_CAN = {
 			0.00 #-- suppression
 			0.00 #-- suppression_factor
 			0.00 #-- experience_loss_factor
+			0.00 #-- equipment_capture_factor
 			#-- Air Values
 			0.00 #-- air_attack
 			#-- Common Values
 			0.60 #-- max_organisation
-			0.40 #-- max_strCANth
-			-0.1 #-- build_cost_ic
+			0.40 #-- max_strength
+
 			0.00 #-- maximum_speed
 			0.05 #-- armor_value
 			0.00 #-- ap_attack
 			0.00 #-- reliability
 			0.00 #-- reliability_factor
 			-0.2 #-- weight
+			-0.1 #-- build_cost_ic
 		}
 
 		target_template = {
@@ -824,18 +838,20 @@ paratrooper_CAN = {
 			0.01 #-- suppression
 			0.01 #-- suppression_factor
 			0.05 #-- experience_loss_factor
+			0.00 #-- equipment_capture_factor
 			#-- Air Values
 			0.01 #-- air_attack
 			#-- Common Values
 			0.6 #-- max_organisation
-			0.4 #-- max_strCANth
-			-0.1 #-- build_cost_ic
+			0.4 #-- max_strength
+
 			0.00 #-- maximum_speed
 			0.00 #-- armor_value
 			0.20 #-- ap_attack
 			0.00 #-- reliability
 			0.00 #-- reliability_factor
 			-1.0 #-- weight
+			-0.1 #-- build_cost_ic
 		}
 
 		target_template = {
@@ -924,18 +940,20 @@ garrison_CAN = {
 			0.00 #-- suppression
 			0.00 #-- suppression_factor
 			0.00 #-- experience_loss_factor
+			0.00 #-- equipment_capture_factor
 			#-- Air Values
 			0.00 #-- air_attack
 			#-- Common Values
 			0.60 #-- max_organisation
-			0.40 #-- max_strCANth
-			0.00 #-- build_cost_ic
+			0.40 #-- max_strength
+
 			0.00 #-- maximum_speed
 			0.00 #-- armor_value
 			0.20 #-- ap_attack
 			0.00 #-- reliability
 			0.00 #-- reliability_factor
 			0.00 #-- weight
+			0.00 #-- build_cost_ic
 		}
 		
 		target_template = {

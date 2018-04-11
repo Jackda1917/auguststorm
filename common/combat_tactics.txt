@@ -20,7 +20,7 @@ tactic_basic_attack = {
 	
 	active = yes
 
-	base = 1 #4
+	base = { factor = 1 } #4
 	picture = attack
 	
 	countered_by = tactic_counterattack
@@ -37,7 +37,7 @@ tactic_basic_defend = {
 	
 	active = yes
 	
-	base = 1 #4
+	base = { factor = 1 } #4
 	picture = defend
 	
 	defender = 0.05
@@ -53,7 +53,13 @@ tactic_counterattack = { # counters basic attack, assault
 	
 	active = yes
 	
-	base = 3
+	base =  {
+		factor = 3
+		modifier = {
+			add = 4
+			has_trait = unyielding_defender
+		}
+	}
 	picture = counterattack
 	
 	defender = 0.35  # was 0.25
@@ -69,7 +75,13 @@ tactic_assault = {
 	
 	active = yes
 	
-	base = 2 #Revisit ideally this should be more common in urban terrain
+	base =  {
+		factor = 2
+		modifier = {
+			add = 2
+			has_trait = aggressive_assaulter
+		}
+	} #Revisit ideally this should be more common in urban terrain
 	
 	picture = assault
 	countered_by = tactic_counterattack
@@ -89,7 +101,8 @@ tactic_cc_attack = {
 	
 	active = yes
 	
-	base = 3 #4
+	base =  { factor = 3 }	#4
+	
 	picture = cc_attack
 	display_phase = close_combat
 
@@ -105,7 +118,7 @@ tactic_cc_defend = {
 	
 	active = yes
 	
-	base = 3 #4
+	base = { factor = 3 } #4
 	picture = cc_defend
 	display_phase = close_combat
 
@@ -121,7 +134,8 @@ tactic_cc_storm = {
 	
 	active = yes
 	
-	base = 2
+	base = { factor = 2 }
+	
 	picture = cc_storm
 	display_phase = close_combat
 
@@ -138,7 +152,8 @@ tactic_cc_local_strong_point = {
 	active = yes
 	display_phase = close_combat
 
-	base = 2
+	base =  { factor = 2 }
+	
 	picture = cc_local_strong_point
 	
 	attacker = -0.1			# Was - 0.2 attacker gets a penalty to doing damage
@@ -153,7 +168,8 @@ tactic_cc_withdraw = {
 	
 	active = yes
 	
-	base = 1
+	base = { factor = 1 }
+	
 	picture = cc_withdraw
 	display_phase = close_combat
 
@@ -178,11 +194,14 @@ tactic_encirclement = {
 		temperature > -15      # AS
 		phase = no
 		frontage_full = yes
-		has_reserves = yes
-		skill_advantage > 1 # was 0		
+		has_reserves = yes	
 		OR = {
 			#is_ai = yes 	   # AS
-			has_trait = offensive_doctrine
+			skill_advantage > 1 # was 0				
+			AND = {	
+				has_trait = offensive_doctrine
+				skill_advantage > 0
+			}
 			has_trait = panzer_leader
 			has_trait = trickster
 		}
@@ -190,7 +209,17 @@ tactic_encirclement = {
 	
 	active = yes
 	
-	base = 5 #1
+	base =  { 
+		factor = 4
+		modifier = {
+			add = 4
+			OR = {
+				has_trait = panzer_expert
+				has_trait = combined_arms_expert
+			}
+		}
+	}
+	
 	picture = encircle
 	countered_by = tactic_tactical_withdrawal
 	countered_by = tactic_winter_defence  # AS
@@ -218,7 +247,9 @@ tactic_delay = {
 	
 	active = no
 	
-	base = 3 #4
+	base =  {
+		factor = 3		# 4
+	}
 	picture = delay
 	countered_by = tactic_shock
 	
@@ -236,8 +267,14 @@ tactic_shock = { #counters delay
 	}
 	
 	active = yes
-	
-	base = 3 #4
+		
+	base =  {
+		factor = 3		#4
+		modifier = {
+			add = 4
+			has_trait = aggressive_assaulter
+		}
+	}
 	picture = shock
 	countered_by = tactic_ambush
 	
@@ -249,13 +286,16 @@ tactic_tactical_withdrawal = { #counters encirclement
 	trigger = {
 		is_attacker = no
 		phase = no	
-		has_trait = trickster
-		skill > 0
+		OR = {
+			skill_advantage > 1 #0
+			has_trait = trickster
+		}
 	}
 	
-	active = yes
+	active = no
 	
-	base = 3 #4
+	base =  { factor = 4 }
+	
 	picture = withdraw
 	
 	phase = tactical_withdrawal
@@ -273,7 +313,7 @@ tactic_tw_attack = {
 		phase = tactical_withdrawal
 	}
 	
-	base = 3 #4
+	base =  { factor = 3 }	#4
 	picture = tw_attack
 	display_phase = tactical_withdrawal
 	
@@ -288,7 +328,8 @@ tactic_tw_defend = {
 		phase = tactical_withdrawal
 	}
 	
-	base = 3 #4
+	base = { factor = 3 } #4
+	
 	picture = tw_defend
 	display_phase = tactical_withdrawal
 	
@@ -303,7 +344,7 @@ tactic_tw_chase = {
 		phase = tactical_withdrawal
 	}
 	
-	base = 3 #4
+	base = { factor = 3 } #4
 	picture = tw_chase
 	display_phase = tactical_withdrawal
 	
@@ -325,14 +366,14 @@ tactic_tw_evade = {
 		}		
 	}
 	
-	base = 5  #4 
+	base = { factor = 5 } #4
 	picture = tw_evade
 	display_phase = tactical_withdrawal
 	
 	attacker_movement_speed = -0.4	
 	combat_width = -0.25		
-	attacker = -0.4
-	defender = -0.1
+	attacker = -0.5 #-0.4
+	defender = -0.2	#-0.1
 }
 tactic_tw_intercept = { 
 	is_attacker = yes
@@ -342,7 +383,8 @@ tactic_tw_intercept = {
 		phase = tactical_withdrawal
 	}
 	
-	base = 3 #4
+	base = { factor = 3 }	#4
+	
 	picture = tw_intercept
 	display_phase = tactical_withdrawal
 	
@@ -364,11 +406,11 @@ tactic_breakthrough = { #counters ambush
 			is_fighting_in_terrain = forest
 			is_fighting_in_terrain = desert				
 		}
-		hardness > 0.30  # was 0.5  		
+		hardness > 0.4  # was 0.5  		
 		phase = no		
 		AND = {	
 			OR = {
-				has_trait = panzer_leader
+				has_trait = panzer_expert
 				AND = {									#Because AI is too dumb to use the good leaders
 					has_global_flag = ger_is_ai
 					tag = GER
@@ -386,13 +428,14 @@ tactic_breakthrough = { #counters ambush
 					tag = ENG
 				}					
 			}
-			skill > 2 				
+			skill_advantage > 0				
 		}			
 	}
 	
 	active = no
 	
-	base = 5
+	base =  { factor = 5 }  #4
+	
 	picture = breakthrough
 	
 	countered_by = tactic_backhand_blow
@@ -417,7 +460,8 @@ tactic_ambush = { #counters shock
 	
 	active = yes
 	
-	base = 4
+	base =  { factor = 4 }
+	
 	picture = ambush
 	countered_by = tactic_breakthrough
 
@@ -443,6 +487,7 @@ tactic_blitz = {
 		AND = {	
 			OR = {
 				has_trait = panzer_leader
+				skill_advantage > 2
 				AND = {
 					has_global_flag = ger_is_ai
 					tag = GER
@@ -460,7 +505,6 @@ tactic_blitz = {
 					tag = ENG
 				}					
 			}
-			NOT = { skill_advantage < 0 } 
 			#AND = {                     Because AI is too dumb to use the good leaders
 			#	skill_advantage > 0
 			#	skill > 2
@@ -474,7 +518,16 @@ tactic_blitz = {
 	
 	active = no
 	
-	base = 5 #4
+	base =  { 
+		factor = 4
+		modifier = {
+			add = 4
+			OR = {
+				has_trait = panzer_expert
+				has_trait = combined_arms_expert
+			}
+		}
+	}
 	picture = blitz
 	countered_by = tactic_elastic_defense
 	
@@ -495,7 +548,7 @@ tactic_elastic_defense = { #counters blitz
 			}			
 			AND = {
 				skill_advantage > 1
-				skill > 2			
+				skill > 3			
 			}
 			#AND = {
 			#	skill_advantage > 0
@@ -506,7 +559,7 @@ tactic_elastic_defense = { #counters blitz
 	
 	active = no
 	
-	base = 5 #4
+	base =  { factor = 5 }	#4
 	picture = elastic_defence
 	
 	attacker_movement_speed = -0.4
@@ -521,16 +574,17 @@ tactic_backhand_blow = { #counters breakthrough
         # NOT = { has_combat_modifier = lack_of_supply } # AS			
 		phase = no
 		OR = {
-			skill_advantage > 0  # was skill > 4
+			skill_advantage > 1  # was skill > 4
 			AND = {
 				has_trait = defensive_doctrine
 				skill_advantage > 0  # was skill > 3
-			}
-			
+			}			
 		}
 	}
 	
-	base = 5 #4
+	active = no
+	
+	base = { factor = 4 }	#5
 	picture = backhand_blow
 	
 	attacker_movement_speed = -0.5
@@ -554,7 +608,7 @@ tactic_seize_bridge = {
 		}
 	}
 	
-	base = 3 # was 2
+	base =  { factor = 3 }	#2
 	picture = seize_bridge
 	
 	phase = seize_bridge
@@ -571,7 +625,7 @@ tactic_attacker_sb_hold = {
 		phase = seize_bridge
 	}
 	
-	base = 4
+	base =  { factor = 4 }
 	picture = attacker_sb_hold
 	display_phase = seize_bridge
 	
@@ -587,7 +641,7 @@ tactic_attacker_sb_skillful_defence = {
 		skill_advantage > 0   # was none		
 	}
 	
-	base = 4
+	base =  { factor = 4 }
 	picture = attacker_sb_skillful_defence
 	display_phase = seize_bridge
 
@@ -603,7 +657,7 @@ tactic_defender_sb_assault = {
 		#skill_advantage > 0   # was none
 	}
 	
-	base = 4
+	base =  { factor = 4 }
 	picture = defender_sb_assault
 	display_phase = seize_bridge
 
@@ -619,7 +673,7 @@ tactic_defender_sb_reckless_assault = {
 		#skill_advantage < 0   # was none		
 	}
 	
-	base = 4
+	base =  { factor = 4 }
 	picture = defender_sb_reckless_assault
 	display_phase = seize_bridge
 
@@ -641,7 +695,7 @@ tactic_defender_sb_retake_bridge = {
 	countered_by = tactic_attacker_sb_skillful_defence
 	phase = hold_bridge
 	
-	base = 4
+	base =  { factor = 4 }
 	picture = defender_sb_retake_bridge
 	display_phase = seize_bridge
 
@@ -662,7 +716,7 @@ tactic_hold_bridge = {
 		}
 	}
 	
-	base = 2
+	base =  { factor = 2 }
 	picture = tactic_hold_bridge
 	
 	phase = hold_bridge
@@ -679,7 +733,7 @@ tactic_attacker_hb_attack = {
 		phase = hold_bridge
 	}
 	
-	base = 4
+	base =  { factor = 4 }
 	picture = attacker_hb_attack
 	display_phase = hold_bridge
 
@@ -694,7 +748,7 @@ tactic_attacker_hb_rush = {
 		skill > 4
 	}
 	
-	base = 4
+	base =  { factor = 4 }
 	picture = attacker_hb_rush
 	display_phase = hold_bridge
 
@@ -708,7 +762,7 @@ tactic_attacker_hb_storm = {
 		phase = hold_bridge
 	}
 	
-	base = 2
+	base =  { factor = 2 }
 	picture = attacker_hb_storm
 	display_phase = hold_bridge
 
@@ -728,7 +782,7 @@ tactic_defender_hb_hold = {
 		skill < 3
 	}
 	
-	base = 2
+	base =  { factor = 2 }
 	picture = defender_hb_hold
 	display_phase = hold_bridge
 
@@ -748,7 +802,7 @@ tactic_defender_hb_skillful_defence = {
 		}
 	}
 	
-	base = 2
+	base =  { factor = 2 }
 	picture = defender_hb_skillful_defence
 	display_phase = hold_bridge
 	
@@ -780,7 +834,7 @@ tactic_guerrilla_tactics = { #People's army defender tactic. also for German vol
 	
 	active = no
 	
-	base = 3 # was 4
+	base =  { factor = 4 }
 	picture = tactic_guerrilla_tactics
 
 	attacker_movement_speed = -0.2	
@@ -801,7 +855,7 @@ tactic_human_wave_tactics = { #People's army attacker tactic
 	
 	active = no
 	
-	base = 3 # was 4
+	base =  { factor = 4 }
 	picture = tactic_human_wave_tactics
 	
 	combat_width = 0.5
@@ -828,7 +882,7 @@ tactic_banzai_charge = { #Special Japan attacker tactic
 	
 	countered_by = tactic_overwhelming_fire
 	
-	base = 4
+	base =  { factor = 4 }
 	picture = tactic_banzai_charge
 	
 	attacker_movement_speed = 0.15  # was 0.1
@@ -851,7 +905,7 @@ tactic_infantry_charge = { #GBP -> Infantry attacker tactic
 	
 	active = no
 	
-	base = 3 #4
+	base =  { factor = 3 }	#4
 	picture = tactic_infantry_charge
 	
 	attacker = 0.25          # was 0.1 
@@ -864,14 +918,14 @@ tactic_planned_attack = { #GBP -> Armor attacker tactic
 		is_attacker = yes
         # NOT = { has_combat_modifier = lack_of_supply } # AS			
 		OR = {										# AS
-				is_fighting_in_terrain = plains
-				is_fighting_in_terrain = forest
-				is_fighting_in_terrain = desert				
+			is_fighting_in_terrain = plains
+			is_fighting_in_terrain = forest
+			is_fighting_in_terrain = desert				
 		}
 		
 		OR = {										# AS
-				has_trait = thorough_planner
-				skill_advantage > 0
+			has_trait = thorough_planner
+			skill_advantage > 0
 		}		
 		hardness > 0.35        # AS
 		temperature > -15      # AS
@@ -881,7 +935,7 @@ tactic_planned_attack = { #GBP -> Armor attacker tactic
 	
 	active = no
 	
-	base = 4
+	base =  { factor = 4 }
 	picture = tactic_planned_attack
 	
 	attacker = 0.35   # was 0.15
@@ -903,7 +957,7 @@ tactic_relentless_assault = { #Deep battle attacker tactic
 	
 	active = no
 	
-	base = 3 #4
+	base =  { factor = 3 }	#4
 	picture = tactic_relentless_assault
 	
 	attacker_movement_speed = 0.15
@@ -928,7 +982,7 @@ tactic_unexpected_thrust = { #Mobile warfare attacker tactic
 	
 	active = no
 	
-	base = 3 #4
+	base =  { factor = 3 } #4
 	picture = tactic_unexpected_thrust
 	
 	attacker_movement_speed = 0.15     
@@ -958,7 +1012,7 @@ tactic_overwhelming_fire = { # Counters Banzai charge
 	
 	active = no
 	
-	base = 3 # was 2
+	base = { factor = 3 }	#2
 	picture = tactic_overwhelming_fire
 	
 	attacker = -0.15   # was -0.1
@@ -987,7 +1041,7 @@ tactic_barrage = { #Superior firepower attacker tactic
 	
 	active = no
 	
-	base = 4
+	base =  { factor = 4 }
 	picture = tactic_barrage
 	
 	attacker = 0.2     # was 0.1
@@ -1005,14 +1059,11 @@ tactic_winter_assault = { # winter equipment attacker tactic
 			tag = NOR
 			tag = SWE
 			tag = SOV
-			AND = {
-				has_trait = winter_specialist
-				OR = {	
-					skill > 2
-					has_trait = winter_specialist
-				}
-			}
 		}
+		OR = {	
+			skill > 2
+			has_trait = winter_specialist
+		}		
 		is_attacker = yes
 		temperature < -14
 		phase = no
@@ -1020,7 +1071,8 @@ tactic_winter_assault = { # winter equipment attacker tactic
 	
 	active = no
 	
-	base = 5 
+	base = { factor = 8 }
+	
 	picture = tactic_unexpected_thrust
 	
 	attacker_movement_speed = 0.50       # to compensate+ generic winter malus + Ski units
@@ -1036,14 +1088,11 @@ tactic_winter_defence = { # winter equipment attacker tactic
 			tag = NOR
 			tag = SWE
 			tag = SOV
-			AND = {
-				has_trait = winter_specialist
-				OR = {	
-					skill > 2
-					has_trait = winter_specialist
-				}
-			}
 		}
+		OR = {	
+			skill > 2
+			has_trait = winter_specialist
+		}		
 		is_attacker = no
 		temperature < -14
 		phase = no
@@ -1051,7 +1100,8 @@ tactic_winter_defence = { # winter equipment attacker tactic
 	
 	active = no
 		
-	base = 5
+	base = { factor = 8 }
+	
 	picture = cc_defend
 	countered_by = tactic_winter_assault	
 
@@ -1087,7 +1137,8 @@ tactic_limited_war = {
 	
 	active = yes
 		
-	base = 5
+	base = { factor = 8 }
+	
 	picture = attack	
 
 	attacker_movement_speed = -0.80	

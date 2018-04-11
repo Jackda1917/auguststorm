@@ -1,5 +1,8 @@
 ﻿division_template = {
 		name = "Armoured Division -1942-"
+		
+		division_names_group = CAN_ARM_01
+				
 			regiments = {
 				medium_armor = { x = 0 y = 0 }			#3rgt
 				medium_armor = { x = 0 y = 1 }
@@ -26,7 +29,7 @@
 				signal_company = { x = 0 y = 3 }
 				field_hospital = { x = 0 y = 4 }		
 			}
-	priority = 2
+
 }
 
 

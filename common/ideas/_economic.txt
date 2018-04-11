@@ -11,7 +11,7 @@ ideas = {
 			modifier = {
 				consumer_goods_factor = 0.50 # was 0.40
 				
-				production_speed_industrial_complex_factor = -0.1 # was -0.5
+				production_speed_industrial_complex_factor = -0.15 # was -0.5
 				production_speed_arms_factory_factor = -0.8 # was -0.5
 				conversion_cost_civ_to_mil_factor = 0.75 # was 0.5
 				industrial_capacity_factory = -0.2 # was none
@@ -28,7 +28,7 @@ ideas = {
 			
 			allowed_to_remove = {
 				OR = {
-					threat > 0.4
+					has_war_support > 0.4
 					has_war = yes
 				}
 			}
@@ -59,7 +59,7 @@ ideas = {
 			}
 			allowed_to_remove = {
 				OR = {
-					threat > 0.65 
+					has_war_support > 0.65 
 
 					has_war = yes
 				}
@@ -98,7 +98,7 @@ ideas = {
 					has_war = yes
 					has_completed_focus = USA_USACE_projects 				
 					AND = {	
-						threat > 0.20  # was 0.05
+						has_war_support > 0.20  # was 0.05
 						NOT = { tag = USA } # was none
 					}					
 				}			
@@ -128,7 +128,7 @@ ideas = {
    				factor = 1
 
    				modifier = {
-					factor = 2
+					factor = 20
 					
 					is_major = yes
 				}
@@ -145,12 +145,12 @@ ideas = {
 					has_war = yes
 					has_completed_focus = USA_arsenal_of_democracy 				
 					AND = {	
-						threat > 0.30
+						has_war_support > 0.30
 						NOT = { tag = USA } # was none
 						is_major = yes
 					}
 					AND = {	
-						threat > 0.50
+						has_war_support > 0.50
 						is_major = no
 					}					
 				}			
@@ -178,7 +178,7 @@ ideas = {
 				industrial_capacity_dockyard = 0.2 # was none				
 				conversion_cost_civ_to_mil_factor = -0.1
 				conversion_cost_mil_to_civ_factor = 0.1  # was -0.1
-			    unity_factor = -0.05 # AS
+			    stability_factor = -0.05 # AS
 			}
 			
 			cancel_if_invalid = no
@@ -199,7 +199,7 @@ ideas = {
 			available = {				
 				OR = {
 					AND = {
-						threat > 0.50
+						has_war_support > 0.50
 						is_major = yes  # none
 						NOT = {
 							has_government = fascism
@@ -211,11 +211,12 @@ ideas = {
 					}
 					AND = {	
 						has_government = communism
-						threat > 0.10   
+						has_war_support > 0.40   
 					}
 					AND = {
 						has_government = fascism
 						is_major = yes  # none
+						has_war_support > 0.30   						
 					}
 					AND = {
 						has_government = fascism
@@ -259,7 +260,7 @@ ideas = {
 				conversion_cost_civ_to_mil_factor = -0.2
 				conversion_cost_mil_to_civ_factor = 0.2 # was -0.2
 				research_time_factor = -0.05 # AS
-				unity_weekly = -0.0001 # AS				
+				stability_weekly = -0.0001 # AS				
 			}
 			cancel_if_invalid = no
 
@@ -380,7 +381,7 @@ ideas = {
 				conversion_cost_civ_to_mil_factor = -0.5 # was -0.3
 				conversion_cost_mil_to_civ_factor = 0.5 # was -0.3
 				political_power_factor = -0.5   # AS
-				unity_weekly = -0.0002 # AS
+				stability_weekly = -0.0002 # AS
 				research_time_factor = -0.10 # AS
 			}
 
@@ -401,7 +402,7 @@ ideas = {
 				industrial_capacity_dockyard = 0.15
 				production_speed_buildings_factor = 0.15
 				research_time_factor = -0.10
-				unity_factor = -0.1 # AS
+				stability_factor = -0.1 # AS
 			}
 
 			cancel_if_invalid = no
@@ -430,7 +431,7 @@ ideas = {
 				industrial_capacity_dockyard = 0.1
 				production_speed_buildings_factor = 0.1
 				research_time_factor = -0.05
-				unity_factor = -0.05 # AS
+				stability_factor = -0.05 # AS
 			}
 			
 			default = yes
@@ -489,7 +490,7 @@ ideas = {
 				industrial_capacity_dockyard = 0.05
 				production_speed_buildings_factor = 0.05
 				research_time_factor = -0.01
-				unity_factor = -0.025 # AS
+				stability_factor = -0.025 # AS
 			}
 			
 

@@ -1,0 +1,35 @@
+ideas = {
+	country = {
+
+######## August Storm #########		
+		
+		CHI_warlordism_disruption = {
+
+			picture = warlordism_disruption
+		
+			allowed = {
+				always = no
+			}
+
+			allowed_civil_war = {
+				has_government = communism
+			}
+			
+			removal_cost = -1
+			
+			modifier = {
+				consumer_goods_factor = 0.05
+				research_time_factor = 0.30
+				production_speed_arms_factory_factor = -0.05
+				production_speed_industrial_complex_factor = -0.05
+				army_attack_factor = -0.1				
+			}
+
+		}
+
+		
+	}
+############################################################################
+
+
+}

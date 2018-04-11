@@ -1,7 +1,7 @@
 state= {
 	id=602
 	name="STATE_602" # Hunan
-	manpower = 28293700
+	buildings_max_level_factor=1.000   manpower = 28293700
 	
 	
 	state_category = town
