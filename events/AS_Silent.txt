@@ -387,7 +387,21 @@ country_event = {				# War mobilisation
 		
 	trigger = {
 		is_ai = yes
-		has_war = yes
+		OR = {
+			AND = {
+				has_government = fascism
+				has_war_support > 0.4
+			}
+			AND = {
+				has_government = communism
+				has_war_support > 0.5
+			}	
+			AND = {
+				has_government = democratic
+				has_war_support > 0.7
+			}			
+			has_war = yes			
+		}
 		NOT = { has_country_flag = war_prod_flag }
 		NOT = {
 			has_idea = war_economy
@@ -899,7 +913,8 @@ country_event = {											# Conversion techs
 	trigger = {	
 		is_major = yes
 		has_tech = improved_machine_tools
-		NOT = { has_tech = improved_equipment_conversion }			
+		NOT = { has_tech = improved_equipment_conversion }	
+		is_ai =yes
 	}
 	
 	mean_time_to_happen = {
@@ -924,7 +939,8 @@ country_event = {											# Conversion techs
 	trigger = {	
 		is_major = yes
 		has_tech = improved_equipment_conversion
-		NOT = { has_tech = advanced_equipment_conversion }			
+		NOT = { has_tech = advanced_equipment_conversion }	
+		is_ai =yes		
 	}
 	
 	mean_time_to_happen = {
@@ -1096,3 +1112,337 @@ country_event = {											# AI RAJ mobilisation
 		}
 	}
 }
+
+country_event = {											# Setting Powers					
+	id = as_silent.40
+	title = as_silent.40.title
+	desc = as_silent.40.desc
+	picture = GFX_report_event_german_politician_speech
+	
+	trigger = {	
+		is_major = no
+		num_of_factories > 39
+		num_of_factories < 59
+		NOT = { has_country_flag = regional_power_flag }
+	}
+	
+	mean_time_to_happen = {
+		days = 30
+	}
+
+	hidden = yes
+		
+	option = {
+		name = as_silent.6.option_a
+		ai_chance = { factor = 100 }
+		set_country_flag = regional_power_flag
+		if = {
+			limit = {
+				has_country_flag = great_power
+			}
+			clr_country_flag = great_power
+		}
+		if = {
+			limit = {
+				has_country_flag = super_power
+			}
+			clr_country_flag = super_power
+		}														
+		if = {
+			limit = {
+				NOT = {
+					has_idea = regional_power						
+				}
+			}
+			add_ideas = regional_power						
+		}				
+	}
+}
+
+country_event = {											# Setting Powers					
+	id = as_silent.41
+	title = as_silent.41.title
+	desc = as_silent.41.desc
+	picture = GFX_report_event_german_politician_speech
+	
+	trigger = {	
+		is_major = yes 
+		num_of_factories > 59
+		num_of_factories < 499	
+		NOT = { has_country_flag = great_power_flag }
+	}
+	
+	mean_time_to_happen = {
+		days = 30
+	}
+
+	hidden = yes
+		
+	option = {
+		name = as_silent.6.option_a
+		ai_chance = { factor = 100 }
+		set_country_flag = great_power_flag
+		if = {
+			limit = {
+				has_country_flag = regional_power
+			}
+			clr_country_flag = regional_power
+		}
+		if = {
+			limit = {
+				has_country_flag = super_power
+			}
+			clr_country_flag = super_power
+		}														
+		if = {
+			limit = {
+				NOT = {
+					has_idea = great_power						
+				}
+			}
+			add_ideas = great_power						
+		}				
+	}
+}
+
+country_event = {											# Setting Powers					
+	id = as_silent.42
+	title = as_silent.42.title
+	desc = as_silent.42.desc
+	picture = GFX_report_event_german_politician_speech
+	
+	trigger = {	
+		is_major = yes 
+		num_of_factories > 499
+		NOT = { has_country_flag = super_power }
+	}
+	
+	mean_time_to_happen = {
+		days = 30
+	}
+
+	hidden = yes
+		
+	option = {
+		name = as_silent.6.option_a
+		ai_chance = { factor = 100 }
+		set_country_flag = super_power_flag
+		if = {
+			limit = {
+				has_country_flag = regional_power
+			}
+			clr_country_flag = regional_power
+		}
+		if = {
+			limit = {
+				has_country_flag = great_power
+			}
+			clr_country_flag = great_power
+		}														
+		if = {
+			limit = {
+				NOT = {
+					has_idea = super_power						
+				}
+			}
+			add_ideas = super_power						
+		}				
+	}
+}
+
+country_event = {							# From AI GLO on_actions
+	id = as_silent.43
+	title = as_silent.43.title
+	desc = as_silent.43.desc
+	
+	picture = GFX_report_event_military_planning
+
+	is_triggered_only = yes
+	
+	hidden = yes
+
+	option = {
+		name = as_silent.6.option_a
+			FROM = {
+				set_unit_leader_flag = {
+					flag = recently_main_front_leader
+					value = 1
+					days = 180
+				}				
+				add_timed_unit_leader_trait = {
+					trait = main_front_leader
+					days = 21
+				}								
+			}
+	}	
+}
+
+country_event = {							# Vichy establishment, from on_actions 
+	id = as_silent.44	
+	title = as_silent.44.title
+	desc = as_silent.44.desc
+	
+	picture = GFX_report_event_military_planning
+
+	is_triggered_only = yes
+	
+	hidden = yes
+
+	immediate = {
+		diplomatic_relation = { country = GER relation = non_aggression_pact }
+		add_opinion_modifier = { target = ENG modifier = hostile_status }
+		add_opinion_modifier = { target = USA modifier = hostile_status }
+		add_opinion_modifier = { target = FRA modifier = hostile_status }
+		FRA = { add_opinion_modifier = { target = VIC modifier = hostile_status } }
+		ENG = { add_opinion_modifier = { target = VIC modifier = faction_traitor } }
+		USA = { add_opinion_modifier = { target = VIC modifier = faction_traitor } }	
+		diplomatic_relation = { country = ITA relation = non_aggression_pact }
+		diplomatic_relation = { country = JAP relation = non_aggression_pact }
+	}
+	
+	option = {
+		name = as_silent.6.option_a
+		country_event = { id = france.20 days = 2 }
+		release_puppet = SYR
+		release_puppet = LEB				
+		# German Occupation Zone		
+		if = { 
+			limit = { 1 = { NOT = { is_owned_by = ITA } } }
+			transfer_state = 1 
+		}   # Corse 
+		if = { 
+			limit = { 31 = { NOT = { is_owned_by = SPR } } }
+			transfer_state = 31 
+		} # Midi-Pyrénnées				 					 
+		if = { 
+			limit = { 735 = { NOT = { is_owned_by = ITA } } }
+			transfer_state = 735 
+		} # Savoy
+		transfer_state = 20  # Franche-comté
+		transfer_state = 21  # Côte d'Azur
+		transfer_state = 22  # Roussillon
+		transfer_state = 25  # Limousin
+		transfer_state = 26  # Auvergne		
+		transfer_state = 33  # Centre Sud
+		transfer_state = 268 # Djibouti
+		transfer_state = 272 # French Africa
+		transfer_state = 286 # Indochina
+		transfer_state = 310 # Guinée
+		transfer_state = 320 # French India
+		transfer_state = 458 # Tunisia
+		transfer_state = 459 # western Algeria
+		transfer_state = 460 # eastern Algeria
+		transfer_state = 461 # Northern Morocco
+		transfer_state = 462 # Southern Morocco
+		transfer_state = 513 # Southern Algeria
+		transfer_state = 514 # North Africa
+		transfer_state = 515 # Central Africa
+		transfer_state = 539 # Gabon
+		transfer_state = 543 # Madagascar				
+		transfer_state = 556 # Ivory Coast
+		transfer_state = 557 # Dakar
+		transfer_state = 635 # Nouvelle Calédonie
+		transfer_state = 641 # Tahiti
+		transfer_state = 660 # Equatorial Africa
+		transfer_state = 665 # Gabes
+		transfer_state = 670 # Laos
+		transfer_state = 671 # Annam
+		transfer_state = 694 # French Caribbean
+		transfer_state = 706 # Reunion
+		transfer_state = 708 # Comoro Islands
+		transfer_state = 713 # Kerguelen
+		transfer_state = 728 # Guangzhouwan
+		transfer_state = 730 # St Pierre et Miquelon
+		transfer_state = 734 # Nendo
+		transfer_state = 741 # Cambodia		
+		transfer_state = 32  # Alpes					
+			every_owned_state = {
+				limit = {
+					is_core_of = VIC
+				}
+				add_core_of = FRA
+			}						
+			every_owned_state = {
+				limit = {
+					is_controlled_by = GER
+					is_controlled_by = ITA
+					is_controlled_by = SPR					
+				}
+				remove_core_of = VIC
+			}		
+	}	
+}
+
+country_event = {											# AI USA trade laws					
+	id = as_silent.45
+	title = as_silent.45.title
+	desc = as_silent.45.desc
+	picture = GFX_report_event_german_politician_speech
+	
+	fire_only_once = yes
+	
+	trigger = {	
+		tag = USA
+		is_ai = yes
+		has_war = yes
+		has_idea = free_trade
+	}
+	
+	mean_time_to_happen = {
+		days = 10
+	}
+
+	hidden = yes
+		
+	option = {
+		name = as_silent.6.option_a
+		ai_chance = { factor = 100 }
+		USA = {												### AS
+				if = {
+					limit = {
+						NOT = {
+						    has_idea = export_focus
+							has_idea = limited_exports
+							has_idea = closed_economy											
+						}
+					}
+						add_ideas = export_focus
+				}			
+		}
+	}
+}
+
+country_event = {											# FIN DOW SOV
+	id = as_silent.46
+	title = as_silent.46.title
+	desc = as_silent.46.desc
+	picture = GFX_report_event_german_politician_speech
+	
+	fire_only_once = yes
+	
+	trigger = {	
+		tag = FIN
+		has_war = no
+		GER = { has_war_with = SOV }
+		SOV = { controls_state = 146 }
+		is_ai = yes	
+	}
+	
+	mean_time_to_happen = {
+		days = 10
+	}
+
+	hidden = yes
+		
+	option = {
+		name = as_silent.6.option_a
+		ai_chance = { factor = 100 }
+		create_wargoal = {
+			type = take_state
+			target = SOV
+			generator = { 146 }
+		}			
+		declare_war_on = { target = SOV type = take_state_focus }	
+	}
+}
+	

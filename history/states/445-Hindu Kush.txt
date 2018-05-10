@@ -2,7 +2,7 @@
 state={
 	id=445
 	name="STATE_445" # Quetta
-	buildings_max_level_factor=1.000   manpower = 405100
+	manpower = 405100
 	
 	state_category = wasteland
 

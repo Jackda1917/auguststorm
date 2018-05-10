@@ -10,44 +10,21 @@ country_event = {
 	desc = as_waffen_ss.1.desc
 	picture = GFX_report_event_german_troops
 	
-	fire_only_once = yes
+	fire_only_once = yes			# Was more or less a brigade before that
 	
-	trigger = {							# Was more or less a brigade before that
-		tag = GER
-		has_government = fascism
-		16 = {
-			OR = {
-				is_controlled_by = GER
-				any_other_country = {
-					controls_state = 16 # Paris
-					is_in_faction_with = GER
-					GER = { is_faction_leader = yes }
-				}
-			}
-		}		
-		10 = {
-			OR = {
-				is_controlled_by = GER
-				any_other_country = {
-					controls_state = 10 # Warzawa
-					is_in_faction_with = GER
-					GER = { is_faction_leader = yes }
-				}
-			}
-		}
-	}
+	is_triggered_only = yes
 
-	mean_time_to_happen = {
-		days = 1
-	}
-	
 	option = {
 		name = as_waffen_ss.1.option_a
 		ai_chance = { factor = 100 }
 		as_add_waffen_ss_effect = yes
 		as_new_waffen_ss_division_effect = yes
+		add_to_variable = { var = wehrmacht_anger value = 2 }
+		subtract_from_variable = { var = SS_anger value = 2 }
+		SS_resolve_effects_wehrmacht = yes		
 		hidden_effect = { load_oob = GER_Waffen_SS_1 }
 		set_country_flag = as_germany_ss_panzer_division_40
+		delete_unit_template_and_units = { division_template = "SS-Brigade" } # SS-Verfügungstruppe
 		army_experience = -100
 	}
 	
@@ -68,51 +45,15 @@ country_event = {
 	
 	fire_only_once = yes
 	
-	trigger = {
-		tag = GER
-		has_government = fascism
-		has_idea = as_germany_waffen_ss
-		has_country_flag = as_germany_ss_panzer_division_40
-		64 = {
-			OR = {
-				is_controlled_by = GER
-				any_other_country = {
-					controls_state = 64 # Brandenburg
-					is_in_faction_with = GER
-					GER = { is_faction_leader = yes }
-				}
-			}
-		}
-		16 = {
-			OR = {
-				is_controlled_by = GER
-				any_other_country = {
-					controls_state = 16 # Paris
-					is_in_faction_with = GER
-					GER = { is_faction_leader = yes }
-				}
-			}
-		}		
-		10 = {
-			OR = {
-				is_controlled_by = GER
-				any_other_country = {
-					controls_state = 10 # Warzawa
-					is_in_faction_with = GER
-					GER = { is_faction_leader = yes }
-				}
-			}
-		}		
-	}
-
-	mean_time_to_happen = {
-		days = 30
-	}
+	is_triggered_only = yes
 	
 	option = {
 		name = as_waffen_ss.2.option_a
 		ai_chance = { factor = 100 }
 		as_new_waffen_ss_division_effect = yes
+		add_to_variable = { var = wehrmacht_anger value = 2 }
+		subtract_from_variable = { var = SS_anger value = 2 }
+		SS_resolve_effects_wehrmacht = yes				
 		hidden_effect = { load_oob = GER_Waffen_SS_2 }
 	}
 	
@@ -132,41 +73,15 @@ country_event = {
 	
 	fire_only_once = yes
 	
-	trigger = {
-		tag = GER
-		has_government = fascism
-		has_idea = as_germany_waffen_ss
-		has_country_flag = as_germany_ss_panzer_division_40
-		85 = {
-			OR = {
-				is_controlled_by = GER
-				any_other_country = {
-					controls_state = 85 # Danzig
-					is_in_faction_with = GER
-					GER = { is_faction_leader = yes }
-				}
-			}
-		}
-		10 = {
-			OR = {
-				is_controlled_by = GER
-				any_other_country = {
-					controls_state = 10 # Warzawa
-					is_in_faction_with = GER
-					GER = { is_faction_leader = yes }
-				}
-			}
-		}		
-	}
+	is_triggered_only = yes
 
-	mean_time_to_happen = {
-		days = 60
-	}
-	
 	option = {
 		name = as_waffen_ss.3.option_a
 		ai_chance = { factor = 100 }
 		as_new_waffen_ss_division_effect = yes
+		add_to_variable = { var = wehrmacht_anger value = 2 }
+		subtract_from_variable = { var = SS_anger value = 2 }
+		SS_resolve_effects_wehrmacht = yes				
 		hidden_effect = { load_oob = GER_Waffen_SS_3 }
 	}
 	
@@ -186,44 +101,18 @@ country_event = {
 	
 	fire_only_once = yes
 	
-	trigger = {
-		tag = GER
-		has_government = fascism
-		has_idea = as_germany_waffen_ss
-		has_tech = mechanised_infantry
-		50 = {
-			OR = {
-				is_controlled_by = GER
-				any_other_country = {
-					controls_state = 50 # Württemberg
-					is_in_faction_with = GER
-					GER = { is_faction_leader = yes }
-				}
-			}
-		}
-		10 = {
-			OR = {
-				is_controlled_by = GER
-				any_other_country = {
-					controls_state = 10 # Warzawa
-					is_in_faction_with = GER
-					GER = { is_faction_leader = yes }
-				}
-			}
-		}		
-	}
-
-	mean_time_to_happen = {
-		days = 30
-	}
+	is_triggered_only = yes
 	
 	option = {
 		name = as_waffen_ss.4.option_a
 		ai_chance = { factor = 100 }
 		as_new_waffen_ss_division_effect = yes
+		add_to_variable = { var = wehrmacht_anger value = 2 }
+		subtract_from_variable = { var = SS_anger value = 2 }
+		SS_resolve_effects_wehrmacht = yes				
 		hidden_effect = { load_oob = GER_Waffen_SS_4 }
 		set_country_flag = as_germany_ss_panzergrenadier_division
-		army_experience = -100		
+		add_command_power = -50		
 	}
 	
 	option = {
@@ -240,35 +129,20 @@ country_event = {
 	desc = as_waffen_ss.5.desc
 	picture = GFX_report_event_german_troops
 	
-	fire_only_once = yes
+	is_triggered_only = yes
 	
-	trigger = {
-		tag = GER
-		has_government = fascism
-		has_idea = as_germany_waffen_ss
-		has_country_flag = as_germany_ss_panzer_division_40
-		37 = {
-			OR = {
-				is_controlled_by = GER
-				any_other_country = {
-					controls_state = 37 # Sjaelland
-					is_in_faction_with = GER
-					GER = { is_faction_leader = yes }
-				}
-			}
-		}
-	}
-
-	mean_time_to_happen = {
-		days = 270
-	}
+	fire_only_once = yes
 	
 	option = {
 		name = as_waffen_ss.5.option_a
 		ai_chance = { factor = 100 }
 		as_add_waffen_ss_volunteers_effect = yes
+		add_to_variable = { var = wehrmacht_anger value = 2 }
+		subtract_from_variable = { var = SS_anger value = 2 }
+		SS_resolve_effects_wehrmacht = yes				
 		as_new_waffen_ss_volunteer_division_effect = yes
 		hidden_effect = { load_oob = GER_Waffen_SS_5 }
+		add_command_power = -60
 	}
 	
 	option = {
@@ -288,33 +162,18 @@ country_event = {
 	
 	fire_only_once = yes
 	
-	trigger = {
-		tag = GER
-		has_government = fascism
-		has_idea = as_germany_waffen_ss
-		110 = {
-			OR = {
-				is_controlled_by = GER
-				any_other_country = {
-					controls_state = 110 # Ostlandet
-					is_in_faction_with = GER
-					GER = { is_faction_leader = yes }
-				}
-			}
-		}
-	}
-
-	mean_time_to_happen = {
-		days = 570
-	}
+	is_triggered_only = yes
 	
 	option = {
 		name = as_waffen_ss.6.option_a
 		ai_chance = { factor = 100 }
 		as_new_waffen_ss_division_effect = yes
+		add_to_variable = { var = wehrmacht_anger value = 1 }
+		subtract_from_variable = { var = SS_anger value = 1 }
+		SS_resolve_effects_wehrmacht = yes				
 		hidden_effect = { load_oob = GER_Waffen_SS_6 }
 		set_country_flag = as_germany_ss_gebirgs_division
-		army_experience = -100		
+		add_command_power = -40		
 	}
 	
 	option = {
@@ -333,32 +192,17 @@ country_event = {
 	
 	fire_only_once = yes
 	
-	trigger = {
-		tag = GER
-		has_government = fascism
-		has_idea = as_germany_waffen_ss_volunteers
-		has_country_flag = as_germany_ss_gebirgs_division
-		45 = {
-			OR = {
-				is_controlled_by = GER
-				any_other_country = {
-					controls_state = 45 # Vojvodina
-					is_in_faction_with = GER
-					GER = { is_faction_leader = yes }
-				}
-			}
-		}
-	}
-
-	mean_time_to_happen = {
-		days = 180
-	}
+	is_triggered_only = yes
 	
 	option = {
 		name = as_waffen_ss.7.option_a
 		ai_chance = { factor = 100 }
 		as_new_waffen_ss_volunteer_division_effect = yes
+		add_to_variable = { var = wehrmacht_anger value = 1 }
+		subtract_from_variable = { var = SS_anger value = 1 }
+		SS_resolve_effects_wehrmacht = yes						
 		hidden_effect = { load_oob = GER_Waffen_SS_7 }
+		add_command_power = -40		
 	}
 	
 	option = {
@@ -377,33 +221,18 @@ country_event = {
 	
 	fire_only_once = yes
 	
-	trigger = {
-		tag = GER
-		has_government = fascism
-		has_idea = as_germany_waffen_ss_volunteers
-		76 = {
-			OR = {
-				is_controlled_by = GER
-				any_other_country = {
-					controls_state = 76 # North Transylvania
-					is_in_faction_with = GER
-					GER = { is_faction_leader = yes }
-				}
-			}
-		}
-	}
-
-	mean_time_to_happen = {
-		days = 270
-	}
+	is_triggered_only = yes
 	
 	option = {
 		name = as_waffen_ss.8.option_a
 		ai_chance = { factor = 100 }
 		as_new_waffen_ss_volunteer_division_effect = yes
+		add_to_variable = { var = wehrmacht_anger value = 1 }
+		subtract_from_variable = { var = SS_anger value = 1 }
+		SS_resolve_effects_wehrmacht = yes						
 		hidden_effect = { load_oob = GER_Waffen_SS_8 }
 		set_country_flag = as_germany_ss_kavallerie_division
-		army_experience = -100		
+		add_command_power = -10		
 	}
 	
 	option = {
@@ -422,38 +251,18 @@ country_event = {
 	
 	fire_only_once = yes
 	
-	trigger = {
-		tag = GER
-		has_government = fascism
-		has_idea = as_germany_waffen_ss
-		has_tech = mechanised_infantry
-		OR = {
-			has_tech = basic_heavy_tank
-			has_tech = improved_heavy_tank			
-		}				
-		16 = {
-			OR = {
-				is_controlled_by = GER
-				any_other_country = {
-					controls_state = 16 # Île-de-France
-					is_in_faction_with = GER
-					GER = { is_faction_leader = yes }
-				}
-			}
-		}
-	}
-
-	mean_time_to_happen = {
-		days = 510
-	}
+	is_triggered_only = yes
 	
 	option = {
 		name = as_waffen_ss.9.option_a
 		ai_chance = { factor = 100 }
 		as_new_waffen_ss_division_effect = yes
+		add_to_variable = { var = wehrmacht_anger value = 1 }
+		subtract_from_variable = { var = SS_anger value = 1 }
+		SS_resolve_effects_wehrmacht = yes						
 		hidden_effect = { load_oob = GER_Waffen_SS_9 }
 		set_country_flag = as_germany_ss_panzer_division_42
-		army_experience = -100		
+		add_command_power = -50		
 	}
 	
 	option = {
@@ -472,33 +281,17 @@ country_event = {
 	
 	fire_only_once = yes
 	
-	trigger = {
-		tag = GER
-		has_government = fascism
-		has_idea = as_germany_waffen_ss
-		has_tech = mechanised_infantry
-		has_country_flag = as_germany_ss_panzer_division_42
-		16 = {
-			OR = {
-				is_controlled_by = GER
-				any_other_country = {
-					controls_state = 16 # Île-de-France
-					is_in_faction_with = GER
-					GER = { is_faction_leader = yes }
-				}
-			}
-		}
-	}
-
-	mean_time_to_happen = {
-		days = 30
-	}
+	is_triggered_only = yes
 	
 	option = {
 		name = as_waffen_ss.10.option_a
 		ai_chance = { factor = 100 }
 		as_new_waffen_ss_division_effect = yes
+		add_to_variable = { var = wehrmacht_anger value = 1 }
+		subtract_from_variable = { var = SS_anger value = 1 }
+		SS_resolve_effects_wehrmacht = yes						
 		hidden_effect = { load_oob = GER_Waffen_SS_10 }
+		add_command_power = -50
 	}
 	
 	option = {
@@ -517,33 +310,17 @@ country_event = {
 	
 	fire_only_once = yes
 	
-	trigger = {
-		tag = GER
-		has_government = fascism
-		has_idea = as_germany_waffen_ss_volunteers
-		has_tech = mechanised_infantry
-		has_country_flag = as_germany_ss_panzergrenadier_division
-		37 = {
-			OR = {
-				is_controlled_by = GER
-				any_other_country = {
-					controls_state = 37 # Sjaelland
-					is_in_faction_with = GER
-					GER = { is_faction_leader = yes }
-				}
-			}
-		}
-	}
-
-	mean_time_to_happen = {
-		days = 1170 # July 1943
-	}
+	is_triggered_only = yes
 	
 	option = {
 		name = as_waffen_ss.11.option_a
 		ai_chance = { factor = 100 }
 		as_new_waffen_ss_volunteer_division_effect = yes
+		add_to_variable = { var = wehrmacht_anger value = 1 }
+		subtract_from_variable = { var = SS_anger value = 1 }
+		SS_resolve_effects_wehrmacht = yes						
 		hidden_effect = { load_oob = GER_Waffen_SS_11 }
+		add_command_power = -50		
 	}
 	
 	option = {
@@ -562,33 +339,17 @@ country_event = {
 	
 	fire_only_once = yes
 	
-	trigger = {
-		tag = GER
-		has_government = fascism
-		has_idea = as_germany_waffen_ss
-		has_tech = mechanised_infantry
-		has_country_flag = as_germany_ss_panzer_division_42
-		64 = {
-			OR = {
-				is_controlled_by = GER
-				any_other_country = {
-					controls_state = 64 # Brandenburg
-					is_in_faction_with = GER
-					GER = { is_faction_leader = yes }
-				}
-			}
-		}
-	}
+	is_triggered_only = yes
 
-	mean_time_to_happen = {
-		days = 990 # September 1943
-	}
-	
 	option = {
 		name = as_waffen_ss.12.option_a
 		ai_chance = { factor = 100 }
 		as_new_waffen_ss_division_effect = yes
+		add_to_variable = { var = wehrmacht_anger value = 1 }
+		subtract_from_variable = { var = SS_anger value = 1 }
+		SS_resolve_effects_wehrmacht = yes						
 		hidden_effect = { load_oob = GER_Waffen_SS_12 }
+		add_command_power = -50		
 	}
 	
 	option = {
@@ -607,33 +368,18 @@ country_event = {
 	
 	fire_only_once = yes
 	
-	trigger = {
-		tag = GER
-		has_government = fascism
-		has_idea = as_germany_waffen_ss_volunteers
-		has_country_flag = as_germany_ss_gebirgs_division
-		109 = {
-			OR = {
-				is_controlled_by = GER
-				any_other_country = {
-					controls_state = 109 # Croatia
-					is_in_faction_with = GER
-					GER = { is_faction_leader = yes }
-				}
-			}
-		}
-	}
+	is_triggered_only = yes
 
-	mean_time_to_happen = {
-		days = 720 # April 1943
-	}
-	
 	option = {
 		name = as_waffen_ss.13.option_a
 		ai_chance = { factor = 100 }
 		as_add_waffen_ss_foreigners_effect = yes
+		add_to_variable = { var = wehrmacht_anger value = 1 }
+		subtract_from_variable = { var = SS_anger value = 1 }
+		SS_resolve_effects_wehrmacht = yes						
 		as_new_waffen_ss_foreign_division_effect = yes
 		hidden_effect = { load_oob = GER_Waffen_SS_13 }
+		add_command_power = -30		
 	}
 	
 	option = {
@@ -650,38 +396,22 @@ country_event = {
 	title = as_waffen_ss.14.title
 	desc = as_waffen_ss.14.desc
 	picture = GFX_report_event_german_troops
-	
+		
 	fire_only_once = yes
 	
-	trigger = {
-		tag = GER
-		has_government = fascism
-		#has_idea = as_germany_waffen_ss_foreigners
-		has_idea = as_germany_waffen_ss_volunteers		
-		91 = {
-			OR = {
-				is_controlled_by = GER
-				any_other_country = {
-					controls_state = 91 # Lwow
-					is_in_faction_with = GER
-					GER = { is_faction_leader = yes }
-				}
-			}
-		}
-	}
-
-	mean_time_to_happen = {
-		days = 30 # April 1943
-	}
+	is_triggered_only = yes
 	
 	option = {
 		name = as_waffen_ss.14.option_a
 		ai_chance = { factor = 100 }
 		as_add_waffen_ss_foreigners_effect = yes
 		as_new_waffen_ss_foreign_division_effect = yes
+		add_to_variable = { var = wehrmacht_anger value = 2 }
+		subtract_from_variable = { var = SS_anger value = 2 }
+		SS_resolve_effects_wehrmacht = yes						
 		hidden_effect = { load_oob = GER_Waffen_SS_14 }
 		set_country_flag = as_germany_ss_motorized_division
-		army_experience = -100		
+		add_command_power = -20		
 	}
 	
 	option = {
@@ -697,37 +427,21 @@ country_event = {
 	title = as_waffen_ss.15.title
 	desc = as_waffen_ss.15.desc
 	picture = GFX_report_event_german_troops
-	
+		
 	fire_only_once = yes
 	
-	trigger = {
-		tag = GER
-		has_government = fascism
-		#has_idea = as_germany_waffen_ss_foreigners
-		has_idea = as_germany_waffen_ss_volunteers
-		has_country_flag = as_germany_ss_motorized_division
-		12 = {
-			OR = {
-				is_controlled_by = GER
-				any_other_country = {
-					controls_state = 12 # Vidzeme
-					is_in_faction_with = GER
-					GER = { is_faction_leader = yes }
-				}
-			}
-		}
-	}
-
-	mean_time_to_happen = {
-		days = 40 # February 1943
-	}
+	is_triggered_only = yes
 	
 	option = {
 		name = as_waffen_ss.15.option_a
 		ai_chance = { factor = 100 }
 		as_add_waffen_ss_foreigners_effect = yes
 		as_new_waffen_ss_foreign_division_effect = yes
+		add_to_variable = { var = wehrmacht_anger value = 2 }
+		subtract_from_variable = { var = SS_anger value = 2 }
+		SS_resolve_effects_wehrmacht = yes						
 		hidden_effect = { load_oob = GER_Waffen_SS_15 }
+		add_command_power = -30		
 	}
 	
 	option = {
@@ -745,35 +459,20 @@ country_event = {
 	title = as_waffen_ss.16.title
 	desc = as_waffen_ss.16.desc
 	picture = GFX_report_event_german_troops
-	
+		
 	fire_only_once = yes
 	
-	trigger = {
-		tag = GER
-		has_government = fascism
-		has_idea = as_germany_waffen_ss
-		has_country_flag = as_germany_ss_motorized_division
-		110 = {
-			OR = {
-				is_controlled_by = GER
-				any_other_country = {
-					controls_state = 110 # Ostlandet
-					is_in_faction_with = GER
-					GER = { is_faction_leader = yes }
-				}
-			}
-		}
-	}
-
-	mean_time_to_happen = {
-		days = 1200 # October 1943
-	}
+	is_triggered_only = yes
 	
 	option = {
 		name = as_waffen_ss.16.option_a
 		ai_chance = { factor = 100 }
 		as_new_waffen_ss_division_effect = yes
+		add_to_variable = { var = wehrmacht_anger value = 1 }
+		subtract_from_variable = { var = SS_anger value = 1 }
+		SS_resolve_effects_wehrmacht = yes						
 		hidden_effect = { load_oob = GER_Waffen_SS_16 }
+		add_command_power = -30			
 	}
 	
 	option = {
@@ -790,35 +489,20 @@ country_event = {
 	title = as_waffen_ss.17.title
 	desc = as_waffen_ss.17.desc
 	picture = GFX_report_event_german_troops
-	
+		
 	fire_only_once = yes
 	
-	trigger = {
-		tag = GER
-		has_government = fascism
-		has_idea = as_germany_waffen_ss
-		has_country_flag = as_germany_ss_motorized_division
-		16 = {
-			OR = {
-				is_controlled_by = GER
-				any_other_country = {
-					controls_state = 16 
-					is_in_faction_with = GER
-					GER = { is_faction_leader = yes }
-				}
-			}
-		}
-	}
-
-	mean_time_to_happen = {
-		days = 1200 # October 1943
-	}
+	is_triggered_only = yes
 	
 	option = {
 		name = as_waffen_ss.17.option_a
 		ai_chance = { factor = 100 }
 		as_new_waffen_ss_division_effect = yes
+		add_to_variable = { var = wehrmacht_anger value = 1 }
+		subtract_from_variable = { var = SS_anger value = 1 }
+		SS_resolve_effects_wehrmacht = yes						
 		hidden_effect = { load_oob = GER_Waffen_SS_17 }
+		add_command_power = -50		
 	}
 	
 	option = {
@@ -835,35 +519,20 @@ country_event = {
 	title = as_waffen_ss.18.title
 	desc = as_waffen_ss.18.desc
 	picture = GFX_report_event_german_troops
-	
+		
 	fire_only_once = yes
 	
-	trigger = {
-		tag = GER
-		has_government = fascism
-		has_idea = as_germany_waffen_ss_volunteers
-		has_country_flag = as_germany_ss_panzergrenadier_division
-		109 = {
-			OR = {
-				is_controlled_by = GER
-				any_other_country = {
-					controls_state = 109
-					is_in_faction_with = GER
-					GER = { is_faction_leader = yes }
-				}
-			}
-		}
-	}
-
-	mean_time_to_happen = {
-		days = 750 # October 1943 
-	}
+	is_triggered_only = yes
 	
 	option = {
 		name = as_waffen_ss.18.option_a
 		ai_chance = { factor = 100 }
 		as_new_waffen_ss_volunteer_division_effect = yes
+		add_to_variable = { var = wehrmacht_anger value = 1 }
+		subtract_from_variable = { var = SS_anger value = 1 }
+		SS_resolve_effects_wehrmacht = yes						
 		hidden_effect = { load_oob = GER_Waffen_SS_18 }
+		add_command_power = -50			
 	}
 	
 	option = {
@@ -880,36 +549,21 @@ country_event = {
 	title = as_waffen_ss.19.title
 	desc = as_waffen_ss.19.desc
 	picture = GFX_report_event_german_troops
-	
+		
 	fire_only_once = yes
 	
-	trigger = {
-		tag = GER
-		has_government = fascism
-		has_idea = as_germany_waffen_ss_volunteers
-		has_country_flag = as_germany_ss_motorized_division
-		12 = {
-			OR = {
-				is_controlled_by = GER
-				any_other_country = {
-					controls_state = 12
-					is_in_faction_with = GER
-					GER = { is_faction_leader = yes }
-				}
-			}
-		}
-	}
-
-	mean_time_to_happen = {
-		days = 850 # 1944 
-	}
+	is_triggered_only = yes
 	
 	option = {
 		name = as_waffen_ss.19.option_a
 		ai_chance = { factor = 100 }
 		as_new_waffen_ss_foreign_division_effect = yes
 		as_add_waffen_ss_foreigners_effect = yes
+		add_to_variable = { var = wehrmacht_anger value = 2 }
+		subtract_from_variable = { var = SS_anger value = 2 }
+		SS_resolve_effects_wehrmacht = yes						
 		hidden_effect = { load_oob = GER_Waffen_SS_19 }
+		add_command_power = -20	
 	}
 	
 	option = {
@@ -926,36 +580,21 @@ country_event = {
 	title = as_waffen_ss.20.title
 	desc = as_waffen_ss.20.desc
 	picture = GFX_report_event_german_troops
-	
+		
 	fire_only_once = yes
 	
-	trigger = {
-		tag = GER
-		has_government = fascism
-		has_idea = as_germany_waffen_ss_volunteers
-		has_country_flag = as_germany_ss_motorized_division
-		13 = {
-			OR = {
-				is_controlled_by = GER
-				any_other_country = {
-					controls_state = 13
-					is_in_faction_with = GER
-					GER = { is_faction_leader = yes }
-				}
-			}
-		}
-	}
-
-	mean_time_to_happen = {
-		days = 800 # 1944 
-	}
+	is_triggered_only = yes
 	
 	option = {
 		name = as_waffen_ss.20.option_a
 		ai_chance = { factor = 100 }
 		as_new_waffen_ss_foreign_division_effect = yes
 		as_add_waffen_ss_foreigners_effect = yes
+		add_to_variable = { var = wehrmacht_anger value = 2 }
+		subtract_from_variable = { var = SS_anger value = 2 }
+		SS_resolve_effects_wehrmacht = yes						
 		hidden_effect = { load_oob = GER_Waffen_SS_20 }
+		add_command_power = -20			
 	}
 	
 	option = {
@@ -972,35 +611,20 @@ country_event = {
 	title = as_waffen_ss.21.title
 	desc = as_waffen_ss.21.desc
 	picture = GFX_report_event_german_troops
-	
+		
 	fire_only_once = yes
 	
-	trigger = {
-		tag = GER
-		has_government = fascism
-		has_idea = as_germany_waffen_ss_foreigners
-		has_country_flag = as_germany_ss_gebirgs_division
-		106 = {							# Macedonia
-			OR = {
-				is_controlled_by = GER
-				any_other_country = {
-					controls_state = 106
-					is_in_faction_with = GER
-					GER = { is_faction_leader = yes }
-				}
-			}
-		}
-	}
-
-	mean_time_to_happen = {
-		days = 800 # 1944 
-	}
+	is_triggered_only = yes
 	
 	option = {
 		name = as_waffen_ss.21.option_a
 		ai_chance = { factor = 100 }
 		as_new_waffen_ss_foreign_division_effect = yes
+		add_to_variable = { var = wehrmacht_anger value = 1 }
+		subtract_from_variable = { var = SS_anger value = 1 }
+		SS_resolve_effects_wehrmacht = yes						
 		hidden_effect = { load_oob = GER_Waffen_SS_21 }
+		add_command_power = -30			
 	}
 	
 	option = {
@@ -1017,36 +641,21 @@ country_event = {
 	title = as_waffen_ss.22.title
 	desc = as_waffen_ss.22.desc
 	picture = GFX_report_event_german_troops
-	
+		
 	fire_only_once = yes
 	
-	trigger = {
-		tag = GER
-		has_government = fascism
-		has_idea = as_germany_waffen_ss_foreigners
-		109 = {							
-			OR = {
-				is_controlled_by = GER
-				any_other_country = {
-					controls_state = 109
-					is_in_faction_with = GER
-					GER = { is_faction_leader = yes }
-				}
-			}
-		}
-	}
-
-	mean_time_to_happen = {
-		days = 550 # 1943 
-	}
+	is_triggered_only = yes
 	
 	option = {
 		name = as_waffen_ss.22.option_a
 		ai_chance = { factor = 100 }
 		as_new_waffen_ss_foreign_division_effect = yes
 		as_add_waffen_ss_foreigners_effect = yes
+		add_to_variable = { var = wehrmacht_anger value = 2 }
+		subtract_from_variable = { var = SS_anger value = 2 }
+		SS_resolve_effects_wehrmacht = yes								
 		hidden_effect = { load_oob = GER_Waffen_SS_22 }
-		#army_experience = -100		
+		add_command_power = -20		
 	}
 	
 	option = {
@@ -1063,36 +672,21 @@ country_event = {
 	title = as_waffen_ss.23.title
 	desc = as_waffen_ss.23.desc
 	picture = GFX_report_event_german_troops
-	
+		
 	fire_only_once = yes
 	
-	trigger = {
-		tag = GER
-		has_government = fascism
-		has_idea = as_germany_waffen_ss_volunteers
-		has_country_flag = as_germany_ss_gebirgs_division
-		109 = {
-			OR = {
-				is_controlled_by = GER
-				any_other_country = {
-					controls_state = 109 # Croatia
-					is_in_faction_with = GER
-					GER = { is_faction_leader = yes }
-				}
-			}
-		}
-	}
-
-	mean_time_to_happen = {
-		days = 1050 # 1944 
-	}
+	is_triggered_only = yes
 	
 	option = {
 		name = as_waffen_ss.23.option_a
 		ai_chance = { factor = 100 }
 		as_add_waffen_ss_foreigners_effect = yes
 		as_new_waffen_ss_foreign_division_effect = yes
+		add_to_variable = { var = wehrmacht_anger value = 2 }
+		subtract_from_variable = { var = SS_anger value = 2 }
+		SS_resolve_effects_wehrmacht = yes						
 		hidden_effect = { load_oob = GER_Waffen_SS_23 }
+		add_command_power = -20		
 	}
 	
 	option = {
@@ -1109,35 +703,20 @@ country_event = {
 	title = as_waffen_ss.24.title
 	desc = as_waffen_ss.24.desc
 	picture = GFX_report_event_german_troops
-	
+		
 	fire_only_once = yes
 	
-	trigger = {
-		tag = GER
-		has_government = fascism
-		has_idea = as_germany_waffen_ss_volunteers
-		has_country_flag = as_germany_ss_gebirgs_division
-		153 = {							
-			OR = {
-				is_controlled_by = GER
-				any_other_country = {
-					controls_state = 153
-					is_in_faction_with = GER
-					GER = { is_faction_leader = yes }
-				}
-			}
-		}
-	}
-
-	mean_time_to_happen = {
-		days = 1550 # 1944 
-	}
+	is_triggered_only = yes
 	
 	option = {
 		name = as_waffen_ss.24.option_a
 		ai_chance = { factor = 100 }
 		as_new_waffen_ss_volunteer_division_effect = yes
+		add_to_variable = { var = wehrmacht_anger value = 1 }
+		subtract_from_variable = { var = SS_anger value = 1 }
+		SS_resolve_effects_wehrmacht = yes						
 		hidden_effect = { load_oob = GER_Waffen_SS_24 }
+		add_command_power = -30		
 	}
 	
 	option = {
@@ -1154,35 +733,20 @@ country_event = {
 	title = as_waffen_ss.25.title
 	desc = as_waffen_ss.25.desc
 	picture = GFX_report_event_german_troops
-	
+		
 	fire_only_once = yes
 	
-	trigger = {
-		tag = GER
-		has_government = fascism
-		has_idea = as_germany_waffen_ss_foreigners
-		has_country_flag = as_germany_ss_motorized_division
-		43 = {							
-			OR = {
-				is_controlled_by = GER
-				any_other_country = {
-					controls_state = 43
-					is_in_faction_with = GER
-					GER = { is_faction_leader = yes }
-				}
-			}
-		}
-	}
-
-	mean_time_to_happen = {
-		days = 1200 # 1944 
-	}
+	is_triggered_only = yes
 	
 	option = {
 		name = as_waffen_ss.25.option_a
 		ai_chance = { factor = 100 }
 		as_new_waffen_ss_foreign_division_effect = yes
+		add_to_variable = { var = wehrmacht_anger value = 1 }
+		subtract_from_variable = { var = SS_anger value = 1 }
+		SS_resolve_effects_wehrmacht = yes						
 		hidden_effect = { load_oob = GER_Waffen_SS_25 }
+		add_command_power = -40		
 	}
 	
 	option = {
@@ -1199,35 +763,20 @@ country_event = {
 	title = as_waffen_ss.26.title
 	desc = as_waffen_ss.26.desc
 	picture = GFX_report_event_german_troops
-	
+		
 	fire_only_once = yes
 	
-	trigger = {
-		tag = GER
-		has_government = fascism
-		has_idea = as_germany_waffen_ss_foreigners
-		has_country_flag = as_germany_ss_motorized_division
-		43 = {							
-			OR = {
-				is_controlled_by = GER
-				any_other_country = {
-					controls_state = 43
-					is_in_faction_with = GER
-					GER = { is_faction_leader = yes }
-				}
-			}
-		}
-	}
-
-	mean_time_to_happen = {
-		days = 1230 # 1944 
-	}
+	is_triggered_only = yes
 	
 	option = {
 		name = as_waffen_ss.26.option_a
 		ai_chance = { factor = 100 }
 		as_new_waffen_ss_foreign_division_effect = yes
+		add_to_variable = { var = wehrmacht_anger value = 1 }
+		subtract_from_variable = { var = SS_anger value = 1 }
+		SS_resolve_effects_wehrmacht = yes						
 		hidden_effect = { load_oob = GER_Waffen_SS_26 }
+		add_command_power = -40		
 	}
 	
 	option = {
@@ -1244,35 +793,20 @@ country_event = {
 	title = as_waffen_ss.27.title
 	desc = as_waffen_ss.27.desc
 	picture = GFX_report_event_german_troops
-	
+		
 	fire_only_once = yes
 	
-	trigger = {
-		tag = GER
-		has_government = fascism
-		has_idea = as_germany_waffen_ss_foreigners
-		has_country_flag = as_germany_ss_motorized_division
-		7 = {							
-			OR = {
-				is_controlled_by = GER
-				any_other_country = {
-					controls_state = 7
-					is_in_faction_with = GER
-					GER = { is_faction_leader = yes }
-				}
-			}
-		}
-	}
-
-	mean_time_to_happen = {
-		days = 30 # 1940
-	}
+	is_triggered_only = yes
 	
 	option = {
 		name = as_waffen_ss.27.option_a
 		ai_chance = { factor = 100 }
 		as_new_waffen_ss_foreign_division_effect = yes
+		add_to_variable = { var = wehrmacht_anger value = 1 }
+		subtract_from_variable = { var = SS_anger value = 1 }
+		SS_resolve_effects_wehrmacht = yes						
 		hidden_effect = { load_oob = GER_Waffen_SS_27 }
+		add_command_power = -20			
 	}
 	
 	option = {
@@ -1289,29 +823,10 @@ country_event = {
 	title = as_waffen_ss.28.title
 	desc = as_waffen_ss.28.desc
 	picture = GFX_report_event_german_troops
-	
+		
 	fire_only_once = yes
 	
-	trigger = {
-		tag = GER
-		has_government = fascism
-		has_idea = as_germany_waffen_ss
-		has_country_flag = as_germany_ss_motorized_division
-		34 = {							
-			OR = {
-				is_controlled_by = GER
-				any_other_country = {
-					controls_state = 34
-					is_in_faction_with = GER
-					GER = { is_faction_leader = yes }
-				}
-			}
-		}
-	}
-
-	mean_time_to_happen = {
-		days = 200 # 1941
-	}
+	is_triggered_only = yes
 	
 	option = {
 		name = as_waffen_ss.28.option_a
@@ -1319,7 +834,11 @@ country_event = {
 		as_new_waffen_ss_foreign_division_effect = yes
 		as_add_waffen_ss_foreigners_effect = yes
 		as_add_waffen_ss_volunteers_effect = yes
+		add_to_variable = { var = wehrmacht_anger value = 3 }
+		subtract_from_variable = { var = SS_anger value = 3 }
+		SS_resolve_effects_wehrmacht = yes						
 		hidden_effect = { load_oob = GER_Waffen_SS_28 }
+		add_command_power = -20			
 	}
 	
 	option = {
@@ -1336,35 +855,20 @@ country_event = {
 	title = as_waffen_ss.29.title
 	desc = as_waffen_ss.29.desc
 	picture = GFX_report_event_german_troops
-	
+		
 	fire_only_once = yes
 	
-	trigger = {
-		tag = GER
-		has_government = fascism
-		has_idea = as_germany_waffen_ss_foreigners
-		has_country_flag = as_germany_ss_motorized_division
-		153 = {							
-			OR = {
-				is_controlled_by = GER
-				any_other_country = {
-					controls_state = 153
-					is_in_faction_with = GER
-					GER = { is_faction_leader = yes }
-				}
-			}
-		}
-	}
-
-	mean_time_to_happen = {
-		days = 1500 # 1944
-	}
+	is_triggered_only = yes
 	
 	option = {
 		name = as_waffen_ss.29.option_a
 		ai_chance = { factor = 100 }
 		as_new_waffen_ss_foreign_division_effect = yes
+		add_to_variable = { var = wehrmacht_anger value = 1 }
+		subtract_from_variable = { var = SS_anger value = 1 }
+		SS_resolve_effects_wehrmacht = yes						
 		hidden_effect = { load_oob = GER_Waffen_SS_29 }
+		add_command_power = -40		
 	}
 	
 	option = {
@@ -1381,35 +885,20 @@ country_event = {
 	title = as_waffen_ss.30.title
 	desc = as_waffen_ss.30.desc
 	picture = GFX_report_event_german_troops
-	
+		
 	fire_only_once = yes
 	
-	trigger = {
-		tag = GER
-		has_government = fascism
-		has_idea = as_germany_waffen_ss_foreigners
-		has_country_flag = as_germany_ss_motorized_division
-		206 = {							
-			OR = {
-				is_controlled_by = GER
-				any_other_country = {
-					controls_state = 206
-					is_in_faction_with = GER
-					GER = { is_faction_leader = yes }
-				}
-			}
-		}
-	}
-
-	mean_time_to_happen = {
-		days = 600 # 1943
-	}
+	is_triggered_only = yes
 	
 	option = {
 		name = as_waffen_ss.30.option_a
 		ai_chance = { factor = 100 }
 		as_new_waffen_ss_foreign_division_effect = yes
+		add_to_variable = { var = wehrmacht_anger value = 1 }
+		subtract_from_variable = { var = SS_anger value = 1 }
+		SS_resolve_effects_wehrmacht = yes						
 		hidden_effect = { load_oob = GER_Waffen_SS_30 }
+		add_command_power = -40		
 	}
 	
 	option = {
@@ -1426,35 +915,20 @@ country_event = {
 	title = as_waffen_ss.31.title
 	desc = as_waffen_ss.31.desc
 	picture = GFX_report_event_german_troops
-	
+		
 	fire_only_once = yes
 	
-	trigger = {
-		tag = GER
-		has_government = fascism
-		has_idea = as_germany_waffen_ss_foreigners
-		has_country_flag = as_germany_ss_motorized_division
-		154 = {							
-			OR = {
-				is_controlled_by = GER
-				any_other_country = {
-					controls_state = 154
-					is_in_faction_with = GER
-					GER = { is_faction_leader = yes }
-				}
-			}
-		}
-	}
-
-	mean_time_to_happen = {
-		days = 1200 # 1944
-	}
+	is_triggered_only = yes
 	
 	option = {
 		name = as_waffen_ss.31.option_a
 		ai_chance = { factor = 100 }
 		as_new_waffen_ss_foreign_division_effect = yes
+		add_to_variable = { var = wehrmacht_anger value = 1 }
+		subtract_from_variable = { var = SS_anger value = 1 }
+		SS_resolve_effects_wehrmacht = yes		
 		hidden_effect = { load_oob = GER_Waffen_SS_31 }
+		add_command_power = -40			
 	}
 	
 	option = {
@@ -1471,36 +945,20 @@ country_event = {
 	title = as_waffen_ss.32.title
 	desc = as_waffen_ss.32.desc
 	picture = GFX_report_event_german_troops
-	
+		
 	fire_only_once = yes
 	
-	trigger = {
-		tag = GER
-		has_government = fascism
-		has_idea = as_germany_waffen_ss_foreigners
-		has_country_flag = as_germany_ss_motorized_division
-		surrender_progress > 0.15
-		64 = {							
-			OR = {
-				is_controlled_by = GER
-				any_other_country = {
-					controls_state = 64
-					is_in_faction_with = GER
-					GER = { is_faction_leader = yes }
-				}
-			}
-		}
-	}
-
-	mean_time_to_happen = {
-		days = 15 # 1945
-	}
+	is_triggered_only = yes
 	
 	option = {
 		name = as_waffen_ss.32.option_a
 		ai_chance = { factor = 100 }
 		as_new_waffen_ss_foreign_division_effect = yes
+		add_to_variable = { var = wehrmacht_anger value = 1 }
+		subtract_from_variable = { var = SS_anger value = 1 }
+		SS_resolve_effects_wehrmacht = yes		
 		hidden_effect = { load_oob = GER_Waffen_SS_32 }
+		add_command_power = -20			
 	}
 	
 	option = {
@@ -1517,37 +975,20 @@ country_event = {
 	title = as_waffen_ss.33.title
 	desc = as_waffen_ss.33.desc
 	picture = GFX_report_event_german_troops
-	
+		
 	fire_only_once = yes
 	
-	trigger = {
-		tag = GER
-		has_government = fascism
-		has_idea = as_germany_waffen_ss_foreigners
-		has_country_flag = as_germany_ss_motorized_division
-		VIC = { exists = no }
-		has_war_with = SOV
-		16 = {							
-			OR = {
-				is_controlled_by = GER
-				any_other_country = {
-					controls_state = 16
-					is_in_faction_with = GER
-					GER = { is_faction_leader = yes }
-				}
-			}
-		}
-	}
-
-	mean_time_to_happen = {
-		days = 365 # 1944
-	}
+	is_triggered_only = yes
 	
 	option = {
 		name = as_waffen_ss.33.option_a
 		ai_chance = { factor = 100 }
 		as_new_waffen_ss_foreign_division_effect = yes
+		add_to_variable = { var = wehrmacht_anger value = 1 }
+		subtract_from_variable = { var = SS_anger value = 1 }
+		SS_resolve_effects_wehrmacht = yes		
 		hidden_effect = { load_oob = GER_Waffen_SS_33 }
+		add_command_power = -40			
 	}
 	
 	option = {
@@ -1564,35 +1005,20 @@ country_event = {
 	title = as_waffen_ss.34.title
 	desc = as_waffen_ss.34.desc
 	picture = GFX_report_event_german_troops
-	
+		
 	fire_only_once = yes
 	
-	trigger = {
-		tag = GER
-		has_government = fascism
-		has_idea = as_germany_waffen_ss_foreigners
-		has_country_flag = as_germany_ss_motorized_division
-		35 = {							
-			OR = {
-				is_controlled_by = GER
-				any_other_country = {
-					controls_state = 35
-					is_in_faction_with = GER
-					GER = { is_faction_leader = yes }
-				}
-			}
-		}
-	}
-
-	mean_time_to_happen = {
-		days = 1200 # 1944
-	}
+	is_triggered_only = yes
 	
 	option = {
 		name = as_waffen_ss.34.option_a
 		ai_chance = { factor = 100 }
 		as_new_waffen_ss_foreign_division_effect = yes
+		add_to_variable = { var = wehrmacht_anger value = 1 }
+		subtract_from_variable = { var = SS_anger value = 1 }
+		SS_resolve_effects_wehrmacht = yes		
 		hidden_effect = { load_oob = GER_Waffen_SS_34 }
+		add_command_power = -40			
 	}
 	
 	option = {
@@ -1609,36 +1035,20 @@ country_event = {
 	title = as_waffen_ss.35.title
 	desc = as_waffen_ss.35.desc
 	picture = GFX_report_event_german_troops
-	
+		
 	fire_only_once = yes
 	
-	trigger = {
-		tag = GER
-		has_government = fascism
-		has_idea = as_germany_waffen_ss_foreigners
-		has_country_flag = as_germany_ss_motorized_division
-		has_war_with = SOV
-		10 = {							
-			OR = {
-				is_controlled_by = GER
-				any_other_country = {
-					controls_state = 10
-					is_in_faction_with = GER
-					GER = { is_faction_leader = yes }
-				}
-			}
-		}
-	}
-
-	mean_time_to_happen = {
-		days = 1200 # 1944
-	}
+	is_triggered_only = yes
 	
 	option = {
 		name = as_waffen_ss.35.option_a
 		ai_chance = { factor = 100 }
 		as_new_waffen_ss_foreign_division_effect = yes
+		add_to_variable = { var = wehrmacht_anger value = 1 }
+		subtract_from_variable = { var = SS_anger value = 1 }
+		SS_resolve_effects_wehrmacht = yes		
 		hidden_effect = { load_oob = GER_Waffen_SS_35 }
+		add_command_power = -40			
 	}
 	
 	option = {
@@ -1655,45 +1065,20 @@ country_event = {
 	title = as_waffen_ss.36.title
 	desc = as_waffen_ss.36.desc
 	picture = GFX_report_event_german_troops
-	
+		
 	fire_only_once = yes
 	
-	trigger = {
-		tag = GER
-		has_government = fascism
-		has_idea = as_germany_waffen_ss
-		has_country_flag = as_germany_ss_motorized_division
-		16 = {							
-			OR = {
-				is_controlled_by = GER
-				any_other_country = {
-					controls_state = 16
-					is_in_faction_with = GER
-					GER = { is_faction_leader = yes }
-				}
-			}
-		}
-		68 = {							
-			OR = {
-				is_controlled_by = GER
-				any_other_country = {
-					controls_state = 68
-					is_in_faction_with = GER
-					GER = { is_faction_leader = yes }
-				}
-			}
-		}		
-	}
-
-	mean_time_to_happen = {
-		days = 10  # 1940
-	}
+	is_triggered_only = yes
 	
 	option = {
 		name = as_waffen_ss.36.option_a
 		ai_chance = { factor = 100 }
 		as_new_waffen_ss_division_effect = yes
+		add_to_variable = { var = wehrmacht_anger value = 4 }		# Because the silliest 
+		subtract_from_variable = { var = SS_anger value = 4 }
+		SS_resolve_effects_wehrmacht = yes		
 		hidden_effect = { load_oob = GER_Waffen_SS_36 }
+		add_command_power = -10		
 	}
 	
 	option = {
@@ -1710,35 +1095,20 @@ country_event = {
 	title = as_waffen_ss.37.title
 	desc = as_waffen_ss.37.desc
 	picture = GFX_report_event_german_troops
-	
+		
 	fire_only_once = yes
 	
-	trigger = {
-		tag = GER
-		has_government = fascism
-		has_idea = as_germany_waffen_ss
-		has_country_flag = as_germany_ss_kavallerie_division
-		10 = {							
-			OR = {
-				is_controlled_by = GER
-				any_other_country = {
-					controls_state = 10
-					is_in_faction_with = GER
-					GER = { is_faction_leader = yes }
-				}
-			}
-		}		
-	}
-
-	mean_time_to_happen = {
-		days = 1600   # 1945
-	}
+	is_triggered_only = yes
 	
 	option = {
 		name = as_waffen_ss.37.option_a
 		ai_chance = { factor = 100 }
 		as_new_waffen_ss_division_effect = yes
+		add_to_variable = { var = wehrmacht_anger value = 1 }
+		subtract_from_variable = { var = SS_anger value = 1 }
+		SS_resolve_effects_wehrmacht = yes		
 		hidden_effect = { load_oob = GER_Waffen_SS_37 }
+		add_command_power = -10		
 	}
 	
 	option = {
@@ -1755,36 +1125,20 @@ country_event = {
 	title = as_waffen_ss.38.title
 	desc = as_waffen_ss.38.desc
 	picture = GFX_report_event_german_troops
-	
+		
 	fire_only_once = yes
 	
-	trigger = {
-		tag = GER
-		has_government = fascism
-		has_idea = as_germany_waffen_ss
-		has_country_flag = as_germany_ss_motorized_division
-		surrender_progress > 0.20
-		68 = {							
-			OR = {
-				is_controlled_by = GER
-				any_other_country = {
-					controls_state = 68
-					is_in_faction_with = GER
-					GER = { is_faction_leader = yes }
-				}
-			}
-		}		
-	}
-
-	mean_time_to_happen = {
-		days = 1   # 1945
-	}
+	is_triggered_only = yes
 	
 	option = {
 		name = as_waffen_ss.38.option_a
 		ai_chance = { factor = 100 }
 		as_new_waffen_ss_division_effect = yes
+		add_to_variable = { var = wehrmacht_anger value = 2 }
+		subtract_from_variable = { var = SS_anger value = 2 }
+		SS_resolve_effects_wehrmacht = yes		
 		hidden_effect = { load_oob = GER_Waffen_SS_38 }
+		add_command_power = -10		
 	}
 	
 	option = {

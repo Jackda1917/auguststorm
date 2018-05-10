@@ -2470,7 +2470,7 @@ technologies = {
 	
 	jet_strategic_bomber_1 = {
 		enable_equipments = {
-			jet_strategic_bomber_equipment_1
+			jet_strat_bomber_equipment_1
 		}
 
 		path = {
@@ -2524,7 +2524,7 @@ technologies = {
 	
 	jet_strategic_bomber_2 = {
 		enable_equipments = {
-			jet_strategic_bomber_equipment_2
+			jet_strat_bomber_equipment_2
 		}
 
 		path = {
@@ -2577,7 +2577,7 @@ technologies = {
 	
 	jet_strategic_bomber_3 = {
 		enable_equipments = {
-			jet_strategic_bomber_equipment_3
+			jet_strat_bomber_equipment_3
 		}
 
 		path = {
@@ -2630,7 +2630,7 @@ technologies = {
 	
 	jet_strategic_bomber_4 = {
 		enable_equipments = {
-			jet_strategic_bomber_equipment_4
+			jet_strat_bomber_equipment_4
 		}
 
 		research_cost = 4

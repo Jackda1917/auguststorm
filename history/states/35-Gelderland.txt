@@ -2,7 +2,7 @@
 state={
 	id=35
 	name="STATE_35" # Brabant
-	buildings_max_level_factor=1.000   manpower = 1449000
+	manpower = 1449000
 	
 	state_category = large_city
 

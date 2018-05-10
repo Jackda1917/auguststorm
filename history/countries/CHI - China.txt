@@ -20,7 +20,7 @@ set_technology = {
 add_ideas = {
 	german_advisors
 }
-set_research_slots = 2 # AS
+set_research_slots = 1 # AS
 
 
 if = {

@@ -75,26 +75,3 @@ germany_jerk = {
 		value = -200
 	}	
 }
-############### AS
-hun_no_war_rom = {
-	enable = {
-		tag = HUN
-		country_exists = ROM
-	}
-	abort = {
-		ROM = { NOT = { is_in_faction_with = GER } }
-		HUN = { is_in_faction_with = GER }
-		date > 1941.3.1
-	}
-	
-	ai_strategy = {
-		type = antagonize
-		id = "ROM"			
-		value = -300
-	}
-	ai_strategy = {
-		type = ignore
-		id = "ROM"			
-		value = 300
-	}	
-}

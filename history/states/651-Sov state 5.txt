@@ -2,7 +2,7 @@
 state={
 	id=651
 	name="STATE_651" # Ufa
-	buildings_max_level_factor=1.000   manpower = 2552075
+	manpower = 2552075
 
 	state_category = city
 

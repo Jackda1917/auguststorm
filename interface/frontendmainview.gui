@@ -22,23 +22,6 @@ guiTypes = {
 	}
 
 	### MAIN MENU PANEL (upperleft)
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 	containerWindowType = {
 		name  ="mainmenu_panel_upperleft"
 		position = { x=0 y =-200 }
@@ -98,13 +81,6 @@ guiTypes = {
 		}		
 		
 	}		
-
-
-
-
-
-
-
 
 	### SINGLE PLAYER MENU
 	containerWindowType = {
@@ -306,7 +282,7 @@ guiTypes = {
 			textureFile = ""
 			font = "hoi_18b"
 			borderSize = {x = 0 y = 0}
-			text = "AS v1.4.2.1"
+			text = "AS v1.5.3"
 			format = right
 			maxWidth = 270
 			maxHeight = 20	

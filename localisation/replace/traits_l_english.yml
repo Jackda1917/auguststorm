@@ -1,7 +1,9 @@
 ﻿l_english:
  panzer_leader_desc:0 "A natural with Armoured and Mechanized forces."
  ##### August Storm ######################################################################################################
- fm_leader:0 "General"
+ fm_leader:0 "General****"
+ cc_leader:0 "General***"
+ navy_leader:0 "Admiral"
  militarily_incompetent:0 "Militarily Incompetent"
  militarily_incompetent_desc:0 "Known to be incapable of properly conducting strategic military operations."
  grand_land_offensive_plan:0 "Grand Land Offensive"
@@ -22,3 +24,7 @@
  communist_revolutionary_desc:0 "A supporter of the Socialism In One Country supposed to aid the country's transition to a Communist society, 'following the light of Joseph Stalin's unerring ideas'."
  international_revolutionary:0 "Communist Revolutionary" 
  international_revolutionary_desc:0 "A supporter of an international Revolution hoping to aid the workers of the country to contribute to the world's future transition to a classless and stateless society."
+ main_front_leader:0 "Main Front Leader"
+ MAIN_FRONT_LEADER_desc:0 "Priority given for Grand Land Offensives"
+ field_marshal_baton:0 "Field Marshal"
+ field_marshal_baton_desc:1 "This general has been granted the honorific rank of Field Marshal, symbolized by his baton. He commands the respect of all, not to mention several armies."

@@ -1,7 +1,7 @@
 state={
 	id=698
 	name="STATE_698"
-	buildings_max_level_factor=1.000   manpower = 212012
+	manpower = 212012
 	
 	state_category = small_island
 	

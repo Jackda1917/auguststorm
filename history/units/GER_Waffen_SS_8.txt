@@ -21,7 +21,8 @@
 		signal_company = { x = 0 y = 4 }
 	}
 	priority = 1
-	template_counter=4
+	template_counter = 4
+	is_locked = yes	
 }
 
 units = {

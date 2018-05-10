@@ -36,7 +36,8 @@ british_help_against_germany = {
 }
 
 POL_template_design = {
-	enable = {	
+	enable = {
+	
 		original_tag = POL
 		date < 1940.1.1				
 	}
@@ -44,18 +45,6 @@ POL_template_design = {
 		date > 1940.1.1
 	}
 
-	ai_strategy = {
-		type = build_army
-		id = infantry
-		value = 40
-	}	
-
-	ai_strategy = {
-		type = build_army
-		id = armor
-		value = 3
-	}
-	
 	ai_strategy = {
 		type = template_prio
 		id = motorized

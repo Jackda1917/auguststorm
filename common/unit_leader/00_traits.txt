@@ -386,7 +386,7 @@ leader_traits = {
 		parent = skilled_staffer
 		gui_row = 15
 	}
-
+##### August Storm #################################################
 
 ##################################
 # Corps Commander traits.
@@ -460,7 +460,7 @@ leader_traits = {
 	skilled_staffer = { 
 		type = corps_commander
 		gain_xp = {
-			check_variable = { num_units > 11 } #23
+			check_variable = { num_units > 23 } 
 		}
 		custom_gain_xp_trigger_tooltip = fighting_with_at_least_23_units
 		
@@ -477,6 +477,7 @@ leader_traits = {
 		
 		gui_row = 15
 	}
+	
 	trickster = { 
 		type = corps_commander
 		gain_xp = {
@@ -498,7 +499,6 @@ leader_traits = {
 		
 		gui_row = 13
 	}
-
 
 	winter_specialist = { 
 		type = corps_commander
@@ -558,7 +558,7 @@ leader_traits = {
 		}
 
 		modifier = {
-			acclimatization_cold_climate_gain_factor = 0.2
+			acclimatization_cold_climate_gain_factor = 0.3 #0.2
 		}
 		
 		ai_will_do = {
@@ -1297,6 +1297,13 @@ leader_traits = {
 # status traits
 ##################################
 
+	main_front_leader = { 		# AI
+		type = field_marshal
+		trait_type = status_trait
+		
+		planning_skill = 1 #none
+	}
+##############################################################
 	sick = { 
 		type = all
 		trait_type = status_trait
@@ -1368,8 +1375,8 @@ leader_traits = {
 		trait_type = status_trait
 		
 		attack_skill = -1
-		#defense_skill = -1
-		#logistics_skill = -1
+		defense_skill = -1
+		logistics_skill = -1
 		planning_skill = -1
 	}
 

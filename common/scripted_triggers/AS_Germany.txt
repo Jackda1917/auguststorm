@@ -5,7 +5,7 @@ as_germany_rhineland_demilitarized = {
 	OR = {
 		51 = { is_owned_by = GER is_demilitarized_zone = yes } # Rhineland
 		42 = { is_owned_by = GER is_demilitarized_zone = yes } # Moselland
-		749 = { is_owned_by = GER is_demilitarized_zone = yes } # Saarland
+		771 = { is_owned_by = GER is_demilitarized_zone = yes } # Saarland
 	}
 }
 

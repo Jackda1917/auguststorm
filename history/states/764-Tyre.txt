@@ -1,0 +1,24 @@
+
+state={
+	id=764
+	name="STATE_764" #Tyre
+	manpower = 100000
+	
+	state_category = town
+
+	history={
+		owner = FRA
+		controller = FRA
+		add_core_of = LEB
+		add_claim_by = SYR
+
+		1926.5.23 = {
+			owner = LEB
+			controller = LEB
+		}
+	}
+
+	provinces={
+		11919
+	}
+}

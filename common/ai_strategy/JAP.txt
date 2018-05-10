@@ -13,24 +13,12 @@
 less_trucks_4_u_JAP = {
 	enable = {
 		tag = JAP
-		date < 1939.5.1				
+		date < 1939.1.1
 	}
 	abort = { 
-		date > 1939.5.1
+		date > 1939.1.1
 	}
-	
-	ai_strategy = { 
-		type = role_ratio
-		id = motorized 
-		value = 3 
-	}
-	
-	ai_strategy = { 
-		type = role_ratio
-		id = armor 
-		value = -30
-	}	
-	
+
 	ai_strategy = { 
 		type = role_ratio
 		id = infantry
@@ -40,9 +28,15 @@ less_trucks_4_u_JAP = {
 	ai_strategy = { 
 		type = role_ratio
 		id = garrison
-		value = 20
-	}	
+		value = 12
+	}
 	
+	ai_strategy = { 
+		type = role_ratio
+		id = suppression
+		value = 8
+	}
+
 	ai_strategy = {
 		type = template_prio
 		id = motorized
@@ -64,10 +58,10 @@ less_trucks_4_u_JAP = {
 	ai_strategy = {
 		type = template_prio
 		id = infantry
-		value = 80
+		value = 100
 	}
 	
-	ai_strategy = {
+		ai_strategy = {
 		type = equipment_production_factor
 		id = fighter
 		value = 20
@@ -76,28 +70,27 @@ less_trucks_4_u_JAP = {
 	ai_strategy = {
 		type = equipment_production_factor
 		id = infantry
-		value = 20 
+		value = 5 #10 to 5
 	}
 	
 	ai_strategy = {
 		type = equipment_production_factor
 		id = artillery
-		value = 20 #10 to 20
+		value = 20 #From 40 to 20
 	}
-	
-	ai_strategy = {
-		type = equipment_production_factor
-		id = carrier
-		value = 20  
+		ai_strategy = {
+		type = equipment_production_min_factories
+		id = artillery
+		value = 5
 	}
 
 	ai_strategy = {
 		type = equipment_production_factor
 		id = capital_ship
 		value = 10  
-	}	
-	
+	}
 }
+	
 
 southern_expansion = {
 	enable = {
@@ -127,6 +120,7 @@ southern_expansion = {
 		id = "HOL"			
 		value = 200
 	}	
+
 	ai_strategy = {
 		type = antagonize
 		id = "ENG"			
@@ -137,7 +131,10 @@ southern_expansion = {
 northern_expansion = {
 	enable = {
 		tag = JAP
-		has_completed_focus = northern_expansion_focus
+		OR = {	
+			has_completed_focus = JAP_prepare_for_war_with_the_soviet_union
+			has_completed_focus = JAP_preemptive_war			
+		}
 		country_exists = SOV
 	}
 	abort = {
@@ -149,14 +146,14 @@ northern_expansion = {
 	ai_strategy = {
 		type = antagonize
 		id = "SOV"			
-		value = 200
+		value = 300
 	}		
 }
 
 chinese_war = {
 	enable = {
 		tag = JAP
-		has_completed_focus = chinese_war_focus
+		has_completed_focus = JAP_intervene_in_china
 		country_exists = CHI
 	}
 	abort = {
@@ -167,7 +164,6 @@ chinese_war = {
 			}
 		}
 	}
-	
 	ai_strategy = {
 		type = antagonize
 		id = "CHI"			
@@ -178,7 +174,7 @@ chinese_war = {
 strike_usa = {
 	enable = {
 		tag = JAP
-		has_completed_focus = strike_usa_focus
+		has_completed_focus = JAP_strike_usa_focus
 		country_exists = USA
 	}
 	abort = {
@@ -203,15 +199,14 @@ strike_usa = {
 		type = equipment_production_factor
 		id = capital_ship
 		value = 10  
-	}
-	
+	}	
 }
 
 germany_ally = {
 	enable = {
 		tag = JAP
-		#has_completed_focus = axis_leanings_focus
-		has_completed_focus = strike_usa_focus		
+		has_completed_focus = JAP_technological_exchange
+		VIC = { exists = yes }
 		country_exists = GER
 	}
 	abort = {
@@ -221,14 +216,16 @@ germany_ally = {
 	ai_strategy = {
 		type = befriend
 		id = "GER"			
-		value = 300
+		value = 200
 	}
 	ai_strategy = {
 		type = alliance
 		id = "GER"			
-		value = 300
+		value = 200
 	}	
 }
+
+
 JAP_template_design = {
 	enable = {
 		original_tag = JAP
@@ -268,13 +265,13 @@ JAP_template_design = {
 	ai_strategy = {
 		type = template_prio
 		id = light_armor
-		value = 10
+		value = -10
 	}
 
 	ai_strategy = {
 		type = template_prio
 		id = medium_armor
-		value = -10
+		value = 40
 	}
 	
 	ai_strategy = {
@@ -288,7 +285,7 @@ JAP_template_design = {
 		id = marines
 		value = 50
 	}
-	
+
 	ai_strategy = {
 		type = template_prio
 		id = heavy_armor
@@ -298,7 +295,7 @@ JAP_template_design = {
 	ai_strategy = {
 		type = template_prio
 		id = paratroopers
-		value = -100
+		value = -10
 	}
 	
 	ai_strategy = {
@@ -310,45 +307,8 @@ JAP_template_design = {
 
 
 # hey dynamic targets would be swole as f*
-all_china_must_prosper_in_my_prosperity_sphere_SIK = {
+### Not SIK
 
-	enable = {
-		tag = JAP
-		
-		OR = {
-			NOT = { country_exists = CHI }
-			CHI = {
-				is_in_faction_with = JAP
-				is_puppet_of = JAP
-			}
-		}
-		country_exists = SIK
-		NOT = { 
-			YUN = {
-				OR = {
-					is_in_faction_with = JAP
-					is_puppet_of = JAP
-				}			
-			} 
-		}
-	}
-
-	abort = {
-		NOT = { country_exists = SIK }
-		SIK = {
-			OR = {
-				is_in_faction_with = JAP
-				is_puppet_of = JAP
-			}			
-		} 
-	}
-	
-	ai_strategy = {
-		type = antagonize
-		id = "SIK"
-		value = 5000
-	}
-}
 all_china_must_prosper_in_my_prosperity_sphere_XSM = {
 
 	enable = {
@@ -585,10 +545,9 @@ jap_building_boats_is_great = {
 
 	ai_strategy = {
 		type = dockyard_to_military_factory_ratio
-		value = 40  #aim for a 2-1 ratio on naval factories
+		value = 50  #aim for a 2-1 ratio on naval factories
 	}
 }
-
 
 JAP_dont_mess_with_volunteers = { # Reverse strategy
 	reversed = yes
@@ -654,7 +613,11 @@ respect_jap_sov_pact = {
 	}
 	abort = {
 		tag = JAP 
-		date > 1945.12.31
+		ENG = { has_capitulated = yes }
+		OR = {	
+			RAJ = { exists = no }
+			RAJ = { is_puppet_of = JAP }
+		}
 		is_in_faction_with = GER
 		NOT = { has_war_with = USA }
 		NOT = { surrender_progress > 0.01 }
@@ -663,8 +626,14 @@ respect_jap_sov_pact = {
 	ai_strategy = {
 		type = ignore
 		id = "SOV"
-		value = 300
+		value = 5000
 	}
+	
+	ai_strategy = {
+		type = ignore
+		id = "MON"
+		value = 5000
+	}	
 	
 	ai_strategy = {
 		type = antagonize

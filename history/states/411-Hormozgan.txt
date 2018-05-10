@@ -2,7 +2,7 @@
 state={
 	id=411
 	name="STATE_411" # Isfahan
-	buildings_max_level_factor=1.000   manpower = 885272
+	manpower = 885272
 	resources={
 		oil=14
 	}

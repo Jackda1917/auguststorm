@@ -2661,6 +2661,9 @@ news_event = {
 	option = {
 		name = news.100.c
 		trigger = { TAG = FRA }
+		add_timed_idea = { idea = defeat_opinion days = 60 }       # AS	
+		add_stability = -0.30
+		add_war_support = -0.30		
 	}
 }
 
@@ -5359,7 +5362,7 @@ news_event = {
 	option = {								# AS
 		trigger = {
 			OR = {
-				has_government = democracy
+				has_government = democratic
 				has_government = fascism
 			}
 		}
@@ -9323,9 +9326,10 @@ news_event = {
 					tag = GER
 					tag = ENG
 				}				
-				
-			}			
-			is_in_faction_with = GER
+
+
+			is_in_faction_with = GER		
+			}	
 		}
 	}
 }
@@ -11056,179 +11060,7 @@ news_event = {
 
 }
 
-############## August Storm ######################################
 
-# Barbarossa news event
-news_event = {
-	id = news.500
-	title = news.500.t
-	desc = news.500.d
-	picture = GFX_news_event_003
-
-	major = yes
-
-	fire_only_once = yes 
-
-	is_triggered_only = yes  # On action
-
-	option = {
-		name = news.500.a
-		trigger = {
-			NOT = { TAG = GER }
-		}
-	}	
-	option = {
-		name = news.500.b
-		SOV = { custom_effect_tooltip = surprised_su_tt }
-		trigger = {
-			or = {
-				TAG = SOV
-				is_in_faction_with = SOV
-				has_war_with = GER
-			}		
-		}
-	}	
-}
-
-# Norway surrender to GER
-news_event = {
-	id = news.501
-	title = news.501.t
-	desc = news.501.d
-	picture = GFX_news_event_003
-
-	major = yes
-
-	fire_only_once = yes 
-
-	mean_time_to_happen = {
-			days = 1
-	}
-		
-	trigger = {
-		GER = { is_ai = yes }
-		NOR = { 
-			surrender_progress > 0.39
-			has_war_with = GER
-			is_ai = yes
-		}
-		OR = {	
-			FRA = {
-				surrender_progress > 0.14
-				has_war_with = GER		
-			}
-			FRA = { has_capitulated = yes }
-			GER = { controls_state = 16 }
-		}
-	}
-
-	immediate = {
-			if = {
-				limit = { 110 = { owner = { tag = NOR } } }
-				set_state_controller = 110
-			}
-			if = {
-				limit = { 142 = { owner = { tag = NOR } } }
-				set_state_controller = 142
-			}
-			if = {
-				limit = { 143 = { owner = { tag = NOR } } }
-				set_state_controller = 143
-			}
-			if = {
-				limit = { 144 = { owner = { tag = NOR } } }
-				set_state_controller = 144
-			}		
-	} 
-	
-	option = {
-		name = news.501.a
-		hidden_effect = {
-			GER = {
-				if = {
-					limit = { 110 = { owner = { tag = NOR } } }
-					set_state_controller = 110
-				}
-				if = {
-					limit = { 142 = { owner = { tag = NOR } } }
-					set_state_controller = 142
-				}
-				if = {
-					limit = { 143 = { owner = { tag = NOR } } }
-					set_state_controller = 143
-				}
-				if = {
-					limit = { 144 = { owner = { tag = NOR } } }
-					set_state_controller = 144
-				}
-			}
-		}			
-	}		
-}
-
-# Trotsky Assassination II
-news_event = {
-	id = news.502
-	title = news.502.t
-	desc = news.502.d
-	picture = GFX_news_event_024
-	
-	major = yes
-	
-	is_triggered_only = yes
-
-	immediate = {
-		set_global_flag = trotsky_dead
-	}
-	
-	option = {
-		name = news.37.a
-		trigger = { NOT = { TAG = SOV } }
-		if = {
-			limit = { revolutionary > 0.05 }
-			add_popularity = { ideology = revolutionary popularity = -0.05 }
-		}		
-	}
-	option = {
-		name = news.37.b
-		trigger = { TAG = SOV }
-		if = {
-			limit = { revolutionary > 0.20 }
-			add_popularity = { ideology = revolutionary popularity = -0.20 }
-		}
-		if = {
-			limit = { revolutionary > 0.10 }
-			add_popularity = { ideology = revolutionary popularity = -0.10 }
-		}		
-	}
-
-	option = {
-		name = news.37.c
-		trigger = { 
-			is_in_faction_with = SOV
-			NOT = {
-				tag = SOV
-			} 
-		}
-		if = {
-			limit = { revolutionary > 0.10 }
-			add_popularity = { ideology = revolutionary popularity = -0.10 }
-		}		
-	}
-	option = {							# AS
-		name = news.37.e
-		trigger = { 
-			has_government = revolutionary
-			NOT = {
-				tag = SOV
-			} 
-		}
-		if = {
-			limit = { revolutionary > 0.10 }
-			add_popularity = { ideology = revolutionary popularity = -0.10 }
-		}		
-	}	
-}
 # Australia severs ties and breaks free
 news_event = {
 	id = news.286
@@ -13295,4 +13127,177 @@ news_event = {
 			NOT = { is_in_faction_with = GER }
 		}
 	}
+}
+############## August Storm ######################################
+
+# Barbarossa news event
+news_event = {
+	id = news.500
+	title = news.500.t
+	desc = news.500.d
+	picture = GFX_news_event_003
+
+	major = yes
+
+	fire_only_once = yes 
+
+	is_triggered_only = yes  # On action
+
+	option = {
+		name = news.500.a
+		trigger = {
+			NOT = { TAG = GER }
+		}
+	}	
+	option = {
+		name = news.500.b
+		SOV = { custom_effect_tooltip = surprised_su_tt }
+		trigger = {
+			OR = {
+				TAG = SOV
+				is_in_faction_with = SOV
+				has_war_with = GER
+			}		
+		}
+	}	
+}
+
+# Norway surrender to GER
+news_event = {
+	id = news.501
+	title = news.501.t
+	desc = news.501.d
+	picture = GFX_news_event_003
+
+	major = yes
+
+	fire_only_once = yes 
+
+	mean_time_to_happen = {
+			days = 1
+	}
+		
+	trigger = {
+		GER = { is_ai = yes }
+		NOR = { 
+			surrender_progress > 0.3
+			has_war_with = GER
+			is_ai = yes
+		}
+		OR = {	
+			FRA = {
+				surrender_progress > 0.14
+				has_war_with = GER		
+			}
+			FRA = { has_capitulated = yes }
+			GER = { controls_state = 16 }
+		}
+	}
+
+	immediate = {
+			if = {
+				limit = { 110 = { owner = { tag = NOR } } }
+				set_state_controller = 110
+			}
+			if = {
+				limit = { 142 = { owner = { tag = NOR } } }
+				set_state_controller = 142
+			}
+			if = {
+				limit = { 143 = { owner = { tag = NOR } } }
+				set_state_controller = 143
+			}
+			if = {
+				limit = { 144 = { owner = { tag = NOR } } }
+				set_state_controller = 144
+			}		
+	} 
+	
+	option = {
+		name = news.501.a
+		hidden_effect = {
+			GER = {
+				if = {
+					limit = { 110 = { owner = { tag = NOR } } }
+					set_state_controller = 110
+				}
+				if = {
+					limit = { 142 = { owner = { tag = NOR } } }
+					set_state_controller = 142
+				}
+				if = {
+					limit = { 143 = { owner = { tag = NOR } } }
+					set_state_controller = 143
+				}
+				if = {
+					limit = { 144 = { owner = { tag = NOR } } }
+					set_state_controller = 144
+				}
+			}
+		}			
+	}		
+}
+
+# Trotsky Assassination II
+news_event = {
+	id = news.502
+	title = news.502.t
+	desc = news.502.d
+	picture = GFX_news_event_024
+	
+	major = yes
+	
+	is_triggered_only = yes
+
+	immediate = {
+		set_global_flag = trotsky_dead
+	}
+	
+	option = {
+		name = news.37.a
+		trigger = { NOT = { TAG = SOV } }
+		if = {
+			limit = { revolutionary > 0.05 }
+			add_popularity = { ideology = revolutionary popularity = -0.05 }
+		}		
+	}
+	option = {
+		name = news.37.b
+		trigger = { TAG = SOV }
+		if = {
+			limit = { revolutionary > 0.20 }
+			add_popularity = { ideology = revolutionary popularity = -0.20 }
+		}
+		if = {
+			limit = { revolutionary > 0.10 }
+			add_popularity = { ideology = revolutionary popularity = -0.10 }
+		}		
+	}
+
+	option = {
+		name = news.37.c
+		trigger = { 
+			is_in_faction_with = SOV
+			NOT = {
+				tag = SOV
+			} 
+		}
+		if = {
+			limit = { revolutionary > 0.10 }
+			add_popularity = { ideology = revolutionary popularity = -0.10 }
+		}		
+	}
+	option = {							# AS
+		name = news.37.e
+		trigger = { 
+			has_government = revolutionary
+			NOT = {
+				tag = SOV
+			} 
+		}
+		if = {
+			limit = { revolutionary > 0.10 }
+			add_popularity = { ideology = revolutionary popularity = -0.10 }
+		}		
+	}	
 }

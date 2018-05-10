@@ -1,7 +1,7 @@
 state={
 	id=661
 	name="STATE_661"
-	buildings_max_level_factor=1.000   manpower = 17617
+	manpower = 17617
 	
 	state_category = wasteland
 	

@@ -1,0 +1,1087 @@
+on_actions = {
+	# country 
+	#FROM is the one that joins the faction
+	on_create_faction = {
+		effect = {
+			# Sunset invasion check
+			if = {										# Any new major member drastically strengthen revolutionary movements 
+				limit = {
+					FROM = {
+						has_government = revolutionary
+						is_major = yes
+					}
+				}
+				FROM = {	
+					every_neighbor_country  = {
+						limit = { has_stability < 0.65 }
+						add_timed_idea = { idea = revolutionary_communism days = 360 }
+						add_popularity = { ideology = revolutionary popularity = 0.05 }
+						add_popularity = { ideology = communism popularity = -0.05 }	
+					}
+					every_country  = {
+						limit = { 
+							communism > 0.03
+							has_stability < 0.60
+						}
+						add_popularity = { ideology = revolutionary popularity = 0.04 }
+						add_popularity = { ideology = communism popularity = -0.03 }						
+					}					
+				}				
+			}							
+		}
+		
+	}
+	#FROM is faction leader on join faction requests. THIS DOES NOT FIRE ON ADD_TO_FACTION EFFECT! USE ON_OFFER_JOIN_FACTION!
+	on_join_faction = {
+		effect = {
+			set_country_flag = achievement_has_joined_faction
+			#Remove anti_soviet_pact if joining commie Soviet in faction
+			if = {										# Any new major member drastically strengthen revolutionary movements 
+				limit = {
+					tag = YUG
+					FROM = { 
+						tag = GER
+						has_government = fascism
+					}
+					ENG = { is_ai = yes }
+					YUG = { is_ai = yes }
+				}
+				ENG = { diplomatic_relation = { country = YUG relation = non_aggression_pact active = yes } }
+				YUG = { country_event = { id = DOD_yugoslavia.1 days = 2 } }
+			}
+			if = {										# Any new major member drastically strengthen revolutionary movements 
+				limit = {
+					has_government = revolutionary
+					is_major = yes
+					FROM = {
+						has_government = revolutionary
+					}
+				}
+				#add_ideas = bureaucratic_threat
+				every_country = {
+					limit = { has_government = revolutionary }						# High morale on existing revolutionary countries
+					add_timed_idea = { idea = iv_international_influence days = 365 }
+					add_popularity = { ideology = revolutionary popularity = 0.3 }
+					add_popularity = { ideology = communism popularity = -0.3 }					
+				}
+				every_other_country = {
+					limit = { has_government = communism }# stalinist 			   # Stalinism influence decreased
+					add_timed_idea = { idea = revolutionary_communism days = 360 }					
+					add_popularity = { ideology = revolutionary popularity = 0.2 }
+					add_popularity = { ideology = communism popularity = -0.2 }					
+				}
+				every_other_country = {												# Trouble in weakest Capitalist countries 
+					limit = { 
+						NOT = { has_government = communism } # stalinist
+						NOT = { has_government = revolutionary }
+						has_stability < 0.60
+					}
+					add_timed_idea = { idea = revolutionary_agitation days = 200 }
+					add_popularity = { ideology = revolutionary popularity = 0.1 }
+					add_popularity = { ideology = communism popularity = -0.1 }					
+				}												
+				every_neighbor_country = {										# Higher influence on neighborhood
+					limit = { 
+						NOT = { has_government = communism } # stalinist
+						NOT = { has_government = revolutionary }
+						has_stability < 0.65						
+					}				
+					add_timed_idea = { idea = revolutionary_communism days = 360 } 
+					add_popularity = { ideology = revolutionary popularity = 0.2 }
+					add_popularity = { ideology = communism popularity = -0.3 }					
+				}								
+			}
+			if = {										# Any new member strengthen revolutionary movements 
+				limit = {
+					has_government = revolutionary
+					NOT = { is_major = yes }
+					FROM = {
+						has_government = revolutionary
+					}
+				}
+				#add_ideas = bureaucratic_threat				
+				every_country  = {
+					limit = { has_government = revolutionary }
+					add_timed_idea = { idea = iv_international_influence days = 90 }
+					add_popularity = { ideology = revolutionary popularity = 0.1 }
+					add_popularity = { ideology = communism popularity = -0.1 }					
+				}
+				every_country = {
+					limit = { has_government = communism }# stalinist 
+					add_popularity = { ideology = revolutionary popularity = 0.1 }
+					add_popularity = { ideology = communism popularity = -0.1 }					
+				}
+				every_country  = {
+					limit = { 
+						NOT = { has_government = communism } # stalinist
+						NOT = { has_government = revolutionary } 
+						has_stability < 0.60						
+					}
+					#add_timed_idea = { idea = revolutionary_agitation days = 200 }
+					add_popularity = { ideology = revolutionary popularity = 0.05 }
+					add_popularity = { ideology = communism popularity = -0.05 }					
+				}												
+				every_neighbor_country  = {
+					limit = { 
+						NOT = { has_government = communism } # stalinist
+						NOT = { has_government = revolutionary }
+						has_stability < 0.65						
+					}
+					add_timed_idea = { idea = revolutionary_agitation days = 30 }
+					add_popularity = { ideology = revolutionary popularity = 0.1 }
+					add_popularity = { ideology = communism popularity = -0.1 }					
+				}						
+			}
+			if = {										# Stalinists unmasked 
+				limit = {
+					has_government = communism
+					NOT = { is_major = yes }
+					FROM = {
+						has_government = revolutionary
+					}
+				}
+				add_ideas = revolutionary_agitation
+				add_ideas = revolutionary_communism	
+				#add_ideas = bureaucratic_threat				
+				add_popularity = {
+					ideology = revolutionary
+					popularity = 0.70
+				}
+				add_popularity = {
+					ideology = communism
+					popularity = -0.70
+				}				
+			}			
+		}		
+	}
+
+	#FROM is war target
+	on_declare_war = {
+		effect = {		
+			if = {
+				limit = {
+					ROOT = { 
+						has_government = fascism
+						is_in_faction = yes
+					}																									
+					FROM = {  
+						is_in_faction = no
+						NOT = {
+							is_neighbor_of = SOV
+							communism > 0.24
+						}						
+						OR = {
+							has_government = democratic
+							has_government = neutrality
+						}
+					}
+				}
+				random_country = {
+					limit = {	
+						is_faction_leader = yes
+						has_government = democratic
+						has_war_with = ROOT						
+					}
+					add_to_faction = FROM
+				}
+			}
+			if = {
+				limit = {
+					ROOT = { 
+						has_government = fascism
+						is_in_faction = yes
+					}																									
+					FROM = { 
+						is_in_faction = no					
+						is_neighbor_of = SOV
+						communism > 0.25
+						OR = {
+							has_government = democratic
+							has_government = neutrality							
+						}
+					}
+				}
+				random_country = {
+					limit = {	
+						is_faction_leader = yes
+						has_government = communism
+						has_war_with = ROOT
+					}
+					add_to_faction = FROM
+				}
+			}			
+			if = {
+				limit = {
+					ROOT = { 
+						has_government = democratic
+						is_in_faction = yes
+					}																									
+					FROM = {
+						is_in_faction = no
+						fascism > 0.24						
+						OR = {
+							has_government = fascism
+							has_government = neutrality							
+						}
+					}
+				}
+				random_country = {
+					limit = {	
+						is_faction_leader = yes
+						has_government = fascism
+						has_war_with = ROOT						
+					}
+					add_to_faction = FROM
+				}
+			}
+			if = {
+				limit = {
+					ROOT = { 
+						is_in_faction = yes						
+						OR = {
+							has_government = democratic						
+							has_government = fascism
+							has_government = neutrality							
+						}	
+					}																									
+					FROM = {
+						is_in_faction = no
+						has_government = communism
+					}
+				}
+				random_country = {
+					limit = {	
+						is_faction_leader = yes
+						has_government = communism
+						has_war_with = ROOT						
+					}
+					add_to_faction = FROM
+				}
+			}
+			if = {
+				limit = {
+					ROOT = {
+						is_in_faction = yes					
+						OR = {	
+							has_government = democratic
+							has_government = neutrality							
+						}
+					}	
+																									
+					FROM = {
+						NOT = { is_in_faction = yes }
+						communism > 0.25
+						NOT = { fascism > 0.25 }
+					}
+				}
+				random_country = {
+					limit = {	
+						is_faction_leader = yes
+						has_government = communism
+						has_war_with = ROOT						
+					}
+					add_to_faction = FROM
+				}
+			}						
+			if = {
+				limit = {
+					ROOT = { 
+						has_government = revolutionary
+					}																									
+					FROM = {  
+						has_government = democratic
+						has_stability > 0.60
+					}
+				}
+				FROM = { add_timed_idea = { idea = upset_workers days = 1200 } } 
+			}
+			if = {
+				limit = {
+					ROOT = { 
+						has_government = revolutionary
+					}																					
+					FROM = { 
+						has_government = democratic
+						has_stability < 0.60
+					}
+				}
+				FROM = {	
+					add_timed_idea = { idea = upset_workers days = 1200 }
+					add_timed_idea = { idea = revolutionary_partisans_recruiting days = 365 }
+				}
+			}			
+			if = {
+				limit = {
+					FROM = { 
+						is_ai = yes 
+						NOT = {
+							has_idea = war_economy
+							has_idea = tot_economic_mobilisation						
+						}												
+					}					
+				}
+					FROM = { add_ideas = war_economy }
+			}			
+			if = {
+				limit = {
+					FROM = { 
+						is_ai = yes 
+						NOT = {
+							has_idea = war_economy
+							has_idea = tot_economic_mobilisation						
+						}												
+					}
+				}
+					FROM = { add_ideas = war_economy }
+			}			
+																			### AS
+			if = {
+				limit = {
+					FROM = { 
+						is_ai = yes 
+						NOT = {
+							has_idea = service_by_requirement
+							has_idea = all_adults_serve
+							has_idea = scraping_the_barrel											
+						}						
+					}
+
+				}
+					FROM = { add_ideas = service_by_requirement }
+			}
+					
+			# Generic Surprise event trigger / AI vs AI or AI vs Human
+			if = {
+				limit = {
+					FROM = {
+						NOT = { has_country_flag = well_prepared_army }
+						NOT = { has_idea = surprised_army }
+						NOT = { has_offensive_war = yes }
+					}
+					
+					ROOT = { is_ai = yes }
+				}
+				FROM = { 
+					country_event = { id = surprise.1 } 
+				}
+			}
+			# Generic Surprise event trigger / Human vs Human
+			if = {
+				limit = {
+					FROM = {
+						NOT = { is_ai = yes }
+						NOT = { has_country_flag = well_prepared_army }
+						NOT = { has_idea = surprised_army }
+						NOT = { has_offensive_war = yes }						
+					}
+
+					ROOT = { NOT = { is_ai = yes } }
+				}
+				FROM = { 
+					country_event = { id = surprise.1 } 
+				}
+			}			
+			# Barbarossa surprise event trigger
+			if = {
+				limit = {
+					date < 1942.1.1
+					has_global_flag = sov_yes_pact
+					FROM = {
+						tag = SOV
+						has_completed_focus = SOV_great_purge
+						has_country_flag = ger_honors_pact
+						NOT = { has_country_flag = surprised_su_flag }
+						has_country_leader = { id = 499 ruling_only = yes name = "Joseph Stalin" } 
+					}				
+					ROOT = {
+						tag = GER
+						has_completed_focus = GER_ussr_war_goal
+						is_neighbor_of = SOV									
+					}
+				}
+				ROOT = {
+					country_event = { id = germany.198 }
+				}
+				every_country = {
+						limit = {
+							NOT = { is_ai = yes }
+						}
+					news_event = { id = news.500 }				
+				}				
+			}
+			# Barbarossa GLO for GER AI
+			if = {
+				limit = {
+					FROM = {
+						tag = SOV
+					}				
+					ROOT = {
+						tag = GER
+						is_ai = yes
+						is_neighbor_of = SOV
+						NOT = { has_country_flag = grand_land_offensive_flag }						
+					}
+				}
+				ROOT = {
+					country_event = { id = glo.3 }	
+				}				
+			}
+			# Barbarossa GAO for GER AI
+			if = {
+				limit = {
+					FROM = {
+						tag = SOV
+					}				
+					ROOT = {
+						tag = GER
+						is_ai = yes
+						is_neighbor_of = SOV
+						NOT = { has_country_flag = grand_air_offensive_flag }						
+					}
+				}
+				ROOT = {
+					country_event = { id = glo.5 }	
+				}				
+			}
+			# Norway invasion event for GER AI
+			if = {
+				limit = {
+					FROM = {
+						tag = NOR
+						is_ai = yes
+					}				
+					ROOT = {
+						tag = GER
+						is_ai = yes
+						has_completed_focus = GER_weserubung						
+					}
+				}
+				ROOT = {
+					country_event = { id = germany.202 }					
+				}				
+			}
+			# Denmark invasion event for GER AI
+			if = {
+				limit = {
+					FROM = {
+						tag = DEN
+						is_ai = yes
+					}				
+					ROOT = {
+						tag = GER
+						is_ai = yes
+						has_completed_focus = GER_weserubung						
+					}
+				}
+				ROOT = {
+					country_event = { id = germany.203 }					
+				}				
+			}			
+			# Jap AI vs CHI
+			if = {
+				limit = {
+					FROM = {
+						tag = CHI
+						is_ai = no
+					}				
+					ROOT = {
+						tag = JAP
+						is_ai = yes
+						has_completed_focus = JAP_intervene_in_china				
+					}					
+					GER = { is_ai = yes }          # Must be harder for human players
+					ITA = { is_ai = yes }
+				}
+				ROOT = {
+					country_event = { id = glo.3 }
+					country_event = { id = glo.5 }					
+				}
+			}			
+			
+			# Day Of Infamy
+			if = {
+				limit = {
+					FROM = {
+						tag = USA
+					}				
+					ROOT = {
+						tag = JAP
+						has_completed_focus = JAP_strike_usa_focus						
+					}
+					NOT = { has_global_flag = day_of_infamy_flag }
+				}
+				USA = {
+					country_event = { id = surprise.4 }					
+				}
+				ROOT = {
+					country_event = { id = glo.7 }
+					country_event = { id = glo.5 }
+					#country_event = { id = as_japan.1 days = 2 } # Phil
+				}
+			}
+			# Pacific Invasion
+			if = {
+				limit = {
+					FROM = {
+						OR = {
+							tag = INS
+							tag = ENG
+							tag = HOL
+						}
+					}				
+					ROOT = {
+						tag = JAP
+						is_ai = yes						
+					}
+				}
+				JAP = {
+					country_event = { id = as_japan.2 days = 2 } # NEI										
+				}
+			}
+			if = {
+				limit = {
+					FROM = {
+						tag = PHI
+					}				
+					ROOT = {
+						tag = JAP
+						is_ai = yes						
+					}
+				}
+				JAP = {
+					country_event = { id = as_japan.1 days = 1 } # Phil
+				}
+			}		
+			# Fall Gelb style
+			if = {
+				limit = {
+					FROM = {
+						OR = {
+							tag = HOL
+							tag = BEL
+							tag = LUX
+						}
+					}				
+					ROOT = {
+						tag = GER
+						is_ai = yes
+						has_completed_focus = GER_around_maginot 
+						NOT = { has_country_flag = grand_land_offensive_flag }
+						NOT = { has_country_flag = grand_land_offensive_ai_flag }						
+					}
+				}
+				GER = { 
+					country_event = { id = glo.3 }  # GLO					
+				}
+				GER = { 
+					country_event = { id = glo.5 }  # GLA	 
+				}
+			}
+		}
+	}
+	# ROOT is capitulated country, FROM is winner
+	on_capitulation = {
+		effect = {	
+			if = {                              
+				limit = { 
+					ROOT = { 
+						tag = SOV 
+						has_government = communism
+					}										
+					FROM = { 
+						tag = GER
+						is_ai = yes
+					}
+					NOT = { has_global_flag = sov_sue_for_peace } 
+				} 
+								
+				FROM = {
+					annex_country = { target = SOV transfer_troops = no }				
+					country_event = { id = as_sov.17 }
+				}
+			}			
+			if = {                              ## Lead to ITA/RSI civil war
+				limit = { 
+					ROOT = { 
+						tag = ITA 
+						NOT = { has_government = fascism }
+					}										
+					FROM = { 
+						OR = {	
+							tag = ENG
+							tag = USA
+							tag = FRA						
+						}
+					}
+					has_global_flag = ita_sue_for_peace
+				}
+				annex_country = { target = ITA transfer_troops = no }
+				ROOT = { 
+					country_event = { id = as_italy.4 }					
+				}
+			}			
+			if = {                              ## French State establishment
+				limit = { 
+					ROOT = { 
+						original_tag = FRA 
+						NOT = { has_country_flag = fra_armistice }
+					}										
+					FROM = { 
+						tag = GER
+						NOT = { has_country_flag = ger_fall_anton }
+					}
+					has_global_flag = vichy_established
+					NOT = { VIC = { has_capitulated = yes } }
+						
+				}
+				ROOT = {
+					transfer_navy = { target = VIC }
+					set_country_flag = fra_armistice
+				}
+				FROM = { 
+					annex_country = { target = FRA transfer_troops = no }
+				}				
+				VIC = {
+					country_event = { id = as_silent.44 hours = 1 }
+					annex_country = { target = SYR transfer_troops = no }
+					annex_country = { target = LEB transfer_troops = no }
+				}			
+			}
+			if = {                              ## French State
+				limit = { 
+					ROOT = { 
+						original_tag = FRA 
+						has_country_flag = fra_armistice
+					}										
+					FROM = { 
+						tag = GER
+						NOT = { has_country_flag = ger_fall_anton }
+					}
+					has_global_flag = vichy_established
+					NOT = { VIC = { has_capitulated = yes } }
+					NOT = { VIC = { has_war_with = GER } }					
+					VIC = { exists = yes }
+				}
+				FROM = {
+					transfer_navy = { target = VIC }
+					VIC = {
+						annex_country = { target = FRA transfer_troops = no }
+					}
+				}			
+			}
+			if = {                              ## Post Fall Anton
+				limit = { 
+					ROOT = { 
+						original_tag = FRA
+						has_country_flag = fra_armistice
+					}
+					has_global_flag = vichy_established	
+					VIC = { exists = no }
+					FROM = { 
+						tag = GER
+						has_country_flag = ger_fall_anton 
+					}
+				}
+				FROM = {	
+					transfer_state = 268 # Djibouti
+					transfer_state = 272 # French Africa
+					transfer_state = 286 # Indochina
+					transfer_state = 310 # Guinée
+					transfer_state = 320 # French India
+					#transfer_state = 458 # Tunisia
+					transfer_state = 459 # western Algeria
+					transfer_state = 460 # eastern Algeria
+					transfer_state = 461 # Northern Morocco
+					transfer_state = 462 # Southern Morocco
+					transfer_state = 513 # Southern Algeria
+					transfer_state = 514 # North Africa
+					transfer_state = 515 # Central Africa
+					transfer_state = 539 # Gabon
+					transfer_state = 543 # Madagascar				
+					transfer_state = 556 # Ivory Coast
+					transfer_state = 557 # Dakar
+					transfer_state = 635 # Nouvelle Calédonie
+					transfer_state = 641 # Tahiti
+					transfer_state = 660 # Equatorial Africa
+					transfer_state = 665 # Gabes
+					transfer_state = 670 # Laos
+					transfer_state = 671 # Annam
+					transfer_state = 694 # French Caribbean
+					transfer_state = 706 # Reunion
+					transfer_state = 708 # Comoro Islands
+					transfer_state = 713 # Kerguelen
+					transfer_state = 728 # Guangzhouwan
+					transfer_state = 730 # St Pierre et Miquelon
+					transfer_state = 734 # Nendo
+				}			
+			}
+		
+			if = {
+				limit = {
+					ROOT = { 
+						capital_scope = {
+							is_on_continent = asia
+						}
+						has_war_with = JAP						
+					}																									
+					JAP = { has_government = fascism }
+					FROM = { 
+						has_government = fascism
+						is_ai = yes
+					}
+				}
+				every_state = {
+					limit = {	
+						is_core_of = ROOT
+						is_owned_by = ROOT
+						OR = {	
+							is_on_continent = asia
+							is_core_of = PAK                             # For some reasons PAK was given to GER
+						}
+					}
+					JAP = {
+						set_state_controller = PREV				
+					}
+				}
+			}
+			if = {								## Surinam for ENG
+				limit = { 
+					ROOT = { 
+						tag = HOL
+						is_in_faction_with = ENG
+					}					
+				}
+				ENG = {	
+					transfer_state = 309					
+				}
+			}			
+			if = {								## NEI for JAP
+				limit = { 
+					ROOT = { 
+							OR = {
+								tag = HOL							
+								tag = INS
+							}							
+					}
+					JAP = { is_in_faction_with = FROM }
+					NOT = {
+						ENG = { controls_state = 336  controls_state = 333 }							
+					}					
+				}
+				JAP = {	
+					transfer_state = 334
+					transfer_state = 335
+					transfer_state = 672
+					transfer_state = 335
+					transfer_state = 667
+					transfer_state = 673
+					transfer_state = 668
+					transfer_state = 669
+					transfer_state = 738					
+				}
+			}
+			#### Add Free INO (neutral) if any of above met			
+			if = {                               ## Chinese 
+				limit = { 
+					ROOT = {
+						OR = {
+							AND = {
+								tag = MAN
+								NOT = { is_in_faction_with = FROM }
+							}
+							AND = {
+								tag = MEN
+								NOT = { is_in_faction_with = FROM }
+							}
+						}
+					}										
+					FROM = { 
+						OR = {
+							tag = CHI
+							tag = PRC
+						}
+					}
+				}				
+				FROM = { annex_country = { target = ROOT transfer_troops = yes } }				
+			}
+			if = {                               ## Allies 
+				limit = { 
+					ROOT = {
+						is_major = no					
+						any_owned_state = {
+							is_core_of = CHI
+							is_core_of = ROOT
+						}
+					}										
+					FROM = {
+						OR = {	
+							is_in_faction_with = CHI 
+							has_government = democratic
+							NOT = { tag = PRC }
+							tag = CHI
+						}
+					}
+				}				
+				CHI = { annex_country = { target = ROOT transfer_troops = yes } }
+			}			
+			if = {                              
+				limit = { 
+					ROOT = {
+						is_major = no
+						any_owned_state = {
+							is_core_of = PRC							
+						}
+					}
+					FROM = {
+						OR = {	
+							#is_in_faction_with = PRC 
+							has_government = communism
+							NOT = { tag = CHI }
+							tag = PRC
+						}
+					}
+				}				
+				PRC = { annex_country = { target = ROOT transfer_troops = yes } }
+			}			
+			if = {                              
+				limit = { 
+					ROOT = {
+						OR = {
+							tag = CHI
+							any_owned_state = {
+								is_core_of = CHI
+								is_core_of = ROOT								
+							}							
+						}
+					}
+					FROM = { tag = SOV }
+					PRC = { NOT = { has_war_with = SOV } }
+				}				
+				PRC = { annex_country = { target = ROOT transfer_troops = yes } }
+				PRC = { diplomatic_relation = { country = SOV relation = non_aggression_pact active = yes } }
+				FROM = { give_military_access = PRC } 
+			}
+			if = {                              
+				limit = { 
+					ROOT = {
+						tag = YUG
+						NOT = { has_government = fascism }
+					}
+				}				
+				every_state = {
+					limit = {
+						is_core_of = ROOT
+					}					
+					FROM = {
+						set_state_controller = PREV
+					}
+					ROOT = {
+						set_state_owner = PREV
+					}
+				}
+			}			
+			if = {                               ## JAP Chinese puppet 
+				limit = { 
+					ROOT = { tag = CHI }										
+					FROM = { 
+						tag = JAP
+						is_ai = yes
+					}
+				}	
+				FROM = {
+					 add_named_threat = { threat = -10 name = as_japan.4.t } 
+					 country_event = { id = as_japan.4 days = 1 } 
+				}
+			}					
+		}		
+	}
+	on_government_change = {
+		effect = {
+			#Make sure Soviet can always create factions		
+			if = {										# 
+				limit = {
+					has_government = revolutionary
+				}
+				random_country = {
+					limit = { 
+						has_government = revolutionary
+						is_faction_leader = yes
+						is_ai = yes
+					}
+					add_to_faction = ROOT
+				}								
+			}			
+			if = {										# 
+				limit = {
+					has_government = revolutionary
+					NOT = { has_global_flag = triumphant_communism }
+					NOT = { has_idea = bureaucratic_threat }
+				}
+				remove_ideas = revolutionary_agitation
+				remove_ideas = revolutionary_communism	
+				#add_ideas = bureaucratic_threat								
+			}
+			if = {										# No bureaucratic threat anymore
+				limit = {
+					has_government = revolutionary
+					has_global_flag = triumphant_communism 
+				}
+				remove_ideas = revolutionary_agitation
+				remove_ideas = revolutionary_communism
+			}									
+		}
+	}
+	#ROOT is winner #FROM gets annexed - This will also fire on_annex
+	on_civil_war_end = {
+		effect = {
+			if = {
+				limit = {
+					has_government = revolutionary			
+				}
+				set_politics = {
+					elections_allowed = yes
+				}
+			}
+			if = {
+				limit = {
+					has_government = communism			
+				}
+				set_politics = {
+					elections_allowed = no
+				}
+			}			
+			if = {
+				limit = {
+					FROM = {
+						original_tag = SOV
+					}
+					ROOT = {
+						original_tag = SOV
+						has_government = revolutionary
+					}
+				}
+				ROOT = {
+					add_political_power = 1250 #To form new gov
+					set_rule = { can_create_factions = yes }
+					set_politics = {
+						elections_allowed = yes   # If Stalinist win, removed	
+					}				
+					country_event = { id = as_sov.11 days = 1 }				
+				}				
+			}
+			if = {									# Every defeated Revolution strenghten Stalinism
+				limit = {
+					FROM = {
+						has_government = revolutionary
+					}
+					ROOT = {
+						NOT = { has_government = revolutionary }
+
+					}
+				}				
+				every_country = {
+					limit = { revolutionary > 0.05 }
+					add_popularity = { ideology = revolutionary popularity = -0.05 }
+				}
+				SOV = { add_popularity = { ideology = communism popularity = 0.1 } }				
+
+			}
+			if = {									# Every Victorious Revolution weaken Stalinism
+				limit = {
+					FROM = {
+						NOT = { has_government = revolutionary }
+					}
+					ROOT = {
+						has_government = revolutionary 
+
+					}
+				}
+				SOV = { add_popularity = { ideology = revolutionary popularity = 0.1 } }				
+				every_country = {
+					limit = { revolutionary > 0.01 }
+					add_popularity = { ideology = revolutionary popularity = 0.05 }
+				}				
+			}						
+		}
+	}
+	#ROOT is new controller #FROM is old controller #FROM.FROM is state ID
+	on_state_control_changed = {
+		effect = {
+			if = {      								# PRC takes control of defeated Warlords                        
+				limit = { 
+					FROM = {
+						is_major = no
+						is_in_faction_with = CHI
+						is_neighbor_of = PRC
+						surrender_progress > 0.4
+						any_owned_state = {
+							is_core_of = PRC							
+						}
+					}
+					ROOT = {
+						has_war_with = PRC
+					}
+				}				
+				random_list = {
+					70 = {
+						PRC = { annex_country = { target = FROM transfer_troops = yes } }
+					}
+					30 = {
+						CHI = { annex_country = { target = FROM transfer_troops = yes } }							
+					}						
+				}				
+			}
+		}
+	}	
+	# From is owner country
+	#on_army_leader_daily = {
+	#	effect = {
+	#	#### Hitler hates losers
+	#	}
+	#}
+	
+	# From is owner country
+	on_army_leader_won_combat = {
+		effect = {			
+			if = {
+				limit = {
+					NOT = { has_trait = main_front_leader }	
+					NOT = { has_unit_leader_flag = recently_main_front_leader }						
+					is_field_marshal = yes
+					is_leading_army_group = yes
+					check_variable = { num_units_offensive_combats > 12 }				
+					set_temp_variable = { temp = avg_offensive_combat_status }
+					check_variable = { temp > 0.1 }
+					check_variable = { ai_random > temp }					
+					FROM = {
+						is_ai = yes
+						is_major = yes
+						has_war = yes
+						land_doctrine_level > 4
+						NOT = { has_country_flag = grand_land_offensive_ai_flag }
+						NOT = { has_country_flag = grand_air_offensive_flag }						
+					}					
+				}
+				random_list = {
+						35 = {
+							#Not this time!
+						}
+						30 = {
+							unit_leader_event = { id = as_silent.43 }							
+						}
+						25 = {
+							FROM = { country_event = { id = glo.6 } }
+						}
+						10 = {
+							FROM = {						
+								country_event = { id = glo.6 }
+							}
+							unit_leader_event = { id = as_silent.43 }							
+						}						
+					}				
+			}
+			
+		}
+	}	
+
+}

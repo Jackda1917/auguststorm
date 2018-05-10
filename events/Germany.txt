@@ -147,9 +147,24 @@ country_event = {
 					popularity = -0.30
 				}			
 		}
+		every_other_country = {												# Trouble in weakest Capitalist countries 
+			limit = { 
+				communism > 0.1
+			}
+			add_popularity = {
+				ideology = communism
+				popularity = -0.10
+			}
+		}		
 		add_opinion_modifier = { target = GER modifier = MR_pact }# pact		
 		custom_effect_tooltip = germany.11.a.tt
 		set_global_flag = sov_yes_pact
+		if = {
+			limit = {
+				has_idea = fascist_threat					
+			}
+			remove_ideas = fascist_threat
+		}					
 		add_political_power = 200
 		add_state_claim = 96
 		add_state_claim = 11
@@ -168,9 +183,9 @@ country_event = {
 		add_state_claim = 94
 		add_state_claim = 95
 		add_state_claim = 97
-		add_state_claim = 757
+		add_state_claim = 777	#Grodno
 		add_state_claim = 80
-		add_state_claim = 750
+		add_state_claim = 772
 		hidden_effect =  { add_timed_idea = { idea = SOV_molotov_ribbentrop_pact days = 730 } }
 		add_ai_strategy = {
 			type = antagonize
@@ -189,7 +204,29 @@ country_event = {
 			}
 		}
 		hidden_effect = {
+			GER = {
+				add_ai_strategy = {
+					type = support
+					id = "FIN"
+					value = 300
+				}		
+			}
+			ENG = {
+				add_ai_strategy = {
+					type = support
+					id = "FIN"
+					value = 100
+				}		
+			}			
 			FIN = {
+				if = {
+					limit = {
+						NOT = {
+							has_idea = soviet_threat					
+						}
+					}
+					add_ideas = soviet_threat
+				}				
 				if = {
 						limit = {
 							FIN = { is_ai = yes }
@@ -304,27 +341,27 @@ country_event = {
 		NOT =  { has_war_with = SOV }
 		OR = {
 			OR = {
-				owns_state = 750
+				owns_state = 772
 				owns_state = 96
 				owns_state = 95
 				owns_state = 94
 				owns_state = 93
 				owns_state = 91
 				owns_state = 97
-				owns_state = 757
+				owns_state = 777	#Grodno
 				owns_state = 89
 			}
 			AND = {
 				POL = { has_capitulated = yes }
 				OR = {
-					controls_state = 750
+					controls_state = 772
 					controls_state = 96
 					controls_state = 95
 					controls_state = 94
 					controls_state = 93
 					controls_state = 91
 					controls_state = 97
-					controls_state = 757
+					controls_state = 777	#Grodno
 					controls_state = 89
 				}
 			}
@@ -341,7 +378,7 @@ country_event = {
 						owns_state = 93
 						owns_state = 91
 						owns_state = 97
-						owns_state = 757
+						owns_state = 777	#Grodno
 						owns_state = 89
 						AND = {
 							POL = { has_capitulated = yes }
@@ -352,7 +389,7 @@ country_event = {
 								controls_state = 93
 								controls_state = 91
 								controls_state = 97
-								controls_state = 757
+								controls_state = 777	#Grodno
 								controls_state = 89
 							}
 						}		
@@ -383,11 +420,11 @@ country_event = {
 		}
 		if = {
 			limit = {
-				750 = {
+				772 = {
 					OR = {
 						is_controlled_by = GER
 						any_country = {
-							controls_state = 750
+							controls_state = 772
 							is_in_faction_with = GER
 							GER = { is_faction_leader = yes }
 						}
@@ -395,7 +432,7 @@ country_event = {
 					}
 				}
 			}
-			SOV = { transfer_state = 750 }
+			SOV = { transfer_state = 772 }
 		}
 		if = {
 			limit = {
@@ -489,18 +526,18 @@ country_event = {
 		}
 		if = {
 			limit = {
-				757 = {
+				777 = {
 					OR = {
 						is_controlled_by = GER
 						any_other_country = {
-							controls_state = 757
+							controls_state = 777	#Grodno
 							is_in_faction_with = GER
 							GER = { is_faction_leader = yes }
 						}
 					}
 				}
 			}
-			SOV = { transfer_state = 757 }
+			SOV = { transfer_state = 777 }
 		}
 		if = {
 			limit = {
@@ -525,14 +562,14 @@ country_event = {
 			add_state_core =  93    # was none
 			add_state_core =  91    # was none
 			add_state_core =  97    # was none
-			add_state_core =  757   # was none
+			add_state_core =  777	#Grodno   # was none
 			add_state_core =  89    # was none
 			add_state_core =  11    # was none
 			add_state_core =  189   # was none
 			add_state_core =  12    # was none
 			add_state_core =  190	# was none
 			add_state_core =  146   # was none
-			add_state_core =  750   # was none
+			add_state_core =  772   # was none
 			add_state_core =  191   # was none
 			add_state_core =  13    # was none			
 		}
@@ -569,7 +606,7 @@ country_event = {
 			add_state_claim = 93
 			add_state_claim = 91
 			add_state_claim = 97
-			add_state_claim = 757
+			add_state_claim = 777	#Grodno
 			add_state_claim = 89
 			add_state_core =  96    # was none
 			add_state_core =  95    # was none
@@ -577,7 +614,7 @@ country_event = {
 			add_state_core =  93    # was none
 			add_state_core =  91    # was none
 			add_state_core =  97    # was none
-			add_state_core =  757    # was none
+			add_state_core =  777	#Grodno    # was none
 			add_state_core =  89    # was none
 			effect_tooltip = {
 				create_wargoal = {
@@ -922,7 +959,7 @@ country_event = {
 				level = 5
 			}
 		}
-		749 = {
+		771 = {
 			add_building_construction = {
 				type = bunker
 				province = 11531
@@ -1101,7 +1138,7 @@ country_event = {
 						}
 					}
 						add_ideas = war_economy
-						add_war_support = 0.2
+						add_war_support = 0.4
 				}			
 		}
 		CZE = {												### AS
@@ -1117,7 +1154,7 @@ country_event = {
 					}
 						add_ideas = extensive_conscription
 				}			
-			}
+		}
 			ENG = {
 				diplomatic_relation = {
    					country = CZE
@@ -1270,6 +1307,38 @@ country_event = {
 				}
 			}
 		}
+		SOV = { 
+			if = {
+				limit = {
+					NOT = {
+						has_idea = fascist_threat					
+					}
+				}
+				add_ideas = fascist_threat
+			}			
+			if = {
+				limit = {
+					is_ai = yes
+					NOT = {
+						has_idea = war_economy
+						has_idea = tot_economic_mobilisation						
+					}
+				}
+				add_ideas = war_economy
+			}
+			if = {
+				limit = {
+					is_ai = yes
+					NOT = {
+						has_idea = extensive_conscription
+						has_idea = service_by_requirement
+						has_idea = all_adults_serve
+						has_idea = scraping_the_barrel											
+					}
+				}
+				add_ideas = extensive_conscription
+			}
+		}		
 	}
 	option = { # Support the Czechs alone
 		name = germany.41.b	
@@ -1812,7 +1881,7 @@ country_event = {
 						}
 					}
 						add_ideas = partial_economic_mobilisation
-						add_war_support = 0.1
+						add_war_support = 0.2
 				}			
 		}
 		FRA = {												### AS
@@ -1840,7 +1909,7 @@ country_event = {
 						}
 					}
 						add_ideas = partial_economic_mobilisation
-						add_war_support = 0.1
+						add_war_support = 0.15
 				}			
 		}
 		ENG = {												### AS
@@ -1986,7 +2055,6 @@ country_event = {
 						}
 					}
 						add_ideas = war_economy
-						add_war_support = 0.1
 				}				
 		}
 		FRA = {												### AS
@@ -2013,7 +2081,6 @@ country_event = {
 						}
 					}
 						add_ideas = partial_economic_mobilisation
-						add_war_support = 0.1
 				}			
 		}
 		ENG = {												### AS
@@ -2030,6 +2097,38 @@ country_event = {
 						add_ideas = extensive_conscription
 				}			
 		}
+		SOV = { 
+			if = {
+				limit = {
+					NOT = {
+						has_idea = fascist_threat					
+					}
+				}
+				add_ideas = fascist_threat
+			}			
+			if = {
+				limit = {
+					is_ai = yes
+					NOT = {
+						has_idea = war_economy
+						has_idea = tot_economic_mobilisation						
+					}
+				}
+				add_ideas = war_economy
+			}
+			if = {
+				limit = {
+					is_ai = yes
+					NOT = {
+						has_idea = extensive_conscription
+						has_idea = service_by_requirement
+						has_idea = all_adults_serve
+						has_idea = scraping_the_barrel											
+					}
+				}
+				add_ideas = extensive_conscription
+			}
+		}		
 		GER = { country_event = germany.55 }
 		if = {
 			limit = {
@@ -2041,7 +2140,7 @@ country_event = {
 				}
 			}
 			ENG = {
-				add_war_support = 0.1
+				add_war_support = 0.25
 			}
 		}
 
@@ -2055,7 +2154,7 @@ country_event = {
 				}
 			}
 			FRA = {
-				add_war_support = 0.1
+				add_war_support = 0.25
 			}
 		}
 
@@ -2932,12 +3031,12 @@ country_event = {
 		}
 		51 = { add_claim_by = FRA } # Rhineland
 		42 = { add_claim_by = FRA } # Moselland
-		749 = { add_claim_by = FRA } # Saarland
+		771 = { add_claim_by = FRA } # Saarland
 		FRA = {
 			declare_war_on = {
 				target = GER
 				type = take_state_focus
-				generator = { 51 42 749 } 
+				generator = { 51 42 771 } 
 			}
 			country_event = germany.92
 			if = {
@@ -2987,7 +3086,7 @@ country_event = {
 		set_global_flag = as_treaty_of_versailles
 		51 = { set_demilitarized_zone = yes } # Rhineland
 		42 = { set_demilitarized_zone = yes } # Moselland
-		749 = { set_demilitarized_zone = yes } # Saarland
+		771 = { set_demilitarized_zone = yes } # Saarland
 		add_timed_idea = {
 			idea = as_germany_rhineland_backed_down
 			days = 365
@@ -3021,12 +3120,12 @@ country_event = {
 		}
 		51 = { add_claim_by = FRA } # Rhineland
 		42 = { add_claim_by = FRA } # Moselland
-		749 = { add_claim_by = FRA } # Saarland
+		771 = { add_claim_by = FRA } # Saarland
 		FRA = {
 			declare_war_on = {
 				target = GER
 				type = take_state_focus
-				generator = { 51 42 749 } 
+				generator = { 51 42 771 } 
 			}
 			country_event = germany.92
 			if = {
@@ -3065,7 +3164,7 @@ country_event = {
 		51 = { set_demilitarized_zone = yes } # Rhineland
 		add_war_support = -0.2 #That was scary for a moment there!
 		42 = { set_demilitarized_zone = yes } # Moselland
-		749 = { set_demilitarized_zone = yes } # Saarland
+		771 = { set_demilitarized_zone = yes } # Saarland
 		add_timed_idea = {
 			idea = as_germany_rhineland_backed_down
 			days = 365
@@ -3647,8 +3746,8 @@ country_event = {
 			}
 			85 = { add_core_of = GER}
 			GER = { transfer_state = 85 }
-			748 = { add_core_of = GER }
-			GER = { transfer_state = 748 }
+			770 = { add_core_of = GER }
+			GER = { transfer_state = 770 }
 		}
 	}
 	
@@ -3687,7 +3786,7 @@ country_event = {
 				create_wargoal = {
 					type = take_state_focus
 					target = POL
-					generator = { 85 748 }
+					generator = { 85 770 }
 				}
 			}
 		}
@@ -3726,7 +3825,7 @@ country_event = {
 			POL = { transfer_state = 664 }
 		}
 		transfer_state = 85
-		transfer_state = 748
+		transfer_state = 770
 
 
 		if = {
@@ -3774,7 +3873,7 @@ country_event = {
 		create_wargoal = {
 			type = take_state_focus
 			target = POL
-			generator = { 85 748 }
+			generator = { 85 770 }
 		}
 	}
 }
@@ -4066,7 +4165,31 @@ country_event = {
 					}
 						add_ideas = service_by_requirement
 				}			
-		}				
+		}
+		SOV = { 
+			if = {
+				limit = {
+					is_ai = yes
+					NOT = {
+						has_idea = war_economy
+						has_idea = tot_economic_mobilisation						
+					}
+				}
+				add_ideas = war_economy
+			}
+			if = {
+				limit = {
+					is_ai = yes
+					NOT = {
+						has_idea = extensive_conscription
+						has_idea = service_by_requirement
+						has_idea = all_adults_serve
+						has_idea = scraping_the_barrel											
+					}
+				}
+				add_ideas = extensive_conscription
+			}
+		}		
 		GER = { country_event = { id = germany.88 days = 1 } 
 			if = {
 				limit = {
@@ -4097,7 +4220,7 @@ country_event = {
 				declare_war_on = {
 					target = POL
 					type = take_state
-					generator = { 85 748 }
+					generator = { 85 770 }
 				}
 			}
 		}
@@ -4760,7 +4883,7 @@ country_event = {
 	is_triggered_only = yes
 
 	option = {
-		ai_chance = { factor = 5 }
+		ai_chance = { factor = 1 }
 		name = germany.99.a
 
 		ITA = { add_opinion_modifier = { target = GER modifier = GER_second_ljubljana_award_GER } }
@@ -5351,7 +5474,7 @@ country_event = {
 				declare_war_on = {
 					target = POL
 					type = take_state
-					generator = { 85 748 }
+					generator = { 85 770 }
 				}
 			}
 		}
@@ -5396,7 +5519,7 @@ country_event = {
 		declare_war_on = {
 			target = POL
 			type = take_state
-			generator = { 85 748 }
+			generator = { 85 770 }
 		}
 	}
 
@@ -5535,7 +5658,7 @@ country_event = {
 				add_state_core = 67
 
 				add_state_core = 68
-				add_state_core = 746
+				add_state_core = 768
 			}
 		}
 		event_target:yalta_partner = {
@@ -5592,7 +5715,7 @@ country_event = {
 			add_state_core = 67
 
 			add_state_core = 68
-			add_state_core = 746
+			add_state_core = 768
 		}
 		hidden_effect = {
 			news_event = { days = 1 id = news.236 }
@@ -6390,19 +6513,28 @@ country_event = {								#### Barbarossa
 		FIN = {
 				if = {
 					limit = { 
-						SOV = { owns_state = 146 }
+						SOV = { controls_state = 146 }
 						NOT = { is_in_faction_with = SOV }
 						NOT = { is_in_faction_with = ENG }	
 						is_ai = yes						
 					}
-					add_to_war = { targeted_alliance = GER enemy = SOV }
- 					
-					remove_ideas = neutrality_idea
+					#add_to_war = { targeted_alliance = GER enemy = SOV }					
+					create_wargoal = {
+						type = take_state
+						target = SOV
+						generator = { 146 }
+					}					
 					add_ai_strategy = {
 						type = antagonize
 						id = "SOV"
 						value = 300
 					}					
+				}
+				if = {
+					limit = {
+						has_idea = neutrality_idea
+					}				
+					remove_ideas = neutrality_idea					
 				}
 		}
 		ROM = {

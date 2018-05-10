@@ -282,9 +282,9 @@ create_field_marshal = {
 
 	gfx = GFX_Portrait_romania_petre_dumitrescu
 	traits = { offensive_doctrine logistics_wizard }
-	skill = 4
-	attack_skill = 4
-	defense_skill = 4
+	skill = 2 #4
+	attack_skill = 2 #4
+	defense_skill = 2 #4
 	planning_skill = 2
 	logistics_skill = 3
 }

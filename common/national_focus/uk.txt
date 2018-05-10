@@ -1969,7 +1969,7 @@ focus_tree = {
 		id = uk_mediterranean_focus 
 		prerequisite = { focus = uk_service_focus }
 		available = {
-			751 = {
+			773 = {
 				CONTROLLER = {
 					OR = {
 						tag = ENG
@@ -1984,7 +1984,7 @@ focus_tree = {
 		relative_position_id = uk_service_focus
 		cost = 10
 		completion_reward = {
-			751 = {
+			773 = {
 				add_building_construction = {
 					type = coastal_bunker
 					level = 2
@@ -2081,7 +2081,7 @@ focus_tree = {
 		}
 
 		available = {
-			751 = {
+			773 = {
               CONTROLLER = {
 					  OR = {
 						tag = ENG
@@ -2116,7 +2116,7 @@ focus_tree = {
 		#}
 
 		completion_reward = {                    # AS
-			751 = {
+			773 = {
 				add_building_construction = {
 					type = coastal_bunker
 					level = 1

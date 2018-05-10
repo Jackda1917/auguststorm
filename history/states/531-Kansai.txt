@@ -2,7 +2,7 @@
 state={
 	id=531
 	name="STATE_531" # Kansai (Osaka)
-	buildings_max_level_factor=1.000   manpower = 11015000
+	manpower = 11015000
 	state_category = megalopolis
 	resources={
 		aluminium=6

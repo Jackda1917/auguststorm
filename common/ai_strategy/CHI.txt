@@ -11,16 +11,13 @@
 # influence
 
 CHI_unit_production = {
-
-
 	enable = {
 		original_tag = CHI
-
 	}
 	abort = {
 		always = no
 	}
-
+	
 	ai_strategy = {
 		type = role_ratio
 		id = garrison
@@ -144,6 +141,11 @@ CHI_unit_production = {
 		id = armor
 		value = 0
 	}
+	
+	ai_strategy = {
+		type = ignore_army_incompetence
+		value = 50
+	}
 }
 
 CHI_dont_waste_on_offensive_air_early = {
@@ -230,6 +232,7 @@ chi_jap_limited_war = {
 
 chi_ignore_mongolia = {
 
+
 	enable = {
 		tag = CHI
 	}
@@ -241,6 +244,7 @@ chi_ignore_mongolia = {
 	ai_strategy = {
 		type = ignore
 		id = "MON"
+
 		value = 300
 	}
 	
@@ -249,6 +253,17 @@ chi_ignore_mongolia = {
 		id = "MON"
 		value = -300
 	}	
+}
+CHI_prio_military_even_at_peace = {
+	enable = {
+		original_tag = CHI
+	}
+	
+	ai_strategy = {
+		type = added_military_to_civilian_factory_ratio
+		value = 50
+	}
+	
 }
 	
 CHI_dont_mess_with_the_soviets = {
@@ -290,4 +305,33 @@ CHI_some_safer_places_to_build = {
         target =  605
         value = 300
     }
+}
+##################### August Storm ########################################
+sik_ignore_united_front = {
+	enable = {
+		tag = SIK
+	}
+	abort = {
+		tag = SIK 
+		OR = {
+			JAP = { has_war_with = USA }
+			JAP = { has_war_with = SOV }			
+		}
+	}
+	
+	ai_strategy = {
+		type = alliance
+		id = "CHI"
+		value = -3000
+	}
+	ai_strategy = {
+		type = ignore
+		id = "JAP"
+		value = 3000
+	}
+	ai_strategy = {
+		type = antagonize
+		id = "JAP"
+		value = -300
+	}	
 }

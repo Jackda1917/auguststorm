@@ -2,7 +2,7 @@
 state={
 	id=348
 	name="STATE_348" # Kayseri
-	buildings_max_level_factor=1.000   manpower = 858452
+	manpower = 858452
 	
 	state_category = rural
 

@@ -1,55 +1,14 @@
-##### August Storm
-##### Spain AI Strategy
-
-##### Diplomacy
-
-SPR_unit_production = {
-
-	enable = {
-		original_tag = SPR
-		has_civil_war = yes
-		NOT = { has_government = fascism }
-	}
-	abort = {
-		NOT = { has_civil_war = yes }
-	}
-
-	ai_strategy = {
-		type = role_ratio
-		id = garrison
-		value = 
-	}
-	
-	ai_strategy = {
-		type = build_army
-		id = infantry
-		value = 50
-	}
-
-	ai_strategy = {
-		type = role_ratio
-		id = garrison
-		value = 10
-	}
-	
-	ai_strategy = {
-		type = equipment_production_factor
-		id = infantry
-		value = 35
-	}
-	
-	ai_strategy = {
-		type = equipment_production_factor
-		id = artillery
-		value = 25
-	}
-	
-	ai_strategy = {
-		type = equipment_production_factor
-		id = armor
-		value = 0
-	}
-}
+# befriend
+# conquer
+# antagonize
+# build_ship
+# build_army
+# unit_ratio
+# build_building
+# research_tech
+# garrison
+# protect
+# influence
 
 spanish_civil_war_GER_expatriate = {
 	enable = {

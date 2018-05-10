@@ -42,8 +42,8 @@ ideologies = {
 			generate_wargoal_tension = 1.00
 			join_faction_tension = 0.80
 			lend_lease_tension = 0.50
-			send_volunteers_tension = 0.50
-			guarantee_tension = 0.25
+			send_volunteers_tension = 0.01
+			guarantee_tension = 0.75 #0.25
 			take_states_cost_factor = 0.25
 			annex_cost_factor = 0.5
 			send_volunteer_divisions_required = 2		# was none			
@@ -91,12 +91,13 @@ ideologies = {
 			can_puppet = no
 			can_declare_war_on_same_ideology = no
 			can_guarantee_other_ideologies = yes
+			can_only_justify_war_on_threat_country = yes 
 		}
 		
 		modifiers = {
 			#puppet_cost_factor = -0.75  # was -0.3
 			#lend_lease_tension = 0.01		# was none
-			send_volunteers_tension = 0.3		# was none
+			send_volunteers_tension = 1		# was none
 			send_volunteer_divisions_required = 1		# was none
 			guarantee_tension = 0.5		# was none
 		}
@@ -140,10 +141,10 @@ ideologies = {
 		}
 		
 		modifiers = {
-			puppet_cost_factor = -0.75  # was -0.3
+			puppet_cost_factor = -0.5  # was -0.3
 			#lend_lease_tension = 0.05		# was none
-			send_volunteers_tension = 0.05		# was none
-			send_volunteer_divisions_required = 3		# was none
+			send_volunteers_tension = 0.1		# was none
+			send_volunteer_divisions_required = 4	# was none
 			guarantee_tension = 0.10		# was none	
 			drift_defence_factor = 0.30
 		}
@@ -192,7 +193,9 @@ ideologies = {
 		
 		modifiers = {
 			justify_war_goal_when_in_major_war_time = -0.80
-			send_volunteer_divisions_required = 0.10		# was none
+			send_volunteer_divisions_required = 0.1		# was none
+			send_volunteers_tension = 0.05		# was none
+			consumer_goods_factor = 0.07		# was none
 		}
 
 		ai_fascist = yes # uses the fascist AI behaviour

@@ -2,7 +2,7 @@
 state={
 	id=245
 	name="STATE_245" # Millerovo
-	buildings_max_level_factor=1.000   manpower = 761769
+	manpower = 761769
 	
 	state_category = rural
 

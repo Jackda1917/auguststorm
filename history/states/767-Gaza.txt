@@ -1,0 +1,46 @@
+
+state={
+	id=767
+	name="STATE_767" # Gaza
+	manpower = 130000
+	
+	state_category = rural
+
+	history={
+		owner = ENG
+		add_claim_by = ISR
+		
+		buildings = {
+			infrastructure = 4
+		}
+
+		1948.5.15 = {
+			owner = EGY
+			controller = EGY
+			add_claim_by = EGY
+		}
+
+		1949.2.24 = {
+			remove_claim_by = EGY
+			add_core_of = EGY
+		}
+
+		1967.6.6 = {
+			controller = ISR
+		}
+
+		1967.6.10 = {
+			owner = ISR
+		}
+
+		# Camp David Accords
+		1978.9.17 = {
+			remove_core_of = EGY
+			add_core_of = PAL
+		}
+	}
+
+	provinces={
+		4088
+	}
+}

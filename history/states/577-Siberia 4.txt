@@ -1,7 +1,7 @@
 
 state={
 	id=577 # Surgut
-	buildings_max_level_factor=1.000   manpower = 29299
+	manpower = 29299
 	name="STATE_577"
 	resources={
 		oil=14

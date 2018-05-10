@@ -4,24 +4,6 @@ capital = 64
 
 oob = "GER_1936"
 
-# Ideas
-add_ideas = {
-	# Laws									
-	partial_economic_mobilisation
-	limited_conscription
-	limited_exports
-
-	#henschel			# AS
-	ig_faben
-	heinrich_himmler
-	rudolf_hess
-	ludwig_beck
-	gerd_von_rundstedt	
-	
-	# National Spirits
-	sour_loser
-	general_staff
-}
 
 # Starting tech
 set_technology = {
@@ -36,6 +18,7 @@ set_technology = {
 	interwar_antiair = 1
 	antiair1 = 1 # was none
 	interwar_antitank = 1
+	tech_military_police = 1 # was none
 	gwtank = 1
 	basic_light_tank = 1
 	improved_light_tank = 1
@@ -78,11 +61,18 @@ set_technology = {
 
 set_variable = { var = wehrmacht_anger value = 0 }
 set_variable = { var = ss_anger value = 0 }
+
 add_political_power = 500 # was none
-set_research_slots = 5
+if = {					# AS
+	limit = { is_ai = yes }
+	add_political_power = 500	
+}
+
+
+set_research_slots = 5  #4
 set_convoys = 300  # was 200
-set_stability = 0.7 # was 0.75
-set_war_support = 0.35 #3
+set_stability = 0.65 # was 0.75
+set_war_support = 0.4 #3
 
 #Trade
 create_import = {
@@ -147,10 +137,10 @@ USA = {
 		ig_faben
 		heinrich_himmler
 		rudolf_hess
+		walther_funk
 		ludwig_beck
 		gerd_von_rundstedt
-		GER_autarky_idea
-
+		GER_autarky_idea		
 		#laws
 		war_economy
 		extensive_conscription
@@ -315,13 +305,29 @@ set_politics = {
 create_faction = Axis
 add_to_faction = GER
 
+
+# Ideas
 add_ideas = {
+	# Laws									
+	partial_economic_mobilisation
+	extensive_conscription						#limited_conscription
+	limited_exports
+
+	#henschel			# AS
+	ig_faben
+	
+	heinrich_himmler
+	rudolf_hess
+	walther_funk
+	
+	ludwig_beck
+	gerd_von_rundstedt	
+
+	# National Spirits
 	sour_loser
 	general_staff
-	limited_exports
-	limited_conscription
-	partial_economic_mobilisation
 }
+
 add_ideas = GER_mefo_bills_1
 
 activate_mission = GER_mefo_bills_mission
@@ -393,9 +399,9 @@ add_namespace = {
 create_field_marshal = {
 	name = "Gerd von Rundstedt"
 	picture = "Portrait_Germany_Gerd_von_Rundstedt.dds"
-	traits = { defensive_doctrine offensive_doctrine old_guard }
-	skill = 3
-	attack_skill = 3
+	traits = { field_marshal_baton defensive_doctrine offensive_doctrine old_guard }
+	skill = 4 #3
+	attack_skill = 4 #3
 	defense_skill = 2
 	planning_skill = 3
 	logistics_skill = 2
@@ -405,7 +411,7 @@ create_field_marshal = {
 create_field_marshal = {
 	name = "Günther von Kluge"
 	picture = "Portrait_Germany_Gunther_von_Kluge.dds"
-	traits = {  offensive_doctrine armor_officer }
+	traits = { field_marshal_baton offensive_doctrine armor_officer }
 	skill = 3
 	id = 2
 	attack_skill = 3
@@ -433,9 +439,9 @@ create_corps_commander = {
 	skill = 5 #4
 	id = 4
 	attack_skill = 5 #4
-	defense_skill = 5 #4 
+	defense_skill = 4 #4 
 	planning_skill = 3 #2
-	logistics_skill = 3 
+	logistics_skill = 5 #3 
 }
 
 create_corps_commander = {
@@ -444,21 +450,21 @@ create_corps_commander = {
 	traits = { trickster armor_officer brilliant_strategist trait_engineer }	
 	skill = 5 #4
 	id = 5
-	attack_skill = 3 #2
-	defense_skill = 5 #4
-	planning_skill = 3
-	logistics_skill = 5 #4
+	attack_skill = 5 #2
+	defense_skill = 4
+	planning_skill = 5 #3
+	logistics_skill = 3 #4
 }
 
 create_corps_commander = {
 	name = "Heinz Guderian"
 	picture = "Portrait_Germany_Heinz_Guderian.dds"
-	traits = { trickster brilliant_strategist panzer_leader armor_officer career_officer }
+	traits = { trickster brilliant_strategist panzer_leader panzer_expert armor_officer career_officer }
 	skill = 5 #4
 	id = 6
-	attack_skill = 5 #2
-	defense_skill = 5 #4
-	planning_skill = 5 #4
+	attack_skill = 7 #2
+	defense_skill = 4 #4
+	planning_skill = 6 #4
 	logistics_skill = 3
 }
 
@@ -481,12 +487,12 @@ create_corps_commander = {
 	picture = "Portrait_Germany_Ewald_von_Kleist.dds"
 	traits = { armor_officer trait_cautious }
 
-	skill = 2
+	skill = 3
 	id = 8
 	attack_skill = 2
-	defense_skill = 1
+	defense_skill = 3
 	planning_skill = 2
-	logistics_skill = 2
+	logistics_skill = 3
 }
 
 create_corps_commander = {
@@ -509,7 +515,7 @@ create_field_marshal = {
 
 	skill = 3
 	id = 10
-	attack_skill = 2
+	attack_skill = 3 #2
 	defense_skill = 4
 	planning_skill = 2
 	logistics_skill = 2
@@ -599,7 +605,7 @@ create_corps_commander = {
 
 	skill = 3
 	id = 18
-	attack_skill = 2
+	attack_skill = 3 #2
 	defense_skill = 2
 	planning_skill = 3
 	logistics_skill = 3
@@ -703,8 +709,8 @@ create_corps_commander = {
 	skill = 4
 	id = 32
 	attack_skill = 2
-	defense_skill = 4
-	planning_skill = 3
+	defense_skill = 4 
+	planning_skill = 4 #3
 	logistics_skill = 4
 }
 

@@ -1,0 +1,31 @@
+state = {
+	id = 773
+	name = "STATE_773" # Suez
+	manpower = 50000
+	
+	state_category = town
+
+	history = {
+		owner = ENG
+		add_core_of = EGY
+		add_core_of = ENG
+		
+		buildings = {
+			infrastructure = 5
+		}
+		
+		victory_points = {
+			4073 30 #25
+		}
+		
+		# Nasser nationalizes the Suez Canal
+		1956.7.26 = {
+			owner = EGY
+			remove_core_of = ENG
+		}
+	}
+
+	provinces = {
+		4073 12049
+	}
+}

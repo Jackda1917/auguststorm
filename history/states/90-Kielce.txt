@@ -1,7 +1,7 @@
 state={
 	id=90
 	name="STATE_90" # Kielce
-	buildings_max_level_factor=1.000   manpower = 2935697
+	manpower = 2935697
 	
 	state_category = town
 	

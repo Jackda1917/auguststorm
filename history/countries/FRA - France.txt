@@ -3,7 +3,6 @@
 oob = "FRA_1936"
 
 set_research_slots = 3
-set_stability = 0.5
 set_war_support = 0.15
 
 # Starting tech
@@ -49,7 +48,21 @@ set_technology = {
 }
 
 set_convoys = 300
-set_stability = 0.55  # was 0.45
+set_stability = 0.5  # was 0.45
+
+if = {							# AS
+	limit = { is_ai = yes }
+	add_political_power = 500
+	#adding ministers
+	add_ideas = {
+		FRA_charles_tillon
+		francois_darlan
+		philippe_fequant
+		famh
+		jean_marie_bergeret
+		renault_fra
+	}	
+}
 
 # DIPLOMACY
 if = {
@@ -76,7 +89,7 @@ set_politics = {
 
 	parties = {
 		democratic = { 
-			popularity = 69
+			popularity = 79
 		}
 
 		fascism = {
@@ -84,7 +97,7 @@ set_politics = {
 		}
 		
 		communism = {
-			popularity = 26
+			popularity = 16
 		}
 	}
 	
@@ -230,42 +243,15 @@ create_country_leader = {
 	}
 }
 
-create_corps_commander = {
-	name = "Jean de Lattre de Tassigny"
-	picture = "Portrait_France_Jean_de_Lattre_de_Tassigny.dds"
-	traits = { trickster brilliant_strategist cavalry_officer war_hero }
-
-	skill = 4
-	attack_skill = 4
-	defense_skill = 2
-	planning_skill = 4
-	logistics_skill = 3
-}
-
-create_corps_commander = {
-	name = "Alphonse Juin"
-	picture = "Portrait_France_Alphonse_Juin.dds"
-	traits = { armor_officer career_officer trait_cautious  }
-	skill = 4
-	attack_skill = 3
-	defense_skill = 2
-	planning_skill = 4
-	logistics_skill = 4
-
-
-
-}
-
 create_field_marshal = {
 	name = "Maurice Gamelin"
 	picture = "Portrait_France_Maurice_Gamelin.dds"
-	traits = { defensive_doctrine old_guard inflexible_strategist career_officer }
+	traits = { field_marshal_baton defensive_doctrine old_guard inflexible_strategist career_officer }
+	id = 703                         # AS
 	skill = 2
 	attack_skill = 1
-	defense_skill = 3
+	defense_skill = 2
 	planning_skill = 2
-
-
 	logistics_skill = 1
 }
 
@@ -273,10 +259,10 @@ create_field_marshal = {
 	name = "Maxime Weygand"
 	picture = "Portrait_France_Maxime_Weygand.dds"
 	traits = { defensive_doctrine old_guard inflexible_strategist career_officer }
-
-	skill = 3
-	attack_skill = 3
-	defense_skill = 3
+	id = 704                         # AS
+	skill = 2 #3
+	attack_skill = 1
+	defense_skill = 2
 	planning_skill = 2
 	logistics_skill = 2
 }
@@ -285,45 +271,36 @@ create_field_marshal = {
 	name = "Alphonse Georges"
 	picture = "Portrait_France_Alphonse_Joseph_Georges.dds"
 	traits = { defensive_doctrine old_guard trait_cautious }
-	skill = 3
-	attack_skill = 2
+	id = 705                         # AS
+	skill = 2 #3
+	attack_skill = 1
 	defense_skill = 2
-	planning_skill = 4
+	planning_skill = 2
 	logistics_skill = 2
-
-
 }
 
 create_corps_commander = {
 	name = "Charles De Gaulle"
 	picture = "Portrait_France_Charles_De_Gaulle.dds"
-	traits = {  armor_officer harsh_leader media_personality }
-	skill = 4
-	attack_skill = 4
-	defense_skill = 4
+	traits = { armor_officer harsh_leader media_personality }
+	id = 706                         # AS
+	skill = 3 #4
+	attack_skill = 3
+	defense_skill = 3
 	planning_skill = 3
 	logistics_skill = 2
 }
 
-create_corps_commander = {
-	name = "Philippe Leclerc"
-	picture = "portrait_france_philippe_leclerc.dds"
-	traits = {  armor_officer trait_reckless career_officer }
-	skill = 3
-	attack_skill = 3
-	defense_skill = 2
-	planning_skill = 2
-	logistics_skill = 3
-}
 
 create_corps_commander = {
 	name = "Henri Giraud"
 	picture = "portrait_france_henri_giraud.dds"
 	traits = {  trickster trait_cautious career_officer infantry_officer }
-	skill = 3
+	id = 707                         # AS
+	skill = 2 #3
 	attack_skill = 2
 	defense_skill = 2
-	planning_skill = 4
+	planning_skill = 2
 	logistics_skill = 2
 }
 
@@ -331,19 +308,55 @@ create_corps_commander = {
 	name = "Charles Huntziger"
 	picture = "portrait_france_charles_huntziger.dds"
 	traits = { old_guard infantry_officer }
-
-	skill = 3
-	attack_skill = 3
+	id = 708                         # AS
+	skill = 2 #3
+	attack_skill = 2 #3
 	defense_skill = 1
-	planning_skill = 3
-	logistics_skill = 3
+	planning_skill = 2
+	logistics_skill = 2
+}
+
+create_corps_commander = {         # AS
+	name = "Gaston Billotte"
+	picture = "Portrait_France_Generic_land_1.dds"
+	traits = { old_guard defensive_doctrine }
+	id = 714                        
+	skill = 2 
+	attack_skill = 1 
+	defense_skill = 2
+	planning_skill = 2
+	logistics_skill = 2
+}
+
+create_corps_commander = {         # AS
+	name = "Antoine Besson"
+	picture = "Portrait_France_Generic_land_2.dds"
+	traits = { old_guard }
+	id = 715                        
+	skill = 2 
+	attack_skill = 1 
+	defense_skill = 2
+	planning_skill = 2
+	logistics_skill = 1
+}
+
+create_corps_commander = {         # AS
+	name = "Georges Blanchard"
+	picture = "Portrait_France_Generic_land_3.dds"
+	traits = { old_guard infantry_officer }
+	id = 716                        
+	skill = 2 
+	attack_skill = 2
+	defense_skill = 2
+	planning_skill = 1
+	logistics_skill = 1
 }
 
 create_navy_leader = {
 	name = "François Darlan"
 		picture = "Portrait_France_Francois_Darlan.dds"
 	traits = { superior_tactician }
-	id = 706                         # AS	
+	id = 709                        # AS	
 	skill = 3
 }
 
@@ -351,7 +364,7 @@ create_navy_leader = {
 	name = "Jean-Marie Charles Abrial"
 		picture = "Portrait_France_Jean-Marie_Charles_Abrial.dds"
 	traits = { superior_tactician }
-	id = 707                         # AS	
+	id = 710                         # AS	
 	skill = 3
 }
 
@@ -359,7 +372,7 @@ create_navy_leader = {
 	name = "Jean-Pierre Esteva"
 		picture = "Portrait_France_Jean-Pierre_Esteva.dds"
 	traits = { seawolf }
-	id = 708                         # AS	
+	id = 711                         # AS	
 	skill = 2
 }
 
@@ -367,7 +380,7 @@ create_navy_leader = {
 	name = "René-Émile Godfroy"
 		picture = "Portrait_France_Rene-Emile_Godfroy.dds"
 	traits = { old_guard_navy spotter }
-	id = 709                         # AS	
+	id = 712                         # AS	
 	skill = 2
 }
 
@@ -375,7 +388,7 @@ create_navy_leader = {
 	name = "Jean de Laborde"
 	picture = "Portrait_France_Jean_de_Laborde.dds"
 	traits = {  }
-	id = 710                         # AS	
+	id = 713                         # AS	
 	skill = 1
 }
 

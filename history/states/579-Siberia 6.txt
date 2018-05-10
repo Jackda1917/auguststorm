@@ -2,7 +2,7 @@
 state={
 	id=579
 	name="STATE_579" # Salekhard
-	buildings_max_level_factor=1.000   manpower = 45484
+	manpower = 45484
 	
 	state_category = wasteland
 

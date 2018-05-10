@@ -2,7 +2,7 @@
 state={
 	id=17
 	name="STATE_17" # Lorraine
-	buildings_max_level_factor=1.000   manpower = 1517500
+	manpower = 1517500
 	
 	state_category = city
 	

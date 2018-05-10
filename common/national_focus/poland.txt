@@ -486,7 +486,7 @@ focus_tree = {
 
 		completion_reward = {
 			random_owned_controlled_state = {
-				prioritize = { 756 }
+				prioritize = { 762 }
 				limit = {
 					free_building_slots = {
 						building = industrial_complex
@@ -729,8 +729,8 @@ focus_tree = {
 		prerequisite = { focus = POL_romanian_bridgehead_strategy }
 
 		bypass = {
-			756 = { NOT = { is_owned_by = ROOT } }
-			756 = { NOT = { is_controlled_by = ROOT } }
+			762 = { NOT = { is_owned_by = ROOT } }
+			762 = { NOT = { is_controlled_by = ROOT } }
 		}
 		
 		x = 1
@@ -743,7 +743,7 @@ focus_tree = {
 			factor = 10
 		}
 		completion_reward = {
-			756 = {
+			762 = {
 				custom_effect_tooltip = POL_silesia_fortified_area_forts
 				hidden_effect = {
 					add_building_construction = {
@@ -762,8 +762,8 @@ focus_tree = {
 			} #Adds two Land Forts to Katowice province
 			if = {
 				limit = {
-					756 = { is_owned_by = ROOT }
-					756 = { is_controlled_by = ROOT }
+					762 = { is_owned_by = ROOT }
+					762 = { is_controlled_by = ROOT }
 				}
 				custom_effect_tooltip = POL_silesia_fortified_area_tt
 				72 = {
@@ -793,8 +793,8 @@ focus_tree = {
 		prerequisite = { focus = POL_romanian_bridgehead_strategy }
 		
 		bypass = {
-			748 = { NOT = { is_owned_by = ROOT } }
-			748 = { NOT = { is_controlled_by = ROOT } }
+			770 = { NOT = { is_owned_by = ROOT } }
+			770 = { NOT = { is_controlled_by = ROOT } }
 		}
 
 		x = -1

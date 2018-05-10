@@ -16,11 +16,11 @@ focus_tree = {
 	focus = {
 		id = JAP_the_unthinkable_option
 		icon = GFX_goal_support_communism
-		mutually_exclusive = {
-			focus = JAP_purge_the_kodoha_faction
-			focus = JAP_support_the_kodoha_faction
-			focus = JAP_strengthen_civilian_government
-		}
+		#mutually_exclusive = {
+		#	focus = JAP_purge_the_kodoha_faction
+		#	focus = JAP_support_the_kodoha_faction
+		#	focus = JAP_strengthen_civilian_government
+		#}
 		x = 3
 		y = 0
 
@@ -35,7 +35,7 @@ focus_tree = {
 		}
 
 		available = {
-
+			communism > 0.5		# AS
 		}
 
 		bypass = {
@@ -1504,7 +1504,7 @@ focus_tree = {
 		cost = 10
 
 		ai_will_do = {
-			factor = 1
+			factor = 0
 			modifier = {
 				factor = 10
 				"PHI" = {
@@ -1603,7 +1603,7 @@ focus_tree = {
 					286 = {
 						NOT = { is_controlled_by = FRA }
 					}
-					741 = {
+					763 = {
 						NOT = { is_controlled_by = FRA }
 					}
 				}
@@ -1653,7 +1653,7 @@ focus_tree = {
 						286 = {
 							is_controlled_by = FRA
 						}
-						741 = {
+						763 = {
 							is_controlled_by = FRA
 						}
 					}
@@ -5646,7 +5646,7 @@ focus_tree = {
 		icon = GFX_goal_generic_navy_doctrines_tactics
 		prerequisite = { focus = JAP_strike_south_doctrine }
 		mutually_exclusive = { focus = JAP_preemptive_war }  # AS
-		mutually_exclusive = { focus = strike_usa_focus }  # AS		
+		mutually_exclusive = { focus = JAP_strike_usa_focus }  # AS		
 		x = -2
 		y = 4		
 		relative_position_id = JAP_strike_south_doctrine		
@@ -5748,7 +5748,7 @@ focus_tree = {
 	}	
 	
 	focus = {
-		id = strike_usa_focus
+		id = JAP_strike_usa_focus
 		icon = GFX_goal_generic_occupy_states_coastal
 		prerequisite = { focus = JAP_strike_south_doctrine }
 		mutually_exclusive = { focus = southern_expansion_focus }  # AS
@@ -5758,23 +5758,8 @@ focus_tree = {
 		relative_position_id = JAP_strike_south_doctrine		
 		available = {
 			country_exists = USA
-			JAP = { has_opinion_modifier = embargo }
-			AND = {												# AS								
-					NOT = { has_war_with = SOV }
-					OR = {
-						FRA = { has_capitulated = yes }
-						VIC = { exists = yes }
-						has_global_flag = vichy_established
-					}								
-					OR = {
-						CHI = { is_puppet_of = JAP }
-						CHI = { is_in_faction_with = JAP }										
-						CHI = { surrender_progress > 0.25 }
-						CHI = { has_capitulated = yes }
-						has_global_flag = chi_limited_war_flag
-					}
-					JAP = { controls_state = 608 } # Beijing							
-			}			
+			NOT = { has_war_with = USA }
+			JAP = { has_opinion_modifier = embargo }			
 		}
 		will_lead_to_war_with = USA
 		will_lead_to_war_with = PHI		
@@ -5824,34 +5809,6 @@ focus_tree = {
 				type = take_state_focus
 				target = INS
 				generator = { 334 672 } 
-			}
-			add_timed_idea = { idea = for_the_emperor_idea days = 200 } # was 100
-			hidden_effect = {
-				news_event = { hours = 6 id = news.208 }
-				if = {
-					limit = {
-						is_ai = yes
-					}
-					declare_war_on = { target = USA type = take_state_focus } 					
-				}
-				if = {
-					limit = {
-						is_ai = yes
-					}
-					declare_war_on = { target = PHI type = take_state_focus } 					
-				}
-				if = {
-					limit = {
-						is_ai = yes
-					}
-					declare_war_on = { target = ENG type = take_state_focus } 					
-				}
-				if = {
-					limit = {
-						is_ai = yes
-					}
-					declare_war_on = { target = INS type = take_state_focus } 					
-				}				
 			}
 		}
 		#select_effect = {

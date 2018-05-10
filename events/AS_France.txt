@@ -16,7 +16,7 @@ country_event = {
 		tag = FRA
 		NOT = { has_war_with = TUR }
 		SYR = { is_puppet_of = FRA }
-		747 = { OR = { is_owned_by = SYR is_owned_by = FRA } } # Hatay
+		769 = { OR = { is_owned_by = SYR is_owned_by = FRA } } # Hatay
 		date > 1939.6.28 # Historical 1939.6.29
 	}
 	
@@ -28,7 +28,7 @@ country_event = {
 		name = as_france.1.option_a
 		ai_chance = { factor = 100 }
 		TUR = {
-			transfer_state = 747 # Hatay
+			transfer_state = 769 # Hatay
 			add_named_threat = { threat = 1 name = as_france.1.title }
 		}
 	}

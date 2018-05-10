@@ -1296,6 +1296,10 @@ focus_tree = {
 				threat > 0.9							## was 0.6
 				CHI = { has_capitulated = yes }
 				CHI = { is_puppet_of = JAP }
+				any_other_country = {
+					original_tag = CHI
+					is_in_faction_with = JAP
+				}				
 			}
 		}
 

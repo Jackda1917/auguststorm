@@ -2,20 +2,42 @@ state={
 	id=762
 	name="STATE_762"
 	provinces={
-		506 6464
+		506 6464 13205
 	}
-	manpower=1000000
 	resources={
-		steel=19 # was: 60
-		aluminium=7 # was: 20
+		steel=18
+		aluminium=6
 	}
-	state_category = city
-	history={
+	manpower=1000000	
+	state_category = large_city
+
+	history = {
 		owner = POL
+		controller = POL
+		add_core_of = POL
+		
+		victory_points = {
+			13205 1		
+		}
+		
 		buildings = {
 			infrastructure = 6
-			industrial_complex = 1
+			industrial_complex = 2
 		}
-		add_core_of = POL
+		
+		1945.4.4 = {
+			controller = SOV
+		}
+		
+		1945.5.8 = {
+			owner = SOV
+		}
+		
+		1945.8.1 = {
+			owner = POL
+			controller = POL
+			add_core_of = POL
+		}
 	}
+
 }

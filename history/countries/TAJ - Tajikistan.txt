@@ -1,4 +1,4 @@
-﻿capital = 753 # Tajikistan
+﻿capital = 775 # Tajikistan
 
 set_stability = 0.75
 set_convoys = 5

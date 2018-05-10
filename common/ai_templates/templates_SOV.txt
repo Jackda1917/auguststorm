@@ -45,7 +45,7 @@ armored_SOV = {
 		}
 		
 		can_upgrade_in_field = {
-			has_equipment = { light_tank_equipment < 500 } 
+			has_equipment = { light_tank_equipment < 2000 } 
 		}
 	
 		target_width = 6.0

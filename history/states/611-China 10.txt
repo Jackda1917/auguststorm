@@ -2,7 +2,7 @@
 state={
 	id=611
 	name="STATE_611" # South Chahar
-	buildings_max_level_factor=1.000   manpower = 1470000
+	manpower = 1470000
 	
 	state_category = rural
 

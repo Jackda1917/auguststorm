@@ -2,7 +2,7 @@ state=
 {
 	id=456
 	name="STATE_456" # Aswan
-	buildings_max_level_factor=1.000   manpower = 4224516
+	manpower = 4224516
 	
 	state_category = rural
 	

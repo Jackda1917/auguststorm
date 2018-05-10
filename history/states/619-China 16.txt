@@ -2,7 +2,7 @@
 state={
 	id=619
 	name="STATE_619" # Yarkand
-	buildings_max_level_factor=1.000   manpower = 1430700
+	manpower = 1430700
 	
 	state_category = pastoral
 	

@@ -2,7 +2,7 @@
 state={
 	id=535
 	name="STATE_535" # Koshinetsu
-	buildings_max_level_factor=1.000   manpower = 3871000
+	manpower = 3871000
 	state_category = large_city
 	
 	resources={

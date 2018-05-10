@@ -192,7 +192,7 @@
 	}
 
 
-	jet_strategic_bomber_equipment = {
+	jet_strat_bomber_equipment = {
 		prefix = ""
 		generic = { "Groupe de Bombardement" }
 		generic_pattern = AIR_WING_NAME_FRA_GENERIC

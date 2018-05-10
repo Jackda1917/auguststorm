@@ -298,9 +298,11 @@ country_event = {
 					286 = {
 						OR = {
 						    is_owned_by = FRA
-						    is_owned_by = VIC							
+						    is_owned_by = VIC
+						    is_owned_by = GER							
 							is_controlled_by = FRA
 							is_controlled_by = VIC
+							is_controlled_by = GER							
 							#is_controlled_by = JAP
 						}
 					}
@@ -312,9 +314,11 @@ country_event = {
 					670 = {
 						OR = {
 						    is_owned_by = FRA
-						    is_owned_by = VIC							
+						    is_owned_by = VIC
+						    is_owned_by = GER							
 							is_controlled_by = FRA
 							is_controlled_by = VIC
+							is_controlled_by = GER							
 							#is_controlled_by = JAP
 						}
 					}
@@ -326,9 +330,11 @@ country_event = {
 					671 = {
 						OR = {
 						    is_owned_by = FRA
-						    is_owned_by = VIC							
+						    is_owned_by = VIC
+						    is_owned_by = GER							
 							is_controlled_by = FRA
 							is_controlled_by = VIC
+							is_controlled_by = GER							
 							#is_controlled_by = JAP
 						}
 					}
@@ -337,17 +343,19 @@ country_event = {
 			}
 			if = {
 				limit = {
-					758 = {
+					741 = {
 						OR = {
 						    is_owned_by = FRA
-						    is_owned_by = VIC							
+						    is_owned_by = VIC
+						    is_owned_by = GER							
 							is_controlled_by = FRA
 							is_controlled_by = VIC
+							is_controlled_by = GER							
 							#is_controlled_by = JAP
 						}
 					}
 				}
-				transfer_state = 758
+				transfer_state = 741
 			}			
 			add_named_threat = { threat = 8 name = france.1.t }  # was 1
 			if = {

@@ -10,6 +10,184 @@
 # protect
 # influence
 
+
+ITA_unit_production = {
+	enable = {
+		original_tag = ITA
+	}
+	abort = {
+		always = no
+	}
+	
+	ai_strategy = {
+		type = role_ratio
+		id = garrison
+		value = 10
+	}
+
+	ai_strategy = {
+		type = role_ratio
+		id = suppression
+		value = 2
+	}
+	
+	ai_strategy = {
+		type = role_ratio
+		id = paratroopers
+		value = 1
+	}
+
+	ai_strategy = {
+		type = role_ratio
+		id = mountaineers
+		value = 5
+	}
+
+	ai_strategy = {
+		type = role_ratio
+		id = marines
+		value = 1
+	}
+
+	ai_strategy = {
+		type = role_ratio
+		id = cavalry
+		value = 0
+	}
+
+	ai_strategy = {
+		type = role_ratio
+		id = motorized
+		value = 3
+	}
+
+	ai_strategy = {
+		type = role_ratio
+		id = mechanized
+		value = 0
+	}
+
+	ai_strategy = {
+		type = role_ratio
+		id = armor
+		value = 3
+	}
+
+	ai_strategy = {
+		type = role_ratio
+		id = infantry
+		value = 70
+	}
+	
+	#Air unit factors
+	ai_strategy = {
+		type = unit_ratio
+		id = fighter
+		value = 40
+	}
+	
+	ai_strategy = {
+		type = unit_ratio
+		id = cas
+		value = 5
+	}
+	
+	ai_strategy = {
+		type = unit_ratio
+		id = tactical_bomber
+		value = 10
+	}
+	
+	ai_strategy = {
+		type = unit_ratio
+		id = strategic_bomber
+		value = -30
+	}
+	
+	ai_strategy = {
+		type = unit_ratio
+		id = naval_bomber
+		value = 30
+	}
+	
+	
+	# Naval unit factors
+	ai_strategy = {
+		type = unit_ratio
+		id = capital_ship
+		value = 30
+	}
+
+	ai_strategy = {
+		type = unit_ratio
+		id = submarine
+		value = 20 
+	}
+
+	ai_strategy = {
+		type = unit_ratio
+		id = screen_ship
+		value = 10
+	}
+
+	ai_strategy = {
+		type = unit_ratio
+		id = convoy
+		value = 10
+	}
+	
+	ai_strategy = {
+		type = equipment_production_factor
+		id = fighter
+		value = 10
+	}
+
+	ai_strategy = {
+		type = equipment_production_factor
+		id = strategic_bomber
+		value = -20
+	}
+
+	ai_strategy = {
+		type = equipment_production_factor
+		id = naval_bomber
+		value = 20
+	}
+	
+	ai_strategy = {
+		type = equipment_production_factor
+		id = infantry
+		value = 30
+	}
+	
+	ai_strategy = {
+		type = equipment_production_factor
+		id = artillery
+		value = 20
+	}
+	
+	ai_strategy = {
+		type = equipment_production_factor
+		id = armor
+		value = 2
+	}
+	ai_strategy = {
+		type = equipment_production_min_factories
+		id = naval_bomber
+		value = 2
+	}
+	ai_strategy = {
+		type = equipment_production_min_factories
+		id = fighter
+		value = 2
+	}
+	ai_strategy = {
+		type = equipment_variant_production_factor
+		id = strat_bomber_equipment
+		value = -100
+	}
+}
+
 albania_war_goal = {
 	enable = {
 		tag = ITA
@@ -25,7 +203,7 @@ albania_war_goal = {
 	ai_strategy = {
 		type = antagonize
 		id = "ALB"			
-		value = 200
+		value = 300
 	}		
 }
 
@@ -106,7 +284,7 @@ germany_ally = {
 	ai_strategy = {
 		type = alliance
 		id = "GER"
-		value = 300
+		value = 2000
 	}
 
 	ai_strategy = {
@@ -149,7 +327,7 @@ bulgaria_ally = {
 	enable = {
 		tag = ITA
 		has_completed_focus = ITA_bulgaria_friend
-		country_exists = GER
+		country_exists = BUL
 	}
 	abort = {
 		NOT = { country_exists = BUL }
@@ -268,31 +446,21 @@ crush_ethiopia = {
 	ai_strategy = {
 		type = area_priority
 		id = africa
-		value = 400
+		value = 500
 	}
 }
 
+
 ITA_template_design_1 = {
-	enable = {	
+	enable = {
+	
 		original_tag = ITA
-		num_divisions < 130
+		date < 1940.1.1				
 	}
 	abort = { 
-		num_divisions > 129
-	}
-	
-	ai_strategy = {
-		type = build_army
-		id = infantry
-		value = 50
+		date > 1940.1.1
 	}
 
-	ai_strategy = {
-		type = build_army
-		id = garrison
-		value = 80
-	}
-	
 	ai_strategy = {
 		type = template_prio
 		id = motorized
@@ -308,7 +476,7 @@ ITA_template_design_1 = {
 	ai_strategy = {
 		type = template_prio
 		id = light_armor
-		value = 10
+		value = 40
 	}
 
 	ai_strategy = {
@@ -326,21 +494,16 @@ ITA_template_design_1 = {
 	ai_strategy = {
 		type = template_prio
 		id = paratroopers
-		value = -10
+		value = -50
 	}
-	
-	ai_strategy = {
-		type = template_prio
-		id = mountaineers
-		value = 50
-	}	
 }
 
 
 ITA_template_design_2 = {
-	enable = {	
+	enable = {
+	
 		original_tag = ITA
-		num_divisions > 129			
+		date > 1940.1.1				
 	}
 
 	ai_strategy = {
@@ -364,13 +527,13 @@ ITA_template_design_2 = {
 	ai_strategy = {
 		type = template_prio
 		id = medium_armor
-		value = 20
+		value = 40
 	}
 
 	ai_strategy = {
 		type = template_prio
 		id = heavy_armor
-		value = 10
+		value = -10
 	}
 
 	ai_strategy = {
@@ -418,7 +581,7 @@ italy_ignore_axis = {
 		OR = {
 			NOT = { country_exists = GER }
 			has_global_flag = vichy_established		#as_germany_controls_paris = yes    Doesn't work ?
-			#GER = { controls_state = 16 }
+			GER = { controls_state = 16 }
 			FRA = { surrender_progress > 0.20 }
 		}
 	}
@@ -430,11 +593,11 @@ italy_ignore_axis = {
 	}
 
 	ai_strategy = {
-		type = ignore
-		id = "GER"			
-		value = 300
-	}
-
+		type = alliance
+		id = "JAP"			
+		value = -300
+	}	
+		
 	ai_strategy = {
 		type = antagonize
 		id = "FRA"			
@@ -445,18 +608,6 @@ italy_ignore_axis = {
 		type = antagonize
 		id = "ENG"			
 		value = -300
-	}
-
-	ai_strategy = {
-		type = ignore
-		id = "FRA"			
-		value = 300
-	}
-
-	ai_strategy = {
-		type = ignore
-		id = "ENG"			
-		value = 300
 	}	
 }
 
@@ -603,4 +754,31 @@ dont_take_claims_on_yug = {
 		id = "YUG"			
 		value = 1
 	}		
-}	
+}
+
+dont_take_claims_on_gre = {
+	enable = {
+		tag = ITA
+		country_exists = YUG
+	}
+
+	abort = {
+		tag = ITA	
+		OR = {
+			NOT = { country_exists = YUG }
+			YUG = { is_puppet_of = GER }
+			YUG = { is_puppet_of = ITA }			
+		}
+	}
+	
+	ai_strategy = {
+		type = ignore_claim
+		id = "GRE"			
+		value = 1
+	}
+	ai_strategy = {
+		type = ignore
+		id = "GRE"			
+		value = 1000
+	}	
+}		

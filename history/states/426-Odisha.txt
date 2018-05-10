@@ -2,7 +2,7 @@
 state={
 	id=426
 	name="STATE_426" # Orissa
-	buildings_max_level_factor=1.000   manpower = 14520100
+	manpower = 14520100
 	
 	state_category = rural
 	

@@ -2,7 +2,7 @@
 state={
 	id=41
 	name="STATE_41" # Madrid
-	buildings_max_level_factor=1.000   manpower = 2269659
+	manpower = 2269659
 
 	state_category = city
 

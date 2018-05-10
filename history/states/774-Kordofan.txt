@@ -1,0 +1,22 @@
+
+state={
+	id=774
+	name="STATE_774" # Kordofan
+	manpower = 26539
+	
+	state_category = rural
+
+	history={
+		owner = ENG
+		controller = ENG
+		add_claim_by = EGY
+
+		buildings = {
+			infrastructure = 0
+		}
+	}
+
+	provinces = {
+		4138 4961 7987 8103 10900 12836
+	}
+}

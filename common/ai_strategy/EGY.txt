@@ -94,7 +94,7 @@ uk_antagonize = {
 			NOT = { country_exists = ENG }
 			OR = {
 				NOT = { EGY = { is_puppet_of = ENG } }
-				NOT = { ENG = { controls_state = 751 } } # Suez
+				NOT = { ENG = { controls_state = 773 } } # Suez
 			}
 		}
 		

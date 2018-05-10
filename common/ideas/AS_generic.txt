@@ -20,8 +20,9 @@ ideas = {
 			}
 			
 			modifier = {
-				stability_weekly = -0.01
-				political_power_factor = -0.1
+				stability_weekly = -0.02
+				political_power_factor = -0.2
+				war_support_weekly = -0.20				
 			}
 		}	
 	
@@ -45,7 +46,8 @@ ideas = {
 			
 			modifier = {
 				stability_weekly = 0.01
-				political_power_factor = 0.2				
+				political_power_factor = 0.2
+				war_support_weekly = 0.10					
 			}
 		}
 
@@ -78,12 +80,13 @@ ideas = {
 			}				
 												
 			modifier = {
-				stability_factor = -0.2 # was none
-				research_time_factor = 0.25 # was none	
+				stability_factor = -0.15 # was none
+				war_support_factor = -0.25 # was none
+				research_time_factor = 0.5 # was none	
 				production_speed_arms_factory_factor = -0.5
 				production_speed_industrial_complex_factor = -0.5
 				ai_get_ally_desire_factor = -300
-				conscription_factor = -0.35				
+				conscription_factor = -0.5				
 				join_faction_tension = 0.5				
 				political_power_factor = -0.5 
 				consumer_goods_factor = 0.05
@@ -174,6 +177,7 @@ ideas = {
 				stability_weekly = -0.001
 				revolutionary_drift = 0.15
 				communism_drift = -0.15
+				war_support_factor = -0.30				
 				industrial_capacity_factory = -0.1
 				production_factory_efficiency_gain_factor =	-0.1
 				industrial_capacity_dockyard = -0.1				
@@ -198,12 +202,14 @@ ideas = {
 			modifier = {
 				revolutionary_drift = 0.01
 				political_power_factor = -0.20
-				stability_factor = -0.1
+				stability_factor = -0.10
+				war_support_factor = -0.20
 				industrial_capacity_factory = -0.05 # was none
 				production_factory_efficiency_gain_factor =	-0.05 # was none
 				industrial_capacity_dockyard = -0.05 # was none				
 			}
 		}
+		
 		
 	}
 
@@ -225,7 +231,8 @@ ideas = {
 			removal_cost = -1
 
 			modifier = {
-				stability_factor = -0.20
+				stability_factor = -0.10
+				war_support_factor = -0.10
 			}
 		}
 
@@ -246,7 +253,8 @@ ideas = {
 			removal_cost = -1
 
 			modifier = {
-				stability_factor = -0.20
+				stability_factor = -0.12
+				war_support_factor = -0.12
 			}
 		}
 		
@@ -267,10 +275,10 @@ ideas = {
 			removal_cost = -1
 
 			modifier = {
-				stability_factor = -0.20
+				stability_factor = -0.15
+				war_support_factor = -0.20
 			}
-		}
-		
+		}		
 	}	
 	
 }

@@ -51,7 +51,7 @@ country_event = {
 		clr_global_flag = as_treaty_of_versailles
 		51 = { set_demilitarized_zone = no } # Rhineland
 		42 = { set_demilitarized_zone = no } # Moselland
-		749 = { set_demilitarized_zone = no } # Saarland
+		771 = { set_demilitarized_zone = no } # Saarland
 		if = {
 			limit = {
 				FRA = { is_puppet = no }
@@ -238,7 +238,15 @@ country_event = {
 			}
 		}
 		CZE = { country_event = { days = 18 id = as_czechoslovakia.1 } }
-		SOV = {
+		SOV = { 
+			if = {
+				limit = {
+					NOT = {
+						has_idea = fascist_threat					
+					}
+				}
+				add_ideas = fascist_threat
+			}			
 			if = {
 				limit = {
 					is_ai = yes
@@ -289,14 +297,14 @@ country_event = {
 	option = {
 		name = as_germany.4.a
 		ai_chance = { factor = 10 }
-		set_country_flag = ger_fall_anton
+		set_country_flag = ger_fall_anton				
 		every_state = {
 			limit = {
 				is_core_of = VIC				
 			}
 			remove_core_of = VIC
 		}		
-		ITA = { add_stability = 0.10 }
+		ITA = { add_stability = 0.1 }
 		FRA = { 
 			if = {
 				limit = { 28 = { owner = { tag = GER } } }
@@ -432,26 +440,34 @@ country_event = {
 		if = {
 			limit = { 
 				JAP = { has_country_flag = jap_get_indo }
+				country_exists = JAP
+				JAP = { has_government = fascism } 
 			}
 			JAP = { transfer_state = 286 }
 		}
 		if = {
 			limit = {  
 				JAP = { has_country_flag = jap_get_indo }
+				country_exists = JAP
+				JAP = { has_government = fascism }				
 			}
 			JAP = { transfer_state = 670 }			
 		}
 		if = {
 			limit = { 
-				JAP = { has_country_flag = jap_get_indo }				
+				JAP = { has_country_flag = jap_get_indo }
+				country_exists = JAP
+				JAP = { has_government = fascism }				
 			}
 			JAP = { transfer_state = 671 }
 		}
 		if = {
 			limit = {  
-				JAP = { has_country_flag = jap_get_indo }				
+				JAP = { has_country_flag = jap_get_indo }
+				country_exists = JAP
+				JAP = { has_government = fascism }				
 			}
-			JAP = { transfer_state = 758 }			
+			JAP = { transfer_state = 741 }			
 		}		
 		# Extend Italian Occupation zone
 		if = {
@@ -520,18 +536,8 @@ country_event = {
 	
 	fire_only_once = yes
 
-	mean_time_to_happen = {
-			days = 50
-	}
-	
-	trigger = {
-		tag = GER
-		VIC = { exists = yes }
-		has_completed_focus = french_state_collaboration_focus
-		has_war_with = SOV
-		has_war_with = USA
-		has_war_with = ENG		
-	}
+	is_triggered_only = yes 
+
 	option = {
 		name = as_germany.5.a
 		ai_chance = { factor = 10 }		
@@ -555,7 +561,7 @@ country_event = {
 	fire_only_once = yes
 
 	mean_time_to_happen = {
-			days = 1
+			days = 10
 	}
 	
 	trigger = {
@@ -658,7 +664,7 @@ country_event = {
 		set_technology = { improved_medium_td = 1 }
 		set_technology = { improved_medium_art = 1 }
 		set_technology = { improved_medium_spaa = 1 }
-		set_technology = { improved_heavy_tank = 1 }		
+		#set_technology = { improved_heavy_tank = 1 }		
 	}	
 }
 
@@ -728,22 +734,22 @@ country_event = {									# Help SPA
 	fire_only_once = yes
 
 	mean_time_to_happen = {
-			days = 20
+			days = 10
 	}
 	
 	trigger = {
 		tag = GER
 		is_ai = yes
 		SPR = { has_civil_war = yes }
-
 	}
+	
 	option = {
 		name = as_germany.6.a
 		random_country = {
 			limit = {
 				original_tag = SPR
 				has_government = fascism 
-			}
+			}			
 			add_equipment_to_stockpile = {
 				type = light_tank_equipment_1
 				amount = 200
@@ -851,6 +857,7 @@ country_event = {									# Bitter Peace
 		ai_chance = { factor = 0 }
 		SOV = { 
 			add_stability = 0.20
+			add_war_support = 0.20			
 			country_event = { id = as_sov.16 days = 1 }
 			show_ideas_tooltip = soviet_partisans
 		}		
@@ -870,8 +877,8 @@ country_event = {								# DOW Irak
 		has_war_with = ENG
 		IRQ = { NOT = { is_in_faction_with = GER } }
 		OR = {	
-			751 = { is_controlled_by = GER }
-			751 = { is_controlled_by = ITA }
+			773 = { is_controlled_by = GER }
+			773 = { is_controlled_by = ITA }
 			EGY = { has_capitulated = yes }	
 			IRQ = { is_neighbor_of = GER }
 		}
@@ -912,8 +919,8 @@ country_event = {								# DOW Persia
 		}
 		AND = {
 			OR = {	
-				751 = { is_controlled_by = GER }
-				751 = { is_controlled_by = ITA }
+				773 = { is_controlled_by = GER }
+				773 = { is_controlled_by = ITA }
 				PER = { is_neighbor_of = GER }
 			}
 			ITA = { is_in_faction_with = GER }
@@ -921,7 +928,7 @@ country_event = {								# DOW Persia
 	}		
 
 	mean_time_to_happen = {
-			days = 10
+			days = 30
 	}	
 	
 	hidden = yes
@@ -990,7 +997,7 @@ country_event = {									# DAK
 		add_ai_strategy = {
 			type = area_priority
 			id = africa
-			value = 40
+			value = 50
 		}	
 	}	
 }
@@ -1006,7 +1013,7 @@ country_event = {									# Extra GLO against human SOV
 	fire_only_once = yes
 
 	mean_time_to_happen = {
-			days = 0
+			days = 365
 	}
 	
 	trigger = {

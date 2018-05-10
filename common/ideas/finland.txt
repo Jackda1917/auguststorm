@@ -16,13 +16,40 @@ ideas = {
 			removal_cost = -1
 			
 			modifier = {
-				army_org = 25
+				army_org = 50					# was 25
 				army_morale_factor = 0.50		# was 0.25
 				attrition = -0.5				# was -0.1
 				army_core_attack_factor = 0.7   # was 0.2
 				army_core_defence_factor = 0.7  # was 0.2
 			}
 		}
+		soviet_threat = {
+			
+			removal_cost = -1
+			
+			allowed = {
+				always = no     # event
+			}
+			
+			cancel = {
+				OR = {
+					SOV = { exists = no }
+					GER = { NOT = { has_government = fascism } }
+					has_war_with = GER
+					is_puppet_of = SOV
+				}
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+			
+			picture = generic_communism_drift_bonus
+	
+			modifier = {
+				war_support_factor = 0.70
+			}	
+		}				
 	}
 
 	political_advisor = {

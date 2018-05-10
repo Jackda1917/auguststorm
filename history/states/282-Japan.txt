@@ -2,7 +2,7 @@
 state={
 	id=282
 	name="STATE_282" # Kanto
-	buildings_max_level_factor=1.000   manpower = 13773000
+	manpower = 13773000
 	
 	state_category = megalopolis
 	

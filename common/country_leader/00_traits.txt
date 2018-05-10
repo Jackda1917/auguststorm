@@ -48,11 +48,11 @@ leader_traits = {
 		}
 		targeted_modifier = {
 			tag = XSM
-			generate_wargoal_tension_against = 0.75
+			generate_wargoal_tension_against = 0.50  #0.75
 		}
 		targeted_modifier = {
 			tag = SIK
-			generate_wargoal_tension_against = 0.75
+			generate_wargoal_tension_against = 0.25  #0.75
 		}
 
 		ai_will_do = {
@@ -300,9 +300,9 @@ leader_traits = {
 	anti_communist = {
 		random = no
 		communism_acceptance = -50
-		communism_drift = -0.002
+		communism_drift = -0.02
 		revolutionary_acceptance = -100
-		revolutionary_drift = -0.005
+		revolutionary_drift = -0.05
 		ai_will_do = {
 			factor = 1
 		}
@@ -2448,10 +2448,10 @@ leader_traits = {
 		industrial_capacity_factory = 0.15
 		industry_repair_factor = 0.15
 		local_resources_factor = 0.10
-		consumer_goods_factor = -0.05
+		consumer_goods_factor = -0.07
 		
 		ai_will_do = {
-			factor = 500
+			factor = 50
 		}
 	}
 	
@@ -2465,47 +2465,32 @@ leader_traits = {
 		}
 	}
 	
-	grand_land_offensive_plan = {
-		random = no	
-		army_armor_attack_factor = 0.30
-		motorized_attack_factor = 0.25
-		army_artillery_attack_factor = 0.66
-		army_infantry_attack_factor = 0.20
-		special_forces_attack_factor = 0.25
-		army_speed_factor = 0.30
-		supply_consumption_factor = -0.25
-		attrition = -0.20
-		
-		ai_will_do = {
-			factor = 1
-		}	
-	}
+	#grand_land_offensive_plan = {
+	#	random = no	
+	#	army_armor_attack_factor = 0.30
+	#	army_armor_speed_factor = 0.20 
+	#	motorized_attack_factor = 0.25
+	#	army_artillery_attack_factor = 0.66
+	#	army_infantry_attack_factor = 0.20
+	#	special_forces_attack_factor = 0.25
+	#	army_speed_factor = 0.30
+	#	supply_consumption_factor = -0.25
+	#	attrition = -0.20
+	#	
+	#	ai_will_do = {
+	#		factor = 1
+	#	}	
+	#}
 	
-	grand_land_offensive_plan_ai = {
-		random = no	
-		army_armor_attack_factor = 0.60
-		motorized_attack_factor = 0.50
-		army_artillery_attack_factor = 1.25
-		army_infantry_attack_factor = 0.50
-		special_forces_attack_factor = 0.35
-		army_speed_factor = 0.40
-		supply_consumption_factor = -0.15
-		attrition = -0.40
-		
-		ai_will_do = {
-			factor = 1
-		}	
-	}
-
 	grand_naval_air_offensive_plan = {
 		random = no	
-		naval_strike_attack_factor = 0.15
-		naval_strike_targetting_factor = 0.15
-		naval_strike_agility_factor = 0.15
-		navy_capital_ship_attack_factor = 0.15
-		navy_screen_attack_factor = 0.15		
+		naval_strike_attack_factor = 0.3
+		naval_strike_targetting_factor = 0.25
+		naval_strike_agility_factor = 0.25
+		navy_capital_ship_attack_factor = 0.25
+		navy_screen_attack_factor = 0.25		
 		amphibious_invasion = 0.20		
-		navy_max_range_factor = 0.15		
+		navy_max_range_factor = 0.25		
 		
 		ai_will_do = {
 			factor = 1
@@ -2519,7 +2504,7 @@ leader_traits = {
 		army_bonus_air_superiority_factor = 0.15
 		air_paradrop_attack_factor = 0.10
 		air_strategic_bomber_bombing_factor = 0.15		
-		air_cas_present_factor = 0.25
+		air_cas_present_factor = 0.5
 		
 		ai_will_do = {
 			factor = 1
@@ -2530,9 +2515,9 @@ leader_traits = {
 		random = no
 		army_defence_factor = -0.50
 		army_attack_factor = -0.75
-		army_speed_factor = -0.10
+		army_speed_factor = -0.25
 		army_org_Factor = -0.50
-		army_morale_factor = -0.25
+		army_morale_factor = -0.25		
 		air_interception_attack_factor = -0.15
 		air_interception_defence_factor = -0.30
 		air_air_superiority_attack_factor = -0.50
@@ -2546,9 +2531,7 @@ leader_traits = {
 	}
 	courageous_defense = {
 		random = no
-		army_defence_factor = 0.30
-		army_speed_factor = 0.30		
-		army_morale_factor = 0.30
+		war_support_factor = 0.40
 		
 		ai_will_do = {
 			factor = 1

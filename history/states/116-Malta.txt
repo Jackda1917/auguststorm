@@ -2,12 +2,12 @@ state=
 {
 	id=116
 	name="STATE_116"
-	buildings_max_level_factor=1.000   manpower = 241621
+	manpower = 241621
 	state_category = small_island
 	history= {
 		owner = ENG
 		victory_points = {
-			12003 5 
+			12003 20 #5 
 		}
 		buildings = {
 			infrastructure = 3

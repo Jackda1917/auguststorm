@@ -571,14 +571,11 @@ ideas = {
 			picture = generic_volunteer_expedition_bonus
 			modifier = {			
 				justify_war_goal_time = -0.25
-				political_power_factor = 1  # was none
+				political_power_gain = 1  # was none
 			}			
 		}
 	
 	}
-	
-	
-	
 	
 	political_advisor = {
 		earl_browder = {

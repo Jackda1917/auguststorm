@@ -106,6 +106,7 @@ units = {
 			is_name_ordered = yes
 			name_order = 1
 		}
+		location = 3569 # Brno	
 		division_template = "Rychlá divize"
 		force_equipment_variants = { light_tank_equipment_2 = { owner = "CZE" } }
 		start_experience_factor = 0.2

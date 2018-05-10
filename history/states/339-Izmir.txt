@@ -2,7 +2,7 @@
 state={
 	id=339
 	name="STATE_339"
-	buildings_max_level_factor=1.000   manpower = 1111755
+	manpower = 1111755
 	resources={
 		chromium=86
 	}

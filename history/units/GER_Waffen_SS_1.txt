@@ -27,6 +27,7 @@
 	}
 	priority = 2
 	template_counter = 2
+	is_locked = yes		
 }
 
 units = {
@@ -35,5 +36,6 @@ units = {
 		location = 3544 # Warsaw
 		division_template = "SS-Panzer-Division 40"
 		start_experience_factor = 0.8 
+		#start_equipment_factor = 0.20  # From SS-Verfügungstruppe
 	}
 }

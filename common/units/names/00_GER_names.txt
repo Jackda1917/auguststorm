@@ -231,7 +231,7 @@
 		}	
 	}
 
-	jet_strategic_bomber_equipment = {
+	jet_strat_bomber_equipment = {
 
 		prefix = ""
 		generic = { "Fernkampfgeschwader zbV." "Schnellbombergeschwader" "Erprobungskommando" "Erprobungsgruppe" }

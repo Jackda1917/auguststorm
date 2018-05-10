@@ -1,0 +1,2182 @@
+### #  # ###  #  #  ### ### ###  #   #    ###  #### #     ##   ##   ##  ### ###  ##  #  #
+ #  ## # #  # #  # #     #  #  #  # #     #  # #    #    #  # #  # #  #  #   #  #  # ## #
+ #  # ## #  # #  #   #   #  ###    #      ###  ##   #    #  # #    ####  #   #  #  # # ##
+ #  #  # #  # #  #    #  #  #  #   #      #  # #    #    #  # #  # #  #  #   #  #  # #  #
+### #  # ###   ##  ###   #  #  #   #      #  # #### ####  ##   ##  #  #  #  ###  ##  #  #
+
+#Category only allowed for SOV
+SOV_industry_relocation = {
+
+	SOV_relocate_industry_from_moscow = {
+
+		icon = generic_construction
+
+		highlight_states = {
+			state = 219
+		}	
+
+		available = {
+			has_completed_focus = SOV_move_industry_to_urals
+			219 = { #Moscow
+				is_owned_and_controlled_by = SOV
+				arms_factory > 5
+				industrial_complex > 1
+			} 
+			573 = { is_owned_and_controlled_by = SOV } #Zlatoust
+			582 = { is_owned_and_controlled_by = SOV } #Magnitogorsk
+		}
+
+		fire_only_once = yes
+
+		cost = 25
+		days_remove = 15
+
+		modifier = {
+			
+		}
+
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				factor = 200 # oh shit they are getting close!
+				OR = {
+					AND = {
+						owns_state = 246
+						NOT = { controls_state = 246 }
+					}
+					AND = {
+						owns_state = 242
+						NOT = { controls_state = 242 }
+					}
+					AND = {
+						owns_state = 205
+						NOT = { controls_state = 205 }
+					}
+					AND = {
+						owns_state = 223
+						NOT = { controls_state = 223 }
+					}
+					AND = {
+						owns_state = 243
+						NOT = { controls_state = 243 }
+					}
+					AND = {
+						owns_state = 224
+						NOT = { controls_state = 224 }
+					}
+					AND = {
+						owns_state = 222
+						NOT = { controls_state = 224 }
+					}
+				}
+			}
+		}
+
+		visible = {
+			has_war = yes
+		}
+
+		remove_effect = {
+			if = {
+				limit = {
+					controls_state = 219
+				}
+				219 = { #Moscow
+					remove_building = {
+						type = arms_factory
+						level = 6
+					}
+					remove_building = {
+						type = industrial_complex
+						level = 2
+					}
+				}
+				573 = { #Zlatoust
+					add_extra_state_shared_building_slots = 4
+					add_building_construction = {
+						type = arms_factory
+						level = 3
+						instant_build = yes
+					}
+					add_building_construction = {
+						type = industrial_complex
+						level = 1
+						instant_build = yes
+					}
+	
+					hidden_effect = {
+						damage_building = { type = arms_factory damage = 0.3 }
+						damage_building = { type = industrial_complex damage = 0.1 }
+					}
+				}
+				582 = { #Magnitogorsk
+					add_extra_state_shared_building_slots = 4
+					add_building_construction = {
+						type = arms_factory
+						level = 3
+						instant_build = yes
+					}
+					add_building_construction = {
+						type = industrial_complex
+						level = 1
+						instant_build = yes
+					}
+				
+					hidden_effect = {
+						damage_building = { type = arms_factory damage = 0.3 }
+						damage_building = { type = industrial_complex damage = 0.1 }
+					}
+				}
+				custom_effect_tooltip = relocate_industry_repair
+			}
+			custom_effect_tooltip = SOV_relocate_industry_from_moscow_tt
+		}
+	}
+
+	SOV_relocate_industry_from_leningrad = {
+
+		icon = generic_construction
+
+		highlight_states = {
+			state = 195
+		}
+
+		available = {
+			has_completed_focus = SOV_move_industry_to_urals		
+			195 = { #Leningrad
+				is_owned_and_controlled_by = SOV
+				arms_factory > 4
+				industrial_complex > 0
+			}
+			573 = { is_owned_and_controlled_by = SOV } #Zlatoust
+			582 = { is_owned_and_controlled_by = SOV } #Magnitogorsk
+		}
+
+		fire_only_once = yes
+
+		cost = 25
+		days_remove = 15
+
+		modifier = {
+			
+		}
+
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				factor = 200 # oh shit they are getting close!
+				OR = {
+					AND = {
+						owns_state = 208
+						NOT = { controls_state = 208 }
+					}
+					AND = {
+						owns_state = 209
+						NOT = { controls_state = 209 }
+					}
+					AND = {
+						owns_state = 244
+						NOT = { controls_state = 244 }
+					}
+					AND = {
+						owns_state = 263
+						NOT = { controls_state = 263 }
+					}
+					AND = {
+						owns_state = 191
+						NOT = { controls_state = 191 }
+					}
+					AND = {
+						owns_state = 146
+						NOT = { controls_state = 146 }
+					}
+				}
+			}
+		}
+
+		visible = {
+			has_war = yes
+		}
+
+		remove_effect = {
+			if = {
+				limit = {
+					controls_state = 195
+				}
+				195 = { #Leningrad
+					remove_building = {
+						type = arms_factory
+						level = 5
+					}
+					remove_building = {
+						type = industrial_complex
+						level = 1
+					}
+				}
+	
+				573 = { #Zlatoust
+					add_extra_state_shared_building_slots = 3
+					add_building_construction = {
+						type = arms_factory
+						level = 3
+						instant_build = yes
+					}
+	
+					hidden_effect = {			
+						damage_building = { type = arms_factory damage = 0.3 }
+					}
+				}
+				582 = { #Magnitogorsk
+					add_extra_state_shared_building_slots = 3
+					add_building_construction = {
+						type = arms_factory
+						level = 2
+						instant_build = yes
+					}
+					add_building_construction = {
+						type = industrial_complex
+						level = 1
+						instant_build = yes
+					}
+	
+					hidden_effect = {			
+						damage_building = { type = arms_factory damage = 0.2 }
+						damage_building = { type = industrial_complex damage = 0.1 }
+					}
+				}
+				custom_effect_tooltip = relocate_industry_repair
+			}
+			custom_effect_tooltip = SOV_relocate_industry_from_leningrad_tt
+		}
+	}
+
+	SOV_relocate_industry_from_smolensk = {
+
+		icon = generic_construction
+
+		highlight_states = {
+			state = 242
+		}
+
+		available = {
+			has_completed_focus = SOV_move_industry_to_urals		
+			242 = { #Smolensk
+				is_owned_and_controlled_by = SOV
+				industrial_complex > 1
+			}
+			573 = { is_owned_and_controlled_by = SOV } #Zlatoust
+			582 = { is_owned_and_controlled_by = SOV } #Magnitogorsk
+		}
+
+		fire_only_once = yes
+
+		cost = 25
+		days_remove = 30
+
+		modifier = {
+			
+		}
+
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				factor = 200 # oh shit they are getting close!
+				OR = {
+					AND = {
+						owns_state = 210
+						NOT = { controls_state = 210 }
+					}
+					AND = {
+						owns_state = 207
+						NOT = { controls_state = 207 }
+					}
+					AND = {
+						owns_state = 206
+						NOT = { controls_state = 206 }
+					}
+					AND = {
+						owns_state = 241
+						NOT = { controls_state = 241 }
+					}
+					AND = {
+						owns_state = 243
+						NOT = { controls_state = 243 }
+					}
+					AND = {
+						owns_state = 205
+						NOT = { controls_state = 205 }
+					}
+					AND = {
+						owns_state = 246
+						NOT = { controls_state = 246 }
+					}
+				}
+			}
+		}
+
+		visible = {
+			has_war = yes
+		}
+
+		remove_effect = {
+			if = {
+				limit = {
+					controls_state = 242
+				}
+				242 = { #Smolensk
+					remove_building = {
+						type = industrial_complex
+						level = 2
+					}
+				}
+				573 = { #Zlatoust
+					add_extra_state_shared_building_slots = 1				
+					add_building_construction = {
+						type = industrial_complex
+						level = 1
+						instant_build = yes
+					}
+	
+					hidden_effect = {			
+						damage_building = { type = industrial_complex damage = 0.1 }
+					}
+				}
+				582 = { #Magnitogorsk
+					add_extra_state_shared_building_slots = 1
+					add_building_construction = {
+						type = industrial_complex
+						level = 1
+						instant_build = yes
+					}
+				
+					hidden_effect = {
+						damage_building = { type = industrial_complex damage = 0.1 }
+					}
+				}
+				custom_effect_tooltip = relocate_industry_repair
+			}
+			custom_effect_tooltip = SOV_relocate_industry_from_smolensk_tt
+		}
+	}
+	
+	SOV_relocate_industry_from_kiev_and_karkhov = {
+
+		icon = generic_construction
+
+		highlight_states = {
+			state = 202
+			state = 221
+		}	
+
+		available = {
+			has_completed_focus = SOV_move_industry_to_urals		
+			202 = { #Kiev
+				is_owned_and_controlled_by = SOV
+				arms_factory > 2
+				industrial_complex > 0
+			}
+			221 = { #Karkhov
+				is_owned_and_controlled_by = SOV
+				arms_factory > 1				
+			}
+
+		}
+
+		fire_only_once = yes
+
+		cost = 25
+		days_remove = 30
+
+		modifier = {
+			
+		}
+
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				factor = 200 # oh shit they are getting close!
+				OR = {
+					AND = {
+						owns_state = 246
+						NOT = { controls_state = 246 }
+					}
+					AND = {
+						owns_state = 242
+						NOT = { controls_state = 242 }
+					}
+					AND = {
+						owns_state = 205
+						NOT = { controls_state = 205 }
+					}
+					AND = {
+						owns_state = 223
+						NOT = { controls_state = 223 }
+					}
+					AND = {
+						owns_state = 243
+						NOT = { controls_state = 243 }
+					}
+					AND = {
+						owns_state = 224
+						NOT = { controls_state = 224 }
+					}
+					AND = {
+						owns_state = 222
+						NOT = { controls_state = 224 }
+					}
+				}
+			}
+		}
+
+		visible = {
+			has_war = yes
+		}
+
+		remove_effect = {
+			if = {
+				limit = {
+					controls_state = 202
+				}
+				202 = { #Kiev
+					remove_building = {
+						type = arms_factory
+						level = 3
+					}
+					remove_building = {
+						type = industrial_complex
+						level = 1
+					}
+					set_state_flag = transfered_factory_flag					
+				}							
+			}
+			651 = {
+				if = { 
+					limit = { 202 = { has_state_flag = transfered_factory_flag } }
+						add_extra_state_shared_building_slots = 4
+						add_building_construction = {
+							type = arms_factory
+							level = 3
+							instant_build = yes
+						}						
+						add_building_construction = {
+							type = industrial_complex
+							level = 1
+							instant_build = yes
+						}
+						hidden_effect = {
+							damage_building = { type = arms_factory damage = 0.2 }
+							damage_building = { type = industrial_complex damage = 0.1 }
+						}
+					custom_effect_tooltip = relocate_industry_repair						
+				}
+			}
+			221 = { #Karkhov
+				remove_building = {
+					type = arms_factory
+					level = 2
+				}
+				set_state_flag = transfered_factory_flag					
+			}
+			#569
+			578 = {
+				if = { 
+					limit = { 221 = { has_state_flag = transfered_factory_flag } }
+						add_extra_state_shared_building_slots = 2
+						add_building_construction = {
+							type = arms_factory
+							level = 2
+							instant_build = yes
+						}
+						hidden_effect = {
+							damage_building = { type = arms_factory damage = 0.2 }
+						}
+					custom_effect_tooltip = relocate_industry_repair						
+				}
+			}	
+			custom_effect_tooltip = SOV_relocate_industry_from_kiev_and_karkhov_tt			
+		}		
+	}	
+	
+	SOV_more_relocated_industry_from_western_territories = {
+
+		icon = generic_construction
+
+		available = {
+			OR = {	
+				has_decision = SOV_relocate_industry_from_moscow
+				has_decision = SOV_relocate_industry_from_leningrad
+				has_decision = SOV_relocate_industry_from_smolensk
+				has_decision = SOV_relocate_industry_from_kiev_and_karkhov
+			}
+		}
+
+		fire_only_once = yes
+
+		cost = 50
+		days_remove = 15
+
+		modifier = {
+			
+		}
+
+		ai_will_do = {
+			factor = 50
+		}
+
+		visible = {
+			has_war = yes
+		}
+
+		remove_effect = {
+			random_owned_controlled_state  = {			
+					limit = { 
+						is_in_home_area = yes
+						is_on_continent = europe
+						NOT = { state = 219 }
+						NOT = { state = 195 }
+						NOT = { state = 242 }
+						NOT = { state = 202 }
+						NOT = { state = 221 }
+						arms_factory > 2
+						NOT = {
+							has_state_flag = transfered_factory30
+							has_state_flag = transfered_factory31
+							has_state_flag = transfered_factory32
+							has_state_flag = transfered_factory33
+							has_state_flag = transfered_factory34
+							has_state_flag = transfered_factory35
+							has_state_flag = transfered_factory36
+							has_state_flag = transfered_factory1
+							has_state_flag = transfered_factory2
+							has_state_flag = transfered_factory3
+							has_state_flag = transfered_factory4
+							has_state_flag = transfered_factory5
+							has_state_flag = transfered_factory6
+							has_state_flag = transfered_factory7
+							has_state_flag = transfered_factory8
+							has_state_flag = transfered_factory9
+							has_state_flag = transfered_factory10
+							has_state_flag = transfered_factory11
+							has_state_flag = transfered_factory12
+							has_state_flag = transfered_factory13
+							has_state_flag = transfered_factory14
+							has_state_flag = transfered_factory15							
+						}
+					}			
+					remove_building = {
+						type = arms_factory
+						level = 3
+					}					
+					set_state_flag = transfered_factory30	
+					custom_effect_tooltip = relocate_industry_repair					
+			}				
+			random_owned_controlled_state  = {			
+					limit = { 
+						is_in_home_area = yes
+						is_on_continent = europe
+						NOT = { state = 219 }
+						NOT = { state = 195 }
+						NOT = { state = 242 }
+						NOT = { state = 202 }
+						NOT = { state = 221 }						
+						arms_factory > 2
+						NOT = {
+							has_state_flag = transfered_factory_flag						
+							has_state_flag = transfered_factory30
+							has_state_flag = transfered_factory31
+							has_state_flag = transfered_factory32
+							has_state_flag = transfered_factory33
+							has_state_flag = transfered_factory34
+							has_state_flag = transfered_factory35
+							has_state_flag = transfered_factory36
+							has_state_flag = transfered_factory1
+							has_state_flag = transfered_factory2
+							has_state_flag = transfered_factory3
+							has_state_flag = transfered_factory4
+							has_state_flag = transfered_factory5
+							has_state_flag = transfered_factory6
+							has_state_flag = transfered_factory7
+							has_state_flag = transfered_factory8
+							has_state_flag = transfered_factory9
+							has_state_flag = transfered_factory10
+							has_state_flag = transfered_factory11
+							has_state_flag = transfered_factory12
+							has_state_flag = transfered_factory13
+							has_state_flag = transfered_factory14
+							has_state_flag = transfered_factory15							
+						}						
+					}			
+					remove_building = {
+						type = arms_factory
+						level = 3
+					}					
+					set_state_flag = transfered_factory31	
+					custom_effect_tooltip = relocate_industry_repair					
+			}		
+			random_owned_controlled_state  = {			
+					limit = { 
+						is_in_home_area = yes
+						is_on_continent = europe
+						NOT = { state = 219 }
+						NOT = { state = 195 }
+						NOT = { state = 242 }
+						NOT = { state = 202 }
+						NOT = { state = 221 }						
+						arms_factory > 2
+						NOT = {
+							has_state_flag = transfered_factory30
+							has_state_flag = transfered_factory31
+							has_state_flag = transfered_factory32
+							has_state_flag = transfered_factory33
+							has_state_flag = transfered_factory34
+							has_state_flag = transfered_factory35
+							has_state_flag = transfered_factory36
+							has_state_flag = transfered_factory1
+							has_state_flag = transfered_factory2
+							has_state_flag = transfered_factory3
+							has_state_flag = transfered_factory4
+							has_state_flag = transfered_factory5
+							has_state_flag = transfered_factory6
+							has_state_flag = transfered_factory7
+							has_state_flag = transfered_factory8
+							has_state_flag = transfered_factory9
+							has_state_flag = transfered_factory10
+							has_state_flag = transfered_factory11
+							has_state_flag = transfered_factory12
+							has_state_flag = transfered_factory13
+							has_state_flag = transfered_factory14
+							has_state_flag = transfered_factory15							
+						}						
+					}			
+					remove_building = {
+						type = arms_factory
+						level = 3
+					}					
+					set_state_flag = transfered_factory32
+					custom_effect_tooltip = relocate_industry_repair					
+			}		
+			random_owned_controlled_state  = {			
+					limit = { 
+						is_in_home_area = yes
+						is_on_continent = europe
+						NOT = { state = 219 }
+						NOT = { state = 195 }
+						NOT = { state = 242 }
+						NOT = { state = 202 }
+						NOT = { state = 221 }						
+						industrial_complex > 2
+						NOT = {
+							has_state_flag = transfered_factory30
+							has_state_flag = transfered_factory31
+							has_state_flag = transfered_factory32
+							has_state_flag = transfered_factory33
+							has_state_flag = transfered_factory34
+							has_state_flag = transfered_factory35
+							has_state_flag = transfered_factory36
+							has_state_flag = transfered_factory1
+							has_state_flag = transfered_factory2
+							has_state_flag = transfered_factory3
+							has_state_flag = transfered_factory4
+							has_state_flag = transfered_factory5
+							has_state_flag = transfered_factory6
+							has_state_flag = transfered_factory7
+							has_state_flag = transfered_factory8
+							has_state_flag = transfered_factory9
+							has_state_flag = transfered_factory10
+							has_state_flag = transfered_factory11
+							has_state_flag = transfered_factory12
+							has_state_flag = transfered_factory13
+							has_state_flag = transfered_factory14
+							has_state_flag = transfered_factory15							
+						}						
+					}			
+					remove_building = {
+						type = industrial_complex
+						level = 3
+					}					
+					set_state_flag = transfered_factory33	
+					custom_effect_tooltip = relocate_industry_repair					
+			}				
+			random_owned_controlled_state  = {			
+					limit = { 
+						is_in_home_area = yes
+						is_on_continent = europe
+						NOT = { state = 219 }
+						NOT = { state = 195 }
+						NOT = { state = 242 }
+						NOT = { state = 202 }
+						NOT = { state = 221 }						
+						industrial_complex > 2
+						NOT = {
+							has_state_flag = transfered_factory30
+							has_state_flag = transfered_factory31
+							has_state_flag = transfered_factory32
+							has_state_flag = transfered_factory33
+							has_state_flag = transfered_factory34
+							has_state_flag = transfered_factory35
+							has_state_flag = transfered_factory36
+							has_state_flag = transfered_factory1
+							has_state_flag = transfered_factory2
+							has_state_flag = transfered_factory3
+							has_state_flag = transfered_factory4
+							has_state_flag = transfered_factory5
+							has_state_flag = transfered_factory6
+							has_state_flag = transfered_factory7
+							has_state_flag = transfered_factory8
+							has_state_flag = transfered_factory9
+							has_state_flag = transfered_factory10
+							has_state_flag = transfered_factory11
+							has_state_flag = transfered_factory12
+							has_state_flag = transfered_factory13
+							has_state_flag = transfered_factory14
+							has_state_flag = transfered_factory15							
+						}						
+					}			
+					remove_building = {
+						type = industrial_complex
+						level = 3
+					}					
+					set_state_flag = transfered_factory34	
+					custom_effect_tooltip = relocate_industry_repair					
+			}
+			random_owned_controlled_state  = {			
+					limit = { 
+						is_in_home_area = yes
+						is_on_continent = europe
+						NOT = { state = 219 }
+						NOT = { state = 195 }
+						NOT = { state = 242 }
+						NOT = { state = 202 }
+						NOT = { state = 221 }						
+						industrial_complex > 1
+						NOT = {
+							has_state_flag = transfered_factory30
+							has_state_flag = transfered_factory31
+							has_state_flag = transfered_factory32
+							has_state_flag = transfered_factory33
+							has_state_flag = transfered_factory34
+							has_state_flag = transfered_factory35
+							has_state_flag = transfered_factory36
+							has_state_flag = transfered_factory1
+							has_state_flag = transfered_factory2
+							has_state_flag = transfered_factory3
+							has_state_flag = transfered_factory4
+							has_state_flag = transfered_factory5
+							has_state_flag = transfered_factory6
+							has_state_flag = transfered_factory7
+							has_state_flag = transfered_factory8
+							has_state_flag = transfered_factory9
+							has_state_flag = transfered_factory10
+							has_state_flag = transfered_factory11
+							has_state_flag = transfered_factory12
+							has_state_flag = transfered_factory13
+							has_state_flag = transfered_factory14
+							has_state_flag = transfered_factory15						
+						}						
+					}			
+					remove_building = {
+						type = industrial_complex
+						level = 2
+					}					
+					set_state_flag = transfered_factory35
+					custom_effect_tooltip = relocate_industry_repair					
+			}
+			random_owned_controlled_state  = {			
+					limit = { 
+						is_in_home_area = yes
+						is_on_continent = europe
+						NOT = { state = 219 }
+						NOT = { state = 195 }
+						NOT = { state = 242 }
+						NOT = { state = 202 }
+						NOT = { state = 221 }						
+						industrial_complex > 1
+						NOT = {
+							has_state_flag = transfered_factory30
+							has_state_flag = transfered_factory31
+							has_state_flag = transfered_factory32
+							has_state_flag = transfered_factory33
+							has_state_flag = transfered_factory34
+							has_state_flag = transfered_factory35
+							has_state_flag = transfered_factory36
+							has_state_flag = transfered_factory1
+							has_state_flag = transfered_factory2
+							has_state_flag = transfered_factory3
+							has_state_flag = transfered_factory4
+							has_state_flag = transfered_factory5
+							has_state_flag = transfered_factory6
+							has_state_flag = transfered_factory7
+							has_state_flag = transfered_factory8
+							has_state_flag = transfered_factory9
+							has_state_flag = transfered_factory10
+							has_state_flag = transfered_factory11
+							has_state_flag = transfered_factory12
+							has_state_flag = transfered_factory13
+							has_state_flag = transfered_factory14
+							has_state_flag = transfered_factory15							
+						}						
+					}			
+					remove_building = {
+						type = industrial_complex
+						level = 2
+					}					
+					set_state_flag = transfered_factory36
+					custom_effect_tooltip = relocate_industry_repair					
+			}							
+			hidden_effect = {	
+				country_event = { id = as_sov.13 days = 1 } # Silent event for random transfered industry
+			}
+			custom_effect_tooltip = SOV_relocate_western_industry_tt
+	}
+}
+	
+	move_leningrad_aluminium_plant = { #195
+
+		icon = aluminium
+		
+		highlight_states = {
+			state = 195
+		}
+
+		allowed = {
+			#Everyone
+		}
+
+		available = {
+			has_full_control_of_state = 195
+			has_full_control_of_state = 569
+			
+		}
+
+		visible = {
+			controls_state = 195
+			controls_state = 569
+			195 = { has_state_flag = leningrad_aluminium_developed }
+			has_war = yes
+		}
+
+		fire_only_once = yes
+
+		cost = 25
+		days_remove = 15
+
+		modifier = {
+			
+		}
+
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				factor = 200 # oh shit they are getting close!
+				OR = {
+					AND = {
+						owns_state = 208
+						NOT = { controls_state = 208 }
+					}
+					AND = {
+						owns_state = 209
+						NOT = { controls_state = 209 }
+					}
+					AND = {
+						owns_state = 244
+						NOT = { controls_state = 244 }
+					}
+					AND = {
+						owns_state = 263
+						NOT = { controls_state = 263 }
+					}
+					AND = {
+						owns_state = 191
+						NOT = { controls_state = 191 }
+					}
+					AND = {
+						owns_state = 146
+						NOT = { controls_state = 146 }
+					}
+				}
+			}
+		}
+
+		remove_effect = {
+			if = {
+				limit = {
+					controls_state = 195
+				}
+				195 = {
+					add_resource = {
+						type = aluminium
+						amount = -12
+					}				
+				}
+				569 = {
+					add_resource = {
+						type = aluminium
+						amount = 12
+					}
+				}
+			}
+			custom_effect_tooltip = SOV_relocate_industry_from_leningrad_tt
+		}
+	}
+}
+
+#Category only allowed for SOV
+SOV_great_patriotic_war = {
+
+	SOV_order_227 = {
+
+		icon = generic_army_support
+
+		available = {
+			has_completed_focus = SOV_new_soviet_man
+		}
+
+		cost = 5 # 50
+		fire_only_once = yes
+		visible = {
+			has_war = yes
+			any_enemy_country = {
+				is_major = yes
+			}
+			#surrender_progress > 0
+		}
+
+		days_remove = 720
+
+		complete_effect = {
+			if = {
+				limit = { 
+					SOV = { is_ai = no } 
+				}
+				add_timed_idea = { idea = order_227 days = 1200 }
+			}
+			hidden_effect = {
+				if = {
+					limit = { 
+						SOV = { is_ai = yes } 
+					}
+					add_timed_idea = { idea = order_227_ai days = 1500 }
+				}
+			}
+		}		
+
+		ai_will_do = {
+			factor = 50
+		}
+	}
+	SOV_scorched_earth = {
+
+		icon = generic_scorched_earth
+
+		available = {
+			has_war = yes
+			any_enemy_country = {
+				is_major = yes
+			}
+			surrender_progress > 0
+		}
+
+		cost = 50
+		fire_only_once = yes
+		visible = {
+			has_war = yes
+			any_enemy_country = {
+				is_major = yes
+			}
+			surrender_progress > 0
+		}
+
+		complete_effect = {
+			set_country_flag = SOV_scorched_earth
+			unlock_decision_tooltip = SOV_scorched_earth_baltics
+			unlock_decision_tooltip = SOV_scorched_earth_byelorussia
+			unlock_decision_tooltip = SOV_scorched_earth_ukraine
+			unlock_decision_tooltip = SOV_scorched_earth_stalingrad
+			unlock_decision_tooltip = SOV_scorched_earth_caucasus
+			unlock_decision_tooltip = SOV_scorched_earth_moscow
+		}
+
+		ai_will_do = {
+			factor = 50
+		}
+	}
+	SOV_scorched_earth_baltics = {
+
+		icon = generic_scorched_earth
+
+		available = {
+			has_war = yes
+			has_country_flag = SOV_scorched_earth
+			has_equipment = {
+				support_equipment > 24
+			}
+		}
+
+		cost = 50
+		fire_only_once = yes
+		visible = {
+			has_war = yes
+			OR = {
+				controls_state = 189
+				controls_state = 11
+				controls_state = 190
+				controls_state = 12
+				controls_state = 191
+				controls_state = 13
+			}
+			has_country_flag = SOV_scorched_earth
+		}
+
+		complete_effect = {
+			add_equipment_to_stockpile = {
+				type = support_equipment_1
+				amount = -25
+			}
+			if = {
+				limit = {
+					controls_state = 189
+				}
+				189 = {
+					damage_building = {
+						type = infrastructure
+						damage = 3
+					}
+				}
+			}
+			if = {
+				limit = {
+					controls_state = 11
+				}
+				11 = {
+					damage_building = {
+						type = infrastructure
+						damage = 3
+					}
+				}
+			}
+			if = {
+				limit = {
+					controls_state = 190
+				}
+				190 = {
+					damage_building = {
+						type = infrastructure
+						damage = 3
+					}
+				}
+			}
+			if = {
+				limit = {
+					controls_state = 12
+				}
+				12 = {
+					damage_building = {
+						type = infrastructure
+						damage = 3
+					}
+				}
+			}
+			if = {
+				limit = {
+					controls_state = 191
+				}
+				191 = {
+					damage_building = {
+						type = infrastructure
+						damage = 3
+					}
+				}
+			}
+			if = {
+				limit = {
+					controls_state = 13
+				}
+				13 = {
+					damage_building = {
+						type = infrastructure
+						damage = 3
+					}
+				}
+			}
+		}
+
+		ai_will_do = {
+			factor = 50
+		}
+	}
+	SOV_scorched_earth_byelorussia = {
+
+		icon = generic_scorched_earth
+
+		available = {
+			has_war = yes
+			has_country_flag = SOV_scorched_earth
+			has_equipment = {
+				support_equipment > 49
+			}
+		}
+
+		cost = 75
+		fire_only_once = yes
+		visible = {
+			has_war = yes
+			has_country_flag = SOV_scorched_earth
+			any_state = {
+				is_core_of = BLR
+				is_controlled_by = SOV
+			}
+		}
+
+		complete_effect = {
+			add_equipment_to_stockpile = {
+				type = support_equipment_1
+				amount = -50
+			}
+			every_state = {
+				limit = {
+					is_core_of = BLR
+					is_controlled_by = SOV
+				}
+				damage_building = {
+					type = infrastructure
+					damage = 3
+				}
+			}
+		}
+
+		ai_will_do = {
+			factor = 50
+		}
+	}
+	SOV_scorched_earth_ukraine = {
+
+		icon = generic_scorched_earth
+
+		available = {
+			has_war = yes
+			has_country_flag = SOV_scorched_earth
+			any_state = {
+				is_core_of = UKR
+				is_controlled_by = SOV
+			}
+			has_equipment = {
+				support_equipment > 74
+			}
+		}
+
+		cost = 75
+		fire_only_once = yes
+		visible = {
+			has_war = yes
+			has_country_flag = SOV_scorched_earth
+			any_state = {
+				is_core_of = UKR
+				is_controlled_by = SOV
+			}
+		}
+
+		complete_effect = {
+			add_equipment_to_stockpile = {
+				type = support_equipment_1
+				amount = -75
+			}
+			every_state = {
+				limit = {
+					is_core_of = UKR
+					is_controlled_by = SOV
+				}
+				damage_building = {
+					type = infrastructure
+					damage = 3
+				}
+			}
+		}
+
+		ai_will_do = {
+			factor = 50
+		}
+	}
+	SOV_scorched_earth_caucasus = {
+
+		icon = generic_scorched_earth
+
+		available = {
+			has_war = yes
+			has_country_flag = SOV_scorched_earth
+			has_equipment = {
+				support_equipment > 49
+			}
+		}
+
+		cost = 75
+		fire_only_once = yes
+		visible = {
+			has_war = yes
+			OR = {
+				420 = { CONTROLLER = { has_war_with = SOV } }
+				419 = { CONTROLLER = { has_war_with = SOV } }
+				353 = { CONTROLLER = { has_war_with = SOV } }
+				354 = { CONTROLLER = { has_war_with = SOV } }
+				137 = { CONTROLLER = { has_war_with = SOV } }
+				218 = { CONTROLLER = { has_war_with = SOV } }
+				238 = { CONTROLLER = { has_war_with = SOV } }
+				237 = { CONTROLLER = { has_war_with = SOV } }
+				236 = { CONTROLLER = { has_war_with = SOV } }
+				231 = { CONTROLLER = { has_war_with = SOV } }#sneaky QA naval invasion check
+				233 = { CONTROLLER = { has_war_with = SOV } }
+				234 = { CONTROLLER = { has_war_with = SOV } }
+			}
+			has_country_flag = SOV_scorched_earth
+		}
+
+		complete_effect = {
+			add_equipment_to_stockpile = {
+				type = support_equipment_1
+				amount = -50
+			}
+			if = {
+				limit = {
+					229 = { is_controlled_by = SOV}
+				}
+				229 = {
+					damage_building = {
+						type = infrastructure
+						damage = 3
+					}
+				}
+			}
+			if = {
+				limit = {
+					230 = { is_controlled_by = SOV}
+				}
+				230 = {
+					damage_building = {
+						type = infrastructure
+						damage = 3
+					}
+				}
+			}
+			if = {
+				limit = {
+					231 = { is_controlled_by = SOV}
+				}
+				231 = {
+					damage_building = {
+						type = infrastructure
+						damage = 3
+					}
+				}
+			}
+			if = {
+				limit = {
+					232 = { is_controlled_by = SOV}
+				}
+				232 = {
+					damage_building = {
+						type = infrastructure
+						damage = 3
+					}
+				}
+			}
+			if = {
+				limit = {
+					233 = { is_controlled_by = SOV}
+				}
+				233 = {
+					damage_building = {
+						type = infrastructure
+						damage = 3
+					}
+				}
+			}
+			if = {
+				limit = {
+					234 = { is_controlled_by = SOV}
+				}
+				234 = {
+					damage_building = {
+						type = infrastructure
+						damage = 3
+					}
+				}
+			}
+			if = {
+				limit = {
+					235 = { is_controlled_by = SOV}
+				}
+				235 = {
+					damage_building = {
+						type = infrastructure
+						damage = 3
+					}
+				}
+			}
+		}
+
+		ai_will_do = {
+			factor = 50
+		}
+	}
+	SOV_scorched_earth_stalingrad = {
+
+		icon = generic_scorched_earth
+
+		available = {
+			has_war = yes
+			has_country_flag = SOV_scorched_earth
+			has_equipment = {
+				support_equipment > 49
+			}
+		}
+
+		cost = 75
+		fire_only_once = yes
+		visible = {
+			has_war = yes
+			has_country_flag = SOV_scorched_earth
+			OR = {
+				227 = { CONTROLLER = { has_war_with = SOV } }
+				228 = { CONTROLLER = { has_war_with = SOV } }
+				218 = { CONTROLLER = { has_war_with = SOV } }
+				245 = { CONTROLLER = { has_war_with = SOV } }
+				237 = { CONTROLLER = { has_war_with = SOV } }
+				236 = { CONTROLLER = { has_war_with = SOV } }
+				231 = { CONTROLLER = { has_war_with = SOV } }#sneaky QA naval invasion check
+				238 = { CONTROLLER = { has_war_with = SOV } }
+				260 = { CONTROLLER = { has_war_with = SOV } }
+				239 = { CONTROLLER = { has_war_with = SOV } }
+			}
+		}
+
+		complete_effect = {
+			add_equipment_to_stockpile = {
+				type = support_equipment_1
+				amount = -50
+			}
+			if = {
+				limit = {
+					245 = { is_controlled_by = SOV}
+				}
+				245 = {
+					damage_building = {
+						type = infrastructure
+						damage = 3
+					}
+				}
+			}
+			if = {
+				limit = {
+					217 = { is_controlled_by = SOV}
+				}
+				217 = {
+					damage_building = {
+						type = infrastructure
+						damage = 3
+					}
+				}
+			}
+			if = {
+				limit = {
+					218 = { is_controlled_by = SOV}
+				}
+				218 = {
+					damage_building = {
+						type = infrastructure
+						damage = 3
+					}
+				}
+			}
+			if = {
+				limit = {
+					238 = { is_controlled_by = SOV}
+				}
+				238 = {
+					damage_building = {
+						type = infrastructure
+						damage = 3
+					}
+				}
+			}
+			if = {
+				limit = {
+					237 = { is_controlled_by = SOV}
+				}
+				237 = {
+					damage_building = {
+						type = infrastructure
+						damage = 3
+					}
+				}
+			}
+			if = {
+				limit = {
+					236 = { is_controlled_by = SOV}
+				}
+				236 = {
+					damage_building = {
+						type = infrastructure
+						damage = 3
+					}
+				}
+			}
+			if = {
+				limit = {
+					265 = { is_controlled_by = SOV}
+				}
+				265 = {
+					damage_building = {
+						type = infrastructure
+						damage = 3
+					}
+				}
+			}
+		}
+
+		ai_will_do = {
+			factor = 50
+		}
+	}
+	SOV_scorched_earth_moscow = {
+
+		icon = generic_scorched_earth
+
+		available = {
+			has_war = yes
+			has_country_flag = SOV_scorched_earth
+			has_equipment = {
+				support_equipment > 49
+			}
+		}
+
+		cost = 75
+		fire_only_once = yes
+		visible = {
+			has_war = yes
+			has_country_flag = SOV_scorched_earth
+			OR = {
+				207 = { CONTROLLER = { has_war_with = SOV } }
+				210 = { CONTROLLER = { has_war_with = SOV } }
+				241 = { CONTROLLER = { has_war_with = SOV } }
+				193 = { CONTROLLER = { has_war_with = SOV } }
+				225 = { CONTROLLER = { has_war_with = SOV } }
+				240 = { CONTROLLER = { has_war_with = SOV } }
+			}
+		}
+
+		complete_effect = {
+			add_equipment_to_stockpile = {
+				type = support_equipment_1
+				amount = -50
+			}
+			every_state = {
+				limit = {
+					OR = {
+						state = 220
+						state = 222
+						state = 224
+						state = 243
+						state = 205
+						state = 242
+						state = 246
+						state = 219
+					}
+					is_controlled_by = SOV
+				}
+				damage_building = {
+						type = infrastructure
+						damage = 3
+					}
+			}
+			
+		}
+
+		ai_will_do = {
+			factor = 25
+		}
+	}
+
+}
+
+SOV_great_patriotic_war = {
+
+
+
+	#217 "Stalingrad"
+	SOV_hold_stalingrad = {
+
+		icon = generic_civil_support
+
+		allowed = {
+			original_tag = SOV
+		}
+
+		#Fail trigger
+		available = {
+			NOT = { controls_state = 217 }
+		}
+
+		days_mission_timeout = 180
+
+		fire_only_once = yes
+
+		is_good = yes
+
+		activation = {
+			has_war = yes
+			has_civil_war = no
+			217 = {
+				is_controlled_by = ROOT
+				OR = {
+					any_neighbor_state = {
+						CONTROLLER = {
+							has_war_with = ROOT
+						}
+						OWNER = { tag = ROOT }
+					}
+					NOT = { is_fully_controlled_by = ROOT }
+				}
+			}
+		}
+
+		#Success
+		timeout_effect = {
+			add_stability = 0.05
+			add_war_support = 0.05
+			217 = { save_event_target_as = state }			
+			country_event = wtt_soviet_hold_city.1
+		}
+		#Fail
+		complete_effect = {
+			217 = { save_event_target_as = state }			
+			country_event = wtt_soviet_hold_city.2
+		}
+	}
+	
+	#195 "Leningrad"
+	SOV_hold_leningrad = {
+
+		icon = generic_civil_support
+
+		allowed = {
+			original_tag = SOV
+		}
+
+		#Fail trigger
+		available = {
+			NOT = { controls_state = 195 }
+		}
+
+		days_mission_timeout = 180
+
+		fire_only_once = yes
+
+		is_good = yes
+
+		activation = {
+			has_war = yes
+			has_civil_war = no
+			195 = {
+				is_controlled_by = ROOT
+				OR = {
+					any_neighbor_state = {
+						CONTROLLER = {
+							has_war_with = ROOT
+						}
+						OWNER = { tag = ROOT }
+					}
+					NOT = { is_fully_controlled_by = ROOT }
+				}
+			}
+		}
+
+		#Success
+		timeout_effect = {
+			add_stability = 0.05
+			add_war_support = 0.05
+			195 = { save_event_target_as = state }
+			country_event = wtt_soviet_hold_city.3
+		}
+		#Fail
+		complete_effect = {
+			195 = { save_event_target_as = state }
+			country_event = wtt_soviet_hold_city.4
+		}
+	}
+
+	#219 "Moscow"
+	SOV_hold_moscow = {
+
+		icon = generic_civil_support
+
+		allowed = {
+			original_tag = SOV
+		}
+
+		#Fail trigger
+		available = {
+			NOT = { controls_state = 219 }
+		}
+
+		days_mission_timeout = 180
+
+		fire_only_once = yes
+
+		is_good = yes
+
+		activation = {
+			has_war = yes
+			has_civil_war = no
+			219 = {
+				is_controlled_by = ROOT
+				OR = {
+					any_neighbor_state = {
+						CONTROLLER = {
+							has_war_with = ROOT
+						}
+						OWNER = { tag = ROOT }
+					}
+					NOT = { is_fully_controlled_by = ROOT }
+				}
+			}
+		}
+
+		#Success
+		timeout_effect = {
+			add_stability = 0.05
+			add_war_support = 0.05
+			219 = { save_event_target_as = state }
+			country_event = wtt_soviet_hold_city.5
+		}
+		#Fail
+		complete_effect = {
+			219 = { save_event_target_as = state }
+			country_event = wtt_soviet_hold_city.6
+		}
+	}
+}
+
+operations = {
+
+	SOV_seize_manchuria = {
+
+		icon = generic_operation
+
+		allowed = {
+			original_tag = SOV
+		}
+
+		available = {
+			JAP = { has_completed_focus = JAP_pre_emptive_coup }
+			MAN = { is_puppet = no }
+			NOT = {
+				has_war_with = MAN
+			}
+		}
+
+		cost = 25
+		fire_only_once = yes
+		visible = {
+			JAP = { has_completed_focus = JAP_strengthen_civilian_government }
+			MAN = { exists = yes }
+		}
+
+		complete_effect = {
+			create_wargoal = {
+				target = MAN
+				type = annex_everything
+			}			
+		}
+
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				MAN = {
+					is_ai = no
+				}
+				factor = 0 #we're mean but not that mean
+			}
+			modifier = {
+				threat < 0.25
+				factor = 0
+			}
+		}
+	}
+	
+}
+
+political_actions = {
+
+	SOV_return_manchuria = {
+
+		allowed = {
+			original_tag = SOV
+		}
+
+		available = {
+			OR = {
+				AND = {
+					owns_state = 610
+					owns_state = 716
+					owns_state = 328
+					owns_state = 715
+					owns_state = 714
+					owns_state = 717
+				}
+				AND = {
+					MAN = { is_puppet_of = SOV }
+					owns_state = 610
+					owns_state = 716
+					owns_state = 328
+					owns_state = 715
+					owns_state = 714
+					owns_state = 717
+				}
+			}
+		}
+		cost = 0
+		fire_only_once = yes
+		visible = {
+			JAP = { has_completed_focus = JAP_strengthen_civilian_government }
+			PRC = { exists = yes }
+		}
+
+		complete_effect = {
+			PRC = { 
+				transfer_state = 609
+				transfer_state = 610
+				transfer_state = 716
+				transfer_state = 715
+				transfer_state = 328
+				transfer_state = 717
+				transfer_state = 714
+				country_event = { id = wtt_japan.125 }
+			}		
+		}
+
+		ai_will_do = {
+			factor = 50
+		}
+	}
+}
+
+political_actions = {
+
+	demand_tribute_from_new_communist_china = {
+
+		icon = generic_civil_support
+
+		allowed = {
+			tag = SOV
+		}
+
+		icon = generic_political_actions
+
+		available = {
+			
+		}
+
+		ai_will_do = {
+			base = 0
+			modifier = {
+				add = 150
+					#Has somewhat won against CHI and JAP
+				count_triggers = {
+					amount = 10
+					595 = { is_controlled_by = FROM }
+					596 = { is_controlled_by = FROM }
+					597 = { is_controlled_by = FROM }
+					598 = { is_controlled_by = FROM }
+					600 = { is_controlled_by = FROM }
+					601 = { is_controlled_by = FROM }
+					602 = { is_controlled_by = FROM }
+					603 = { is_controlled_by = FROM }
+					605 = { is_controlled_by = FROM }
+					606 = { is_controlled_by = FROM }
+					607 = { is_controlled_by = FROM }
+					608 = { is_controlled_by = FROM }
+					613 = { is_controlled_by = FROM }
+					614 = { is_controlled_by = FROM }
+					620 = { is_controlled_by = FROM }				
+				}
+			}
+		}
+
+		cost = 10
+
+		visible = {
+			has_government = communism
+			FROM = {
+				tag = event_target:WTT_communist_china
+				has_country_flag = WTT_support_from_soviet
+				NOT = { has_war_with = ROOT }
+				NOT = { is_subject_of = ROOT }
+				NOT = { has_idea = PRC_soviet_tribute_6 }
+			}
+		}
+
+		target_trigger = {
+			FROM = { has_country_flag = WTT_support_from_soviet }
+		}
+
+		fire_only_once = no
+
+		days_re_enable = 180
+
+		complete_effect = {
+			FROM = {
+				country_event = { id = wtt_warlord_vs_prc.21 }
+				custom_effect_tooltip = if_they_accept
+				effect_tooltip = {
+					PRC_soviet_tribute_level_up = yes	
+				}
+			}
+		}
+	}
+
+	demand_full_integration = {
+
+		icon = generic_civil_support
+
+		allowed = {
+			tag = SOV			
+		}
+
+		icon = generic_political_actions
+
+		available = {
+			FROM = { has_soviet_tribute = yes }
+		}
+
+		cost = WTT_communist_china_integration_cost?300
+
+		visible = {
+			has_government = communism
+			FROM = { has_country_flag = WTT_support_from_soviet }
+		}
+
+		target_trigger = {
+			FROM = { has_country_flag = WTT_support_from_soviet }
+		}
+
+		ai_will_do = {
+			base = 0
+			modifier = {
+				add = 100
+				#Has won against CHI and JAP
+				595 = { is_controlled_by = FROM }
+				596 = { is_controlled_by = FROM }
+				597 = { is_controlled_by = FROM }
+				598 = { is_controlled_by = FROM }
+				600 = { is_controlled_by = FROM }
+				601 = { is_controlled_by = FROM }
+				602 = { is_controlled_by = FROM }
+				603 = { is_controlled_by = FROM }
+				605 = { is_controlled_by = FROM }
+				606 = { is_controlled_by = FROM }
+				607 = { is_controlled_by = FROM }
+				608 = { is_controlled_by = FROM }
+				613 = { is_controlled_by = FROM }
+				614 = { is_controlled_by = FROM }
+				620 = { is_controlled_by = FROM }
+			}
+			modifier = {
+				add = 50
+				FROM = {
+					check_variable = { WTT_communist_china_integration_cost < 200 }
+				}
+			}
+			modifier = {
+				add = 50
+				FROM = {
+					check_variable = { WTT_communist_china_integration_cost < 150 }
+				}
+			}
+			modifier = {
+				add = 50
+				FROM = {
+					check_variable = { WTT_communist_china_integration_cost < 100 }
+				}
+			}
+		}
+
+		fire_only_once = yes
+
+		complete_effect = {
+			FROM = { country_event = { id = wtt_warlord_vs_prc.31 } }
+		}
+	}	
+
+	SOV_demand_bessarabia = {						# Demand Bessarabia
+
+		icon = generic_operation
+
+		allowed = {
+			tag = SOV		
+		}
+
+		available = {
+			#FROM = { tag = ROM }
+			NOT = { has_country_flag = bessarabia_demand }
+			OR = {	
+				AND = {		
+					OR = {								# AS
+						FRA = { has_capitulated = yes }
+						VIC = { exists = yes }
+						has_global_flag = vichy_established			
+					}		
+					has_global_flag = sov_yes_pact 		
+				}
+				has_completed_focus = SOV_claim_bessarabia
+			}		
+			78 = {
+				is_claimed_by = SOV
+				#is_owned_by = ROM
+			}
+		}
+
+		cost = 200
+		fire_only_once = yes
+		
+		visible = {
+			tag = SOV
+		}
+
+		complete_effect = {
+			SOV = { country_event = soviet.30 }		
+		}
+
+		ai_will_do = {
+			factor = 5000
+		}
+	}		
+
+	SOV_demand_karjala = {						# Demand Karjala
+
+		icon = generic_operation
+
+		allowed = {		
+			tag = SOV
+		}
+
+		available = {
+			#FROM = { tag = FIN }
+			NOT = { has_country_flag = karjala_demand }
+			OR = {	
+				AND = {		
+					OR = {								# AS
+						FRA = { has_war_with = GER }
+						ENG = { has_war_with = GER }					
+						VIC = { exists = yes }
+						has_global_flag = vichy_established			
+					}		
+					has_global_flag = sov_yes_pact 		
+				}
+				has_completed_focus = SOV_claims_on_baltic
+			}					
+			146 = {
+				is_claimed_by = SOV
+				is_owned_by = FIN
+			}
+		}
+
+		cost = 200
+		fire_only_once = yes
+		
+		visible = {
+			tag = SOV		
+		}
+
+		complete_effect = {
+			SOV = { country_event = soviet.31 }		
+		}
+
+		ai_will_do = {
+			factor = 5000
+		}
+	}
+
+	SOV_demand_estonia = {						# Oppress Estonia
+
+		icon = generic_operation
+
+		allowed = {		
+			tag = SOV
+		}
+
+		available = {
+			#FROM = {
+			#	tag = EST
+			#	any_owned_state = { is_claimed_by = SOV }
+			#}
+			NOT = { has_country_flag = estonia_demand }
+			OR = {	
+				AND = {		
+					OR = {								# AS
+						FRA = { has_war_with = GER }
+						ENG = { has_war_with = GER }					
+						VIC = { exists = yes }
+						has_global_flag = vichy_established			
+					}		
+					has_global_flag = sov_yes_pact 		
+				}
+				has_completed_focus = SOV_baltic_security
+			}			
+			EST = {
+				any_owned_state = { is_claimed_by = SOV }
+			}
+		}
+
+		cost = 200
+		fire_only_once = yes
+		
+		visible = {
+			tag = SOV		
+		}
+
+		complete_effect = {
+			SOV = { country_event = soviet.32 }		
+		}
+
+		ai_will_do = {
+			factor = 5000
+		}
+	}
+
+	SOV_demand_latvia = {						# Oppress Latvia
+
+		icon = generic_operation
+
+		allowed = {		
+			tag = SOV
+		}
+
+		available = {
+			#FROM = {
+			#	tag = LAT
+			#	any_owned_state = { is_claimed_by = SOV }
+			#}
+			NOT = { has_country_flag = latvia_demand }
+			OR = {	
+				AND = {		
+					OR = {								# AS
+						FRA = { has_war_with = GER }
+						ENG = { has_war_with = GER }					
+						VIC = { exists = yes }
+						has_global_flag = vichy_established			
+					}		
+					has_global_flag = sov_yes_pact 		
+				}
+				has_completed_focus = SOV_baltic_security
+			}			
+			LAT = {
+				any_owned_state = { is_claimed_by = SOV }
+			}		
+		}
+
+		cost = 200
+		fire_only_once = yes
+		
+		visible = {
+			tag = SOV		
+		}
+
+		complete_effect = {
+			SOV = { country_event = soviet.33 }		
+		}
+
+		ai_will_do = {
+			factor = 5000
+		}
+	}	
+
+	SOV_demand_lithuania = {						# Oppress Lithuania 
+
+		icon = generic_operation
+
+		allowed = {		
+			tag = SOV
+		}
+
+		available = {
+			#FROM = {
+			#	tag = LIT
+			#	any_owned_state = { is_claimed_by = SOV }
+			#}
+			NOT = { has_country_flag = lithuania_demand }	
+			OR = {	
+				AND = {		
+					OR = {								# AS
+						FRA = { has_war_with = GER }
+						ENG = { has_war_with = GER }					
+						VIC = { exists = yes }
+						has_global_flag = vichy_established			
+					}		
+					has_global_flag = sov_yes_pact 		
+				}
+				has_completed_focus = SOV_baltic_security
+			}				
+			LIT = {
+				any_owned_state = { is_claimed_by = SOV }
+			}		
+		}
+
+		cost = 200
+		fire_only_once = yes
+		
+		visible = {
+			tag = SOV		
+		}
+
+		complete_effect = {
+			SOV = { country_event = soviet.34 }		
+		}
+
+		ai_will_do = {
+			factor = 5000
+		}
+	}
+
+	SOV_operation_countenance = {					# AS
+
+		icon = generic_operation
+
+		allowed = {
+			tag = SOV
+		}
+
+		available = {
+			has_completed_focus = SOV_operation_countenance
+			has_war_with = GER
+			NOT = { has_country_flag = revol_gov }
+			ENG = { has_war_with = GER }
+			NOT = { has_war_with = PER }
+			NOT = { has_war_with = ENG } 			
+			ENG = { NOT = { has_war_with = PER } }
+			PER = {
+				OR = {	
+					is_in_faction = no
+					is_in_faction_with = ENG
+				}
+				NOT = { is_in_faction_with = SOV }
+				exists = yes
+			}			
+		}
+
+		cost = 25
+		fire_only_once = yes
+		visible = {
+			has_war_with = GER
+			NOT = { has_war_with = ENG }
+			NOT = { has_war_with = PER }
+		}
+
+		complete_effect = {
+			custom_effect_tooltip = operation_countenance_TT
+			ENG = { country_event = as_great_britain.11 }		
+		}
+
+		ai_will_do = {
+			factor = 5000
+		}
+	}	
+}

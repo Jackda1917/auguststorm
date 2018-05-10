@@ -17,11 +17,11 @@ set_technology = {
 	defence_in_depth = 1 # was none
 	peoples_army = 1 # was none
 }
-set_research_slots = 3 # AS / SOV help
+set_research_slots = 2 # AS / SOV help
 add_opinion_modifier = { target = CHI modifier = hostile_status } # AS
 add_ideas = PRC_peasantry_support # AS
-set_stability = 0.80 # AS
-set_war_support = 0.7
+set_stability = 0.9 # AS
+set_war_support = 0.9 #0.7
 
 
 save_global_event_target_as = WTT_communist_china
@@ -231,7 +231,7 @@ create_country_leader = {
 create_field_marshal = {
 	name = "Mao Zedong"
 	gfx = "GFX_portrait_prc_mao_zedong"
-	traits = { defensive_doctrine trait_cautious politically_connected }
+	traits = { field_marshal_baton defensive_doctrine trait_cautious politically_connected }
 	skill = 4
 	attack_skill = 2
 	defense_skill = 4

@@ -1,8 +1,8 @@
 ﻿units = {
 	division= {	
 		name = "36. Waffen-Grenadier-Division der SS 'Dirlewanger'"
-		location = 11399 # Lublin
+		location = 6521 # Berlin
 		division_template = "SS-Grenadier-Division"
-		start_experience_factor = 0.4
+		start_experience_factor = 0.1
 	}
 }

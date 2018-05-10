@@ -1,0 +1,32 @@
+
+state={
+	id=763
+	name="STATE_763" #Golan
+	manpower = 100000
+	
+	state_category = rural
+
+	history={
+		owner = FRA
+		controller = FRA
+		add_core_of = SYR
+
+		1930.5.14 = {
+			owner = SYR
+			controller = SYR
+		}
+
+		1967.6.10 = {
+			owner = ISR
+			controller = ISR
+		}
+		
+		1981.12.14 = {
+			add_core_of = ISR
+		}
+	}
+
+	provinces={
+		1074
+	}
+}

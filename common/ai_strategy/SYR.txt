@@ -45,7 +45,7 @@ turkey_antagonize = {
 		country_exists = TUR
 	}
 	abort = {
-		NOT = { TUR = { controls_state = 747 } } # Hatay
+		NOT = { TUR = { controls_state = 769 } } # Hatay
 		NOT = {
 			country_exists = TUR
 		}

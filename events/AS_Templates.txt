@@ -43,7 +43,8 @@ country_event = {			# French Templates
 		original_tag = FRA
 		is_ai = yes
 		has_war_with = GER
-		is_in_faction_with = USA		
+		is_in_faction_with = USA
+		VIC = { exists = no }
 		452 = {
 			NOT = {
 				is_controlled_by = GER
@@ -53,7 +54,7 @@ country_event = {			# French Templates
 	}
 	
 	mean_time_to_happen = {
-		days = 220
+		days = 1
 	}
 
 	hidden = yes
@@ -105,10 +106,11 @@ country_event = {				# ENG Templates
 		original_tag = ENG
 		is_ai = yes
 		has_tech = motorised_infantry
+		has_war = yes
 	}
 	
 	mean_time_to_happen = {
-		days = 1
+		days = 10
 	}
 
 	hidden = yes
@@ -117,6 +119,7 @@ country_event = {				# ENG Templates
 		name = as_template.6.option_a
 		ai_chance = { factor = 100 }
 		load_oob = "ENG_Motorized"
+		load_oob = "ENG_armour_1940"		
 	}
 }
 
@@ -135,7 +138,7 @@ country_event = {				# ENG Templates
 	}
 	
 	mean_time_to_happen = {
-		days = 1
+		days = 50
 	}
 
 	hidden = yes
@@ -162,7 +165,7 @@ country_event = {				# ENG Templates
 	}
 	
 	mean_time_to_happen = {
-		days = 100
+		days = 10
 	}
 
 	hidden = yes
@@ -217,7 +220,7 @@ country_event = {				# CAN Templates
 	}
 	
 	mean_time_to_happen = {
-		days = 1
+		days = 50
 	}
 
 	hidden = yes

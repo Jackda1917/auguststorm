@@ -2,7 +2,7 @@
 state={
 	id=429
 	name="STATE_429"		# Bombay
-	buildings_max_level_factor=1.000   manpower = 17355600
+	manpower = 17355600
 	state_category = town
 	
 	resources={

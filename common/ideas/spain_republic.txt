@@ -25,15 +25,15 @@ ideas = {
 			removal_cost = -1		
 			
 			modifier = {
-				ai_get_ally_desire_factor = -90  # -70
-				join_faction_tension = 0.5
+				ai_get_ally_desire_factor = -100  # -70
+				join_faction_tension = 0.9
 				production_speed_industrial_complex_factor = -0.4 # was none
 				production_speed_arms_factory_factor = -0.4	 # was none					
 				industrial_capacity_factory = -0.50   
 				industrial_capacity_dockyard = -0.50 # was none
 				consumer_goods_factor = 0.10        # AS
 				conscription = -0.33       # AS
-				war_support_factor = -0.2 # AS				
+				war_support_factor = -0.4 # AS				
 			}
 		}
 		

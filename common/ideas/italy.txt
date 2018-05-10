@@ -52,7 +52,7 @@ ideas = {
 				fascism_acceptance = 10
 				ai_focus_aggressive_factor = 0.5
 				justify_war_goal_time = -0.10			# was -0.05
-				army_attack_factor = -0.15		# was none
+				war_support_factor = -0.2		# was none
 				supply_consumption_factor = 0.20  # was none
 			}
 		}
@@ -74,9 +74,9 @@ ideas = {
 						}
 					}
 					AND = {
-						has_government = communsim
+						has_government = communism
 						GER = {
-							has_government = communsim
+							has_government = communism
 						}
 					}
 					AND = {
@@ -126,7 +126,8 @@ ideas = {
 
 			modifier = {
 				stability_factor = -0.30
-				war_support_factor = -0.1
+				war_support_factor = -0.15
+				surrender_limit = -0.25
 			}
 		}
 
@@ -151,7 +152,8 @@ ideas = {
 
 			modifier = {
 				stability_factor = -0.20
-				war_support_factor = -0.1				
+				war_support_factor = -0.15
+				surrender_limit = -0.25				
 			}
 		}
 		
@@ -168,14 +170,14 @@ ideas = {
 			cancel = {
 				OR = {	
 					NOT = { has_government = fascism }
-					751 = { NOT = { is_controlled_by = ITA } }
+					773 = { NOT = { is_controlled_by = ITA } }
 				}
 			}
 			
 			removal_cost = -1
 
 			modifier = {
-				stability_factor = 0.30
+				stability_factor = 0.20
 				war_support_factor = 0.1				
 			}
 		}
@@ -201,7 +203,7 @@ ideas = {
 			removal_cost = -1
 
 			modifier = {
-				stability_factor = 0.30
+				stability_factor = 0.20
 				war_support_factor = 0.1				
 			}
 		}		

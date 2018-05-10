@@ -181,7 +181,8 @@ country_event = {
 			transfer_state = 622
 			transfer_state = 283
 			transfer_state = 615			
-			transfer_state = 616			
+			transfer_state = 616
+			transfer_state = 746 #Ordos
 		}
 		every_state = {
 			limit = {
@@ -241,6 +242,10 @@ country_event = {
 	trigger = {
 		tag = JAP
 		is_ai = yes
+		OR = {	
+			CHI = { is_ai = no }
+			PRC = { is_ai = no } 
+		}
 	}
 	
 	option = {
@@ -884,7 +889,7 @@ country_event = {
 		FRA = { transfer_state = 671 }
 		FRA = { transfer_state = 670 }
 		FRA = { transfer_state = 286 }
-		FRA = { transfer_state = 758 } # France gets back Indochina
+		FRA = { transfer_state = 741 } # France gets back Indochina
 		
 		USA = { transfer_state = 646 }
 		USA = { transfer_state = 647 }

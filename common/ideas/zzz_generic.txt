@@ -66,7 +66,7 @@ ideas = {
 					instant = yes
 					build_cost_ic = -0.10
 				}
-				jet_tac_bomber_equipment = {
+				attack_bomber_equipment = {		# AS
 					instant = yes
 					build_cost_ic = -0.10
 				}
@@ -568,8 +568,8 @@ ideas = {
 			picture = generic_pp_unity_bonus
 			
 			modifier = {
-				stability_factor = 0.10
-				war_support_factor = 0.1
+				stability_factor = 0.1
+				war_support_factor = 0.15 # was 0.1
 			}
 		}	
 

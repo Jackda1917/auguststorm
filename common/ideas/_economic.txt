@@ -60,7 +60,6 @@ ideas = {
 			allowed_to_remove = {
 				OR = {
 					has_war_support > 0.65 
-
 					has_war = yes
 				}
 			}
@@ -125,10 +124,10 @@ ideas = {
 			cancel_if_invalid = no
 
 			ai_will_do = {
-   				factor = 1
+   				factor = 2
 
    				modifier = {
-					factor = 20
+					factor = 200
 					
 					is_major = yes
 				}
@@ -166,7 +165,7 @@ ideas = {
 				}
 			}
 
-			cost = 100 # was 150
+			cost = 75 # was 150
 			removal_cost = -1
 			
 			modifier = {
@@ -178,16 +177,16 @@ ideas = {
 				industrial_capacity_dockyard = 0.2 # was none				
 				conversion_cost_civ_to_mil_factor = -0.1
 				conversion_cost_mil_to_civ_factor = 0.1  # was -0.1
-			    stability_factor = -0.05 # AS
+			    #stability_factor = -0.05 # AS
 			}
 			
 			cancel_if_invalid = no
 
 			ai_will_do = {
-   				factor = 1
+   				factor = 20
 
    				modifier = {
-					factor = 2
+					factor = 300
 					
 					is_major = yes
 				}
@@ -199,7 +198,7 @@ ideas = {
 			available = {				
 				OR = {
 					AND = {
-						has_war_support > 0.50
+						has_war_support > 0.5
 						is_major = yes  # none
 						NOT = {
 							has_government = fascism
@@ -260,15 +259,15 @@ ideas = {
 				conversion_cost_civ_to_mil_factor = -0.2
 				conversion_cost_mil_to_civ_factor = 0.2 # was -0.2
 				research_time_factor = -0.05 # AS
-				stability_weekly = -0.0001 # AS				
+				stability_weekly = -0.001 # AS				
 			}
 			cancel_if_invalid = no
 
 			ai_will_do = {
-   				factor = 5
+   				factor = 1000
 				modifier = {
 					#High prio on production
-					factor = 80
+					factor = 2000
 					manpower_per_military_factory > 1000
 				}
    			}
@@ -289,9 +288,12 @@ ideas = {
 						has_dlc = "Death or Dishonor"
 					}
 					NOT = { has_idea = HUN_treaty_of_triannon }
-				}				
+				}
 				OR = {
-					has_country_flag = fight_for_surviving
+					has_country_flag = ger_tot_economic_mobilisation
+					has_country_flag = ita_tot_economic_mobilisation
+					has_country_flag = jap_tot_economic_mobilisation				
+					has_country_flag = fight_for_surviving					
 					AND = {									# was none		
 							has_government = communism
 							enemies_strength_ratio > 0.75
@@ -304,17 +306,12 @@ ideas = {
 							}
 					}				
 					AND = {									# was none		
-							OR = {	
-								has_government = democratic
-								has_country_flag = ger_tot_economic_mobilisation
-								has_country_flag = ita_tot_economic_mobilisation
-								has_country_flag = jap_tot_economic_mobilisation
-							}
-							enemies_strength_ratio > 1		# was 2				
+							has_government = democratic
+							enemies_strength_ratio > 2				
 							any_enemy_country  = {			# was any_enemy_country
 								ic_ratio = { 
 									tag = ROOT 
-									ratio > 0.75     # was 1.5
+									ratio > 1     # was 1.5
 								}
 							}
 					}
@@ -342,7 +339,7 @@ ideas = {
 						
 			}
 			ai_will_do = {
-   				factor = 1
+   				factor = 1000
 
 				modifier = {
 					factor = 25
@@ -381,7 +378,8 @@ ideas = {
 				conversion_cost_civ_to_mil_factor = -0.5 # was -0.3
 				conversion_cost_mil_to_civ_factor = 0.5 # was -0.3
 				political_power_factor = -0.5   # AS
-				stability_weekly = -0.0002 # AS
+				stability_weekly = -0.002 # AS
+				war_support_weekly = -0.001 # AS		
 				research_time_factor = -0.10 # AS
 			}
 
@@ -402,7 +400,8 @@ ideas = {
 				industrial_capacity_dockyard = 0.15
 				production_speed_buildings_factor = 0.15
 				research_time_factor = -0.10
-				stability_factor = -0.1 # AS
+				stability_factor = -0.05 # AS
+				war_support_factor = -0.15 # AS
 			}
 
 			cancel_if_invalid = no
@@ -431,7 +430,7 @@ ideas = {
 				industrial_capacity_dockyard = 0.1
 				production_speed_buildings_factor = 0.1
 				research_time_factor = -0.05
-				stability_factor = -0.05 # AS
+				war_support_factor = -0.05 # AS
 			}
 			
 			default = yes
@@ -490,7 +489,6 @@ ideas = {
 				industrial_capacity_dockyard = 0.05
 				production_speed_buildings_factor = 0.05
 				research_time_factor = -0.01
-				stability_factor = -0.025 # AS
 			}
 			
 
@@ -534,6 +532,8 @@ ideas = {
 			
 			modifier = {
 				min_export = 0
+				war_support_factor = 0.05 # AS	
+				research_time_factor = -0.02 # AS
 			}
 			
 			on_add = {

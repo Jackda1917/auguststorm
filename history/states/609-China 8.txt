@@ -2,7 +2,7 @@
 state={
 	id=609
 	name="STATE_609" # East Hebei
-	buildings_max_level_factor=1.000   manpower = 6400000
+	manpower = 6400000
 	
 	state_category = town
 

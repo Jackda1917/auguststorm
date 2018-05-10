@@ -2560,19 +2560,24 @@ focus_tree = {
 					}
 					division_template = {
 						name = "Rats of Tobruk"
+						is_locked = yes
 						division_names_group = AST_INF_01
 						regiments = {
 							infantry = { x = 0 y = 0 }
 							infantry = { x = 0 y = 1 }
 							infantry = { x = 0 y = 2 }
+							
 							infantry = { x = 1 y = 0 }
 							infantry = { x = 1 y = 1 }
 							infantry = { x = 1 y = 2 }
+							
 							infantry = { x = 2 y = 0 }
 							infantry = { x = 2 y = 1 }
 							infantry = { x = 2 y = 2 }
+							
 							infantry = { x = 3 y = 0 }
 							infantry = { x = 3 y = 1 }
+							infantry = { x = 3 y = 2 }							
 						}
 						support = {
 					        recon = { x = 0 y = 0 }
@@ -2583,24 +2588,29 @@ focus_tree = {
 					else = {
 						division_template = {
 							name = "Rats of Tobruk"
+							is_locked = yes
 						division_names_group = AST_INF_01
 							regiments = {
 								infantry = { x = 0 y = 0 }
 								infantry = { x = 0 y = 1 }
 								infantry = { x = 0 y = 2 }
+							
 								infantry = { x = 1 y = 0 }
 								infantry = { x = 1 y = 1 }
 								infantry = { x = 1 y = 2 }
+							
 								infantry = { x = 2 y = 0 }
 								infantry = { x = 2 y = 1 }
 								infantry = { x = 2 y = 2 }
+							
 								infantry = { x = 3 y = 0 }
 								infantry = { x = 3 y = 1 }
-							}
-							support = {
-						        recon = { x = 0 y = 0 }
-						        engineer = { x = 0 y = 1 }
-							}
+								infantry = { x = 3 y = 2 }							
+								}
+								support = {
+									recon = { x = 0 y = 0 }
+									engineer = { x = 0 y = 1 }
+								}
 						}
 					}
 				}

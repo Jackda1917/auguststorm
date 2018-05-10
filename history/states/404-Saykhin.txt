@@ -1,7 +1,7 @@
 state={
 	id=404
 	name="STATE_404" # Kzyl Orda
-	buildings_max_level_factor=1.000   manpower = 667036
+	manpower = 667036
 	
 	state_category = wasteland
 

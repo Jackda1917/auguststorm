@@ -481,7 +481,6 @@ country_event = {
 	desc = as_sov.13.d
 	picture = GFX_report_event_soviet_tanks
 
-	fire_only_once = yes
 	
 	is_triggered_only = yes
 
@@ -503,7 +502,11 @@ country_event = {
 					type = arms_factory
 					level = 3
 					instant_build = yes
-				}										
+				}
+				hidden_effect = {
+					damage_building = { type = arms_factory damage = 0.2 }
+					damage_building = { type = industrial_complex damage = 0.1 }
+				}				
 			}			
 		}
 		if = {
@@ -519,7 +522,11 @@ country_event = {
 					type = arms_factory
 					level = 3
 					instant_build = yes
-				}										
+				}
+				hidden_effect = {
+					damage_building = { type = arms_factory damage = 0.2 }
+					damage_building = { type = industrial_complex damage = 0.1 }
+				}					
 			}			
 		}		
 		if = {
@@ -535,7 +542,11 @@ country_event = {
 					type = industrial_complex
 					level = 3
 					instant_build = yes
-				}										
+				}
+				hidden_effect = {
+					damage_building = { type = arms_factory damage = 0.2 }
+					damage_building = { type = industrial_complex damage = 0.1 }
+				}					
 			}			
 		}
 		if = {
@@ -551,7 +562,11 @@ country_event = {
 					type = industrial_complex
 					level = 3
 					instant_build = yes
-				}										
+				}
+				hidden_effect = {
+					damage_building = { type = arms_factory damage = 0.2 }
+					damage_building = { type = industrial_complex damage = 0.1 }
+				}				
 			}			
 		}
 		if = {
@@ -567,7 +582,11 @@ country_event = {
 					type = industrial_complex
 					level = 3
 					instant_build = yes
-				}										
+				}
+				hidden_effect = {
+					damage_building = { type = arms_factory damage = 0.2 }
+					damage_building = { type = industrial_complex damage = 0.1 }
+				}				
 			}			
 		}	
 		if = {
@@ -583,7 +602,11 @@ country_event = {
 					type = industrial_complex
 					level = 2
 					instant_build = yes
-				}										
+				}
+				hidden_effect = {
+					damage_building = { type = arms_factory damage = 0.2 }
+					damage_building = { type = industrial_complex damage = 0.1 }
+				}				
 			}			
 		}
 		if = {
@@ -599,7 +622,11 @@ country_event = {
 					type = industrial_complex
 					level = 2
 					instant_build = yes
-				}										
+				}
+				hidden_effect = {
+					damage_building = { type = arms_factory damage = 0.2 }
+					damage_building = { type = industrial_complex damage = 0.1 }
+				}				
 			}			
 		}		
 		if = {
@@ -615,7 +642,11 @@ country_event = {
 					type = arms_factory
 					level = 3
 					instant_build = yes
-				}										
+				}
+				hidden_effect = {
+					damage_building = { type = arms_factory damage = 0.2 }
+					damage_building = { type = industrial_complex damage = 0.1 }
+				}				
 			}			
 		}		
 		if = {
@@ -631,7 +662,11 @@ country_event = {
 					type = arms_factory
 					level = 3
 					instant_build = yes
-				}										
+				}
+				hidden_effect = {
+					damage_building = { type = arms_factory damage = 0.2 }
+					damage_building = { type = industrial_complex damage = 0.1 }
+				}				
 			}			
 		}
 		if = {
@@ -647,7 +682,11 @@ country_event = {
 					type = arms_factory
 					level = 3
 					instant_build = yes
-				}										
+				}
+				hidden_effect = {
+					damage_building = { type = arms_factory damage = 0.2 }
+					damage_building = { type = industrial_complex damage = 0.1 }
+				}				
 			}			
 		}		
 		if = {
@@ -663,7 +702,11 @@ country_event = {
 					type = arms_factory
 					level = 3
 					instant_build = yes
-				}										
+				}
+				hidden_effect = {
+					damage_building = { type = arms_factory damage = 0.2 }
+					damage_building = { type = industrial_complex damage = 0.1 }
+				}				
 			}			
 		}
 		if = {
@@ -679,7 +722,11 @@ country_event = {
 					type = arms_factory
 					level = 3
 					instant_build = yes
-				}										
+				}
+				hidden_effect = {
+					damage_building = { type = arms_factory damage = 0.2 }
+					damage_building = { type = industrial_complex damage = 0.1 }
+				}				
 			}			
 		}
 		if = {
@@ -695,7 +742,11 @@ country_event = {
 					type = arms_factory
 					level = 3
 					instant_build = yes
-				}										
+				}	
+				hidden_effect = {
+					damage_building = { type = arms_factory damage = 0.2 }
+					damage_building = { type = industrial_complex damage = 0.1 }
+				}				
 			}			
 		}		
 		if = {
@@ -711,7 +762,11 @@ country_event = {
 					type = arms_factory
 					level = 4
 					instant_build = yes
-				}										
+				}
+				hidden_effect = {
+					damage_building = { type = arms_factory damage = 0.2 }
+					damage_building = { type = industrial_complex damage = 0.1 }
+				}				
 			}			
 		}		
 		if = {
@@ -727,7 +782,11 @@ country_event = {
 					type = arms_factory
 					level = 4
 					instant_build = yes
-				}										
+				}
+				hidden_effect = {
+					damage_building = { type = arms_factory damage = 0.2 }
+					damage_building = { type = industrial_complex damage = 0.1 }
+				}				
 			}			
 		}
 		if = {
@@ -743,7 +802,11 @@ country_event = {
 					type = arms_factory
 					level = 5
 					instant_build = yes
-				}										
+				}
+				hidden_effect = {
+					damage_building = { type = arms_factory damage = 0.2 }
+					damage_building = { type = industrial_complex damage = 0.1 }
+				}				
 			}			
 		}		
 		if = {
@@ -759,7 +822,11 @@ country_event = {
 					type = arms_factory
 					level = 5
 					instant_build = yes
-				}										
+				}
+				hidden_effect = {
+					damage_building = { type = arms_factory damage = 0.2 }
+					damage_building = { type = industrial_complex damage = 0.1 }
+				}				
 			}			
 		}
 		if = {
@@ -775,7 +842,11 @@ country_event = {
 					type = industrial_complex
 					level = 3
 					instant_build = yes
-				}										
+				}
+				hidden_effect = {
+					damage_building = { type = arms_factory damage = 0.2 }
+					damage_building = { type = industrial_complex damage = 0.1 }
+				}				
 			}			
 		}		
 		if = {
@@ -791,7 +862,11 @@ country_event = {
 					type = industrial_complex
 					level = 3
 					instant_build = yes
-				}										
+				}
+				hidden_effect = {
+					damage_building = { type = arms_factory damage = 0.2 }
+					damage_building = { type = industrial_complex damage = 0.1 }
+				}				
 			}			
 		}		
 		if = {
@@ -807,7 +882,11 @@ country_event = {
 					type = industrial_complex
 					level = 4
 					instant_build = yes
-				}										
+				}
+				hidden_effect = {
+					damage_building = { type = arms_factory damage = 0.2 }
+					damage_building = { type = industrial_complex damage = 0.1 }
+				}				
 			}			
 		}
 		if = {
@@ -823,7 +902,11 @@ country_event = {
 					type = industrial_complex
 					level = 4
 					instant_build = yes
-				}										
+				}
+				hidden_effect = {
+					damage_building = { type = arms_factory damage = 0.2 }
+					damage_building = { type = industrial_complex damage = 0.1 }
+				}				
 			}			
 		}		
 		if = {
@@ -839,7 +922,11 @@ country_event = {
 					type = industrial_complex
 					level = 5
 					instant_build = yes
-				}										
+				}
+				hidden_effect = {
+					damage_building = { type = arms_factory damage = 0.2 }
+					damage_building = { type = industrial_complex damage = 0.1 }
+				}				
 			}			
 		}		
 	}	
@@ -1182,6 +1269,18 @@ country_event = {     					# Germany create fascist Russia
 		name = as_sov.15.a  
 		ai_chance = { factor = 10 }
 		add_stability = 0.50
+		RUS = {
+			create_country_leader = {
+				name = "Konstantin Rodzaevsky"
+				desc = "POLITICS_KONSTANTIN_RODZAEVSKY_DESC"
+				picture = "Portrait_Soviet_Konstantin_Rodzaevsky.dds"
+				expire = "1953.3.1"
+				ideology = fascism_ideology
+				traits = {
+		
+				}
+			}		
+		}
 		every_owned_state = {
 			limit = {	
 				is_core_of = RUS

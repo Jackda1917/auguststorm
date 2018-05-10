@@ -2,6 +2,7 @@
 ##### Heavy Bomber Equipment
 
 equipments = {
+
 	# Strategic Bomber
 	strat_bomber_equipment = {
 		year = 1933
@@ -47,8 +48,9 @@ equipments = {
 		manpower = 120 # was 80
 	}
 
+
 	# Jet Strategic Bomber
-	jet_strategic_bomber_equipment = {
+	jet_strat_bomber_equipment = {
 		year = 1933
 
 		is_archetype = yes
@@ -83,18 +85,22 @@ equipments = {
 		resources = {
 			aluminium = 3
 			tungsten = 3
+
 			rubber = 0.75 # was 1
 		}
 		
 		manpower = 160
 	}	
+
 	
+
 	# Basic Strategic Bomber
 	strat_bomber_equipment_1 = {
 		year = 1936
 
 		archetype = strat_bomber_equipment
 		priority = 140
+
 		can_convert_from = {
 			transport_plane_equipment
 		}
@@ -155,11 +161,12 @@ equipments = {
 		}
 	}
 	
+
 	# Subsonic Strategic Bomber
-	jet_strategic_bomber_equipment_1 = {
+	jet_strat_bomber_equipment_1 = {
 		year = 1950
 
-		archetype = jet_strategic_bomber_equipment
+		archetype = jet_strat_bomber_equipment
 		priority = 150
 		
 		air_range = 7000
@@ -170,12 +177,13 @@ equipments = {
 		air_bombing = 64
 	}
 
+
 	# Transonic Strategic Bomber
-	jet_strategic_bomber_equipment_2 = {
+	jet_strat_bomber_equipment_2 = {
 		year = 1960
 	
-		archetype = jet_strategic_bomber_equipment
-		parent = jet_strategic_bomber_equipment_1
+		archetype = jet_strat_bomber_equipment
+		parent = jet_strat_bomber_equipment_1
 		priority = 150
 		
 		air_range = 7500
@@ -194,11 +202,11 @@ equipments = {
 	}
 
 	# Supersonic Strategic Bomber
-	jet_strategic_bomber_equipment_3 = {
+	jet_strat_bomber_equipment_3 = {
 		year = 1970
 		
-		archetype = jet_strategic_bomber_equipment
-		parent = jet_strategic_bomber_equipment_2
+		archetype = jet_strat_bomber_equipment
+		parent = jet_strat_bomber_equipment_2
 		priority = 150
 		
 		air_range = 8000
@@ -217,11 +225,11 @@ equipments = {
 	}
 
 	# Modern Strategic Bomber
-	jet_strategic_bomber_equipment_4 = {
+	jet_strat_bomber_equipment_4 = {
 		year = 1980
 	
-		archetype = jet_strategic_bomber_equipment
-		parent = jet_strategic_bomber_equipment_3
+		archetype = jet_strat_bomber_equipment
+		parent = jet_strat_bomber_equipment_3
 		priority = 150
 		
 		air_range = 9000
@@ -242,6 +250,7 @@ equipments = {
 	# Transport
 	transport_plane_equipment = {
 		year = 1933
+
 	
 		is_archetype = yes
 		is_convertable = yes
@@ -277,8 +286,10 @@ equipments = {
 		manpower = 120 # was 80
 	}
 
+
 	transport_plane_equipment_1 = {
 		year = 1933
+
 		archetype = transport_plane_equipment
 		active = yes
 		priority = 130

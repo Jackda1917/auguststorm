@@ -2,7 +2,7 @@
 state={
 	id=584
 	name="STATE_584" # Ashkhabad
-	buildings_max_level_factor=1.000   manpower = 1064523
+	manpower = 1064523
 	
 	state_category = pastoral
 

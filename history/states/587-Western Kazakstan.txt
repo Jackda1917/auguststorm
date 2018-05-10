@@ -2,7 +2,7 @@
 state={
 	id=587
 	name="STATE_587" # Ust Urt
-	buildings_max_level_factor=1.000   manpower = 245133
+	manpower = 245133
 	
 	state_category = rural
 

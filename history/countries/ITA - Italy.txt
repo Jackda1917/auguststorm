@@ -2,7 +2,7 @@
 
 oob = "ITA_1936"
 
-set_research_slots = 4
+set_research_slots = 3 #4
 set_stability = 0.6
 set_war_support = 0.6 #0.7
 
@@ -54,7 +54,18 @@ give_guarantee = ALB
 
 add_political_power = 300 # was none
 
-
+if = {					# AS
+	limit = { is_ai = yes }
+	add_political_power = 200
+	add_ideas = {
+		ITA_giovanni_marinelli
+		ITA_giacomo_acerbo
+		emilio_de_bono
+		vittorio_ambrosio
+		fiat
+		beretta
+	}	
+}
 
 1939.1.1 = {
 
@@ -219,7 +230,7 @@ create_country_leader = {
 create_field_marshal = {
 	name = "Pietro Badoglio"
 	picture = "Portrait_Italy_Pietro_Badoglio.dds"
-	traits = { defensive_doctrine old_guard politically_connected inflexible_strategist }
+	traits = { field_marshal_baton defensive_doctrine old_guard politically_connected inflexible_strategist }
 	skill = 1
 	attack_skill = 1
 	defense_skill = 1
@@ -242,7 +253,6 @@ create_corps_commander = {
 	name = "Ugo Cavallero"
 	picture = "Portrait_Italy_Ugo_Cavallero.dds"
 	traits = {  old_guard trait_cautious career_officer }
-
 	skill = 2
 	rank = 1
 	attack_skill = 1
@@ -254,21 +264,19 @@ create_corps_commander = {
 create_corps_commander = {
 	name = "Giovanni Messe"
 	picture = "Portrait_Italy_Giovanni_Messe.dds"
-	traits = {  armor_officer war_hero }
-
-	skill = 4
+	traits = { armor_officer war_hero }
+	skill = 3 #4
 	rank = 1
-	attack_skill = 4
+	attack_skill = 2
 	defense_skill = 3
 	planning_skill = 2
-	logistics_skill = 4
+	logistics_skill = 3
 }
 
 create_corps_commander = {
 	name = "Sebastiano Visconti Prasca"
 	picture = "Portrait_Italy_Sebastiano_Visconti_Prasca.dds"
 	traits = { career_officer inflexible_strategist }
-
 	skill = 1
 	attack_skill = 1
 	defense_skill = 1
@@ -280,7 +288,6 @@ create_corps_commander = {
 	name = "Ubaldo Soddu"
 	picture = "Portrait_Italy_Ubaldo_Soddu.dds"
 	traits = { career_officer trait_cautious }
-
 	skill = 1
 	attack_skill = 1
 	defense_skill = 1
@@ -292,7 +299,6 @@ create_corps_commander = {
 	name = "Italo Balbo"
 	picture = "portrait_italy_italo_balbo.dds"
 	traits = { career_officer politically_connected }
-
 	skill = 1
 	attack_skill = 1
 	defense_skill = 1

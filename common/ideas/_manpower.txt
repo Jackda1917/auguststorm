@@ -354,7 +354,7 @@ ideas = {
 				}
 				NOT = { has_idea = fractured_society }				
 				OR = {	
-					has_stability > 60
+					has_stability > 0.6
 					is_major = yes
 				}
 				OR = {
@@ -368,7 +368,7 @@ ideas = {
 								has_war_with = ROOT  
 								}
 							}
-							has_stability > 50														
+							has_stability > 0.5														
 					}
 				}
 				if = {

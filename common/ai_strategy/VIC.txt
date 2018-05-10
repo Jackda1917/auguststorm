@@ -22,7 +22,7 @@ vic_restrictions = {
 	ai_strategy = {
 		type = build_army
 		id = infantry
-		value = 20
+		value = 10
 	}
 	
 	ai_strategy = {
@@ -160,43 +160,123 @@ vic_neutrality = {
 		tag = VIC
 	}
 	abort = {	
-		VIC = { exists = no }		
+		OR = {
+			VIC = { exists = no }
+			VIC = { has_war = yes }
+		}
 	}
 
 	ai_strategy = {
 		type = alliance
 		id = "GER"
-		value = -300
+		value = -3000
 	}
 	ai_strategy = {
 		type = alliance
 		id = "ITA"
-		value = -300
+		value = -3000
 	}
 	ai_strategy = {
 		type = alliance
+		id = "JAP"
+		value = -3000
+	}	
+	ai_strategy = {
+		type = alliance
 		id = "ENG"
-		value = -300
+		value = -3000
 	}
 	ai_strategy = {
 		type = alliance
 		id = "USA"
-		value = -300
+		value = -3000
+	}
+	ai_strategy = {
+		type = alliance
+		id = "FRA"
+		value = -3000
+	}
+	ai_strategy = {
+		type = alliance
+		id = "SOV"
+		value = -3000
 	}	
 	ai_strategy = {
 		type = antagonize
 		id = "ENG"
-		value = -300
+		value = -3000
 	}
 	ai_strategy = {
 		type = antagonize
 		id = "USA"
-		value = -300
+		value = -3000
 	}
 	ai_strategy = {
 		type = antagonize
 		id = "FRA"
-		value = -300
-	}	
+		value = -3000
+	}
+	ai_strategy = {
+		type = antagonize
+		id = "SOV"
+		value = -1000
+	}		
 }
 
+vic_ignore_allies = {
+	enable = {	
+		tag = VIC
+	}
+	abort = {	
+		OR = {
+			VIC = { exists = no }
+			VIC = { has_war = yes }
+		}
+	}
+
+	ai_strategy = {
+		type = ignore
+		id = "USA"
+		value = 3000
+	}
+	ai_strategy = {
+		type = ignore
+		id = "ENG"
+		value = 3000
+	}
+	ai_strategy = {
+		type = ignore
+		id = "FRA"
+		value = 3000
+	}
+	ai_strategy = {
+		type = ignore
+		id = "SOV"
+		value = 3000
+	}	
+	ai_strategy = {
+		type = ignore
+		id = "CHI"
+		value = 3000
+	}
+	ai_strategy = {
+		type = befriend
+		id = "USA"
+		value = -3000
+	}
+	ai_strategy = {
+		type = befriend
+		id = "ENG"
+		value = -3000
+	}
+	ai_strategy = {
+		type = befriend
+		id = "FRA"
+		value = -3000
+	}
+	ai_strategy = {
+		type = befriend
+		id = "CHI"
+		value = -3000
+	}	
+}

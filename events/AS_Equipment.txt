@@ -127,7 +127,7 @@ country_event = {
 		create_equipment_variant = { 
 			name = "Panther I" 
 			type = medium_tank_equipment_3
-			upgrades = { tank_gun_upgrade = 4 tank_armor_upgrade = 4 tank_engine_upgrade = 5 tank_reliability_upgrade = 1 } 		
+			upgrades = { tank_gun_upgrade = 4 tank_armor_upgrade = 4 tank_engine_upgrade = 5 } 		
 		}
 		
 	}
@@ -189,4 +189,129 @@ country_event = {
 			factor =  0
 		}		
 	}	
+}
+
+# Motorized Artillery Limitation AI
+country_event = {
+	id = as_equipment.23
+	title = as_equipment.23.t
+	desc = as_equipment.23.d
+	picture = GFX_news_event_tank_factory
+	
+	trigger = {
+		is_ai = yes	
+		has_equipment = { motorized_artillery_equipment > 1000 }
+	}
+	
+	mean_time_to_happen = {
+			days = 10
+	}
+	
+	option = {
+		name = as_equipment.22_a
+		ai_chance = {
+			factor = 10
+		}
+		add_equipment_to_stockpile = {
+				type = artillery_equipment
+				amount = 500
+		}
+		add_equipment_to_stockpile = {
+				type = motorized_artillery_equipment
+				amount = -500
+		}		
+	}		
+}
+
+country_event = {
+	id = as_equipment.24
+	title = as_equipment.24.t
+	desc = as_equipment.24.d
+	picture = GFX_news_event_tank_factory
+	
+	trigger = {
+		is_ai = yes	
+		has_equipment = { motorized_artillery_equipment_1 > 1000 }
+	}
+	
+	mean_time_to_happen = {
+			days = 10
+	}
+	
+	option = {
+		name = as_equipment.22_a
+		ai_chance = {
+			factor = 10
+		}
+		add_equipment_to_stockpile = {
+				type = artillery_equipment_1
+				amount = 500
+		}
+		add_equipment_to_stockpile = {
+				type = motorized_artillery_equipment_1
+				amount = -500
+		}		
+	}		
+}
+
+country_event = {
+	id = as_equipment.25
+	title = as_equipment.25.t
+	desc = as_equipment.25.d
+	picture = GFX_news_event_tank_factory
+	
+	trigger = {
+		is_ai = yes	
+		has_equipment = { motorized_artillery_equipment_2 > 1000 }
+	}
+	
+	mean_time_to_happen = {
+			days = 10
+	}
+	
+	option = {
+		name = as_equipment.22_a
+		ai_chance = {
+			factor = 10
+		}
+		add_equipment_to_stockpile = {
+				type = artillery_equipment_2
+				amount = 500
+		}
+		add_equipment_to_stockpile = {
+				type = motorized_artillery_equipment_2
+				amount = -500
+		}		
+	}		
+}
+
+country_event = {
+	id = as_equipment.26
+	title = as_equipment.26.t
+	desc = as_equipment.26.d
+	picture = GFX_news_event_tank_factory
+	
+	trigger = {
+		is_ai = yes	
+		has_equipment = { motorized_artillery_equipment_3 > 2000 }
+	}
+	
+	mean_time_to_happen = {
+			days = 10
+	}
+	
+	option = {
+		name = as_equipment.22_a
+		ai_chance = {
+			factor = 10
+		}
+		add_equipment_to_stockpile = {
+				type = artillery_equipment_3
+				amount = 500
+		}
+		add_equipment_to_stockpile = {
+				type = motorized_artillery_equipment_3
+				amount = -500
+		}		
+	}		
 }

@@ -1,0 +1,31 @@
+ideas = {
+	country = {
+
+		fascist_threat = {
+			
+			removal_cost = -1
+			
+			allowed = {
+				always = no     # event
+			}
+			
+			cancel = {
+				OR = {
+					GER = { exists = no }
+					GER = { NOT = { has_government = fascism } }
+					has_war_with = GER
+				}
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+			
+			picture = generic_communism_drift_bonus
+	
+			modifier = {
+				war_support_factor = 0.25
+			}	
+		}		
+	}
+}

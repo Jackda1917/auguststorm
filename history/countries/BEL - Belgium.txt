@@ -158,7 +158,7 @@ create_country_leader = {
 
 create_country_leader = {
 	name = "Victor Serge"
-	desc = ""
+	desc = "POLITICS_VICTOR_SERGE_DESC"
 	picture = "gfx/leaders/Europe/Portrait_Europe_Generic_2.dds"
 	expire = "1947.11.17"
 	ideology = leninism
@@ -182,11 +182,11 @@ create_corps_commander = {
 	name = "M.C.L. Keyaerts"
 	portrait_path = "gfx/leaders/Europe/Portrait_Europe_Generic_land_2.dds"
 	traits = { trait_mountaineer hill_fighter }
-	skill = 4
-	attack_skill = 3
+	skill = 2
+	attack_skill = 2
 	defense_skill = 2
-	planning_skill = 4
-	logistics_skill = 4
+	planning_skill = 2
+	logistics_skill = 2
 }
 
 create_navy_leader = {

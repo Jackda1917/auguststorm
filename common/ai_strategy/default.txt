@@ -1,5 +1,5 @@
 # Written by Henrik "Groogy" Hansson
-# Modified by Daniel "Da9L" Sjöberg, Jackda, Dermeister  
+# Modified by Daniel "Da9L" Sjöberg
 
 # befriend
 # conquer
@@ -15,210 +15,12 @@
 # contain
 # area_priority
 
-major_limit_air_wings = {
-	enable = {
-		#date > 1942.7.1
-		has_equipment = { single_engine_airframe > 4499 }
-		OR = {
-			original_tag = GER 
-			original_tag = FRA
-			original_tag = ENG
-			original_tag = SOV
-			original_tag = USA
-			original_tag = ITA
-			original_tag = JAP			
-		}
-	}
-	
-	abort = {
-		has_equipment = { single_engine_airframe < 4500 } 
-	}	
-	
-	ai_strategy = {
-		type = equipment_production_factor
-		id = cas
-		value = -70
-	}
-	
-	ai_strategy = {
-		type = equipment_production_factor
-		id = fighter
-		value = -50
-	}
-
-} 
-
-
-major_dont_waste_on_templates = {			# Because scripted templates
-	enable = {
-		always = yes
-		OR = {
-			original_tag = GER 
-			original_tag = FRA
-			original_tag = ENG
-			original_tag = SOV
-			original_tag = USA
-			original_tag = CAN
-			original_tag = ITA
-			original_tag = JAP			
-		}
-	}
-	ai_strategy = {
-		type = template_prio
-		id = infantry
-		value = -100
-	}
-
-	ai_strategy = {
-		type = template_prio
-		id = paratroopers
-		value = -100
-	}
-
-	ai_strategy = {
-		type = template_prio
-		id = mountaineers
-		value = -100
-	}
-
-	ai_strategy = {
-		type = template_prio
-		id = marines
-		value = -100
-	}
-
-	ai_strategy = {
-		type = template_prio
-		id = cavalry
-		value = -100
-	}
-
-	ai_strategy = {
-		type = template_prio
-		id = light_armor
-		value = -100
-	}
-
-	ai_strategy = {
-		type = template_prio
-		id = medium_armor
-		value = -100
-	}
-	
-	ai_strategy = {
-		type = template_prio
-		id = heavy_armor
-		value = -100
-	}	
-
-	ai_strategy = {
-		type = template_prio
-		id = mechanized
-		value = -100
-	}
-
-	ai_strategy = {
-		type = template_prio
-		id = motorized
-		value = -100
-	}
-	
-}
-
-end_all_production = {
-	enable = {
-		OR = {
-			# Stop all production of units if the country has maxed it's cap
-			as_hyper_power_production_maxed = yes 	# 500+ IC
-			as_super_power_production_maxed = yes 	# 400-500 IC
-			as_great_power_production_maxed = yes 	# 300-400 IC
-			as_major_power_production_maxed = yes 	# 200-400 IC
-			as_middle_power_production_maxed = yes 	# 100-200 IC
-			as_minor_power_production_maxed = yes 	# 50-100 IC
-			as_micro_power_production_maxed = yes 	# 25-50 IC
-			as_nano_power_production_maxed = yes 	# <25 IC
-		}
-	}
-	abort = {
-		# If no cap has been breached, resume production
-		OR = {	
-			AND = {	
-				as_hyper_power_production_maxed = no 	# 500+ IC
-				as_super_power_production_maxed = no 	# 400-500 IC
-				as_great_power_production_maxed = no 	# 300-400 IC
-				as_major_power_production_maxed = no 	# 200-400 IC
-				as_middle_power_production_maxed = no 	# 100-200 IC
-				as_minor_power_production_maxed = no 	# 50-100 IC
-				as_micro_power_production_maxed = no 	# 25-50 IC
-				as_nano_power_production_maxed = no 	# <25 IC
-			}
-			has_idea = war_economy
-			has_idea = tot_economic_mobilisation
-		}
-	}
-
-	ai_strategy = {
-		type = role_ratio
-		id = infantry
-		value = -100
-	}
-
-	ai_strategy = {
-		type = role_ratio
-		id = paratroopers
-		value = -100
-	}
-
-	ai_strategy = {
-		type = role_ratio
-		id = mountaineers
-		value = -100
-	}
-
-	ai_strategy = {
-		type = role_ratio
-		id = marines
-		value = -100
-	}
-
-	ai_strategy = {
-		type = role_ratio
-		id = cavalry
-		value = -100
-	}
-
-	ai_strategy = {
-		type = role_ratio
-		id = armor
-		value = -100
-	}
-
-	ai_strategy = {
-		type = role_ratio
-		id = mechanized
-		value = -100
-	}
-
-	ai_strategy = {
-		type = role_ratio
-		id = motorized
-		value = -100
-	}
-}
-
 default_unit_production = {
 	enable = {
 		always = yes
 		NOT = { original_tag = GER } NOT = { original_tag = FRA } NOT = { original_tag = CHI  } NOT = { original_tag = ENG  }
 		NOT = { original_tag = SOV } NOT = { original_tag = USA } NOT = { original_tag = CAN } NOT = { original_tag = PRC  } 
 	}
-
-	ai_strategy = {
-		type = template_prio
-		id = cavalry
-		value = -100
-	}
-	
 	ai_strategy = {
 		type = role_ratio
 		id = paratroopers
@@ -243,12 +45,6 @@ default_unit_production = {
 		value = 2
 	}
 
-	ai_strategy = {
-		type = role_ratio
-		id = mobile
-		value = 1
-	}	
-	
 	ai_strategy = {
 		type = role_ratio
 		id = infantry
@@ -292,7 +88,6 @@ default_unit_production = {
 		type = unit_ratio
 		id = capital_ship
 		value = 20
-
 	}
 
 	ai_strategy = {
@@ -311,14 +106,12 @@ default_unit_production = {
 		type = unit_ratio
 		id = convoy
 		value = 15
-
 	}
 	
 	ai_strategy = {
 		type = equipment_production_factor
 		id = fighter
-		value = 40
-
+		value = 30
 	}
 	
 	ai_strategy = {
@@ -330,8 +123,7 @@ default_unit_production = {
 	ai_strategy = {
 		type = equipment_production_factor
 		id = artillery
-		value = 30
-
+		value = 20
 	}
 }
 
@@ -379,11 +171,11 @@ default_garrison_production = {
 			original_tag = FRA
 			original_tag = JAP
 		}
-		ai_wants_divisions >  12 #Massively decreasing the amount of paratroopers the AI wants
+		ai_wants_divisions >  12 #Massively decreasing the amount of garrison and suppression the AI wants
 		is_major = yes
 	}
 	abort = {
-		ai_wants_divisions < 13 #Massively decreasing the amount of paratroopers the AI wants
+		ai_wants_divisions < 13 #Massively decreasing the amount of garrison and suppression the AI wants
 		is_major = no
 	}
 
@@ -391,6 +183,12 @@ default_garrison_production = {
 		type = role_ratio
 		id = garrison
 		value = 5
+	}
+	
+	ai_strategy = {
+		type = role_ratio
+		id = suppression
+		value = 2
 	}
 }
 
@@ -451,11 +249,7 @@ default_mobile_production = {
 
 default_armored_production = {
 	enable = {
-		NOT = { 
-			original_tag = GER 
-			original_tag = CZE 
-			original_tag = SOV 
-		}		
+		NOT = { original_tag = GER }
 		ai_wants_divisions > 49
 	}
 	abort = {
@@ -477,11 +271,7 @@ default_armored_production = {
 
 highered_armored_production = {
 	enable = {
-		NOT = { 
-			original_tag = GER 
-			original_tag = CZE 
-			original_tag = SOV 
-		}		
+		NOT = { original_tag = GER }
 		num_of_military_factories > 69
 	}
 	abort = {
@@ -569,10 +359,7 @@ more_naval_focused_nation = {
 
 default_area_priority = {
 	enable = {
-		NOT = { original_tag = GER }
-		NOT = { original_tag = FRA }
-		NOT = { original_tag = ITA }	# AS
-		NOT = { original_tag = ENG }	# AS		
+		NOT = { original_tag = GER } NOT = { original_tag = FRA }
 	}
 
 	ai_strategy = {
@@ -608,7 +395,7 @@ default_area_priority = {
 	ai_strategy = {
 		type = area_priority
 		id = africa
-		value = -25
+		value = -90
 	}
 	
 	ai_strategy = {
@@ -631,12 +418,12 @@ default_stockpile_management = {
 	}
 
 	abort = {
-		num_divisions < 125
+		num_divisions < 130
 	}
 
 	ai_strategy = {
-		type = equipment_stockpile
-		value = 20 # double base stockpile
+		type = equipment_stockpile_surplus_ratio
+		value = 35 # double base stockpile #from 25 to 35
 	}
 }
 
@@ -693,7 +480,7 @@ DEFAULT_template_design = {
 	}
 }
 
-DEFAULT_late_template_design = {
+DEFAULT_template_design = {
 	enable = {
 		NOT = { OR = { tag = GER tag = ENG tag = SOV tag = ITA tag = JAP tag = USA tag = POL } }
 		date > 1940.1.1				
@@ -748,9 +535,7 @@ DEFAULT_late_template_design = {
 	}
 }
 
-
 save_admiral_pp_for_later = {
-
 	enable = {
 		has_war = no
 		threat < 0.3
@@ -762,7 +547,6 @@ save_admiral_pp_for_later = {
 			threat > 0.3
 			has_political_power > 200
 		}
-
 	}
 
 	ai_strategy = { # dont burn PP on admirals (can still get free ones)
@@ -796,7 +580,6 @@ DEFAULT_mot_artillery = {
 		value = 5
 	}
 }
-
 do_not_waste_pp_if_saving_for_manpower_laws = {
 
 	enable = {
@@ -814,6 +597,22 @@ do_not_waste_pp_if_saving_for_manpower_laws = {
 		type = pp_spend_priority
 		id = relation
 		value = -9999
+	}
+
+	ai_strategy = {
+		type = pp_spend_priority
+		id = guarantee
+		value = -9999
+	}
+}
+
+do_not_waste_pp_guarantee_vic = {
+
+	enable = {
+		has_war = yes
+	}
+	abort = {
+		has_war = no
 	}
 
 	ai_strategy = {

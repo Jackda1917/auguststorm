@@ -18,10 +18,10 @@
 	
 	support = {
 		recon = { x = 0 y = 0 }
-		anti_tank = { x = 0 y = 1 }
-		engineer = { x = 0 y = 2 }
-		signal_company = { x = 0 y = 3 }
-		artillery = { x = 0 y = 4 }
+		engineer = { x = 0 y = 1 }
+		signal_company = { x = 0 y = 2 }
+		artillery = { x = 0 y = 3 }
+		#anti_tank = { x = 0 y = 4 }		
 	}
 }
 
@@ -77,7 +77,7 @@ division_template = {
 }
 
 division_template = {
-	name = "SS-Division"
+	name = "SS-Brigade"
 
 	regiments = {
 		motorized = { x = 0 y = 0 }
@@ -89,7 +89,8 @@ division_template = {
 		motorized = { x = 1 y = 2 }
 	}
 	priority = 2
-	template_counter=0
+	template_counter = 0
+	is_locked = yes
 }
 division_template = {
 	name = "Gebirgsjäger-Brigade"
@@ -344,8 +345,8 @@ units = {
 	division= {	
 		name = "SS-Verfügungstruppe" 
 		location = 6521 # Berlin
-		division_template = "SS-Division"
-		start_experience_factor = 0.3
+		division_template = "SS-Brigade"
+		start_experience_factor = 0.5 #0.3
 	}
 
 	##### Heeresdienststellen

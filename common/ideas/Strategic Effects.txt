@@ -68,38 +68,54 @@ ideas = {
 				industrial_capacity_factory = -0.40
 				conscription = -0.25
 			}	
+			
+			ai_will_do = {
+				factor = 0
+			}			
+			
 		}		
 		
 		##### Great Powers
 		
 		regional_power = {
-			allowed = { always = no }
+			allowed = { 
+				#is_major = yes 
+				num_of_factories > 39
+				num_of_factories < 59 
+			}
+				
 			picture = generic_fascism_drift_bonus
 			
 			cancel = {
 				OR = {
 					has_idea = great_power
-					has_idea = super_power					
+					has_idea = super_power	
+					is_major = no
 				}			
 			}
 			
 			modifier = {
-				political_power_factor = 0.1
+				political_power_gain = 0.25
 			}
 			ai_will_do = { factor = 0 }
 		}
 		
 		great_power = {
-			allowed = { always = no }
+			allowed = { 
+				is_major = yes 
+				num_of_factories > 59
+				num_of_factories < 499				
+			}
 			picture = generic_fascism_drift_bonus
 			modifier = {
-				political_power_factor = 0.5
+				political_power_gain = 2
 			}
 			
 			cancel = {
 				OR = {
 					has_idea = regional_power
-					has_idea = super_power					
+					has_idea = super_power
+					is_major = no
 				}			
 			}			
 			
@@ -107,20 +123,42 @@ ideas = {
 		}
 		
 		super_power = {
-			allowed = { always = no }
+			allowed = { 
+				is_major = yes 
+				num_of_factories > 499			
+			}
 			picture = generic_fascism_drift_bonus
 			modifier = {
-				political_power_factor = 2
+				political_power_gain = 6
 			}
 			
 			cancel = {
 				OR = {
 					has_idea = regional_power
-					has_idea = great_power					
+					has_idea = great_power	
+					is_major = no
 				}			
 			}			
 			
 			ai_will_do = { factor = 0 }
 		}
+		
+		defeated = {						# To force surrender
+			
+			allowed = {
+				always = no # Triggered via event
+			}
+
+			picture = FRA_national_mobilization_focus
+			
+			modifier = {
+				war_support_factor = -0.99
+			}
+	
+			ai_will_do = {
+				factor = 0
+			}
+		}		
+		
 	}
 }

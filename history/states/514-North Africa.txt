@@ -2,7 +2,7 @@
 state={
 	id=514
 	name="STATE_514" # Algerian Desert
-	buildings_max_level_factor=1.000   manpower = 207733
+	manpower = 207733
 	
 	state_category = wasteland
 	impassable = yes

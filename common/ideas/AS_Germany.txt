@@ -33,9 +33,9 @@ ideas = {
 			modifier = {
 				stability_factor = 0.02
 				political_power_gain = 0.1
-				conscription = -0.002
+				conscription = -0.004
 				army_morale_factor = -0.01
-				production_factory_efficiency_gain_factor =	-0.01
+				production_factory_efficiency_gain_factor =	-0.04
 			}
 		}
 		as_germany_waffen_ss_volunteers = {
@@ -51,8 +51,8 @@ ideas = {
 
 			modifier = {
 				conscription = 0.002
-				army_morale_factor = -0.05
-				production_factory_efficiency_gain_factor =	-0.02
+				army_morale_factor = -0.03
+				production_factory_efficiency_gain_factor =	-0.01
 			}
 		}
 		as_germany_waffen_ss_foreigners = {
@@ -70,8 +70,8 @@ ideas = {
 				stability_factor = -0.01
 				political_power_gain = -0.1
 				conscription = 0.004
-				army_morale_factor = -0.08
-				production_factory_efficiency_gain_factor =	-0.03
+				army_morale_factor = -0.05
+				production_factory_efficiency_gain_factor =	-0.05
 			}
 		}
 		GER_french_collaboration = {

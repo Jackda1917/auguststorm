@@ -19,7 +19,6 @@
  internationalism_desc:0 "The State leaders must take the control over the main production means, our economic elites are totally failing and gradually selling the country to foreign interests." 
  revolutionary_communism:0 "Proletarian Internationalism"
  revolutionary_communism_desc:0 "Working Class ideology knows no borders. Another nation may call itself sovereign, but our convictions are above such claims. Nationalism is part of Bourgeoisie's ideology, it divides the workers.That's why Imperialists and Capitalists of our own country are our worst ennemies." 
- ##### August Storm ###### [Root.GetLeader]
  grand_land_offensive_prepare:0 "Prepare Grand Land Offensive"
  grand_land_offensive_prepare_desc:0 "Our General Staff will make the necessary preparations for a devastating land offensive."
  grand_land_offensive_launch:0 "Launch Grand Land Offensive"
@@ -141,11 +140,13 @@
  JAP_jungle_training_desc:0 "Pacific Islands, India, Burma and Indochina are covered in jungle and special training is recommended to make our soldiers effective in this dangerous terrain.
  JAP_total_war_mobilisation_focus:0 "Total War Mobilisation of the Empire"
  JAP_total_war_mobilisation_focus_desc:0 "Our enemies are numerous and getting stronger day by day. We have no choice but to prepare our nation to be totally mobilised for the war effort, if we want to have a chance to match them. " 
+ JAP_strike_usa_focus:0 "Strike the USA !"
+ JAP_strike_usa_focus_desc:0 "Prepare the Imperial forces to hit hard and fast the US military positions in the pacific..."
  GER_total_war_mobilisation_focus:0 "Total War Mobilisation of the Reich"
  GER_total_war_mobilisation_focus_desc:0 "Our enemies are numerous and getting stronger day by day. We have no choice but to prepare our nation to be totally mobilised for the war effort, if we want to have a chance to match them. "
  GER_atlantic_wall_focus:0 "Build the Atlantikwall"
  GER_atlantic_wall_focus_desc:0 "Build an extensive system of coastal defence and fortifications along the coast of continental Europe."
- GER_finish_atlantic_wall_focus:0 "Finish the Atlantikwall"
+ GER_finish_atlantic_wall_focus:0 "Complete the Atlantikwall"
  GER_finish_atlantic_wall_focus_desc:0 "Complete the wall to maintain inviolable our Reich."
  ITA_total_war_mobilisation_focus:0 "Total War Mobilisation of the people"
  ITA_total_war_mobilisation_focus_desc:0 "Our enemies are numerous and getting stronger day by day. We have no choice but to prepare our nation to be totally mobilised for the war effort, if we want to have a chance to match them. "

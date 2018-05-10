@@ -65,19 +65,6 @@ set_politics = {
 }
 
 create_country_leader = {
-	name = "Lavrentiy Beria"
-	id = 4980	
-	desc = "POLITICS_LAVRENTIY_BERIA_DESC"
-	picture = "Portrait_Soviet_Generic_2.dds"
-	expire = "1953.12.23"
-	ideology = stalinism
-	traits = {
-		backroom_backstabber # was none
-		democratic_reformer
-	}
-}
-
-create_country_leader = {
 	name = "Konstantin Rodzaevsky"
 	desc = "POLITICS_KONSTANTIN_RODZAEVSKY_DESC"
 	picture = "Portrait_Soviet_Konstantin_Rodzaevsky.dds"

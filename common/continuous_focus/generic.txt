@@ -22,8 +22,7 @@ continuous_focus_palette = {
 		
 		enabled = {
 			land_doctrine_level > 4
-			has_war = yes
-			NOT = { has_country_flag = reset_glo_flag }
+			has_war = yes			
 			OR = {
 				AND = { 
 					is_ai = yes
@@ -34,7 +33,8 @@ continuous_focus_palette = {
 					num_divisions > 99
 					has_equipment = { support_equipment > 9999 }
 				}
-			}
+			}		
+			NOT = { has_country_flag = reset_glo_flag }
 		}			
 				
 		select_effect = {

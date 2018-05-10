@@ -1,6 +1,6 @@
 ############################### AS ################################
 
-Med_arms_template = {
+med_arms_template = {
 
 	potential = {
 		TAG = GER

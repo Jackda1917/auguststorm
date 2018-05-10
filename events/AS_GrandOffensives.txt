@@ -2,7 +2,6 @@
 
 add_namespace = glo
 
-
 country_event = {					
 	id = glo.1
 	title = glo.1.t
@@ -14,7 +13,11 @@ country_event = {
 	option = {
 		name = glo.3.a
 		set_country_flag = grand_land_offensive_flag
-		add_country_leader_trait = grand_land_offensive_plan
+		#add_country_leader_trait = grand_land_offensive_plan
+		custom_effect_tooltip = grand_land_offensive_TT
+		hidden_effect = {	
+			send_equipment = { target = D15 type = support_equipment amount = 10000 }
+		}
 	}
 }
 
@@ -29,7 +32,7 @@ country_event = {						# GLO ends
 	}
 	
 	mean_time_to_happen = {
-				days = 20
+				days = 15
 	}
 	
 	immediate = {
@@ -39,9 +42,8 @@ country_event = {						# GLO ends
 	option = {
 			name = glo.2.a	
 			hidden_effect = {	
-				remove_country_leader_trait = grand_land_offensive_plan					
-				clr_country_flag = grand_land_offensive_flag									
-				send_equipment = { target = D15 type = support_equipment amount = 10000 } 				
+				#remove_country_leader_trait = grand_land_offensive_plan					
+				clr_country_flag = grand_land_offensive_flag									 				
 			}
 	}	
 }
@@ -57,7 +59,7 @@ country_event = {				### Scripted For AI only
 	option = {
 		name = glo.3.a
 		set_country_flag = grand_land_offensive_ai_flag
-		add_country_leader_trait = grand_land_offensive_plan_ai
+		#add_country_leader_trait = grand_land_offensive_plan_ai
 	}
 }
 
@@ -72,21 +74,15 @@ country_event = {				### Scripted For AI only
 	}
 	
 	mean_time_to_happen = {
-				days = 30
+				days = 25
 	}
 	
 	option = {
 		name = glo.4.a	
 		hidden_effect = {	
 			clr_country_flag = grand_land_offensive_ai_flag
-			remove_country_leader_trait = grand_land_offensive_plan_ai
-			set_country_flag = reset_glo_flag
-			if = {
-				limit = {  
-					is_ai = yes
-				}					
-				send_equipment = { target = D15 type = support_equipment amount = 1000 } 
-			}			
+			#remove_country_leader_trait = grand_land_offensive_plan_ai
+			set_country_flag = reset_glo_flag			
 		}
 	}	
 }

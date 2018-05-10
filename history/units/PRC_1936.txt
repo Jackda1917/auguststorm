@@ -48,7 +48,7 @@ units = {
 		division_template = "Juntuán"
 		start_experience_factor = 0.6  # was 0.3
 		start_equipment_factor = 0.7
-		force_equipment_variants = { infantry_equipment_1 = { owner = "CHI" } }	
+		force_equipment_variants = { infantry_equipment_1 = { owner = "SOV" } }	
 	}
 	
 	### Provincial Forces ###

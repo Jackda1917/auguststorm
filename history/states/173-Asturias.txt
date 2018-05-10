@@ -2,7 +2,7 @@
 state={
 	id=173
 	name="STATE_173" # Granada
-	buildings_max_level_factor=1.000   manpower = 1662292
+	manpower = 1662292
 	
 	state_category = city
 	

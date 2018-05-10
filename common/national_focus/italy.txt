@@ -2546,7 +2546,7 @@ focus_tree = {
 	focus = {
 		id = ITA_total_war_mobilisation_focus
 		icon = GFX_goal_generic_construct_military
-		prerequisite = { focus = ITA_army_primacy }
+		prerequisite = { focus = ITA_industrial_effort_2 }
 
 		bypass = {
 			has_idea = tot_economic_mobilisation
@@ -2561,9 +2561,9 @@ focus_tree = {
 			enemies_strength_ratio > 4
 		}
 
-		x = 0
-		y = 1
-		relative_position_id = ITA_army_primacy
+		x = -2
+		y = 0
+		relative_position_id = ITA_industrial_effort_2
 		cost = 10 
 		cancel_if_invalid = yes		
 		ai_will_do = {
@@ -2572,6 +2572,7 @@ focus_tree = {
 		completion_reward = {
 			set_country_flag = ita_tot_economic_mobilisation 
 			add_stability = -0.30
+			add_war_support = -0.30 
 		}
 	}	
 

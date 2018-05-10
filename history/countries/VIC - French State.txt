@@ -173,9 +173,21 @@ create_field_marshal = {
 	name = "Maxime Weygand"
 	picture = "Portrait_France_Maxime_Weygand.dds"
 	traits = { defensive_doctrine old_guard inflexible_strategist career_officer }
-	skill = 3
-	attack_skill = 3
-	defense_skill = 3
+	skill = 2 #3
+	attack_skill = 1
+	defense_skill = 2
+	planning_skill = 2
+	logistics_skill = 2
+}
+
+create_corps_commander = {
+	name = "Henri Giraud"
+	picture = "portrait_france_henri_giraud.dds"
+	traits = {  trickster trait_cautious career_officer infantry_officer }
+	id = 717
+	skill = 2 #3
+	attack_skill = 2
+	defense_skill = 2
 	planning_skill = 2
 	logistics_skill = 2
 }

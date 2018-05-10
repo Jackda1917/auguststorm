@@ -44,7 +44,7 @@ equipments = {
 		# (Describes combat behaviour - hidden stat)
 		offensive_weapons = no
 		
-		build_cost_ic = 8750
+		build_cost_ic = 9750 #8750
 		resources = {
 			oil = 1
 			steel = 3
@@ -91,7 +91,7 @@ equipments = {
 		
 		port_capacity_usage = 2
 
-		build_cost_ic = 9500
+		build_cost_ic = 10500 #9500
 		resources = {
 			oil = 1
 			steel = 4
@@ -130,7 +130,7 @@ equipments = {
 		
 		port_capacity_usage = 2
 
-		build_cost_ic = 10250
+		build_cost_ic = 12000 #10250
 		resources = {
 			oil = 2
 			steel = 4
@@ -169,7 +169,7 @@ equipments = {
 		
 		port_capacity_usage = 2
 
-		build_cost_ic = 11000
+		build_cost_ic = 13500 #11000
 		resources = {
 			oil = 2
 			steel = 5

@@ -107,8 +107,8 @@ ideas = {
 			removal_cost = -1
 			
 			modifier = {
-				army_attack_factor = -0.5
-				army_defence_factor = -0.5
+				army_attack_factor = -0.6 #-0.5
+				army_defence_factor = -0.1 #-0.5
 				mobilization_speed = -0.3
 			}
 
@@ -132,7 +132,7 @@ ideas = {
 			
 			modifier = {
 				army_attack_factor = -0.33
-				army_defence_factor = -0.33
+				army_defence_factor = -0.2 #-033
 				mobilization_speed = -0.2
 			}
 
@@ -156,7 +156,7 @@ ideas = {
 			
 			modifier = {
 				army_attack_factor = -0.16
-				army_defence_factor = -0.16
+				army_defence_factor = -0.1  #-0.16
 				mobilization_speed = -0.1
 			}
 

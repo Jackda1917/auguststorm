@@ -1,0 +1,49 @@
+
+state = {
+	id=766
+	name="STATE_766" # Cisjordan
+	manpower = 500000
+	
+	state_category = rural
+
+	history={
+		owner = ENG
+		add_claim_by = ISR
+
+		buildings = {
+			infrastructure = 4
+			industrial_complex = 1
+		}
+		victory_points = {
+			1086 1 
+		}
+
+		1948.5.15 = {
+			owner = JOR
+			controller = JOR
+			add_claim_by = JOR
+		}
+
+		1950.4.24 = {
+			remove_claim_by = JOR
+			add_core_of = JOR
+		}
+
+		1967.6.7 = {
+			controller = ISR
+		}
+
+		1967.6.10 = {
+			owner = ISR
+		}
+		
+		1988.7.31 = {
+			remove_core_of = JOR
+			add_core_of = PAL
+		}
+	}
+
+	provinces = {
+		1086 7107 7176 1
+	}
+}

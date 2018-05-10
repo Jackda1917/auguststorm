@@ -23,9 +23,9 @@ ideas = {
 			cancel_if_invalid = yes
 			
 			modifier = {
-				ai_get_ally_desire_factor = -200
+				ai_get_ally_desire_factor = -500
 				conscription_factor = -0.5	# AS			
-				join_faction_tension = 0.75
+				join_faction_tension = 1
 				consumer_goods_factor = 0.1        # AS
 				war_support_factor = -0.9
 			}

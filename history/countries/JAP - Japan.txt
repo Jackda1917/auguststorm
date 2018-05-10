@@ -48,6 +48,7 @@ set_technology = {
 	early_submarine = 1
 	basic_submarine = 1
 	early_destroyer = 1
+	basic_destroyer = 1	#
 	early_light_cruiser = 1
 	basic_light_cruiser = 1
 	early_heavy_cruiser = 1
@@ -73,50 +74,6 @@ create_import = {
 		exporter = USA
 }
 
-add_political_power = 550 # was none
-
-set_convoys = 400
-
-set_politics = {
-
-	parties = {
-		democratic = { 
-			popularity = 0
-		}
-
-		fascism = {
-			popularity = 100
-		}
-		
-		communism = {
-			popularity = 0
-			#banned = no #default is no
-		}
-	}
-	
-	ruling_party = fascism
-	last_election = "1936.1.1"
-	election_frequency = 48
-	elections_allowed = no
-}
-
-if = {
-	limit = {
-		has_dlc = "Together for Victory"
-	}
-	set_autonomy = {
-		target = MEN
-		autonomous_state = autonomy_integrated_puppet
-	}
-	set_autonomy = {
-		target = MAN
-		autonomous_state = autonomy_integrated_puppet
-	}
-	else = {
-		puppet = MAN
-		puppet = MEN
-	}
-}
 
 
 1939.1.1 = {
@@ -223,7 +180,77 @@ if = {
 		concentrated_industry2 = 1
 		concentrated_industry3 = 1
 	}
+}
 
+add_political_power = 550 # was none
+
+if = {					# AS
+	limit = { is_ai = yes }
+	add_political_power = 300
+	add_ideas = {
+		JAP_mitsumasa_yonai
+		takuo_godo
+		#laws
+		war_economy 						#tot_economic_mobilisation
+		extensive_conscription				#service_by_requirement
+		limited_exports						#closed_economy		
+	}	
+}
+
+set_convoys = 400
+
+if = {
+	limit = {
+		has_dlc = "Together for Victory"
+	}
+	set_autonomy = {
+		target = MEN
+		autonomous_state = autonomy_integrated_puppet
+	}
+	set_autonomy = {
+		target = MAN
+		autonomous_state = autonomy_integrated_puppet
+	}
+	else = {
+		set_autonomy = {
+			target = MEN
+			autonomous_state = autonomy_puppet
+		}
+		set_autonomy = {
+			target = MAN
+			autonomous_state = autonomy_puppet
+		}
+	}
+}
+
+
+set_politics = {
+
+	parties = {
+		democratic = { 
+			popularity = 0
+		}
+
+		fascism = {
+			popularity = 100
+		}
+		
+		communism = {
+			popularity = 0
+			#banned = no #default is no
+		}
+
+
+	}
+	
+	ruling_party = fascism
+	last_election = "1936.1.1"
+	election_frequency = 48
+	elections_allowed = no
+}
+
+
+1939.1.1 = {
 	set_politics = {
 
 		parties = {
@@ -256,6 +283,7 @@ if = {
 	USA = { end_puppet = JAP }
 }
 
+
 create_country_leader = {
 	name = "Hirohito"
 	desc = "POLITICS_Hirohito_DESC"
@@ -264,19 +292,18 @@ create_country_leader = {
 	ideology = fascism_ideology
 	traits = {
 		warrior_code
-
 		emperor_showa
 		imperial_sanction
 	}
 	id = 700 #Hirohito
 }
-}
+
 create_country_leader = {
 	name = "Kyuichi Tokuda"
 	desc = "POLITICS_Hirohito_DESC"
 	picture = "GFX_Portrait_kyuichi_tokuda"
 	expire = "1989.1.1"
-	ideology = stalinism
+	ideology = stalinism #marxism
 	traits = {
 
 	}
@@ -287,13 +314,9 @@ create_country_leader = {
 
 	desc = "POLITICS_Hirohito_DESC"
 	picture = "GFX_Portrait_tetsu_katayama"
-
 	expire = "1989.1.1"
 	ideology = liberalism
-
 	traits = {
-
-
 	}
 }
 create_corps_commander = {
@@ -312,7 +335,7 @@ create_corps_commander = {
 create_field_marshal = {
 	name = "Hisaichi Terauchi"
 	picture = "Portrait_Japan_Hisaichi_Terauchi.dds"
-	traits = { 
+	traits = {
 		offensive_doctrine
 		JAP_samurai_lineage   # hakushaku
 		politically_connected
@@ -329,12 +352,6 @@ create_field_marshal = {
 		picture = "Portrait_Japan_Shunroku_Hata.dds"
 	traits = { offensive_doctrine JAP_samurai_lineage }
 	skill = 4
-
-
-
-
-
-
 	attack_skill = 3
 	defense_skill = 4
 	planning_skill = 2
@@ -445,12 +462,6 @@ create_corps_commander = {
 		picture = "Portrait_Japan_Kenji_Doihara.dds"
 	traits = { career_officer substance_abuser }
 	skill = 1 
-
-
-
-
-
-
 	attack_skill = 1
 	defense_skill = 1
 	planning_skill = 1
@@ -704,7 +715,6 @@ create_navy_leader = {
 	traits = {  }
 	skill = 3
 }
-
 
 ### VARIANTS ###
 	# 1936 Start #

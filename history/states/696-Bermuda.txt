@@ -1,7 +1,7 @@
 state={
 	id=696
 	name="STATE_696"
-	buildings_max_level_factor=1.000   manpower=37516
+	manpower=37516
 	state_category = small_island
 
 	history={

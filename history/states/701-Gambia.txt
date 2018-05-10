@@ -1,7 +1,7 @@
 state={
 	id=701
 	name="STATE_701"
-	buildings_max_level_factor=1.000   manpower = 199520
+	manpower = 199520
 	
 	state_category = enclave
 	history={
