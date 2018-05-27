@@ -17,7 +17,7 @@ leader_traits = {
 			}
 		}
 
-		cost = 1000
+		cost = 3000
 		
 		corps_commander_modifier = {
 			max_commander_army_size = 12
@@ -28,7 +28,7 @@ leader_traits = {
 		}
 		
 		ai_will_do = {
-			factor = 1000
+			factor = 10
 		}
 
 		trait_type = assignable_trait

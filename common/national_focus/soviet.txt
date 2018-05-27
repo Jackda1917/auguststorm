@@ -2434,6 +2434,10 @@ focus_tree = {
 		completion_reward = {
 			if = {
 				limit = { NOT = { has_government = revolutionary } }
+				unlock_decision_tooltip = SOV_demand_estonia
+				unlock_decision_tooltip = SOV_demand_latvia
+				unlock_decision_tooltip = SOV_demand_lithuania	
+				unlock_decision_tooltip = SOV_demand_karjala				
 				add_state_claim = 146 # Karjala
 				add_state_core = 146
 				add_state_claim = 772 # Vilnius
@@ -2870,6 +2874,7 @@ focus_tree = {
 					add_opinion_modifier = { target = SOV modifier = claimed_bucovina }
 				}
 			}
+			unlock_decision_tooltip = SOV_demand_bessarabia		
 		}
 	}
 

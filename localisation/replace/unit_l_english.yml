@@ -1,0 +1,3 @@
+﻿l_english:
+ FM_GAIN_TRAIT_LEVEL:0 "Army Generals can assign a new trait when they are promoted.\n" 
+ FIELD_MARSHAL_BONUS_INFO:0 "Non-§HArmy General§! bonuses only apply by $RATIO|%.0H$\n" 

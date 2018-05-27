@@ -46,8 +46,8 @@ No surprise there: the more players will play the mod the more feedback you make
 
 August Storm detailed changes (cumulative but not exhaustive!):
 
-Current Version: 1.4.1.31
-Compatibility: HOI IV 1.4.1 DOD
+Current Version: 1.5.3.1
+Compatibility: HOI IV 1.5.3 WTT
 
 - Please, don't forget to evaluate the mod on Steam Workshop, we have put a link in the game menu for that, Thanks ! -
 
@@ -74,12 +74,17 @@ AI
 • GER AI more likely to attack Persia and Iraq
 
 Land Combat
+• Grand Land Offensive system : one Army Group get a strong combat bonus for a limited time.
 • Winter countries (FIN, SOV, NOR, SWE) fight better than their opponents in winter: temperatures checked for every combats.
+• Balanced terrain modifiers to be more realistic
+• Added Winter Equipment for (FIN, NOR, SWE, CAN and by focus to SOV) 
+• Harsher weather effects
 • Some combat tactics won’t trigger in inappropriate terrains (fe: no more Blitz in mountains nor swamps)
 • Armour related combat events more difficult to trigger (see above), but also far more decisive when effective
 
 Balance and Gameplay
 • Base combat width increased (80 to 100)
+• Grand Land Offensive, Grand Air Offensive, Grand Air-Naval Offensive
 • Improved laws (to suit historical plausibility and realism)
 • Research slots scaled with 1936 country's GDP and relative industrial/economical power
 • Improved OOBs
@@ -87,17 +92,14 @@ Balance and Gameplay
 • Modified tech-tree (extended research time will force you to make real choices)
 • Upgrade equipment time vastly increased (soldiers need time to learn…)
 • More progressive production input
-• New focus: Grand Offensive system
+• New focus for all majors : Grand Offensive system
 • Better starting Templates
 • Oresund straight rules changed. No more British landings in Poland
-• New dynamic trait ("Surprised SU" for Barbarossa, Grand Offensive Plan…)
+• New dynamic traits ("Surprised SU" for Barbarossa....)
 • New national ideas: Warlordism Disruption (CHI), Socialism In One Country (SOV), Neutrality for several countries (Persia, Turkey, Denmark…)
 • New events: Barbarossa (surprise malus to SU), Day Of Infamy (USA), Xi'an Incident (CHI, PRC), Generic Surprise attack events, STO (GER), Operation Torch (USA)...
-• Higher difficulty (Veteran mode tweaked, Grand Offensive events for AI, more aggressive AI)
+• Higher difficulty (Veteran mode tweaked,dunamic Grand Offensives for AI, more aggressive AI)
 • CZE makes tanks (35t, 38t, potentially added to German’s OOB after “Fate of Cze”)
-• Balanced terrain modifiers to be more realistic
-• Added Winter Equipment for (FIN, NOR, SWE, CAN and by focus to SOV) 
-• Harsher weather effects
 • Halved sabotage factory damage factor 
 • Historical East German provinces
 • Lower rubber cost for all units
@@ -118,7 +120,7 @@ Balance and Gameplay
 • Replace illogical "Trotskyist coup" with "Third Revolution" events chain (and add more prospective ideas)
 • Add new Ideology : "Revolutionary"
 • Reworked some ideologies
-• Too low National Unity could lead to: Fascist coup, Stalinist coup, Communist insurection.
+• Too low Stability could lead to: Fascist coup, Stalinist coup, Communist insurection.
 • Light and Medium Armours now have respectively 1 and 1.5 width
 • Factories cost slightly increased.
 • More Historical starting Spanish Republican government for SCW

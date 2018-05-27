@@ -17,16 +17,16 @@ on_actions = {
 						add_timed_idea = { idea = revolutionary_communism days = 360 }
 						add_popularity = { ideology = revolutionary popularity = 0.05 }
 						add_popularity = { ideology = communism popularity = -0.05 }	
+					}				
+				}
+				every_country  = {
+					limit = { 
+						communism > 0.03
+						has_stability < 0.60
 					}
-					every_country  = {
-						limit = { 
-							communism > 0.03
-							has_stability < 0.60
-						}
-						add_popularity = { ideology = revolutionary popularity = 0.04 }
-						add_popularity = { ideology = communism popularity = -0.03 }						
-					}					
-				}				
+					add_popularity = { ideology = revolutionary popularity = 0.04 }
+					add_popularity = { ideology = communism popularity = -0.03 }						
+				}					
 			}							
 		}
 		
@@ -375,7 +375,7 @@ on_actions = {
 						NOT = { has_offensive_war = yes }						
 					}
 
-					ROOT = { NOT = { is_ai = yes } }
+					ROOT = { is_ai = no }
 				}
 				FROM = { 
 					country_event = { id = surprise.1 } 
@@ -662,7 +662,7 @@ on_actions = {
 					NOT = { VIC = { has_war_with = GER } }					
 					VIC = { exists = yes }
 				}
-				FROM = {
+				ROOT = {
 					transfer_navy = { target = VIC }
 					VIC = {
 						annex_country = { target = FRA transfer_troops = no }

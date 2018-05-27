@@ -1053,18 +1053,11 @@ country_event = {									# AS MUST BE A DECISION
 	desc = soviet.34.d
 	picture = GFX_report_event_soviet_in_riga
 
-	#is_triggered_only = yes
-	
-	mean_time_to_happen = {
-		days = 30		
-	}
-	
+	is_triggered_only = yes
+
 	fire_only_once = yes
 	
-	trigger = {
-			
-	}
-	
+
 	immediate = { set_country_flag = lithuania_demand } 
 		
 	option = {

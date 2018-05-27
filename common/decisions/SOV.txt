@@ -1971,7 +1971,7 @@ political_actions = {
 					}		
 					has_global_flag = sov_yes_pact 		
 				}
-				has_completed_focus = SOV_claims_on_baltic
+				has_completed_focus = SOV_baltic_security
 			}					
 			146 = {
 				is_claimed_by = SOV
