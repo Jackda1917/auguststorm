@@ -30,7 +30,15 @@ autonomy_state = {
 
 	ai_overlord_wants_garrison = {
 		always = no
-		#factor = 1.0 # was none		
+	}
+
+	allowed = {
+		if = {
+			limit = { has_dlc = "Death or Dishonor" }
+			NOT = { has_government = fascism }
+			NOT = { has_government = communism }
+		}
+
 	}
 	
 	can_take_level = {

@@ -1842,7 +1842,8 @@ country_event = {
 				transfer_state = 69
 				transfer_state = 74			# was none				
 		}
-		POL = {												### AS
+		hidden_effect = {
+			POL = {												### AS
 				if = {
 					limit = {
 						POL = { is_ai = yes }
@@ -1852,11 +1853,11 @@ country_event = {
 								has_idea = tot_economic_mobilisation						
 						}
 					}
-						add_ideas = partial_economic_mobilisation
-						add_war_support = 0.4
+					add_ideas = partial_economic_mobilisation
+					add_war_support = 0.4
 				}			
-		}
-		POL = {												### AS
+			}
+			POL = {												### AS
 				if = {
 					limit = {
 						POL = { is_ai = yes }
@@ -1867,10 +1868,10 @@ country_event = {
 								has_idea = scraping_the_barrel											
 						}
 					}
-						add_ideas = extensive_conscription
+					add_ideas = extensive_conscription
 				}			
-		}
-		FRA = {												### AS
+			}
+			FRA = {												### AS
 				if = {
 					limit = {
 						FRA = { is_ai = yes }
@@ -1880,11 +1881,11 @@ country_event = {
 								has_idea = tot_economic_mobilisation						
 						}
 					}
-						add_ideas = partial_economic_mobilisation
-						add_war_support = 0.2
+					add_ideas = partial_economic_mobilisation
+					add_war_support = 0.2
 				}			
-		}
-		FRA = {												### AS
+			}
+			FRA = {												### AS
 				if = {
 					limit = {
 						FRA = { is_ai = yes }
@@ -1895,10 +1896,10 @@ country_event = {
 								has_idea = scraping_the_barrel											
 						}
 					}
-						add_ideas = extensive_conscription
+					add_ideas = extensive_conscription
 				}			
-		}
-		ENG = {												### AS
+			}
+			ENG = {												### AS
 				if = {
 					limit = {
 						ENG = { is_ai = yes }
@@ -1908,11 +1909,11 @@ country_event = {
 								has_idea = tot_economic_mobilisation						
 						}
 					}
-						add_ideas = partial_economic_mobilisation
-						add_war_support = 0.15
+					add_ideas = partial_economic_mobilisation
+					add_war_support = 0.15
 				}			
-		}
-		ENG = {												### AS
+			}
+			ENG = {												### AS
 				if = {
 					limit = {
 						ENG = { is_ai = yes }
@@ -1923,9 +1924,10 @@ country_event = {
 								has_idea = scraping_the_barrel											
 						}
 					}
-						add_ideas = extensive_conscription
+					add_ideas = extensive_conscription
 				}			
-		}		
+			}	
+		}
 		set_country_flag = sudetenland_acquired		
 		add_war_support = 0.15 #0.1
 		add_stability = 0.05

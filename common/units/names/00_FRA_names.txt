@@ -183,7 +183,7 @@
 	}
 
 
-	strategic_bomber_equipment = {
+	strat_bomber_equipment = {
 		prefix = ""
 		generic = { "Groupe de Bombardement" }
 		generic_pattern = AIR_WING_NAME_FRA_GENERIC
@@ -218,13 +218,13 @@
 	}
 	marine = {
 		prefix = ""
-		generic = { "Division d'Infanterie de Marine" }
+		generic = { "Div. d'Infanterie de Marine" }
 		generic_pattern = "UNIT_GENERIC_NAME_FRA"
 		unique = {}
 	}
 	mountaineers = {
 		prefix = ""
-		generic = { "Division d'Infanterie Alpine" }
+		generic = { "Div. d'Infanterie Alpine" }
 		generic_pattern = "UNIT_GENERIC_NAME_FRA"
 		unique = {}
 	}
@@ -236,13 +236,13 @@
 	}
 	motorized = {
 		prefix = ""
-		generic = { "Division d'Infanterie Motorisée" }
+		generic = { "Div. d'Infanterie Motorisée" }
 		generic_pattern = "UNIT_GENERIC_NAME_FRA"
 		unique = {}
 	}
 	mechanized = {
 		prefix = ""
-		generic = { "Division d'Infanterie Méchanisée" }
+		generic = { "Div. d'Infanterie Méchanisée" }
 		generic_pattern = "UNIT_GENERIC_NAME_FRA"
 		unique = {}
 	}
@@ -255,13 +255,13 @@
 	light_armor = {
 		prefix = ""
 		generic = { "Division Cuirasée" }
-		generic_pattern = "UNIT_GENERIC_NAME_GENERIC_INFANTRY"
+		generic_pattern = "UNIT_GENERIC_NAME_FRA"
 		unique = {}
 	}
 	air_assault_battalion = {
 		prefix = ""
 		generic = { "Division Aéromobile" }
-		generic_pattern = "UNIT_GENERIC_NAME_GENERIC_INFANTRY"
+		generic_pattern = "UNIT_GENERIC_NAME_FRA"
 		unique = {}
 	}
 	light_armor = {
@@ -314,7 +314,7 @@
 	}
 	medium_tank_destroyer_brigade = {
 		prefix = ""
-		generic = { "Division de Chasseurs de Chars" }
+		generic = { "Div. de Chasseurs de Chars" }
 		generic_pattern = "UNIT_GENERIC_NAME_FRA"
 		unique = {}
 	}

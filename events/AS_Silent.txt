@@ -1356,20 +1356,22 @@ country_event = {							# Vichy establishment, from on_actions
 		transfer_state = 734 # Nendo
 		transfer_state = 741 # Cambodia		
 		transfer_state = 32  # Alpes					
-			every_owned_state = {
-				limit = {
-					is_core_of = VIC
-				}
-				add_core_of = FRA
-			}						
-			every_owned_state = {
-				limit = {
+		every_owned_state = {
+			limit = {
+				is_core_of = VIC
+			}
+			add_core_of = FRA
+		}						
+		every_owned_state = {
+			limit = {
+				OR = {	
 					is_controlled_by = GER
 					is_controlled_by = ITA
-					is_controlled_by = SPR					
+					is_controlled_by = SPR
 				}
-				remove_core_of = VIC
-			}		
+			}
+			remove_core_of = VIC
+		}		
 	}	
 }
 

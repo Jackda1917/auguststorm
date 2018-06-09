@@ -1,6 +1,7 @@
 ﻿##### Division Templates #####
 division_template = {
-	name = "Divisione di Fanteria -1942-"		
+	name = "Divisione di Fanteria -1942-"
+	division_names_group = ITA_INF_01	
 	# Represents nearly all infantry divisions
 	# In later years, CCNN Brigade added to Inf Division (1x2 militia/inf regiment)
 	# Also represent semi-mountain divisions (1st, 2nd, 3rd, 4th, 6th Divisions)
@@ -25,6 +26,7 @@ division_template = {
 
 division_template = {
 	name = "Divisione Corazzata" 		# Division blindée
+	division_names_group = ITA_ARM_01	
 	regiments = {
 		medium_armor = { x = 0 y = 0 }
 		medium_armor = { x = 0 y = 1 }
@@ -45,6 +47,7 @@ division_template = {
 
 division_template = {
 	name = "Divisione Celere -1942-" 		# Divisione Celere (Fast Division)
+	division_names_group = ITA_MOT_01	
 	regiments = {
 		motorized = { x = 0 y = 0 }
 		motorized = { x = 0 y = 1 }

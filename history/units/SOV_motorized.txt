@@ -1,6 +1,7 @@
 ﻿division_template = {
 		name = "Motostrelkovaya diviziya"  	
-
+		division_names_group = SOV_MOT_01
+		
 		regiments = {
 				motorized = { x = 0 y = 0 }   
 				motorized = { x = 0 y = 1 }

@@ -447,12 +447,12 @@ create_corps_commander = {
 create_corps_commander = {
 	name = "Erich von Manstein"
 	picture = "Portrait_Germany_Erich_von_Manstein.dds"
-	traits = { trickster armor_officer brilliant_strategist trait_engineer }	
+	traits = { career_officer trickster armor_officer brilliant_strategist trait_engineer }	
 	skill = 5 #4
 	id = 5
 	attack_skill = 5 #2
 	defense_skill = 4
-	planning_skill = 5 #3
+	planning_skill = 6 #3
 	logistics_skill = 3 #4
 }
 
@@ -464,7 +464,7 @@ create_corps_commander = {
 	id = 6
 	attack_skill = 7 #2
 	defense_skill = 4 #4
-	planning_skill = 6 #4
+	planning_skill = 5 #4
 	logistics_skill = 3
 }
 
@@ -537,7 +537,7 @@ create_corps_commander = {
 create_corps_commander = {
 	name = "Wilhelm Ritter von Leeb"
 	picture = "Portrait_Germany_Wilhelm_Ritter_von_Leeb.dds"
-	traits = { old_guard infantry_officer }
+	traits = { old_guard infantry_officer war_hero }
 
 	skill = 3
 	id = 13

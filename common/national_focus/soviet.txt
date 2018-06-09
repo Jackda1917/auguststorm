@@ -3867,6 +3867,7 @@ focus_tree = {
 							NOT = { has_trait = field_marshal_baton }							
 						}
 						promote_leader = THIS
+						add_unit_leader_trait = field_marshal_baton						
 					}
 					random_army_leader = {				# Vasilevsky
 						limit = {
@@ -3945,8 +3946,6 @@ focus_tree = {
 		id = SOV_military_reorganization
 		icon = GFX_goal_generic_army_doctrines
 		prerequisite = { focus = SOV_rehabilitated_military }
-
-
 		x = 0
 		y = 1
 		relative_position_id = SOV_rehabilitated_military
@@ -3963,8 +3962,7 @@ focus_tree = {
 		available_if_capitulated = yes
 
 		completion_reward = {
-			add_tech_bonus = {
-		
+			add_tech_bonus = {		
 				bonus = 0.25  # was 0.5
 				uses = 2
 				category = land_doctrine
@@ -4089,7 +4087,7 @@ focus_tree = {
 				name = "Konstantin Rokossovsky"
 				id = 402
 				picture = "Portrait_Soviet_Konstantin_Rokossovsky.dds"
-				traits = {  armor_officer trait_cautious brilliant_strategist }
+				traits = { armor_officer trait_cautious brilliant_strategist }
 				skill = 4	
 				attack_skill = 3
 				defense_skill = 4
@@ -4137,6 +4135,7 @@ focus_tree = {
 							#is_field_marshal = yes
 							has_trait = politically_connected
 							has_trait = career_officer
+							NOT = { has_trait = winter_specialist }
 							NOT = { has_trait = trait_cautious }
 							NOT = { has_trait = field_marshal_baton }							
 						}

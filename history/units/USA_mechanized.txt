@@ -1,6 +1,7 @@
 ﻿division_template = {
 		name = "Infantry Division (Mec.)"  	
-
+		division_names_group = USA_MEC_01
+		
 		regiments = {
 				mechanized = { x = 0 y = 0 }   
 				mechanized = { x = 0 y = 1 }

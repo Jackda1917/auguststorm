@@ -1,7 +1,8 @@
 ﻿##### Division Templates #####
 division_template = {
 	name = "Strelkovaya Diviziya"			# Rifle Division
-
+	division_names_group = SOV_INF_01
+	
 	regiments = {
 		infantry = { x = 0 y = 0 }
 		infantry = { x = 0 y = 1 }
@@ -27,7 +28,8 @@ division_template = {
 
 division_template = {
 	name = "Gornostrelkovaya Diviziya"		#  Rifle Division
-
+	division_names_group = SOV_MNT_01
+	
 	regiments = {
 		mountaineers = { x = 0 y = 0 }	
 		mountaineers = { x = 0 y = 1 }
@@ -39,7 +41,11 @@ division_template = {
 		
 		mountaineers = { x = 2 y = 0 }	
 		mountaineers = { x = 2 y = 1 }	
-		mountaineers = { x = 2 y = 2 }			
+		mountaineers = { x = 2 y = 2 }	
+
+		mountaineers = { x = 3 y = 0 }	
+		mountaineers = { x = 3 y = 1 }	
+		mountaineers = { x = 3 y = 2 }		
 	}
 	support = {
 		armoured_reconnaissance_company = { x = 0 y = 0 } # Basicaly 1 L-Arm battalion in 1936	
@@ -70,6 +76,7 @@ division_template = {
 
 division_template = {
 	name = "Kavaleriyskaya Diviziya" 	# Kavaleriyskaya Diviziya
+	division_names_group = SOV_CAV_01	
 
 	regiments = {
 		cavalry = { x = 0 y = 0 }		#cavalry
@@ -91,7 +98,8 @@ division_template = {
 
 division_template = {
 	name = "NKVD Pogranichnaya Diviziya"			# NKVD Border Guard Division - Garrison units (lolder experience, older equipment)
-
+	division_names_group = SOV_GAR_01
+	
 	regiments = {
 		infantry = { x = 0 y = 0 }	
 		infantry = { x = 0 y = 1 }
@@ -110,6 +118,7 @@ division_template = {
 
 division_template = {
 	name = "Mekhanizirovaniy Diviziya" # = 1/2 Korpus minus infantry Rgmt
+	division_names_group = SOV_MEC_01	
 
 	regiments = {
 		light_armor = { x = 0 y = 0 }
@@ -140,7 +149,8 @@ division_template = {
 
 division_template = {
 	name = "Tankovaya Brigada" # 
-
+	division_names_group = SOV_ARM_04
+	
 	regiments = {
 		light_armor = { x = 0 y = 0 }
 		light_armor = { x = 0 y = 1 }
@@ -153,6 +163,7 @@ division_template = {
 
 division_template = {
 	name = "Vozdushno-Desantnaya Brigada"			# Airborne Brigade
+	division_names_group = SOV_PAR_01
 
 	regiments = {
 		paratrooper = { x = 0 y = 0 }

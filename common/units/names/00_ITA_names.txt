@@ -1,17 +1,17 @@
 ﻿ITA = { 
 	submarine = { 
-		prefix = "RM" 
+		prefix = "RSmg" 
 		generic = { "Sommergibile" } 
 		unique = { 
 			# Current models (2 Glauco class, 3 Pietro Calvi class, 2 Argo class, 10 Serie 600 - Perla class, 17 Serie 600 - Adua class, 11 Marcello class, 5 Benedetto Brin class, 4 Console Generale Liuzzi class, 
 			# 6 Marconi class, 4 Ammiragli class, 13 Serie 600 - Platino class, 6 Tritone Prima Serie class, 8 Tritone Seconda Serie class) 
 			"Glauco" "Otaria" "Pietro Calvi" "Giuseppe Finzi" "Enrico Tazzoli" "Argo" "Velella" "Ambra" "Berillo" "Corallo" "Diaspro" "Gemma" "Iride" "Malachite" "Onice" "Perla" "Turchese" "Adua" "Alagi" 
-			"Aradam" "Ascianghi" "Axum" "Beilul" "Dagabur" "Dessié" "Durbo" "Gondar" "Lafolé" "Macallé" "Neghelli" "Sciré" "Tembien" "Uarsciek" "Uebi Scebeli" "Marcello" "Dandolo" "Veniero" "Provana" 
+			"Aradam" "Ascianghi" "Axum" "Beilul" "Dagabur" "Dessiè" "Durbo" "Gondar" "Lafolè" "Macallè" "Neghelli" "Scirè" "Tembien" "Uarsciek" "Uebi Scebeli" "Marcello" "Dandolo" "Veniero" "Provana" 
 			"Mocenigo" "Nani" "Barbarigo" "Emo" "Morosini" "Comandante Cappellini" "Comandante Faà di Bruno" "Brin" "Galvani" "Guglielmotti" "Archimede" "Torricelli" "Console Generale Liuzzi" "Alpino Bagnolini" 
 			"Reginaldo Giuliani" "Capitano Tarantini" "Guglielmo Marconi" "Leonardo da Vinci" "Michele Bianchi" "Luigi Torelli" "Alessandro Malaspina" "Maggiore Baracca" "Ammiraglio Saint Bon" "Ammiraglio Cagni" 
 			"Ammiraglio Millo" "Ammiraglio Caracciolo" "Acciaio" "Alabastro" "Argento" "Asteria" "Avorio" "Bronzo" "Cobalto" "Giada" "Granito" "Nichelio" "Platino" "Porfido" "Volframio" "Tritone" "Gorgo" "Flutto" 
 			"Marea" "Vortice" "Nautilo" "Bario" "Litio" "Sodio" "Potassio" "Rame" "Ferro" "Zinco" "Piombo" 
-			# Cancelled/NOT completed/Reconstructed (6 Tritone Prima Serie class, 16 Tritone Seconda Serie class, 2 Bragadin class, 1 Pietro Micca class, 3 Foca class, YUG Smeli, YUG Osvetnik) 
+			# Cancelled/Not completed/Reconstructed (6 Tritone Prima Serie class, 16 Tritone Seconda Serie class, 2 Bragadin class, 1 Pietro Micca class, 3 Foca class, YUG Smeli, YUG Osvetnik) 
 			"Murena" "Grongo" "Sparide" "Spigola" "Cernia" "Dentice" "Cromo" "Ottone" "Cadmio" "Vanadio" "Iridio" "Ruthenio" "Oro" "Alluminio" "Antimonio" "Fosforo" "Manganese" "Zolfo" "Silicio" "Magnesio" 
 			"Mercurio" "Amianto" "Marcantonio Bragadin" "Filippo Corridoni" "Pietro Micca" "Foca" "Atropo" "Zoea" "Antonio Bajamonti" "Francesco Rismondo" 
 			# Older models (4 Balilla class, 4 Mameli class, 4 Vettor Pisani class, 1 Ettore Fieramosca class, 4 Fratelli Bandiera class, 4 Squalo class, 7 Serie 600 - Argonauta class, 2 Settembrini class, 
@@ -25,7 +25,7 @@
 		} 
 	} 
 	destroyer = { 
-		prefix = "RM" 
+		prefix = "RCT"
 		generic = { "Cacciatorpedindiere" } 
 		unique = { 
 			# Current models (12 Soldati Prima Serie class, 5 Soldati Seconda Serie class, 32 Spica class, 13 Ariete class, 4 Orsa class, 16 Ciclone class) 
@@ -51,23 +51,25 @@
 			"Carlo Alberto Racchia" "Insidioso" "Irrequieto" "Pilade Bronzetti" "Agostino Bertani" "Benedetto Cairoli" 
 		}
 	}
-	light_cruiser = {
-		prefix = "RM"
-		generic = { "Incrociatore Leggero" }
-		unique = {
-			# Current models (2 Duca d'Aosta class, 2 Duca degli Abruzzi class, 4 Capitani Romani class)
+	light_cruiser = { 
+		prefix = "RI" 
+		generic = { "Incrociatore Leggero" } 
+		unique = { 
+			# Current models (2 Duca d'Aosta class, 2 Duca degli Abruzzi class, 4 Capitani Romani class) 
 			"Emanuele Filiberto Duca d'Aosta" "Eugenio di Savoia" "Duca degli Abruzzi" "Giuseppe Garibaldi" "Attilio Regolo" "Scipione Africano" "Giulio Germanico" "Pompeo Magno" 
-			# Cancelled/NOT completed/Reconstructed (8 Capitani Romani class, 2 San Giorgio class, 2 Etna class, 2 Costanzo Ciano class)
+			# Cancelled/Not completed/Reconstructed (8 Capitani Romani class, 2 San Giorgio class, 2 Etna class, 2 Costanzo Ciano class) 
 			"Lucio Cornelio Silla" "Caio Mario" "Ottaviano Augusto" "Ulpio Traiano" "Claudio Druso" "Claudio Tiberio" "Vipsanio Agrippa" "Paolo Emilio" "San Giorgio" "San Marco" "Etna" "Vesuvio" 
 			"Costanzo Ciano" "Venezia" 
-			# Older models (SMS Pillau, SMS Strassburg, 4 Giussano class, 2 Cadorna class, 2 Montecuccoli class)
+			# Older models (SMS Pillau, SMS Strassburg, 4 Giussano class, 2 Cadorna class, 2 Montecuccoli class) 
 			"Bari" "Taranto" "Alberto da Giussano" "Alberico da Barbiano" "Bartolomeo Colleoni" "Giovanni dalle Bande Nere" "Luigi Cadorna" "Armando Diaz" "Raimondo Montecuccoli" "Muzio Attendolo" 
-			# Fictional names start here (2 WWI Basilicata class, 7 pre-WWI Regioni class, 6 WWI Esploratori class)
+			# Fictional names start here (2 WWI Basilicata class, 7 pre-WWI Regioni class, 6 WWI Esploratori class) 
 			"Basilicata" "Campania" "Lombardia" "Calabria" "Elba" "Etruria" "Liguria" "Puglia" "Umbria" "Quarto" "Nino Bixio" "Marsala" "Libia" "Ancona" "Brindisi" 
-		}
-	}
+		} 
+	} 
+
+
 	heavy_cruiser = { 
-		prefix = "RM" 
+		prefix = "RI" 
 		generic = { "Incrociatore Pesante" } 
 		unique = { 
 			# Current models (2 Trento class, 4 Zara class, 1 Bolzano class) 
@@ -88,28 +90,30 @@
 			"Principe Amedeo" "Palestra" 
 		}
 	}
-	battleship = {
-		prefix = "RM"
-		generic = { "Corazzata" }
-		unique = {
-			# Current models (2 Conte Di Cavour class, 2 Caio Duilio class, 3 Littorio class)
+	battleship = { 
+		prefix = "RN" 
+		generic = { "Corazzata" } 
+		unique = { 
+			# Current models (2 Conte Di Cavour class, 2 Caio Duilio class, 3 Littorio class) 
 			"Conte Di Cavour" "Giulio Cesare" "Caio Duilio" "Andrea Doria" "Littorio" "Vittorio Veneto" "Roma" 
-			# Cancelled/NOT completed/Reconstructed (1 Littorio class, 1 Italia class)
+			# Cancelled/Not completed/Reconstructed (1 Littorio class, 1 Italia class) 
 			"Impero" "Italia" 
-			# Fictional names start here (1 WWI Conte Di Cavour class, 1 WWI Dante Alighieri class)
+			# Fictional names start here (1 WWI Conte Di Cavour class, 1 WWI Dante Alighieri class) 
 			"Leonardo Da Vinci" "Dante Alighieri" 
-		}
-	}
-	carrier = {
-		prefix = "RM"
-		generic = { "Portaerei" }
-		unique = {
-			# Cancelled/NOT completed/Reconstructed (1 Aquila class, 1 Sparviero class)
+		} 
+	} 
+
+
+	carrier = { 
+		prefix = "RN" 
+		generic = { "Portaerei" } 
+		unique = { 
+			# Cancelled/Not completed/Reconstructed (1 Aquila class, 1 Sparviero class) 
 			"Aquila" "Sparviero" 
-			# Fictional names start here (1 fictional, 1 pre-WWI Europa class, 1 WWI Giuseppe Miraglia class)
+			# Fictional names start here (1 fictional, 1 pre-WWI Europa class, 1 WWI Giuseppe Miraglia class) 
 			"Falco" "Europa" "Giuseppe Miraglia" 
-		}
-	}
+		} 
+	} 
 	
 	air_wing_names_template = AIR_WING_NAME_ITA_FALLBACK
 	
@@ -158,7 +162,7 @@
 	light_armor = {
 		prefix = ""
 		generic = { "Divisione Celere" }
-		generic_pattern = "UNIT_GENERIC_NAME_GENERIC_INFANTRY"
+		generic_pattern = "UNIT_GENERIC_NAME_ITA"
 		unique = {}
 	}
 	air_assault_battalion = {

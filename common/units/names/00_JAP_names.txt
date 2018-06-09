@@ -90,7 +90,7 @@
 		prefix = ""
 		generic = { "Senkan" }
 		unique = {
-			"Yamato" "Musashi" "Tosa" "Kii" "Owari" "Iwami" "Sagami" "Suwo" "Hizen" "Tango" "Iki" 
+			"Hiei" "Yamato" "Musashi" "Tosa" "Kii" "Owari" "Iwami" "Sagami" "Suwo" "Hizen" "Tango" "Iki" 
 			# Captured/Converted/Older Models
 			"Fuso" "Yamashiro" "Ise" "Hyuga" "Nagato" "Mutsu" "Kaga" "Shinano" 
 			# Fictional
