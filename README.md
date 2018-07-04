@@ -47,6 +47,7 @@ No surprise there: the more players will play the mod the more feedback you make
 August Storm detailed changes (cumulative but not exhaustive!):
 
 Current Version: 1.5.3.1
+
 Compatibility: HOI IV 1.5.3 WTT
 
 - Please, don't forget to evaluate the mod on Steam Workshop, we have put a link in the game menu for that, Thanks ! -
@@ -135,6 +136,7 @@ Balance and Gameplay
 • Navy XP gain increased
 • Land Unit XP gain increased, lowered for leaders
 • Air units XP gain decreased 
+• New leader trait : Field Marshal baton 
 • Many other balance tweaks, historical fix, new events...
 
 Equipment

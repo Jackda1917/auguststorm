@@ -282,7 +282,7 @@ guiTypes = {
 			textureFile = ""
 			font = "hoi_18b"
 			borderSize = {x = 0 y = 0}
-			text = "AS v1.5.3"
+			text = "AS v1.5.4.1"
 			format = right
 			maxWidth = 270
 			maxHeight = 20	
@@ -322,6 +322,14 @@ guiTypes = {
 			#clicksound = click_default
 			pdx_tooltip = "MENU_TWITTER"
 			web_link = "https://twitter.com/hoi_game"
+		}
+		
+		ButtonType = {
+			name = "privacy_policy_button"
+			position = { x = 219 y = 309 }
+			quadTextureSprite ="privacy"
+			#clicksound = click_default
+			pdx_tooltip = "MENU_PRIVACY_POLICY"
 		}
 	}
 }

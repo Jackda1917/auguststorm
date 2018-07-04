@@ -15,6 +15,7 @@ NGame = {
 	MISSION_REMOVE_FROM_INTERFACE_DEFAULT = 13,		-- Default days before a mission is removed from the interface after having failed or completed
 	DECISION_ALERT_TIMEOUT_DAYS = 30,				-- Days left when player will be alerted about timing out events or decisions
 	NAVAL_COMBAT_CONVOY_SIZE = 0.20,				-- Size of a convoy in a naval battle. Used to determine the size of the fleet when intercepting convoy.
+	CHECKSUM_SALT = "ee f6 04 09 e4 a2 c8 bb "		-- Data to modify generated checksum when game binaries have changed but not any content files.
 },
 
 NDiplomacy = {
@@ -271,6 +272,7 @@ NCountry = {
 	SPECIAL_FORCES_CAP_MIN = 24,					-- You can have a minimum of this many special forces battalions, regardless of the number of non-special forces battalions you have, this can also be modified by a country modifier
 	DAYS_OF_WAR_BEFORE_SURRENDER = 7,				-- Number of days a war has to have existed before anyone can surrender in it
 },
+
 NProduction = {
 	MAX_EQUIPMENT_RESOURCES_NEED = 3, 	-- Max number of different strategic resources an equipment can be dependent on.
 	MAX_CIV_FACTORIES_PER_LINE = 15,	-- Max number of factories that can be assigned a single production line.
@@ -378,6 +380,7 @@ NMilitary = {
 	INFRA_ORG_IMPACT = 0.5,					-- scale factor of infra on org regain.
 
 	UNIT_DAMAGE_TO_WAR_SUPPORT_REDUCTION_MULT = 0.6, --WAS 0.5 if a unit reduces war support when it is damaged, this base multiplier is multiplied by the total damage they suffered to convert it war support damage
+
 	INFRASTRUCTURE_MOVEMENT_SPEED_IMPACT = -0.05,	-- speed penalty per infrastucture below maximum.
 
 	WAR_SCORE_LOSSES_RATIO = 0.3,				--WAS 0.2 Scale how much losses will affect warscore ( per 1000 losses ).
@@ -390,6 +393,7 @@ NMilitary = {
 	CORPS_COMMANDER_ARMIES_CAP = -1,			-- how many armies a corps commander is limited to. 0 = inf, < 0 = blocked
 	FIELD_MARSHAL_DIVISIONS_CAP = 30,			--WAS 24 how many divisions a field marshall is limited to. 0 = inf, < 0 = blocked
 	FIELD_MARSHAL_ARMIES_CAP = 4,				--WAS 5 how many armies a field marshall is limited to. 0 = inf, < 0 = blocked
+
 	UNIT_LEADER_GENERATION_CAPITAL_CONTINENT_FACTOR = 100, --Integer factor to multiply manpower.
 
 	RECON_SKILL_IMPACT = 5, -- how many skillpoints is a recon advantage worth when picking a tactic.
@@ -412,6 +416,7 @@ NMilitary = {
 	LEADER_GROUP_MAX_SIZE = 1000, --5,			-- Max slots for leader groups.
 
 	MIN_SUPPLY_CONSUMPTION = 0.05,					-- minimum value of supply consumption that a unit can get
+
 	LAND_COMBAT_ORG_DICE_SIZE = 6,                 --WAS 4 nr of damage dice
 	LAND_COMBAT_STR_DICE_SIZE = 2,                 -- nr of damage dice
 	LAND_COMBAT_STR_DAMAGE_MODIFIER = 0.025,        --WAS 0.05 global damage modifier
@@ -556,6 +561,7 @@ NMilitary = {
 	PLAN_PROVINCE_HIGH_VP_IMPORTANCE_FRONT = 10.0,   --WAS 5.0 Used when calculating the calue of fronts in the battle plan system
 	
 	PLAN_SHARED_FRONT_PROV_IMPORTANCE_FACTOR = 0.8,	-- If fornt orders share end provinces, they should each have a somewhat reduced prio due to it being shared.
+
 	PLAN_PORVINCE_PORT_BASE_IMPORTANCE = 18.0,		--WAS 9.0 Added importance for area defense province with a port
 	PLAN_PORVINCE_PORT_LEVEL_FACTOR = 0.5,			--WAS 1.5 Bonus factor for port level
 	PLAN_PORVINCE_AIRFIELD_BASE_IMPORTANCE = 5.0,	--WAS 3.0 Added importance for area defense province with air field
@@ -565,19 +571,27 @@ NMilitary = {
 
 	PLAN_TAKE_UNIT_PAIN_DISTANCE_SAME_CONTROLLER_AREA = 24.0, -- Used to lower how painful it is to take a unit for defense order within same controller area
 	PLAN_TAKE_UNIT_PAIN_DISTANCE_OTHER_CONTROLLER_AREA = 12.0, -- Used to lower how painful it is to take a unit for defense order from different controller area
+
 	-- These need to result in province value > 1.0 for it to matter.
 	PLAN_AREA_DEFENSE_ENEMY_CONTROLLER_SCORE = 25.0,  --WAS 15.0 Score applied to provinces in the defense area order controlled by enemies
 	PLAN_AREA_DEFENSE_ENEMY_UNIT_FACTOR = -2.0,		  -- Factor applied to province score in area defense order per enemy unit in that province
 	PLAN_AREA_DEFENSE_FORT_IMPORTANCE = 0.5,		  --WAS 0.25 Used when calculating the calue of defense area provinces for the battle plan system, works as multipliers on the rest
 	PLAN_AREA_DEFENSE_COASTAL_FORT_IMPORTANCE = 25.0, --was 5 Used when calculating the calue of defense area provinces for the battle plan system
 	PLAN_AREA_DEFENSE_COAST_NO_FORT_IMPORTANCE = 1.0, -- Used when calculating the calue of defense area provinces for the battle plan system
+
 	PLAN_STICKINESS_FACTOR = 100.0,					-- Factor used in unitcontroller when prioritizing units for locations
 	
 	PLAN_PROVINCE_PRIO_DISTRIBUTION_MIN = 0.8,		-- Lowest fraction of divisions that will be distributed based on province priority
 	PLAN_PROVINCE_PRIO_DISTRIBUTION_MAX = 1.0,		-- Highest fraction of divisions that will be distributed based on province priority
 	PLAN_PROVINCE_PRIO_DISTRIBUTION_DPP_HIGH = 5.0, --WAS 4 At what divisions per province should we use PLAN_PROVINCE_PRIO_DISTRIBUTION_MIN
 	PLAN_PROVINCE_PRIO_DISTRIBUTION_DPP_LOW = 1.0,	--WAS 2 At what divisions per province should we use PLAN_PROVINCE_PRIO_DISTRIBUTION_MAX
+
+
+
+
+
 	
+
 	PLAN_EXECUTE_CAREFUL_LIMIT = 15,				--WAS 25 When looking for an attach target, this score limit is required in the battle plan to consider province for attack
 	PLAN_EXECUTE_BALANCED_LIMIT = -10,				-- When looking for an attach target, this score limit is required in the battle plan to consider province for attack
 	PLAN_EXECUTE_RUSH = -300,				        -- When looking for an attach target, this score limit is required in the battle plan to consider province for attack
@@ -612,6 +626,7 @@ NMilitary = {
 	PEN_VS_AVERAGE = 0.5,                           --WAS 0.4
 
 	DECRYPTION_ADVANTAGE_BONUS = 0.10,				--WAS 0.05 How much unit base damage and base defense is increased per decryption level compared to enemies average encryption level (ex: dec. level is 5 and enemy average enc. level is 3 then 5-3 = 2 which gives 10 % increase)
+
 	LAND_EQUIPMENT_BASE_COST = 15,					--WAS 5 (1.1) Cost in XP to upgrade a piece of equipment one level is base + ( total levels * ramp )
 	LAND_EQUIPMENT_RAMP_COST = 5,					
 	NAVAL_EQUIPMENT_BASE_COST = 25,
@@ -623,8 +638,10 @@ NMilitary = {
 	FASTER_ORG_REGAIN_MULT = 1.0,
 	SLOWER_ORG_REGAIN_LEVEL = 0.7,					-- Was 0.75
 	SLOWER_ORG_REGAIN_MULT = -0.5,
+
 	DISBAND_MANPOWER_LOSS = 0.7,
 	MIN_DIVISION_DEPLOYMENT_TRAINING = 0.1,			--WAS 0.2 Min level of division training
+
 	FRONT_MIN_PATH_TO_REDEPLOY = 6,				    --WAS 8 If a units path is at least this long to reach its front location, it will strategically redeploy.
 	ARMY_INITIATIVE_REINFORCE_FACTOR = 0.35,		--WAS 0.25 scales initiative for reinforce chance
 	
@@ -820,6 +837,7 @@ NAir = {
 	EFFICIENCY_REGION_CHANGE_DAILY_GAIN_TACTICAL_BOMBER = 0.192,	-- How much efficiency to regain per day. Gain applied hourly.
 	EFFICIENCY_REGION_CHANGE_DAILY_GAIN_FIGHTER = 0.888,			-- How much efficiency to regain per day. Gain applied hourly.
 	EFFICIENCY_REGION_CHANGE_DAILY_GAIN_STRATEGIC_BOMBER = 0.072,	-- How much efficiency to regain per day. Gain applied hourly.
+
 	
 	DISRUPTION_FACTOR = 5.0,								--WAS 4.0 multiplier on disruption damage to scale its effects on planes
 	DISRUPTION_SPEED_FACTOR = 1.0,
@@ -982,6 +1000,7 @@ NNavy = {
 	ENEMY_AIR_SUPERIORITY_IMPACT = -1,           					-- effect on ship efficiency due to enemy air superiorty
 	DECRYPTION_SPOTTING_BONUS = 0.3,								-- WAS 0.2
 	DISBAND_MANPOWER_LOSS = 0.0,
+
 	XP_GAIN_FACTOR = 1.0,	   			   							-- xp gain factor for navy
 },
 
@@ -1177,6 +1196,7 @@ NAI = {
 	PLAN_AVG_PREPARATION_TO_EXECUTE = 0.2,		--% or more average plan preparation before executing
 	STATE_GARRISON_MAX_UNITS = 2,				--WAS 3 Max units to guard a garrison under normal circumstances (isolated core areas like England has is excempt)
 
+
 	REDEPLOY_DISTANCE_VS_ORDER_SIZE = 1.0,		-- Factor applied to the path length of a unit compared to length of an order to determine if it should use strategic redeployment
 	UNIT_ASSIGNMENT_TERRAIN_IMPORTANCE = 10.0,  --WAS 5 Terrain score for units are multiplied by this when the AI is deciding which front they should be assigned to
 	
@@ -1214,6 +1234,7 @@ NAI = {
 	COMMUNISTS_ANTAGONIZE_FASCISTS = 100,
 	COMMUNISTS_ANTAGONIZE_DEMOCRACIES = 50,
 	COMMUNISTS_ANTAGONIZE_COMMUNISTS = -30,
+
 	TENSION_MIN_FOR_GUARANTEE_VS_MINOR = 10, -- for non faction people AI will not consider you worth guaranteeing below this
 	
 	NUM_AI_MESSAGES = 10,				-- Set to whatever category has the highest number of messages
@@ -1319,6 +1340,7 @@ NAI = {
 	DIVISION_DESIGN_COMBAT_WIDTH_WEIGHT = -1.0,				-- This score is reduced the higher width is when comparing pure changes with no target
 	DIVISION_DESIGN_COMBAT_WIDTH_TARGET_WEIGHT = -1000.0,	--WAS -200 This score is reduced the farther the width is from the target width (if set)
 	DIVISION_DESIGN_MAX_FAILED_DAYS = 60,					-- max days we keep track of since failure of a design update
+
 	BUILD_ARMOR_BASE_COST_WEIGHT = 200.0,
 	BUILD_ARMOR_STRENGTH_MULTIPLIER_WEIGHT = 100.0,
 	BUILD_ARMOR_ORGANIZATION_MULTIPLIER_WEIGHT = 500.0,
@@ -1433,6 +1455,7 @@ NAI = {
 	NAVAL_MIN_EXCORT_WINGS = 0,							-- Min amount of airwings requested to excort operations
 	DEMOCRATIC_AI_FACTION_KICKING_PLAYER_THREAT_DIFFERENCE = 6.0, -- World threat generation difference needed to kick a player from a democratic faction
 	BEFRIEND_FACTOR_FOR_KICKING_COUNTRIES = 7.5,		-- World threat difference addition per 100 befriend against a country, democratic leaders will forgive allies if they are befriending them
+
 	LAND_DEFENSE_AIR_SUPERIORITY_IMPORTANCE = 0.20,		--WAS 0.10 Strategic importance of air superiority ( amount of enemy planes in area )
 	LAND_DEFENSE_CIVIL_FACTORY_IMPORTANCE = 50,			-- Strategic importance of civil factories
 	LAND_DEFENSE_MILITARY_FACTORY_IMPORTANCE = 70,		-- Strategic importance of military factories
@@ -1442,11 +1465,14 @@ NAI = {
 	LAND_DEFENSE_IMPORTANCE_SCALE = 1.5,				-- Lend defence total importance scale (every land defence score get's multiplied by it)
 	
 	NUM_HOURS_SINCE_LAST_COMBAT_TO_SUPPORT_UNITS_VIA_AIR = 72,			-- units will be considered in combat if they are just out of their last combat for air supporting
+
 	LAND_DEFENSE_MIN_FACTORIES_FOR_AIR_IMPORTANCE = 6,	-- If amount of factories is less importance of factories won't apply
 	
 	LAND_DEFENSE_FIGHERS_PER_PLANE = 1.1,				-- Amount of air superiority planes requested per enemy plane
 	LAND_DEFENSE_INTERSEPTORS_PER_BOMBERS = 0.2,		-- Amount of air interceptor planes requested per enemy plane
 	LAND_DEFENSE_INTERSEPTORS_PER_PLANE = 1.0,				-- Amount of air interceptor planes requested per enemy plane (non bomber)
+
+
 	
 	LAND_COMBAT_AIR_SUPERIORITY_IMPORTANCE = 0.50,		--WAS 0.20 Strategic importance of air superiority ( amount of enemy planes in area )
 	LAND_COMBAT_OUR_ARMIES_AIR_IMPORTANCE = 12,			-- Strategic importance of our armies
@@ -1469,6 +1495,8 @@ NAI = {
 	LAND_COMBAT_MIN_EXCORT_WINGS = 2,					-- Min amount of airwings requested to excort operations
 	
 	LAND_COMBAT_INTERCEPT_PER_PLANE = 0.4,				-- Amount of interception planes requested per enemy plane
+
+
 	STR_BOMB_AIR_SUPERIORITY_IMPORTANCE = 0.10,			-- Strategic importance of air superiority ( amount of enemy planes in area )
 	STR_BOMB_CIVIL_FACTORY_IMPORTANCE = 50,				-- Strategic importance of enemy civil factories
 	STR_BOMB_MILITARY_FACTORY_IMPORTANCE = 70,			-- Strategic importance of enemy military factories
@@ -1530,5 +1558,6 @@ NFocus = {
 	MAX_SAVED_FOCUS_PROGRESS = 10,				-- This much progress can be saved while not having a focus selected
 	},
 }
+
 
 

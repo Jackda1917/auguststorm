@@ -270,6 +270,7 @@ focus_tree = {
 
 		available = {
 			SOV = { is_faction_leader = yes }
+			communism > 0.4  # AS
 			is_in_faction = no
 			NOT = { has_war_with = SOV }
 			is_subject = no
@@ -346,7 +347,7 @@ focus_tree = {
 		cost = 10
 
 		ai_will_do = {
-			factor = 1
+			factor = 100
 		}
 
 		available = {
@@ -435,7 +436,7 @@ focus_tree = {
 		cost = 10
 
 		ai_will_do = {
-			factor = 1
+			factor = 1000
 			modifier = {
 				factor = 0
 				GER = {
@@ -449,7 +450,7 @@ focus_tree = {
 				is_faction_leader = yes
 				has_government = fascism
 			}
-			
+			fascism > 0.3  # AS
 			is_in_faction = no
 			NOT = { has_war_with = GER }
 			is_subject = no
@@ -492,7 +493,7 @@ focus_tree = {
 		cost = 10
 
 		ai_will_do = {
-			factor = 1
+			factor = 1000
 		}
 
 		available = {
@@ -852,6 +853,7 @@ focus_tree = {
 
 		available = {
 			ENG = { is_faction_leader = yes }
+			democratic > 0.5 # AS
 			is_in_faction = no
 			NOT = { has_war_with = ENG }
 			is_subject = no
@@ -1465,7 +1467,7 @@ focus_tree = {
 			46 = {
 				add_resource = {
 					type = oil
-					amount = 24
+					amount = 28 #24
 				}
 			}
 		}
@@ -2312,6 +2314,7 @@ focus_tree = {
 
 		available = {
 			is_subject = no
+			communism > 0.35 #AS
 			SOV = {
 				is_faction_leader = yes
 				has_government = communism
@@ -2693,6 +2696,7 @@ focus_tree = {
 
 		available = {
 			is_subject = no
+			democratic > 0.35
 			ENG = {
 				is_faction_leader = yes
 				has_government = democratic
